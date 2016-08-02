@@ -1,7 +1,0 @@
-/Users/tpan/Documents/ti55987/src/Square.Connect/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/tpan/Documents/ti55987/src/Square.Connect/bin/Debug/Swagger Library.dll.mdb
-/Users/tpan/Documents/ti55987/src/Square.Connect/bin/Debug/Swagger Library.dll
-/Users/tpan/Documents/ti55987/src/Square.Connect/obj/Debug/Swagger Library.dll
-/Users/tpan/Documents/ti55987/src/Square.Connect/obj/Debug/Swagger Library.dll.mdb
-/Users/tpan/Documents/ti55987/src/Square.Connect/bin/Debug/Newtonsoft.Json.dll
-/Users/tpan/Documents/ti55987/src/Square.Connect/bin/Debug/RestSharp.dll
