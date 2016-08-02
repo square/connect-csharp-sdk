@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Square.Connect</id>
+    <version>1.0.0</version>
+    <title>Square.Connect</title>
+    <authors>i-Fen Pan</authors>
+    <owners>Square</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Square Connect version 1</description>
+    <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="RestSharp" version="105.1.0" />
+      <dependency id="Newtonsoft.Json" version="8.0.3" />
+    </dependencies>
+    <references>
+      <group targetFramework="net45"> 
+        <reference file="Square.Connect.dll" />
+        <reference file="Square.Connect.xml" />
+      </group>
+      <group targetFramework="net40"> 
+        <reference file="Square.Connect.dll" />
+        <reference file="Square.Connect.xml" />
+      </group>     
+    </references>
+  </metadata>
+  <files>
+    <file src="lib/net45/Square.Connect.dll" target="lib/net45"/>
+    <file src="lib/net45/Square.Connect.xml" target="lib/net45"/>
+    <file src="lib/net40/Square.Connect.dll" target="lib/net40"/>
+    <file src="lib/net40/Square.Connect.xml" target="lib/net40"/>
+  </files>
+</package>
