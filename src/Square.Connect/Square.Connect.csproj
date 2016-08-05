@@ -25,8 +25,8 @@ limitations under the License.
     <ProjectGuid>{73509C9E-CACA-4E60-AFAC-1F40E8C4DC84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Swagger Library</RootNamespace>
-    <AssemblyName>Swagger Library</AssemblyName>
+    <RootNamespace>Square.Connect</RootNamespace>
+    <AssemblyName>Square.Connect</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
