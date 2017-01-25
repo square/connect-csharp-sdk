@@ -34,34 +34,55 @@ using Newtonsoft.Json.Converters;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [UpdateCustomer](#endpoint-updatecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+    /// Contains some brief information about a customer group with its identifier included.
     /// </summary>
     [DataContract]
-    public partial class UpdateCustomerResponse :  IEquatable<UpdateCustomerResponse>
+    public partial class CustomerGroupInfo :  IEquatable<CustomerGroupInfo>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateCustomerResponse" /> class.
+        /// Initializes a new instance of the <see cref="CustomerGroupInfo" /> class.
         /// </summary>
-        /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Customer">The updated customer..</param>
-        public UpdateCustomerResponse(List<Error> Errors = null, Customer Customer = null)
+        [JsonConstructorAttribute]
+        protected CustomerGroupInfo() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerGroupInfo" /> class.
+        /// </summary>
+        /// <param name="Id">The ID of the customer group. (required).</param>
+        /// <param name="Name">The name of the customer group. (required).</param>
+        public CustomerGroupInfo(string Id = null, string Name = null)
         {
-            this.Errors = Errors;
-            this.Customer = Customer;
+            // to ensure "Id" is required (not null)
+            if (Id == null)
+            {
+                throw new InvalidDataException("Id is a required property for CustomerGroupInfo and cannot be null");
+            }
+            else
+            {
+                this.Id = Id;
+            }
+            // to ensure "Name" is required (not null)
+            if (Name == null)
+            {
+                throw new InvalidDataException("Name is a required property for CustomerGroupInfo and cannot be null");
+            }
+            else
+            {
+                this.Name = Name;
+            }
         }
         
         /// <summary>
-        /// Any errors that occurred during the request.
+        /// The ID of the customer group.
         /// </summary>
-        /// <value>Any errors that occurred during the request.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<Error> Errors { get; set; }
+        /// <value>The ID of the customer group.</value>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public string Id { get; set; }
         /// <summary>
-        /// The updated customer.
+        /// The name of the customer group.
         /// </summary>
-        /// <value>The updated customer.</value>
-        [DataMember(Name="customer", EmitDefaultValue=false)]
-        public Customer Customer { get; set; }
+        /// <value>The name of the customer group.</value>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -69,9 +90,9 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateCustomerResponse {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
-            sb.Append("  Customer: ").Append(Customer).Append("\n");
+            sb.Append("class CustomerGroupInfo {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +114,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UpdateCustomerResponse);
+            return this.Equals(obj as CustomerGroupInfo);
         }
 
         /// <summary>
-        /// Returns true if UpdateCustomerResponse instances are equal
+        /// Returns true if CustomerGroupInfo instances are equal
         /// </summary>
-        /// <param name="other">Instance of UpdateCustomerResponse to be compared</param>
+        /// <param name="other">Instance of CustomerGroupInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateCustomerResponse other)
+        public bool Equals(CustomerGroupInfo other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -109,14 +130,14 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.Errors == other.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(other.Errors)
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 ) && 
                 (
-                    this.Customer == other.Customer ||
-                    this.Customer != null &&
-                    this.Customer.Equals(other.Customer)
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
                 );
         }
 
@@ -131,10 +152,10 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Errors != null)
-                    hash = hash * 59 + this.Errors.GetHashCode();
-                if (this.Customer != null)
-                    hash = hash * 59 + this.Customer.GetHashCode();
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
                 return hash;
             }
         }

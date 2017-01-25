@@ -34,34 +34,26 @@ using Newtonsoft.Json.Converters;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [UpdateCustomer](#endpoint-updatecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+    /// Represents a particular customer&#39;s preferences.
     /// </summary>
     [DataContract]
-    public partial class UpdateCustomerResponse :  IEquatable<UpdateCustomerResponse>
+    public partial class CustomerPreferences :  IEquatable<CustomerPreferences>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateCustomerResponse" /> class.
+        /// Initializes a new instance of the <see cref="CustomerPreferences" /> class.
         /// </summary>
-        /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Customer">The updated customer..</param>
-        public UpdateCustomerResponse(List<Error> Errors = null, Customer Customer = null)
+        /// <param name="EmailUnsubscribed">The customer has unsubscribed from receiving marketing campaign emails..</param>
+        public CustomerPreferences(bool? EmailUnsubscribed = null)
         {
-            this.Errors = Errors;
-            this.Customer = Customer;
+            this.EmailUnsubscribed = EmailUnsubscribed;
         }
         
         /// <summary>
-        /// Any errors that occurred during the request.
+        /// The customer has unsubscribed from receiving marketing campaign emails.
         /// </summary>
-        /// <value>Any errors that occurred during the request.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<Error> Errors { get; set; }
-        /// <summary>
-        /// The updated customer.
-        /// </summary>
-        /// <value>The updated customer.</value>
-        [DataMember(Name="customer", EmitDefaultValue=false)]
-        public Customer Customer { get; set; }
+        /// <value>The customer has unsubscribed from receiving marketing campaign emails.</value>
+        [DataMember(Name="email_unsubscribed", EmitDefaultValue=false)]
+        public bool? EmailUnsubscribed { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -69,9 +61,8 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateCustomerResponse {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
-            sb.Append("  Customer: ").Append(Customer).Append("\n");
+            sb.Append("class CustomerPreferences {\n");
+            sb.Append("  EmailUnsubscribed: ").Append(EmailUnsubscribed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +84,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UpdateCustomerResponse);
+            return this.Equals(obj as CustomerPreferences);
         }
 
         /// <summary>
-        /// Returns true if UpdateCustomerResponse instances are equal
+        /// Returns true if CustomerPreferences instances are equal
         /// </summary>
-        /// <param name="other">Instance of UpdateCustomerResponse to be compared</param>
+        /// <param name="other">Instance of CustomerPreferences to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateCustomerResponse other)
+        public bool Equals(CustomerPreferences other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -109,14 +100,9 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.Errors == other.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(other.Errors)
-                ) && 
-                (
-                    this.Customer == other.Customer ||
-                    this.Customer != null &&
-                    this.Customer.Equals(other.Customer)
+                    this.EmailUnsubscribed == other.EmailUnsubscribed ||
+                    this.EmailUnsubscribed != null &&
+                    this.EmailUnsubscribed.Equals(other.EmailUnsubscribed)
                 );
         }
 
@@ -131,10 +117,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Errors != null)
-                    hash = hash * 59 + this.Errors.GetHashCode();
-                if (this.Customer != null)
-                    hash = hash * 59 + this.Customer.GetHashCode();
+                if (this.EmailUnsubscribed != null)
+                    hash = hash * 59 + this.EmailUnsubscribed.GetHashCode();
                 return hash;
             }
         }

@@ -34,22 +34,28 @@ using Newtonsoft.Json.Converters;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [UpdateCustomer](#endpoint-updatecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+    /// Defines the fields that are included in the response body of a request to the [CreateCheckout](#endpoint-createcheckout) endpoint.
     /// </summary>
     [DataContract]
-    public partial class UpdateCustomerResponse :  IEquatable<UpdateCustomerResponse>
+    public partial class CreateCheckoutResponse :  IEquatable<CreateCheckoutResponse>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateCustomerResponse" /> class.
+        /// Initializes a new instance of the <see cref="CreateCheckoutResponse" /> class.
         /// </summary>
+        /// <param name="Checkout">The newly created checkout. If the same request was made with the same idempotency_key, this will be the checkout created with the idempotency_key..</param>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Customer">The updated customer..</param>
-        public UpdateCustomerResponse(List<Error> Errors = null, Customer Customer = null)
+        public CreateCheckoutResponse(Checkout Checkout = null, List<Error> Errors = null)
         {
+            this.Checkout = Checkout;
             this.Errors = Errors;
-            this.Customer = Customer;
         }
         
+        /// <summary>
+        /// The newly created checkout. If the same request was made with the same idempotency_key, this will be the checkout created with the idempotency_key.
+        /// </summary>
+        /// <value>The newly created checkout. If the same request was made with the same idempotency_key, this will be the checkout created with the idempotency_key.</value>
+        [DataMember(Name="checkout", EmitDefaultValue=false)]
+        public Checkout Checkout { get; set; }
         /// <summary>
         /// Any errors that occurred during the request.
         /// </summary>
@@ -57,21 +63,15 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The updated customer.
-        /// </summary>
-        /// <value>The updated customer.</value>
-        [DataMember(Name="customer", EmitDefaultValue=false)]
-        public Customer Customer { get; set; }
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateCustomerResponse {\n");
+            sb.Append("class CreateCheckoutResponse {\n");
+            sb.Append("  Checkout: ").Append(Checkout).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
-            sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +93,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UpdateCustomerResponse);
+            return this.Equals(obj as CreateCheckoutResponse);
         }
 
         /// <summary>
-        /// Returns true if UpdateCustomerResponse instances are equal
+        /// Returns true if CreateCheckoutResponse instances are equal
         /// </summary>
-        /// <param name="other">Instance of UpdateCustomerResponse to be compared</param>
+        /// <param name="other">Instance of CreateCheckoutResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateCustomerResponse other)
+        public bool Equals(CreateCheckoutResponse other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -109,14 +109,14 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.Checkout == other.Checkout ||
+                    this.Checkout != null &&
+                    this.Checkout.Equals(other.Checkout)
+                ) && 
+                (
                     this.Errors == other.Errors ||
                     this.Errors != null &&
                     this.Errors.SequenceEqual(other.Errors)
-                ) && 
-                (
-                    this.Customer == other.Customer ||
-                    this.Customer != null &&
-                    this.Customer.Equals(other.Customer)
                 );
         }
 
@@ -131,10 +131,10 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Checkout != null)
+                    hash = hash * 59 + this.Checkout.GetHashCode();
                 if (this.Errors != null)
                     hash = hash * 59 + this.Errors.GetHashCode();
-                if (this.Customer != null)
-                    hash = hash * 59 + this.Customer.GetHashCode();
                 return hash;
             }
         }

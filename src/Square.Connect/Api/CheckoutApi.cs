@@ -34,53 +34,61 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ILocationApi : IApiAccessor
+    public interface ICheckoutApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// ListLocations
+        /// CreateCheckout
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>ListLocationsResponse</returns>
-        ListLocationsResponse ListLocations (string authorization);
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>CreateCheckoutResponse</returns>
+        CreateCheckoutResponse CreateCheckout (string authorization, string locationId, CreateCheckoutRequest body);
 
         /// <summary>
-        /// ListLocations
+        /// CreateCheckout
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>ApiResponse of ListLocationsResponse</returns>
-        ApiResponse<ListLocationsResponse> ListLocationsWithHttpInfo (string authorization);
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of CreateCheckoutResponse</returns>
+        ApiResponse<CreateCheckoutResponse> CreateCheckoutWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// ListLocations
+        /// CreateCheckout
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>Task of ListLocationsResponse</returns>
-        System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync (string authorization);
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of CreateCheckoutResponse</returns>
+        System.Threading.Tasks.Task<CreateCheckoutResponse> CreateCheckoutAsync (string authorization, string locationId, CreateCheckoutRequest body);
 
         /// <summary>
-        /// ListLocations
+        /// CreateCheckout
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo (string authorization);
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (CreateCheckoutResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateCheckoutResponse>> CreateCheckoutAsyncWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body);
         #endregion Asynchronous Operations
     }
     /// \endcond
@@ -88,15 +96,15 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class LocationApi : ILocationApi
+    public partial class CheckoutApi : ICheckoutApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LocationApi"/> class.
+        /// Initializes a new instance of the <see cref="CheckoutApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public LocationApi(String basePath)
+        public CheckoutApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -110,12 +118,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LocationApi"/> class
+        /// Initializes a new instance of the <see cref="CheckoutApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LocationApi(Configuration configuration = null)
+        public CheckoutApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -197,31 +205,41 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>ListLocationsResponse</returns>
-        public ListLocationsResponse ListLocations (string authorization)
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>CreateCheckoutResponse</returns>
+        public CreateCheckoutResponse CreateCheckout (string authorization, string locationId, CreateCheckoutRequest body)
         {
-             ApiResponse<ListLocationsResponse> localVarResponse = ListLocationsWithHttpInfo(authorization);
+             ApiResponse<CreateCheckoutResponse> localVarResponse = CreateCheckoutWithHttpInfo(authorization, locationId, body);
              return localVarResponse.Data;
         }
 
         /// \cond
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>ApiResponse of ListLocationsResponse</returns>
-        public ApiResponse< ListLocationsResponse > ListLocationsWithHttpInfo (string authorization)
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of CreateCheckoutResponse</returns>
+        public ApiResponse< CreateCheckoutResponse > CreateCheckoutWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body)
         {
             // verify the required parameter 'authorization' is set
             if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling LocationApi->ListLocations");
+                throw new ApiException(400, "Missing required parameter 'authorization' when calling CheckoutApi->CreateCheckout");
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling CheckoutApi->CreateCheckout");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling CheckoutApi->CreateCheckout");
 
-            var localVarPath = "/v2/locations";
+            var localVarPath = "/v2/locations/{location_id}/checkouts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -246,56 +264,75 @@ namespace Square.Connect.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
 
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
+                Exception exception = ExceptionFactory("CreateCheckout", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ListLocationsResponse>(localVarStatusCode,
+            return new ApiResponse<CreateCheckoutResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListLocationsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListLocationsResponse)));
+                (CreateCheckoutResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateCheckoutResponse)));
             
         }
         /// \endcond
 
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>Task of ListLocationsResponse</returns>
-        public async System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync (string authorization)
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of CreateCheckoutResponse</returns>
+        public async System.Threading.Tasks.Task<CreateCheckoutResponse> CreateCheckoutAsync (string authorization, string locationId, CreateCheckoutRequest body)
         {
-             ApiResponse<ListLocationsResponse> localVarResponse = await ListLocationsAsyncWithHttpInfo(authorization);
+             ApiResponse<CreateCheckoutResponse> localVarResponse = await CreateCheckoutAsyncWithHttpInfo(authorization, locationId, body);
              return localVarResponse.Data;
 
         }
 
         /// \cond
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
-        /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo (string authorization)
+        /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (CreateCheckoutResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CreateCheckoutResponse>> CreateCheckoutAsyncWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body)
         {
             // verify the required parameter 'authorization' is set
             if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling LocationApi->ListLocations");
+                throw new ApiException(400, "Missing required parameter 'authorization' when calling CheckoutApi->CreateCheckout");
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling CheckoutApi->CreateCheckout");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling CheckoutApi->CreateCheckout");
 
-            var localVarPath = "/v2/locations";
+            var localVarPath = "/v2/locations/{location_id}/checkouts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -320,25 +357,34 @@ namespace Square.Connect.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
 
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
+                Exception exception = ExceptionFactory("CreateCheckout", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ListLocationsResponse>(localVarStatusCode,
+            return new ApiResponse<CreateCheckoutResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListLocationsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListLocationsResponse)));
+                (CreateCheckoutResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateCheckoutResponse)));
             
         }
         /// \endcond
