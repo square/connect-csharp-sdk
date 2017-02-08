@@ -19,3 +19,4 @@ mono:
 solution: Square.Connect.sln
 script:
   - /bin/sh ./mono_nunit_test.sh
+
