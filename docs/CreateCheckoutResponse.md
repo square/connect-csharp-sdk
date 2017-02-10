@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Checkout** | Checkout | The newly created checkout. If the same request was made with the same idempotency_key, this will be the checkout created with the idempotency_key. | [optional] 
-**Errors** | List<Error> | Any errors that occurred during the request. | [optional] 
+**Checkout** | [**Checkout**](Checkout.md) | The newly created checkout. If the same request was made with the same idempotency_key, this will be the checkout created with the idempotency_key. | [optional] 
+**Errors** | [**List&lt;Error&gt;**](Error.md) | Any errors that occurred during the request. | [optional] 
 
 
 

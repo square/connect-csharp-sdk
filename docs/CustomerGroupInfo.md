@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | string | The ID of the customer group. | 
-**Name** | string | The name of the customer group. | 
+**Id** | **string** | The ID of the customer group. | 
+**Name** | **string** | The name of the customer group. | 
 
 
 

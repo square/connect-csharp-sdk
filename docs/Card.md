@@ -3,13 +3,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | string | The card&#39;s unique ID, if any. | [optional] 
-**CardBrand** | CardBrandEnum | The card&#39;s brand (such as &#x60;VISA&#x60;). See [CardBrand](#type-cardbrand) for all possible values. | [optional] 
-**Last4** | string | The last 4 digits of the card&#39;s number. | [optional] 
-**ExpMonth** | long? | The month of the card&#39;s expiration date. This value is always between &#x60;1&#x60; and &#x60;12&#x60;, inclusive. | [optional] 
-**ExpYear** | long? | The four-digit year of the card&#39;s expiration date. | [optional] 
-**CardholderName** | string | The cardholder name. This value is present only if this object represents a customer&#39;s card on file. | [optional] 
-**BillingAddress** | Address | The card&#39;s billing address. This value is present only if this object represents a customer&#39;s card on file. | [optional] 
+**Id** | **string** | The card&#39;s unique ID, if any. | [optional] 
+**CardBrand** | **CardBrandEnum** | The card&#39;s brand (such as &#x60;VISA&#x60;). See [CardBrand](#type-cardbrand) for all possible values. | [optional] 
+**Last4** | **string** | The last 4 digits of the card&#39;s number. | [optional] 
+**ExpMonth** | **long?** | The month of the card&#39;s expiration date. This value is always between &#x60;1&#x60; and &#x60;12&#x60;, inclusive. | [optional] 
+**ExpYear** | **long?** | The four-digit year of the card&#39;s expiration date. | [optional] 
+**CardholderName** | **string** | The cardholder name. This value is present only if this object represents a customer&#39;s card on file. | [optional] 
+**BillingAddress** | [**Address**](Address.md) | The card&#39;s billing address. This value is present only if this object represents a customer&#39;s card on file. | [optional] 
 
 
 ## CardBrandEnum
