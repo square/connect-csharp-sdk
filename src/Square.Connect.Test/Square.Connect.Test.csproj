@@ -74,7 +74,7 @@ OpenAPI spec version: 2.0
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\Square.Connect\Square.Connect.csproj">
-          <Project>{C906CF98-16C4-4893-A718-489616DA50B9}</Project>
+          <Project>{87A64C4B-8318-402F-9CAE-D80CBB06D0CA}</Project>
           <Name>Square.Connect</Name>
       </ProjectReference>
   </ItemGroup>

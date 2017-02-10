@@ -37,11 +37,11 @@ fi
 echo "Packing..."
 mono nuget.exe pack -basepath . src/Square.Connect/Square.Connect.nuspec
 
-# publish
-if [ "${TRAVIS_PULL_REQUEST}" = "false" ];
+# publish when it's not a pull request and it's on master branch.
+if [ "${TRAVIS_PULL_REQUEST_BRANCH}" = "" -a "${TRAVIS_BRANCH}" = "master" ];
 then
   echo "Uploading..."
   mono nuget.exe push -apikey $NUGET_APIKEY *.nupkg
 else
-  echo "Not uploading pull request changes."
+  echo "Not uploading pending changes."
 fi
