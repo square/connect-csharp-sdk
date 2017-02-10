@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-frameworkVersion=net45
 netfx=${frameworkVersion#net}
 
 echo "[INFO] Target framework: ${frameworkVersion}"
