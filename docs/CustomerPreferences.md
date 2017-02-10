@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailUnsubscribed** | bool? | The customer has unsubscribed from receiving marketing campaign emails. | [optional] 
+**EmailUnsubscribed** | **bool?** | The customer has unsubscribed from receiving marketing campaign emails. | [optional] 
 
 
 

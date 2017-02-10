@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Errors** | List<Error> | Any errors that occurred during the request. | [optional] 
-**Transaction** | Transaction | The requested transaction. | [optional] 
+**Errors** | [**List&lt;Error&gt;**](Error.md) | Any errors that occurred during the request. | [optional] 
+**Transaction** | [**Transaction**](Transaction.md) | The requested transaction. | [optional] 
 
 
 

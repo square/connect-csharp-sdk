@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Errors** | List<Error> | Any errors that occurred during the request. | [optional] 
-**Customer** | Customer | The updated customer. | [optional] 
+**Errors** | [**List&lt;Error&gt;**](Error.md) | Any errors that occurred during the request. | [optional] 
+**Customer** | [**Customer**](Customer.md) | The updated customer. | [optional] 
 
 
 

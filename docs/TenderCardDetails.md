@@ -3,9 +3,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | StatusEnum | The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values. | [optional] 
-**Card** | Card | The credit card&#39;s non-confidential details. | [optional] 
-**EntryMethod** | EntryMethodEnum | The method used to enter the card&#39;s details for the transaction. | [optional] 
+**Status** | **StatusEnum** | The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values. | [optional] 
+**Card** | [**Card**](Card.md) | The credit card&#39;s non-confidential details. | [optional] 
+**EntryMethod** | **EntryMethodEnum** | The method used to enter the card&#39;s details for the transaction. | [optional] 
 
 
 ## StatusEnum

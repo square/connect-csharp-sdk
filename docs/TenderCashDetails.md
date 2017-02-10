@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BuyerTenderedMoney** | Money | The total amount of cash provided by the buyer, before change is given. | [optional] 
-**ChangeBackMoney** | Money | The amount of change returned to the buyer. | [optional] 
+**BuyerTenderedMoney** | [**Money**](Money.md) | The total amount of cash provided by the buyer, before change is given. | [optional] 
+**ChangeBackMoney** | [**Money**](Money.md) | The amount of change returned to the buyer. | [optional] 
 
 
 

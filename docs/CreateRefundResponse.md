@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Errors** | List<Error> | Any errors that occurred during the request. | [optional] 
-**Refund** | Refund | The created refund. | [optional] 
+**Errors** | [**List&lt;Error&gt;**](Error.md) | Any errors that occurred during the request. | [optional] 
+**Refund** | [**Refund**](Refund.md) | The created refund. | [optional] 
 
 
 
