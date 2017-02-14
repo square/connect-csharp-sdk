@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Square.Connect", "src\Square.Connect\Square.Connect.csproj", "{1CEE0170-B4B1-45DF-A51D-CD1528E64582}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Square.Connect", "src\Square.Connect\Square.Connect.csproj", "{16F523A1-A205-4C08-961D-380CA85D2D8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Square.Connect.Test", "src\Square.Connect.Test\Square.Connect.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Debug|Any CPU = Debug|Any CPU
 Release|Any CPU = Release|Any CPU
 EndGlobalSection
 GlobalSection(ProjectConfigurationPlatforms) = postSolution
-{1CEE0170-B4B1-45DF-A51D-CD1528E64582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-{1CEE0170-B4B1-45DF-A51D-CD1528E64582}.Debug|Any CPU.Build.0 = Debug|Any CPU
-{1CEE0170-B4B1-45DF-A51D-CD1528E64582}.Release|Any CPU.ActiveCfg = Release|Any CPU
-{1CEE0170-B4B1-45DF-A51D-CD1528E64582}.Release|Any CPU.Build.0 = Release|Any CPU
+{16F523A1-A205-4C08-961D-380CA85D2D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{16F523A1-A205-4C08-961D-380CA85D2D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{16F523A1-A205-4C08-961D-380CA85D2D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{16F523A1-A205-4C08-961D-380CA85D2D8A}.Release|Any CPU.Build.0 = Release|Any CPU
 {19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 {19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 {19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

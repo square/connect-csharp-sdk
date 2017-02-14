@@ -11,7 +11,7 @@ OpenAPI spec version: 2.0
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1CEE0170-B4B1-45DF-A51D-CD1528E64582}</ProjectGuid>
+    <ProjectGuid>{16F523A1-A205-4C08-961D-380CA85D2D8A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Square.Connect</RootNamespace>
