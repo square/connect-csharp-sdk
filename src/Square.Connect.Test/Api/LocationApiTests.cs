@@ -34,6 +34,7 @@ namespace Square.Connect.Test
     public class LocationApiTests
     {
         private LocationApi instance;
+        private TestAccounts testAccounts;
 
         /// <summary>
         /// Setup before each unit test
@@ -42,6 +43,7 @@ namespace Square.Connect.Test
         public void Init()
         {
             instance = new LocationApi();
+            testAccounts = new TestAccounts();
         }
 
         /// <summary>
@@ -59,8 +61,7 @@ namespace Square.Connect.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' LocationApi
-            //Assert.IsInstanceOfType(typeof(LocationApi), instance, "instance is a LocationApi");
+            Assert.IsInstanceOf<LocationApi>(instance, "instance is not type of LocationApi");
         }
 
         
@@ -70,10 +71,14 @@ namespace Square.Connect.Test
         [Test]
         public void ListLocationsTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string authorization = null;
-            //var response = instance.ListLocations(authorization);
-            //Assert.IsInstanceOf<ListLocationsResponse> (response, "response is ListLocationsResponse");
+            var sandboxAccount = testAccounts["US-Prod-Sandbox"];
+            var authorization = sandboxAccount.AccessToken;
+            var response = instance.ListLocations(authorization);
+            var firstLocation = response.Locations.First();
+
+            Assert.IsInstanceOf<ListLocationsResponse> (response, "response type is not ListLocationsResponse.");
+            Assert.IsInstanceOf<Location> (firstLocation, "response element type is not Location.");
+            Assert.AreEqual("CBASEEffqN8pnVNXwoCL0dSGMVAgAQ", firstLocation.Id, "first location id doesn't match.");
         }
         
     }
