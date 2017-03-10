@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+if [ ! `git diff --name-only ${TRAVIS_COMMIT_RANGE/.../..} -- src/Square.Connect` ]
+then
+  echo -e "\033[1;32mSkip packaging because no change was made to 'src/Square.Connect'"
+  echo -e "\033[1;32mThis could also because of missing commit caused by force push."
+  exit 0
+fi
+
 netfx=${frameworkVersion#net}
 
 echo "[INFO] Target framework: ${frameworkVersion}"
@@ -26,10 +33,10 @@ System.Runtime.Serialization.dll \
 
 if [ $? -ne 0 ]
 then
-  echo "[ERROR] Compilation failed with exit code $?"
+  echo -e "\033[1;31m[ERROR] Compilation failed with exit code $?"
   exit 1
 else
-  echo "[INFO] bin/Square.Connect.dll was created successfully"
+  echo -e "\033[1;32m[INFO] bin/Square.Connect.dll was created successfully"
 fi
 
 # pack
@@ -40,8 +47,8 @@ mono nuget.exe pack -version ${packageVersion} -basepath . src/Square.Connect/Sq
 # publish when it's not a pull request and it's on master branch.
 if [ "${TRAVIS_PULL_REQUEST_BRANCH}" = "" -a "${TRAVIS_BRANCH}" = "master" ];
 then
-  echo "Publishing version ${packageVersion} to Nuget..."
+  echo -e "\033[1;32mPublishing version ${packageVersion} to Nuget..."
   mono nuget.exe push -apikey $NUGET_APIKEY *.nupkg
 else
-  echo "Skip publishing pending changes."
+  echo -e "\033[1;32mNot uploading pending changes until it's merged into master."
 fi
