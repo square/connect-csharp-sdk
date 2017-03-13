@@ -31,12 +31,11 @@ namespace Square.Connect.Api
         /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateRefundResponse</returns>
-        CreateRefundResponse CreateRefund (string authorization, string locationId, string transactionId, CreateRefundRequest body);
+        CreateRefundResponse CreateRefund (string locationId, string transactionId, CreateRefundRequest body);
 
         /// <summary>
         /// CreateRefund
@@ -45,12 +44,11 @@ namespace Square.Connect.Api
         /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateRefundResponse</returns>
-        ApiResponse<CreateRefundResponse> CreateRefundWithHttpInfo (string authorization, string locationId, string transactionId, CreateRefundRequest body);
+        ApiResponse<CreateRefundResponse> CreateRefundWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body);
         /// <summary>
         /// ListRefunds
         /// </summary>
@@ -58,14 +56,13 @@ namespace Square.Connect.Api
         /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListRefundsResponse</returns>
-        ListRefundsResponse ListRefunds (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
         /// ListRefunds
@@ -74,14 +71,13 @@ namespace Square.Connect.Api
         /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListRefundsResponse</returns>
-        ApiResponse<ListRefundsResponse> ListRefundsWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        ApiResponse<ListRefundsResponse> ListRefundsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -91,12 +87,11 @@ namespace Square.Connect.Api
         /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateRefundResponse</returns>
-        System.Threading.Tasks.Task<CreateRefundResponse> CreateRefundAsync (string authorization, string locationId, string transactionId, CreateRefundRequest body);
+        System.Threading.Tasks.Task<CreateRefundResponse> CreateRefundAsync (string locationId, string transactionId, CreateRefundRequest body);
 
         /// <summary>
         /// CreateRefund
@@ -105,12 +100,11 @@ namespace Square.Connect.Api
         /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateRefundResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateRefundResponse>> CreateRefundAsyncWithHttpInfo (string authorization, string locationId, string transactionId, CreateRefundRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateRefundResponse>> CreateRefundAsyncWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body);
         /// <summary>
         /// ListRefunds
         /// </summary>
@@ -118,14 +112,13 @@ namespace Square.Connect.Api
         /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListRefundsResponse</returns>
-        System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
         /// ListRefunds
@@ -134,14 +127,13 @@ namespace Square.Connect.Api
         /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListRefundsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         #endregion Asynchronous Operations
     }
 
@@ -258,14 +250,13 @@ namespace Square.Connect.Api
         /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateRefundResponse</returns>
-        public CreateRefundResponse CreateRefund (string authorization, string locationId, string transactionId, CreateRefundRequest body)
+        public CreateRefundResponse CreateRefund (string locationId, string transactionId, CreateRefundRequest body)
         {
-             ApiResponse<CreateRefundResponse> localVarResponse = CreateRefundWithHttpInfo(authorization, locationId, transactionId, body);
+             ApiResponse<CreateRefundResponse> localVarResponse = CreateRefundWithHttpInfo(locationId, transactionId, body);
              return localVarResponse.Data;
         }
 
@@ -273,16 +264,12 @@ namespace Square.Connect.Api
         /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateRefundResponse</returns>
-        public ApiResponse< CreateRefundResponse > CreateRefundWithHttpInfo (string authorization, string locationId, string transactionId, CreateRefundRequest body)
+        public ApiResponse< CreateRefundResponse > CreateRefundWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling RefundApi->CreateRefund");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling RefundApi->CreateRefund");
@@ -320,7 +307,6 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -330,6 +316,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -354,14 +346,13 @@ namespace Square.Connect.Api
         /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateRefundResponse</returns>
-        public async System.Threading.Tasks.Task<CreateRefundResponse> CreateRefundAsync (string authorization, string locationId, string transactionId, CreateRefundRequest body)
+        public async System.Threading.Tasks.Task<CreateRefundResponse> CreateRefundAsync (string locationId, string transactionId, CreateRefundRequest body)
         {
-             ApiResponse<CreateRefundResponse> localVarResponse = await CreateRefundAsyncWithHttpInfo(authorization, locationId, transactionId, body);
+             ApiResponse<CreateRefundResponse> localVarResponse = await CreateRefundAsyncWithHttpInfo(locationId, transactionId, body);
              return localVarResponse.Data;
 
         }
@@ -370,16 +361,12 @@ namespace Square.Connect.Api
         /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateRefundResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateRefundResponse>> CreateRefundAsyncWithHttpInfo (string authorization, string locationId, string transactionId, CreateRefundRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateRefundResponse>> CreateRefundAsyncWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling RefundApi->CreateRefund");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling RefundApi->CreateRefund");
@@ -417,7 +404,6 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -427,6 +413,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -451,16 +443,15 @@ namespace Square.Connect.Api
         /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListRefundsResponse</returns>
-        public ListRefundsResponse ListRefunds (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-             ApiResponse<ListRefundsResponse> localVarResponse = ListRefundsWithHttpInfo(authorization, locationId, beginTime, endTime, sortOrder, cursor);
+             ApiResponse<ListRefundsResponse> localVarResponse = ListRefundsWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
              return localVarResponse.Data;
         }
 
@@ -468,18 +459,14 @@ namespace Square.Connect.Api
         /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListRefundsResponse</returns>
-        public ApiResponse< ListRefundsResponse > ListRefundsWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public ApiResponse< ListRefundsResponse > ListRefundsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling RefundApi->ListRefunds");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling RefundApi->ListRefunds");
@@ -514,8 +501,13 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -540,16 +532,15 @@ namespace Square.Connect.Api
         /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListRefundsResponse</returns>
-        public async System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-             ApiResponse<ListRefundsResponse> localVarResponse = await ListRefundsAsyncWithHttpInfo(authorization, locationId, beginTime, endTime, sortOrder, cursor);
+             ApiResponse<ListRefundsResponse> localVarResponse = await ListRefundsAsyncWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
              return localVarResponse.Data;
 
         }
@@ -558,18 +549,14 @@ namespace Square.Connect.Api
         /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListRefundsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling RefundApi->ListRefunds");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling RefundApi->ListRefunds");
@@ -604,8 +591,13 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

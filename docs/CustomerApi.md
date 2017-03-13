@@ -12,7 +12,7 @@ Method | HTTP request
 
 
 # **CreateCustomer**
-> CreateCustomerResponse CreateCustomer (string authorization, CreateCustomerRequest body)
+> CreateCustomerResponse CreateCustomer (CreateCustomerRequest body)
 
 ### Description
 
@@ -22,7 +22,6 @@ Creates a new customer for a business, which can have associated cards on file. 
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **body** | [**CreateCustomerRequest**](CreateCustomerRequest.md)| 
 
 ### Return type
@@ -41,7 +40,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteCustomer**
-> DeleteCustomerResponse DeleteCustomer (string authorization, string customerId)
+> DeleteCustomerResponse DeleteCustomer (string customerId)
 
 ### Description
 
@@ -51,7 +50,6 @@ Deletes a customer from a business, along with any linked cards on file.
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **customerId** | **string**| 
 
 ### Return type
@@ -70,7 +68,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ListCustomers**
-> ListCustomersResponse ListCustomers (string authorization, string cursor = null)
+> ListCustomersResponse ListCustomers (string cursor = null)
 
 ### Description
 
@@ -80,7 +78,6 @@ Lists a business's customers.
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **cursor** | **string**| [optional] 
 
 ### Return type
@@ -99,7 +96,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RetrieveCustomer**
-> RetrieveCustomerResponse RetrieveCustomer (string authorization, string customerId)
+> RetrieveCustomerResponse RetrieveCustomer (string customerId)
 
 ### Description
 
@@ -109,7 +106,6 @@ Returns details for a single customer.
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **customerId** | **string**| 
 
 ### Return type
@@ -128,7 +124,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateCustomer**
-> UpdateCustomerResponse UpdateCustomer (string authorization, string customerId, UpdateCustomerRequest body)
+> UpdateCustomerResponse UpdateCustomer (string customerId, UpdateCustomerRequest body)
 
 ### Description
 
@@ -138,7 +134,6 @@ Updates the details of an existing customer.  You cannot edit a customer's cards
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **customerId** | **string**| 
  **body** | [**UpdateCustomerRequest**](UpdateCustomerRequest.md)| 
 

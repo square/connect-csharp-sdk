@@ -31,11 +31,10 @@ namespace Square.Connect.Api
         /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateCheckoutResponse</returns>
-        CreateCheckoutResponse CreateCheckout (string authorization, string locationId, CreateCheckoutRequest body);
+        CreateCheckoutResponse CreateCheckout (string locationId, CreateCheckoutRequest body);
 
         /// <summary>
         /// CreateCheckout
@@ -44,11 +43,10 @@ namespace Square.Connect.Api
         /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateCheckoutResponse</returns>
-        ApiResponse<CreateCheckoutResponse> CreateCheckoutWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body);
+        ApiResponse<CreateCheckoutResponse> CreateCheckoutWithHttpInfo (string locationId, CreateCheckoutRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -58,11 +56,10 @@ namespace Square.Connect.Api
         /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateCheckoutResponse</returns>
-        System.Threading.Tasks.Task<CreateCheckoutResponse> CreateCheckoutAsync (string authorization, string locationId, CreateCheckoutRequest body);
+        System.Threading.Tasks.Task<CreateCheckoutResponse> CreateCheckoutAsync (string locationId, CreateCheckoutRequest body);
 
         /// <summary>
         /// CreateCheckout
@@ -71,11 +68,10 @@ namespace Square.Connect.Api
         /// Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateCheckoutResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCheckoutResponse>> CreateCheckoutAsyncWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateCheckoutResponse>> CreateCheckoutAsyncWithHttpInfo (string locationId, CreateCheckoutRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -192,13 +188,12 @@ namespace Square.Connect.Api
         /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateCheckoutResponse</returns>
-        public CreateCheckoutResponse CreateCheckout (string authorization, string locationId, CreateCheckoutRequest body)
+        public CreateCheckoutResponse CreateCheckout (string locationId, CreateCheckoutRequest body)
         {
-             ApiResponse<CreateCheckoutResponse> localVarResponse = CreateCheckoutWithHttpInfo(authorization, locationId, body);
+             ApiResponse<CreateCheckoutResponse> localVarResponse = CreateCheckoutWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -206,15 +201,11 @@ namespace Square.Connect.Api
         /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateCheckoutResponse</returns>
-        public ApiResponse< CreateCheckoutResponse > CreateCheckoutWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body)
+        public ApiResponse< CreateCheckoutResponse > CreateCheckoutWithHttpInfo (string locationId, CreateCheckoutRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CheckoutApi->CreateCheckout");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling CheckoutApi->CreateCheckout");
@@ -248,7 +239,6 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -258,6 +248,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -282,13 +278,12 @@ namespace Square.Connect.Api
         /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateCheckoutResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCheckoutResponse> CreateCheckoutAsync (string authorization, string locationId, CreateCheckoutRequest body)
+        public async System.Threading.Tasks.Task<CreateCheckoutResponse> CreateCheckoutAsync (string locationId, CreateCheckoutRequest body)
         {
-             ApiResponse<CreateCheckoutResponse> localVarResponse = await CreateCheckoutAsyncWithHttpInfo(authorization, locationId, body);
+             ApiResponse<CreateCheckoutResponse> localVarResponse = await CreateCheckoutAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -297,15 +292,11 @@ namespace Square.Connect.Api
         /// CreateCheckout Creates a [Checkout](#type-checkout) response that links a &#x60;checkoutId&#x60; and &#x60;checkout_page_url&#x60; that customers can be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateCheckoutResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateCheckoutResponse>> CreateCheckoutAsyncWithHttpInfo (string authorization, string locationId, CreateCheckoutRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateCheckoutResponse>> CreateCheckoutAsyncWithHttpInfo (string locationId, CreateCheckoutRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CheckoutApi->CreateCheckout");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling CheckoutApi->CreateCheckout");
@@ -339,7 +330,6 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -349,6 +339,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

@@ -8,17 +8,14 @@ Method | HTTP request
 
 
 # **ListLocations**
-> ListLocationsResponse ListLocations (string authorization)
+> ListLocationsResponse ListLocations ()
 
 ### Description
 
 Provides the details for all of a business's locations.  Most other Connect API endpoints have a required `location_id` path parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
 
 ### Parameters
-
-Name | Type | Notes
-------------- | ------------- | -------------
- **authorization** | **string**| 
+This endpoint does not need any parameter.
 
 ### Return type
 

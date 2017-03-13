@@ -31,9 +31,8 @@ namespace Square.Connect.Api
         /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>ListLocationsResponse</returns>
-        ListLocationsResponse ListLocations (string authorization);
+        ListLocationsResponse ListLocations ();
 
         /// <summary>
         /// ListLocations
@@ -42,9 +41,8 @@ namespace Square.Connect.Api
         /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>ApiResponse of ListLocationsResponse</returns>
-        ApiResponse<ListLocationsResponse> ListLocationsWithHttpInfo (string authorization);
+        ApiResponse<ListLocationsResponse> ListLocationsWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -54,9 +52,8 @@ namespace Square.Connect.Api
         /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>Task of ListLocationsResponse</returns>
-        System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync (string authorization);
+        System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync ();
 
         /// <summary>
         /// ListLocations
@@ -65,9 +62,8 @@ namespace Square.Connect.Api
         /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo (string authorization);
+        System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -184,11 +180,10 @@ namespace Square.Connect.Api
         /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>ListLocationsResponse</returns>
-        public ListLocationsResponse ListLocations (string authorization)
+        public ListLocationsResponse ListLocations ()
         {
-             ApiResponse<ListLocationsResponse> localVarResponse = ListLocationsWithHttpInfo(authorization);
+             ApiResponse<ListLocationsResponse> localVarResponse = ListLocationsWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -196,13 +191,9 @@ namespace Square.Connect.Api
         /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>ApiResponse of ListLocationsResponse</returns>
-        public ApiResponse< ListLocationsResponse > ListLocationsWithHttpInfo (string authorization)
+        public ApiResponse< ListLocationsResponse > ListLocationsWithHttpInfo ()
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling LocationApi->ListLocations");
 
             var localVarPath = "/v2/locations";
             var localVarPathParams = new Dictionary<String, String>();
@@ -229,8 +220,13 @@ namespace Square.Connect.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -255,11 +251,10 @@ namespace Square.Connect.Api
         /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>Task of ListLocationsResponse</returns>
-        public async System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync (string authorization)
+        public async System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync ()
         {
-             ApiResponse<ListLocationsResponse> localVarResponse = await ListLocationsAsyncWithHttpInfo(authorization);
+             ApiResponse<ListLocationsResponse> localVarResponse = await ListLocationsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -268,13 +263,9 @@ namespace Square.Connect.Api
         /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo (string authorization)
+        public async System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo ()
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling LocationApi->ListLocations");
 
             var localVarPath = "/v2/locations";
             var localVarPathParams = new Dictionary<String, String>();
@@ -301,8 +292,13 @@ namespace Square.Connect.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

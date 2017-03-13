@@ -31,10 +31,9 @@ namespace Square.Connect.Api
         /// Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateCustomerResponse</returns>
-        CreateCustomerResponse CreateCustomer (string authorization, CreateCustomerRequest body);
+        CreateCustomerResponse CreateCustomer (CreateCustomerRequest body);
 
         /// <summary>
         /// CreateCustomer
@@ -43,10 +42,9 @@ namespace Square.Connect.Api
         /// Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateCustomerResponse</returns>
-        ApiResponse<CreateCustomerResponse> CreateCustomerWithHttpInfo (string authorization, CreateCustomerRequest body);
+        ApiResponse<CreateCustomerResponse> CreateCustomerWithHttpInfo (CreateCustomerRequest body);
         /// <summary>
         /// DeleteCustomer
         /// </summary>
@@ -54,10 +52,9 @@ namespace Square.Connect.Api
         /// Deletes a customer from a business, along with any linked cards on file.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>DeleteCustomerResponse</returns>
-        DeleteCustomerResponse DeleteCustomer (string authorization, string customerId);
+        DeleteCustomerResponse DeleteCustomer (string customerId);
 
         /// <summary>
         /// DeleteCustomer
@@ -66,10 +63,9 @@ namespace Square.Connect.Api
         /// Deletes a customer from a business, along with any linked cards on file.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>ApiResponse of DeleteCustomerResponse</returns>
-        ApiResponse<DeleteCustomerResponse> DeleteCustomerWithHttpInfo (string authorization, string customerId);
+        ApiResponse<DeleteCustomerResponse> DeleteCustomerWithHttpInfo (string customerId);
         /// <summary>
         /// ListCustomers
         /// </summary>
@@ -77,10 +73,9 @@ namespace Square.Connect.Api
         /// Lists a business&#39;s customers.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListCustomersResponse</returns>
-        ListCustomersResponse ListCustomers (string authorization, string cursor = null);
+        ListCustomersResponse ListCustomers (string cursor = null);
 
         /// <summary>
         /// ListCustomers
@@ -89,10 +84,9 @@ namespace Square.Connect.Api
         /// Lists a business&#39;s customers.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListCustomersResponse</returns>
-        ApiResponse<ListCustomersResponse> ListCustomersWithHttpInfo (string authorization, string cursor = null);
+        ApiResponse<ListCustomersResponse> ListCustomersWithHttpInfo (string cursor = null);
         /// <summary>
         /// RetrieveCustomer
         /// </summary>
@@ -100,10 +94,9 @@ namespace Square.Connect.Api
         /// Returns details for a single customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>RetrieveCustomerResponse</returns>
-        RetrieveCustomerResponse RetrieveCustomer (string authorization, string customerId);
+        RetrieveCustomerResponse RetrieveCustomer (string customerId);
 
         /// <summary>
         /// RetrieveCustomer
@@ -112,10 +105,9 @@ namespace Square.Connect.Api
         /// Returns details for a single customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>ApiResponse of RetrieveCustomerResponse</returns>
-        ApiResponse<RetrieveCustomerResponse> RetrieveCustomerWithHttpInfo (string authorization, string customerId);
+        ApiResponse<RetrieveCustomerResponse> RetrieveCustomerWithHttpInfo (string customerId);
         /// <summary>
         /// UpdateCustomer
         /// </summary>
@@ -123,11 +115,10 @@ namespace Square.Connect.Api
         /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>UpdateCustomerResponse</returns>
-        UpdateCustomerResponse UpdateCustomer (string authorization, string customerId, UpdateCustomerRequest body);
+        UpdateCustomerResponse UpdateCustomer (string customerId, UpdateCustomerRequest body);
 
         /// <summary>
         /// UpdateCustomer
@@ -136,11 +127,10 @@ namespace Square.Connect.Api
         /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of UpdateCustomerResponse</returns>
-        ApiResponse<UpdateCustomerResponse> UpdateCustomerWithHttpInfo (string authorization, string customerId, UpdateCustomerRequest body);
+        ApiResponse<UpdateCustomerResponse> UpdateCustomerWithHttpInfo (string customerId, UpdateCustomerRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -150,10 +140,9 @@ namespace Square.Connect.Api
         /// Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateCustomerResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerResponse> CreateCustomerAsync (string authorization, CreateCustomerRequest body);
+        System.Threading.Tasks.Task<CreateCustomerResponse> CreateCustomerAsync (CreateCustomerRequest body);
 
         /// <summary>
         /// CreateCustomer
@@ -162,10 +151,9 @@ namespace Square.Connect.Api
         /// Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerResponse>> CreateCustomerAsyncWithHttpInfo (string authorization, CreateCustomerRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateCustomerResponse>> CreateCustomerAsyncWithHttpInfo (CreateCustomerRequest body);
         /// <summary>
         /// DeleteCustomer
         /// </summary>
@@ -173,10 +161,9 @@ namespace Square.Connect.Api
         /// Deletes a customer from a business, along with any linked cards on file.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>Task of DeleteCustomerResponse</returns>
-        System.Threading.Tasks.Task<DeleteCustomerResponse> DeleteCustomerAsync (string authorization, string customerId);
+        System.Threading.Tasks.Task<DeleteCustomerResponse> DeleteCustomerAsync (string customerId);
 
         /// <summary>
         /// DeleteCustomer
@@ -185,10 +172,9 @@ namespace Square.Connect.Api
         /// Deletes a customer from a business, along with any linked cards on file.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>Task of ApiResponse (DeleteCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteCustomerResponse>> DeleteCustomerAsyncWithHttpInfo (string authorization, string customerId);
+        System.Threading.Tasks.Task<ApiResponse<DeleteCustomerResponse>> DeleteCustomerAsyncWithHttpInfo (string customerId);
         /// <summary>
         /// ListCustomers
         /// </summary>
@@ -196,10 +182,9 @@ namespace Square.Connect.Api
         /// Lists a business&#39;s customers.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListCustomersResponse</returns>
-        System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string authorization, string cursor = null);
+        System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null);
 
         /// <summary>
         /// ListCustomers
@@ -208,10 +193,9 @@ namespace Square.Connect.Api
         /// Lists a business&#39;s customers.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListCustomersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string authorization, string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null);
         /// <summary>
         /// RetrieveCustomer
         /// </summary>
@@ -219,10 +203,9 @@ namespace Square.Connect.Api
         /// Returns details for a single customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>Task of RetrieveCustomerResponse</returns>
-        System.Threading.Tasks.Task<RetrieveCustomerResponse> RetrieveCustomerAsync (string authorization, string customerId);
+        System.Threading.Tasks.Task<RetrieveCustomerResponse> RetrieveCustomerAsync (string customerId);
 
         /// <summary>
         /// RetrieveCustomer
@@ -231,10 +214,9 @@ namespace Square.Connect.Api
         /// Returns details for a single customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RetrieveCustomerResponse>> RetrieveCustomerAsyncWithHttpInfo (string authorization, string customerId);
+        System.Threading.Tasks.Task<ApiResponse<RetrieveCustomerResponse>> RetrieveCustomerAsyncWithHttpInfo (string customerId);
         /// <summary>
         /// UpdateCustomer
         /// </summary>
@@ -242,11 +224,10 @@ namespace Square.Connect.Api
         /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of UpdateCustomerResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerResponse> UpdateCustomerAsync (string authorization, string customerId, UpdateCustomerRequest body);
+        System.Threading.Tasks.Task<UpdateCustomerResponse> UpdateCustomerAsync (string customerId, UpdateCustomerRequest body);
 
         /// <summary>
         /// UpdateCustomer
@@ -255,11 +236,10 @@ namespace Square.Connect.Api
         /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerResponse>> UpdateCustomerAsyncWithHttpInfo (string authorization, string customerId, UpdateCustomerRequest body);
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerResponse>> UpdateCustomerAsyncWithHttpInfo (string customerId, UpdateCustomerRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -376,12 +356,11 @@ namespace Square.Connect.Api
         /// CreateCustomer Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateCustomerResponse</returns>
-        public CreateCustomerResponse CreateCustomer (string authorization, CreateCustomerRequest body)
+        public CreateCustomerResponse CreateCustomer (CreateCustomerRequest body)
         {
-             ApiResponse<CreateCustomerResponse> localVarResponse = CreateCustomerWithHttpInfo(authorization, body);
+             ApiResponse<CreateCustomerResponse> localVarResponse = CreateCustomerWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -389,14 +368,10 @@ namespace Square.Connect.Api
         /// CreateCustomer Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateCustomerResponse</returns>
-        public ApiResponse< CreateCustomerResponse > CreateCustomerWithHttpInfo (string authorization, CreateCustomerRequest body)
+        public ApiResponse< CreateCustomerResponse > CreateCustomerWithHttpInfo (CreateCustomerRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->CreateCustomer");
             // verify the required parameter 'body' is set
             if (body == null)
                 throw new ApiException(400, "Missing required parameter 'body' when calling CustomerApi->CreateCustomer");
@@ -426,7 +401,6 @@ namespace Square.Connect.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -436,6 +410,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -460,12 +440,11 @@ namespace Square.Connect.Api
         /// CreateCustomer Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerResponse> CreateCustomerAsync (string authorization, CreateCustomerRequest body)
+        public async System.Threading.Tasks.Task<CreateCustomerResponse> CreateCustomerAsync (CreateCustomerRequest body)
         {
-             ApiResponse<CreateCustomerResponse> localVarResponse = await CreateCustomerAsyncWithHttpInfo(authorization, body);
+             ApiResponse<CreateCustomerResponse> localVarResponse = await CreateCustomerAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -474,14 +453,10 @@ namespace Square.Connect.Api
         /// CreateCustomer Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;  This endpoint does not accept an idempotency key. If you accidentally create a duplicate customer, you can delete it with the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateCustomerResponse>> CreateCustomerAsyncWithHttpInfo (string authorization, CreateCustomerRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateCustomerResponse>> CreateCustomerAsyncWithHttpInfo (CreateCustomerRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->CreateCustomer");
             // verify the required parameter 'body' is set
             if (body == null)
                 throw new ApiException(400, "Missing required parameter 'body' when calling CustomerApi->CreateCustomer");
@@ -511,7 +486,6 @@ namespace Square.Connect.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -521,6 +495,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -545,12 +525,11 @@ namespace Square.Connect.Api
         /// DeleteCustomer Deletes a customer from a business, along with any linked cards on file.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>DeleteCustomerResponse</returns>
-        public DeleteCustomerResponse DeleteCustomer (string authorization, string customerId)
+        public DeleteCustomerResponse DeleteCustomer (string customerId)
         {
-             ApiResponse<DeleteCustomerResponse> localVarResponse = DeleteCustomerWithHttpInfo(authorization, customerId);
+             ApiResponse<DeleteCustomerResponse> localVarResponse = DeleteCustomerWithHttpInfo(customerId);
              return localVarResponse.Data;
         }
 
@@ -558,14 +537,10 @@ namespace Square.Connect.Api
         /// DeleteCustomer Deletes a customer from a business, along with any linked cards on file.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>ApiResponse of DeleteCustomerResponse</returns>
-        public ApiResponse< DeleteCustomerResponse > DeleteCustomerWithHttpInfo (string authorization, string customerId)
+        public ApiResponse< DeleteCustomerResponse > DeleteCustomerWithHttpInfo (string customerId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->DeleteCustomer");
             // verify the required parameter 'customerId' is set
             if (customerId == null)
                 throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerApi->DeleteCustomer");
@@ -596,8 +571,13 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -622,12 +602,11 @@ namespace Square.Connect.Api
         /// DeleteCustomer Deletes a customer from a business, along with any linked cards on file.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>Task of DeleteCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteCustomerResponse> DeleteCustomerAsync (string authorization, string customerId)
+        public async System.Threading.Tasks.Task<DeleteCustomerResponse> DeleteCustomerAsync (string customerId)
         {
-             ApiResponse<DeleteCustomerResponse> localVarResponse = await DeleteCustomerAsyncWithHttpInfo(authorization, customerId);
+             ApiResponse<DeleteCustomerResponse> localVarResponse = await DeleteCustomerAsyncWithHttpInfo(customerId);
              return localVarResponse.Data;
 
         }
@@ -636,14 +615,10 @@ namespace Square.Connect.Api
         /// DeleteCustomer Deletes a customer from a business, along with any linked cards on file.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to delete.</param>
         /// <returns>Task of ApiResponse (DeleteCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeleteCustomerResponse>> DeleteCustomerAsyncWithHttpInfo (string authorization, string customerId)
+        public async System.Threading.Tasks.Task<ApiResponse<DeleteCustomerResponse>> DeleteCustomerAsyncWithHttpInfo (string customerId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->DeleteCustomer");
             // verify the required parameter 'customerId' is set
             if (customerId == null)
                 throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerApi->DeleteCustomer");
@@ -674,8 +649,13 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -700,12 +680,11 @@ namespace Square.Connect.Api
         /// ListCustomers Lists a business&#39;s customers.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListCustomersResponse</returns>
-        public ListCustomersResponse ListCustomers (string authorization, string cursor = null)
+        public ListCustomersResponse ListCustomers (string cursor = null)
         {
-             ApiResponse<ListCustomersResponse> localVarResponse = ListCustomersWithHttpInfo(authorization, cursor);
+             ApiResponse<ListCustomersResponse> localVarResponse = ListCustomersWithHttpInfo(cursor);
              return localVarResponse.Data;
         }
 
@@ -713,14 +692,10 @@ namespace Square.Connect.Api
         /// ListCustomers Lists a business&#39;s customers.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListCustomersResponse</returns>
-        public ApiResponse< ListCustomersResponse > ListCustomersWithHttpInfo (string authorization, string cursor = null)
+        public ApiResponse< ListCustomersResponse > ListCustomersWithHttpInfo (string cursor = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->ListCustomers");
 
             var localVarPath = "/v2/customers";
             var localVarPathParams = new Dictionary<String, String>();
@@ -748,8 +723,13 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -774,12 +754,11 @@ namespace Square.Connect.Api
         /// ListCustomers Lists a business&#39;s customers.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListCustomersResponse</returns>
-        public async System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string authorization, string cursor = null)
+        public async System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null)
         {
-             ApiResponse<ListCustomersResponse> localVarResponse = await ListCustomersAsyncWithHttpInfo(authorization, cursor);
+             ApiResponse<ListCustomersResponse> localVarResponse = await ListCustomersAsyncWithHttpInfo(cursor);
              return localVarResponse.Data;
 
         }
@@ -788,14 +767,10 @@ namespace Square.Connect.Api
         /// ListCustomers Lists a business&#39;s customers.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListCustomersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string authorization, string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->ListCustomers");
 
             var localVarPath = "/v2/customers";
             var localVarPathParams = new Dictionary<String, String>();
@@ -823,8 +798,13 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -849,12 +829,11 @@ namespace Square.Connect.Api
         /// RetrieveCustomer Returns details for a single customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>RetrieveCustomerResponse</returns>
-        public RetrieveCustomerResponse RetrieveCustomer (string authorization, string customerId)
+        public RetrieveCustomerResponse RetrieveCustomer (string customerId)
         {
-             ApiResponse<RetrieveCustomerResponse> localVarResponse = RetrieveCustomerWithHttpInfo(authorization, customerId);
+             ApiResponse<RetrieveCustomerResponse> localVarResponse = RetrieveCustomerWithHttpInfo(customerId);
              return localVarResponse.Data;
         }
 
@@ -862,14 +841,10 @@ namespace Square.Connect.Api
         /// RetrieveCustomer Returns details for a single customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>ApiResponse of RetrieveCustomerResponse</returns>
-        public ApiResponse< RetrieveCustomerResponse > RetrieveCustomerWithHttpInfo (string authorization, string customerId)
+        public ApiResponse< RetrieveCustomerResponse > RetrieveCustomerWithHttpInfo (string customerId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->RetrieveCustomer");
             // verify the required parameter 'customerId' is set
             if (customerId == null)
                 throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerApi->RetrieveCustomer");
@@ -900,8 +875,13 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -926,12 +906,11 @@ namespace Square.Connect.Api
         /// RetrieveCustomer Returns details for a single customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>Task of RetrieveCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<RetrieveCustomerResponse> RetrieveCustomerAsync (string authorization, string customerId)
+        public async System.Threading.Tasks.Task<RetrieveCustomerResponse> RetrieveCustomerAsync (string customerId)
         {
-             ApiResponse<RetrieveCustomerResponse> localVarResponse = await RetrieveCustomerAsyncWithHttpInfo(authorization, customerId);
+             ApiResponse<RetrieveCustomerResponse> localVarResponse = await RetrieveCustomerAsyncWithHttpInfo(customerId);
              return localVarResponse.Data;
 
         }
@@ -940,14 +919,10 @@ namespace Square.Connect.Api
         /// RetrieveCustomer Returns details for a single customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RetrieveCustomerResponse>> RetrieveCustomerAsyncWithHttpInfo (string authorization, string customerId)
+        public async System.Threading.Tasks.Task<ApiResponse<RetrieveCustomerResponse>> RetrieveCustomerAsyncWithHttpInfo (string customerId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->RetrieveCustomer");
             // verify the required parameter 'customerId' is set
             if (customerId == null)
                 throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerApi->RetrieveCustomer");
@@ -978,8 +953,13 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1004,13 +984,12 @@ namespace Square.Connect.Api
         /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>UpdateCustomerResponse</returns>
-        public UpdateCustomerResponse UpdateCustomer (string authorization, string customerId, UpdateCustomerRequest body)
+        public UpdateCustomerResponse UpdateCustomer (string customerId, UpdateCustomerRequest body)
         {
-             ApiResponse<UpdateCustomerResponse> localVarResponse = UpdateCustomerWithHttpInfo(authorization, customerId, body);
+             ApiResponse<UpdateCustomerResponse> localVarResponse = UpdateCustomerWithHttpInfo(customerId, body);
              return localVarResponse.Data;
         }
 
@@ -1018,15 +997,11 @@ namespace Square.Connect.Api
         /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of UpdateCustomerResponse</returns>
-        public ApiResponse< UpdateCustomerResponse > UpdateCustomerWithHttpInfo (string authorization, string customerId, UpdateCustomerRequest body)
+        public ApiResponse< UpdateCustomerResponse > UpdateCustomerWithHttpInfo (string customerId, UpdateCustomerRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->UpdateCustomer");
             // verify the required parameter 'customerId' is set
             if (customerId == null)
                 throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerApi->UpdateCustomer");
@@ -1060,7 +1035,6 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1070,6 +1044,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1094,13 +1074,12 @@ namespace Square.Connect.Api
         /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of UpdateCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerResponse> UpdateCustomerAsync (string authorization, string customerId, UpdateCustomerRequest body)
+        public async System.Threading.Tasks.Task<UpdateCustomerResponse> UpdateCustomerAsync (string customerId, UpdateCustomerRequest body)
         {
-             ApiResponse<UpdateCustomerResponse> localVarResponse = await UpdateCustomerAsyncWithHttpInfo(authorization, customerId, body);
+             ApiResponse<UpdateCustomerResponse> localVarResponse = await UpdateCustomerAsyncWithHttpInfo(customerId, body);
              return localVarResponse.Data;
 
         }
@@ -1109,15 +1088,11 @@ namespace Square.Connect.Api
         /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UpdateCustomerResponse>> UpdateCustomerAsyncWithHttpInfo (string authorization, string customerId, UpdateCustomerRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateCustomerResponse>> UpdateCustomerAsyncWithHttpInfo (string customerId, UpdateCustomerRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling CustomerApi->UpdateCustomer");
             // verify the required parameter 'customerId' is set
             if (customerId == null)
                 throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerApi->UpdateCustomer");
@@ -1151,7 +1126,6 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1161,6 +1135,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

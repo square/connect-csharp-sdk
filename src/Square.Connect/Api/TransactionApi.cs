@@ -31,11 +31,10 @@ namespace Square.Connect.Api
         /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>CaptureTransactionResponse</returns>
-        CaptureTransactionResponse CaptureTransaction (string authorization, string locationId, string transactionId);
+        CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId);
 
         /// <summary>
         /// CaptureTransaction
@@ -44,11 +43,10 @@ namespace Square.Connect.Api
         /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>ApiResponse of CaptureTransactionResponse</returns>
-        ApiResponse<CaptureTransactionResponse> CaptureTransactionWithHttpInfo (string authorization, string locationId, string transactionId);
+        ApiResponse<CaptureTransactionResponse> CaptureTransactionWithHttpInfo (string locationId, string transactionId);
         /// <summary>
         /// Charge
         /// </summary>
@@ -56,11 +54,10 @@ namespace Square.Connect.Api
         /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ChargeResponse</returns>
-        ChargeResponse Charge (string authorization, string locationId, ChargeRequest body);
+        ChargeResponse Charge (string locationId, ChargeRequest body);
 
         /// <summary>
         /// Charge
@@ -69,11 +66,10 @@ namespace Square.Connect.Api
         /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of ChargeResponse</returns>
-        ApiResponse<ChargeResponse> ChargeWithHttpInfo (string authorization, string locationId, ChargeRequest body);
+        ApiResponse<ChargeResponse> ChargeWithHttpInfo (string locationId, ChargeRequest body);
         /// <summary>
         /// ListTransactions
         /// </summary>
@@ -81,14 +77,13 @@ namespace Square.Connect.Api
         /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListTransactionsResponse</returns>
-        ListTransactionsResponse ListTransactions (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
         /// ListTransactions
@@ -97,14 +92,13 @@ namespace Square.Connect.Api
         /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListTransactionsResponse</returns>
-        ApiResponse<ListTransactionsResponse> ListTransactionsWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        ApiResponse<ListTransactionsResponse> ListTransactionsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
         /// RetrieveTransaction
         /// </summary>
@@ -112,11 +106,10 @@ namespace Square.Connect.Api
         /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>RetrieveTransactionResponse</returns>
-        RetrieveTransactionResponse RetrieveTransaction (string authorization, string locationId, string transactionId);
+        RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId);
 
         /// <summary>
         /// RetrieveTransaction
@@ -125,11 +118,10 @@ namespace Square.Connect.Api
         /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>ApiResponse of RetrieveTransactionResponse</returns>
-        ApiResponse<RetrieveTransactionResponse> RetrieveTransactionWithHttpInfo (string authorization, string locationId, string transactionId);
+        ApiResponse<RetrieveTransactionResponse> RetrieveTransactionWithHttpInfo (string locationId, string transactionId);
         /// <summary>
         /// VoidTransaction
         /// </summary>
@@ -137,11 +129,10 @@ namespace Square.Connect.Api
         /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>VoidTransactionResponse</returns>
-        VoidTransactionResponse VoidTransaction (string authorization, string locationId, string transactionId);
+        VoidTransactionResponse VoidTransaction (string locationId, string transactionId);
 
         /// <summary>
         /// VoidTransaction
@@ -150,11 +141,10 @@ namespace Square.Connect.Api
         /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>ApiResponse of VoidTransactionResponse</returns>
-        ApiResponse<VoidTransactionResponse> VoidTransactionWithHttpInfo (string authorization, string locationId, string transactionId);
+        ApiResponse<VoidTransactionResponse> VoidTransactionWithHttpInfo (string locationId, string transactionId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -164,11 +154,10 @@ namespace Square.Connect.Api
         /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of CaptureTransactionResponse</returns>
-        System.Threading.Tasks.Task<CaptureTransactionResponse> CaptureTransactionAsync (string authorization, string locationId, string transactionId);
+        System.Threading.Tasks.Task<CaptureTransactionResponse> CaptureTransactionAsync (string locationId, string transactionId);
 
         /// <summary>
         /// CaptureTransaction
@@ -177,11 +166,10 @@ namespace Square.Connect.Api
         /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of ApiResponse (CaptureTransactionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CaptureTransactionResponse>> CaptureTransactionAsyncWithHttpInfo (string authorization, string locationId, string transactionId);
+        System.Threading.Tasks.Task<ApiResponse<CaptureTransactionResponse>> CaptureTransactionAsyncWithHttpInfo (string locationId, string transactionId);
         /// <summary>
         /// Charge
         /// </summary>
@@ -189,11 +177,10 @@ namespace Square.Connect.Api
         /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ChargeResponse</returns>
-        System.Threading.Tasks.Task<ChargeResponse> ChargeAsync (string authorization, string locationId, ChargeRequest body);
+        System.Threading.Tasks.Task<ChargeResponse> ChargeAsync (string locationId, ChargeRequest body);
 
         /// <summary>
         /// Charge
@@ -202,11 +189,10 @@ namespace Square.Connect.Api
         /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (ChargeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChargeResponse>> ChargeAsyncWithHttpInfo (string authorization, string locationId, ChargeRequest body);
+        System.Threading.Tasks.Task<ApiResponse<ChargeResponse>> ChargeAsyncWithHttpInfo (string locationId, ChargeRequest body);
         /// <summary>
         /// ListTransactions
         /// </summary>
@@ -214,14 +200,13 @@ namespace Square.Connect.Api
         /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListTransactionsResponse</returns>
-        System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
         /// ListTransactions
@@ -230,14 +215,13 @@ namespace Square.Connect.Api
         /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListTransactionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
         /// RetrieveTransaction
         /// </summary>
@@ -245,11 +229,10 @@ namespace Square.Connect.Api
         /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>Task of RetrieveTransactionResponse</returns>
-        System.Threading.Tasks.Task<RetrieveTransactionResponse> RetrieveTransactionAsync (string authorization, string locationId, string transactionId);
+        System.Threading.Tasks.Task<RetrieveTransactionResponse> RetrieveTransactionAsync (string locationId, string transactionId);
 
         /// <summary>
         /// RetrieveTransaction
@@ -258,11 +241,10 @@ namespace Square.Connect.Api
         /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveTransactionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RetrieveTransactionResponse>> RetrieveTransactionAsyncWithHttpInfo (string authorization, string locationId, string transactionId);
+        System.Threading.Tasks.Task<ApiResponse<RetrieveTransactionResponse>> RetrieveTransactionAsyncWithHttpInfo (string locationId, string transactionId);
         /// <summary>
         /// VoidTransaction
         /// </summary>
@@ -270,11 +252,10 @@ namespace Square.Connect.Api
         /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of VoidTransactionResponse</returns>
-        System.Threading.Tasks.Task<VoidTransactionResponse> VoidTransactionAsync (string authorization, string locationId, string transactionId);
+        System.Threading.Tasks.Task<VoidTransactionResponse> VoidTransactionAsync (string locationId, string transactionId);
 
         /// <summary>
         /// VoidTransaction
@@ -283,11 +264,10 @@ namespace Square.Connect.Api
         /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of ApiResponse (VoidTransactionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VoidTransactionResponse>> VoidTransactionAsyncWithHttpInfo (string authorization, string locationId, string transactionId);
+        System.Threading.Tasks.Task<ApiResponse<VoidTransactionResponse>> VoidTransactionAsyncWithHttpInfo (string locationId, string transactionId);
         #endregion Asynchronous Operations
     }
 
@@ -404,13 +384,12 @@ namespace Square.Connect.Api
         /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>CaptureTransactionResponse</returns>
-        public CaptureTransactionResponse CaptureTransaction (string authorization, string locationId, string transactionId)
+        public CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId)
         {
-             ApiResponse<CaptureTransactionResponse> localVarResponse = CaptureTransactionWithHttpInfo(authorization, locationId, transactionId);
+             ApiResponse<CaptureTransactionResponse> localVarResponse = CaptureTransactionWithHttpInfo(locationId, transactionId);
              return localVarResponse.Data;
         }
 
@@ -418,15 +397,11 @@ namespace Square.Connect.Api
         /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>ApiResponse of CaptureTransactionResponse</returns>
-        public ApiResponse< CaptureTransactionResponse > CaptureTransactionWithHttpInfo (string authorization, string locationId, string transactionId)
+        public ApiResponse< CaptureTransactionResponse > CaptureTransactionWithHttpInfo (string locationId, string transactionId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->CaptureTransaction");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->CaptureTransaction");
@@ -461,8 +436,13 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -487,13 +467,12 @@ namespace Square.Connect.Api
         /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of CaptureTransactionResponse</returns>
-        public async System.Threading.Tasks.Task<CaptureTransactionResponse> CaptureTransactionAsync (string authorization, string locationId, string transactionId)
+        public async System.Threading.Tasks.Task<CaptureTransactionResponse> CaptureTransactionAsync (string locationId, string transactionId)
         {
-             ApiResponse<CaptureTransactionResponse> localVarResponse = await CaptureTransactionAsyncWithHttpInfo(authorization, locationId, transactionId);
+             ApiResponse<CaptureTransactionResponse> localVarResponse = await CaptureTransactionAsyncWithHttpInfo(locationId, transactionId);
              return localVarResponse.Data;
 
         }
@@ -502,15 +481,11 @@ namespace Square.Connect.Api
         /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of ApiResponse (CaptureTransactionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CaptureTransactionResponse>> CaptureTransactionAsyncWithHttpInfo (string authorization, string locationId, string transactionId)
+        public async System.Threading.Tasks.Task<ApiResponse<CaptureTransactionResponse>> CaptureTransactionAsyncWithHttpInfo (string locationId, string transactionId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->CaptureTransaction");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->CaptureTransaction");
@@ -545,8 +520,13 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -571,13 +551,12 @@ namespace Square.Connect.Api
         /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ChargeResponse</returns>
-        public ChargeResponse Charge (string authorization, string locationId, ChargeRequest body)
+        public ChargeResponse Charge (string locationId, ChargeRequest body)
         {
-             ApiResponse<ChargeResponse> localVarResponse = ChargeWithHttpInfo(authorization, locationId, body);
+             ApiResponse<ChargeResponse> localVarResponse = ChargeWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -585,15 +564,11 @@ namespace Square.Connect.Api
         /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of ChargeResponse</returns>
-        public ApiResponse< ChargeResponse > ChargeWithHttpInfo (string authorization, string locationId, ChargeRequest body)
+        public ApiResponse< ChargeResponse > ChargeWithHttpInfo (string locationId, ChargeRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->Charge");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->Charge");
@@ -627,7 +602,6 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -637,6 +611,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -661,13 +641,12 @@ namespace Square.Connect.Api
         /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ChargeResponse</returns>
-        public async System.Threading.Tasks.Task<ChargeResponse> ChargeAsync (string authorization, string locationId, ChargeRequest body)
+        public async System.Threading.Tasks.Task<ChargeResponse> ChargeAsync (string locationId, ChargeRequest body)
         {
-             ApiResponse<ChargeResponse> localVarResponse = await ChargeAsyncWithHttpInfo(authorization, locationId, body);
+             ApiResponse<ChargeResponse> localVarResponse = await ChargeAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -676,15 +655,11 @@ namespace Square.Connect.Api
         /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (ChargeResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ChargeResponse>> ChargeAsyncWithHttpInfo (string authorization, string locationId, ChargeRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<ChargeResponse>> ChargeAsyncWithHttpInfo (string locationId, ChargeRequest body)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->Charge");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->Charge");
@@ -718,7 +693,6 @@ namespace Square.Connect.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -728,6 +702,12 @@ namespace Square.Connect.Api
                 localVarPostBody = body; // byte array
             }
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -752,16 +732,15 @@ namespace Square.Connect.Api
         /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListTransactionsResponse</returns>
-        public ListTransactionsResponse ListTransactions (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-             ApiResponse<ListTransactionsResponse> localVarResponse = ListTransactionsWithHttpInfo(authorization, locationId, beginTime, endTime, sortOrder, cursor);
+             ApiResponse<ListTransactionsResponse> localVarResponse = ListTransactionsWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
              return localVarResponse.Data;
         }
 
@@ -769,18 +748,14 @@ namespace Square.Connect.Api
         /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListTransactionsResponse</returns>
-        public ApiResponse< ListTransactionsResponse > ListTransactionsWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public ApiResponse< ListTransactionsResponse > ListTransactionsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->ListTransactions");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->ListTransactions");
@@ -815,8 +790,13 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -841,16 +821,15 @@ namespace Square.Connect.Api
         /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListTransactionsResponse</returns>
-        public async System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-             ApiResponse<ListTransactionsResponse> localVarResponse = await ListTransactionsAsyncWithHttpInfo(authorization, locationId, beginTime, endTime, sortOrder, cursor);
+             ApiResponse<ListTransactionsResponse> localVarResponse = await ListTransactionsAsyncWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
              return localVarResponse.Data;
 
         }
@@ -859,18 +838,14 @@ namespace Square.Connect.Api
         /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListTransactionsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->ListTransactions");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->ListTransactions");
@@ -905,8 +880,13 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -931,13 +911,12 @@ namespace Square.Connect.Api
         /// RetrieveTransaction Retrieves details for a single transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>RetrieveTransactionResponse</returns>
-        public RetrieveTransactionResponse RetrieveTransaction (string authorization, string locationId, string transactionId)
+        public RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId)
         {
-             ApiResponse<RetrieveTransactionResponse> localVarResponse = RetrieveTransactionWithHttpInfo(authorization, locationId, transactionId);
+             ApiResponse<RetrieveTransactionResponse> localVarResponse = RetrieveTransactionWithHttpInfo(locationId, transactionId);
              return localVarResponse.Data;
         }
 
@@ -945,15 +924,11 @@ namespace Square.Connect.Api
         /// RetrieveTransaction Retrieves details for a single transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>ApiResponse of RetrieveTransactionResponse</returns>
-        public ApiResponse< RetrieveTransactionResponse > RetrieveTransactionWithHttpInfo (string authorization, string locationId, string transactionId)
+        public ApiResponse< RetrieveTransactionResponse > RetrieveTransactionWithHttpInfo (string locationId, string transactionId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->RetrieveTransaction");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->RetrieveTransaction");
@@ -988,8 +963,13 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1014,13 +994,12 @@ namespace Square.Connect.Api
         /// RetrieveTransaction Retrieves details for a single transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>Task of RetrieveTransactionResponse</returns>
-        public async System.Threading.Tasks.Task<RetrieveTransactionResponse> RetrieveTransactionAsync (string authorization, string locationId, string transactionId)
+        public async System.Threading.Tasks.Task<RetrieveTransactionResponse> RetrieveTransactionAsync (string locationId, string transactionId)
         {
-             ApiResponse<RetrieveTransactionResponse> localVarResponse = await RetrieveTransactionAsyncWithHttpInfo(authorization, locationId, transactionId);
+             ApiResponse<RetrieveTransactionResponse> localVarResponse = await RetrieveTransactionAsyncWithHttpInfo(locationId, transactionId);
              return localVarResponse.Data;
 
         }
@@ -1029,15 +1008,11 @@ namespace Square.Connect.Api
         /// RetrieveTransaction Retrieves details for a single transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
         /// <param name="transactionId">The ID of the transaction to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveTransactionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RetrieveTransactionResponse>> RetrieveTransactionAsyncWithHttpInfo (string authorization, string locationId, string transactionId)
+        public async System.Threading.Tasks.Task<ApiResponse<RetrieveTransactionResponse>> RetrieveTransactionAsyncWithHttpInfo (string locationId, string transactionId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->RetrieveTransaction");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->RetrieveTransaction");
@@ -1072,8 +1047,13 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1098,13 +1078,12 @@ namespace Square.Connect.Api
         /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>VoidTransactionResponse</returns>
-        public VoidTransactionResponse VoidTransaction (string authorization, string locationId, string transactionId)
+        public VoidTransactionResponse VoidTransaction (string locationId, string transactionId)
         {
-             ApiResponse<VoidTransactionResponse> localVarResponse = VoidTransactionWithHttpInfo(authorization, locationId, transactionId);
+             ApiResponse<VoidTransactionResponse> localVarResponse = VoidTransactionWithHttpInfo(locationId, transactionId);
              return localVarResponse.Data;
         }
 
@@ -1112,15 +1091,11 @@ namespace Square.Connect.Api
         /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>ApiResponse of VoidTransactionResponse</returns>
-        public ApiResponse< VoidTransactionResponse > VoidTransactionWithHttpInfo (string authorization, string locationId, string transactionId)
+        public ApiResponse< VoidTransactionResponse > VoidTransactionWithHttpInfo (string locationId, string transactionId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->VoidTransaction");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->VoidTransaction");
@@ -1155,8 +1130,13 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1181,13 +1161,12 @@ namespace Square.Connect.Api
         /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of VoidTransactionResponse</returns>
-        public async System.Threading.Tasks.Task<VoidTransactionResponse> VoidTransactionAsync (string authorization, string locationId, string transactionId)
+        public async System.Threading.Tasks.Task<VoidTransactionResponse> VoidTransactionAsync (string locationId, string transactionId)
         {
-             ApiResponse<VoidTransactionResponse> localVarResponse = await VoidTransactionAsyncWithHttpInfo(authorization, locationId, transactionId);
+             ApiResponse<VoidTransactionResponse> localVarResponse = await VoidTransactionAsyncWithHttpInfo(locationId, transactionId);
              return localVarResponse.Data;
 
         }
@@ -1196,15 +1175,11 @@ namespace Square.Connect.Api
         /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;.</param>
         /// <param name="locationId"></param>
         /// <param name="transactionId"></param>
         /// <returns>Task of ApiResponse (VoidTransactionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<VoidTransactionResponse>> VoidTransactionAsyncWithHttpInfo (string authorization, string locationId, string transactionId)
+        public async System.Threading.Tasks.Task<ApiResponse<VoidTransactionResponse>> VoidTransactionAsyncWithHttpInfo (string locationId, string transactionId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling TransactionApi->VoidTransaction");
             // verify the required parameter 'locationId' is set
             if (locationId == null)
                 throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionApi->VoidTransaction");
@@ -1239,8 +1214,13 @@ namespace Square.Connect.Api
             localVarPathParams.Add("format", "json");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

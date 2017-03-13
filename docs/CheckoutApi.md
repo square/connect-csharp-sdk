@@ -8,7 +8,7 @@ Method | HTTP request
 
 
 # **CreateCheckout**
-> CreateCheckoutResponse CreateCheckout (string authorization, string locationId, CreateCheckoutRequest body)
+> CreateCheckoutResponse CreateCheckout (string locationId, CreateCheckoutRequest body)
 
 ### Description
 
@@ -18,7 +18,6 @@ Creates a [Checkout](#type-checkout) response that links a `checkoutId` and `che
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **locationId** | **string**| 
  **body** | [**CreateCheckoutRequest**](CreateCheckoutRequest.md)| 
 

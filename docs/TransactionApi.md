@@ -12,7 +12,7 @@ Method | HTTP request
 
 
 # **CaptureTransaction**
-> CaptureTransactionResponse CaptureTransaction (string authorization, string locationId, string transactionId)
+> CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId)
 
 ### Description
 
@@ -22,7 +22,6 @@ Captures a transaction that was created with the [Charge](#endpoint-charge) endp
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **locationId** | **string**| 
  **transactionId** | **string**| 
 
@@ -42,7 +41,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **Charge**
-> ChargeResponse Charge (string authorization, string locationId, ChargeRequest body)
+> ChargeResponse Charge (string locationId, ChargeRequest body)
 
 ### Description
 
@@ -52,7 +51,6 @@ Charges a card represented by a card nonce or a customer's card on file.  Your r
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **locationId** | **string**| 
  **body** | [**ChargeRequest**](ChargeRequest.md)| 
 
@@ -72,7 +70,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ListTransactions**
-> ListTransactionsResponse ListTransactions (string authorization, string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+> ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
 ### Description
 
@@ -82,7 +80,6 @@ Lists transactions for a particular location.  Max results per [page](#paginatin
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **locationId** | **string**| 
  **beginTime** | **string**| [optional] 
  **endTime** | **string**| [optional] 
@@ -105,7 +102,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RetrieveTransaction**
-> RetrieveTransactionResponse RetrieveTransaction (string authorization, string locationId, string transactionId)
+> RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId)
 
 ### Description
 
@@ -115,7 +112,6 @@ Retrieves details for a single transaction.
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **locationId** | **string**| 
  **transactionId** | **string**| 
 
@@ -135,7 +131,7 @@ Assign your **Access Token** from developer portal to the authorization paramete
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VoidTransaction**
-> VoidTransactionResponse VoidTransaction (string authorization, string locationId, string transactionId)
+> VoidTransactionResponse VoidTransaction (string locationId, string transactionId)
 
 ### Description
 
@@ -145,7 +141,6 @@ Cancels a transaction that was created with the [Charge](#endpoint-charge) endpo
 
 Name | Type | Notes
 ------------- | ------------- | -------------
- **authorization** | **string**| 
  **locationId** | **string**| 
  **transactionId** | **string**| 
 

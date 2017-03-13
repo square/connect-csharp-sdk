@@ -12,7 +12,7 @@ install:
 
 script:
   - export frameworkVersion=net45
-  - export releaseVersion="2.0.2"
+  - export releaseVersion="3.0.0"
   - /bin/sh ./mono_nunit_test.sh
 
 after_success:
