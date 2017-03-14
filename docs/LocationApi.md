@@ -1,18 +1,54 @@
 # Square.Connect.Api.LocationApi
 
-All endpoints are relative to [Square Connect V2 Documentation](https://docs.connect.squareup.com/api/connect/v2/#navsection-endpoints)
+All URIs are relative to *https://connect.squareup.com*
 
-Method | HTTP request 
-------------- | ------------- 
-[**ListLocations**](LocationApi.md#listlocations) | **GET** /v2/locations
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**ListLocations**](LocationApi.md#listlocations) | **GET** /v2/locations | ListLocations
 
 
+<a name="listlocations"></a>
 # **ListLocations**
 > ListLocationsResponse ListLocations ()
 
-### Description
+ListLocations
 
 Provides the details for all of a business's locations.  Most other Connect API endpoints have a required `location_id` path parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class ListLocationsExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new LocationApi();
+
+            try
+            {
+                // ListLocations
+                ListLocationsResponse result = apiInstance.ListLocations();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LocationApi.ListLocations: " + e.Message );
+            }
+        }
+    }
+}
+```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -23,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-Assign your **Access Token** from developer portal to the authorization parameter.
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
