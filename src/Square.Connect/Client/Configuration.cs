@@ -46,7 +46,7 @@ namespace Square.Connect.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Square-Connect-Csharp/3.0.0"
+                             string userAgent = "Square-Connect-CSharp/3.0.0"
                             )
         {
             setApiClientUsingDefault(apiClient);
@@ -167,7 +167,28 @@ namespace Square.Connect.Client
         /// <returns></returns>
         public void AddDefaultHeader(string key, string value)
         {
-            _defaultHeaderMap.Add(key, value);
+            _defaultHeaderMap[key] = value;
+        }
+
+        /// <summary>
+        /// Add Api Key Header.
+        /// </summary>
+        /// <param name="key">Api Key name.</param>
+        /// <param name="value">Api Key value.</param>
+        /// <returns></returns>
+        public void AddApiKey(string key, string value)
+        {
+            ApiKey[key] = value;
+        }
+
+        /// <summary>
+        /// Sets the API key prefix.
+        /// </summary>
+        /// <param name="key">Api Key name.</param>
+        /// <param name="value">Api Key value.</param>
+        public void AddApiKeyPrefix(string key, string value)
+        {
+            ApiKeyPrefix[key] = value;
         }
 
         /// <summary>

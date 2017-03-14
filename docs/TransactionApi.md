@@ -1,29 +1,67 @@
 # Square.Connect.Api.TransactionApi
 
-All endpoints are relative to [Square Connect V2 Documentation](https://docs.connect.squareup.com/api/connect/v2/#navsection-endpoints)
+All URIs are relative to *https://connect.squareup.com*
 
-Method | HTTP request 
-------------- | ------------- 
-[**CaptureTransaction**](TransactionApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
-[**Charge**](TransactionApi.md#charge) | **POST** /v2/locations/{location_id}/transactions
-[**ListTransactions**](TransactionApi.md#listtransactions) | **GET** /v2/locations/{location_id}/transactions
-[**RetrieveTransaction**](TransactionApi.md#retrievetransaction) | **GET** /v2/locations/{location_id}/transactions/{transaction_id}
-[**VoidTransaction**](TransactionApi.md#voidtransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/void
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**CaptureTransaction**](TransactionApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
+[**Charge**](TransactionApi.md#charge) | **POST** /v2/locations/{location_id}/transactions | Charge
+[**ListTransactions**](TransactionApi.md#listtransactions) | **GET** /v2/locations/{location_id}/transactions | ListTransactions
+[**RetrieveTransaction**](TransactionApi.md#retrievetransaction) | **GET** /v2/locations/{location_id}/transactions/{transaction_id} | RetrieveTransaction
+[**VoidTransaction**](TransactionApi.md#voidtransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/void | VoidTransaction
 
 
+<a name="capturetransaction"></a>
 # **CaptureTransaction**
 > CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId)
 
-### Description
+CaptureTransaction
 
 Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class CaptureTransactionExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TransactionApi();
+            var locationId = locationId_example;  // string | 
+            var transactionId = transactionId_example;  // string | 
+
+            try
+            {
+                // CaptureTransaction
+                CaptureTransactionResponse result = apiInstance.CaptureTransaction(locationId, transactionId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TransactionApi.CaptureTransaction: " + e.Message );
+            }
+        }
+    }
+}
+```
+
 ### Parameters
 
-Name | Type | Notes
-------------- | ------------- | -------------
- **locationId** | **string**| 
- **transactionId** | **string**| 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **string**|  | 
+ **transactionId** | **string**|  | 
 
 ### Return type
 
@@ -31,7 +69,7 @@ Name | Type | Notes
 
 ### Authorization
 
-Assign your **Access Token** from developer portal to the authorization parameter.
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -40,19 +78,57 @@ Assign your **Access Token** from developer portal to the authorization paramete
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="charge"></a>
 # **Charge**
 > ChargeResponse Charge (string locationId, ChargeRequest body)
 
-### Description
+Charge
 
 Charges a card represented by a card nonce or a customer's card on file.  Your request to this endpoint must include _either_:  - A value for the `card_nonce` parameter (to charge a card nonce generated with the `SqPaymentForm`) - Values for the `customer_card_id` and `customer_id` parameters (to charge a customer's card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - `buyer_email_address` - At least one of `billing_address` or `shipping_address`  When this response is returned, the amount of Square's processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the `processing_fee_money` field of each [Tender included](#type-tender) in the transaction.
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class ChargeExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TransactionApi();
+            var locationId = locationId_example;  // string | The ID of the location to associate the created transaction with.
+            var body = new ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+
+            try
+            {
+                // Charge
+                ChargeResponse result = apiInstance.Charge(locationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TransactionApi.Charge: " + e.Message );
+            }
+        }
+    }
+}
+```
+
 ### Parameters
 
-Name | Type | Notes
-------------- | ------------- | -------------
- **locationId** | **string**| 
- **body** | [**ChargeRequest**](ChargeRequest.md)| 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **string**| The ID of the location to associate the created transaction with. | 
+ **body** | [**ChargeRequest**](ChargeRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
 
 ### Return type
 
@@ -60,7 +136,7 @@ Name | Type | Notes
 
 ### Authorization
 
-Assign your **Access Token** from developer portal to the authorization parameter.
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -69,22 +145,63 @@ Assign your **Access Token** from developer portal to the authorization paramete
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="listtransactions"></a>
 # **ListTransactions**
 > ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
-### Description
+ListTransactions
 
 Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class ListTransactionsExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TransactionApi();
+            var locationId = locationId_example;  // string | The ID of the location to list transactions for.
+            var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional) 
+            var endTime = endTime_example;  // string | The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional) 
+            var sortOrder = sortOrder_example;  // string | The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC` (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional) 
+
+            try
+            {
+                // ListTransactions
+                ListTransactionsResponse result = apiInstance.ListTransactions(locationId, beginTime, endTime, sortOrder, cursor);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TransactionApi.ListTransactions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
 ### Parameters
 
-Name | Type | Notes
-------------- | ------------- | -------------
- **locationId** | **string**| 
- **beginTime** | **string**| [optional] 
- **endTime** | **string**| [optional] 
- **sortOrder** | **string**| [optional] 
- **cursor** | **string**| [optional] 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **string**| The ID of the location to list transactions for. | 
+ **beginTime** | **string**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | [optional] 
+ **endTime** | **string**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. | [optional] 
+ **sortOrder** | **string**| The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. | [optional] 
 
 ### Return type
 
@@ -92,7 +209,7 @@ Name | Type | Notes
 
 ### Authorization
 
-Assign your **Access Token** from developer portal to the authorization parameter.
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -101,19 +218,57 @@ Assign your **Access Token** from developer portal to the authorization paramete
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="retrievetransaction"></a>
 # **RetrieveTransaction**
 > RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId)
 
-### Description
+RetrieveTransaction
 
 Retrieves details for a single transaction.
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class RetrieveTransactionExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TransactionApi();
+            var locationId = locationId_example;  // string | The ID of the transaction's associated location.
+            var transactionId = transactionId_example;  // string | The ID of the transaction to retrieve.
+
+            try
+            {
+                // RetrieveTransaction
+                RetrieveTransactionResponse result = apiInstance.RetrieveTransaction(locationId, transactionId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TransactionApi.RetrieveTransaction: " + e.Message );
+            }
+        }
+    }
+}
+```
+
 ### Parameters
 
-Name | Type | Notes
-------------- | ------------- | -------------
- **locationId** | **string**| 
- **transactionId** | **string**| 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **string**| The ID of the transaction&#39;s associated location. | 
+ **transactionId** | **string**| The ID of the transaction to retrieve. | 
 
 ### Return type
 
@@ -121,7 +276,7 @@ Name | Type | Notes
 
 ### Authorization
 
-Assign your **Access Token** from developer portal to the authorization parameter.
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -130,19 +285,57 @@ Assign your **Access Token** from developer portal to the authorization paramete
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="voidtransaction"></a>
 # **VoidTransaction**
 > VoidTransactionResponse VoidTransaction (string locationId, string transactionId)
 
-### Description
+VoidTransaction
 
 Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class VoidTransactionExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TransactionApi();
+            var locationId = locationId_example;  // string | 
+            var transactionId = transactionId_example;  // string | 
+
+            try
+            {
+                // VoidTransaction
+                VoidTransactionResponse result = apiInstance.VoidTransaction(locationId, transactionId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TransactionApi.VoidTransaction: " + e.Message );
+            }
+        }
+    }
+}
+```
+
 ### Parameters
 
-Name | Type | Notes
-------------- | ------------- | -------------
- **locationId** | **string**| 
- **transactionId** | **string**| 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **string**|  | 
+ **transactionId** | **string**|  | 
 
 ### Return type
 
@@ -150,7 +343,7 @@ Name | Type | Notes
 
 ### Authorization
 
-Assign your **Access Token** from developer portal to the authorization parameter.
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

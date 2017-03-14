@@ -119,9 +119,7 @@ namespace Square.Connect.Client
 
             // add header parameter, if any
             foreach(var param in headerParams)
-            {
                 request.AddHeader(param.Key, param.Value);
-            }
 
             // add query parameter, if any
             foreach(var param in queryParams)
@@ -147,12 +145,6 @@ namespace Square.Connect.Client
                 {
                     request.AddParameter(contentType, postBody, ParameterType.RequestBody);
                 }
-            } 
-            else 
-            {
-                // Our API explicitly requires an empty JSON body for requests 
-                // that don't have any parameters in the body 
-                request.AddParameter("application/json", "{}", ParameterType.RequestBody);
             }
 
             return request;
