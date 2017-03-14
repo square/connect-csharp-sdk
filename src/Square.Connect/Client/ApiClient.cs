@@ -120,14 +120,7 @@ namespace Square.Connect.Client
             // add header parameter, if any
             foreach(var param in headerParams)
             {
-                if (param.Key.Equals("Authorization"))
-                {
-                    request.AddHeader(param.Key, "Bearer " + param.Value);
-                }
-                else
-                {
-                    request.AddHeader(param.Key, param.Value);
-                }
+                request.AddHeader(param.Key, param.Value);
             }
 
             // add query parameter, if any

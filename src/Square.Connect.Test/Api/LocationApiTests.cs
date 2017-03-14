@@ -44,6 +44,8 @@ namespace Square.Connect.Test
         {
             instance = new LocationApi();
             testAccounts = new TestAccounts();
+            var sandboxAccount = testAccounts["US-Prod-Sandbox"];
+            Configuration.Default.AccessToken = sandboxAccount.AccessToken;
         }
 
         /// <summary>
@@ -71,9 +73,7 @@ namespace Square.Connect.Test
         [Test]
         public void ListLocationsTest()
         {
-            var sandboxAccount = testAccounts["US-Prod-Sandbox"];
-            var authorization = sandboxAccount.AccessToken;
-            var response = instance.ListLocations(authorization);
+            var response = instance.ListLocations();
             var firstLocation = response.Locations.First();
 
             Assert.IsInstanceOf<ListLocationsResponse> (response, "response type is not ListLocationsResponse.");
