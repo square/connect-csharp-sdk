@@ -21,118 +21,102 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ICustomerCardApi : IApiAccessor
+    public interface IV1LocationApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// CreateCustomerCard
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>CreateCustomerCardResponse</returns>
-        CreateCustomerCardResponse CreateCustomerCard (string customerId, CreateCustomerCardRequest body);
+        /// <returns>List&lt;V1Merchant&gt;</returns>
+        List<V1Merchant> ListLocations ();
 
         /// <summary>
-        /// CreateCustomerCard
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of CreateCustomerCardResponse</returns>
-        ApiResponse<CreateCustomerCardResponse> CreateCustomerCardWithHttpInfo (string customerId, CreateCustomerCardRequest body);
+        /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
+        ApiResponse<List<V1Merchant>> ListLocationsWithHttpInfo ();
         /// <summary>
-        /// DeleteCustomerCard
+        /// Get a business&#39;s information.
         /// </summary>
         /// <remarks>
-        /// Removes a card on file from a customer.
+        /// Get a business&#39;s information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>DeleteCustomerCardResponse</returns>
-        DeleteCustomerCardResponse DeleteCustomerCard (string customerId, string cardId);
+        /// <returns>V1Merchant</returns>
+        V1Merchant RetrieveBusiness ();
 
         /// <summary>
-        /// DeleteCustomerCard
+        /// Get a business&#39;s information.
         /// </summary>
         /// <remarks>
-        /// Removes a card on file from a customer.
+        /// Get a business&#39;s information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>ApiResponse of DeleteCustomerCardResponse</returns>
-        ApiResponse<DeleteCustomerCardResponse> DeleteCustomerCardWithHttpInfo (string customerId, string cardId);
+        /// <returns>ApiResponse of V1Merchant</returns>
+        ApiResponse<V1Merchant> RetrieveBusinessWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// CreateCustomerCard
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of CreateCustomerCardResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerCardResponse> CreateCustomerCardAsync (string customerId, CreateCustomerCardRequest body);
+        /// <returns>Task of List&lt;V1Merchant&gt;</returns>
+        System.Threading.Tasks.Task<List<V1Merchant>> ListLocationsAsync ();
 
         /// <summary>
-        /// CreateCustomerCard
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (CreateCustomerCardResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerCardResponse>> CreateCustomerCardAsyncWithHttpInfo (string customerId, CreateCustomerCardRequest body);
+        /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<V1Merchant>>> ListLocationsAsyncWithHttpInfo ();
         /// <summary>
-        /// DeleteCustomerCard
+        /// Get a business&#39;s information.
         /// </summary>
         /// <remarks>
-        /// Removes a card on file from a customer.
+        /// Get a business&#39;s information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>Task of DeleteCustomerCardResponse</returns>
-        System.Threading.Tasks.Task<DeleteCustomerCardResponse> DeleteCustomerCardAsync (string customerId, string cardId);
+        /// <returns>Task of V1Merchant</returns>
+        System.Threading.Tasks.Task<V1Merchant> RetrieveBusinessAsync ();
 
         /// <summary>
-        /// DeleteCustomerCard
+        /// Get a business&#39;s information.
         /// </summary>
         /// <remarks>
-        /// Removes a card on file from a customer.
+        /// Get a business&#39;s information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>Task of ApiResponse (DeleteCustomerCardResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteCustomerCardResponse>> DeleteCustomerCardAsyncWithHttpInfo (string customerId, string cardId);
+        /// <returns>Task of ApiResponse (V1Merchant)</returns>
+        System.Threading.Tasks.Task<ApiResponse<V1Merchant>> RetrieveBusinessAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class CustomerCardApi : ICustomerCardApi
+    public partial class V1LocationApi : IV1LocationApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerCardApi"/> class.
+        /// Initializes a new instance of the <see cref="V1LocationApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public CustomerCardApi(String basePath)
+        public V1LocationApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -146,12 +130,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerCardApi"/> class
+        /// Initializes a new instance of the <see cref="V1LocationApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public CustomerCardApi(Configuration configuration = null)
+        public V1LocationApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -231,35 +215,25 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>CreateCustomerCardResponse</returns>
-        public CreateCustomerCardResponse CreateCustomerCard (string customerId, CreateCustomerCardRequest body)
+        /// <returns>List&lt;V1Merchant&gt;</returns>
+        public List<V1Merchant> ListLocations ()
         {
-             ApiResponse<CreateCustomerCardResponse> localVarResponse = CreateCustomerCardWithHttpInfo(customerId, body);
+             ApiResponse<List<V1Merchant>> localVarResponse = ListLocationsWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of CreateCustomerCardResponse</returns>
-        public ApiResponse< CreateCustomerCardResponse > CreateCustomerCardWithHttpInfo (string customerId, CreateCustomerCardRequest body)
+        /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
+        public ApiResponse< List<V1Merchant> > ListLocationsWithHttpInfo ()
         {
-            // verify the required parameter 'customerId' is set
-            if (customerId == null)
-                throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerCardApi->CreateCustomerCard");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling CustomerCardApi->CreateCustomerCard");
 
-            var localVarPath = "/v2/customers/{customer_id}/cards";
+            var localVarPath = "/v1/me/locations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -281,15 +255,6 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
 
             // authentication (oauth2) required
             // oauth required
@@ -300,54 +265,44 @@ namespace Square.Connect.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("CreateCustomerCard", localVarResponse);
+                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<CreateCustomerCardResponse>(localVarStatusCode,
+            return new ApiResponse<List<V1Merchant>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateCustomerCardResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateCustomerCardResponse)));
+                (List<V1Merchant>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Merchant>)));
             
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of CreateCustomerCardResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerCardResponse> CreateCustomerCardAsync (string customerId, CreateCustomerCardRequest body)
+        /// <returns>Task of List&lt;V1Merchant&gt;</returns>
+        public async System.Threading.Tasks.Task<List<V1Merchant>> ListLocationsAsync ()
         {
-             ApiResponse<CreateCustomerCardResponse> localVarResponse = await CreateCustomerCardAsyncWithHttpInfo(customerId, body);
+             ApiResponse<List<V1Merchant>> localVarResponse = await ListLocationsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (CreateCustomerCardResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateCustomerCardResponse>> CreateCustomerCardAsyncWithHttpInfo (string customerId, CreateCustomerCardRequest body)
+        /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Merchant>>> ListLocationsAsyncWithHttpInfo ()
         {
-            // verify the required parameter 'customerId' is set
-            if (customerId == null)
-                throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerCardApi->CreateCustomerCard");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling CustomerCardApi->CreateCustomerCard");
 
-            var localVarPath = "/v2/customers/{customer_id}/cards";
+            var localVarPath = "/v1/me/locations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -369,15 +324,6 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
 
             // authentication (oauth2) required
             // oauth required
@@ -388,53 +334,43 @@ namespace Square.Connect.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("CreateCustomerCard", localVarResponse);
+                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<CreateCustomerCardResponse>(localVarStatusCode,
+            return new ApiResponse<List<V1Merchant>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateCustomerCardResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateCustomerCardResponse)));
+                (List<V1Merchant>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Merchant>)));
             
         }
 
         /// <summary>
-        /// DeleteCustomerCard Removes a card on file from a customer.
+        /// Get a business&#39;s information. Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>DeleteCustomerCardResponse</returns>
-        public DeleteCustomerCardResponse DeleteCustomerCard (string customerId, string cardId)
+        /// <returns>V1Merchant</returns>
+        public V1Merchant RetrieveBusiness ()
         {
-             ApiResponse<DeleteCustomerCardResponse> localVarResponse = DeleteCustomerCardWithHttpInfo(customerId, cardId);
+             ApiResponse<V1Merchant> localVarResponse = RetrieveBusinessWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// DeleteCustomerCard Removes a card on file from a customer.
+        /// Get a business&#39;s information. Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>ApiResponse of DeleteCustomerCardResponse</returns>
-        public ApiResponse< DeleteCustomerCardResponse > DeleteCustomerCardWithHttpInfo (string customerId, string cardId)
+        /// <returns>ApiResponse of V1Merchant</returns>
+        public ApiResponse< V1Merchant > RetrieveBusinessWithHttpInfo ()
         {
-            // verify the required parameter 'customerId' is set
-            if (customerId == null)
-                throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerCardApi->DeleteCustomerCard");
-            // verify the required parameter 'cardId' is set
-            if (cardId == null)
-                throw new ApiException(400, "Missing required parameter 'cardId' when calling CustomerCardApi->DeleteCustomerCard");
 
-            var localVarPath = "/v2/customers/{customer_id}/cards/{card_id}";
+            var localVarPath = "/v1/me";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -456,8 +392,6 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (cardId != null) localVarPathParams.Add("card_id", Configuration.ApiClient.ParameterToString(cardId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -468,54 +402,44 @@ namespace Square.Connect.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeleteCustomerCard", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveBusiness", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DeleteCustomerCardResponse>(localVarStatusCode,
+            return new ApiResponse<V1Merchant>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteCustomerCardResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteCustomerCardResponse)));
+                (V1Merchant) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Merchant)));
             
         }
 
         /// <summary>
-        /// DeleteCustomerCard Removes a card on file from a customer.
+        /// Get a business&#39;s information. Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>Task of DeleteCustomerCardResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteCustomerCardResponse> DeleteCustomerCardAsync (string customerId, string cardId)
+        /// <returns>Task of V1Merchant</returns>
+        public async System.Threading.Tasks.Task<V1Merchant> RetrieveBusinessAsync ()
         {
-             ApiResponse<DeleteCustomerCardResponse> localVarResponse = await DeleteCustomerCardAsyncWithHttpInfo(customerId, cardId);
+             ApiResponse<V1Merchant> localVarResponse = await RetrieveBusinessAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// DeleteCustomerCard Removes a card on file from a customer.
+        /// Get a business&#39;s information. Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
-        /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>Task of ApiResponse (DeleteCustomerCardResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeleteCustomerCardResponse>> DeleteCustomerCardAsyncWithHttpInfo (string customerId, string cardId)
+        /// <returns>Task of ApiResponse (V1Merchant)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<V1Merchant>> RetrieveBusinessAsyncWithHttpInfo ()
         {
-            // verify the required parameter 'customerId' is set
-            if (customerId == null)
-                throw new ApiException(400, "Missing required parameter 'customerId' when calling CustomerCardApi->DeleteCustomerCard");
-            // verify the required parameter 'cardId' is set
-            if (cardId == null)
-                throw new ApiException(400, "Missing required parameter 'cardId' when calling CustomerCardApi->DeleteCustomerCard");
 
-            var localVarPath = "/v2/customers/{customer_id}/cards/{card_id}";
+            var localVarPath = "/v1/me";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -537,8 +461,6 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
-            if (cardId != null) localVarPathParams.Add("card_id", Configuration.ApiClient.ParameterToString(cardId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -549,20 +471,20 @@ namespace Square.Connect.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeleteCustomerCard", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveBusiness", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DeleteCustomerCardResponse>(localVarStatusCode,
+            return new ApiResponse<V1Merchant>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteCustomerCardResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteCustomerCardResponse)));
+                (V1Merchant) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Merchant)));
             
         }
 
