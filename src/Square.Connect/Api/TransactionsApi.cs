@@ -25,557 +25,357 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CaptureTransaction
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>CaptureTransactionResponse</returns>
+        CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId);
+
+        /// <summary>
+        /// CaptureTransaction
+        /// </summary>
+        /// <remarks>
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>ApiResponse of CaptureTransactionResponse</returns>
+        ApiResponse<CaptureTransactionResponse> CaptureTransactionWithHttpInfo (string locationId, string transactionId);
+        /// <summary>
+        /// Charge
+        /// </summary>
+        /// <remarks>
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Refund</returns>
-        V1Refund V1CreateRefund (string locationId, V1CreateRefundRequest body);
+        /// <returns>ChargeResponse</returns>
+        ChargeResponse Charge (string locationId, ChargeRequest body);
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Charge
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of V1Refund</returns>
-        ApiResponse<V1Refund> V1CreateRefundWithHttpInfo (string locationId, V1CreateRefundRequest body);
+        /// <returns>ApiResponse of ChargeResponse</returns>
+        ApiResponse<ChargeResponse> ChargeWithHttpInfo (string locationId, ChargeRequest body);
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>List&lt;V1BankAccount&gt;</returns>
-        List<V1BankAccount> V1ListBankAccounts (string locationId);
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>CreateRefundResponse</returns>
+        CreateRefundResponse CreateRefund (string locationId, string transactionId, CreateRefundRequest body);
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>ApiResponse of List&lt;V1BankAccount&gt;</returns>
-        ApiResponse<List<V1BankAccount>> V1ListBankAccountsWithHttpInfo (string locationId);
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of CreateRefundResponse</returns>
+        ApiResponse<CreateRefundResponse> CreateRefundWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body);
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Provides summary information for a merchant&#39;s online store orders.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>List&lt;V1Order&gt;</returns>
-        List<V1Order> V1ListOrders (string locationId, string order = null, int? limit = null);
-
-        /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
-        /// </summary>
-        /// <remarks>
-        /// Provides summary information for a merchant&#39;s online store orders.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Order&gt;</returns>
-        ApiResponse<List<V1Order>> V1ListOrdersWithHttpInfo (string locationId, string order = null, int? limit = null);
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>List&lt;V1Payment&gt;</returns>
-        List<V1Payment> V1ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
-
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Payment&gt;</returns>
-        ApiResponse<List<V1Payment>> V1ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
-        /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-        /// </summary>
-        /// <remarks>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>List&lt;V1Refund&gt;</returns>
-        List<V1Refund> V1ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ListRefundsResponse</returns>
+        ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Refund&gt;</returns>
-        ApiResponse<List<V1Refund>> V1ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ApiResponse of ListRefundsResponse</returns>
+        ApiResponse<ListRefundsResponse> ListRefundsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>List&lt;V1Settlement&gt;</returns>
-        List<V1Settlement> V1ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ListTransactionsResponse</returns>
+        ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Settlement&gt;</returns>
-        ApiResponse<List<V1Settlement>> V1ListSettlementsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ApiResponse of ListTransactionsResponse</returns>
+        ApiResponse<ListTransactionsResponse> ListTransactionsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveTransaction
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>V1BankAccount</returns>
-        V1BankAccount V1RetrieveBankAccount (string locationId, string bankAccountId);
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>RetrieveTransactionResponse</returns>
+        RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId);
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveTransaction
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>ApiResponse of V1BankAccount</returns>
-        ApiResponse<V1BankAccount> V1RetrieveBankAccountWithHttpInfo (string locationId, string bankAccountId);
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>ApiResponse of RetrieveTransactionResponse</returns>
+        ApiResponse<RetrieveTransactionResponse> RetrieveTransactionWithHttpInfo (string locationId, string transactionId);
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>V1Order</returns>
-        V1Order V1RetrieveOrder (string locationId, string orderId);
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>VoidTransactionResponse</returns>
+        VoidTransactionResponse VoidTransaction (string locationId, string transactionId);
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>ApiResponse of V1Order</returns>
-        ApiResponse<V1Order> V1RetrieveOrderWithHttpInfo (string locationId, string orderId);
-        /// <summary>
-        /// Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single payment.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>V1Payment</returns>
-        V1Payment V1RetrievePayment (string locationId, string paymentId);
-
-        /// <summary>
-        /// Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single payment.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>ApiResponse of V1Payment</returns>
-        ApiResponse<V1Payment> V1RetrievePaymentWithHttpInfo (string locationId, string paymentId);
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>V1Settlement</returns>
-        V1Settlement V1RetrieveSettlement (string locationId, string settlementId);
-
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>ApiResponse of V1Settlement</returns>
-        ApiResponse<V1Settlement> V1RetrieveSettlementWithHttpInfo (string locationId, string settlementId);
-        /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </summary>
-        /// <remarks>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Order</returns>
-        V1Order V1UpdateOrder (string locationId, string orderId, V1UpdateOrderRequest body);
-
-        /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </summary>
-        /// <remarks>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of V1Order</returns>
-        ApiResponse<V1Order> V1UpdateOrderWithHttpInfo (string locationId, string orderId, V1UpdateOrderRequest body);
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>ApiResponse of VoidTransactionResponse</returns>
+        ApiResponse<VoidTransactionResponse> VoidTransactionWithHttpInfo (string locationId, string transactionId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CaptureTransaction
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of CaptureTransactionResponse</returns>
+        System.Threading.Tasks.Task<CaptureTransactionResponse> CaptureTransactionAsync (string locationId, string transactionId);
+
+        /// <summary>
+        /// CaptureTransaction
+        /// </summary>
+        /// <remarks>
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of ApiResponse (CaptureTransactionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CaptureTransactionResponse>> CaptureTransactionAsyncWithHttpInfo (string locationId, string transactionId);
+        /// <summary>
+        /// Charge
+        /// </summary>
+        /// <remarks>
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of V1Refund</returns>
-        System.Threading.Tasks.Task<V1Refund> V1CreateRefundAsync (string locationId, V1CreateRefundRequest body);
+        /// <returns>Task of ChargeResponse</returns>
+        System.Threading.Tasks.Task<ChargeResponse> ChargeAsync (string locationId, ChargeRequest body);
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Charge
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (V1Refund)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Refund>> V1CreateRefundAsyncWithHttpInfo (string locationId, V1CreateRefundRequest body);
+        /// <returns>Task of ApiResponse (ChargeResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ChargeResponse>> ChargeAsyncWithHttpInfo (string locationId, ChargeRequest body);
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>Task of List&lt;V1BankAccount&gt;</returns>
-        System.Threading.Tasks.Task<List<V1BankAccount>> V1ListBankAccountsAsync (string locationId);
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of CreateRefundResponse</returns>
+        System.Threading.Tasks.Task<CreateRefundResponse> CreateRefundAsync (string locationId, string transactionId, CreateRefundRequest body);
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Initiates a refund for a previously charged tender.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>Task of ApiResponse (List&lt;V1BankAccount&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1BankAccount>>> V1ListBankAccountsAsyncWithHttpInfo (string locationId);
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (CreateRefundResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateRefundResponse>> CreateRefundAsyncWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body);
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Provides summary information for a merchant&#39;s online store orders.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of List&lt;V1Order&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Order>> V1ListOrdersAsync (string locationId, string order = null, int? limit = null);
-
-        /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
-        /// </summary>
-        /// <remarks>
-        /// Provides summary information for a merchant&#39;s online store orders.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Order&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Order>>> V1ListOrdersAsyncWithHttpInfo (string locationId, string order = null, int? limit = null);
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of List&lt;V1Payment&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Payment>> V1ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
-
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Payment&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> V1ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
-        /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-        /// </summary>
-        /// <remarks>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of List&lt;V1Refund&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Refund>> V1ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ListRefundsResponse</returns>
+        System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Refund&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> V1ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ApiResponse (ListRefundsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>Task of List&lt;V1Settlement&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Settlement>> V1ListSettlementsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ListTransactionsResponse</returns>
+        System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Settlement&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Settlement>>> V1ListSettlementsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ApiResponse (ListTransactionsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveTransaction
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>Task of V1BankAccount</returns>
-        System.Threading.Tasks.Task<V1BankAccount> V1RetrieveBankAccountAsync (string locationId, string bankAccountId);
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>Task of RetrieveTransactionResponse</returns>
+        System.Threading.Tasks.Task<RetrieveTransactionResponse> RetrieveTransactionAsync (string locationId, string transactionId);
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveTransaction
         /// </summary>
         /// <remarks>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// Retrieves details for a single transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>Task of ApiResponse (V1BankAccount)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1BankAccount>> V1RetrieveBankAccountAsyncWithHttpInfo (string locationId, string bankAccountId);
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>Task of ApiResponse (RetrieveTransactionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RetrieveTransactionResponse>> RetrieveTransactionAsyncWithHttpInfo (string locationId, string transactionId);
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>Task of V1Order</returns>
-        System.Threading.Tasks.Task<V1Order> V1RetrieveOrderAsync (string locationId, string orderId);
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of VoidTransactionResponse</returns>
+        System.Threading.Tasks.Task<VoidTransactionResponse> VoidTransactionAsync (string locationId, string transactionId);
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>Task of ApiResponse (V1Order)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Order>> V1RetrieveOrderAsyncWithHttpInfo (string locationId, string orderId);
-        /// <summary>
-        /// Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single payment.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of V1Payment</returns>
-        System.Threading.Tasks.Task<V1Payment> V1RetrievePaymentAsync (string locationId, string paymentId);
-
-        /// <summary>
-        /// Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single payment.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of ApiResponse (V1Payment)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Payment>> V1RetrievePaymentAsyncWithHttpInfo (string locationId, string paymentId);
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of V1Settlement</returns>
-        System.Threading.Tasks.Task<V1Settlement> V1RetrieveSettlementAsync (string locationId, string settlementId);
-
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of ApiResponse (V1Settlement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Settlement>> V1RetrieveSettlementAsyncWithHttpInfo (string locationId, string settlementId);
-        /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </summary>
-        /// <remarks>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of V1Order</returns>
-        System.Threading.Tasks.Task<V1Order> V1UpdateOrderAsync (string locationId, string orderId, V1UpdateOrderRequest body);
-
-        /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </summary>
-        /// <remarks>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (V1Order)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Order>> V1UpdateOrderAsyncWithHttpInfo (string locationId, string orderId, V1UpdateOrderRequest body);
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of ApiResponse (VoidTransactionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<VoidTransactionResponse>> VoidTransactionAsyncWithHttpInfo (string locationId, string transactionId);
         #endregion Asynchronous Operations
     }
 
@@ -689,35 +489,196 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Refund</returns>
-        public V1Refund V1CreateRefund (string locationId, V1CreateRefundRequest body)
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>CaptureTransactionResponse</returns>
+        public CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId)
         {
-             ApiResponse<V1Refund> localVarResponse = V1CreateRefundWithHttpInfo(locationId, body);
+             ApiResponse<CaptureTransactionResponse> localVarResponse = CaptureTransactionWithHttpInfo(locationId, transactionId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of V1Refund</returns>
-        public ApiResponse< V1Refund > V1CreateRefundWithHttpInfo (string locationId, V1CreateRefundRequest body)
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>ApiResponse of CaptureTransactionResponse</returns>
+        public ApiResponse< CaptureTransactionResponse > CaptureTransactionWithHttpInfo (string locationId, string transactionId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1CreateRefund");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->CaptureTransaction");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->CaptureTransaction");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}/capture";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CaptureTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CaptureTransactionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (CaptureTransactionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CaptureTransactionResponse)));
+            
+        }
+
+        /// <summary>
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of CaptureTransactionResponse</returns>
+        public async System.Threading.Tasks.Task<CaptureTransactionResponse> CaptureTransactionAsync (string locationId, string transactionId)
+        {
+             ApiResponse<CaptureTransactionResponse> localVarResponse = await CaptureTransactionAsyncWithHttpInfo(locationId, transactionId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of ApiResponse (CaptureTransactionResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CaptureTransactionResponse>> CaptureTransactionAsyncWithHttpInfo (string locationId, string transactionId)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->CaptureTransaction");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->CaptureTransaction");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}/capture";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CaptureTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CaptureTransactionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (CaptureTransactionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CaptureTransactionResponse)));
+            
+        }
+
+        /// <summary>
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ChargeResponse</returns>
+        public ChargeResponse Charge (string locationId, ChargeRequest body)
+        {
+             ApiResponse<ChargeResponse> localVarResponse = ChargeWithHttpInfo(locationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of ChargeResponse</returns>
+        public ApiResponse< ChargeResponse > ChargeWithHttpInfo (string locationId, ChargeRequest body)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->Charge");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->V1CreateRefund");
+                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->Charge");
 
-            var localVarPath = "/v1/{location_id}/refunds";
+            var localVarPath = "/v2/locations/{location_id}/transactions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -765,47 +726,47 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateRefund", localVarResponse);
+                Exception exception = ExceptionFactory("Charge", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<V1Refund>(localVarStatusCode,
+            return new ApiResponse<ChargeResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Refund) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Refund)));
+                (ChargeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargeResponse)));
             
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of V1Refund</returns>
-        public async System.Threading.Tasks.Task<V1Refund> V1CreateRefundAsync (string locationId, V1CreateRefundRequest body)
+        /// <returns>Task of ChargeResponse</returns>
+        public async System.Threading.Tasks.Task<ChargeResponse> ChargeAsync (string locationId, ChargeRequest body)
         {
-             ApiResponse<V1Refund> localVarResponse = await V1CreateRefundAsyncWithHttpInfo(locationId, body);
+             ApiResponse<ChargeResponse> localVarResponse = await ChargeAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
+        /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (V1Refund)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Refund>> V1CreateRefundAsyncWithHttpInfo (string locationId, V1CreateRefundRequest body)
+        /// <returns>Task of ApiResponse (ChargeResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ChargeResponse>> ChargeAsyncWithHttpInfo (string locationId, ChargeRequest body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1CreateRefund");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->Charge");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->V1CreateRefund");
+                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->Charge");
 
-            var localVarPath = "/v1/{location_id}/refunds";
+            var localVarPath = "/v2/locations/{location_id}/transactions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -853,1530 +814,51 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateRefund", localVarResponse);
+                Exception exception = ExceptionFactory("Charge", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<V1Refund>(localVarStatusCode,
+            return new ApiResponse<ChargeResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Refund) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Refund)));
+                (ChargeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChargeResponse)));
             
         }
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>List&lt;V1BankAccount&gt;</returns>
-        public List<V1BankAccount> V1ListBankAccounts (string locationId)
-        {
-             ApiResponse<List<V1BankAccount>> localVarResponse = V1ListBankAccountsWithHttpInfo(locationId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>ApiResponse of List&lt;V1BankAccount&gt;</returns>
-        public ApiResponse< List<V1BankAccount> > V1ListBankAccountsWithHttpInfo (string locationId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListBankAccounts");
-
-            var localVarPath = "/v1/{location_id}/bank-accounts";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListBankAccounts", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1BankAccount>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1BankAccount>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1BankAccount>)));
-            
-        }
-
-        /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>Task of List&lt;V1BankAccount&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1BankAccount>> V1ListBankAccountsAsync (string locationId)
-        {
-             ApiResponse<List<V1BankAccount>> localVarResponse = await V1ListBankAccountsAsyncWithHttpInfo(locationId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>Task of ApiResponse (List&lt;V1BankAccount&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1BankAccount>>> V1ListBankAccountsAsyncWithHttpInfo (string locationId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListBankAccounts");
-
-            var localVarPath = "/v1/{location_id}/bank-accounts";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListBankAccounts", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1BankAccount>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1BankAccount>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1BankAccount>)));
-            
-        }
-
-        /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>List&lt;V1Order&gt;</returns>
-        public List<V1Order> V1ListOrders (string locationId, string order = null, int? limit = null)
-        {
-             ApiResponse<List<V1Order>> localVarResponse = V1ListOrdersWithHttpInfo(locationId, order, limit);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Order&gt;</returns>
-        public ApiResponse< List<V1Order> > V1ListOrdersWithHttpInfo (string locationId, string order = null, int? limit = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListOrders");
-
-            var localVarPath = "/v1/{location_id}/orders";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListOrders", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Order>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Order>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Order>)));
-            
-        }
-
-        /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of List&lt;V1Order&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Order>> V1ListOrdersAsync (string locationId, string order = null, int? limit = null)
-        {
-             ApiResponse<List<V1Order>> localVarResponse = await V1ListOrdersAsyncWithHttpInfo(locationId, order, limit);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list online store orders for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Order&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Order>>> V1ListOrdersAsyncWithHttpInfo (string locationId, string order = null, int? limit = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListOrders");
-
-            var localVarPath = "/v1/{location_id}/orders";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListOrders", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Order>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Order>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Order>)));
-            
-        }
-
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>List&lt;V1Payment&gt;</returns>
-        public List<V1Payment> V1ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-             ApiResponse<List<V1Payment>> localVarResponse = V1ListPaymentsWithHttpInfo(locationId, order, beginTime, endTime, limit);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Payment&gt;</returns>
-        public ApiResponse< List<V1Payment> > V1ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListPayments");
-
-            var localVarPath = "/v1/{location_id}/payments";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
-            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListPayments", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Payment>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Payment>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Payment>)));
-            
-        }
-
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of List&lt;V1Payment&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Payment>> V1ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-             ApiResponse<List<V1Payment>> localVarResponse = await V1ListPaymentsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">The order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Payment&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> V1ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListPayments");
-
-            var localVarPath = "/v1/{location_id}/payments";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
-            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListPayments", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Payment>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Payment>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Payment>)));
-            
-        }
-
-        /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>List&lt;V1Refund&gt;</returns>
-        public List<V1Refund> V1ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-             ApiResponse<List<V1Refund>> localVarResponse = V1ListRefundsWithHttpInfo(locationId, order, beginTime, endTime, limit);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Refund&gt;</returns>
-        public ApiResponse< List<V1Refund> > V1ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListRefunds");
-
-            var localVarPath = "/v1/{location_id}/refunds";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
-            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListRefunds", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Refund>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Refund>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Refund>)));
-            
-        }
-
-        /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of List&lt;V1Refund&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Refund>> V1ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-             ApiResponse<List<V1Refund>> localVarResponse = await V1ListRefundsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list refunds for.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Refund&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> V1ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListRefunds");
-
-            var localVarPath = "/v1/{location_id}/refunds";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
-            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListRefunds", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Refund>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Refund>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Refund>)));
-            
-        }
-
-        /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>List&lt;V1Settlement&gt;</returns>
-        public List<V1Settlement> V1ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
-        {
-             ApiResponse<List<V1Settlement>> localVarResponse = V1ListSettlementsWithHttpInfo(locationId, order, beginTime, endTime, limit, status);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>ApiResponse of List&lt;V1Settlement&gt;</returns>
-        public ApiResponse< List<V1Settlement> > V1ListSettlementsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListSettlements");
-
-            var localVarPath = "/v1/{location_id}/settlements";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
-            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-            if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListSettlements", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Settlement>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Settlement>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Settlement>)));
-            
-        }
-
-        /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>Task of List&lt;V1Settlement&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Settlement>> V1ListSettlementsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
-        {
-             ApiResponse<List<V1Settlement>> localVarResponse = await V1ListSettlementsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit, status);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
-        /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
-        /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
-        /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
-        /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;V1Settlement&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Settlement>>> V1ListSettlementsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1ListSettlements");
-
-            var localVarPath = "/v1/{location_id}/settlements";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
-            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
-            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
-            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-            if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1ListSettlements", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<V1Settlement>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<V1Settlement>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<V1Settlement>)));
-            
-        }
-
-        /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>V1BankAccount</returns>
-        public V1BankAccount V1RetrieveBankAccount (string locationId, string bankAccountId)
-        {
-             ApiResponse<V1BankAccount> localVarResponse = V1RetrieveBankAccountWithHttpInfo(locationId, bankAccountId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>ApiResponse of V1BankAccount</returns>
-        public ApiResponse< V1BankAccount > V1RetrieveBankAccountWithHttpInfo (string locationId, string bankAccountId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrieveBankAccount");
-            // verify the required parameter 'bankAccountId' is set
-            if (bankAccountId == null)
-                throw new ApiException(400, "Missing required parameter 'bankAccountId' when calling TransactionsApi->V1RetrieveBankAccount");
-
-            var localVarPath = "/v1/{location_id}/bank-accounts/{bank_account_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (bankAccountId != null) localVarPathParams.Add("bank_account_id", Configuration.ApiClient.ParameterToString(bankAccountId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrieveBankAccount", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1BankAccount>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1BankAccount) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1BankAccount)));
-            
-        }
-
-        /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>Task of V1BankAccount</returns>
-        public async System.Threading.Tasks.Task<V1BankAccount> V1RetrieveBankAccountAsync (string locationId, string bankAccountId)
-        {
-             ApiResponse<V1BankAccount> localVarResponse = await V1RetrieveBankAccountAsyncWithHttpInfo(locationId, bankAccountId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
-        /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>Task of ApiResponse (V1BankAccount)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1BankAccount>> V1RetrieveBankAccountAsyncWithHttpInfo (string locationId, string bankAccountId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrieveBankAccount");
-            // verify the required parameter 'bankAccountId' is set
-            if (bankAccountId == null)
-                throw new ApiException(400, "Missing required parameter 'bankAccountId' when calling TransactionsApi->V1RetrieveBankAccount");
-
-            var localVarPath = "/v1/{location_id}/bank-accounts/{bank_account_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (bankAccountId != null) localVarPathParams.Add("bank_account_id", Configuration.ApiClient.ParameterToString(bankAccountId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrieveBankAccount", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1BankAccount>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1BankAccount) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1BankAccount)));
-            
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>V1Order</returns>
-        public V1Order V1RetrieveOrder (string locationId, string orderId)
-        {
-             ApiResponse<V1Order> localVarResponse = V1RetrieveOrderWithHttpInfo(locationId, orderId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>ApiResponse of V1Order</returns>
-        public ApiResponse< V1Order > V1RetrieveOrderWithHttpInfo (string locationId, string orderId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrieveOrder");
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling TransactionsApi->V1RetrieveOrder");
-
-            var localVarPath = "/v1/{location_id}/orders/{order_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrieveOrder", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1Order>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Order) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Order)));
-            
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>Task of V1Order</returns>
-        public async System.Threading.Tasks.Task<V1Order> V1RetrieveOrderAsync (string locationId, string orderId)
-        {
-             ApiResponse<V1Order> localVarResponse = await V1RetrieveOrderAsyncWithHttpInfo(locationId, orderId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>Task of ApiResponse (V1Order)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Order>> V1RetrieveOrderAsyncWithHttpInfo (string locationId, string orderId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrieveOrder");
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling TransactionsApi->V1RetrieveOrder");
-
-            var localVarPath = "/v1/{location_id}/orders/{order_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrieveOrder", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1Order>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Order) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Order)));
-            
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>V1Payment</returns>
-        public V1Payment V1RetrievePayment (string locationId, string paymentId)
-        {
-             ApiResponse<V1Payment> localVarResponse = V1RetrievePaymentWithHttpInfo(locationId, paymentId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>ApiResponse of V1Payment</returns>
-        public ApiResponse< V1Payment > V1RetrievePaymentWithHttpInfo (string locationId, string paymentId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrievePayment");
-            // verify the required parameter 'paymentId' is set
-            if (paymentId == null)
-                throw new ApiException(400, "Missing required parameter 'paymentId' when calling TransactionsApi->V1RetrievePayment");
-
-            var localVarPath = "/v1/{location_id}/payments/{payment_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrievePayment", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1Payment>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Payment) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Payment)));
-            
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of V1Payment</returns>
-        public async System.Threading.Tasks.Task<V1Payment> V1RetrievePaymentAsync (string locationId, string paymentId)
-        {
-             ApiResponse<V1Payment> localVarResponse = await V1RetrievePaymentAsyncWithHttpInfo(locationId, paymentId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of ApiResponse (V1Payment)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Payment>> V1RetrievePaymentAsyncWithHttpInfo (string locationId, string paymentId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrievePayment");
-            // verify the required parameter 'paymentId' is set
-            if (paymentId == null)
-                throw new ApiException(400, "Missing required parameter 'paymentId' when calling TransactionsApi->V1RetrievePayment");
-
-            var localVarPath = "/v1/{location_id}/payments/{payment_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrievePayment", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1Payment>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Payment) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Payment)));
-            
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>V1Settlement</returns>
-        public V1Settlement V1RetrieveSettlement (string locationId, string settlementId)
-        {
-             ApiResponse<V1Settlement> localVarResponse = V1RetrieveSettlementWithHttpInfo(locationId, settlementId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>ApiResponse of V1Settlement</returns>
-        public ApiResponse< V1Settlement > V1RetrieveSettlementWithHttpInfo (string locationId, string settlementId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrieveSettlement");
-            // verify the required parameter 'settlementId' is set
-            if (settlementId == null)
-                throw new ApiException(400, "Missing required parameter 'settlementId' when calling TransactionsApi->V1RetrieveSettlement");
-
-            var localVarPath = "/v1/{location_id}/settlements/{settlement_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (settlementId != null) localVarPathParams.Add("settlement_id", Configuration.ApiClient.ParameterToString(settlementId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrieveSettlement", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1Settlement>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Settlement) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Settlement)));
-            
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of V1Settlement</returns>
-        public async System.Threading.Tasks.Task<V1Settlement> V1RetrieveSettlementAsync (string locationId, string settlementId)
-        {
-             ApiResponse<V1Settlement> localVarResponse = await V1RetrieveSettlementAsyncWithHttpInfo(locationId, settlementId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
-        /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>Task of ApiResponse (V1Settlement)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Settlement>> V1RetrieveSettlementAsyncWithHttpInfo (string locationId, string settlementId)
-        {
-            // verify the required parameter 'locationId' is set
-            if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1RetrieveSettlement");
-            // verify the required parameter 'settlementId' is set
-            if (settlementId == null)
-                throw new ApiException(400, "Missing required parameter 'settlementId' when calling TransactionsApi->V1RetrieveSettlement");
-
-            var localVarPath = "/v1/{location_id}/settlements/{settlement_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (settlementId != null) localVarPathParams.Add("settlement_id", Configuration.ApiClient.ParameterToString(settlementId)); // path parameter
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("V1RetrieveSettlement", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<V1Settlement>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Settlement) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Settlement)));
-            
-        }
-
-        /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Order</returns>
-        public V1Order V1UpdateOrder (string locationId, string orderId, V1UpdateOrderRequest body)
+        /// <returns>CreateRefundResponse</returns>
+        public CreateRefundResponse CreateRefund (string locationId, string transactionId, CreateRefundRequest body)
         {
-             ApiResponse<V1Order> localVarResponse = V1UpdateOrderWithHttpInfo(locationId, orderId, body);
+             ApiResponse<CreateRefundResponse> localVarResponse = CreateRefundWithHttpInfo(locationId, transactionId, body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of V1Order</returns>
-        public ApiResponse< V1Order > V1UpdateOrderWithHttpInfo (string locationId, string orderId, V1UpdateOrderRequest body)
+        /// <returns>ApiResponse of CreateRefundResponse</returns>
+        public ApiResponse< CreateRefundResponse > CreateRefundWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1UpdateOrder");
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling TransactionsApi->V1UpdateOrder");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->CreateRefund");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->CreateRefund");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->V1UpdateOrder");
+                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->CreateRefund");
 
-            var localVarPath = "/v1/{location_id}/orders/{order_id}";
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}/refund";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2399,7 +881,7 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2418,59 +900,59 @@ namespace Square.Connect.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateOrder", localVarResponse);
+                Exception exception = ExceptionFactory("CreateRefund", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<V1Order>(localVarStatusCode,
+            return new ApiResponse<CreateRefundResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Order) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Order)));
+                (CreateRefundResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRefundResponse)));
             
         }
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of V1Order</returns>
-        public async System.Threading.Tasks.Task<V1Order> V1UpdateOrderAsync (string locationId, string orderId, V1UpdateOrderRequest body)
+        /// <returns>Task of CreateRefundResponse</returns>
+        public async System.Threading.Tasks.Task<CreateRefundResponse> CreateRefundAsync (string locationId, string transactionId, CreateRefundRequest body)
         {
-             ApiResponse<V1Order> localVarResponse = await V1UpdateOrderAsyncWithHttpInfo(locationId, orderId, body);
+             ApiResponse<CreateRefundResponse> localVarResponse = await CreateRefundAsyncWithHttpInfo(locationId, transactionId, body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// CreateRefund Initiates a refund for a previously charged tender.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
-        /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
+        /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the original transaction that includes the tender to refund.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (V1Order)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Order>> V1UpdateOrderAsyncWithHttpInfo (string locationId, string orderId, V1UpdateOrderRequest body)
+        /// <returns>Task of ApiResponse (CreateRefundResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CreateRefundResponse>> CreateRefundAsyncWithHttpInfo (string locationId, string transactionId, CreateRefundRequest body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->V1UpdateOrder");
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling TransactionsApi->V1UpdateOrder");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->CreateRefund");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->CreateRefund");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->V1UpdateOrder");
+                throw new ApiException(400, "Missing required parameter 'body' when calling TransactionsApi->CreateRefund");
 
-            var localVarPath = "/v1/{location_id}/orders/{order_id}";
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}/refund";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2493,7 +975,7 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2512,20 +994,688 @@ namespace Square.Connect.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateOrder", localVarResponse);
+                Exception exception = ExceptionFactory("CreateRefund", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<V1Order>(localVarStatusCode,
+            return new ApiResponse<CreateRefundResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (V1Order) Configuration.ApiClient.Deserialize(localVarResponse, typeof(V1Order)));
+                (CreateRefundResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRefundResponse)));
+            
+        }
+
+        /// <summary>
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list refunds for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ListRefundsResponse</returns>
+        public ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+             ApiResponse<ListRefundsResponse> localVarResponse = ListRefundsWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list refunds for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ApiResponse of ListRefundsResponse</returns>
+        public ApiResponse< ListRefundsResponse > ListRefundsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->ListRefunds");
+
+            var localVarPath = "/v2/locations/{location_id}/refunds";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
+            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
+            if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
+            if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListRefunds", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ListRefundsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ListRefundsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListRefundsResponse)));
+            
+        }
+
+        /// <summary>
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list refunds for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ListRefundsResponse</returns>
+        public async System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+             ApiResponse<ListRefundsResponse> localVarResponse = await ListRefundsAsyncWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list refunds for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ApiResponse (ListRefundsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->ListRefunds");
+
+            var localVarPath = "/v2/locations/{location_id}/refunds";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
+            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
+            if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
+            if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListRefunds", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ListRefundsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ListRefundsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListRefundsResponse)));
+            
+        }
+
+        /// <summary>
+        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ListTransactionsResponse</returns>
+        public ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+             ApiResponse<ListTransactionsResponse> localVarResponse = ListTransactionsWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>ApiResponse of ListTransactionsResponse</returns>
+        public ApiResponse< ListTransactionsResponse > ListTransactionsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->ListTransactions");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
+            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
+            if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
+            if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTransactions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ListTransactionsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ListTransactionsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListTransactionsResponse)));
+            
+        }
+
+        /// <summary>
+        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ListTransactionsResponse</returns>
+        public async System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+             ApiResponse<ListTransactionsResponse> localVarResponse = await ListTransactionsAsyncWithHttpInfo(locationId, beginTime, endTime, sortOrder, cursor);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to list transactions for.</param>
+        /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
+        /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
+        /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <returns>Task of ApiResponse (ListTransactionsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->ListTransactions");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
+            if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
+            if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
+            if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTransactions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ListTransactionsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ListTransactionsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListTransactionsResponse)));
+            
+        }
+
+        /// <summary>
+        /// RetrieveTransaction Retrieves details for a single transaction.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>RetrieveTransactionResponse</returns>
+        public RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId)
+        {
+             ApiResponse<RetrieveTransactionResponse> localVarResponse = RetrieveTransactionWithHttpInfo(locationId, transactionId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// RetrieveTransaction Retrieves details for a single transaction.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>ApiResponse of RetrieveTransactionResponse</returns>
+        public ApiResponse< RetrieveTransactionResponse > RetrieveTransactionWithHttpInfo (string locationId, string transactionId)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->RetrieveTransaction");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->RetrieveTransaction");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RetrieveTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RetrieveTransactionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (RetrieveTransactionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveTransactionResponse)));
+            
+        }
+
+        /// <summary>
+        /// RetrieveTransaction Retrieves details for a single transaction.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>Task of RetrieveTransactionResponse</returns>
+        public async System.Threading.Tasks.Task<RetrieveTransactionResponse> RetrieveTransactionAsync (string locationId, string transactionId)
+        {
+             ApiResponse<RetrieveTransactionResponse> localVarResponse = await RetrieveTransactionAsyncWithHttpInfo(locationId, transactionId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// RetrieveTransaction Retrieves details for a single transaction.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the transaction&#39;s associated location.</param>
+        /// <param name="transactionId">The ID of the transaction to retrieve.</param>
+        /// <returns>Task of ApiResponse (RetrieveTransactionResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<RetrieveTransactionResponse>> RetrieveTransactionAsyncWithHttpInfo (string locationId, string transactionId)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->RetrieveTransaction");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->RetrieveTransaction");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RetrieveTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RetrieveTransactionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (RetrieveTransactionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveTransactionResponse)));
+            
+        }
+
+        /// <summary>
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>VoidTransactionResponse</returns>
+        public VoidTransactionResponse VoidTransaction (string locationId, string transactionId)
+        {
+             ApiResponse<VoidTransactionResponse> localVarResponse = VoidTransactionWithHttpInfo(locationId, transactionId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>ApiResponse of VoidTransactionResponse</returns>
+        public ApiResponse< VoidTransactionResponse > VoidTransactionWithHttpInfo (string locationId, string transactionId)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->VoidTransaction");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->VoidTransaction");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}/void";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("VoidTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<VoidTransactionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (VoidTransactionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoidTransactionResponse)));
+            
+        }
+
+        /// <summary>
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of VoidTransactionResponse</returns>
+        public async System.Threading.Tasks.Task<VoidTransactionResponse> VoidTransactionAsync (string locationId, string transactionId)
+        {
+             ApiResponse<VoidTransactionResponse> localVarResponse = await VoidTransactionAsyncWithHttpInfo(locationId, transactionId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId"></param>
+        /// <param name="transactionId"></param>
+        /// <returns>Task of ApiResponse (VoidTransactionResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<VoidTransactionResponse>> VoidTransactionAsyncWithHttpInfo (string locationId, string transactionId)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling TransactionsApi->VoidTransaction");
+            // verify the required parameter 'transactionId' is set
+            if (transactionId == null)
+                throw new ApiException(400, "Missing required parameter 'transactionId' when calling TransactionsApi->VoidTransaction");
+
+            var localVarPath = "/v2/locations/{location_id}/transactions/{transaction_id}/void";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("VoidTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<VoidTransactionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (VoidTransactionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoidTransactionResponse)));
             
         }
 

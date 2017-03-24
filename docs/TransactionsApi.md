@@ -4,26 +4,22 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1CreateRefund**](TransactionsApi.md#v1createrefund) | **POST** /v1/{location_id}/refunds | Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
-[**V1ListBankAccounts**](TransactionsApi.md#v1listbankaccounts) | **GET** /v1/{location_id}/bank-accounts | Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-[**V1ListOrders**](TransactionsApi.md#v1listorders) | **GET** /v1/{location_id}/orders | Provides summary information for a merchant&#39;s online store orders.
-[**V1ListPayments**](TransactionsApi.md#v1listpayments) | **GET** /v1/{location_id}/payments | Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-[**V1ListRefunds**](TransactionsApi.md#v1listrefunds) | **GET** /v1/{location_id}/refunds | Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-[**V1ListSettlements**](TransactionsApi.md#v1listsettlements) | **GET** /v1/{location_id}/settlements | Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
-[**V1RetrieveBankAccount**](TransactionsApi.md#v1retrievebankaccount) | **GET** /v1/{location_id}/bank-accounts/{bank_account_id} | Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-[**V1RetrieveOrder**](TransactionsApi.md#v1retrieveorder) | **GET** /v1/{location_id}/orders/{order_id} | Provides comprehensive information for a single online store order, including the order&#39;s history.
-[**V1RetrievePayment**](TransactionsApi.md#v1retrievepayment) | **GET** /v1/{location_id}/payments/{payment_id} | Provides comprehensive information for a single payment.
-[**V1RetrieveSettlement**](TransactionsApi.md#v1retrievesettlement) | **GET** /v1/{location_id}/settlements/{settlement_id} | Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-[**V1UpdateOrder**](TransactionsApi.md#v1updateorder) | **PUT** /v1/{location_id}/orders/{order_id} | Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+[**CaptureTransaction**](TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
+[**Charge**](TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions | Charge
+[**CreateRefund**](TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund | CreateRefund
+[**ListRefunds**](TransactionsApi.md#listrefunds) | **GET** /v2/locations/{location_id}/refunds | ListRefunds
+[**ListTransactions**](TransactionsApi.md#listtransactions) | **GET** /v2/locations/{location_id}/transactions | ListTransactions
+[**RetrieveTransaction**](TransactionsApi.md#retrievetransaction) | **GET** /v2/locations/{location_id}/transactions/{transaction_id} | RetrieveTransaction
+[**VoidTransaction**](TransactionsApi.md#voidtransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/void | VoidTransaction
 
 
-<a name="v1createrefund"></a>
-# **V1CreateRefund**
-> V1Refund V1CreateRefund (string locationId, V1CreateRefundRequest body)
+<a name="capturetransaction"></a>
+# **CaptureTransaction**
+> CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId)
 
-Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+CaptureTransaction
 
-Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
 
 ### Example
 ```csharp
@@ -35,7 +31,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateRefundExample
+    public class CaptureTransactionExample
     {
         public void main()
         {
@@ -44,18 +40,18 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the original payment's associated location.
-            var body = new V1CreateRefundRequest(); // V1CreateRefundRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+            var locationId = locationId_example;  // string | 
+            var transactionId = transactionId_example;  // string | 
 
             try
             {
-                // Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
-                V1Refund result = apiInstance.V1CreateRefund(locationId, body);
+                // CaptureTransaction
+                CaptureTransactionResponse result = apiInstance.CaptureTransaction(locationId, transactionId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TransactionsApi.V1CreateRefund: " + e.Message );
+                Debug.Print("Exception when calling TransactionsApi.CaptureTransaction: " + e.Message );
             }
         }
     }
@@ -66,12 +62,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the original payment&#39;s associated location. | 
- **body** | [**V1CreateRefundRequest**](V1CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
+ **locationId** | **string**|  | 
+ **transactionId** | **string**|  | 
 
 ### Return type
 
-[**V1Refund**](V1Refund.md)
+[**CaptureTransactionResponse**](CaptureTransactionResponse.md)
 
 ### Authorization
 
@@ -84,13 +80,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listbankaccounts"></a>
-# **V1ListBankAccounts**
-> List<V1BankAccount> V1ListBankAccounts (string locationId)
+<a name="charge"></a>
+# **Charge**
+> ChargeResponse Charge (string locationId, ChargeRequest body)
 
-Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+Charge
 
-Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+Charges a card represented by a card nonce or a customer's card on file.  Your request to this endpoint must include _either_:  - A value for the `card_nonce` parameter (to charge a card nonce generated with the `SqPaymentForm`) - Values for the `customer_card_id` and `customer_id` parameters (to charge a customer's card on file)  In order for an e-commerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - `buyer_email_address` - At least one of `billing_address` or `shipping_address`  When this response is returned, the amount of Square's processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the `processing_fee_money` field of each [Tender included](#type-tender) in the transaction.
 
 ### Example
 ```csharp
@@ -102,7 +98,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListBankAccountsExample
+    public class ChargeExample
     {
         public void main()
         {
@@ -111,17 +107,18 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the location to list bank accounts for.
+            var locationId = locationId_example;  // string | The ID of the location to associate the created transaction with.
+            var body = new ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
-                // Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-                List&lt;V1BankAccount&gt; result = apiInstance.V1ListBankAccounts(locationId);
+                // Charge
+                ChargeResponse result = apiInstance.Charge(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TransactionsApi.V1ListBankAccounts: " + e.Message );
+                Debug.Print("Exception when calling TransactionsApi.Charge: " + e.Message );
             }
         }
     }
@@ -132,11 +129,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the location to list bank accounts for. | 
+ **locationId** | **string**| The ID of the location to associate the created transaction with. | 
+ **body** | [**ChargeRequest**](ChargeRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
 
 ### Return type
 
-[**List<V1BankAccount>**](V1BankAccount.md)
+[**ChargeResponse**](ChargeResponse.md)
 
 ### Authorization
 
@@ -149,13 +147,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listorders"></a>
-# **V1ListOrders**
-> List<V1Order> V1ListOrders (string locationId, string order = null, int? limit = null)
+<a name="createrefund"></a>
+# **CreateRefund**
+> CreateRefundResponse CreateRefund (string locationId, string transactionId, CreateRefundRequest body)
 
-Provides summary information for a merchant's online store orders.
+CreateRefund
 
-Provides summary information for a merchant's online store orders.
+Initiates a refund for a previously charged tender.
 
 ### Example
 ```csharp
@@ -167,7 +165,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListOrdersExample
+    public class CreateRefundExample
     {
         public void main()
         {
@@ -176,19 +174,19 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the location to list online store orders for.
-            var order = order_example;  // string | TThe order in which payments are listed in the response. (optional) 
-            var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
+            var locationId = locationId_example;  // string | The ID of the original transaction's associated location.
+            var transactionId = transactionId_example;  // string | The ID of the original transaction that includes the tender to refund.
+            var body = new CreateRefundRequest(); // CreateRefundRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
-                // Provides summary information for a merchant's online store orders.
-                List&lt;V1Order&gt; result = apiInstance.V1ListOrders(locationId, order, limit);
+                // CreateRefund
+                CreateRefundResponse result = apiInstance.CreateRefund(locationId, transactionId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TransactionsApi.V1ListOrders: " + e.Message );
+                Debug.Print("Exception when calling TransactionsApi.CreateRefund: " + e.Message );
             }
         }
     }
@@ -199,13 +197,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the location to list online store orders for. | 
- **order** | **string**| TThe order in which payments are listed in the response. | [optional] 
- **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
+ **locationId** | **string**| The ID of the original transaction&#39;s associated location. | 
+ **transactionId** | **string**| The ID of the original transaction that includes the tender to refund. | 
+ **body** | [**CreateRefundRequest**](CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
 
 ### Return type
 
-[**List<V1Order>**](V1Order.md)
+[**CreateRefundResponse**](CreateRefundResponse.md)
 
 ### Authorization
 
@@ -218,86 +216,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listpayments"></a>
-# **V1ListPayments**
-> List<V1Payment> V1ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+<a name="listrefunds"></a>
+# **ListRefunds**
+> ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
-Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+ListRefunds
 
-Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Square.Connect.Api;
-using Square.Connect.Client;
-using Square.Connect.Model;
-
-namespace Example
-{
-    public class V1ListPaymentsExample
-    {
-        public void main()
-        {
-            
-            // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business's locations.
-            var order = order_example;  // string | The order in which payments are listed in the response. (optional) 
-            var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional) 
-            var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
-            var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
-
-            try
-            {
-                // Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-                List&lt;V1Payment&gt; result = apiInstance.V1ListPayments(locationId, order, beginTime, endTime, limit);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TransactionsApi.V1ListPayments: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. | 
- **order** | **string**| The order in which payments are listed in the response. | [optional] 
- **beginTime** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional] 
- **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
- **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
-
-### Return type
-
-[**List<V1Payment>**](V1Payment.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="v1listrefunds"></a>
-# **V1ListRefunds**
-> List<V1Refund> V1ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
-
-Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
-
-Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
+Lists refunds for one of a business's locations.  Refunds with a `status` of `PENDING` are not currently included in this endpoint's response.  Max results per [page](#paginatingresults): 50
 
 ### Example
 ```csharp
@@ -309,7 +234,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListRefundsExample
+    public class ListRefundsExample
     {
         public void main()
         {
@@ -319,20 +244,20 @@ namespace Example
 
             var apiInstance = new TransactionsApi();
             var locationId = locationId_example;  // string | The ID of the location to list refunds for.
-            var order = order_example;  // string | TThe order in which payments are listed in the response. (optional) 
-            var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional) 
-            var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
-            var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
+            var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional) 
+            var endTime = endTime_example;  // string | The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional) 
+            var sortOrder = sortOrder_example;  // string | The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC` (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional) 
 
             try
             {
-                // Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
-                List&lt;V1Refund&gt; result = apiInstance.V1ListRefunds(locationId, order, beginTime, endTime, limit);
+                // ListRefunds
+                ListRefundsResponse result = apiInstance.ListRefunds(locationId, beginTime, endTime, sortOrder, cursor);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TransactionsApi.V1ListRefunds: " + e.Message );
+                Debug.Print("Exception when calling TransactionsApi.ListRefunds: " + e.Message );
             }
         }
     }
@@ -344,14 +269,14 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **string**| The ID of the location to list refunds for. | 
- **order** | **string**| TThe order in which payments are listed in the response. | [optional] 
- **beginTime** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional] 
- **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
- **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
+ **beginTime** | **string**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | [optional] 
+ **endTime** | **string**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. | [optional] 
+ **sortOrder** | **string**| The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. | [optional] 
 
 ### Return type
 
-[**List<V1Refund>**](V1Refund.md)
+[**ListRefundsResponse**](ListRefundsResponse.md)
 
 ### Authorization
 
@@ -364,13 +289,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listsettlements"></a>
-# **V1ListSettlements**
-> List<V1Settlement> V1ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
+<a name="listtransactions"></a>
+# **ListTransactions**
+> ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
-Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
+ListTransactions
 
-Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length. 
+Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
 
 ### Example
 ```csharp
@@ -382,7 +307,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListSettlementsExample
+    public class ListTransactionsExample
     {
         public void main()
         {
@@ -391,22 +316,21 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business's locations.
-            var order = order_example;  // string | TThe order in which payments are listed in the response. (optional) 
-            var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional) 
-            var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
-            var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
-            var status = status_example;  // string | Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional) 
+            var locationId = locationId_example;  // string | The ID of the location to list transactions for.
+            var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional) 
+            var endTime = endTime_example;  // string | The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional) 
+            var sortOrder = sortOrder_example;  // string | The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC` (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional) 
 
             try
             {
-                // Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
-                List&lt;V1Settlement&gt; result = apiInstance.V1ListSettlements(locationId, order, beginTime, endTime, limit, status);
+                // ListTransactions
+                ListTransactionsResponse result = apiInstance.ListTransactions(locationId, beginTime, endTime, sortOrder, cursor);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TransactionsApi.V1ListSettlements: " + e.Message );
+                Debug.Print("Exception when calling TransactionsApi.ListTransactions: " + e.Message );
             }
         }
     }
@@ -417,16 +341,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. | 
- **order** | **string**| TThe order in which payments are listed in the response. | [optional] 
- **beginTime** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional] 
- **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
- **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
- **status** | **string**| Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). | [optional] 
+ **locationId** | **string**| The ID of the location to list transactions for. | 
+ **beginTime** | **string**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | [optional] 
+ **endTime** | **string**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. | [optional] 
+ **sortOrder** | **string**| The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. | [optional] 
 
 ### Return type
 
-[**List<V1Settlement>**](V1Settlement.md)
+[**ListTransactionsResponse**](ListTransactionsResponse.md)
 
 ### Authorization
 
@@ -439,13 +362,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1retrievebankaccount"></a>
-# **V1RetrieveBankAccount**
-> V1BankAccount V1RetrieveBankAccount (string locationId, string bankAccountId)
+<a name="retrievetransaction"></a>
+# **RetrieveTransaction**
+> RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId)
 
-Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+RetrieveTransaction
 
-Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+Retrieves details for a single transaction.
 
 ### Example
 ```csharp
@@ -457,7 +380,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1RetrieveBankAccountExample
+    public class RetrieveTransactionExample
     {
         public void main()
         {
@@ -466,18 +389,18 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the bank account's associated location.
-            var bankAccountId = bankAccountId_example;  // string | The bank account's Square-issued ID. You obtain this value from Settlement objects returned.
+            var locationId = locationId_example;  // string | The ID of the transaction's associated location.
+            var transactionId = transactionId_example;  // string | The ID of the transaction to retrieve.
 
             try
             {
-                // Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-                V1BankAccount result = apiInstance.V1RetrieveBankAccount(locationId, bankAccountId);
+                // RetrieveTransaction
+                RetrieveTransactionResponse result = apiInstance.RetrieveTransaction(locationId, transactionId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TransactionsApi.V1RetrieveBankAccount: " + e.Message );
+                Debug.Print("Exception when calling TransactionsApi.RetrieveTransaction: " + e.Message );
             }
         }
     }
@@ -488,12 +411,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the bank account&#39;s associated location. | 
- **bankAccountId** | **string**| The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned. | 
+ **locationId** | **string**| The ID of the transaction&#39;s associated location. | 
+ **transactionId** | **string**| The ID of the transaction to retrieve. | 
 
 ### Return type
 
-[**V1BankAccount**](V1BankAccount.md)
+[**RetrieveTransactionResponse**](RetrieveTransactionResponse.md)
 
 ### Authorization
 
@@ -506,80 +429,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1retrieveorder"></a>
-# **V1RetrieveOrder**
-> V1Order V1RetrieveOrder (string locationId, string orderId)
+<a name="voidtransaction"></a>
+# **VoidTransaction**
+> VoidTransactionResponse VoidTransaction (string locationId, string transactionId)
 
-Provides comprehensive information for a single online store order, including the order's history.
+VoidTransaction
 
-Provides comprehensive information for a single online store order, including the order's history.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Square.Connect.Api;
-using Square.Connect.Client;
-using Square.Connect.Model;
-
-namespace Example
-{
-    public class V1RetrieveOrderExample
-    {
-        public void main()
-        {
-            
-            // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the order's associated location.
-            var orderId = orderId_example;  // string | The order's Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint
-
-            try
-            {
-                // Provides comprehensive information for a single online store order, including the order's history.
-                V1Order result = apiInstance.V1RetrieveOrder(locationId, orderId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TransactionsApi.V1RetrieveOrder: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the order&#39;s associated location. | 
- **orderId** | **string**| The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint | 
-
-### Return type
-
-[**V1Order**](V1Order.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="v1retrievepayment"></a>
-# **V1RetrievePayment**
-> V1Payment V1RetrievePayment (string locationId, string paymentId)
-
-Provides comprehensive information for a single payment.
-
-Provides comprehensive information for a single payment.
+Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
 
 ### Example
 ```csharp
@@ -591,7 +447,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1RetrievePaymentExample
+    public class VoidTransactionExample
     {
         public void main()
         {
@@ -600,18 +456,18 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the payment's associated location.
-            var paymentId = paymentId_example;  // string | The payment's Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.
+            var locationId = locationId_example;  // string | 
+            var transactionId = transactionId_example;  // string | 
 
             try
             {
-                // Provides comprehensive information for a single payment.
-                V1Payment result = apiInstance.V1RetrievePayment(locationId, paymentId);
+                // VoidTransaction
+                VoidTransactionResponse result = apiInstance.VoidTransaction(locationId, transactionId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TransactionsApi.V1RetrievePayment: " + e.Message );
+                Debug.Print("Exception when calling TransactionsApi.VoidTransaction: " + e.Message );
             }
         }
     }
@@ -622,148 +478,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the payment&#39;s associated location. | 
- **paymentId** | **string**| The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint. | 
+ **locationId** | **string**|  | 
+ **transactionId** | **string**|  | 
 
 ### Return type
 
-[**V1Payment**](V1Payment.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="v1retrievesettlement"></a>
-# **V1RetrieveSettlement**
-> V1Settlement V1RetrieveSettlement (string locationId, string settlementId)
-
-Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
-
-Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Square.Connect.Api;
-using Square.Connect.Client;
-using Square.Connect.Model;
-
-namespace Example
-{
-    public class V1RetrieveSettlementExample
-    {
-        public void main()
-        {
-            
-            // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the settlements's associated location.
-            var settlementId = settlementId_example;  // string | The settlement's Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.
-
-            try
-            {
-                // Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
-                V1Settlement result = apiInstance.V1RetrieveSettlement(locationId, settlementId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TransactionsApi.V1RetrieveSettlement: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the settlements&#39;s associated location. | 
- **settlementId** | **string**| The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint. | 
-
-### Return type
-
-[**V1Settlement**](V1Settlement.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="v1updateorder"></a>
-# **V1UpdateOrder**
-> V1Order V1UpdateOrder (string locationId, string orderId, V1UpdateOrderRequest body)
-
-Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-
-Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Square.Connect.Api;
-using Square.Connect.Client;
-using Square.Connect.Model;
-
-namespace Example
-{
-    public class V1UpdateOrderExample
-    {
-        public void main()
-        {
-            
-            // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new TransactionsApi();
-            var locationId = locationId_example;  // string | The ID of the order's associated location.
-            var orderId = orderId_example;  // string | The order's Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint
-            var body = new V1UpdateOrderRequest(); // V1UpdateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
-
-            try
-            {
-                // Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-                V1Order result = apiInstance.V1UpdateOrder(locationId, orderId, body);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TransactionsApi.V1UpdateOrder: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **string**| The ID of the order&#39;s associated location. | 
- **orderId** | **string**| The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint | 
- **body** | [**V1UpdateOrderRequest**](V1UpdateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
-
-### Return type
-
-[**V1Order**](V1Order.md)
+[**VoidTransactionResponse**](VoidTransactionResponse.md)
 
 ### Authorization
 

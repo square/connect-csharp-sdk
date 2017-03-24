@@ -21,28 +21,9 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ILocationApi : IApiAccessor
+    public interface IV1LocationApi : IApiAccessor
     {
         #region Synchronous Operations
-        /// <summary>
-        /// ListLocations
-        /// </summary>
-        /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ListLocationsResponse</returns>
-        ListLocationsResponse ListLocations ();
-
-        /// <summary>
-        /// ListLocations
-        /// </summary>
-        /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ListLocationsResponse</returns>
-        ApiResponse<ListLocationsResponse> ListLocationsWithHttpInfo ();
         /// <summary>
         /// Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
@@ -51,7 +32,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;V1Merchant&gt;</returns>
-        List<V1Merchant> V1ListLocations ();
+        List<V1Merchant> ListLocations ();
 
         /// <summary>
         /// Provides details for a business&#39;s locations, including their IDs.
@@ -61,7 +42,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
-        ApiResponse<List<V1Merchant>> V1ListLocationsWithHttpInfo ();
+        ApiResponse<List<V1Merchant>> ListLocationsWithHttpInfo ();
         /// <summary>
         /// Get a business&#39;s information.
         /// </summary>
@@ -70,7 +51,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>V1Merchant</returns>
-        V1Merchant V1RetrieveBusiness ();
+        V1Merchant RetrieveBusiness ();
 
         /// <summary>
         /// Get a business&#39;s information.
@@ -80,28 +61,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of V1Merchant</returns>
-        ApiResponse<V1Merchant> V1RetrieveBusinessWithHttpInfo ();
+        ApiResponse<V1Merchant> RetrieveBusinessWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
-        /// <summary>
-        /// ListLocations
-        /// </summary>
-        /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ListLocationsResponse</returns>
-        System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync ();
-
-        /// <summary>
-        /// ListLocations
-        /// </summary>
-        /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </remarks>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo ();
         /// <summary>
         /// Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
@@ -110,7 +72,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;V1Merchant&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Merchant>> V1ListLocationsAsync ();
+        System.Threading.Tasks.Task<List<V1Merchant>> ListLocationsAsync ();
 
         /// <summary>
         /// Provides details for a business&#39;s locations, including their IDs.
@@ -120,7 +82,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Merchant>>> V1ListLocationsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<V1Merchant>>> ListLocationsAsyncWithHttpInfo ();
         /// <summary>
         /// Get a business&#39;s information.
         /// </summary>
@@ -129,7 +91,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of V1Merchant</returns>
-        System.Threading.Tasks.Task<V1Merchant> V1RetrieveBusinessAsync ();
+        System.Threading.Tasks.Task<V1Merchant> RetrieveBusinessAsync ();
 
         /// <summary>
         /// Get a business&#39;s information.
@@ -139,22 +101,22 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (V1Merchant)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Merchant>> V1RetrieveBusinessAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<V1Merchant>> RetrieveBusinessAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class LocationApi : ILocationApi
+    public partial class V1LocationApi : IV1LocationApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LocationApi"/> class.
+        /// Initializes a new instance of the <see cref="V1LocationApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public LocationApi(String basePath)
+        public V1LocationApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -168,12 +130,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LocationApi"/> class
+        /// Initializes a new instance of the <see cref="V1LocationApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LocationApi(Configuration configuration = null)
+        public V1LocationApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -253,150 +215,13 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ListLocationsResponse</returns>
-        public ListLocationsResponse ListLocations ()
-        {
-             ApiResponse<ListLocationsResponse> localVarResponse = ListLocationsWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ListLocationsResponse</returns>
-        public ApiResponse< ListLocationsResponse > ListLocationsWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/locations";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ListLocationsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListLocationsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListLocationsResponse)));
-            
-        }
-
-        /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ListLocationsResponse</returns>
-        public async System.Threading.Tasks.Task<ListLocationsResponse> ListLocationsAsync ()
-        {
-             ApiResponse<ListLocationsResponse> localVarResponse = await ListLocationsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
-        /// </summary>
-        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/locations";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ListLocationsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListLocationsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListLocationsResponse)));
-            
-        }
-
-        /// <summary>
         /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;V1Merchant&gt;</returns>
-        public List<V1Merchant> V1ListLocations ()
+        public List<V1Merchant> ListLocations ()
         {
-             ApiResponse<List<V1Merchant>> localVarResponse = V1ListLocationsWithHttpInfo();
+             ApiResponse<List<V1Merchant>> localVarResponse = ListLocationsWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -405,7 +230,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
-        public ApiResponse< List<V1Merchant> > V1ListLocationsWithHttpInfo ()
+        public ApiResponse< List<V1Merchant> > ListLocationsWithHttpInfo ()
         {
 
             var localVarPath = "/v1/me/locations";
@@ -447,7 +272,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListLocations", localVarResponse);
+                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -462,9 +287,9 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;V1Merchant&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Merchant>> V1ListLocationsAsync ()
+        public async System.Threading.Tasks.Task<List<V1Merchant>> ListLocationsAsync ()
         {
-             ApiResponse<List<V1Merchant>> localVarResponse = await V1ListLocationsAsyncWithHttpInfo();
+             ApiResponse<List<V1Merchant>> localVarResponse = await ListLocationsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -474,7 +299,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Merchant>>> V1ListLocationsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Merchant>>> ListLocationsAsyncWithHttpInfo ()
         {
 
             var localVarPath = "/v1/me/locations";
@@ -516,7 +341,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListLocations", localVarResponse);
+                Exception exception = ExceptionFactory("ListLocations", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -531,9 +356,9 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>V1Merchant</returns>
-        public V1Merchant V1RetrieveBusiness ()
+        public V1Merchant RetrieveBusiness ()
         {
-             ApiResponse<V1Merchant> localVarResponse = V1RetrieveBusinessWithHttpInfo();
+             ApiResponse<V1Merchant> localVarResponse = RetrieveBusinessWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -542,7 +367,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of V1Merchant</returns>
-        public ApiResponse< V1Merchant > V1RetrieveBusinessWithHttpInfo ()
+        public ApiResponse< V1Merchant > RetrieveBusinessWithHttpInfo ()
         {
 
             var localVarPath = "/v1/me";
@@ -584,7 +409,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveBusiness", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveBusiness", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -599,9 +424,9 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of V1Merchant</returns>
-        public async System.Threading.Tasks.Task<V1Merchant> V1RetrieveBusinessAsync ()
+        public async System.Threading.Tasks.Task<V1Merchant> RetrieveBusinessAsync ()
         {
-             ApiResponse<V1Merchant> localVarResponse = await V1RetrieveBusinessAsyncWithHttpInfo();
+             ApiResponse<V1Merchant> localVarResponse = await RetrieveBusinessAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -611,7 +436,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (V1Merchant)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Merchant>> V1RetrieveBusinessAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<V1Merchant>> RetrieveBusinessAsyncWithHttpInfo ()
         {
 
             var localVarPath = "/v1/me";
@@ -653,7 +478,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveBusiness", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveBusiness", localVarResponse);
                 if (exception != null) throw exception;
             }
 

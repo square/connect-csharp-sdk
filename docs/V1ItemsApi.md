@@ -1,54 +1,54 @@
-# Square.Connect.Api.ItemsApi
+# Square.Connect.Api.V1ItemsApi
 
 All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1AdjustInventory**](ItemsApi.md#v1adjustinventory) | **POST** /v1/{location_id}/inventory/{variation_id} | Adjusts an item variation&#39;s current available inventory.
-[**V1ApplyFee**](ItemsApi.md#v1applyfee) | **PUT** /v1/{location_id}/items/{item_id}/fees/{fee_id} | Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
-[**V1ApplyModifierList**](ItemsApi.md#v1applymodifierlist) | **PUT** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
-[**V1CreateCategory**](ItemsApi.md#v1createcategory) | **POST** /v1/{location_id}/categories | Creates an item category.
-[**V1CreateDiscount**](ItemsApi.md#v1creatediscount) | **POST** /v1/{location_id}/discounts | Creates a discount.
-[**V1CreateFee**](ItemsApi.md#v1createfee) | **POST** /v1/{location_id}/fees | Creates a fee (tax).
-[**V1CreateItem**](ItemsApi.md#v1createitem) | **POST** /v1/{location_id}/items | Creates an item and at least one variation for it.
-[**V1CreateModifierList**](ItemsApi.md#v1createmodifierlist) | **POST** /v1/{location_id}/modifier-lists | Creates an item modifier list and at least one modifier option for it.
-[**V1CreateModifierOption**](ItemsApi.md#v1createmodifieroption) | **POST** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options | Creates an item modifier option and adds it to a modifier list.
-[**V1CreatePage**](ItemsApi.md#v1createpage) | **POST** /v1/{location_id}/pages | Creates a Favorites page in Square Register.
-[**V1CreateVariation**](ItemsApi.md#v1createvariation) | **POST** /v1/{location_id}/items/{item_id}/variations | Creates an item variation for an existing item.
-[**V1DeleteCategory**](ItemsApi.md#v1deletecategory) | **DELETE** /v1/{location_id}/categories/{category_id} | Deletes an existing item category.
-[**V1DeleteDiscount**](ItemsApi.md#v1deletediscount) | **DELETE** /v1/{location_id}/discounts/{discount_id} | Deletes an existing discount.
-[**V1DeleteFee**](ItemsApi.md#v1deletefee) | **DELETE** /v1/{location_id}/fees/{fee_id} | Deletes an existing fee (tax).
-[**V1DeleteItem**](ItemsApi.md#v1deleteitem) | **DELETE** /v1/{location_id}/items/{item_id} | Deletes an existing item and all item variations associated with it.
-[**V1DeleteModifierList**](ItemsApi.md#v1deletemodifierlist) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id} | Deletes an existing item modifier list and all modifier options associated with it.
-[**V1DeleteModifierOption**](ItemsApi.md#v1deletemodifieroption) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | Deletes an existing item modifier option from a modifier list.
-[**V1DeletePage**](ItemsApi.md#v1deletepage) | **DELETE** /v1/{location_id}/pages/{page_id} | Deletes an existing Favorites page and all of its cells.
-[**V1DeletePageCell**](ItemsApi.md#v1deletepagecell) | **DELETE** /v1/{location_id}/pages/{page_id}/cells | Deletes a cell from a Favorites page in Square Register.
-[**V1DeleteVariation**](ItemsApi.md#v1deletevariation) | **DELETE** /v1/{location_id}/items/{item_id}/variations/{variation_id} | Deletes an existing item variation from an item.
-[**V1ListCategories**](ItemsApi.md#v1listcategories) | **GET** /v1/{location_id}/categories | Lists all of a location&#39;s item categories.
-[**V1ListDiscounts**](ItemsApi.md#v1listdiscounts) | **GET** /v1/{location_id}/discounts | Lists all of a location&#39;s discounts.
-[**V1ListFees**](ItemsApi.md#v1listfees) | **GET** /v1/{location_id}/fees | Lists all of a location&#39;s fees (taxes).
-[**V1ListInventory**](ItemsApi.md#v1listinventory) | **GET** /v1/{location_id}/inventory | Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
-[**V1ListItems**](ItemsApi.md#v1listitems) | **GET** /v1/{location_id}/items | Provides summary information for all of a location&#39;s items.
-[**V1ListModifierLists**](ItemsApi.md#v1listmodifierlists) | **GET** /v1/{location_id}/modifier-lists | Lists all of a location&#39;s modifier lists.
-[**V1ListPages**](ItemsApi.md#v1listpages) | **GET** /v1/{location_id}/pages | Lists all of a location&#39;s Favorites pages in Square Register.
-[**V1RemoveFee**](ItemsApi.md#v1removefee) | **DELETE** /v1/{location_id}/items/{item_id}/fees/{fee_id} | Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
-[**V1RemoveModifierList**](ItemsApi.md#v1removemodifierlist) | **DELETE** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
-[**V1RetrieveItem**](ItemsApi.md#v1retrieveitem) | **GET** /v1/{location_id}/items/{item_id} | Provides the details for a single item, including associated modifier lists and fees.
-[**V1RetrieveModifierList**](ItemsApi.md#v1retrievemodifierlist) | **GET** /v1/{location_id}/modifier-lists/{modifier_list_id} | Provides the details for a single modifier list.
-[**V1UpdateCategory**](ItemsApi.md#v1updatecategory) | **PUT** /v1/{location_id}/categories/{category_id} | Modifies the details of an existing item category.
-[**V1UpdateDiscount**](ItemsApi.md#v1updatediscount) | **PUT** /v1/{location_id}/discounts/{discount_id} | Modifies the details of an existing discount.
-[**V1UpdateFee**](ItemsApi.md#v1updatefee) | **PUT** /v1/{location_id}/fees/{fee_id} | Modifies the details of an existing fee (tax).
-[**V1UpdateItem**](ItemsApi.md#v1updateitem) | **PUT** /v1/{location_id}/items/{item_id} | Modifies the core details of an existing item.
-[**V1UpdateModifierList**](ItemsApi.md#v1updatemodifierlist) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id} | Modifies the details of an existing item modifier list.
-[**V1UpdateModifierOption**](ItemsApi.md#v1updatemodifieroption) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | Modifies the details of an existing item modifier option.
-[**V1UpdatePage**](ItemsApi.md#v1updatepage) | **PUT** /v1/{location_id}/pages/{page_id} | Modifies the details of a Favorites page in Square Register.
-[**V1UpdatePageCell**](ItemsApi.md#v1updatepagecell) | **PUT** /v1/{location_id}/pages/{page_id}/cells | Modifies a cell of a Favorites page in Square Register.
-[**V1UpdateVariation**](ItemsApi.md#v1updatevariation) | **PUT** /v1/{location_id}/items/{item_id}/variations/{variation_id} | Modifies the details of an existing item variation.
+[**AdjustInventory**](V1ItemsApi.md#adjustinventory) | **POST** /v1/{location_id}/inventory/{variation_id} | Adjusts an item variation&#39;s current available inventory.
+[**ApplyFee**](V1ItemsApi.md#applyfee) | **PUT** /v1/{location_id}/items/{item_id}/fees/{fee_id} | Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+[**ApplyModifierList**](V1ItemsApi.md#applymodifierlist) | **PUT** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+[**CreateCategory**](V1ItemsApi.md#createcategory) | **POST** /v1/{location_id}/categories | Creates an item category.
+[**CreateDiscount**](V1ItemsApi.md#creatediscount) | **POST** /v1/{location_id}/discounts | Creates a discount.
+[**CreateFee**](V1ItemsApi.md#createfee) | **POST** /v1/{location_id}/fees | Creates a fee (tax).
+[**CreateItem**](V1ItemsApi.md#createitem) | **POST** /v1/{location_id}/items | Creates an item and at least one variation for it.
+[**CreateModifierList**](V1ItemsApi.md#createmodifierlist) | **POST** /v1/{location_id}/modifier-lists | Creates an item modifier list and at least one modifier option for it.
+[**CreateModifierOption**](V1ItemsApi.md#createmodifieroption) | **POST** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options | Creates an item modifier option and adds it to a modifier list.
+[**CreatePage**](V1ItemsApi.md#createpage) | **POST** /v1/{location_id}/pages | Creates a Favorites page in Square Register.
+[**CreateVariation**](V1ItemsApi.md#createvariation) | **POST** /v1/{location_id}/items/{item_id}/variations | Creates an item variation for an existing item.
+[**DeleteCategory**](V1ItemsApi.md#deletecategory) | **DELETE** /v1/{location_id}/categories/{category_id} | Deletes an existing item category.
+[**DeleteDiscount**](V1ItemsApi.md#deletediscount) | **DELETE** /v1/{location_id}/discounts/{discount_id} | Deletes an existing discount.
+[**DeleteFee**](V1ItemsApi.md#deletefee) | **DELETE** /v1/{location_id}/fees/{fee_id} | Deletes an existing fee (tax).
+[**DeleteItem**](V1ItemsApi.md#deleteitem) | **DELETE** /v1/{location_id}/items/{item_id} | Deletes an existing item and all item variations associated with it.
+[**DeleteModifierList**](V1ItemsApi.md#deletemodifierlist) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id} | Deletes an existing item modifier list and all modifier options associated with it.
+[**DeleteModifierOption**](V1ItemsApi.md#deletemodifieroption) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | Deletes an existing item modifier option from a modifier list.
+[**DeletePage**](V1ItemsApi.md#deletepage) | **DELETE** /v1/{location_id}/pages/{page_id} | Deletes an existing Favorites page and all of its cells.
+[**DeletePageCell**](V1ItemsApi.md#deletepagecell) | **DELETE** /v1/{location_id}/pages/{page_id}/cells | Deletes a cell from a Favorites page in Square Register.
+[**DeleteVariation**](V1ItemsApi.md#deletevariation) | **DELETE** /v1/{location_id}/items/{item_id}/variations/{variation_id} | Deletes an existing item variation from an item.
+[**ListCategories**](V1ItemsApi.md#listcategories) | **GET** /v1/{location_id}/categories | Lists all of a location&#39;s item categories.
+[**ListDiscounts**](V1ItemsApi.md#listdiscounts) | **GET** /v1/{location_id}/discounts | Lists all of a location&#39;s discounts.
+[**ListFees**](V1ItemsApi.md#listfees) | **GET** /v1/{location_id}/fees | Lists all of a location&#39;s fees (taxes).
+[**ListInventory**](V1ItemsApi.md#listinventory) | **GET** /v1/{location_id}/inventory | Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+[**ListItems**](V1ItemsApi.md#listitems) | **GET** /v1/{location_id}/items | Provides summary information for all of a location&#39;s items.
+[**ListModifierLists**](V1ItemsApi.md#listmodifierlists) | **GET** /v1/{location_id}/modifier-lists | Lists all of a location&#39;s modifier lists.
+[**ListPages**](V1ItemsApi.md#listpages) | **GET** /v1/{location_id}/pages | Lists all of a location&#39;s Favorites pages in Square Register.
+[**RemoveFee**](V1ItemsApi.md#removefee) | **DELETE** /v1/{location_id}/items/{item_id}/fees/{fee_id} | Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+[**RemoveModifierList**](V1ItemsApi.md#removemodifierlist) | **DELETE** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+[**RetrieveItem**](V1ItemsApi.md#retrieveitem) | **GET** /v1/{location_id}/items/{item_id} | Provides the details for a single item, including associated modifier lists and fees.
+[**RetrieveModifierList**](V1ItemsApi.md#retrievemodifierlist) | **GET** /v1/{location_id}/modifier-lists/{modifier_list_id} | Provides the details for a single modifier list.
+[**UpdateCategory**](V1ItemsApi.md#updatecategory) | **PUT** /v1/{location_id}/categories/{category_id} | Modifies the details of an existing item category.
+[**UpdateDiscount**](V1ItemsApi.md#updatediscount) | **PUT** /v1/{location_id}/discounts/{discount_id} | Modifies the details of an existing discount.
+[**UpdateFee**](V1ItemsApi.md#updatefee) | **PUT** /v1/{location_id}/fees/{fee_id} | Modifies the details of an existing fee (tax).
+[**UpdateItem**](V1ItemsApi.md#updateitem) | **PUT** /v1/{location_id}/items/{item_id} | Modifies the core details of an existing item.
+[**UpdateModifierList**](V1ItemsApi.md#updatemodifierlist) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id} | Modifies the details of an existing item modifier list.
+[**UpdateModifierOption**](V1ItemsApi.md#updatemodifieroption) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | Modifies the details of an existing item modifier option.
+[**UpdatePage**](V1ItemsApi.md#updatepage) | **PUT** /v1/{location_id}/pages/{page_id} | Modifies the details of a Favorites page in Square Register.
+[**UpdatePageCell**](V1ItemsApi.md#updatepagecell) | **PUT** /v1/{location_id}/pages/{page_id}/cells | Modifies a cell of a Favorites page in Square Register.
+[**UpdateVariation**](V1ItemsApi.md#updatevariation) | **PUT** /v1/{location_id}/items/{item_id}/variations/{variation_id} | Modifies the details of an existing item variation.
 
 
-<a name="v1adjustinventory"></a>
-# **V1AdjustInventory**
-> V1InventoryEntry V1AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body)
+<a name="adjustinventory"></a>
+# **AdjustInventory**
+> V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body)
 
 Adjusts an item variation's current available inventory.
 
@@ -64,7 +64,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1AdjustInventoryExample
+    public class AdjustInventoryExample
     {
         public void main()
         {
@@ -72,7 +72,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var variationId = variationId_example;  // string | The ID of the variation to adjust inventory information for.
             var body = new V1AdjustInventoryRequest(); // V1AdjustInventoryRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -80,12 +80,12 @@ namespace Example
             try
             {
                 // Adjusts an item variation's current available inventory.
-                V1InventoryEntry result = apiInstance.V1AdjustInventory(locationId, variationId, body);
+                V1InventoryEntry result = apiInstance.AdjustInventory(locationId, variationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1AdjustInventory: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.AdjustInventory: " + e.Message );
             }
         }
     }
@@ -115,9 +115,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1applyfee"></a>
-# **V1ApplyFee**
-> V1Item V1ApplyFee (string locationId, string itemId, string feeId)
+<a name="applyfee"></a>
+# **ApplyFee**
+> V1Item ApplyFee (string locationId, string itemId, string feeId)
 
 Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
 
@@ -133,7 +133,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ApplyFeeExample
+    public class ApplyFeeExample
     {
         public void main()
         {
@@ -141,7 +141,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the fee's associated location.
             var itemId = itemId_example;  // string | The ID of the item to add the fee to.
             var feeId = feeId_example;  // string | The ID of the fee to apply.
@@ -149,12 +149,12 @@ namespace Example
             try
             {
                 // Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
-                V1Item result = apiInstance.V1ApplyFee(locationId, itemId, feeId);
+                V1Item result = apiInstance.ApplyFee(locationId, itemId, feeId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ApplyFee: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ApplyFee: " + e.Message );
             }
         }
     }
@@ -184,9 +184,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1applymodifierlist"></a>
-# **V1ApplyModifierList**
-> V1Item V1ApplyModifierList (string locationId, string modifierListId, string itemId)
+<a name="applymodifierlist"></a>
+# **ApplyModifierList**
+> V1Item ApplyModifierList (string locationId, string modifierListId, string itemId)
 
 Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
 
@@ -202,7 +202,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ApplyModifierListExample
+    public class ApplyModifierListExample
     {
         public void main()
         {
@@ -210,7 +210,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The ID of the modifier list to apply.
             var itemId = itemId_example;  // string | The ID of the item to add the modifier list to.
@@ -218,12 +218,12 @@ namespace Example
             try
             {
                 // Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
-                V1Item result = apiInstance.V1ApplyModifierList(locationId, modifierListId, itemId);
+                V1Item result = apiInstance.ApplyModifierList(locationId, modifierListId, itemId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ApplyModifierList: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ApplyModifierList: " + e.Message );
             }
         }
     }
@@ -253,9 +253,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1createcategory"></a>
-# **V1CreateCategory**
-> V1Category V1CreateCategory (string locationId, V1Category body)
+<a name="createcategory"></a>
+# **CreateCategory**
+> V1Category CreateCategory (string locationId, V1Category body)
 
 Creates an item category.
 
@@ -271,7 +271,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateCategoryExample
+    public class CreateCategoryExample
     {
         public void main()
         {
@@ -279,19 +279,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create an item for.
             var body = new V1Category(); // V1Category | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
                 // Creates an item category.
-                V1Category result = apiInstance.V1CreateCategory(locationId, body);
+                V1Category result = apiInstance.CreateCategory(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreateCategory: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreateCategory: " + e.Message );
             }
         }
     }
@@ -320,9 +320,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1creatediscount"></a>
-# **V1CreateDiscount**
-> V1Discount V1CreateDiscount (string locationId, V1Discount body)
+<a name="creatediscount"></a>
+# **CreateDiscount**
+> V1Discount CreateDiscount (string locationId, V1Discount body)
 
 Creates a discount.
 
@@ -338,7 +338,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateDiscountExample
+    public class CreateDiscountExample
     {
         public void main()
         {
@@ -346,19 +346,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create an item for.
             var body = new V1Discount(); // V1Discount | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
                 // Creates a discount.
-                V1Discount result = apiInstance.V1CreateDiscount(locationId, body);
+                V1Discount result = apiInstance.CreateDiscount(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreateDiscount: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreateDiscount: " + e.Message );
             }
         }
     }
@@ -387,9 +387,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1createfee"></a>
-# **V1CreateFee**
-> V1Fee V1CreateFee (string locationId, V1Fee body)
+<a name="createfee"></a>
+# **CreateFee**
+> V1Fee CreateFee (string locationId, V1Fee body)
 
 Creates a fee (tax).
 
@@ -405,7 +405,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateFeeExample
+    public class CreateFeeExample
     {
         public void main()
         {
@@ -413,19 +413,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create a fee for.
             var body = new V1Fee(); // V1Fee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
                 // Creates a fee (tax).
-                V1Fee result = apiInstance.V1CreateFee(locationId, body);
+                V1Fee result = apiInstance.CreateFee(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreateFee: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreateFee: " + e.Message );
             }
         }
     }
@@ -454,9 +454,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1createitem"></a>
-# **V1CreateItem**
-> V1Item V1CreateItem (string locationId, V1Item body)
+<a name="createitem"></a>
+# **CreateItem**
+> V1Item CreateItem (string locationId, V1Item body)
 
 Creates an item and at least one variation for it.
 
@@ -472,7 +472,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateItemExample
+    public class CreateItemExample
     {
         public void main()
         {
@@ -480,19 +480,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create an item for.
             var body = new V1Item(); // V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
                 // Creates an item and at least one variation for it.
-                V1Item result = apiInstance.V1CreateItem(locationId, body);
+                V1Item result = apiInstance.CreateItem(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreateItem: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreateItem: " + e.Message );
             }
         }
     }
@@ -521,9 +521,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1createmodifierlist"></a>
-# **V1CreateModifierList**
-> V1ModifierList V1CreateModifierList (string locationId, V1ModifierList body)
+<a name="createmodifierlist"></a>
+# **CreateModifierList**
+> V1ModifierList CreateModifierList (string locationId, V1ModifierList body)
 
 Creates an item modifier list and at least one modifier option for it.
 
@@ -539,7 +539,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateModifierListExample
+    public class CreateModifierListExample
     {
         public void main()
         {
@@ -547,19 +547,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create a modifier list for.
             var body = new V1ModifierList(); // V1ModifierList | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
                 // Creates an item modifier list and at least one modifier option for it.
-                V1ModifierList result = apiInstance.V1CreateModifierList(locationId, body);
+                V1ModifierList result = apiInstance.CreateModifierList(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreateModifierList: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreateModifierList: " + e.Message );
             }
         }
     }
@@ -588,9 +588,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1createmodifieroption"></a>
-# **V1CreateModifierOption**
-> V1ModifierOption V1CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body)
+<a name="createmodifieroption"></a>
+# **CreateModifierOption**
+> V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body)
 
 Creates an item modifier option and adds it to a modifier list.
 
@@ -606,7 +606,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateModifierOptionExample
+    public class CreateModifierOptionExample
     {
         public void main()
         {
@@ -614,7 +614,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The ID of the modifier list to edit.
             var body = new V1ModifierOption(); // V1ModifierOption | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -622,12 +622,12 @@ namespace Example
             try
             {
                 // Creates an item modifier option and adds it to a modifier list.
-                V1ModifierOption result = apiInstance.V1CreateModifierOption(locationId, modifierListId, body);
+                V1ModifierOption result = apiInstance.CreateModifierOption(locationId, modifierListId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreateModifierOption: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreateModifierOption: " + e.Message );
             }
         }
     }
@@ -657,9 +657,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1createpage"></a>
-# **V1CreatePage**
-> V1Page V1CreatePage (string locationId, V1Page body)
+<a name="createpage"></a>
+# **CreatePage**
+> V1Page CreatePage (string locationId, V1Page body)
 
 Creates a Favorites page in Square Register.
 
@@ -675,7 +675,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreatePageExample
+    public class CreatePageExample
     {
         public void main()
         {
@@ -683,19 +683,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create an item for.
             var body = new V1Page(); // V1Page | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
                 // Creates a Favorites page in Square Register.
-                V1Page result = apiInstance.V1CreatePage(locationId, body);
+                V1Page result = apiInstance.CreatePage(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreatePage: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreatePage: " + e.Message );
             }
         }
     }
@@ -724,9 +724,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1createvariation"></a>
-# **V1CreateVariation**
-> V1Variation V1CreateVariation (string locationId, string itemId, V1Variation body)
+<a name="createvariation"></a>
+# **CreateVariation**
+> V1Variation CreateVariation (string locationId, string itemId, V1Variation body)
 
 Creates an item variation for an existing item.
 
@@ -742,7 +742,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1CreateVariationExample
+    public class CreateVariationExample
     {
         public void main()
         {
@@ -750,7 +750,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var itemId = itemId_example;  // string | The item's ID.
             var body = new V1Variation(); // V1Variation | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -758,12 +758,12 @@ namespace Example
             try
             {
                 // Creates an item variation for an existing item.
-                V1Variation result = apiInstance.V1CreateVariation(locationId, itemId, body);
+                V1Variation result = apiInstance.CreateVariation(locationId, itemId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1CreateVariation: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.CreateVariation: " + e.Message );
             }
         }
     }
@@ -793,9 +793,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletecategory"></a>
-# **V1DeleteCategory**
-> V1Category V1DeleteCategory (string locationId, string categoryId)
+<a name="deletecategory"></a>
+# **DeleteCategory**
+> V1Category DeleteCategory (string locationId, string categoryId)
 
 Deletes an existing item category.
 
@@ -811,7 +811,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeleteCategoryExample
+    public class DeleteCategoryExample
     {
         public void main()
         {
@@ -819,19 +819,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var categoryId = categoryId_example;  // string | The ID of the category to delete.
 
             try
             {
                 // Deletes an existing item category.
-                V1Category result = apiInstance.V1DeleteCategory(locationId, categoryId);
+                V1Category result = apiInstance.DeleteCategory(locationId, categoryId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeleteCategory: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeleteCategory: " + e.Message );
             }
         }
     }
@@ -860,9 +860,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletediscount"></a>
-# **V1DeleteDiscount**
-> V1Discount V1DeleteDiscount (string locationId, string discountId)
+<a name="deletediscount"></a>
+# **DeleteDiscount**
+> V1Discount DeleteDiscount (string locationId, string discountId)
 
 Deletes an existing discount.
 
@@ -878,7 +878,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeleteDiscountExample
+    public class DeleteDiscountExample
     {
         public void main()
         {
@@ -886,19 +886,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var discountId = discountId_example;  // string | The ID of the discount to delete.
 
             try
             {
                 // Deletes an existing discount.
-                V1Discount result = apiInstance.V1DeleteDiscount(locationId, discountId);
+                V1Discount result = apiInstance.DeleteDiscount(locationId, discountId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeleteDiscount: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeleteDiscount: " + e.Message );
             }
         }
     }
@@ -927,9 +927,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletefee"></a>
-# **V1DeleteFee**
-> V1Fee V1DeleteFee (string locationId, string feeId)
+<a name="deletefee"></a>
+# **DeleteFee**
+> V1Fee DeleteFee (string locationId, string feeId)
 
 Deletes an existing fee (tax).
 
@@ -945,7 +945,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeleteFeeExample
+    public class DeleteFeeExample
     {
         public void main()
         {
@@ -953,19 +953,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the fee's associated location.
             var feeId = feeId_example;  // string | The ID of the fee to delete.
 
             try
             {
                 // Deletes an existing fee (tax).
-                V1Fee result = apiInstance.V1DeleteFee(locationId, feeId);
+                V1Fee result = apiInstance.DeleteFee(locationId, feeId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeleteFee: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeleteFee: " + e.Message );
             }
         }
     }
@@ -994,9 +994,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deleteitem"></a>
-# **V1DeleteItem**
-> V1Item V1DeleteItem (string locationId, string itemId)
+<a name="deleteitem"></a>
+# **DeleteItem**
+> V1Item DeleteItem (string locationId, string itemId)
 
 Deletes an existing item and all item variations associated with it.
 
@@ -1012,7 +1012,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeleteItemExample
+    public class DeleteItemExample
     {
         public void main()
         {
@@ -1020,19 +1020,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var itemId = itemId_example;  // string | The ID of the item to modify.
 
             try
             {
                 // Deletes an existing item and all item variations associated with it.
-                V1Item result = apiInstance.V1DeleteItem(locationId, itemId);
+                V1Item result = apiInstance.DeleteItem(locationId, itemId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeleteItem: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeleteItem: " + e.Message );
             }
         }
     }
@@ -1061,9 +1061,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletemodifierlist"></a>
-# **V1DeleteModifierList**
-> V1ModifierList V1DeleteModifierList (string locationId, string modifierListId)
+<a name="deletemodifierlist"></a>
+# **DeleteModifierList**
+> V1ModifierList DeleteModifierList (string locationId, string modifierListId)
 
 Deletes an existing item modifier list and all modifier options associated with it.
 
@@ -1079,7 +1079,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeleteModifierListExample
+    public class DeleteModifierListExample
     {
         public void main()
         {
@@ -1087,19 +1087,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The ID of the modifier list to delete.
 
             try
             {
                 // Deletes an existing item modifier list and all modifier options associated with it.
-                V1ModifierList result = apiInstance.V1DeleteModifierList(locationId, modifierListId);
+                V1ModifierList result = apiInstance.DeleteModifierList(locationId, modifierListId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeleteModifierList: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeleteModifierList: " + e.Message );
             }
         }
     }
@@ -1128,9 +1128,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletemodifieroption"></a>
-# **V1DeleteModifierOption**
-> V1ModifierOption V1DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId)
+<a name="deletemodifieroption"></a>
+# **DeleteModifierOption**
+> V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId)
 
 Deletes an existing item modifier option from a modifier list.
 
@@ -1146,7 +1146,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeleteModifierOptionExample
+    public class DeleteModifierOptionExample
     {
         public void main()
         {
@@ -1154,7 +1154,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The ID of the modifier list to delete.
             var modifierOptionId = modifierOptionId_example;  // string | The ID of the modifier list to edit.
@@ -1162,12 +1162,12 @@ namespace Example
             try
             {
                 // Deletes an existing item modifier option from a modifier list.
-                V1ModifierOption result = apiInstance.V1DeleteModifierOption(locationId, modifierListId, modifierOptionId);
+                V1ModifierOption result = apiInstance.DeleteModifierOption(locationId, modifierListId, modifierOptionId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeleteModifierOption: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeleteModifierOption: " + e.Message );
             }
         }
     }
@@ -1197,9 +1197,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletepage"></a>
-# **V1DeletePage**
-> V1Page V1DeletePage (string locationId, string pageId)
+<a name="deletepage"></a>
+# **DeletePage**
+> V1Page DeletePage (string locationId, string pageId)
 
 Deletes an existing Favorites page and all of its cells.
 
@@ -1215,7 +1215,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeletePageExample
+    public class DeletePageExample
     {
         public void main()
         {
@@ -1223,19 +1223,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the Favorites page's associated location.
             var pageId = pageId_example;  // string | The ID of the page to delete.
 
             try
             {
                 // Deletes an existing Favorites page and all of its cells.
-                V1Page result = apiInstance.V1DeletePage(locationId, pageId);
+                V1Page result = apiInstance.DeletePage(locationId, pageId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeletePage: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeletePage: " + e.Message );
             }
         }
     }
@@ -1264,9 +1264,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletepagecell"></a>
-# **V1DeletePageCell**
-> V1Page V1DeletePageCell (string locationId, string pageId, string row = null, string column = null)
+<a name="deletepagecell"></a>
+# **DeletePageCell**
+> V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null)
 
 Deletes a cell from a Favorites page in Square Register.
 
@@ -1282,7 +1282,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeletePageCellExample
+    public class DeletePageCellExample
     {
         public void main()
         {
@@ -1290,7 +1290,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the Favorites page's associated location.
             var pageId = pageId_example;  // string | The ID of the page to delete.
             var row = row_example;  // string | The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional) 
@@ -1299,12 +1299,12 @@ namespace Example
             try
             {
                 // Deletes a cell from a Favorites page in Square Register.
-                V1Page result = apiInstance.V1DeletePageCell(locationId, pageId, row, column);
+                V1Page result = apiInstance.DeletePageCell(locationId, pageId, row, column);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeletePageCell: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeletePageCell: " + e.Message );
             }
         }
     }
@@ -1335,9 +1335,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1deletevariation"></a>
-# **V1DeleteVariation**
-> V1Variation V1DeleteVariation (string locationId, string itemId, string variationId)
+<a name="deletevariation"></a>
+# **DeleteVariation**
+> V1Variation DeleteVariation (string locationId, string itemId, string variationId)
 
 Deletes an existing item variation from an item.
 
@@ -1353,7 +1353,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1DeleteVariationExample
+    public class DeleteVariationExample
     {
         public void main()
         {
@@ -1361,7 +1361,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var itemId = itemId_example;  // string | The ID of the item to delete.
             var variationId = variationId_example;  // string | The ID of the variation to delete.
@@ -1369,12 +1369,12 @@ namespace Example
             try
             {
                 // Deletes an existing item variation from an item.
-                V1Variation result = apiInstance.V1DeleteVariation(locationId, itemId, variationId);
+                V1Variation result = apiInstance.DeleteVariation(locationId, itemId, variationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1DeleteVariation: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.DeleteVariation: " + e.Message );
             }
         }
     }
@@ -1404,9 +1404,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listcategories"></a>
-# **V1ListCategories**
-> List<V1Category> V1ListCategories (string locationId)
+<a name="listcategories"></a>
+# **ListCategories**
+> List<V1Category> ListCategories (string locationId)
 
 Lists all of a location's item categories.
 
@@ -1422,7 +1422,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListCategoriesExample
+    public class ListCategoriesExample
     {
         public void main()
         {
@@ -1430,18 +1430,18 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to list categories for.
 
             try
             {
                 // Lists all of a location's item categories.
-                List&lt;V1Category&gt; result = apiInstance.V1ListCategories(locationId);
+                List&lt;V1Category&gt; result = apiInstance.ListCategories(locationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ListCategories: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ListCategories: " + e.Message );
             }
         }
     }
@@ -1469,9 +1469,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listdiscounts"></a>
-# **V1ListDiscounts**
-> List<V1Discount> V1ListDiscounts (string locationId)
+<a name="listdiscounts"></a>
+# **ListDiscounts**
+> List<V1Discount> ListDiscounts (string locationId)
 
 Lists all of a location's discounts.
 
@@ -1487,7 +1487,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListDiscountsExample
+    public class ListDiscountsExample
     {
         public void main()
         {
@@ -1495,18 +1495,18 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to list categories for.
 
             try
             {
                 // Lists all of a location's discounts.
-                List&lt;V1Discount&gt; result = apiInstance.V1ListDiscounts(locationId);
+                List&lt;V1Discount&gt; result = apiInstance.ListDiscounts(locationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ListDiscounts: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ListDiscounts: " + e.Message );
             }
         }
     }
@@ -1534,9 +1534,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listfees"></a>
-# **V1ListFees**
-> List<V1Fee> V1ListFees (string locationId)
+<a name="listfees"></a>
+# **ListFees**
+> List<V1Fee> ListFees (string locationId)
 
 Lists all of a location's fees (taxes).
 
@@ -1552,7 +1552,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListFeesExample
+    public class ListFeesExample
     {
         public void main()
         {
@@ -1560,18 +1560,18 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to list fees for.
 
             try
             {
                 // Lists all of a location's fees (taxes).
-                List&lt;V1Fee&gt; result = apiInstance.V1ListFees(locationId);
+                List&lt;V1Fee&gt; result = apiInstance.ListFees(locationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ListFees: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ListFees: " + e.Message );
             }
         }
     }
@@ -1599,9 +1599,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listinventory"></a>
-# **V1ListInventory**
-> List<V1InventoryEntry> V1ListInventory (string locationId, int? limit = null)
+<a name="listinventory"></a>
+# **ListInventory**
+> List<V1InventoryEntry> ListInventory (string locationId, int? limit = null)
 
 Provides inventory information for all of a merchant's inventory-enabled item variations.
 
@@ -1617,7 +1617,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListInventoryExample
+    public class ListInventoryExample
     {
         public void main()
         {
@@ -1625,19 +1625,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var limit = 56;  // int? | The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional) 
 
             try
             {
                 // Provides inventory information for all of a merchant's inventory-enabled item variations.
-                List&lt;V1InventoryEntry&gt; result = apiInstance.V1ListInventory(locationId, limit);
+                List&lt;V1InventoryEntry&gt; result = apiInstance.ListInventory(locationId, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ListInventory: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ListInventory: " + e.Message );
             }
         }
     }
@@ -1666,9 +1666,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listitems"></a>
-# **V1ListItems**
-> List<V1Item> V1ListItems (string locationId)
+<a name="listitems"></a>
+# **ListItems**
+> List<V1Item> ListItems (string locationId)
 
 Provides summary information for all of a location's items.
 
@@ -1684,7 +1684,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListItemsExample
+    public class ListItemsExample
     {
         public void main()
         {
@@ -1692,18 +1692,18 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to list items for.
 
             try
             {
                 // Provides summary information for all of a location's items.
-                List&lt;V1Item&gt; result = apiInstance.V1ListItems(locationId);
+                List&lt;V1Item&gt; result = apiInstance.ListItems(locationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ListItems: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ListItems: " + e.Message );
             }
         }
     }
@@ -1731,9 +1731,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listmodifierlists"></a>
-# **V1ListModifierLists**
-> List<V1ModifierList> V1ListModifierLists (string locationId)
+<a name="listmodifierlists"></a>
+# **ListModifierLists**
+> List<V1ModifierList> ListModifierLists (string locationId)
 
 Lists all of a location's modifier lists.
 
@@ -1749,7 +1749,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListModifierListsExample
+    public class ListModifierListsExample
     {
         public void main()
         {
@@ -1757,18 +1757,18 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to list modifier lists for.
 
             try
             {
                 // Lists all of a location's modifier lists.
-                List&lt;V1ModifierList&gt; result = apiInstance.V1ListModifierLists(locationId);
+                List&lt;V1ModifierList&gt; result = apiInstance.ListModifierLists(locationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ListModifierLists: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ListModifierLists: " + e.Message );
             }
         }
     }
@@ -1796,9 +1796,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1listpages"></a>
-# **V1ListPages**
-> List<V1Page> V1ListPages (string locationId)
+<a name="listpages"></a>
+# **ListPages**
+> List<V1Page> ListPages (string locationId)
 
 Lists all of a location's Favorites pages in Square Register.
 
@@ -1814,7 +1814,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1ListPagesExample
+    public class ListPagesExample
     {
         public void main()
         {
@@ -1822,18 +1822,18 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to list Favorites pages for.
 
             try
             {
                 // Lists all of a location's Favorites pages in Square Register.
-                List&lt;V1Page&gt; result = apiInstance.V1ListPages(locationId);
+                List&lt;V1Page&gt; result = apiInstance.ListPages(locationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1ListPages: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.ListPages: " + e.Message );
             }
         }
     }
@@ -1861,9 +1861,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1removefee"></a>
-# **V1RemoveFee**
-> V1Item V1RemoveFee (string locationId, string itemId, string feeId)
+<a name="removefee"></a>
+# **RemoveFee**
+> V1Item RemoveFee (string locationId, string itemId, string feeId)
 
 Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
 
@@ -1879,7 +1879,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1RemoveFeeExample
+    public class RemoveFeeExample
     {
         public void main()
         {
@@ -1887,7 +1887,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the fee's associated location.
             var itemId = itemId_example;  // string | The ID of the item to add the fee to.
             var feeId = feeId_example;  // string | The ID of the fee to apply.
@@ -1895,12 +1895,12 @@ namespace Example
             try
             {
                 // Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
-                V1Item result = apiInstance.V1RemoveFee(locationId, itemId, feeId);
+                V1Item result = apiInstance.RemoveFee(locationId, itemId, feeId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1RemoveFee: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.RemoveFee: " + e.Message );
             }
         }
     }
@@ -1930,9 +1930,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1removemodifierlist"></a>
-# **V1RemoveModifierList**
-> V1Item V1RemoveModifierList (string locationId, string modifierListId, string itemId)
+<a name="removemodifierlist"></a>
+# **RemoveModifierList**
+> V1Item RemoveModifierList (string locationId, string modifierListId, string itemId)
 
 Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
 
@@ -1948,7 +1948,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1RemoveModifierListExample
+    public class RemoveModifierListExample
     {
         public void main()
         {
@@ -1956,7 +1956,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The ID of the modifier list to remove.
             var itemId = itemId_example;  // string | The ID of the item to remove the modifier list from.
@@ -1964,12 +1964,12 @@ namespace Example
             try
             {
                 // Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
-                V1Item result = apiInstance.V1RemoveModifierList(locationId, modifierListId, itemId);
+                V1Item result = apiInstance.RemoveModifierList(locationId, modifierListId, itemId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1RemoveModifierList: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.RemoveModifierList: " + e.Message );
             }
         }
     }
@@ -1999,9 +1999,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1retrieveitem"></a>
-# **V1RetrieveItem**
-> V1Item V1RetrieveItem (string locationId, string itemId)
+<a name="retrieveitem"></a>
+# **RetrieveItem**
+> V1Item RetrieveItem (string locationId, string itemId)
 
 Provides the details for a single item, including associated modifier lists and fees.
 
@@ -2017,7 +2017,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1RetrieveItemExample
+    public class RetrieveItemExample
     {
         public void main()
         {
@@ -2025,19 +2025,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var itemId = itemId_example;  // string | The item's ID.
 
             try
             {
                 // Provides the details for a single item, including associated modifier lists and fees.
-                V1Item result = apiInstance.V1RetrieveItem(locationId, itemId);
+                V1Item result = apiInstance.RetrieveItem(locationId, itemId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1RetrieveItem: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.RetrieveItem: " + e.Message );
             }
         }
     }
@@ -2066,9 +2066,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1retrievemodifierlist"></a>
-# **V1RetrieveModifierList**
-> V1ModifierList V1RetrieveModifierList (string locationId, string modifierListId)
+<a name="retrievemodifierlist"></a>
+# **RetrieveModifierList**
+> V1ModifierList RetrieveModifierList (string locationId, string modifierListId)
 
 Provides the details for a single modifier list.
 
@@ -2084,7 +2084,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1RetrieveModifierListExample
+    public class RetrieveModifierListExample
     {
         public void main()
         {
@@ -2092,19 +2092,19 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The modifier list's ID.
 
             try
             {
                 // Provides the details for a single modifier list.
-                V1ModifierList result = apiInstance.V1RetrieveModifierList(locationId, modifierListId);
+                V1ModifierList result = apiInstance.RetrieveModifierList(locationId, modifierListId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1RetrieveModifierList: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.RetrieveModifierList: " + e.Message );
             }
         }
     }
@@ -2133,9 +2133,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatecategory"></a>
-# **V1UpdateCategory**
-> V1Category V1UpdateCategory (string locationId, string categoryId, V1Category body)
+<a name="updatecategory"></a>
+# **UpdateCategory**
+> V1Category UpdateCategory (string locationId, string categoryId, V1Category body)
 
 Modifies the details of an existing item category.
 
@@ -2151,7 +2151,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdateCategoryExample
+    public class UpdateCategoryExample
     {
         public void main()
         {
@@ -2159,7 +2159,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the category's associated location.
             var categoryId = categoryId_example;  // string | The ID of the category to edit.
             var body = new V1Category(); // V1Category | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -2167,12 +2167,12 @@ namespace Example
             try
             {
                 // Modifies the details of an existing item category.
-                V1Category result = apiInstance.V1UpdateCategory(locationId, categoryId, body);
+                V1Category result = apiInstance.UpdateCategory(locationId, categoryId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdateCategory: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdateCategory: " + e.Message );
             }
         }
     }
@@ -2202,9 +2202,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatediscount"></a>
-# **V1UpdateDiscount**
-> V1Discount V1UpdateDiscount (string locationId, string discountId, V1Discount body)
+<a name="updatediscount"></a>
+# **UpdateDiscount**
+> V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body)
 
 Modifies the details of an existing discount.
 
@@ -2220,7 +2220,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdateDiscountExample
+    public class UpdateDiscountExample
     {
         public void main()
         {
@@ -2228,7 +2228,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the category's associated location.
             var discountId = discountId_example;  // string | The ID of the discount to edit.
             var body = new V1Discount(); // V1Discount | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -2236,12 +2236,12 @@ namespace Example
             try
             {
                 // Modifies the details of an existing discount.
-                V1Discount result = apiInstance.V1UpdateDiscount(locationId, discountId, body);
+                V1Discount result = apiInstance.UpdateDiscount(locationId, discountId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdateDiscount: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdateDiscount: " + e.Message );
             }
         }
     }
@@ -2271,9 +2271,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatefee"></a>
-# **V1UpdateFee**
-> V1Fee V1UpdateFee (string locationId, string feeId, V1Fee body)
+<a name="updatefee"></a>
+# **UpdateFee**
+> V1Fee UpdateFee (string locationId, string feeId, V1Fee body)
 
 Modifies the details of an existing fee (tax).
 
@@ -2289,7 +2289,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdateFeeExample
+    public class UpdateFeeExample
     {
         public void main()
         {
@@ -2297,7 +2297,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the fee's associated location.
             var feeId = feeId_example;  // string | The ID of the fee to edit.
             var body = new V1Fee(); // V1Fee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -2305,12 +2305,12 @@ namespace Example
             try
             {
                 // Modifies the details of an existing fee (tax).
-                V1Fee result = apiInstance.V1UpdateFee(locationId, feeId, body);
+                V1Fee result = apiInstance.UpdateFee(locationId, feeId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdateFee: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdateFee: " + e.Message );
             }
         }
     }
@@ -2340,9 +2340,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updateitem"></a>
-# **V1UpdateItem**
-> V1Item V1UpdateItem (string locationId, string itemId, V1Item body)
+<a name="updateitem"></a>
+# **UpdateItem**
+> V1Item UpdateItem (string locationId, string itemId, V1Item body)
 
 Modifies the core details of an existing item.
 
@@ -2358,7 +2358,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdateItemExample
+    public class UpdateItemExample
     {
         public void main()
         {
@@ -2366,7 +2366,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var itemId = itemId_example;  // string | The ID of the item to modify.
             var body = new V1Item(); // V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -2374,12 +2374,12 @@ namespace Example
             try
             {
                 // Modifies the core details of an existing item.
-                V1Item result = apiInstance.V1UpdateItem(locationId, itemId, body);
+                V1Item result = apiInstance.UpdateItem(locationId, itemId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdateItem: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdateItem: " + e.Message );
             }
         }
     }
@@ -2409,9 +2409,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatemodifierlist"></a>
-# **V1UpdateModifierList**
-> V1ModifierList V1UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body)
+<a name="updatemodifierlist"></a>
+# **UpdateModifierList**
+> V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body)
 
 Modifies the details of an existing item modifier list.
 
@@ -2427,7 +2427,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdateModifierListExample
+    public class UpdateModifierListExample
     {
         public void main()
         {
@@ -2435,7 +2435,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The ID of the modifier list to edit.
             var body = new V1UpdateModifierListRequest(); // V1UpdateModifierListRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -2443,12 +2443,12 @@ namespace Example
             try
             {
                 // Modifies the details of an existing item modifier list.
-                V1ModifierList result = apiInstance.V1UpdateModifierList(locationId, modifierListId, body);
+                V1ModifierList result = apiInstance.UpdateModifierList(locationId, modifierListId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdateModifierList: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdateModifierList: " + e.Message );
             }
         }
     }
@@ -2478,9 +2478,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatemodifieroption"></a>
-# **V1UpdateModifierOption**
-> V1ModifierOption V1UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
+<a name="updatemodifieroption"></a>
+# **UpdateModifierOption**
+> V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
 
 Modifies the details of an existing item modifier option.
 
@@ -2496,7 +2496,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdateModifierOptionExample
+    public class UpdateModifierOptionExample
     {
         public void main()
         {
@@ -2504,7 +2504,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var modifierListId = modifierListId_example;  // string | The ID of the modifier list to edit.
             var modifierOptionId = modifierOptionId_example;  // string | The ID of the modifier list to edit.
@@ -2513,12 +2513,12 @@ namespace Example
             try
             {
                 // Modifies the details of an existing item modifier option.
-                V1ModifierOption result = apiInstance.V1UpdateModifierOption(locationId, modifierListId, modifierOptionId, body);
+                V1ModifierOption result = apiInstance.UpdateModifierOption(locationId, modifierListId, modifierOptionId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdateModifierOption: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdateModifierOption: " + e.Message );
             }
         }
     }
@@ -2549,9 +2549,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatepage"></a>
-# **V1UpdatePage**
-> V1Page V1UpdatePage (string locationId, string pageId, V1Page body)
+<a name="updatepage"></a>
+# **UpdatePage**
+> V1Page UpdatePage (string locationId, string pageId, V1Page body)
 
 Modifies the details of a Favorites page in Square Register.
 
@@ -2567,7 +2567,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdatePageExample
+    public class UpdatePageExample
     {
         public void main()
         {
@@ -2575,7 +2575,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the Favorites page's associated location
             var pageId = pageId_example;  // string | The ID of the page to modify.
             var body = new V1Page(); // V1Page | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -2583,12 +2583,12 @@ namespace Example
             try
             {
                 // Modifies the details of a Favorites page in Square Register.
-                V1Page result = apiInstance.V1UpdatePage(locationId, pageId, body);
+                V1Page result = apiInstance.UpdatePage(locationId, pageId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdatePage: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdatePage: " + e.Message );
             }
         }
     }
@@ -2618,9 +2618,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatepagecell"></a>
-# **V1UpdatePageCell**
-> V1Page V1UpdatePageCell (string locationId, string pageId, V1PageCell body)
+<a name="updatepagecell"></a>
+# **UpdatePageCell**
+> V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body)
 
 Modifies a cell of a Favorites page in Square Register.
 
@@ -2636,7 +2636,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdatePageCellExample
+    public class UpdatePageCellExample
     {
         public void main()
         {
@@ -2644,7 +2644,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the Favorites page's associated location.
             var pageId = pageId_example;  // string | The ID of the page the cell belongs to.
             var body = new V1PageCell(); // V1PageCell | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
@@ -2652,12 +2652,12 @@ namespace Example
             try
             {
                 // Modifies a cell of a Favorites page in Square Register.
-                V1Page result = apiInstance.V1UpdatePageCell(locationId, pageId, body);
+                V1Page result = apiInstance.UpdatePageCell(locationId, pageId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdatePageCell: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdatePageCell: " + e.Message );
             }
         }
     }
@@ -2687,9 +2687,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="v1updatevariation"></a>
-# **V1UpdateVariation**
-> V1Variation V1UpdateVariation (string locationId, string itemId, string variationId, V1Variation body)
+<a name="updatevariation"></a>
+# **UpdateVariation**
+> V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body)
 
 Modifies the details of an existing item variation.
 
@@ -2705,7 +2705,7 @@ using Square.Connect.Model;
 
 namespace Example
 {
-    public class V1UpdateVariationExample
+    public class UpdateVariationExample
     {
         public void main()
         {
@@ -2713,7 +2713,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ItemsApi();
+            var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var itemId = itemId_example;  // string | The ID of the item to modify.
             var variationId = variationId_example;  // string | The ID of the variation to modify.
@@ -2722,12 +2722,12 @@ namespace Example
             try
             {
                 // Modifies the details of an existing item variation.
-                V1Variation result = apiInstance.V1UpdateVariation(locationId, itemId, variationId, body);
+                V1Variation result = apiInstance.UpdateVariation(locationId, itemId, variationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ItemsApi.V1UpdateVariation: " + e.Message );
+                Debug.Print("Exception when calling V1ItemsApi.UpdateVariation: " + e.Message );
             }
         }
     }

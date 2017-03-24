@@ -21,7 +21,7 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IItemsApi : IApiAccessor
+    public interface IV1ItemsApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -35,7 +35,7 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1InventoryEntry</returns>
-        V1InventoryEntry V1AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body);
+        V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body);
 
         /// <summary>
         /// Adjusts an item variation&#39;s current available inventory.
@@ -48,7 +48,7 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1InventoryEntry</returns>
-        ApiResponse<V1InventoryEntry> V1AdjustInventoryWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body);
+        ApiResponse<V1InventoryEntry> AdjustInventoryWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body);
         /// <summary>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>V1Item</returns>
-        V1Item V1ApplyFee (string locationId, string itemId, string feeId);
+        V1Item ApplyFee (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
@@ -73,7 +73,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1ApplyFeeWithHttpInfo (string locationId, string itemId, string feeId);
+        ApiResponse<V1Item> ApplyFeeWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
         /// </summary>
@@ -85,7 +85,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>V1Item</returns>
-        V1Item V1ApplyModifierList (string locationId, string modifierListId, string itemId);
+        V1Item ApplyModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
@@ -98,7 +98,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1ApplyModifierListWithHttpInfo (string locationId, string modifierListId, string itemId);
+        ApiResponse<V1Item> ApplyModifierListWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
         /// Creates an item category.
         /// </summary>
@@ -109,7 +109,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Category</returns>
-        V1Category V1CreateCategory (string locationId, V1Category body);
+        V1Category CreateCategory (string locationId, V1Category body);
 
         /// <summary>
         /// Creates an item category.
@@ -121,7 +121,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Category</returns>
-        ApiResponse<V1Category> V1CreateCategoryWithHttpInfo (string locationId, V1Category body);
+        ApiResponse<V1Category> CreateCategoryWithHttpInfo (string locationId, V1Category body);
         /// <summary>
         /// Creates a discount.
         /// </summary>
@@ -132,7 +132,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Discount</returns>
-        V1Discount V1CreateDiscount (string locationId, V1Discount body);
+        V1Discount CreateDiscount (string locationId, V1Discount body);
 
         /// <summary>
         /// Creates a discount.
@@ -144,7 +144,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Discount</returns>
-        ApiResponse<V1Discount> V1CreateDiscountWithHttpInfo (string locationId, V1Discount body);
+        ApiResponse<V1Discount> CreateDiscountWithHttpInfo (string locationId, V1Discount body);
         /// <summary>
         /// Creates a fee (tax).
         /// </summary>
@@ -155,7 +155,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Fee</returns>
-        V1Fee V1CreateFee (string locationId, V1Fee body);
+        V1Fee CreateFee (string locationId, V1Fee body);
 
         /// <summary>
         /// Creates a fee (tax).
@@ -167,7 +167,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Fee</returns>
-        ApiResponse<V1Fee> V1CreateFeeWithHttpInfo (string locationId, V1Fee body);
+        ApiResponse<V1Fee> CreateFeeWithHttpInfo (string locationId, V1Fee body);
         /// <summary>
         /// Creates an item and at least one variation for it.
         /// </summary>
@@ -178,7 +178,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Item</returns>
-        V1Item V1CreateItem (string locationId, V1Item body);
+        V1Item CreateItem (string locationId, V1Item body);
 
         /// <summary>
         /// Creates an item and at least one variation for it.
@@ -190,7 +190,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1CreateItemWithHttpInfo (string locationId, V1Item body);
+        ApiResponse<V1Item> CreateItemWithHttpInfo (string locationId, V1Item body);
         /// <summary>
         /// Creates an item modifier list and at least one modifier option for it.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierList</returns>
-        V1ModifierList V1CreateModifierList (string locationId, V1ModifierList body);
+        V1ModifierList CreateModifierList (string locationId, V1ModifierList body);
 
         /// <summary>
         /// Creates an item modifier list and at least one modifier option for it.
@@ -213,7 +213,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        ApiResponse<V1ModifierList> V1CreateModifierListWithHttpInfo (string locationId, V1ModifierList body);
+        ApiResponse<V1ModifierList> CreateModifierListWithHttpInfo (string locationId, V1ModifierList body);
         /// <summary>
         /// Creates an item modifier option and adds it to a modifier list.
         /// </summary>
@@ -225,7 +225,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierOption</returns>
-        V1ModifierOption V1CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body);
+        V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body);
 
         /// <summary>
         /// Creates an item modifier option and adds it to a modifier list.
@@ -238,7 +238,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierOption</returns>
-        ApiResponse<V1ModifierOption> V1CreateModifierOptionWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body);
+        ApiResponse<V1ModifierOption> CreateModifierOptionWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body);
         /// <summary>
         /// Creates a Favorites page in Square Register.
         /// </summary>
@@ -249,7 +249,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Page</returns>
-        V1Page V1CreatePage (string locationId, V1Page body);
+        V1Page CreatePage (string locationId, V1Page body);
 
         /// <summary>
         /// Creates a Favorites page in Square Register.
@@ -261,7 +261,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        ApiResponse<V1Page> V1CreatePageWithHttpInfo (string locationId, V1Page body);
+        ApiResponse<V1Page> CreatePageWithHttpInfo (string locationId, V1Page body);
         /// <summary>
         /// Creates an item variation for an existing item.
         /// </summary>
@@ -273,7 +273,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Variation</returns>
-        V1Variation V1CreateVariation (string locationId, string itemId, V1Variation body);
+        V1Variation CreateVariation (string locationId, string itemId, V1Variation body);
 
         /// <summary>
         /// Creates an item variation for an existing item.
@@ -286,7 +286,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Variation</returns>
-        ApiResponse<V1Variation> V1CreateVariationWithHttpInfo (string locationId, string itemId, V1Variation body);
+        ApiResponse<V1Variation> CreateVariationWithHttpInfo (string locationId, string itemId, V1Variation body);
         /// <summary>
         /// Deletes an existing item category.
         /// </summary>
@@ -297,7 +297,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>V1Category</returns>
-        V1Category V1DeleteCategory (string locationId, string categoryId);
+        V1Category DeleteCategory (string locationId, string categoryId);
 
         /// <summary>
         /// Deletes an existing item category.
@@ -309,7 +309,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>ApiResponse of V1Category</returns>
-        ApiResponse<V1Category> V1DeleteCategoryWithHttpInfo (string locationId, string categoryId);
+        ApiResponse<V1Category> DeleteCategoryWithHttpInfo (string locationId, string categoryId);
         /// <summary>
         /// Deletes an existing discount.
         /// </summary>
@@ -320,7 +320,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>V1Discount</returns>
-        V1Discount V1DeleteDiscount (string locationId, string discountId);
+        V1Discount DeleteDiscount (string locationId, string discountId);
 
         /// <summary>
         /// Deletes an existing discount.
@@ -332,7 +332,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>ApiResponse of V1Discount</returns>
-        ApiResponse<V1Discount> V1DeleteDiscountWithHttpInfo (string locationId, string discountId);
+        ApiResponse<V1Discount> DeleteDiscountWithHttpInfo (string locationId, string discountId);
         /// <summary>
         /// Deletes an existing fee (tax).
         /// </summary>
@@ -343,7 +343,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>V1Fee</returns>
-        V1Fee V1DeleteFee (string locationId, string feeId);
+        V1Fee DeleteFee (string locationId, string feeId);
 
         /// <summary>
         /// Deletes an existing fee (tax).
@@ -355,7 +355,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>ApiResponse of V1Fee</returns>
-        ApiResponse<V1Fee> V1DeleteFeeWithHttpInfo (string locationId, string feeId);
+        ApiResponse<V1Fee> DeleteFeeWithHttpInfo (string locationId, string feeId);
         /// <summary>
         /// Deletes an existing item and all item variations associated with it.
         /// </summary>
@@ -366,7 +366,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>V1Item</returns>
-        V1Item V1DeleteItem (string locationId, string itemId);
+        V1Item DeleteItem (string locationId, string itemId);
 
         /// <summary>
         /// Deletes an existing item and all item variations associated with it.
@@ -378,7 +378,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1DeleteItemWithHttpInfo (string locationId, string itemId);
+        ApiResponse<V1Item> DeleteItemWithHttpInfo (string locationId, string itemId);
         /// <summary>
         /// Deletes an existing item modifier list and all modifier options associated with it.
         /// </summary>
@@ -389,7 +389,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>V1ModifierList</returns>
-        V1ModifierList V1DeleteModifierList (string locationId, string modifierListId);
+        V1ModifierList DeleteModifierList (string locationId, string modifierListId);
 
         /// <summary>
         /// Deletes an existing item modifier list and all modifier options associated with it.
@@ -401,7 +401,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        ApiResponse<V1ModifierList> V1DeleteModifierListWithHttpInfo (string locationId, string modifierListId);
+        ApiResponse<V1ModifierList> DeleteModifierListWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
         /// Deletes an existing item modifier option from a modifier list.
         /// </summary>
@@ -413,7 +413,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>V1ModifierOption</returns>
-        V1ModifierOption V1DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId);
+        V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId);
 
         /// <summary>
         /// Deletes an existing item modifier option from a modifier list.
@@ -426,7 +426,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>ApiResponse of V1ModifierOption</returns>
-        ApiResponse<V1ModifierOption> V1DeleteModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId);
+        ApiResponse<V1ModifierOption> DeleteModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId);
         /// <summary>
         /// Deletes an existing Favorites page and all of its cells.
         /// </summary>
@@ -437,7 +437,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>V1Page</returns>
-        V1Page V1DeletePage (string locationId, string pageId);
+        V1Page DeletePage (string locationId, string pageId);
 
         /// <summary>
         /// Deletes an existing Favorites page and all of its cells.
@@ -449,7 +449,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        ApiResponse<V1Page> V1DeletePageWithHttpInfo (string locationId, string pageId);
+        ApiResponse<V1Page> DeletePageWithHttpInfo (string locationId, string pageId);
         /// <summary>
         /// Deletes a cell from a Favorites page in Square Register.
         /// </summary>
@@ -462,7 +462,7 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>V1Page</returns>
-        V1Page V1DeletePageCell (string locationId, string pageId, string row = null, string column = null);
+        V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null);
 
         /// <summary>
         /// Deletes a cell from a Favorites page in Square Register.
@@ -476,7 +476,7 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>ApiResponse of V1Page</returns>
-        ApiResponse<V1Page> V1DeletePageCellWithHttpInfo (string locationId, string pageId, string row = null, string column = null);
+        ApiResponse<V1Page> DeletePageCellWithHttpInfo (string locationId, string pageId, string row = null, string column = null);
         /// <summary>
         /// Deletes an existing item variation from an item.
         /// </summary>
@@ -488,7 +488,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>V1Variation</returns>
-        V1Variation V1DeleteVariation (string locationId, string itemId, string variationId);
+        V1Variation DeleteVariation (string locationId, string itemId, string variationId);
 
         /// <summary>
         /// Deletes an existing item variation from an item.
@@ -501,7 +501,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>ApiResponse of V1Variation</returns>
-        ApiResponse<V1Variation> V1DeleteVariationWithHttpInfo (string locationId, string itemId, string variationId);
+        ApiResponse<V1Variation> DeleteVariationWithHttpInfo (string locationId, string itemId, string variationId);
         /// <summary>
         /// Lists all of a location&#39;s item categories.
         /// </summary>
@@ -511,7 +511,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>List&lt;V1Category&gt;</returns>
-        List<V1Category> V1ListCategories (string locationId);
+        List<V1Category> ListCategories (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s item categories.
@@ -522,7 +522,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>ApiResponse of List&lt;V1Category&gt;</returns>
-        ApiResponse<List<V1Category>> V1ListCategoriesWithHttpInfo (string locationId);
+        ApiResponse<List<V1Category>> ListCategoriesWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s discounts.
         /// </summary>
@@ -532,7 +532,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>List&lt;V1Discount&gt;</returns>
-        List<V1Discount> V1ListDiscounts (string locationId);
+        List<V1Discount> ListDiscounts (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s discounts.
@@ -543,7 +543,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>ApiResponse of List&lt;V1Discount&gt;</returns>
-        ApiResponse<List<V1Discount>> V1ListDiscountsWithHttpInfo (string locationId);
+        ApiResponse<List<V1Discount>> ListDiscountsWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s fees (taxes).
         /// </summary>
@@ -553,7 +553,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>List&lt;V1Fee&gt;</returns>
-        List<V1Fee> V1ListFees (string locationId);
+        List<V1Fee> ListFees (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s fees (taxes).
@@ -564,7 +564,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>ApiResponse of List&lt;V1Fee&gt;</returns>
-        ApiResponse<List<V1Fee>> V1ListFeesWithHttpInfo (string locationId);
+        ApiResponse<List<V1Fee>> ListFeesWithHttpInfo (string locationId);
         /// <summary>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
         /// </summary>
@@ -575,7 +575,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>List&lt;V1InventoryEntry&gt;</returns>
-        List<V1InventoryEntry> V1ListInventory (string locationId, int? limit = null);
+        List<V1InventoryEntry> ListInventory (string locationId, int? limit = null);
 
         /// <summary>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
@@ -587,7 +587,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1InventoryEntry&gt;</returns>
-        ApiResponse<List<V1InventoryEntry>> V1ListInventoryWithHttpInfo (string locationId, int? limit = null);
+        ApiResponse<List<V1InventoryEntry>> ListInventoryWithHttpInfo (string locationId, int? limit = null);
         /// <summary>
         /// Provides summary information for all of a location&#39;s items.
         /// </summary>
@@ -597,7 +597,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>List&lt;V1Item&gt;</returns>
-        List<V1Item> V1ListItems (string locationId);
+        List<V1Item> ListItems (string locationId);
 
         /// <summary>
         /// Provides summary information for all of a location&#39;s items.
@@ -608,7 +608,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>ApiResponse of List&lt;V1Item&gt;</returns>
-        ApiResponse<List<V1Item>> V1ListItemsWithHttpInfo (string locationId);
+        ApiResponse<List<V1Item>> ListItemsWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s modifier lists.
         /// </summary>
@@ -618,7 +618,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>List&lt;V1ModifierList&gt;</returns>
-        List<V1ModifierList> V1ListModifierLists (string locationId);
+        List<V1ModifierList> ListModifierLists (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s modifier lists.
@@ -629,7 +629,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>ApiResponse of List&lt;V1ModifierList&gt;</returns>
-        ApiResponse<List<V1ModifierList>> V1ListModifierListsWithHttpInfo (string locationId);
+        ApiResponse<List<V1ModifierList>> ListModifierListsWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
         /// </summary>
@@ -639,7 +639,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>List&lt;V1Page&gt;</returns>
-        List<V1Page> V1ListPages (string locationId);
+        List<V1Page> ListPages (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
@@ -650,7 +650,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>ApiResponse of List&lt;V1Page&gt;</returns>
-        ApiResponse<List<V1Page>> V1ListPagesWithHttpInfo (string locationId);
+        ApiResponse<List<V1Page>> ListPagesWithHttpInfo (string locationId);
         /// <summary>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
         /// </summary>
@@ -662,7 +662,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>V1Item</returns>
-        V1Item V1RemoveFee (string locationId, string itemId, string feeId);
+        V1Item RemoveFee (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
@@ -675,7 +675,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1RemoveFeeWithHttpInfo (string locationId, string itemId, string feeId);
+        ApiResponse<V1Item> RemoveFeeWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
         /// </summary>
@@ -687,7 +687,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>V1Item</returns>
-        V1Item V1RemoveModifierList (string locationId, string modifierListId, string itemId);
+        V1Item RemoveModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
@@ -700,7 +700,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1RemoveModifierListWithHttpInfo (string locationId, string modifierListId, string itemId);
+        ApiResponse<V1Item> RemoveModifierListWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
         /// Provides the details for a single item, including associated modifier lists and fees.
         /// </summary>
@@ -711,7 +711,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>V1Item</returns>
-        V1Item V1RetrieveItem (string locationId, string itemId);
+        V1Item RetrieveItem (string locationId, string itemId);
 
         /// <summary>
         /// Provides the details for a single item, including associated modifier lists and fees.
@@ -723,7 +723,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1RetrieveItemWithHttpInfo (string locationId, string itemId);
+        ApiResponse<V1Item> RetrieveItemWithHttpInfo (string locationId, string itemId);
         /// <summary>
         /// Provides the details for a single modifier list.
         /// </summary>
@@ -734,7 +734,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>V1ModifierList</returns>
-        V1ModifierList V1RetrieveModifierList (string locationId, string modifierListId);
+        V1ModifierList RetrieveModifierList (string locationId, string modifierListId);
 
         /// <summary>
         /// Provides the details for a single modifier list.
@@ -746,7 +746,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        ApiResponse<V1ModifierList> V1RetrieveModifierListWithHttpInfo (string locationId, string modifierListId);
+        ApiResponse<V1ModifierList> RetrieveModifierListWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
         /// Modifies the details of an existing item category.
         /// </summary>
@@ -758,7 +758,7 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Category</returns>
-        V1Category V1UpdateCategory (string locationId, string categoryId, V1Category body);
+        V1Category UpdateCategory (string locationId, string categoryId, V1Category body);
 
         /// <summary>
         /// Modifies the details of an existing item category.
@@ -771,7 +771,7 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Category</returns>
-        ApiResponse<V1Category> V1UpdateCategoryWithHttpInfo (string locationId, string categoryId, V1Category body);
+        ApiResponse<V1Category> UpdateCategoryWithHttpInfo (string locationId, string categoryId, V1Category body);
         /// <summary>
         /// Modifies the details of an existing discount.
         /// </summary>
@@ -783,7 +783,7 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Discount</returns>
-        V1Discount V1UpdateDiscount (string locationId, string discountId, V1Discount body);
+        V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body);
 
         /// <summary>
         /// Modifies the details of an existing discount.
@@ -796,7 +796,7 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Discount</returns>
-        ApiResponse<V1Discount> V1UpdateDiscountWithHttpInfo (string locationId, string discountId, V1Discount body);
+        ApiResponse<V1Discount> UpdateDiscountWithHttpInfo (string locationId, string discountId, V1Discount body);
         /// <summary>
         /// Modifies the details of an existing fee (tax).
         /// </summary>
@@ -808,7 +808,7 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Fee</returns>
-        V1Fee V1UpdateFee (string locationId, string feeId, V1Fee body);
+        V1Fee UpdateFee (string locationId, string feeId, V1Fee body);
 
         /// <summary>
         /// Modifies the details of an existing fee (tax).
@@ -821,7 +821,7 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Fee</returns>
-        ApiResponse<V1Fee> V1UpdateFeeWithHttpInfo (string locationId, string feeId, V1Fee body);
+        ApiResponse<V1Fee> UpdateFeeWithHttpInfo (string locationId, string feeId, V1Fee body);
         /// <summary>
         /// Modifies the core details of an existing item.
         /// </summary>
@@ -833,7 +833,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Item</returns>
-        V1Item V1UpdateItem (string locationId, string itemId, V1Item body);
+        V1Item UpdateItem (string locationId, string itemId, V1Item body);
 
         /// <summary>
         /// Modifies the core details of an existing item.
@@ -846,7 +846,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> V1UpdateItemWithHttpInfo (string locationId, string itemId, V1Item body);
+        ApiResponse<V1Item> UpdateItemWithHttpInfo (string locationId, string itemId, V1Item body);
         /// <summary>
         /// Modifies the details of an existing item modifier list.
         /// </summary>
@@ -858,7 +858,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierList</returns>
-        V1ModifierList V1UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body);
+        V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body);
 
         /// <summary>
         /// Modifies the details of an existing item modifier list.
@@ -871,7 +871,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        ApiResponse<V1ModifierList> V1UpdateModifierListWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body);
+        ApiResponse<V1ModifierList> UpdateModifierListWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body);
         /// <summary>
         /// Modifies the details of an existing item modifier option.
         /// </summary>
@@ -884,7 +884,7 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierOption</returns>
-        V1ModifierOption V1UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
+        V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
 
         /// <summary>
         /// Modifies the details of an existing item modifier option.
@@ -898,7 +898,7 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierOption</returns>
-        ApiResponse<V1ModifierOption> V1UpdateModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
+        ApiResponse<V1ModifierOption> UpdateModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
         /// <summary>
         /// Modifies the details of a Favorites page in Square Register.
         /// </summary>
@@ -910,7 +910,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Page</returns>
-        V1Page V1UpdatePage (string locationId, string pageId, V1Page body);
+        V1Page UpdatePage (string locationId, string pageId, V1Page body);
 
         /// <summary>
         /// Modifies the details of a Favorites page in Square Register.
@@ -923,7 +923,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        ApiResponse<V1Page> V1UpdatePageWithHttpInfo (string locationId, string pageId, V1Page body);
+        ApiResponse<V1Page> UpdatePageWithHttpInfo (string locationId, string pageId, V1Page body);
         /// <summary>
         /// Modifies a cell of a Favorites page in Square Register.
         /// </summary>
@@ -935,7 +935,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Page</returns>
-        V1Page V1UpdatePageCell (string locationId, string pageId, V1PageCell body);
+        V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body);
 
         /// <summary>
         /// Modifies a cell of a Favorites page in Square Register.
@@ -948,7 +948,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        ApiResponse<V1Page> V1UpdatePageCellWithHttpInfo (string locationId, string pageId, V1PageCell body);
+        ApiResponse<V1Page> UpdatePageCellWithHttpInfo (string locationId, string pageId, V1PageCell body);
         /// <summary>
         /// Modifies the details of an existing item variation.
         /// </summary>
@@ -961,7 +961,7 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Variation</returns>
-        V1Variation V1UpdateVariation (string locationId, string itemId, string variationId, V1Variation body);
+        V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body);
 
         /// <summary>
         /// Modifies the details of an existing item variation.
@@ -975,7 +975,7 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Variation</returns>
-        ApiResponse<V1Variation> V1UpdateVariationWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body);
+        ApiResponse<V1Variation> UpdateVariationWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -989,7 +989,7 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1InventoryEntry</returns>
-        System.Threading.Tasks.Task<V1InventoryEntry> V1AdjustInventoryAsync (string locationId, string variationId, V1AdjustInventoryRequest body);
+        System.Threading.Tasks.Task<V1InventoryEntry> AdjustInventoryAsync (string locationId, string variationId, V1AdjustInventoryRequest body);
 
         /// <summary>
         /// Adjusts an item variation&#39;s current available inventory.
@@ -1002,7 +1002,7 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1InventoryEntry)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1InventoryEntry>> V1AdjustInventoryAsyncWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body);
+        System.Threading.Tasks.Task<ApiResponse<V1InventoryEntry>> AdjustInventoryAsyncWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body);
         /// <summary>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
         /// </summary>
@@ -1014,7 +1014,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1ApplyFeeAsync (string locationId, string itemId, string feeId);
+        System.Threading.Tasks.Task<V1Item> ApplyFeeAsync (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
@@ -1027,7 +1027,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1ApplyFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> ApplyFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
         /// </summary>
@@ -1039,7 +1039,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1ApplyModifierListAsync (string locationId, string modifierListId, string itemId);
+        System.Threading.Tasks.Task<V1Item> ApplyModifierListAsync (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
@@ -1052,7 +1052,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1ApplyModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> ApplyModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
         /// Creates an item category.
         /// </summary>
@@ -1063,7 +1063,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Category</returns>
-        System.Threading.Tasks.Task<V1Category> V1CreateCategoryAsync (string locationId, V1Category body);
+        System.Threading.Tasks.Task<V1Category> CreateCategoryAsync (string locationId, V1Category body);
 
         /// <summary>
         /// Creates an item category.
@@ -1075,7 +1075,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Category)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Category>> V1CreateCategoryAsyncWithHttpInfo (string locationId, V1Category body);
+        System.Threading.Tasks.Task<ApiResponse<V1Category>> CreateCategoryAsyncWithHttpInfo (string locationId, V1Category body);
         /// <summary>
         /// Creates a discount.
         /// </summary>
@@ -1086,7 +1086,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Discount</returns>
-        System.Threading.Tasks.Task<V1Discount> V1CreateDiscountAsync (string locationId, V1Discount body);
+        System.Threading.Tasks.Task<V1Discount> CreateDiscountAsync (string locationId, V1Discount body);
 
         /// <summary>
         /// Creates a discount.
@@ -1098,7 +1098,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Discount)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Discount>> V1CreateDiscountAsyncWithHttpInfo (string locationId, V1Discount body);
+        System.Threading.Tasks.Task<ApiResponse<V1Discount>> CreateDiscountAsyncWithHttpInfo (string locationId, V1Discount body);
         /// <summary>
         /// Creates a fee (tax).
         /// </summary>
@@ -1109,7 +1109,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Fee</returns>
-        System.Threading.Tasks.Task<V1Fee> V1CreateFeeAsync (string locationId, V1Fee body);
+        System.Threading.Tasks.Task<V1Fee> CreateFeeAsync (string locationId, V1Fee body);
 
         /// <summary>
         /// Creates a fee (tax).
@@ -1121,7 +1121,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Fee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Fee>> V1CreateFeeAsyncWithHttpInfo (string locationId, V1Fee body);
+        System.Threading.Tasks.Task<ApiResponse<V1Fee>> CreateFeeAsyncWithHttpInfo (string locationId, V1Fee body);
         /// <summary>
         /// Creates an item and at least one variation for it.
         /// </summary>
@@ -1132,7 +1132,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1CreateItemAsync (string locationId, V1Item body);
+        System.Threading.Tasks.Task<V1Item> CreateItemAsync (string locationId, V1Item body);
 
         /// <summary>
         /// Creates an item and at least one variation for it.
@@ -1144,7 +1144,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1CreateItemAsyncWithHttpInfo (string locationId, V1Item body);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> CreateItemAsyncWithHttpInfo (string locationId, V1Item body);
         /// <summary>
         /// Creates an item modifier list and at least one modifier option for it.
         /// </summary>
@@ -1155,7 +1155,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierList</returns>
-        System.Threading.Tasks.Task<V1ModifierList> V1CreateModifierListAsync (string locationId, V1ModifierList body);
+        System.Threading.Tasks.Task<V1ModifierList> CreateModifierListAsync (string locationId, V1ModifierList body);
 
         /// <summary>
         /// Creates an item modifier list and at least one modifier option for it.
@@ -1167,7 +1167,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1CreateModifierListAsyncWithHttpInfo (string locationId, V1ModifierList body);
+        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> CreateModifierListAsyncWithHttpInfo (string locationId, V1ModifierList body);
         /// <summary>
         /// Creates an item modifier option and adds it to a modifier list.
         /// </summary>
@@ -1179,7 +1179,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierOption</returns>
-        System.Threading.Tasks.Task<V1ModifierOption> V1CreateModifierOptionAsync (string locationId, string modifierListId, V1ModifierOption body);
+        System.Threading.Tasks.Task<V1ModifierOption> CreateModifierOptionAsync (string locationId, string modifierListId, V1ModifierOption body);
 
         /// <summary>
         /// Creates an item modifier option and adds it to a modifier list.
@@ -1192,7 +1192,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> V1CreateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body);
+        System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> CreateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body);
         /// <summary>
         /// Creates a Favorites page in Square Register.
         /// </summary>
@@ -1203,7 +1203,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Page</returns>
-        System.Threading.Tasks.Task<V1Page> V1CreatePageAsync (string locationId, V1Page body);
+        System.Threading.Tasks.Task<V1Page> CreatePageAsync (string locationId, V1Page body);
 
         /// <summary>
         /// Creates a Favorites page in Square Register.
@@ -1215,7 +1215,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Page>> V1CreatePageAsyncWithHttpInfo (string locationId, V1Page body);
+        System.Threading.Tasks.Task<ApiResponse<V1Page>> CreatePageAsyncWithHttpInfo (string locationId, V1Page body);
         /// <summary>
         /// Creates an item variation for an existing item.
         /// </summary>
@@ -1227,7 +1227,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Variation</returns>
-        System.Threading.Tasks.Task<V1Variation> V1CreateVariationAsync (string locationId, string itemId, V1Variation body);
+        System.Threading.Tasks.Task<V1Variation> CreateVariationAsync (string locationId, string itemId, V1Variation body);
 
         /// <summary>
         /// Creates an item variation for an existing item.
@@ -1240,7 +1240,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Variation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Variation>> V1CreateVariationAsyncWithHttpInfo (string locationId, string itemId, V1Variation body);
+        System.Threading.Tasks.Task<ApiResponse<V1Variation>> CreateVariationAsyncWithHttpInfo (string locationId, string itemId, V1Variation body);
         /// <summary>
         /// Deletes an existing item category.
         /// </summary>
@@ -1251,7 +1251,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>Task of V1Category</returns>
-        System.Threading.Tasks.Task<V1Category> V1DeleteCategoryAsync (string locationId, string categoryId);
+        System.Threading.Tasks.Task<V1Category> DeleteCategoryAsync (string locationId, string categoryId);
 
         /// <summary>
         /// Deletes an existing item category.
@@ -1263,7 +1263,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>Task of ApiResponse (V1Category)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Category>> V1DeleteCategoryAsyncWithHttpInfo (string locationId, string categoryId);
+        System.Threading.Tasks.Task<ApiResponse<V1Category>> DeleteCategoryAsyncWithHttpInfo (string locationId, string categoryId);
         /// <summary>
         /// Deletes an existing discount.
         /// </summary>
@@ -1274,7 +1274,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>Task of V1Discount</returns>
-        System.Threading.Tasks.Task<V1Discount> V1DeleteDiscountAsync (string locationId, string discountId);
+        System.Threading.Tasks.Task<V1Discount> DeleteDiscountAsync (string locationId, string discountId);
 
         /// <summary>
         /// Deletes an existing discount.
@@ -1286,7 +1286,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>Task of ApiResponse (V1Discount)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Discount>> V1DeleteDiscountAsyncWithHttpInfo (string locationId, string discountId);
+        System.Threading.Tasks.Task<ApiResponse<V1Discount>> DeleteDiscountAsyncWithHttpInfo (string locationId, string discountId);
         /// <summary>
         /// Deletes an existing fee (tax).
         /// </summary>
@@ -1297,7 +1297,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>Task of V1Fee</returns>
-        System.Threading.Tasks.Task<V1Fee> V1DeleteFeeAsync (string locationId, string feeId);
+        System.Threading.Tasks.Task<V1Fee> DeleteFeeAsync (string locationId, string feeId);
 
         /// <summary>
         /// Deletes an existing fee (tax).
@@ -1309,7 +1309,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>Task of ApiResponse (V1Fee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Fee>> V1DeleteFeeAsyncWithHttpInfo (string locationId, string feeId);
+        System.Threading.Tasks.Task<ApiResponse<V1Fee>> DeleteFeeAsyncWithHttpInfo (string locationId, string feeId);
         /// <summary>
         /// Deletes an existing item and all item variations associated with it.
         /// </summary>
@@ -1320,7 +1320,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1DeleteItemAsync (string locationId, string itemId);
+        System.Threading.Tasks.Task<V1Item> DeleteItemAsync (string locationId, string itemId);
 
         /// <summary>
         /// Deletes an existing item and all item variations associated with it.
@@ -1332,7 +1332,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1DeleteItemAsyncWithHttpInfo (string locationId, string itemId);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> DeleteItemAsyncWithHttpInfo (string locationId, string itemId);
         /// <summary>
         /// Deletes an existing item modifier list and all modifier options associated with it.
         /// </summary>
@@ -1343,7 +1343,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>Task of V1ModifierList</returns>
-        System.Threading.Tasks.Task<V1ModifierList> V1DeleteModifierListAsync (string locationId, string modifierListId);
+        System.Threading.Tasks.Task<V1ModifierList> DeleteModifierListAsync (string locationId, string modifierListId);
 
         /// <summary>
         /// Deletes an existing item modifier list and all modifier options associated with it.
@@ -1355,7 +1355,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1DeleteModifierListAsyncWithHttpInfo (string locationId, string modifierListId);
+        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> DeleteModifierListAsyncWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
         /// Deletes an existing item modifier option from a modifier list.
         /// </summary>
@@ -1367,7 +1367,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>Task of V1ModifierOption</returns>
-        System.Threading.Tasks.Task<V1ModifierOption> V1DeleteModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId);
+        System.Threading.Tasks.Task<V1ModifierOption> DeleteModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId);
 
         /// <summary>
         /// Deletes an existing item modifier option from a modifier list.
@@ -1380,7 +1380,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> V1DeleteModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId);
+        System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> DeleteModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId);
         /// <summary>
         /// Deletes an existing Favorites page and all of its cells.
         /// </summary>
@@ -1391,7 +1391,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>Task of V1Page</returns>
-        System.Threading.Tasks.Task<V1Page> V1DeletePageAsync (string locationId, string pageId);
+        System.Threading.Tasks.Task<V1Page> DeletePageAsync (string locationId, string pageId);
 
         /// <summary>
         /// Deletes an existing Favorites page and all of its cells.
@@ -1403,7 +1403,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Page>> V1DeletePageAsyncWithHttpInfo (string locationId, string pageId);
+        System.Threading.Tasks.Task<ApiResponse<V1Page>> DeletePageAsyncWithHttpInfo (string locationId, string pageId);
         /// <summary>
         /// Deletes a cell from a Favorites page in Square Register.
         /// </summary>
@@ -1416,7 +1416,7 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>Task of V1Page</returns>
-        System.Threading.Tasks.Task<V1Page> V1DeletePageCellAsync (string locationId, string pageId, string row = null, string column = null);
+        System.Threading.Tasks.Task<V1Page> DeletePageCellAsync (string locationId, string pageId, string row = null, string column = null);
 
         /// <summary>
         /// Deletes a cell from a Favorites page in Square Register.
@@ -1430,7 +1430,7 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Page>> V1DeletePageCellAsyncWithHttpInfo (string locationId, string pageId, string row = null, string column = null);
+        System.Threading.Tasks.Task<ApiResponse<V1Page>> DeletePageCellAsyncWithHttpInfo (string locationId, string pageId, string row = null, string column = null);
         /// <summary>
         /// Deletes an existing item variation from an item.
         /// </summary>
@@ -1442,7 +1442,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>Task of V1Variation</returns>
-        System.Threading.Tasks.Task<V1Variation> V1DeleteVariationAsync (string locationId, string itemId, string variationId);
+        System.Threading.Tasks.Task<V1Variation> DeleteVariationAsync (string locationId, string itemId, string variationId);
 
         /// <summary>
         /// Deletes an existing item variation from an item.
@@ -1455,7 +1455,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>Task of ApiResponse (V1Variation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Variation>> V1DeleteVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId);
+        System.Threading.Tasks.Task<ApiResponse<V1Variation>> DeleteVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId);
         /// <summary>
         /// Lists all of a location&#39;s item categories.
         /// </summary>
@@ -1465,7 +1465,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of List&lt;V1Category&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Category>> V1ListCategoriesAsync (string locationId);
+        System.Threading.Tasks.Task<List<V1Category>> ListCategoriesAsync (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s item categories.
@@ -1476,7 +1476,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Category&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Category>>> V1ListCategoriesAsyncWithHttpInfo (string locationId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Category>>> ListCategoriesAsyncWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s discounts.
         /// </summary>
@@ -1486,7 +1486,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of List&lt;V1Discount&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Discount>> V1ListDiscountsAsync (string locationId);
+        System.Threading.Tasks.Task<List<V1Discount>> ListDiscountsAsync (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s discounts.
@@ -1497,7 +1497,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Discount&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Discount>>> V1ListDiscountsAsyncWithHttpInfo (string locationId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Discount>>> ListDiscountsAsyncWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s fees (taxes).
         /// </summary>
@@ -1507,7 +1507,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>Task of List&lt;V1Fee&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Fee>> V1ListFeesAsync (string locationId);
+        System.Threading.Tasks.Task<List<V1Fee>> ListFeesAsync (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s fees (taxes).
@@ -1518,7 +1518,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Fee&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Fee>>> V1ListFeesAsyncWithHttpInfo (string locationId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Fee>>> ListFeesAsyncWithHttpInfo (string locationId);
         /// <summary>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
         /// </summary>
@@ -1529,7 +1529,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>Task of List&lt;V1InventoryEntry&gt;</returns>
-        System.Threading.Tasks.Task<List<V1InventoryEntry>> V1ListInventoryAsync (string locationId, int? limit = null);
+        System.Threading.Tasks.Task<List<V1InventoryEntry>> ListInventoryAsync (string locationId, int? limit = null);
 
         /// <summary>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
@@ -1541,7 +1541,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1InventoryEntry&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1InventoryEntry>>> V1ListInventoryAsyncWithHttpInfo (string locationId, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1InventoryEntry>>> ListInventoryAsyncWithHttpInfo (string locationId, int? limit = null);
         /// <summary>
         /// Provides summary information for all of a location&#39;s items.
         /// </summary>
@@ -1551,7 +1551,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>Task of List&lt;V1Item&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Item>> V1ListItemsAsync (string locationId);
+        System.Threading.Tasks.Task<List<V1Item>> ListItemsAsync (string locationId);
 
         /// <summary>
         /// Provides summary information for all of a location&#39;s items.
@@ -1562,7 +1562,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Item&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> V1ListItemsAsyncWithHttpInfo (string locationId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> ListItemsAsyncWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s modifier lists.
         /// </summary>
@@ -1572,7 +1572,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>Task of List&lt;V1ModifierList&gt;</returns>
-        System.Threading.Tasks.Task<List<V1ModifierList>> V1ListModifierListsAsync (string locationId);
+        System.Threading.Tasks.Task<List<V1ModifierList>> ListModifierListsAsync (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s modifier lists.
@@ -1583,7 +1583,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1ModifierList&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1ModifierList>>> V1ListModifierListsAsyncWithHttpInfo (string locationId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1ModifierList>>> ListModifierListsAsyncWithHttpInfo (string locationId);
         /// <summary>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
         /// </summary>
@@ -1593,7 +1593,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>Task of List&lt;V1Page&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Page>> V1ListPagesAsync (string locationId);
+        System.Threading.Tasks.Task<List<V1Page>> ListPagesAsync (string locationId);
 
         /// <summary>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
@@ -1604,7 +1604,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Page&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Page>>> V1ListPagesAsyncWithHttpInfo (string locationId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Page>>> ListPagesAsyncWithHttpInfo (string locationId);
         /// <summary>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
         /// </summary>
@@ -1616,7 +1616,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1RemoveFeeAsync (string locationId, string itemId, string feeId);
+        System.Threading.Tasks.Task<V1Item> RemoveFeeAsync (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
@@ -1629,7 +1629,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1RemoveFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> RemoveFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
         /// </summary>
@@ -1641,7 +1641,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1RemoveModifierListAsync (string locationId, string modifierListId, string itemId);
+        System.Threading.Tasks.Task<V1Item> RemoveModifierListAsync (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
@@ -1654,7 +1654,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1RemoveModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> RemoveModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
         /// Provides the details for a single item, including associated modifier lists and fees.
         /// </summary>
@@ -1665,7 +1665,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1RetrieveItemAsync (string locationId, string itemId);
+        System.Threading.Tasks.Task<V1Item> RetrieveItemAsync (string locationId, string itemId);
 
         /// <summary>
         /// Provides the details for a single item, including associated modifier lists and fees.
@@ -1677,7 +1677,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1RetrieveItemAsyncWithHttpInfo (string locationId, string itemId);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> RetrieveItemAsyncWithHttpInfo (string locationId, string itemId);
         /// <summary>
         /// Provides the details for a single modifier list.
         /// </summary>
@@ -1688,7 +1688,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>Task of V1ModifierList</returns>
-        System.Threading.Tasks.Task<V1ModifierList> V1RetrieveModifierListAsync (string locationId, string modifierListId);
+        System.Threading.Tasks.Task<V1ModifierList> RetrieveModifierListAsync (string locationId, string modifierListId);
 
         /// <summary>
         /// Provides the details for a single modifier list.
@@ -1700,7 +1700,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1RetrieveModifierListAsyncWithHttpInfo (string locationId, string modifierListId);
+        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> RetrieveModifierListAsyncWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
         /// Modifies the details of an existing item category.
         /// </summary>
@@ -1712,7 +1712,7 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Category</returns>
-        System.Threading.Tasks.Task<V1Category> V1UpdateCategoryAsync (string locationId, string categoryId, V1Category body);
+        System.Threading.Tasks.Task<V1Category> UpdateCategoryAsync (string locationId, string categoryId, V1Category body);
 
         /// <summary>
         /// Modifies the details of an existing item category.
@@ -1725,7 +1725,7 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Category)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Category>> V1UpdateCategoryAsyncWithHttpInfo (string locationId, string categoryId, V1Category body);
+        System.Threading.Tasks.Task<ApiResponse<V1Category>> UpdateCategoryAsyncWithHttpInfo (string locationId, string categoryId, V1Category body);
         /// <summary>
         /// Modifies the details of an existing discount.
         /// </summary>
@@ -1737,7 +1737,7 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Discount</returns>
-        System.Threading.Tasks.Task<V1Discount> V1UpdateDiscountAsync (string locationId, string discountId, V1Discount body);
+        System.Threading.Tasks.Task<V1Discount> UpdateDiscountAsync (string locationId, string discountId, V1Discount body);
 
         /// <summary>
         /// Modifies the details of an existing discount.
@@ -1750,7 +1750,7 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Discount)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Discount>> V1UpdateDiscountAsyncWithHttpInfo (string locationId, string discountId, V1Discount body);
+        System.Threading.Tasks.Task<ApiResponse<V1Discount>> UpdateDiscountAsyncWithHttpInfo (string locationId, string discountId, V1Discount body);
         /// <summary>
         /// Modifies the details of an existing fee (tax).
         /// </summary>
@@ -1762,7 +1762,7 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Fee</returns>
-        System.Threading.Tasks.Task<V1Fee> V1UpdateFeeAsync (string locationId, string feeId, V1Fee body);
+        System.Threading.Tasks.Task<V1Fee> UpdateFeeAsync (string locationId, string feeId, V1Fee body);
 
         /// <summary>
         /// Modifies the details of an existing fee (tax).
@@ -1775,7 +1775,7 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Fee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Fee>> V1UpdateFeeAsyncWithHttpInfo (string locationId, string feeId, V1Fee body);
+        System.Threading.Tasks.Task<ApiResponse<V1Fee>> UpdateFeeAsyncWithHttpInfo (string locationId, string feeId, V1Fee body);
         /// <summary>
         /// Modifies the core details of an existing item.
         /// </summary>
@@ -1787,7 +1787,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> V1UpdateItemAsync (string locationId, string itemId, V1Item body);
+        System.Threading.Tasks.Task<V1Item> UpdateItemAsync (string locationId, string itemId, V1Item body);
 
         /// <summary>
         /// Modifies the core details of an existing item.
@@ -1800,7 +1800,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> V1UpdateItemAsyncWithHttpInfo (string locationId, string itemId, V1Item body);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> UpdateItemAsyncWithHttpInfo (string locationId, string itemId, V1Item body);
         /// <summary>
         /// Modifies the details of an existing item modifier list.
         /// </summary>
@@ -1812,7 +1812,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierList</returns>
-        System.Threading.Tasks.Task<V1ModifierList> V1UpdateModifierListAsync (string locationId, string modifierListId, V1UpdateModifierListRequest body);
+        System.Threading.Tasks.Task<V1ModifierList> UpdateModifierListAsync (string locationId, string modifierListId, V1UpdateModifierListRequest body);
 
         /// <summary>
         /// Modifies the details of an existing item modifier list.
@@ -1825,7 +1825,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1UpdateModifierListAsyncWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body);
+        System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> UpdateModifierListAsyncWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body);
         /// <summary>
         /// Modifies the details of an existing item modifier option.
         /// </summary>
@@ -1838,7 +1838,7 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierOption</returns>
-        System.Threading.Tasks.Task<V1ModifierOption> V1UpdateModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
+        System.Threading.Tasks.Task<V1ModifierOption> UpdateModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
 
         /// <summary>
         /// Modifies the details of an existing item modifier option.
@@ -1852,7 +1852,7 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> V1UpdateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
+        System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> UpdateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
         /// <summary>
         /// Modifies the details of a Favorites page in Square Register.
         /// </summary>
@@ -1864,7 +1864,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Page</returns>
-        System.Threading.Tasks.Task<V1Page> V1UpdatePageAsync (string locationId, string pageId, V1Page body);
+        System.Threading.Tasks.Task<V1Page> UpdatePageAsync (string locationId, string pageId, V1Page body);
 
         /// <summary>
         /// Modifies the details of a Favorites page in Square Register.
@@ -1877,7 +1877,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Page>> V1UpdatePageAsyncWithHttpInfo (string locationId, string pageId, V1Page body);
+        System.Threading.Tasks.Task<ApiResponse<V1Page>> UpdatePageAsyncWithHttpInfo (string locationId, string pageId, V1Page body);
         /// <summary>
         /// Modifies a cell of a Favorites page in Square Register.
         /// </summary>
@@ -1889,7 +1889,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Page</returns>
-        System.Threading.Tasks.Task<V1Page> V1UpdatePageCellAsync (string locationId, string pageId, V1PageCell body);
+        System.Threading.Tasks.Task<V1Page> UpdatePageCellAsync (string locationId, string pageId, V1PageCell body);
 
         /// <summary>
         /// Modifies a cell of a Favorites page in Square Register.
@@ -1902,7 +1902,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Page>> V1UpdatePageCellAsyncWithHttpInfo (string locationId, string pageId, V1PageCell body);
+        System.Threading.Tasks.Task<ApiResponse<V1Page>> UpdatePageCellAsyncWithHttpInfo (string locationId, string pageId, V1PageCell body);
         /// <summary>
         /// Modifies the details of an existing item variation.
         /// </summary>
@@ -1915,7 +1915,7 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Variation</returns>
-        System.Threading.Tasks.Task<V1Variation> V1UpdateVariationAsync (string locationId, string itemId, string variationId, V1Variation body);
+        System.Threading.Tasks.Task<V1Variation> UpdateVariationAsync (string locationId, string itemId, string variationId, V1Variation body);
 
         /// <summary>
         /// Modifies the details of an existing item variation.
@@ -1929,22 +1929,22 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Variation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Variation>> V1UpdateVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body);
+        System.Threading.Tasks.Task<ApiResponse<V1Variation>> UpdateVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ItemsApi : IItemsApi
+    public partial class V1ItemsApi : IV1ItemsApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ItemsApi"/> class.
+        /// Initializes a new instance of the <see cref="V1ItemsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ItemsApi(String basePath)
+        public V1ItemsApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -1958,12 +1958,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ItemsApi"/> class
+        /// Initializes a new instance of the <see cref="V1ItemsApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ItemsApi(Configuration configuration = null)
+        public V1ItemsApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -2050,9 +2050,9 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1InventoryEntry</returns>
-        public V1InventoryEntry V1AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body)
+        public V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body)
         {
-             ApiResponse<V1InventoryEntry> localVarResponse = V1AdjustInventoryWithHttpInfo(locationId, variationId, body);
+             ApiResponse<V1InventoryEntry> localVarResponse = AdjustInventoryWithHttpInfo(locationId, variationId, body);
              return localVarResponse.Data;
         }
 
@@ -2064,17 +2064,17 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1InventoryEntry</returns>
-        public ApiResponse< V1InventoryEntry > V1AdjustInventoryWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body)
+        public ApiResponse< V1InventoryEntry > AdjustInventoryWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1AdjustInventory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->AdjustInventory");
             // verify the required parameter 'variationId' is set
             if (variationId == null)
-                throw new ApiException(400, "Missing required parameter 'variationId' when calling ItemsApi->V1AdjustInventory");
+                throw new ApiException(400, "Missing required parameter 'variationId' when calling V1ItemsApi->AdjustInventory");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1AdjustInventory");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->AdjustInventory");
 
             var localVarPath = "/v1/{location_id}/inventory/{variation_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2125,7 +2125,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1AdjustInventory", localVarResponse);
+                Exception exception = ExceptionFactory("AdjustInventory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2143,9 +2143,9 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1InventoryEntry</returns>
-        public async System.Threading.Tasks.Task<V1InventoryEntry> V1AdjustInventoryAsync (string locationId, string variationId, V1AdjustInventoryRequest body)
+        public async System.Threading.Tasks.Task<V1InventoryEntry> AdjustInventoryAsync (string locationId, string variationId, V1AdjustInventoryRequest body)
         {
-             ApiResponse<V1InventoryEntry> localVarResponse = await V1AdjustInventoryAsyncWithHttpInfo(locationId, variationId, body);
+             ApiResponse<V1InventoryEntry> localVarResponse = await AdjustInventoryAsyncWithHttpInfo(locationId, variationId, body);
              return localVarResponse.Data;
 
         }
@@ -2158,17 +2158,17 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1InventoryEntry)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1InventoryEntry>> V1AdjustInventoryAsyncWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1InventoryEntry>> AdjustInventoryAsyncWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1AdjustInventory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->AdjustInventory");
             // verify the required parameter 'variationId' is set
             if (variationId == null)
-                throw new ApiException(400, "Missing required parameter 'variationId' when calling ItemsApi->V1AdjustInventory");
+                throw new ApiException(400, "Missing required parameter 'variationId' when calling V1ItemsApi->AdjustInventory");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1AdjustInventory");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->AdjustInventory");
 
             var localVarPath = "/v1/{location_id}/inventory/{variation_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2219,7 +2219,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1AdjustInventory", localVarResponse);
+                Exception exception = ExceptionFactory("AdjustInventory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2237,9 +2237,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1ApplyFee (string locationId, string itemId, string feeId)
+        public V1Item ApplyFee (string locationId, string itemId, string feeId)
         {
-             ApiResponse<V1Item> localVarResponse = V1ApplyFeeWithHttpInfo(locationId, itemId, feeId);
+             ApiResponse<V1Item> localVarResponse = ApplyFeeWithHttpInfo(locationId, itemId, feeId);
              return localVarResponse.Data;
         }
 
@@ -2251,17 +2251,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1ApplyFeeWithHttpInfo (string locationId, string itemId, string feeId)
+        public ApiResponse< V1Item > ApplyFeeWithHttpInfo (string locationId, string itemId, string feeId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ApplyFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ApplyFee");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1ApplyFee");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->ApplyFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1ApplyFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->ApplyFee");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2305,7 +2305,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ApplyFee", localVarResponse);
+                Exception exception = ExceptionFactory("ApplyFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2323,9 +2323,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1ApplyFeeAsync (string locationId, string itemId, string feeId)
+        public async System.Threading.Tasks.Task<V1Item> ApplyFeeAsync (string locationId, string itemId, string feeId)
         {
-             ApiResponse<V1Item> localVarResponse = await V1ApplyFeeAsyncWithHttpInfo(locationId, itemId, feeId);
+             ApiResponse<V1Item> localVarResponse = await ApplyFeeAsyncWithHttpInfo(locationId, itemId, feeId);
              return localVarResponse.Data;
 
         }
@@ -2338,17 +2338,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1ApplyFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> ApplyFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ApplyFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ApplyFee");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1ApplyFee");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->ApplyFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1ApplyFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->ApplyFee");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2392,7 +2392,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ApplyFee", localVarResponse);
+                Exception exception = ExceptionFactory("ApplyFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2410,9 +2410,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1ApplyModifierList (string locationId, string modifierListId, string itemId)
+        public V1Item ApplyModifierList (string locationId, string modifierListId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = V1ApplyModifierListWithHttpInfo(locationId, modifierListId, itemId);
+             ApiResponse<V1Item> localVarResponse = ApplyModifierListWithHttpInfo(locationId, modifierListId, itemId);
              return localVarResponse.Data;
         }
 
@@ -2424,17 +2424,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1ApplyModifierListWithHttpInfo (string locationId, string modifierListId, string itemId)
+        public ApiResponse< V1Item > ApplyModifierListWithHttpInfo (string locationId, string modifierListId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ApplyModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ApplyModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1ApplyModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->ApplyModifierList");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1ApplyModifierList");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->ApplyModifierList");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2478,7 +2478,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ApplyModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("ApplyModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2496,9 +2496,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1ApplyModifierListAsync (string locationId, string modifierListId, string itemId)
+        public async System.Threading.Tasks.Task<V1Item> ApplyModifierListAsync (string locationId, string modifierListId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = await V1ApplyModifierListAsyncWithHttpInfo(locationId, modifierListId, itemId);
+             ApiResponse<V1Item> localVarResponse = await ApplyModifierListAsyncWithHttpInfo(locationId, modifierListId, itemId);
              return localVarResponse.Data;
 
         }
@@ -2511,17 +2511,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1ApplyModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> ApplyModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ApplyModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ApplyModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1ApplyModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->ApplyModifierList");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1ApplyModifierList");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->ApplyModifierList");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2565,7 +2565,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ApplyModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("ApplyModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2582,9 +2582,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Category</returns>
-        public V1Category V1CreateCategory (string locationId, V1Category body)
+        public V1Category CreateCategory (string locationId, V1Category body)
         {
-             ApiResponse<V1Category> localVarResponse = V1CreateCategoryWithHttpInfo(locationId, body);
+             ApiResponse<V1Category> localVarResponse = CreateCategoryWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -2595,14 +2595,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Category</returns>
-        public ApiResponse< V1Category > V1CreateCategoryWithHttpInfo (string locationId, V1Category body)
+        public ApiResponse< V1Category > CreateCategoryWithHttpInfo (string locationId, V1Category body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateCategory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateCategory");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateCategory");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateCategory");
 
             var localVarPath = "/v1/{location_id}/categories";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2652,7 +2652,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateCategory", localVarResponse);
+                Exception exception = ExceptionFactory("CreateCategory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2669,9 +2669,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Category</returns>
-        public async System.Threading.Tasks.Task<V1Category> V1CreateCategoryAsync (string locationId, V1Category body)
+        public async System.Threading.Tasks.Task<V1Category> CreateCategoryAsync (string locationId, V1Category body)
         {
-             ApiResponse<V1Category> localVarResponse = await V1CreateCategoryAsyncWithHttpInfo(locationId, body);
+             ApiResponse<V1Category> localVarResponse = await CreateCategoryAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -2683,14 +2683,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Category)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Category>> V1CreateCategoryAsyncWithHttpInfo (string locationId, V1Category body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Category>> CreateCategoryAsyncWithHttpInfo (string locationId, V1Category body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateCategory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateCategory");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateCategory");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateCategory");
 
             var localVarPath = "/v1/{location_id}/categories";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2740,7 +2740,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateCategory", localVarResponse);
+                Exception exception = ExceptionFactory("CreateCategory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2757,9 +2757,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Discount</returns>
-        public V1Discount V1CreateDiscount (string locationId, V1Discount body)
+        public V1Discount CreateDiscount (string locationId, V1Discount body)
         {
-             ApiResponse<V1Discount> localVarResponse = V1CreateDiscountWithHttpInfo(locationId, body);
+             ApiResponse<V1Discount> localVarResponse = CreateDiscountWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -2770,14 +2770,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Discount</returns>
-        public ApiResponse< V1Discount > V1CreateDiscountWithHttpInfo (string locationId, V1Discount body)
+        public ApiResponse< V1Discount > CreateDiscountWithHttpInfo (string locationId, V1Discount body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateDiscount");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateDiscount");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateDiscount");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateDiscount");
 
             var localVarPath = "/v1/{location_id}/discounts";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2827,7 +2827,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateDiscount", localVarResponse);
+                Exception exception = ExceptionFactory("CreateDiscount", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2844,9 +2844,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Discount</returns>
-        public async System.Threading.Tasks.Task<V1Discount> V1CreateDiscountAsync (string locationId, V1Discount body)
+        public async System.Threading.Tasks.Task<V1Discount> CreateDiscountAsync (string locationId, V1Discount body)
         {
-             ApiResponse<V1Discount> localVarResponse = await V1CreateDiscountAsyncWithHttpInfo(locationId, body);
+             ApiResponse<V1Discount> localVarResponse = await CreateDiscountAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -2858,14 +2858,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Discount)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Discount>> V1CreateDiscountAsyncWithHttpInfo (string locationId, V1Discount body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Discount>> CreateDiscountAsyncWithHttpInfo (string locationId, V1Discount body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateDiscount");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateDiscount");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateDiscount");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateDiscount");
 
             var localVarPath = "/v1/{location_id}/discounts";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2915,7 +2915,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateDiscount", localVarResponse);
+                Exception exception = ExceptionFactory("CreateDiscount", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2932,9 +2932,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Fee</returns>
-        public V1Fee V1CreateFee (string locationId, V1Fee body)
+        public V1Fee CreateFee (string locationId, V1Fee body)
         {
-             ApiResponse<V1Fee> localVarResponse = V1CreateFeeWithHttpInfo(locationId, body);
+             ApiResponse<V1Fee> localVarResponse = CreateFeeWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -2945,14 +2945,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Fee</returns>
-        public ApiResponse< V1Fee > V1CreateFeeWithHttpInfo (string locationId, V1Fee body)
+        public ApiResponse< V1Fee > CreateFeeWithHttpInfo (string locationId, V1Fee body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateFee");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateFee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateFee");
 
             var localVarPath = "/v1/{location_id}/fees";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3002,7 +3002,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateFee", localVarResponse);
+                Exception exception = ExceptionFactory("CreateFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3019,9 +3019,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Fee</returns>
-        public async System.Threading.Tasks.Task<V1Fee> V1CreateFeeAsync (string locationId, V1Fee body)
+        public async System.Threading.Tasks.Task<V1Fee> CreateFeeAsync (string locationId, V1Fee body)
         {
-             ApiResponse<V1Fee> localVarResponse = await V1CreateFeeAsyncWithHttpInfo(locationId, body);
+             ApiResponse<V1Fee> localVarResponse = await CreateFeeAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -3033,14 +3033,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Fee)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Fee>> V1CreateFeeAsyncWithHttpInfo (string locationId, V1Fee body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Fee>> CreateFeeAsyncWithHttpInfo (string locationId, V1Fee body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateFee");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateFee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateFee");
 
             var localVarPath = "/v1/{location_id}/fees";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3090,7 +3090,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateFee", localVarResponse);
+                Exception exception = ExceptionFactory("CreateFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3107,9 +3107,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1CreateItem (string locationId, V1Item body)
+        public V1Item CreateItem (string locationId, V1Item body)
         {
-             ApiResponse<V1Item> localVarResponse = V1CreateItemWithHttpInfo(locationId, body);
+             ApiResponse<V1Item> localVarResponse = CreateItemWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -3120,14 +3120,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1CreateItemWithHttpInfo (string locationId, V1Item body)
+        public ApiResponse< V1Item > CreateItemWithHttpInfo (string locationId, V1Item body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateItem");
 
             var localVarPath = "/v1/{location_id}/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3177,7 +3177,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateItem", localVarResponse);
+                Exception exception = ExceptionFactory("CreateItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3194,9 +3194,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1CreateItemAsync (string locationId, V1Item body)
+        public async System.Threading.Tasks.Task<V1Item> CreateItemAsync (string locationId, V1Item body)
         {
-             ApiResponse<V1Item> localVarResponse = await V1CreateItemAsyncWithHttpInfo(locationId, body);
+             ApiResponse<V1Item> localVarResponse = await CreateItemAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -3208,14 +3208,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1CreateItemAsyncWithHttpInfo (string locationId, V1Item body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> CreateItemAsyncWithHttpInfo (string locationId, V1Item body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateItem");
 
             var localVarPath = "/v1/{location_id}/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3265,7 +3265,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateItem", localVarResponse);
+                Exception exception = ExceptionFactory("CreateItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3282,9 +3282,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierList</returns>
-        public V1ModifierList V1CreateModifierList (string locationId, V1ModifierList body)
+        public V1ModifierList CreateModifierList (string locationId, V1ModifierList body)
         {
-             ApiResponse<V1ModifierList> localVarResponse = V1CreateModifierListWithHttpInfo(locationId, body);
+             ApiResponse<V1ModifierList> localVarResponse = CreateModifierListWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -3295,14 +3295,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        public ApiResponse< V1ModifierList > V1CreateModifierListWithHttpInfo (string locationId, V1ModifierList body)
+        public ApiResponse< V1ModifierList > CreateModifierListWithHttpInfo (string locationId, V1ModifierList body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateModifierList");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateModifierList");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3352,7 +3352,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("CreateModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3369,9 +3369,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierList</returns>
-        public async System.Threading.Tasks.Task<V1ModifierList> V1CreateModifierListAsync (string locationId, V1ModifierList body)
+        public async System.Threading.Tasks.Task<V1ModifierList> CreateModifierListAsync (string locationId, V1ModifierList body)
         {
-             ApiResponse<V1ModifierList> localVarResponse = await V1CreateModifierListAsyncWithHttpInfo(locationId, body);
+             ApiResponse<V1ModifierList> localVarResponse = await CreateModifierListAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -3383,14 +3383,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1CreateModifierListAsyncWithHttpInfo (string locationId, V1ModifierList body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> CreateModifierListAsyncWithHttpInfo (string locationId, V1ModifierList body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateModifierList");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateModifierList");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3440,7 +3440,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("CreateModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3458,9 +3458,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierOption</returns>
-        public V1ModifierOption V1CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body)
+        public V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body)
         {
-             ApiResponse<V1ModifierOption> localVarResponse = V1CreateModifierOptionWithHttpInfo(locationId, modifierListId, body);
+             ApiResponse<V1ModifierOption> localVarResponse = CreateModifierOptionWithHttpInfo(locationId, modifierListId, body);
              return localVarResponse.Data;
         }
 
@@ -3472,17 +3472,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierOption</returns>
-        public ApiResponse< V1ModifierOption > V1CreateModifierOptionWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body)
+        public ApiResponse< V1ModifierOption > CreateModifierOptionWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateModifierOption");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1CreateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->CreateModifierOption");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateModifierOption");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3533,7 +3533,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateModifierOption", localVarResponse);
+                Exception exception = ExceptionFactory("CreateModifierOption", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3551,9 +3551,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierOption</returns>
-        public async System.Threading.Tasks.Task<V1ModifierOption> V1CreateModifierOptionAsync (string locationId, string modifierListId, V1ModifierOption body)
+        public async System.Threading.Tasks.Task<V1ModifierOption> CreateModifierOptionAsync (string locationId, string modifierListId, V1ModifierOption body)
         {
-             ApiResponse<V1ModifierOption> localVarResponse = await V1CreateModifierOptionAsyncWithHttpInfo(locationId, modifierListId, body);
+             ApiResponse<V1ModifierOption> localVarResponse = await CreateModifierOptionAsyncWithHttpInfo(locationId, modifierListId, body);
              return localVarResponse.Data;
 
         }
@@ -3566,17 +3566,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> V1CreateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> CreateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateModifierOption");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1CreateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->CreateModifierOption");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateModifierOption");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3627,7 +3627,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateModifierOption", localVarResponse);
+                Exception exception = ExceptionFactory("CreateModifierOption", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3644,9 +3644,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Page</returns>
-        public V1Page V1CreatePage (string locationId, V1Page body)
+        public V1Page CreatePage (string locationId, V1Page body)
         {
-             ApiResponse<V1Page> localVarResponse = V1CreatePageWithHttpInfo(locationId, body);
+             ApiResponse<V1Page> localVarResponse = CreatePageWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -3657,14 +3657,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        public ApiResponse< V1Page > V1CreatePageWithHttpInfo (string locationId, V1Page body)
+        public ApiResponse< V1Page > CreatePageWithHttpInfo (string locationId, V1Page body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreatePage");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreatePage");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreatePage");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreatePage");
 
             var localVarPath = "/v1/{location_id}/pages";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3714,7 +3714,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreatePage", localVarResponse);
+                Exception exception = ExceptionFactory("CreatePage", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3731,9 +3731,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Page</returns>
-        public async System.Threading.Tasks.Task<V1Page> V1CreatePageAsync (string locationId, V1Page body)
+        public async System.Threading.Tasks.Task<V1Page> CreatePageAsync (string locationId, V1Page body)
         {
-             ApiResponse<V1Page> localVarResponse = await V1CreatePageAsyncWithHttpInfo(locationId, body);
+             ApiResponse<V1Page> localVarResponse = await CreatePageAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -3745,14 +3745,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> V1CreatePageAsyncWithHttpInfo (string locationId, V1Page body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> CreatePageAsyncWithHttpInfo (string locationId, V1Page body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreatePage");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreatePage");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreatePage");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreatePage");
 
             var localVarPath = "/v1/{location_id}/pages";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3802,7 +3802,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreatePage", localVarResponse);
+                Exception exception = ExceptionFactory("CreatePage", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3820,9 +3820,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Variation</returns>
-        public V1Variation V1CreateVariation (string locationId, string itemId, V1Variation body)
+        public V1Variation CreateVariation (string locationId, string itemId, V1Variation body)
         {
-             ApiResponse<V1Variation> localVarResponse = V1CreateVariationWithHttpInfo(locationId, itemId, body);
+             ApiResponse<V1Variation> localVarResponse = CreateVariationWithHttpInfo(locationId, itemId, body);
              return localVarResponse.Data;
         }
 
@@ -3834,17 +3834,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Variation</returns>
-        public ApiResponse< V1Variation > V1CreateVariationWithHttpInfo (string locationId, string itemId, V1Variation body)
+        public ApiResponse< V1Variation > CreateVariationWithHttpInfo (string locationId, string itemId, V1Variation body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateVariation");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateVariation");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1CreateVariation");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->CreateVariation");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateVariation");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateVariation");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/variations";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3895,7 +3895,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateVariation", localVarResponse);
+                Exception exception = ExceptionFactory("CreateVariation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3913,9 +3913,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Variation</returns>
-        public async System.Threading.Tasks.Task<V1Variation> V1CreateVariationAsync (string locationId, string itemId, V1Variation body)
+        public async System.Threading.Tasks.Task<V1Variation> CreateVariationAsync (string locationId, string itemId, V1Variation body)
         {
-             ApiResponse<V1Variation> localVarResponse = await V1CreateVariationAsyncWithHttpInfo(locationId, itemId, body);
+             ApiResponse<V1Variation> localVarResponse = await CreateVariationAsyncWithHttpInfo(locationId, itemId, body);
              return localVarResponse.Data;
 
         }
@@ -3928,17 +3928,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Variation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Variation>> V1CreateVariationAsyncWithHttpInfo (string locationId, string itemId, V1Variation body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Variation>> CreateVariationAsyncWithHttpInfo (string locationId, string itemId, V1Variation body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1CreateVariation");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->CreateVariation");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1CreateVariation");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->CreateVariation");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1CreateVariation");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->CreateVariation");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/variations";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3989,7 +3989,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateVariation", localVarResponse);
+                Exception exception = ExceptionFactory("CreateVariation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4006,9 +4006,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>V1Category</returns>
-        public V1Category V1DeleteCategory (string locationId, string categoryId)
+        public V1Category DeleteCategory (string locationId, string categoryId)
         {
-             ApiResponse<V1Category> localVarResponse = V1DeleteCategoryWithHttpInfo(locationId, categoryId);
+             ApiResponse<V1Category> localVarResponse = DeleteCategoryWithHttpInfo(locationId, categoryId);
              return localVarResponse.Data;
         }
 
@@ -4019,14 +4019,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>ApiResponse of V1Category</returns>
-        public ApiResponse< V1Category > V1DeleteCategoryWithHttpInfo (string locationId, string categoryId)
+        public ApiResponse< V1Category > DeleteCategoryWithHttpInfo (string locationId, string categoryId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteCategory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteCategory");
             // verify the required parameter 'categoryId' is set
             if (categoryId == null)
-                throw new ApiException(400, "Missing required parameter 'categoryId' when calling ItemsApi->V1DeleteCategory");
+                throw new ApiException(400, "Missing required parameter 'categoryId' when calling V1ItemsApi->DeleteCategory");
 
             var localVarPath = "/v1/{location_id}/categories/{category_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4069,7 +4069,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteCategory", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteCategory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4086,9 +4086,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>Task of V1Category</returns>
-        public async System.Threading.Tasks.Task<V1Category> V1DeleteCategoryAsync (string locationId, string categoryId)
+        public async System.Threading.Tasks.Task<V1Category> DeleteCategoryAsync (string locationId, string categoryId)
         {
-             ApiResponse<V1Category> localVarResponse = await V1DeleteCategoryAsyncWithHttpInfo(locationId, categoryId);
+             ApiResponse<V1Category> localVarResponse = await DeleteCategoryAsyncWithHttpInfo(locationId, categoryId);
              return localVarResponse.Data;
 
         }
@@ -4100,14 +4100,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
         /// <returns>Task of ApiResponse (V1Category)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Category>> V1DeleteCategoryAsyncWithHttpInfo (string locationId, string categoryId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Category>> DeleteCategoryAsyncWithHttpInfo (string locationId, string categoryId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteCategory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteCategory");
             // verify the required parameter 'categoryId' is set
             if (categoryId == null)
-                throw new ApiException(400, "Missing required parameter 'categoryId' when calling ItemsApi->V1DeleteCategory");
+                throw new ApiException(400, "Missing required parameter 'categoryId' when calling V1ItemsApi->DeleteCategory");
 
             var localVarPath = "/v1/{location_id}/categories/{category_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4150,7 +4150,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteCategory", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteCategory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4167,9 +4167,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>V1Discount</returns>
-        public V1Discount V1DeleteDiscount (string locationId, string discountId)
+        public V1Discount DeleteDiscount (string locationId, string discountId)
         {
-             ApiResponse<V1Discount> localVarResponse = V1DeleteDiscountWithHttpInfo(locationId, discountId);
+             ApiResponse<V1Discount> localVarResponse = DeleteDiscountWithHttpInfo(locationId, discountId);
              return localVarResponse.Data;
         }
 
@@ -4180,14 +4180,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>ApiResponse of V1Discount</returns>
-        public ApiResponse< V1Discount > V1DeleteDiscountWithHttpInfo (string locationId, string discountId)
+        public ApiResponse< V1Discount > DeleteDiscountWithHttpInfo (string locationId, string discountId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteDiscount");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteDiscount");
             // verify the required parameter 'discountId' is set
             if (discountId == null)
-                throw new ApiException(400, "Missing required parameter 'discountId' when calling ItemsApi->V1DeleteDiscount");
+                throw new ApiException(400, "Missing required parameter 'discountId' when calling V1ItemsApi->DeleteDiscount");
 
             var localVarPath = "/v1/{location_id}/discounts/{discount_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4230,7 +4230,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteDiscount", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteDiscount", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4247,9 +4247,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>Task of V1Discount</returns>
-        public async System.Threading.Tasks.Task<V1Discount> V1DeleteDiscountAsync (string locationId, string discountId)
+        public async System.Threading.Tasks.Task<V1Discount> DeleteDiscountAsync (string locationId, string discountId)
         {
-             ApiResponse<V1Discount> localVarResponse = await V1DeleteDiscountAsyncWithHttpInfo(locationId, discountId);
+             ApiResponse<V1Discount> localVarResponse = await DeleteDiscountAsyncWithHttpInfo(locationId, discountId);
              return localVarResponse.Data;
 
         }
@@ -4261,14 +4261,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
         /// <returns>Task of ApiResponse (V1Discount)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Discount>> V1DeleteDiscountAsyncWithHttpInfo (string locationId, string discountId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Discount>> DeleteDiscountAsyncWithHttpInfo (string locationId, string discountId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteDiscount");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteDiscount");
             // verify the required parameter 'discountId' is set
             if (discountId == null)
-                throw new ApiException(400, "Missing required parameter 'discountId' when calling ItemsApi->V1DeleteDiscount");
+                throw new ApiException(400, "Missing required parameter 'discountId' when calling V1ItemsApi->DeleteDiscount");
 
             var localVarPath = "/v1/{location_id}/discounts/{discount_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4311,7 +4311,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteDiscount", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteDiscount", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4328,9 +4328,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>V1Fee</returns>
-        public V1Fee V1DeleteFee (string locationId, string feeId)
+        public V1Fee DeleteFee (string locationId, string feeId)
         {
-             ApiResponse<V1Fee> localVarResponse = V1DeleteFeeWithHttpInfo(locationId, feeId);
+             ApiResponse<V1Fee> localVarResponse = DeleteFeeWithHttpInfo(locationId, feeId);
              return localVarResponse.Data;
         }
 
@@ -4341,14 +4341,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>ApiResponse of V1Fee</returns>
-        public ApiResponse< V1Fee > V1DeleteFeeWithHttpInfo (string locationId, string feeId)
+        public ApiResponse< V1Fee > DeleteFeeWithHttpInfo (string locationId, string feeId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1DeleteFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->DeleteFee");
 
             var localVarPath = "/v1/{location_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4391,7 +4391,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteFee", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4408,9 +4408,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>Task of V1Fee</returns>
-        public async System.Threading.Tasks.Task<V1Fee> V1DeleteFeeAsync (string locationId, string feeId)
+        public async System.Threading.Tasks.Task<V1Fee> DeleteFeeAsync (string locationId, string feeId)
         {
-             ApiResponse<V1Fee> localVarResponse = await V1DeleteFeeAsyncWithHttpInfo(locationId, feeId);
+             ApiResponse<V1Fee> localVarResponse = await DeleteFeeAsyncWithHttpInfo(locationId, feeId);
              return localVarResponse.Data;
 
         }
@@ -4422,14 +4422,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
         /// <returns>Task of ApiResponse (V1Fee)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Fee>> V1DeleteFeeAsyncWithHttpInfo (string locationId, string feeId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Fee>> DeleteFeeAsyncWithHttpInfo (string locationId, string feeId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1DeleteFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->DeleteFee");
 
             var localVarPath = "/v1/{location_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4472,7 +4472,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteFee", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4489,9 +4489,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1DeleteItem (string locationId, string itemId)
+        public V1Item DeleteItem (string locationId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = V1DeleteItemWithHttpInfo(locationId, itemId);
+             ApiResponse<V1Item> localVarResponse = DeleteItemWithHttpInfo(locationId, itemId);
              return localVarResponse.Data;
         }
 
@@ -4502,14 +4502,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1DeleteItemWithHttpInfo (string locationId, string itemId)
+        public ApiResponse< V1Item > DeleteItemWithHttpInfo (string locationId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteItem");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1DeleteItem");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->DeleteItem");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4552,7 +4552,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteItem", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4569,9 +4569,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1DeleteItemAsync (string locationId, string itemId)
+        public async System.Threading.Tasks.Task<V1Item> DeleteItemAsync (string locationId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = await V1DeleteItemAsyncWithHttpInfo(locationId, itemId);
+             ApiResponse<V1Item> localVarResponse = await DeleteItemAsyncWithHttpInfo(locationId, itemId);
              return localVarResponse.Data;
 
         }
@@ -4583,14 +4583,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1DeleteItemAsyncWithHttpInfo (string locationId, string itemId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> DeleteItemAsyncWithHttpInfo (string locationId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteItem");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1DeleteItem");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->DeleteItem");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4633,7 +4633,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteItem", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4650,9 +4650,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>V1ModifierList</returns>
-        public V1ModifierList V1DeleteModifierList (string locationId, string modifierListId)
+        public V1ModifierList DeleteModifierList (string locationId, string modifierListId)
         {
-             ApiResponse<V1ModifierList> localVarResponse = V1DeleteModifierListWithHttpInfo(locationId, modifierListId);
+             ApiResponse<V1ModifierList> localVarResponse = DeleteModifierListWithHttpInfo(locationId, modifierListId);
              return localVarResponse.Data;
         }
 
@@ -4663,14 +4663,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        public ApiResponse< V1ModifierList > V1DeleteModifierListWithHttpInfo (string locationId, string modifierListId)
+        public ApiResponse< V1ModifierList > DeleteModifierListWithHttpInfo (string locationId, string modifierListId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1DeleteModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->DeleteModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4713,7 +4713,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4730,9 +4730,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>Task of V1ModifierList</returns>
-        public async System.Threading.Tasks.Task<V1ModifierList> V1DeleteModifierListAsync (string locationId, string modifierListId)
+        public async System.Threading.Tasks.Task<V1ModifierList> DeleteModifierListAsync (string locationId, string modifierListId)
         {
-             ApiResponse<V1ModifierList> localVarResponse = await V1DeleteModifierListAsyncWithHttpInfo(locationId, modifierListId);
+             ApiResponse<V1ModifierList> localVarResponse = await DeleteModifierListAsyncWithHttpInfo(locationId, modifierListId);
              return localVarResponse.Data;
 
         }
@@ -4744,14 +4744,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1DeleteModifierListAsyncWithHttpInfo (string locationId, string modifierListId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> DeleteModifierListAsyncWithHttpInfo (string locationId, string modifierListId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1DeleteModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->DeleteModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4794,7 +4794,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4812,9 +4812,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>V1ModifierOption</returns>
-        public V1ModifierOption V1DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId)
+        public V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId)
         {
-             ApiResponse<V1ModifierOption> localVarResponse = V1DeleteModifierOptionWithHttpInfo(locationId, modifierListId, modifierOptionId);
+             ApiResponse<V1ModifierOption> localVarResponse = DeleteModifierOptionWithHttpInfo(locationId, modifierListId, modifierOptionId);
              return localVarResponse.Data;
         }
 
@@ -4826,17 +4826,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>ApiResponse of V1ModifierOption</returns>
-        public ApiResponse< V1ModifierOption > V1DeleteModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId)
+        public ApiResponse< V1ModifierOption > DeleteModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteModifierOption");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteModifierOption");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1DeleteModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->DeleteModifierOption");
             // verify the required parameter 'modifierOptionId' is set
             if (modifierOptionId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling ItemsApi->V1DeleteModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling V1ItemsApi->DeleteModifierOption");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4880,7 +4880,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteModifierOption", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteModifierOption", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4898,9 +4898,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>Task of V1ModifierOption</returns>
-        public async System.Threading.Tasks.Task<V1ModifierOption> V1DeleteModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId)
+        public async System.Threading.Tasks.Task<V1ModifierOption> DeleteModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId)
         {
-             ApiResponse<V1ModifierOption> localVarResponse = await V1DeleteModifierOptionAsyncWithHttpInfo(locationId, modifierListId, modifierOptionId);
+             ApiResponse<V1ModifierOption> localVarResponse = await DeleteModifierOptionAsyncWithHttpInfo(locationId, modifierListId, modifierOptionId);
              return localVarResponse.Data;
 
         }
@@ -4913,17 +4913,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> V1DeleteModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> DeleteModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteModifierOption");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteModifierOption");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1DeleteModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->DeleteModifierOption");
             // verify the required parameter 'modifierOptionId' is set
             if (modifierOptionId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling ItemsApi->V1DeleteModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling V1ItemsApi->DeleteModifierOption");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4967,7 +4967,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteModifierOption", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteModifierOption", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4984,9 +4984,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>V1Page</returns>
-        public V1Page V1DeletePage (string locationId, string pageId)
+        public V1Page DeletePage (string locationId, string pageId)
         {
-             ApiResponse<V1Page> localVarResponse = V1DeletePageWithHttpInfo(locationId, pageId);
+             ApiResponse<V1Page> localVarResponse = DeletePageWithHttpInfo(locationId, pageId);
              return localVarResponse.Data;
         }
 
@@ -4997,14 +4997,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        public ApiResponse< V1Page > V1DeletePageWithHttpInfo (string locationId, string pageId)
+        public ApiResponse< V1Page > DeletePageWithHttpInfo (string locationId, string pageId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeletePage");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeletePage");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1DeletePage");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->DeletePage");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5047,7 +5047,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeletePage", localVarResponse);
+                Exception exception = ExceptionFactory("DeletePage", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5064,9 +5064,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>Task of V1Page</returns>
-        public async System.Threading.Tasks.Task<V1Page> V1DeletePageAsync (string locationId, string pageId)
+        public async System.Threading.Tasks.Task<V1Page> DeletePageAsync (string locationId, string pageId)
         {
-             ApiResponse<V1Page> localVarResponse = await V1DeletePageAsyncWithHttpInfo(locationId, pageId);
+             ApiResponse<V1Page> localVarResponse = await DeletePageAsyncWithHttpInfo(locationId, pageId);
              return localVarResponse.Data;
 
         }
@@ -5078,14 +5078,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> V1DeletePageAsyncWithHttpInfo (string locationId, string pageId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> DeletePageAsyncWithHttpInfo (string locationId, string pageId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeletePage");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeletePage");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1DeletePage");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->DeletePage");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5128,7 +5128,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeletePage", localVarResponse);
+                Exception exception = ExceptionFactory("DeletePage", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5147,9 +5147,9 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>V1Page</returns>
-        public V1Page V1DeletePageCell (string locationId, string pageId, string row = null, string column = null)
+        public V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null)
         {
-             ApiResponse<V1Page> localVarResponse = V1DeletePageCellWithHttpInfo(locationId, pageId, row, column);
+             ApiResponse<V1Page> localVarResponse = DeletePageCellWithHttpInfo(locationId, pageId, row, column);
              return localVarResponse.Data;
         }
 
@@ -5162,14 +5162,14 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>ApiResponse of V1Page</returns>
-        public ApiResponse< V1Page > V1DeletePageCellWithHttpInfo (string locationId, string pageId, string row = null, string column = null)
+        public ApiResponse< V1Page > DeletePageCellWithHttpInfo (string locationId, string pageId, string row = null, string column = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeletePageCell");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeletePageCell");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1DeletePageCell");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->DeletePageCell");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}/cells";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5214,7 +5214,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeletePageCell", localVarResponse);
+                Exception exception = ExceptionFactory("DeletePageCell", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5233,9 +5233,9 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>Task of V1Page</returns>
-        public async System.Threading.Tasks.Task<V1Page> V1DeletePageCellAsync (string locationId, string pageId, string row = null, string column = null)
+        public async System.Threading.Tasks.Task<V1Page> DeletePageCellAsync (string locationId, string pageId, string row = null, string column = null)
         {
-             ApiResponse<V1Page> localVarResponse = await V1DeletePageCellAsyncWithHttpInfo(locationId, pageId, row, column);
+             ApiResponse<V1Page> localVarResponse = await DeletePageCellAsyncWithHttpInfo(locationId, pageId, row, column);
              return localVarResponse.Data;
 
         }
@@ -5249,14 +5249,14 @@ namespace Square.Connect.Api
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> V1DeletePageCellAsyncWithHttpInfo (string locationId, string pageId, string row = null, string column = null)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> DeletePageCellAsyncWithHttpInfo (string locationId, string pageId, string row = null, string column = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeletePageCell");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeletePageCell");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1DeletePageCell");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->DeletePageCell");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}/cells";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5301,7 +5301,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeletePageCell", localVarResponse);
+                Exception exception = ExceptionFactory("DeletePageCell", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5319,9 +5319,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>V1Variation</returns>
-        public V1Variation V1DeleteVariation (string locationId, string itemId, string variationId)
+        public V1Variation DeleteVariation (string locationId, string itemId, string variationId)
         {
-             ApiResponse<V1Variation> localVarResponse = V1DeleteVariationWithHttpInfo(locationId, itemId, variationId);
+             ApiResponse<V1Variation> localVarResponse = DeleteVariationWithHttpInfo(locationId, itemId, variationId);
              return localVarResponse.Data;
         }
 
@@ -5333,17 +5333,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>ApiResponse of V1Variation</returns>
-        public ApiResponse< V1Variation > V1DeleteVariationWithHttpInfo (string locationId, string itemId, string variationId)
+        public ApiResponse< V1Variation > DeleteVariationWithHttpInfo (string locationId, string itemId, string variationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteVariation");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteVariation");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1DeleteVariation");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->DeleteVariation");
             // verify the required parameter 'variationId' is set
             if (variationId == null)
-                throw new ApiException(400, "Missing required parameter 'variationId' when calling ItemsApi->V1DeleteVariation");
+                throw new ApiException(400, "Missing required parameter 'variationId' when calling V1ItemsApi->DeleteVariation");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/variations/{variation_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5387,7 +5387,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteVariation", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteVariation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5405,9 +5405,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>Task of V1Variation</returns>
-        public async System.Threading.Tasks.Task<V1Variation> V1DeleteVariationAsync (string locationId, string itemId, string variationId)
+        public async System.Threading.Tasks.Task<V1Variation> DeleteVariationAsync (string locationId, string itemId, string variationId)
         {
-             ApiResponse<V1Variation> localVarResponse = await V1DeleteVariationAsyncWithHttpInfo(locationId, itemId, variationId);
+             ApiResponse<V1Variation> localVarResponse = await DeleteVariationAsyncWithHttpInfo(locationId, itemId, variationId);
              return localVarResponse.Data;
 
         }
@@ -5420,17 +5420,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
         /// <returns>Task of ApiResponse (V1Variation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Variation>> V1DeleteVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Variation>> DeleteVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1DeleteVariation");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->DeleteVariation");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1DeleteVariation");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->DeleteVariation");
             // verify the required parameter 'variationId' is set
             if (variationId == null)
-                throw new ApiException(400, "Missing required parameter 'variationId' when calling ItemsApi->V1DeleteVariation");
+                throw new ApiException(400, "Missing required parameter 'variationId' when calling V1ItemsApi->DeleteVariation");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/variations/{variation_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5474,7 +5474,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteVariation", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteVariation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5490,9 +5490,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>List&lt;V1Category&gt;</returns>
-        public List<V1Category> V1ListCategories (string locationId)
+        public List<V1Category> ListCategories (string locationId)
         {
-             ApiResponse<List<V1Category>> localVarResponse = V1ListCategoriesWithHttpInfo(locationId);
+             ApiResponse<List<V1Category>> localVarResponse = ListCategoriesWithHttpInfo(locationId);
              return localVarResponse.Data;
         }
 
@@ -5502,11 +5502,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>ApiResponse of List&lt;V1Category&gt;</returns>
-        public ApiResponse< List<V1Category> > V1ListCategoriesWithHttpInfo (string locationId)
+        public ApiResponse< List<V1Category> > ListCategoriesWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListCategories");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListCategories");
 
             var localVarPath = "/v1/{location_id}/categories";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5548,7 +5548,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListCategories", localVarResponse);
+                Exception exception = ExceptionFactory("ListCategories", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5564,9 +5564,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of List&lt;V1Category&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Category>> V1ListCategoriesAsync (string locationId)
+        public async System.Threading.Tasks.Task<List<V1Category>> ListCategoriesAsync (string locationId)
         {
-             ApiResponse<List<V1Category>> localVarResponse = await V1ListCategoriesAsyncWithHttpInfo(locationId);
+             ApiResponse<List<V1Category>> localVarResponse = await ListCategoriesAsyncWithHttpInfo(locationId);
              return localVarResponse.Data;
 
         }
@@ -5577,11 +5577,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Category&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Category>>> V1ListCategoriesAsyncWithHttpInfo (string locationId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Category>>> ListCategoriesAsyncWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListCategories");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListCategories");
 
             var localVarPath = "/v1/{location_id}/categories";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5623,7 +5623,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListCategories", localVarResponse);
+                Exception exception = ExceptionFactory("ListCategories", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5639,9 +5639,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>List&lt;V1Discount&gt;</returns>
-        public List<V1Discount> V1ListDiscounts (string locationId)
+        public List<V1Discount> ListDiscounts (string locationId)
         {
-             ApiResponse<List<V1Discount>> localVarResponse = V1ListDiscountsWithHttpInfo(locationId);
+             ApiResponse<List<V1Discount>> localVarResponse = ListDiscountsWithHttpInfo(locationId);
              return localVarResponse.Data;
         }
 
@@ -5651,11 +5651,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>ApiResponse of List&lt;V1Discount&gt;</returns>
-        public ApiResponse< List<V1Discount> > V1ListDiscountsWithHttpInfo (string locationId)
+        public ApiResponse< List<V1Discount> > ListDiscountsWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListDiscounts");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListDiscounts");
 
             var localVarPath = "/v1/{location_id}/discounts";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5697,7 +5697,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListDiscounts", localVarResponse);
+                Exception exception = ExceptionFactory("ListDiscounts", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5713,9 +5713,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of List&lt;V1Discount&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Discount>> V1ListDiscountsAsync (string locationId)
+        public async System.Threading.Tasks.Task<List<V1Discount>> ListDiscountsAsync (string locationId)
         {
-             ApiResponse<List<V1Discount>> localVarResponse = await V1ListDiscountsAsyncWithHttpInfo(locationId);
+             ApiResponse<List<V1Discount>> localVarResponse = await ListDiscountsAsyncWithHttpInfo(locationId);
              return localVarResponse.Data;
 
         }
@@ -5726,11 +5726,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Discount&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Discount>>> V1ListDiscountsAsyncWithHttpInfo (string locationId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Discount>>> ListDiscountsAsyncWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListDiscounts");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListDiscounts");
 
             var localVarPath = "/v1/{location_id}/discounts";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5772,7 +5772,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListDiscounts", localVarResponse);
+                Exception exception = ExceptionFactory("ListDiscounts", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5788,9 +5788,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>List&lt;V1Fee&gt;</returns>
-        public List<V1Fee> V1ListFees (string locationId)
+        public List<V1Fee> ListFees (string locationId)
         {
-             ApiResponse<List<V1Fee>> localVarResponse = V1ListFeesWithHttpInfo(locationId);
+             ApiResponse<List<V1Fee>> localVarResponse = ListFeesWithHttpInfo(locationId);
              return localVarResponse.Data;
         }
 
@@ -5800,11 +5800,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>ApiResponse of List&lt;V1Fee&gt;</returns>
-        public ApiResponse< List<V1Fee> > V1ListFeesWithHttpInfo (string locationId)
+        public ApiResponse< List<V1Fee> > ListFeesWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListFees");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListFees");
 
             var localVarPath = "/v1/{location_id}/fees";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5846,7 +5846,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListFees", localVarResponse);
+                Exception exception = ExceptionFactory("ListFees", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5862,9 +5862,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>Task of List&lt;V1Fee&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Fee>> V1ListFeesAsync (string locationId)
+        public async System.Threading.Tasks.Task<List<V1Fee>> ListFeesAsync (string locationId)
         {
-             ApiResponse<List<V1Fee>> localVarResponse = await V1ListFeesAsyncWithHttpInfo(locationId);
+             ApiResponse<List<V1Fee>> localVarResponse = await ListFeesAsyncWithHttpInfo(locationId);
              return localVarResponse.Data;
 
         }
@@ -5875,11 +5875,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Fee&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Fee>>> V1ListFeesAsyncWithHttpInfo (string locationId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Fee>>> ListFeesAsyncWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListFees");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListFees");
 
             var localVarPath = "/v1/{location_id}/fees";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5921,7 +5921,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListFees", localVarResponse);
+                Exception exception = ExceptionFactory("ListFees", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -5938,9 +5938,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>List&lt;V1InventoryEntry&gt;</returns>
-        public List<V1InventoryEntry> V1ListInventory (string locationId, int? limit = null)
+        public List<V1InventoryEntry> ListInventory (string locationId, int? limit = null)
         {
-             ApiResponse<List<V1InventoryEntry>> localVarResponse = V1ListInventoryWithHttpInfo(locationId, limit);
+             ApiResponse<List<V1InventoryEntry>> localVarResponse = ListInventoryWithHttpInfo(locationId, limit);
              return localVarResponse.Data;
         }
 
@@ -5951,11 +5951,11 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1InventoryEntry&gt;</returns>
-        public ApiResponse< List<V1InventoryEntry> > V1ListInventoryWithHttpInfo (string locationId, int? limit = null)
+        public ApiResponse< List<V1InventoryEntry> > ListInventoryWithHttpInfo (string locationId, int? limit = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListInventory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListInventory");
 
             var localVarPath = "/v1/{location_id}/inventory";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5998,7 +5998,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListInventory", localVarResponse);
+                Exception exception = ExceptionFactory("ListInventory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6015,9 +6015,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>Task of List&lt;V1InventoryEntry&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1InventoryEntry>> V1ListInventoryAsync (string locationId, int? limit = null)
+        public async System.Threading.Tasks.Task<List<V1InventoryEntry>> ListInventoryAsync (string locationId, int? limit = null)
         {
-             ApiResponse<List<V1InventoryEntry>> localVarResponse = await V1ListInventoryAsyncWithHttpInfo(locationId, limit);
+             ApiResponse<List<V1InventoryEntry>> localVarResponse = await ListInventoryAsyncWithHttpInfo(locationId, limit);
              return localVarResponse.Data;
 
         }
@@ -6029,11 +6029,11 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1InventoryEntry&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1InventoryEntry>>> V1ListInventoryAsyncWithHttpInfo (string locationId, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1InventoryEntry>>> ListInventoryAsyncWithHttpInfo (string locationId, int? limit = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListInventory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListInventory");
 
             var localVarPath = "/v1/{location_id}/inventory";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6076,7 +6076,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListInventory", localVarResponse);
+                Exception exception = ExceptionFactory("ListInventory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6092,9 +6092,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>List&lt;V1Item&gt;</returns>
-        public List<V1Item> V1ListItems (string locationId)
+        public List<V1Item> ListItems (string locationId)
         {
-             ApiResponse<List<V1Item>> localVarResponse = V1ListItemsWithHttpInfo(locationId);
+             ApiResponse<List<V1Item>> localVarResponse = ListItemsWithHttpInfo(locationId);
              return localVarResponse.Data;
         }
 
@@ -6104,11 +6104,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>ApiResponse of List&lt;V1Item&gt;</returns>
-        public ApiResponse< List<V1Item> > V1ListItemsWithHttpInfo (string locationId)
+        public ApiResponse< List<V1Item> > ListItemsWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListItems");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListItems");
 
             var localVarPath = "/v1/{location_id}/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6150,7 +6150,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListItems", localVarResponse);
+                Exception exception = ExceptionFactory("ListItems", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6166,9 +6166,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>Task of List&lt;V1Item&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Item>> V1ListItemsAsync (string locationId)
+        public async System.Threading.Tasks.Task<List<V1Item>> ListItemsAsync (string locationId)
         {
-             ApiResponse<List<V1Item>> localVarResponse = await V1ListItemsAsyncWithHttpInfo(locationId);
+             ApiResponse<List<V1Item>> localVarResponse = await ListItemsAsyncWithHttpInfo(locationId);
              return localVarResponse.Data;
 
         }
@@ -6179,11 +6179,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Item&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> V1ListItemsAsyncWithHttpInfo (string locationId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> ListItemsAsyncWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListItems");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListItems");
 
             var localVarPath = "/v1/{location_id}/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6225,7 +6225,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListItems", localVarResponse);
+                Exception exception = ExceptionFactory("ListItems", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6241,9 +6241,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>List&lt;V1ModifierList&gt;</returns>
-        public List<V1ModifierList> V1ListModifierLists (string locationId)
+        public List<V1ModifierList> ListModifierLists (string locationId)
         {
-             ApiResponse<List<V1ModifierList>> localVarResponse = V1ListModifierListsWithHttpInfo(locationId);
+             ApiResponse<List<V1ModifierList>> localVarResponse = ListModifierListsWithHttpInfo(locationId);
              return localVarResponse.Data;
         }
 
@@ -6253,11 +6253,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>ApiResponse of List&lt;V1ModifierList&gt;</returns>
-        public ApiResponse< List<V1ModifierList> > V1ListModifierListsWithHttpInfo (string locationId)
+        public ApiResponse< List<V1ModifierList> > ListModifierListsWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListModifierLists");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListModifierLists");
 
             var localVarPath = "/v1/{location_id}/modifier-lists";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6299,7 +6299,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListModifierLists", localVarResponse);
+                Exception exception = ExceptionFactory("ListModifierLists", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6315,9 +6315,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>Task of List&lt;V1ModifierList&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1ModifierList>> V1ListModifierListsAsync (string locationId)
+        public async System.Threading.Tasks.Task<List<V1ModifierList>> ListModifierListsAsync (string locationId)
         {
-             ApiResponse<List<V1ModifierList>> localVarResponse = await V1ListModifierListsAsyncWithHttpInfo(locationId);
+             ApiResponse<List<V1ModifierList>> localVarResponse = await ListModifierListsAsyncWithHttpInfo(locationId);
              return localVarResponse.Data;
 
         }
@@ -6328,11 +6328,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1ModifierList&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1ModifierList>>> V1ListModifierListsAsyncWithHttpInfo (string locationId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1ModifierList>>> ListModifierListsAsyncWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListModifierLists");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListModifierLists");
 
             var localVarPath = "/v1/{location_id}/modifier-lists";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6374,7 +6374,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListModifierLists", localVarResponse);
+                Exception exception = ExceptionFactory("ListModifierLists", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6390,9 +6390,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>List&lt;V1Page&gt;</returns>
-        public List<V1Page> V1ListPages (string locationId)
+        public List<V1Page> ListPages (string locationId)
         {
-             ApiResponse<List<V1Page>> localVarResponse = V1ListPagesWithHttpInfo(locationId);
+             ApiResponse<List<V1Page>> localVarResponse = ListPagesWithHttpInfo(locationId);
              return localVarResponse.Data;
         }
 
@@ -6402,11 +6402,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>ApiResponse of List&lt;V1Page&gt;</returns>
-        public ApiResponse< List<V1Page> > V1ListPagesWithHttpInfo (string locationId)
+        public ApiResponse< List<V1Page> > ListPagesWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListPages");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListPages");
 
             var localVarPath = "/v1/{location_id}/pages";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6448,7 +6448,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListPages", localVarResponse);
+                Exception exception = ExceptionFactory("ListPages", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6464,9 +6464,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>Task of List&lt;V1Page&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Page>> V1ListPagesAsync (string locationId)
+        public async System.Threading.Tasks.Task<List<V1Page>> ListPagesAsync (string locationId)
         {
-             ApiResponse<List<V1Page>> localVarResponse = await V1ListPagesAsyncWithHttpInfo(locationId);
+             ApiResponse<List<V1Page>> localVarResponse = await ListPagesAsyncWithHttpInfo(locationId);
              return localVarResponse.Data;
 
         }
@@ -6477,11 +6477,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1Page&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Page>>> V1ListPagesAsyncWithHttpInfo (string locationId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Page>>> ListPagesAsyncWithHttpInfo (string locationId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1ListPages");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->ListPages");
 
             var localVarPath = "/v1/{location_id}/pages";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6523,7 +6523,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListPages", localVarResponse);
+                Exception exception = ExceptionFactory("ListPages", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6541,9 +6541,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1RemoveFee (string locationId, string itemId, string feeId)
+        public V1Item RemoveFee (string locationId, string itemId, string feeId)
         {
-             ApiResponse<V1Item> localVarResponse = V1RemoveFeeWithHttpInfo(locationId, itemId, feeId);
+             ApiResponse<V1Item> localVarResponse = RemoveFeeWithHttpInfo(locationId, itemId, feeId);
              return localVarResponse.Data;
         }
 
@@ -6555,17 +6555,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1RemoveFeeWithHttpInfo (string locationId, string itemId, string feeId)
+        public ApiResponse< V1Item > RemoveFeeWithHttpInfo (string locationId, string itemId, string feeId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RemoveFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RemoveFee");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1RemoveFee");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->RemoveFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1RemoveFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->RemoveFee");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6609,7 +6609,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RemoveFee", localVarResponse);
+                Exception exception = ExceptionFactory("RemoveFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6627,9 +6627,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1RemoveFeeAsync (string locationId, string itemId, string feeId)
+        public async System.Threading.Tasks.Task<V1Item> RemoveFeeAsync (string locationId, string itemId, string feeId)
         {
-             ApiResponse<V1Item> localVarResponse = await V1RemoveFeeAsyncWithHttpInfo(locationId, itemId, feeId);
+             ApiResponse<V1Item> localVarResponse = await RemoveFeeAsyncWithHttpInfo(locationId, itemId, feeId);
              return localVarResponse.Data;
 
         }
@@ -6642,17 +6642,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1RemoveFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> RemoveFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RemoveFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RemoveFee");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1RemoveFee");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->RemoveFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1RemoveFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->RemoveFee");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6696,7 +6696,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RemoveFee", localVarResponse);
+                Exception exception = ExceptionFactory("RemoveFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6714,9 +6714,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1RemoveModifierList (string locationId, string modifierListId, string itemId)
+        public V1Item RemoveModifierList (string locationId, string modifierListId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = V1RemoveModifierListWithHttpInfo(locationId, modifierListId, itemId);
+             ApiResponse<V1Item> localVarResponse = RemoveModifierListWithHttpInfo(locationId, modifierListId, itemId);
              return localVarResponse.Data;
         }
 
@@ -6728,17 +6728,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1RemoveModifierListWithHttpInfo (string locationId, string modifierListId, string itemId)
+        public ApiResponse< V1Item > RemoveModifierListWithHttpInfo (string locationId, string modifierListId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RemoveModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RemoveModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1RemoveModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->RemoveModifierList");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1RemoveModifierList");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->RemoveModifierList");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6782,7 +6782,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RemoveModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("RemoveModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6800,9 +6800,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1RemoveModifierListAsync (string locationId, string modifierListId, string itemId)
+        public async System.Threading.Tasks.Task<V1Item> RemoveModifierListAsync (string locationId, string modifierListId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = await V1RemoveModifierListAsyncWithHttpInfo(locationId, modifierListId, itemId);
+             ApiResponse<V1Item> localVarResponse = await RemoveModifierListAsyncWithHttpInfo(locationId, modifierListId, itemId);
              return localVarResponse.Data;
 
         }
@@ -6815,17 +6815,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1RemoveModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> RemoveModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RemoveModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RemoveModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1RemoveModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->RemoveModifierList");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1RemoveModifierList");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->RemoveModifierList");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6869,7 +6869,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RemoveModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("RemoveModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6886,9 +6886,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1RetrieveItem (string locationId, string itemId)
+        public V1Item RetrieveItem (string locationId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = V1RetrieveItemWithHttpInfo(locationId, itemId);
+             ApiResponse<V1Item> localVarResponse = RetrieveItemWithHttpInfo(locationId, itemId);
              return localVarResponse.Data;
         }
 
@@ -6899,14 +6899,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1RetrieveItemWithHttpInfo (string locationId, string itemId)
+        public ApiResponse< V1Item > RetrieveItemWithHttpInfo (string locationId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RetrieveItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RetrieveItem");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1RetrieveItem");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->RetrieveItem");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6949,7 +6949,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveItem", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -6966,9 +6966,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1RetrieveItemAsync (string locationId, string itemId)
+        public async System.Threading.Tasks.Task<V1Item> RetrieveItemAsync (string locationId, string itemId)
         {
-             ApiResponse<V1Item> localVarResponse = await V1RetrieveItemAsyncWithHttpInfo(locationId, itemId);
+             ApiResponse<V1Item> localVarResponse = await RetrieveItemAsyncWithHttpInfo(locationId, itemId);
              return localVarResponse.Data;
 
         }
@@ -6980,14 +6980,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1RetrieveItemAsyncWithHttpInfo (string locationId, string itemId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> RetrieveItemAsyncWithHttpInfo (string locationId, string itemId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RetrieveItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RetrieveItem");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1RetrieveItem");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->RetrieveItem");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7030,7 +7030,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveItem", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7047,9 +7047,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>V1ModifierList</returns>
-        public V1ModifierList V1RetrieveModifierList (string locationId, string modifierListId)
+        public V1ModifierList RetrieveModifierList (string locationId, string modifierListId)
         {
-             ApiResponse<V1ModifierList> localVarResponse = V1RetrieveModifierListWithHttpInfo(locationId, modifierListId);
+             ApiResponse<V1ModifierList> localVarResponse = RetrieveModifierListWithHttpInfo(locationId, modifierListId);
              return localVarResponse.Data;
         }
 
@@ -7060,14 +7060,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        public ApiResponse< V1ModifierList > V1RetrieveModifierListWithHttpInfo (string locationId, string modifierListId)
+        public ApiResponse< V1ModifierList > RetrieveModifierListWithHttpInfo (string locationId, string modifierListId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RetrieveModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RetrieveModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1RetrieveModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->RetrieveModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7110,7 +7110,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7127,9 +7127,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>Task of V1ModifierList</returns>
-        public async System.Threading.Tasks.Task<V1ModifierList> V1RetrieveModifierListAsync (string locationId, string modifierListId)
+        public async System.Threading.Tasks.Task<V1ModifierList> RetrieveModifierListAsync (string locationId, string modifierListId)
         {
-             ApiResponse<V1ModifierList> localVarResponse = await V1RetrieveModifierListAsyncWithHttpInfo(locationId, modifierListId);
+             ApiResponse<V1ModifierList> localVarResponse = await RetrieveModifierListAsyncWithHttpInfo(locationId, modifierListId);
              return localVarResponse.Data;
 
         }
@@ -7141,14 +7141,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1RetrieveModifierListAsyncWithHttpInfo (string locationId, string modifierListId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> RetrieveModifierListAsyncWithHttpInfo (string locationId, string modifierListId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1RetrieveModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->RetrieveModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1RetrieveModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->RetrieveModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7191,7 +7191,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7209,9 +7209,9 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Category</returns>
-        public V1Category V1UpdateCategory (string locationId, string categoryId, V1Category body)
+        public V1Category UpdateCategory (string locationId, string categoryId, V1Category body)
         {
-             ApiResponse<V1Category> localVarResponse = V1UpdateCategoryWithHttpInfo(locationId, categoryId, body);
+             ApiResponse<V1Category> localVarResponse = UpdateCategoryWithHttpInfo(locationId, categoryId, body);
              return localVarResponse.Data;
         }
 
@@ -7223,17 +7223,17 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Category</returns>
-        public ApiResponse< V1Category > V1UpdateCategoryWithHttpInfo (string locationId, string categoryId, V1Category body)
+        public ApiResponse< V1Category > UpdateCategoryWithHttpInfo (string locationId, string categoryId, V1Category body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateCategory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateCategory");
             // verify the required parameter 'categoryId' is set
             if (categoryId == null)
-                throw new ApiException(400, "Missing required parameter 'categoryId' when calling ItemsApi->V1UpdateCategory");
+                throw new ApiException(400, "Missing required parameter 'categoryId' when calling V1ItemsApi->UpdateCategory");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateCategory");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateCategory");
 
             var localVarPath = "/v1/{location_id}/categories/{category_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7284,7 +7284,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateCategory", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateCategory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7302,9 +7302,9 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Category</returns>
-        public async System.Threading.Tasks.Task<V1Category> V1UpdateCategoryAsync (string locationId, string categoryId, V1Category body)
+        public async System.Threading.Tasks.Task<V1Category> UpdateCategoryAsync (string locationId, string categoryId, V1Category body)
         {
-             ApiResponse<V1Category> localVarResponse = await V1UpdateCategoryAsyncWithHttpInfo(locationId, categoryId, body);
+             ApiResponse<V1Category> localVarResponse = await UpdateCategoryAsyncWithHttpInfo(locationId, categoryId, body);
              return localVarResponse.Data;
 
         }
@@ -7317,17 +7317,17 @@ namespace Square.Connect.Api
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Category)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Category>> V1UpdateCategoryAsyncWithHttpInfo (string locationId, string categoryId, V1Category body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Category>> UpdateCategoryAsyncWithHttpInfo (string locationId, string categoryId, V1Category body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateCategory");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateCategory");
             // verify the required parameter 'categoryId' is set
             if (categoryId == null)
-                throw new ApiException(400, "Missing required parameter 'categoryId' when calling ItemsApi->V1UpdateCategory");
+                throw new ApiException(400, "Missing required parameter 'categoryId' when calling V1ItemsApi->UpdateCategory");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateCategory");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateCategory");
 
             var localVarPath = "/v1/{location_id}/categories/{category_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7378,7 +7378,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateCategory", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateCategory", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7396,9 +7396,9 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Discount</returns>
-        public V1Discount V1UpdateDiscount (string locationId, string discountId, V1Discount body)
+        public V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body)
         {
-             ApiResponse<V1Discount> localVarResponse = V1UpdateDiscountWithHttpInfo(locationId, discountId, body);
+             ApiResponse<V1Discount> localVarResponse = UpdateDiscountWithHttpInfo(locationId, discountId, body);
              return localVarResponse.Data;
         }
 
@@ -7410,17 +7410,17 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Discount</returns>
-        public ApiResponse< V1Discount > V1UpdateDiscountWithHttpInfo (string locationId, string discountId, V1Discount body)
+        public ApiResponse< V1Discount > UpdateDiscountWithHttpInfo (string locationId, string discountId, V1Discount body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateDiscount");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateDiscount");
             // verify the required parameter 'discountId' is set
             if (discountId == null)
-                throw new ApiException(400, "Missing required parameter 'discountId' when calling ItemsApi->V1UpdateDiscount");
+                throw new ApiException(400, "Missing required parameter 'discountId' when calling V1ItemsApi->UpdateDiscount");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateDiscount");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateDiscount");
 
             var localVarPath = "/v1/{location_id}/discounts/{discount_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7471,7 +7471,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateDiscount", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateDiscount", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7489,9 +7489,9 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Discount</returns>
-        public async System.Threading.Tasks.Task<V1Discount> V1UpdateDiscountAsync (string locationId, string discountId, V1Discount body)
+        public async System.Threading.Tasks.Task<V1Discount> UpdateDiscountAsync (string locationId, string discountId, V1Discount body)
         {
-             ApiResponse<V1Discount> localVarResponse = await V1UpdateDiscountAsyncWithHttpInfo(locationId, discountId, body);
+             ApiResponse<V1Discount> localVarResponse = await UpdateDiscountAsyncWithHttpInfo(locationId, discountId, body);
              return localVarResponse.Data;
 
         }
@@ -7504,17 +7504,17 @@ namespace Square.Connect.Api
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Discount)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Discount>> V1UpdateDiscountAsyncWithHttpInfo (string locationId, string discountId, V1Discount body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Discount>> UpdateDiscountAsyncWithHttpInfo (string locationId, string discountId, V1Discount body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateDiscount");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateDiscount");
             // verify the required parameter 'discountId' is set
             if (discountId == null)
-                throw new ApiException(400, "Missing required parameter 'discountId' when calling ItemsApi->V1UpdateDiscount");
+                throw new ApiException(400, "Missing required parameter 'discountId' when calling V1ItemsApi->UpdateDiscount");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateDiscount");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateDiscount");
 
             var localVarPath = "/v1/{location_id}/discounts/{discount_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7565,7 +7565,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateDiscount", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateDiscount", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7583,9 +7583,9 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Fee</returns>
-        public V1Fee V1UpdateFee (string locationId, string feeId, V1Fee body)
+        public V1Fee UpdateFee (string locationId, string feeId, V1Fee body)
         {
-             ApiResponse<V1Fee> localVarResponse = V1UpdateFeeWithHttpInfo(locationId, feeId, body);
+             ApiResponse<V1Fee> localVarResponse = UpdateFeeWithHttpInfo(locationId, feeId, body);
              return localVarResponse.Data;
         }
 
@@ -7597,17 +7597,17 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Fee</returns>
-        public ApiResponse< V1Fee > V1UpdateFeeWithHttpInfo (string locationId, string feeId, V1Fee body)
+        public ApiResponse< V1Fee > UpdateFeeWithHttpInfo (string locationId, string feeId, V1Fee body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1UpdateFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->UpdateFee");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateFee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateFee");
 
             var localVarPath = "/v1/{location_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7658,7 +7658,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateFee", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7676,9 +7676,9 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Fee</returns>
-        public async System.Threading.Tasks.Task<V1Fee> V1UpdateFeeAsync (string locationId, string feeId, V1Fee body)
+        public async System.Threading.Tasks.Task<V1Fee> UpdateFeeAsync (string locationId, string feeId, V1Fee body)
         {
-             ApiResponse<V1Fee> localVarResponse = await V1UpdateFeeAsyncWithHttpInfo(locationId, feeId, body);
+             ApiResponse<V1Fee> localVarResponse = await UpdateFeeAsyncWithHttpInfo(locationId, feeId, body);
              return localVarResponse.Data;
 
         }
@@ -7691,17 +7691,17 @@ namespace Square.Connect.Api
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Fee)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Fee>> V1UpdateFeeAsyncWithHttpInfo (string locationId, string feeId, V1Fee body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Fee>> UpdateFeeAsyncWithHttpInfo (string locationId, string feeId, V1Fee body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateFee");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateFee");
             // verify the required parameter 'feeId' is set
             if (feeId == null)
-                throw new ApiException(400, "Missing required parameter 'feeId' when calling ItemsApi->V1UpdateFee");
+                throw new ApiException(400, "Missing required parameter 'feeId' when calling V1ItemsApi->UpdateFee");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateFee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateFee");
 
             var localVarPath = "/v1/{location_id}/fees/{fee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7752,7 +7752,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateFee", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateFee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7770,9 +7770,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Item</returns>
-        public V1Item V1UpdateItem (string locationId, string itemId, V1Item body)
+        public V1Item UpdateItem (string locationId, string itemId, V1Item body)
         {
-             ApiResponse<V1Item> localVarResponse = V1UpdateItemWithHttpInfo(locationId, itemId, body);
+             ApiResponse<V1Item> localVarResponse = UpdateItemWithHttpInfo(locationId, itemId, body);
              return localVarResponse.Data;
         }
 
@@ -7784,17 +7784,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > V1UpdateItemWithHttpInfo (string locationId, string itemId, V1Item body)
+        public ApiResponse< V1Item > UpdateItemWithHttpInfo (string locationId, string itemId, V1Item body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateItem");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1UpdateItem");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->UpdateItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateItem");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7845,7 +7845,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateItem", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7863,9 +7863,9 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> V1UpdateItemAsync (string locationId, string itemId, V1Item body)
+        public async System.Threading.Tasks.Task<V1Item> UpdateItemAsync (string locationId, string itemId, V1Item body)
         {
-             ApiResponse<V1Item> localVarResponse = await V1UpdateItemAsyncWithHttpInfo(locationId, itemId, body);
+             ApiResponse<V1Item> localVarResponse = await UpdateItemAsyncWithHttpInfo(locationId, itemId, body);
              return localVarResponse.Data;
 
         }
@@ -7878,17 +7878,17 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> V1UpdateItemAsyncWithHttpInfo (string locationId, string itemId, V1Item body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> UpdateItemAsyncWithHttpInfo (string locationId, string itemId, V1Item body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateItem");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateItem");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1UpdateItem");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->UpdateItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateItem");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -7939,7 +7939,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateItem", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateItem", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -7957,9 +7957,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierList</returns>
-        public V1ModifierList V1UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body)
+        public V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body)
         {
-             ApiResponse<V1ModifierList> localVarResponse = V1UpdateModifierListWithHttpInfo(locationId, modifierListId, body);
+             ApiResponse<V1ModifierList> localVarResponse = UpdateModifierListWithHttpInfo(locationId, modifierListId, body);
              return localVarResponse.Data;
         }
 
@@ -7971,17 +7971,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierList</returns>
-        public ApiResponse< V1ModifierList > V1UpdateModifierListWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body)
+        public ApiResponse< V1ModifierList > UpdateModifierListWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1UpdateModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->UpdateModifierList");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateModifierList");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8032,7 +8032,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8050,9 +8050,9 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierList</returns>
-        public async System.Threading.Tasks.Task<V1ModifierList> V1UpdateModifierListAsync (string locationId, string modifierListId, V1UpdateModifierListRequest body)
+        public async System.Threading.Tasks.Task<V1ModifierList> UpdateModifierListAsync (string locationId, string modifierListId, V1UpdateModifierListRequest body)
         {
-             ApiResponse<V1ModifierList> localVarResponse = await V1UpdateModifierListAsyncWithHttpInfo(locationId, modifierListId, body);
+             ApiResponse<V1ModifierList> localVarResponse = await UpdateModifierListAsyncWithHttpInfo(locationId, modifierListId, body);
              return localVarResponse.Data;
 
         }
@@ -8065,17 +8065,17 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> V1UpdateModifierListAsyncWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> UpdateModifierListAsyncWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateModifierList");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateModifierList");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1UpdateModifierList");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->UpdateModifierList");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateModifierList");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateModifierList");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8126,7 +8126,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateModifierList", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateModifierList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8145,9 +8145,9 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1ModifierOption</returns>
-        public V1ModifierOption V1UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
+        public V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
         {
-             ApiResponse<V1ModifierOption> localVarResponse = V1UpdateModifierOptionWithHttpInfo(locationId, modifierListId, modifierOptionId, body);
+             ApiResponse<V1ModifierOption> localVarResponse = UpdateModifierOptionWithHttpInfo(locationId, modifierListId, modifierOptionId, body);
              return localVarResponse.Data;
         }
 
@@ -8160,20 +8160,20 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1ModifierOption</returns>
-        public ApiResponse< V1ModifierOption > V1UpdateModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
+        public ApiResponse< V1ModifierOption > UpdateModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateModifierOption");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->UpdateModifierOption");
             // verify the required parameter 'modifierOptionId' is set
             if (modifierOptionId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling V1ItemsApi->UpdateModifierOption");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateModifierOption");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8225,7 +8225,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateModifierOption", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateModifierOption", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8244,9 +8244,9 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1ModifierOption</returns>
-        public async System.Threading.Tasks.Task<V1ModifierOption> V1UpdateModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
+        public async System.Threading.Tasks.Task<V1ModifierOption> UpdateModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
         {
-             ApiResponse<V1ModifierOption> localVarResponse = await V1UpdateModifierOptionAsyncWithHttpInfo(locationId, modifierListId, modifierOptionId, body);
+             ApiResponse<V1ModifierOption> localVarResponse = await UpdateModifierOptionAsyncWithHttpInfo(locationId, modifierListId, modifierOptionId, body);
              return localVarResponse.Data;
 
         }
@@ -8260,20 +8260,20 @@ namespace Square.Connect.Api
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> V1UpdateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> UpdateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateModifierOption");
             // verify the required parameter 'modifierListId' is set
             if (modifierListId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierListId' when calling V1ItemsApi->UpdateModifierOption");
             // verify the required parameter 'modifierOptionId' is set
             if (modifierOptionId == null)
-                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'modifierOptionId' when calling V1ItemsApi->UpdateModifierOption");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateModifierOption");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateModifierOption");
 
             var localVarPath = "/v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8325,7 +8325,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateModifierOption", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateModifierOption", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8343,9 +8343,9 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Page</returns>
-        public V1Page V1UpdatePage (string locationId, string pageId, V1Page body)
+        public V1Page UpdatePage (string locationId, string pageId, V1Page body)
         {
-             ApiResponse<V1Page> localVarResponse = V1UpdatePageWithHttpInfo(locationId, pageId, body);
+             ApiResponse<V1Page> localVarResponse = UpdatePageWithHttpInfo(locationId, pageId, body);
              return localVarResponse.Data;
         }
 
@@ -8357,17 +8357,17 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        public ApiResponse< V1Page > V1UpdatePageWithHttpInfo (string locationId, string pageId, V1Page body)
+        public ApiResponse< V1Page > UpdatePageWithHttpInfo (string locationId, string pageId, V1Page body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdatePage");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdatePage");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1UpdatePage");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->UpdatePage");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdatePage");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdatePage");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8418,7 +8418,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdatePage", localVarResponse);
+                Exception exception = ExceptionFactory("UpdatePage", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8436,9 +8436,9 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Page</returns>
-        public async System.Threading.Tasks.Task<V1Page> V1UpdatePageAsync (string locationId, string pageId, V1Page body)
+        public async System.Threading.Tasks.Task<V1Page> UpdatePageAsync (string locationId, string pageId, V1Page body)
         {
-             ApiResponse<V1Page> localVarResponse = await V1UpdatePageAsyncWithHttpInfo(locationId, pageId, body);
+             ApiResponse<V1Page> localVarResponse = await UpdatePageAsyncWithHttpInfo(locationId, pageId, body);
              return localVarResponse.Data;
 
         }
@@ -8451,17 +8451,17 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> V1UpdatePageAsyncWithHttpInfo (string locationId, string pageId, V1Page body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> UpdatePageAsyncWithHttpInfo (string locationId, string pageId, V1Page body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdatePage");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdatePage");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1UpdatePage");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->UpdatePage");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdatePage");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdatePage");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8512,7 +8512,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdatePage", localVarResponse);
+                Exception exception = ExceptionFactory("UpdatePage", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8530,9 +8530,9 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Page</returns>
-        public V1Page V1UpdatePageCell (string locationId, string pageId, V1PageCell body)
+        public V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body)
         {
-             ApiResponse<V1Page> localVarResponse = V1UpdatePageCellWithHttpInfo(locationId, pageId, body);
+             ApiResponse<V1Page> localVarResponse = UpdatePageCellWithHttpInfo(locationId, pageId, body);
              return localVarResponse.Data;
         }
 
@@ -8544,17 +8544,17 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Page</returns>
-        public ApiResponse< V1Page > V1UpdatePageCellWithHttpInfo (string locationId, string pageId, V1PageCell body)
+        public ApiResponse< V1Page > UpdatePageCellWithHttpInfo (string locationId, string pageId, V1PageCell body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdatePageCell");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdatePageCell");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1UpdatePageCell");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->UpdatePageCell");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdatePageCell");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdatePageCell");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}/cells";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8605,7 +8605,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdatePageCell", localVarResponse);
+                Exception exception = ExceptionFactory("UpdatePageCell", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8623,9 +8623,9 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Page</returns>
-        public async System.Threading.Tasks.Task<V1Page> V1UpdatePageCellAsync (string locationId, string pageId, V1PageCell body)
+        public async System.Threading.Tasks.Task<V1Page> UpdatePageCellAsync (string locationId, string pageId, V1PageCell body)
         {
-             ApiResponse<V1Page> localVarResponse = await V1UpdatePageCellAsyncWithHttpInfo(locationId, pageId, body);
+             ApiResponse<V1Page> localVarResponse = await UpdatePageCellAsyncWithHttpInfo(locationId, pageId, body);
              return localVarResponse.Data;
 
         }
@@ -8638,17 +8638,17 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Page)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> V1UpdatePageCellAsyncWithHttpInfo (string locationId, string pageId, V1PageCell body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Page>> UpdatePageCellAsyncWithHttpInfo (string locationId, string pageId, V1PageCell body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdatePageCell");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdatePageCell");
             // verify the required parameter 'pageId' is set
             if (pageId == null)
-                throw new ApiException(400, "Missing required parameter 'pageId' when calling ItemsApi->V1UpdatePageCell");
+                throw new ApiException(400, "Missing required parameter 'pageId' when calling V1ItemsApi->UpdatePageCell");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdatePageCell");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdatePageCell");
 
             var localVarPath = "/v1/{location_id}/pages/{page_id}/cells";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8699,7 +8699,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdatePageCell", localVarResponse);
+                Exception exception = ExceptionFactory("UpdatePageCell", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8718,9 +8718,9 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Variation</returns>
-        public V1Variation V1UpdateVariation (string locationId, string itemId, string variationId, V1Variation body)
+        public V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body)
         {
-             ApiResponse<V1Variation> localVarResponse = V1UpdateVariationWithHttpInfo(locationId, itemId, variationId, body);
+             ApiResponse<V1Variation> localVarResponse = UpdateVariationWithHttpInfo(locationId, itemId, variationId, body);
              return localVarResponse.Data;
         }
 
@@ -8733,20 +8733,20 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Variation</returns>
-        public ApiResponse< V1Variation > V1UpdateVariationWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body)
+        public ApiResponse< V1Variation > UpdateVariationWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateVariation");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->UpdateVariation");
             // verify the required parameter 'variationId' is set
             if (variationId == null)
-                throw new ApiException(400, "Missing required parameter 'variationId' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'variationId' when calling V1ItemsApi->UpdateVariation");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateVariation");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/variations/{variation_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8798,7 +8798,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateVariation", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateVariation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -8817,9 +8817,9 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Variation</returns>
-        public async System.Threading.Tasks.Task<V1Variation> V1UpdateVariationAsync (string locationId, string itemId, string variationId, V1Variation body)
+        public async System.Threading.Tasks.Task<V1Variation> UpdateVariationAsync (string locationId, string itemId, string variationId, V1Variation body)
         {
-             ApiResponse<V1Variation> localVarResponse = await V1UpdateVariationAsyncWithHttpInfo(locationId, itemId, variationId, body);
+             ApiResponse<V1Variation> localVarResponse = await UpdateVariationAsyncWithHttpInfo(locationId, itemId, variationId, body);
              return localVarResponse.Data;
 
         }
@@ -8833,20 +8833,20 @@ namespace Square.Connect.Api
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Variation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Variation>> V1UpdateVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Variation>> UpdateVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId, V1Variation body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1ItemsApi->UpdateVariation");
             // verify the required parameter 'itemId' is set
             if (itemId == null)
-                throw new ApiException(400, "Missing required parameter 'itemId' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'itemId' when calling V1ItemsApi->UpdateVariation");
             // verify the required parameter 'variationId' is set
             if (variationId == null)
-                throw new ApiException(400, "Missing required parameter 'variationId' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'variationId' when calling V1ItemsApi->UpdateVariation");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ItemsApi->V1UpdateVariation");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1ItemsApi->UpdateVariation");
 
             var localVarPath = "/v1/{location_id}/items/{item_id}/variations/{variation_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -8898,7 +8898,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateVariation", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateVariation", localVarResponse);
                 if (exception != null) throw exception;
             }
 

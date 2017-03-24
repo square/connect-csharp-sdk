@@ -21,7 +21,7 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IEmployeesApi : IApiAccessor
+    public interface IV1EmployeesApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -33,7 +33,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Employee</returns>
-        V1Employee V1CreateEmployee (V1Employee body);
+        V1Employee CreateEmployee (V1Employee body);
 
         /// <summary>
         /// Creates an employee for a business.
@@ -44,7 +44,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Employee</returns>
-        ApiResponse<V1Employee> V1CreateEmployeeWithHttpInfo (V1Employee body);
+        ApiResponse<V1Employee> CreateEmployeeWithHttpInfo (V1Employee body);
         /// <summary>
         /// Creates an employee role you can then assign to employees.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>V1EmployeeRole</returns>
-        V1EmployeeRole V1CreateEmployeeRole (V1EmployeeRole employeeRole);
+        V1EmployeeRole CreateEmployeeRole (V1EmployeeRole employeeRole);
 
         /// <summary>
         /// Creates an employee role you can then assign to employees.
@@ -65,7 +65,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>ApiResponse of V1EmployeeRole</returns>
-        ApiResponse<V1EmployeeRole> V1CreateEmployeeRoleWithHttpInfo (V1EmployeeRole employeeRole);
+        ApiResponse<V1EmployeeRole> CreateEmployeeRoleWithHttpInfo (V1EmployeeRole employeeRole);
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
         /// </summary>
@@ -75,7 +75,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Timecard</returns>
-        V1Timecard V1CreateTimecard (V1Timecard body);
+        V1Timecard CreateTimecard (V1Timecard body);
 
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
@@ -86,7 +86,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        ApiResponse<V1Timecard> V1CreateTimecardWithHttpInfo (V1Timecard body);
+        ApiResponse<V1Timecard> CreateTimecardWithHttpInfo (V1Timecard body);
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
         /// </summary>
@@ -96,7 +96,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>Object</returns>
-        Object V1DeleteTimecard (string timecardId);
+        Object DeleteTimecard (string timecardId);
 
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
@@ -107,7 +107,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> V1DeleteTimecardWithHttpInfo (string timecardId);
+        ApiResponse<Object> DeleteTimecardWithHttpInfo (string timecardId);
         /// <summary>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
         /// </summary>
@@ -120,7 +120,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>List&lt;V1CashDrawerShift&gt;</returns>
-        List<V1CashDrawerShift> V1ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null);
+        List<V1CashDrawerShift> ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null);
 
         /// <summary>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
@@ -134,7 +134,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1CashDrawerShift&gt;</returns>
-        ApiResponse<List<V1CashDrawerShift>> V1ListCashDrawerShiftsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null);
+        ApiResponse<List<V1CashDrawerShift>> ListCashDrawerShiftsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null);
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee roles.
         /// </summary>
@@ -146,7 +146,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1EmployeeRole&gt;</returns>
-        List<V1EmployeeRole> V1ListEmployeeRoles (string order = null, int? limit = null, string cursor = null);
+        List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string cursor = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee roles.
@@ -159,7 +159,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1EmployeeRole&gt;</returns>
-        ApiResponse<List<V1EmployeeRole>> V1ListEmployeeRolesWithHttpInfo (string order = null, int? limit = null, string cursor = null);
+        ApiResponse<List<V1EmployeeRole>> ListEmployeeRolesWithHttpInfo (string order = null, int? limit = null, string cursor = null);
         /// <summary>
         /// Provides summary information for all of a business&#39;s employees.
         /// </summary>
@@ -176,7 +176,7 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>List&lt;V1Employee&gt;</returns>
-        List<V1Employee> V1ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
+        List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employees.
@@ -194,7 +194,7 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Employee&gt;</returns>
-        ApiResponse<List<V1Employee>> V1ListEmployeesWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
+        ApiResponse<List<V1Employee>> ListEmployeesWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
         /// <summary>
         /// Provides summary information for all events associated with a particular timecard.
         /// </summary>
@@ -204,7 +204,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>List&lt;V1TimecardEvent&gt;</returns>
-        List<V1TimecardEvent> V1ListTimecardEvents (string timecardId);
+        List<V1TimecardEvent> ListTimecardEvents (string timecardId);
 
         /// <summary>
         /// Provides summary information for all events associated with a particular timecard.
@@ -215,7 +215,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>ApiResponse of List&lt;V1TimecardEvent&gt;</returns>
-        ApiResponse<List<V1TimecardEvent>> V1ListTimecardEventsWithHttpInfo (string timecardId);
+        ApiResponse<List<V1TimecardEvent>> ListTimecardEventsWithHttpInfo (string timecardId);
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee timecards.
         /// </summary>
@@ -235,7 +235,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Timecard&gt;</returns>
-        List<V1Timecard> V1ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -256,7 +256,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Timecard&gt;</returns>
-        ApiResponse<List<V1Timecard>> V1ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        ApiResponse<List<V1Timecard>> ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
         /// <summary>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
@@ -267,7 +267,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>V1CashDrawerShift</returns>
-        V1CashDrawerShift V1RetrieveCashDrawerShift (string locationId, string shiftId);
+        V1CashDrawerShift RetrieveCashDrawerShift (string locationId, string shiftId);
 
         /// <summary>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
@@ -279,7 +279,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>ApiResponse of V1CashDrawerShift</returns>
-        ApiResponse<V1CashDrawerShift> V1RetrieveCashDrawerShiftWithHttpInfo (string locationId, string shiftId);
+        ApiResponse<V1CashDrawerShift> RetrieveCashDrawerShiftWithHttpInfo (string locationId, string shiftId);
         /// <summary>
         /// Provides the details for a single employee.
         /// </summary>
@@ -289,7 +289,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>V1Employee</returns>
-        V1Employee V1RetrieveEmployee (string employeeId);
+        V1Employee RetrieveEmployee (string employeeId);
 
         /// <summary>
         /// Provides the details for a single employee.
@@ -300,7 +300,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>ApiResponse of V1Employee</returns>
-        ApiResponse<V1Employee> V1RetrieveEmployeeWithHttpInfo (string employeeId);
+        ApiResponse<V1Employee> RetrieveEmployeeWithHttpInfo (string employeeId);
         /// <summary>
         /// Provides the details for a single employee role.
         /// </summary>
@@ -310,7 +310,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>V1EmployeeRole</returns>
-        V1EmployeeRole V1RetrieveEmployeeRole (string roleId);
+        V1EmployeeRole RetrieveEmployeeRole (string roleId);
 
         /// <summary>
         /// Provides the details for a single employee role.
@@ -321,7 +321,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>ApiResponse of V1EmployeeRole</returns>
-        ApiResponse<V1EmployeeRole> V1RetrieveEmployeeRoleWithHttpInfo (string roleId);
+        ApiResponse<V1EmployeeRole> RetrieveEmployeeRoleWithHttpInfo (string roleId);
         /// <summary>
         /// Provides the details for a single timecard.
         /// </summary>
@@ -331,7 +331,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>V1Timecard</returns>
-        V1Timecard V1RetrieveTimecard (string timecardId);
+        V1Timecard RetrieveTimecard (string timecardId);
 
         /// <summary>
         /// Provides the details for a single timecard.
@@ -342,9 +342,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        ApiResponse<V1Timecard> V1RetrieveTimecardWithHttpInfo (string timecardId);
+        ApiResponse<V1Timecard> RetrieveTimecardWithHttpInfo (string timecardId);
         /// <summary>
-        /// v1UpdateEmployee
+        /// V1 UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -353,10 +353,10 @@ namespace Square.Connect.Api
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Employee</returns>
-        V1Employee V1UpdateEmployee (string employeeId, V1Employee body);
+        V1Employee UpdateEmployee (string employeeId, V1Employee body);
 
         /// <summary>
-        /// v1UpdateEmployee
+        /// V1 UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -365,7 +365,7 @@ namespace Square.Connect.Api
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Employee</returns>
-        ApiResponse<V1Employee> V1UpdateEmployeeWithHttpInfo (string employeeId, V1Employee body);
+        ApiResponse<V1Employee> UpdateEmployeeWithHttpInfo (string employeeId, V1Employee body);
         /// <summary>
         /// Modifies the details of an employee role.
         /// </summary>
@@ -376,7 +376,7 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1EmployeeRole</returns>
-        V1EmployeeRole V1UpdateEmployeeRole (string roleId, V1EmployeeRole body);
+        V1EmployeeRole UpdateEmployeeRole (string roleId, V1EmployeeRole body);
 
         /// <summary>
         /// Modifies the details of an employee role.
@@ -388,7 +388,7 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1EmployeeRole</returns>
-        ApiResponse<V1EmployeeRole> V1UpdateEmployeeRoleWithHttpInfo (string roleId, V1EmployeeRole body);
+        ApiResponse<V1EmployeeRole> UpdateEmployeeRoleWithHttpInfo (string roleId, V1EmployeeRole body);
         /// <summary>
         /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
         /// </summary>
@@ -399,7 +399,7 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Timecard</returns>
-        V1Timecard V1UpdateTimecard (string timecardId, V1Timecard body);
+        V1Timecard UpdateTimecard (string timecardId, V1Timecard body);
 
         /// <summary>
         /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
@@ -411,7 +411,7 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        ApiResponse<V1Timecard> V1UpdateTimecardWithHttpInfo (string timecardId, V1Timecard body);
+        ApiResponse<V1Timecard> UpdateTimecardWithHttpInfo (string timecardId, V1Timecard body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -423,7 +423,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Employee</returns>
-        System.Threading.Tasks.Task<V1Employee> V1CreateEmployeeAsync (V1Employee body);
+        System.Threading.Tasks.Task<V1Employee> CreateEmployeeAsync (V1Employee body);
 
         /// <summary>
         /// Creates an employee for a business.
@@ -434,7 +434,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Employee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Employee>> V1CreateEmployeeAsyncWithHttpInfo (V1Employee body);
+        System.Threading.Tasks.Task<ApiResponse<V1Employee>> CreateEmployeeAsyncWithHttpInfo (V1Employee body);
         /// <summary>
         /// Creates an employee role you can then assign to employees.
         /// </summary>
@@ -444,7 +444,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>Task of V1EmployeeRole</returns>
-        System.Threading.Tasks.Task<V1EmployeeRole> V1CreateEmployeeRoleAsync (V1EmployeeRole employeeRole);
+        System.Threading.Tasks.Task<V1EmployeeRole> CreateEmployeeRoleAsync (V1EmployeeRole employeeRole);
 
         /// <summary>
         /// Creates an employee role you can then assign to employees.
@@ -455,7 +455,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> V1CreateEmployeeRoleAsyncWithHttpInfo (V1EmployeeRole employeeRole);
+        System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> CreateEmployeeRoleAsyncWithHttpInfo (V1EmployeeRole employeeRole);
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
         /// </summary>
@@ -465,7 +465,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Timecard</returns>
-        System.Threading.Tasks.Task<V1Timecard> V1CreateTimecardAsync (V1Timecard body);
+        System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body);
 
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
@@ -476,7 +476,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> V1CreateTimecardAsyncWithHttpInfo (V1Timecard body);
+        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body);
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
         /// </summary>
@@ -486,7 +486,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> V1DeleteTimecardAsync (string timecardId);
+        System.Threading.Tasks.Task<Object> DeleteTimecardAsync (string timecardId);
 
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
@@ -497,7 +497,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V1DeleteTimecardAsyncWithHttpInfo (string timecardId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTimecardAsyncWithHttpInfo (string timecardId);
         /// <summary>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
         /// </summary>
@@ -510,7 +510,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>Task of List&lt;V1CashDrawerShift&gt;</returns>
-        System.Threading.Tasks.Task<List<V1CashDrawerShift>> V1ListCashDrawerShiftsAsync (string locationId, string order = null, string beginTime = null, string endTime = null);
+        System.Threading.Tasks.Task<List<V1CashDrawerShift>> ListCashDrawerShiftsAsync (string locationId, string order = null, string beginTime = null, string endTime = null);
 
         /// <summary>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
@@ -524,7 +524,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1CashDrawerShift&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1CashDrawerShift>>> V1ListCashDrawerShiftsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1CashDrawerShift>>> ListCashDrawerShiftsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null);
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee roles.
         /// </summary>
@@ -536,7 +536,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1EmployeeRole&gt;</returns>
-        System.Threading.Tasks.Task<List<V1EmployeeRole>> V1ListEmployeeRolesAsync (string order = null, int? limit = null, string cursor = null);
+        System.Threading.Tasks.Task<List<V1EmployeeRole>> ListEmployeeRolesAsync (string order = null, int? limit = null, string cursor = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee roles.
@@ -549,7 +549,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1EmployeeRole&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1EmployeeRole>>> V1ListEmployeeRolesAsyncWithHttpInfo (string order = null, int? limit = null, string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1EmployeeRole>>> ListEmployeeRolesAsyncWithHttpInfo (string order = null, int? limit = null, string cursor = null);
         /// <summary>
         /// Provides summary information for all of a business&#39;s employees.
         /// </summary>
@@ -566,7 +566,7 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>Task of List&lt;V1Employee&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Employee>> V1ListEmployeesAsync (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
+        System.Threading.Tasks.Task<List<V1Employee>> ListEmployeesAsync (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employees.
@@ -584,7 +584,7 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Employee&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Employee>>> V1ListEmployeesAsyncWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Employee>>> ListEmployeesAsyncWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null);
         /// <summary>
         /// Provides summary information for all events associated with a particular timecard.
         /// </summary>
@@ -594,7 +594,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>Task of List&lt;V1TimecardEvent&gt;</returns>
-        System.Threading.Tasks.Task<List<V1TimecardEvent>> V1ListTimecardEventsAsync (string timecardId);
+        System.Threading.Tasks.Task<List<V1TimecardEvent>> ListTimecardEventsAsync (string timecardId);
 
         /// <summary>
         /// Provides summary information for all events associated with a particular timecard.
@@ -605,7 +605,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1TimecardEvent&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1TimecardEvent>>> V1ListTimecardEventsAsyncWithHttpInfo (string timecardId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1TimecardEvent>>> ListTimecardEventsAsyncWithHttpInfo (string timecardId);
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee timecards.
         /// </summary>
@@ -625,7 +625,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Timecard&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Timecard>> V1ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        System.Threading.Tasks.Task<List<V1Timecard>> ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -646,7 +646,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Timecard&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> V1ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
         /// <summary>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
@@ -657,7 +657,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>Task of V1CashDrawerShift</returns>
-        System.Threading.Tasks.Task<V1CashDrawerShift> V1RetrieveCashDrawerShiftAsync (string locationId, string shiftId);
+        System.Threading.Tasks.Task<V1CashDrawerShift> RetrieveCashDrawerShiftAsync (string locationId, string shiftId);
 
         /// <summary>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
@@ -669,7 +669,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1CashDrawerShift)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1CashDrawerShift>> V1RetrieveCashDrawerShiftAsyncWithHttpInfo (string locationId, string shiftId);
+        System.Threading.Tasks.Task<ApiResponse<V1CashDrawerShift>> RetrieveCashDrawerShiftAsyncWithHttpInfo (string locationId, string shiftId);
         /// <summary>
         /// Provides the details for a single employee.
         /// </summary>
@@ -679,7 +679,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>Task of V1Employee</returns>
-        System.Threading.Tasks.Task<V1Employee> V1RetrieveEmployeeAsync (string employeeId);
+        System.Threading.Tasks.Task<V1Employee> RetrieveEmployeeAsync (string employeeId);
 
         /// <summary>
         /// Provides the details for a single employee.
@@ -690,7 +690,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1Employee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Employee>> V1RetrieveEmployeeAsyncWithHttpInfo (string employeeId);
+        System.Threading.Tasks.Task<ApiResponse<V1Employee>> RetrieveEmployeeAsyncWithHttpInfo (string employeeId);
         /// <summary>
         /// Provides the details for a single employee role.
         /// </summary>
@@ -700,7 +700,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>Task of V1EmployeeRole</returns>
-        System.Threading.Tasks.Task<V1EmployeeRole> V1RetrieveEmployeeRoleAsync (string roleId);
+        System.Threading.Tasks.Task<V1EmployeeRole> RetrieveEmployeeRoleAsync (string roleId);
 
         /// <summary>
         /// Provides the details for a single employee role.
@@ -711,7 +711,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> V1RetrieveEmployeeRoleAsyncWithHttpInfo (string roleId);
+        System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> RetrieveEmployeeRoleAsyncWithHttpInfo (string roleId);
         /// <summary>
         /// Provides the details for a single timecard.
         /// </summary>
@@ -721,7 +721,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>Task of V1Timecard</returns>
-        System.Threading.Tasks.Task<V1Timecard> V1RetrieveTimecardAsync (string timecardId);
+        System.Threading.Tasks.Task<V1Timecard> RetrieveTimecardAsync (string timecardId);
 
         /// <summary>
         /// Provides the details for a single timecard.
@@ -732,9 +732,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> V1RetrieveTimecardAsyncWithHttpInfo (string timecardId);
+        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> RetrieveTimecardAsyncWithHttpInfo (string timecardId);
         /// <summary>
-        /// v1UpdateEmployee
+        /// V1 UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -743,10 +743,10 @@ namespace Square.Connect.Api
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Employee</returns>
-        System.Threading.Tasks.Task<V1Employee> V1UpdateEmployeeAsync (string employeeId, V1Employee body);
+        System.Threading.Tasks.Task<V1Employee> UpdateEmployeeAsync (string employeeId, V1Employee body);
 
         /// <summary>
-        /// v1UpdateEmployee
+        /// V1 UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -755,7 +755,7 @@ namespace Square.Connect.Api
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Employee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Employee>> V1UpdateEmployeeAsyncWithHttpInfo (string employeeId, V1Employee body);
+        System.Threading.Tasks.Task<ApiResponse<V1Employee>> UpdateEmployeeAsyncWithHttpInfo (string employeeId, V1Employee body);
         /// <summary>
         /// Modifies the details of an employee role.
         /// </summary>
@@ -766,7 +766,7 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1EmployeeRole</returns>
-        System.Threading.Tasks.Task<V1EmployeeRole> V1UpdateEmployeeRoleAsync (string roleId, V1EmployeeRole body);
+        System.Threading.Tasks.Task<V1EmployeeRole> UpdateEmployeeRoleAsync (string roleId, V1EmployeeRole body);
 
         /// <summary>
         /// Modifies the details of an employee role.
@@ -778,7 +778,7 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> V1UpdateEmployeeRoleAsyncWithHttpInfo (string roleId, V1EmployeeRole body);
+        System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> UpdateEmployeeRoleAsyncWithHttpInfo (string roleId, V1EmployeeRole body);
         /// <summary>
         /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
         /// </summary>
@@ -789,7 +789,7 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Timecard</returns>
-        System.Threading.Tasks.Task<V1Timecard> V1UpdateTimecardAsync (string timecardId, V1Timecard body);
+        System.Threading.Tasks.Task<V1Timecard> UpdateTimecardAsync (string timecardId, V1Timecard body);
 
         /// <summary>
         /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
@@ -801,22 +801,22 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> V1UpdateTimecardAsyncWithHttpInfo (string timecardId, V1Timecard body);
+        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> UpdateTimecardAsyncWithHttpInfo (string timecardId, V1Timecard body);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class EmployeesApi : IEmployeesApi
+    public partial class V1EmployeesApi : IV1EmployeesApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmployeesApi"/> class.
+        /// Initializes a new instance of the <see cref="V1EmployeesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public EmployeesApi(String basePath)
+        public V1EmployeesApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -830,12 +830,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmployeesApi"/> class
+        /// Initializes a new instance of the <see cref="V1EmployeesApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public EmployeesApi(Configuration configuration = null)
+        public V1EmployeesApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -920,9 +920,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Employee</returns>
-        public V1Employee V1CreateEmployee (V1Employee body)
+        public V1Employee CreateEmployee (V1Employee body)
         {
-             ApiResponse<V1Employee> localVarResponse = V1CreateEmployeeWithHttpInfo(body);
+             ApiResponse<V1Employee> localVarResponse = CreateEmployeeWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -932,11 +932,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Employee</returns>
-        public ApiResponse< V1Employee > V1CreateEmployeeWithHttpInfo (V1Employee body)
+        public ApiResponse< V1Employee > CreateEmployeeWithHttpInfo (V1Employee body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1CreateEmployee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->CreateEmployee");
 
             var localVarPath = "/v1/me/employees";
             var localVarPathParams = new Dictionary<String, String>();
@@ -985,7 +985,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateEmployee", localVarResponse);
+                Exception exception = ExceptionFactory("CreateEmployee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1001,9 +1001,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Employee</returns>
-        public async System.Threading.Tasks.Task<V1Employee> V1CreateEmployeeAsync (V1Employee body)
+        public async System.Threading.Tasks.Task<V1Employee> CreateEmployeeAsync (V1Employee body)
         {
-             ApiResponse<V1Employee> localVarResponse = await V1CreateEmployeeAsyncWithHttpInfo(body);
+             ApiResponse<V1Employee> localVarResponse = await CreateEmployeeAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -1014,11 +1014,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Employee)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Employee>> V1CreateEmployeeAsyncWithHttpInfo (V1Employee body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Employee>> CreateEmployeeAsyncWithHttpInfo (V1Employee body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1CreateEmployee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->CreateEmployee");
 
             var localVarPath = "/v1/me/employees";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1067,7 +1067,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateEmployee", localVarResponse);
+                Exception exception = ExceptionFactory("CreateEmployee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1083,9 +1083,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>V1EmployeeRole</returns>
-        public V1EmployeeRole V1CreateEmployeeRole (V1EmployeeRole employeeRole)
+        public V1EmployeeRole CreateEmployeeRole (V1EmployeeRole employeeRole)
         {
-             ApiResponse<V1EmployeeRole> localVarResponse = V1CreateEmployeeRoleWithHttpInfo(employeeRole);
+             ApiResponse<V1EmployeeRole> localVarResponse = CreateEmployeeRoleWithHttpInfo(employeeRole);
              return localVarResponse.Data;
         }
 
@@ -1095,11 +1095,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>ApiResponse of V1EmployeeRole</returns>
-        public ApiResponse< V1EmployeeRole > V1CreateEmployeeRoleWithHttpInfo (V1EmployeeRole employeeRole)
+        public ApiResponse< V1EmployeeRole > CreateEmployeeRoleWithHttpInfo (V1EmployeeRole employeeRole)
         {
             // verify the required parameter 'employeeRole' is set
             if (employeeRole == null)
-                throw new ApiException(400, "Missing required parameter 'employeeRole' when calling EmployeesApi->V1CreateEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'employeeRole' when calling V1EmployeesApi->CreateEmployeeRole");
 
             var localVarPath = "/v1/me/roles";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1148,7 +1148,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateEmployeeRole", localVarResponse);
+                Exception exception = ExceptionFactory("CreateEmployeeRole", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1164,9 +1164,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>Task of V1EmployeeRole</returns>
-        public async System.Threading.Tasks.Task<V1EmployeeRole> V1CreateEmployeeRoleAsync (V1EmployeeRole employeeRole)
+        public async System.Threading.Tasks.Task<V1EmployeeRole> CreateEmployeeRoleAsync (V1EmployeeRole employeeRole)
         {
-             ApiResponse<V1EmployeeRole> localVarResponse = await V1CreateEmployeeRoleAsyncWithHttpInfo(employeeRole);
+             ApiResponse<V1EmployeeRole> localVarResponse = await CreateEmployeeRoleAsyncWithHttpInfo(employeeRole);
              return localVarResponse.Data;
 
         }
@@ -1177,11 +1177,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> V1CreateEmployeeRoleAsyncWithHttpInfo (V1EmployeeRole employeeRole)
+        public async System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> CreateEmployeeRoleAsyncWithHttpInfo (V1EmployeeRole employeeRole)
         {
             // verify the required parameter 'employeeRole' is set
             if (employeeRole == null)
-                throw new ApiException(400, "Missing required parameter 'employeeRole' when calling EmployeesApi->V1CreateEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'employeeRole' when calling V1EmployeesApi->CreateEmployeeRole");
 
             var localVarPath = "/v1/me/roles";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1230,7 +1230,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateEmployeeRole", localVarResponse);
+                Exception exception = ExceptionFactory("CreateEmployeeRole", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1246,9 +1246,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Timecard</returns>
-        public V1Timecard V1CreateTimecard (V1Timecard body)
+        public V1Timecard CreateTimecard (V1Timecard body)
         {
-             ApiResponse<V1Timecard> localVarResponse = V1CreateTimecardWithHttpInfo(body);
+             ApiResponse<V1Timecard> localVarResponse = CreateTimecardWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -1258,11 +1258,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        public ApiResponse< V1Timecard > V1CreateTimecardWithHttpInfo (V1Timecard body)
+        public ApiResponse< V1Timecard > CreateTimecardWithHttpInfo (V1Timecard body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1CreateTimecard");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->CreateTimecard");
 
             var localVarPath = "/v1/me/timecards";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1311,7 +1311,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("CreateTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1327,9 +1327,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Timecard</returns>
-        public async System.Threading.Tasks.Task<V1Timecard> V1CreateTimecardAsync (V1Timecard body)
+        public async System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body)
         {
-             ApiResponse<V1Timecard> localVarResponse = await V1CreateTimecardAsyncWithHttpInfo(body);
+             ApiResponse<V1Timecard> localVarResponse = await CreateTimecardAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -1340,11 +1340,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> V1CreateTimecardAsyncWithHttpInfo (V1Timecard body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1CreateTimecard");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->CreateTimecard");
 
             var localVarPath = "/v1/me/timecards";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1393,7 +1393,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1CreateTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("CreateTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1409,9 +1409,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>Object</returns>
-        public Object V1DeleteTimecard (string timecardId)
+        public Object DeleteTimecard (string timecardId)
         {
-             ApiResponse<Object> localVarResponse = V1DeleteTimecardWithHttpInfo(timecardId);
+             ApiResponse<Object> localVarResponse = DeleteTimecardWithHttpInfo(timecardId);
              return localVarResponse.Data;
         }
 
@@ -1421,11 +1421,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > V1DeleteTimecardWithHttpInfo (string timecardId)
+        public ApiResponse< Object > DeleteTimecardWithHttpInfo (string timecardId)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1DeleteTimecard");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->DeleteTimecard");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1467,7 +1467,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1483,9 +1483,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> V1DeleteTimecardAsync (string timecardId)
+        public async System.Threading.Tasks.Task<Object> DeleteTimecardAsync (string timecardId)
         {
-             ApiResponse<Object> localVarResponse = await V1DeleteTimecardAsyncWithHttpInfo(timecardId);
+             ApiResponse<Object> localVarResponse = await DeleteTimecardAsyncWithHttpInfo(timecardId);
              return localVarResponse.Data;
 
         }
@@ -1496,11 +1496,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> V1DeleteTimecardAsyncWithHttpInfo (string timecardId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTimecardAsyncWithHttpInfo (string timecardId)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1DeleteTimecard");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->DeleteTimecard");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1542,7 +1542,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1DeleteTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("DeleteTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1561,9 +1561,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>List&lt;V1CashDrawerShift&gt;</returns>
-        public List<V1CashDrawerShift> V1ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null)
+        public List<V1CashDrawerShift> ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null)
         {
-             ApiResponse<List<V1CashDrawerShift>> localVarResponse = V1ListCashDrawerShiftsWithHttpInfo(locationId, order, beginTime, endTime);
+             ApiResponse<List<V1CashDrawerShift>> localVarResponse = ListCashDrawerShiftsWithHttpInfo(locationId, order, beginTime, endTime);
              return localVarResponse.Data;
         }
 
@@ -1576,11 +1576,11 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1CashDrawerShift&gt;</returns>
-        public ApiResponse< List<V1CashDrawerShift> > V1ListCashDrawerShiftsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null)
+        public ApiResponse< List<V1CashDrawerShift> > ListCashDrawerShiftsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling EmployeesApi->V1ListCashDrawerShifts");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1EmployeesApi->ListCashDrawerShifts");
 
             var localVarPath = "/v1/{location_id}/cash-drawer-shifts";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1625,7 +1625,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListCashDrawerShifts", localVarResponse);
+                Exception exception = ExceptionFactory("ListCashDrawerShifts", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1644,9 +1644,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>Task of List&lt;V1CashDrawerShift&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1CashDrawerShift>> V1ListCashDrawerShiftsAsync (string locationId, string order = null, string beginTime = null, string endTime = null)
+        public async System.Threading.Tasks.Task<List<V1CashDrawerShift>> ListCashDrawerShiftsAsync (string locationId, string order = null, string beginTime = null, string endTime = null)
         {
-             ApiResponse<List<V1CashDrawerShift>> localVarResponse = await V1ListCashDrawerShiftsAsyncWithHttpInfo(locationId, order, beginTime, endTime);
+             ApiResponse<List<V1CashDrawerShift>> localVarResponse = await ListCashDrawerShiftsAsyncWithHttpInfo(locationId, order, beginTime, endTime);
              return localVarResponse.Data;
 
         }
@@ -1660,11 +1660,11 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1CashDrawerShift&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1CashDrawerShift>>> V1ListCashDrawerShiftsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1CashDrawerShift>>> ListCashDrawerShiftsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling EmployeesApi->V1ListCashDrawerShifts");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1EmployeesApi->ListCashDrawerShifts");
 
             var localVarPath = "/v1/{location_id}/cash-drawer-shifts";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1709,7 +1709,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListCashDrawerShifts", localVarResponse);
+                Exception exception = ExceptionFactory("ListCashDrawerShifts", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1727,9 +1727,9 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1EmployeeRole&gt;</returns>
-        public List<V1EmployeeRole> V1ListEmployeeRoles (string order = null, int? limit = null, string cursor = null)
+        public List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string cursor = null)
         {
-             ApiResponse<List<V1EmployeeRole>> localVarResponse = V1ListEmployeeRolesWithHttpInfo(order, limit, cursor);
+             ApiResponse<List<V1EmployeeRole>> localVarResponse = ListEmployeeRolesWithHttpInfo(order, limit, cursor);
              return localVarResponse.Data;
         }
 
@@ -1741,7 +1741,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1EmployeeRole&gt;</returns>
-        public ApiResponse< List<V1EmployeeRole> > V1ListEmployeeRolesWithHttpInfo (string order = null, int? limit = null, string cursor = null)
+        public ApiResponse< List<V1EmployeeRole> > ListEmployeeRolesWithHttpInfo (string order = null, int? limit = null, string cursor = null)
         {
 
             var localVarPath = "/v1/me/roles";
@@ -1786,7 +1786,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListEmployeeRoles", localVarResponse);
+                Exception exception = ExceptionFactory("ListEmployeeRoles", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1804,9 +1804,9 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1EmployeeRole&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1EmployeeRole>> V1ListEmployeeRolesAsync (string order = null, int? limit = null, string cursor = null)
+        public async System.Threading.Tasks.Task<List<V1EmployeeRole>> ListEmployeeRolesAsync (string order = null, int? limit = null, string cursor = null)
         {
-             ApiResponse<List<V1EmployeeRole>> localVarResponse = await V1ListEmployeeRolesAsyncWithHttpInfo(order, limit, cursor);
+             ApiResponse<List<V1EmployeeRole>> localVarResponse = await ListEmployeeRolesAsyncWithHttpInfo(order, limit, cursor);
              return localVarResponse.Data;
 
         }
@@ -1819,7 +1819,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1EmployeeRole&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1EmployeeRole>>> V1ListEmployeeRolesAsyncWithHttpInfo (string order = null, int? limit = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1EmployeeRole>>> ListEmployeeRolesAsyncWithHttpInfo (string order = null, int? limit = null, string cursor = null)
         {
 
             var localVarPath = "/v1/me/roles";
@@ -1864,7 +1864,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListEmployeeRoles", localVarResponse);
+                Exception exception = ExceptionFactory("ListEmployeeRoles", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1887,9 +1887,9 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>List&lt;V1Employee&gt;</returns>
-        public List<V1Employee> V1ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
+        public List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
         {
-             ApiResponse<List<V1Employee>> localVarResponse = V1ListEmployeesWithHttpInfo(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit);
+             ApiResponse<List<V1Employee>> localVarResponse = ListEmployeesWithHttpInfo(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit);
              return localVarResponse.Data;
         }
 
@@ -1906,7 +1906,7 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Employee&gt;</returns>
-        public ApiResponse< List<V1Employee> > V1ListEmployeesWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
+        public ApiResponse< List<V1Employee> > ListEmployeesWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
         {
 
             var localVarPath = "/v1/me/employees";
@@ -1956,7 +1956,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListEmployees", localVarResponse);
+                Exception exception = ExceptionFactory("ListEmployees", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1979,9 +1979,9 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>Task of List&lt;V1Employee&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Employee>> V1ListEmployeesAsync (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
+        public async System.Threading.Tasks.Task<List<V1Employee>> ListEmployeesAsync (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
         {
-             ApiResponse<List<V1Employee>> localVarResponse = await V1ListEmployeesAsyncWithHttpInfo(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit);
+             ApiResponse<List<V1Employee>> localVarResponse = await ListEmployeesAsyncWithHttpInfo(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit);
              return localVarResponse.Data;
 
         }
@@ -1999,7 +1999,7 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Employee&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Employee>>> V1ListEmployeesAsyncWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Employee>>> ListEmployeesAsyncWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
         {
 
             var localVarPath = "/v1/me/employees";
@@ -2049,7 +2049,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListEmployees", localVarResponse);
+                Exception exception = ExceptionFactory("ListEmployees", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2065,9 +2065,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>List&lt;V1TimecardEvent&gt;</returns>
-        public List<V1TimecardEvent> V1ListTimecardEvents (string timecardId)
+        public List<V1TimecardEvent> ListTimecardEvents (string timecardId)
         {
-             ApiResponse<List<V1TimecardEvent>> localVarResponse = V1ListTimecardEventsWithHttpInfo(timecardId);
+             ApiResponse<List<V1TimecardEvent>> localVarResponse = ListTimecardEventsWithHttpInfo(timecardId);
              return localVarResponse.Data;
         }
 
@@ -2077,11 +2077,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>ApiResponse of List&lt;V1TimecardEvent&gt;</returns>
-        public ApiResponse< List<V1TimecardEvent> > V1ListTimecardEventsWithHttpInfo (string timecardId)
+        public ApiResponse< List<V1TimecardEvent> > ListTimecardEventsWithHttpInfo (string timecardId)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1ListTimecardEvents");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->ListTimecardEvents");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}/events";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2123,7 +2123,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListTimecardEvents", localVarResponse);
+                Exception exception = ExceptionFactory("ListTimecardEvents", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2139,9 +2139,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>Task of List&lt;V1TimecardEvent&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1TimecardEvent>> V1ListTimecardEventsAsync (string timecardId)
+        public async System.Threading.Tasks.Task<List<V1TimecardEvent>> ListTimecardEventsAsync (string timecardId)
         {
-             ApiResponse<List<V1TimecardEvent>> localVarResponse = await V1ListTimecardEventsAsyncWithHttpInfo(timecardId);
+             ApiResponse<List<V1TimecardEvent>> localVarResponse = await ListTimecardEventsAsyncWithHttpInfo(timecardId);
              return localVarResponse.Data;
 
         }
@@ -2152,11 +2152,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1TimecardEvent&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1TimecardEvent>>> V1ListTimecardEventsAsyncWithHttpInfo (string timecardId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1TimecardEvent>>> ListTimecardEventsAsyncWithHttpInfo (string timecardId)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1ListTimecardEvents");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->ListTimecardEvents");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}/events";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2198,7 +2198,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListTimecardEvents", localVarResponse);
+                Exception exception = ExceptionFactory("ListTimecardEvents", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2224,9 +2224,9 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Timecard&gt;</returns>
-        public List<V1Timecard> V1ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
         {
-             ApiResponse<List<V1Timecard>> localVarResponse = V1ListTimecardsWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
+             ApiResponse<List<V1Timecard>> localVarResponse = ListTimecardsWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
              return localVarResponse.Data;
         }
 
@@ -2246,7 +2246,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Timecard&gt;</returns>
-        public ApiResponse< List<V1Timecard> > V1ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public ApiResponse< List<V1Timecard> > ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
         {
 
             var localVarPath = "/v1/me/timecards";
@@ -2299,7 +2299,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListTimecards", localVarResponse);
+                Exception exception = ExceptionFactory("ListTimecards", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2325,9 +2325,9 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Timecard&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Timecard>> V1ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public async System.Threading.Tasks.Task<List<V1Timecard>> ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
         {
-             ApiResponse<List<V1Timecard>> localVarResponse = await V1ListTimecardsAsyncWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
+             ApiResponse<List<V1Timecard>> localVarResponse = await ListTimecardsAsyncWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
              return localVarResponse.Data;
 
         }
@@ -2348,7 +2348,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Timecard&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> V1ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
         {
 
             var localVarPath = "/v1/me/timecards";
@@ -2401,7 +2401,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1ListTimecards", localVarResponse);
+                Exception exception = ExceptionFactory("ListTimecards", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2418,9 +2418,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>V1CashDrawerShift</returns>
-        public V1CashDrawerShift V1RetrieveCashDrawerShift (string locationId, string shiftId)
+        public V1CashDrawerShift RetrieveCashDrawerShift (string locationId, string shiftId)
         {
-             ApiResponse<V1CashDrawerShift> localVarResponse = V1RetrieveCashDrawerShiftWithHttpInfo(locationId, shiftId);
+             ApiResponse<V1CashDrawerShift> localVarResponse = RetrieveCashDrawerShiftWithHttpInfo(locationId, shiftId);
              return localVarResponse.Data;
         }
 
@@ -2431,14 +2431,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>ApiResponse of V1CashDrawerShift</returns>
-        public ApiResponse< V1CashDrawerShift > V1RetrieveCashDrawerShiftWithHttpInfo (string locationId, string shiftId)
+        public ApiResponse< V1CashDrawerShift > RetrieveCashDrawerShiftWithHttpInfo (string locationId, string shiftId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling EmployeesApi->V1RetrieveCashDrawerShift");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1EmployeesApi->RetrieveCashDrawerShift");
             // verify the required parameter 'shiftId' is set
             if (shiftId == null)
-                throw new ApiException(400, "Missing required parameter 'shiftId' when calling EmployeesApi->V1RetrieveCashDrawerShift");
+                throw new ApiException(400, "Missing required parameter 'shiftId' when calling V1EmployeesApi->RetrieveCashDrawerShift");
 
             var localVarPath = "/v1/{location_id}/cash-drawer-shifts/{shift_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2481,7 +2481,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveCashDrawerShift", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveCashDrawerShift", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2498,9 +2498,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>Task of V1CashDrawerShift</returns>
-        public async System.Threading.Tasks.Task<V1CashDrawerShift> V1RetrieveCashDrawerShiftAsync (string locationId, string shiftId)
+        public async System.Threading.Tasks.Task<V1CashDrawerShift> RetrieveCashDrawerShiftAsync (string locationId, string shiftId)
         {
-             ApiResponse<V1CashDrawerShift> localVarResponse = await V1RetrieveCashDrawerShiftAsyncWithHttpInfo(locationId, shiftId);
+             ApiResponse<V1CashDrawerShift> localVarResponse = await RetrieveCashDrawerShiftAsyncWithHttpInfo(locationId, shiftId);
              return localVarResponse.Data;
 
         }
@@ -2512,14 +2512,14 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1CashDrawerShift)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1CashDrawerShift>> V1RetrieveCashDrawerShiftAsyncWithHttpInfo (string locationId, string shiftId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1CashDrawerShift>> RetrieveCashDrawerShiftAsyncWithHttpInfo (string locationId, string shiftId)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling EmployeesApi->V1RetrieveCashDrawerShift");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling V1EmployeesApi->RetrieveCashDrawerShift");
             // verify the required parameter 'shiftId' is set
             if (shiftId == null)
-                throw new ApiException(400, "Missing required parameter 'shiftId' when calling EmployeesApi->V1RetrieveCashDrawerShift");
+                throw new ApiException(400, "Missing required parameter 'shiftId' when calling V1EmployeesApi->RetrieveCashDrawerShift");
 
             var localVarPath = "/v1/{location_id}/cash-drawer-shifts/{shift_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2562,7 +2562,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveCashDrawerShift", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveCashDrawerShift", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2578,9 +2578,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>V1Employee</returns>
-        public V1Employee V1RetrieveEmployee (string employeeId)
+        public V1Employee RetrieveEmployee (string employeeId)
         {
-             ApiResponse<V1Employee> localVarResponse = V1RetrieveEmployeeWithHttpInfo(employeeId);
+             ApiResponse<V1Employee> localVarResponse = RetrieveEmployeeWithHttpInfo(employeeId);
              return localVarResponse.Data;
         }
 
@@ -2590,11 +2590,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>ApiResponse of V1Employee</returns>
-        public ApiResponse< V1Employee > V1RetrieveEmployeeWithHttpInfo (string employeeId)
+        public ApiResponse< V1Employee > RetrieveEmployeeWithHttpInfo (string employeeId)
         {
             // verify the required parameter 'employeeId' is set
             if (employeeId == null)
-                throw new ApiException(400, "Missing required parameter 'employeeId' when calling EmployeesApi->V1RetrieveEmployee");
+                throw new ApiException(400, "Missing required parameter 'employeeId' when calling V1EmployeesApi->RetrieveEmployee");
 
             var localVarPath = "/v1/me/employees/{employee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2636,7 +2636,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveEmployee", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveEmployee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2652,9 +2652,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>Task of V1Employee</returns>
-        public async System.Threading.Tasks.Task<V1Employee> V1RetrieveEmployeeAsync (string employeeId)
+        public async System.Threading.Tasks.Task<V1Employee> RetrieveEmployeeAsync (string employeeId)
         {
-             ApiResponse<V1Employee> localVarResponse = await V1RetrieveEmployeeAsyncWithHttpInfo(employeeId);
+             ApiResponse<V1Employee> localVarResponse = await RetrieveEmployeeAsyncWithHttpInfo(employeeId);
              return localVarResponse.Data;
 
         }
@@ -2665,11 +2665,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1Employee)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Employee>> V1RetrieveEmployeeAsyncWithHttpInfo (string employeeId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Employee>> RetrieveEmployeeAsyncWithHttpInfo (string employeeId)
         {
             // verify the required parameter 'employeeId' is set
             if (employeeId == null)
-                throw new ApiException(400, "Missing required parameter 'employeeId' when calling EmployeesApi->V1RetrieveEmployee");
+                throw new ApiException(400, "Missing required parameter 'employeeId' when calling V1EmployeesApi->RetrieveEmployee");
 
             var localVarPath = "/v1/me/employees/{employee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2711,7 +2711,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveEmployee", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveEmployee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2727,9 +2727,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>V1EmployeeRole</returns>
-        public V1EmployeeRole V1RetrieveEmployeeRole (string roleId)
+        public V1EmployeeRole RetrieveEmployeeRole (string roleId)
         {
-             ApiResponse<V1EmployeeRole> localVarResponse = V1RetrieveEmployeeRoleWithHttpInfo(roleId);
+             ApiResponse<V1EmployeeRole> localVarResponse = RetrieveEmployeeRoleWithHttpInfo(roleId);
              return localVarResponse.Data;
         }
 
@@ -2739,11 +2739,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>ApiResponse of V1EmployeeRole</returns>
-        public ApiResponse< V1EmployeeRole > V1RetrieveEmployeeRoleWithHttpInfo (string roleId)
+        public ApiResponse< V1EmployeeRole > RetrieveEmployeeRoleWithHttpInfo (string roleId)
         {
             // verify the required parameter 'roleId' is set
             if (roleId == null)
-                throw new ApiException(400, "Missing required parameter 'roleId' when calling EmployeesApi->V1RetrieveEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'roleId' when calling V1EmployeesApi->RetrieveEmployeeRole");
 
             var localVarPath = "/v1/me/roles/{role_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2785,7 +2785,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveEmployeeRole", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveEmployeeRole", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2801,9 +2801,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>Task of V1EmployeeRole</returns>
-        public async System.Threading.Tasks.Task<V1EmployeeRole> V1RetrieveEmployeeRoleAsync (string roleId)
+        public async System.Threading.Tasks.Task<V1EmployeeRole> RetrieveEmployeeRoleAsync (string roleId)
         {
-             ApiResponse<V1EmployeeRole> localVarResponse = await V1RetrieveEmployeeRoleAsyncWithHttpInfo(roleId);
+             ApiResponse<V1EmployeeRole> localVarResponse = await RetrieveEmployeeRoleAsyncWithHttpInfo(roleId);
              return localVarResponse.Data;
 
         }
@@ -2814,11 +2814,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> V1RetrieveEmployeeRoleAsyncWithHttpInfo (string roleId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> RetrieveEmployeeRoleAsyncWithHttpInfo (string roleId)
         {
             // verify the required parameter 'roleId' is set
             if (roleId == null)
-                throw new ApiException(400, "Missing required parameter 'roleId' when calling EmployeesApi->V1RetrieveEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'roleId' when calling V1EmployeesApi->RetrieveEmployeeRole");
 
             var localVarPath = "/v1/me/roles/{role_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2860,7 +2860,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveEmployeeRole", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveEmployeeRole", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2876,9 +2876,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>V1Timecard</returns>
-        public V1Timecard V1RetrieveTimecard (string timecardId)
+        public V1Timecard RetrieveTimecard (string timecardId)
         {
-             ApiResponse<V1Timecard> localVarResponse = V1RetrieveTimecardWithHttpInfo(timecardId);
+             ApiResponse<V1Timecard> localVarResponse = RetrieveTimecardWithHttpInfo(timecardId);
              return localVarResponse.Data;
         }
 
@@ -2888,11 +2888,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        public ApiResponse< V1Timecard > V1RetrieveTimecardWithHttpInfo (string timecardId)
+        public ApiResponse< V1Timecard > RetrieveTimecardWithHttpInfo (string timecardId)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1RetrieveTimecard");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->RetrieveTimecard");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2934,7 +2934,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2950,9 +2950,9 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>Task of V1Timecard</returns>
-        public async System.Threading.Tasks.Task<V1Timecard> V1RetrieveTimecardAsync (string timecardId)
+        public async System.Threading.Tasks.Task<V1Timecard> RetrieveTimecardAsync (string timecardId)
         {
-             ApiResponse<V1Timecard> localVarResponse = await V1RetrieveTimecardAsyncWithHttpInfo(timecardId);
+             ApiResponse<V1Timecard> localVarResponse = await RetrieveTimecardAsyncWithHttpInfo(timecardId);
              return localVarResponse.Data;
 
         }
@@ -2963,11 +2963,11 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> V1RetrieveTimecardAsyncWithHttpInfo (string timecardId)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> RetrieveTimecardAsyncWithHttpInfo (string timecardId)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1RetrieveTimecard");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->RetrieveTimecard");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3009,7 +3009,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1RetrieveTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("RetrieveTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3020,33 +3020,33 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// v1UpdateEmployee 
+        /// V1 UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Employee</returns>
-        public V1Employee V1UpdateEmployee (string employeeId, V1Employee body)
+        public V1Employee UpdateEmployee (string employeeId, V1Employee body)
         {
-             ApiResponse<V1Employee> localVarResponse = V1UpdateEmployeeWithHttpInfo(employeeId, body);
+             ApiResponse<V1Employee> localVarResponse = UpdateEmployeeWithHttpInfo(employeeId, body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// v1UpdateEmployee 
+        /// V1 UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Employee</returns>
-        public ApiResponse< V1Employee > V1UpdateEmployeeWithHttpInfo (string employeeId, V1Employee body)
+        public ApiResponse< V1Employee > UpdateEmployeeWithHttpInfo (string employeeId, V1Employee body)
         {
             // verify the required parameter 'employeeId' is set
             if (employeeId == null)
-                throw new ApiException(400, "Missing required parameter 'employeeId' when calling EmployeesApi->V1UpdateEmployee");
+                throw new ApiException(400, "Missing required parameter 'employeeId' when calling V1EmployeesApi->UpdateEmployee");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1UpdateEmployee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->UpdateEmployee");
 
             var localVarPath = "/v1/me/employees/{employee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3096,7 +3096,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateEmployee", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateEmployee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3107,34 +3107,34 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// v1UpdateEmployee 
+        /// V1 UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Employee</returns>
-        public async System.Threading.Tasks.Task<V1Employee> V1UpdateEmployeeAsync (string employeeId, V1Employee body)
+        public async System.Threading.Tasks.Task<V1Employee> UpdateEmployeeAsync (string employeeId, V1Employee body)
         {
-             ApiResponse<V1Employee> localVarResponse = await V1UpdateEmployeeAsyncWithHttpInfo(employeeId, body);
+             ApiResponse<V1Employee> localVarResponse = await UpdateEmployeeAsyncWithHttpInfo(employeeId, body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// v1UpdateEmployee 
+        /// V1 UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Employee)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Employee>> V1UpdateEmployeeAsyncWithHttpInfo (string employeeId, V1Employee body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Employee>> UpdateEmployeeAsyncWithHttpInfo (string employeeId, V1Employee body)
         {
             // verify the required parameter 'employeeId' is set
             if (employeeId == null)
-                throw new ApiException(400, "Missing required parameter 'employeeId' when calling EmployeesApi->V1UpdateEmployee");
+                throw new ApiException(400, "Missing required parameter 'employeeId' when calling V1EmployeesApi->UpdateEmployee");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1UpdateEmployee");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->UpdateEmployee");
 
             var localVarPath = "/v1/me/employees/{employee_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3184,7 +3184,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateEmployee", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateEmployee", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3201,9 +3201,9 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1EmployeeRole</returns>
-        public V1EmployeeRole V1UpdateEmployeeRole (string roleId, V1EmployeeRole body)
+        public V1EmployeeRole UpdateEmployeeRole (string roleId, V1EmployeeRole body)
         {
-             ApiResponse<V1EmployeeRole> localVarResponse = V1UpdateEmployeeRoleWithHttpInfo(roleId, body);
+             ApiResponse<V1EmployeeRole> localVarResponse = UpdateEmployeeRoleWithHttpInfo(roleId, body);
              return localVarResponse.Data;
         }
 
@@ -3214,14 +3214,14 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1EmployeeRole</returns>
-        public ApiResponse< V1EmployeeRole > V1UpdateEmployeeRoleWithHttpInfo (string roleId, V1EmployeeRole body)
+        public ApiResponse< V1EmployeeRole > UpdateEmployeeRoleWithHttpInfo (string roleId, V1EmployeeRole body)
         {
             // verify the required parameter 'roleId' is set
             if (roleId == null)
-                throw new ApiException(400, "Missing required parameter 'roleId' when calling EmployeesApi->V1UpdateEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'roleId' when calling V1EmployeesApi->UpdateEmployeeRole");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1UpdateEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->UpdateEmployeeRole");
 
             var localVarPath = "/v1/me/roles/{role_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3271,7 +3271,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateEmployeeRole", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateEmployeeRole", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3288,9 +3288,9 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1EmployeeRole</returns>
-        public async System.Threading.Tasks.Task<V1EmployeeRole> V1UpdateEmployeeRoleAsync (string roleId, V1EmployeeRole body)
+        public async System.Threading.Tasks.Task<V1EmployeeRole> UpdateEmployeeRoleAsync (string roleId, V1EmployeeRole body)
         {
-             ApiResponse<V1EmployeeRole> localVarResponse = await V1UpdateEmployeeRoleAsyncWithHttpInfo(roleId, body);
+             ApiResponse<V1EmployeeRole> localVarResponse = await UpdateEmployeeRoleAsyncWithHttpInfo(roleId, body);
              return localVarResponse.Data;
 
         }
@@ -3302,14 +3302,14 @@ namespace Square.Connect.Api
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> V1UpdateEmployeeRoleAsyncWithHttpInfo (string roleId, V1EmployeeRole body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> UpdateEmployeeRoleAsyncWithHttpInfo (string roleId, V1EmployeeRole body)
         {
             // verify the required parameter 'roleId' is set
             if (roleId == null)
-                throw new ApiException(400, "Missing required parameter 'roleId' when calling EmployeesApi->V1UpdateEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'roleId' when calling V1EmployeesApi->UpdateEmployeeRole");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1UpdateEmployeeRole");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->UpdateEmployeeRole");
 
             var localVarPath = "/v1/me/roles/{role_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3359,7 +3359,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateEmployeeRole", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateEmployeeRole", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3376,9 +3376,9 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>V1Timecard</returns>
-        public V1Timecard V1UpdateTimecard (string timecardId, V1Timecard body)
+        public V1Timecard UpdateTimecard (string timecardId, V1Timecard body)
         {
-             ApiResponse<V1Timecard> localVarResponse = V1UpdateTimecardWithHttpInfo(timecardId, body);
+             ApiResponse<V1Timecard> localVarResponse = UpdateTimecardWithHttpInfo(timecardId, body);
              return localVarResponse.Data;
         }
 
@@ -3389,14 +3389,14 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        public ApiResponse< V1Timecard > V1UpdateTimecardWithHttpInfo (string timecardId, V1Timecard body)
+        public ApiResponse< V1Timecard > UpdateTimecardWithHttpInfo (string timecardId, V1Timecard body)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1UpdateTimecard");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->UpdateTimecard");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1UpdateTimecard");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->UpdateTimecard");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3446,7 +3446,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3463,9 +3463,9 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Timecard</returns>
-        public async System.Threading.Tasks.Task<V1Timecard> V1UpdateTimecardAsync (string timecardId, V1Timecard body)
+        public async System.Threading.Tasks.Task<V1Timecard> UpdateTimecardAsync (string timecardId, V1Timecard body)
         {
-             ApiResponse<V1Timecard> localVarResponse = await V1UpdateTimecardAsyncWithHttpInfo(timecardId, body);
+             ApiResponse<V1Timecard> localVarResponse = await UpdateTimecardAsyncWithHttpInfo(timecardId, body);
              return localVarResponse.Data;
 
         }
@@ -3477,14 +3477,14 @@ namespace Square.Connect.Api
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> V1UpdateTimecardAsyncWithHttpInfo (string timecardId, V1Timecard body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> UpdateTimecardAsyncWithHttpInfo (string timecardId, V1Timecard body)
         {
             // verify the required parameter 'timecardId' is set
             if (timecardId == null)
-                throw new ApiException(400, "Missing required parameter 'timecardId' when calling EmployeesApi->V1UpdateTimecard");
+                throw new ApiException(400, "Missing required parameter 'timecardId' when calling V1EmployeesApi->UpdateTimecard");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EmployeesApi->V1UpdateTimecard");
+                throw new ApiException(400, "Missing required parameter 'body' when calling V1EmployeesApi->UpdateTimecard");
 
             var localVarPath = "/v1/me/timecards/{timecard_id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3534,7 +3534,7 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("V1UpdateTimecard", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateTimecard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
