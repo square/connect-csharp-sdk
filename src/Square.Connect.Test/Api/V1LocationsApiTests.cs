@@ -31,9 +31,9 @@ namespace Square.Connect.Test
     /// Please update the test case below to test the API endpoint.
     /// </remarks>
     [TestFixture]
-    public class V1LocationApiTests
+    public class V1LocationsApiTests
     {
-        private V1LocationApi instance;
+        private V1LocationsApi instance;
 
         /// <summary>
         /// Setup before each unit test
@@ -41,7 +41,7 @@ namespace Square.Connect.Test
         [SetUp]
         public void Init()
         {
-            instance = new V1LocationApi();
+            instance = new V1LocationsApi();
         }
 
         /// <summary>
