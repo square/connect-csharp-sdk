@@ -1,11 +1,11 @@
-# Square.Connect.Api.V1LocationApi
+# Square.Connect.Api.V1LocationsApi
 
 All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListLocations**](V1LocationApi.md#listlocations) | **GET** /v1/me/locations | Provides details for a business&#39;s locations, including their IDs.
-[**RetrieveBusiness**](V1LocationApi.md#retrievebusiness) | **GET** /v1/me | Get a business&#39;s information.
+[**ListLocations**](V1LocationsApi.md#listlocations) | **GET** /v1/me/locations | Provides details for a business&#39;s locations, including their IDs.
+[**RetrieveBusiness**](V1LocationsApi.md#retrievebusiness) | **GET** /v1/me | Get a business&#39;s information.
 
 
 <a name="listlocations"></a>
@@ -34,7 +34,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new V1LocationApi();
+            var apiInstance = new V1LocationsApi();
 
             try
             {
@@ -44,7 +44,7 @@ namespace Example
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling V1LocationApi.ListLocations: " + e.Message );
+                Debug.Print("Exception when calling V1LocationsApi.ListLocations: " + e.Message );
             }
         }
     }
@@ -95,7 +95,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new V1LocationApi();
+            var apiInstance = new V1LocationsApi();
 
             try
             {
@@ -105,7 +105,7 @@ namespace Example
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling V1LocationApi.RetrieveBusiness: " + e.Message );
+                Debug.Print("Exception when calling V1LocationsApi.RetrieveBusiness: " + e.Message );
             }
         }
     }

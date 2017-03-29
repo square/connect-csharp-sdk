@@ -179,8 +179,8 @@ Class | Method | HTTP request
 *V1ItemsApi* | [**UpdatePage**](docs/V1ItemsApi.md#updatepage) | **PUT** /v1/{location_id}/pages/{page_id}
 *V1ItemsApi* | [**UpdatePageCell**](docs/V1ItemsApi.md#updatepagecell) | **PUT** /v1/{location_id}/pages/{page_id}/cells
 *V1ItemsApi* | [**UpdateVariation**](docs/V1ItemsApi.md#updatevariation) | **PUT** /v1/{location_id}/items/{item_id}/variations/{variation_id}
-*V1LocationApi* | [**ListLocations**](docs/V1LocationApi.md#listlocations) | **GET** /v1/me/locations
-*V1LocationApi* | [**RetrieveBusiness**](docs/V1LocationApi.md#retrievebusiness) | **GET** /v1/me
+*V1LocationsApi* | [**ListLocations**](docs/V1LocationsApi.md#listlocations) | **GET** /v1/me/locations
+*V1LocationsApi* | [**RetrieveBusiness**](docs/V1LocationsApi.md#retrievebusiness) | **GET** /v1/me
 *V1TransactionsApi* | [**CreateRefund**](docs/V1TransactionsApi.md#createrefund) | **POST** /v1/{location_id}/refunds
 *V1TransactionsApi* | [**ListBankAccounts**](docs/V1TransactionsApi.md#listbankaccounts) | **GET** /v1/{location_id}/bank-accounts
 *V1TransactionsApi* | [**ListOrders**](docs/V1TransactionsApi.md#listorders) | **GET** /v1/{location_id}/orders

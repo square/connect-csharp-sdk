@@ -21,7 +21,7 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IV1LocationApi : IApiAccessor
+    public interface IV1LocationsApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -108,15 +108,15 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class V1LocationApi : IV1LocationApi
+    public partial class V1LocationsApi : IV1LocationsApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="V1LocationApi"/> class.
+        /// Initializes a new instance of the <see cref="V1LocationsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public V1LocationApi(String basePath)
+        public V1LocationsApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -130,12 +130,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="V1LocationApi"/> class
+        /// Initializes a new instance of the <see cref="V1LocationsApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public V1LocationApi(Configuration configuration = null)
+        public V1LocationsApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
