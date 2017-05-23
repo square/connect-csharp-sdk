@@ -449,6 +449,18 @@ namespace Square.Connect.Model
             UNEXPECTEDVALUE,
             
             /// <summary>
+            /// Enum SANDBOXNOTSUPPORTED for "SANDBOX_NOT_SUPPORTED"
+            /// </summary>
+            [EnumMember(Value = "SANDBOX_NOT_SUPPORTED")]
+            SANDBOXNOTSUPPORTED,
+            
+            /// <summary>
+            /// Enum INVALIDEMAILADDRESS for "INVALID_EMAIL_ADDRESS"
+            /// </summary>
+            [EnumMember(Value = "INVALID_EMAIL_ADDRESS")]
+            INVALIDEMAILADDRESS,
+            
+            /// <summary>
             /// Enum CARDDECLINED for "CARD_DECLINED"
             /// </summary>
             [EnumMember(Value = "CARD_DECLINED")]

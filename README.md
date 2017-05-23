@@ -1,4 +1,7 @@
-# Square Connect V2 C# SDK [![Build Status](https://travis-ci.org/square/connect-csharp-sdk.svg?branch=master)](https://travis-ci.org/square/connect-csharp-sdk)[![NuGet version](https://badge.fury.io/nu/Square.Connect.svg)](https://badge.fury.io/nu/Square.Connect)
+Square Connect C# SDK [![Build Status](https://travis-ci.org/square/connect-csharp-sdk.svg?branch=master)](https://travis-ci.org/square/connect-csharp-sdk)[![NuGet version](https://badge.fury.io/nu/Square.Connect.svg)](https://badge.fury.io/nu/Square.Connect)
+==================
+
+**If you have feedback about the new SDKs, or just want to talk to other Square Developers, request an invite to the new [slack community for Square Developers](https://docs.google.com/forms/d/e/1FAIpQLSfAZGIEZoNs-XryKqUoW3atFQHdQw5UqXLMOVPq3V4DEq-AJw/viewform?usp=sf_link#response=ACYDBNj5LFgPy8Tcac2gSgv_IjXvgWsPy2CO2xTXwnc0OSSxCvWFgc7SCDHvVQ)**
 
 This repository contains the released C# client SDK. Check out our [API
 specification repository](https://github.com/square/connect-api-specification)
@@ -62,16 +65,20 @@ namespace Example
 {
     public class Example
     {
+        public Example()
+        {
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+        }
+
         // Retrieving your location IDs
-        public static void RetrieveLocations()
+        public void RetrieveLocations()
         {
             LocationApi _locationApi = new LocationApi();
-            string authorization = "YOUR_ACCESS_TOKEN";
-            var response = _locationApi.ListLocations(authorization);
+            var response = _locationApi.ListLocations();
         }
 
         // Charge the card nonce
-        public static void ChargeNonce()
+        public void ChargeNonce()
         {
             // Every payment you process for a given business have a unique idempotency key.
             // If you're unsure whether a particular payment succeeded, you can reattempt
@@ -86,11 +93,10 @@ namespace Example
             Money money = new Money(amount, Money.ToCurrencyEnum(currency));
 
             string nonce = "YOUR_NONCE";
-            string authorization = "YOUR_ACCESS_TOKEN";
             string locationId = "YOUR_LOCATION_ID";
             ChargeRequest body = new ChargeRequest(AmountMoney: money, IdempotencyKey: idempotencyKey, CardNonce: nonce);
             TransactionApi transactionApi = new TransactionApi();
-            var response = transactionApi.Charge(authorization, locationId, body);
+            var response = transactionApi.Charge(locationId, body);
         }
     }
 }
@@ -99,34 +105,144 @@ More examples are available at [connect-api-examples](https://github.com/square/
 
 ## Documentation for API Endpoints
 
-All URIs are relative to [Square Connect V2 Documentation](https://docs.connect.squareup.com/api/connect/v2/#navsection-endpoints)
+All URIs are relative to [Square Connect Documentation](https://docs.connect.squareup.com/)
 
 Class | Method | HTTP request 
 ------------ | ------------- | ------------- 
+*CatalogApi* | [**BatchDeleteCatalogObjects**](docs/CatalogApi.md#batchdeletecatalogobjects) | **POST** /v2/catalog/batch-delete
+*CatalogApi* | [**BatchRetrieveCatalogObjects**](docs/CatalogApi.md#batchretrievecatalogobjects) | **POST** /v2/catalog/batch-retrieve
+*CatalogApi* | [**BatchUpsertCatalogObjects**](docs/CatalogApi.md#batchupsertcatalogobjects) | **POST** /v2/catalog/batch-upsert
+*CatalogApi* | [**CatalogInfo**](docs/CatalogApi.md#cataloginfo) | **GET** /v2/catalog/info
+*CatalogApi* | [**DeleteCatalogObject**](docs/CatalogApi.md#deletecatalogobject) | **DELETE** /v2/catalog/object/{object_id}
+*CatalogApi* | [**ListCatalog**](docs/CatalogApi.md#listcatalog) | **GET** /v2/catalog/list
+*CatalogApi* | [**RetrieveCatalogObject**](docs/CatalogApi.md#retrievecatalogobject) | **GET** /v2/catalog/object/{object_id}
+*CatalogApi* | [**SearchCatalogObjects**](docs/CatalogApi.md#searchcatalogobjects) | **POST** /v2/catalog/search
+*CatalogApi* | [**UpdateItemModifierLists**](docs/CatalogApi.md#updateitemmodifierlists) | **POST** /v2/catalog/update-item-modifier-lists
+*CatalogApi* | [**UpdateItemTaxes**](docs/CatalogApi.md#updateitemtaxes) | **POST** /v2/catalog/update-item-taxes
+*CatalogApi* | [**UpsertCatalogObject**](docs/CatalogApi.md#upsertcatalogobject) | **POST** /v2/catalog/object
 *CheckoutApi* | [**CreateCheckout**](docs/CheckoutApi.md#createcheckout) | **POST** /v2/locations/{location_id}/checkouts
-*CustomerApi* | [**CreateCustomer**](docs/CustomerApi.md#createcustomer) | **POST** /v2/customers
-*CustomerApi* | [**DeleteCustomer**](docs/CustomerApi.md#deletecustomer) | **DELETE** /v2/customers/{customer_id}
-*CustomerApi* | [**ListCustomers**](docs/CustomerApi.md#listcustomers) | **GET** /v2/customers
-*CustomerApi* | [**RetrieveCustomer**](docs/CustomerApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id}
-*CustomerApi* | [**UpdateCustomer**](docs/CustomerApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
-*CustomerCardApi* | [**CreateCustomerCard**](docs/CustomerCardApi.md#createcustomercard) | **POST** /v2/customers/{customer_id}/cards
-*CustomerCardApi* | [**DeleteCustomerCard**](docs/CustomerCardApi.md#deletecustomercard) | **DELETE** /v2/customers/{customer_id}/cards/{card_id}
-*LocationApi* | [**ListLocations**](docs/LocationApi.md#listlocations) | **GET** /v2/locations
-*RefundApi* | [**CreateRefund**](docs/RefundApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund
-*RefundApi* | [**ListRefunds**](docs/RefundApi.md#listrefunds) | **GET** /v2/locations/{location_id}/refunds
-*TransactionApi* | [**CaptureTransaction**](docs/TransactionApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
-*TransactionApi* | [**Charge**](docs/TransactionApi.md#charge) | **POST** /v2/locations/{location_id}/transactions
-*TransactionApi* | [**ListTransactions**](docs/TransactionApi.md#listtransactions) | **GET** /v2/locations/{location_id}/transactions
-*TransactionApi* | [**RetrieveTransaction**](docs/TransactionApi.md#retrievetransaction) | **GET** /v2/locations/{location_id}/transactions/{transaction_id}
-*TransactionApi* | [**VoidTransaction**](docs/TransactionApi.md#voidtransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/void
+*CustomersApi* | [**CreateCustomer**](docs/CustomersApi.md#createcustomer) | **POST** /v2/customers
+*CustomersApi* | [**CreateCustomerCard**](docs/CustomersApi.md#createcustomercard) | **POST** /v2/customers/{customer_id}/cards
+*CustomersApi* | [**DeleteCustomer**](docs/CustomersApi.md#deletecustomer) | **DELETE** /v2/customers/{customer_id}
+*CustomersApi* | [**DeleteCustomerCard**](docs/CustomersApi.md#deletecustomercard) | **DELETE** /v2/customers/{customer_id}/cards/{card_id}
+*CustomersApi* | [**ListCustomers**](docs/CustomersApi.md#listcustomers) | **GET** /v2/customers
+*CustomersApi* | [**RetrieveCustomer**](docs/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id}
+*CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
+*LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
+*TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
+*TransactionsApi* | [**Charge**](docs/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions
+*TransactionsApi* | [**CreateRefund**](docs/TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund
+*TransactionsApi* | [**ListRefunds**](docs/TransactionsApi.md#listrefunds) | **GET** /v2/locations/{location_id}/refunds
+*TransactionsApi* | [**ListTransactions**](docs/TransactionsApi.md#listtransactions) | **GET** /v2/locations/{location_id}/transactions
+*TransactionsApi* | [**RetrieveTransaction**](docs/TransactionsApi.md#retrievetransaction) | **GET** /v2/locations/{location_id}/transactions/{transaction_id}
+*TransactionsApi* | [**VoidTransaction**](docs/TransactionsApi.md#voidtransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/void
+*V1EmployeesApi* | [**CreateEmployee**](docs/V1EmployeesApi.md#createemployee) | **POST** /v1/me/employees
+*V1EmployeesApi* | [**CreateEmployeeRole**](docs/V1EmployeesApi.md#createemployeerole) | **POST** /v1/me/roles
+*V1EmployeesApi* | [**CreateTimecard**](docs/V1EmployeesApi.md#createtimecard) | **POST** /v1/me/timecards
+*V1EmployeesApi* | [**DeleteTimecard**](docs/V1EmployeesApi.md#deletetimecard) | **DELETE** /v1/me/timecards/{timecard_id}
+*V1EmployeesApi* | [**ListCashDrawerShifts**](docs/V1EmployeesApi.md#listcashdrawershifts) | **GET** /v1/{location_id}/cash-drawer-shifts
+*V1EmployeesApi* | [**ListEmployeeRoles**](docs/V1EmployeesApi.md#listemployeeroles) | **GET** /v1/me/roles
+*V1EmployeesApi* | [**ListEmployees**](docs/V1EmployeesApi.md#listemployees) | **GET** /v1/me/employees
+*V1EmployeesApi* | [**ListTimecardEvents**](docs/V1EmployeesApi.md#listtimecardevents) | **GET** /v1/me/timecards/{timecard_id}/events
+*V1EmployeesApi* | [**ListTimecards**](docs/V1EmployeesApi.md#listtimecards) | **GET** /v1/me/timecards
+*V1EmployeesApi* | [**RetrieveCashDrawerShift**](docs/V1EmployeesApi.md#retrievecashdrawershift) | **GET** /v1/{location_id}/cash-drawer-shifts/{shift_id}
+*V1EmployeesApi* | [**RetrieveEmployee**](docs/V1EmployeesApi.md#retrieveemployee) | **GET** /v1/me/employees/{employee_id}
+*V1EmployeesApi* | [**RetrieveEmployeeRole**](docs/V1EmployeesApi.md#retrieveemployeerole) | **GET** /v1/me/roles/{role_id}
+*V1EmployeesApi* | [**RetrieveTimecard**](docs/V1EmployeesApi.md#retrievetimecard) | **GET** /v1/me/timecards/{timecard_id}
+*V1EmployeesApi* | [**UpdateEmployee**](docs/V1EmployeesApi.md#updateemployee) | **PUT** /v1/me/employees/{employee_id}
+*V1EmployeesApi* | [**UpdateEmployeeRole**](docs/V1EmployeesApi.md#updateemployeerole) | **PUT** /v1/me/roles/{role_id}
+*V1EmployeesApi* | [**UpdateTimecard**](docs/V1EmployeesApi.md#updatetimecard) | **PUT** /v1/me/timecards/{timecard_id}
+*V1ItemsApi* | [**AdjustInventory**](docs/V1ItemsApi.md#adjustinventory) | **POST** /v1/{location_id}/inventory/{variation_id}
+*V1ItemsApi* | [**ApplyFee**](docs/V1ItemsApi.md#applyfee) | **PUT** /v1/{location_id}/items/{item_id}/fees/{fee_id}
+*V1ItemsApi* | [**ApplyModifierList**](docs/V1ItemsApi.md#applymodifierlist) | **PUT** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id}
+*V1ItemsApi* | [**CreateCategory**](docs/V1ItemsApi.md#createcategory) | **POST** /v1/{location_id}/categories
+*V1ItemsApi* | [**CreateDiscount**](docs/V1ItemsApi.md#creatediscount) | **POST** /v1/{location_id}/discounts
+*V1ItemsApi* | [**CreateFee**](docs/V1ItemsApi.md#createfee) | **POST** /v1/{location_id}/fees
+*V1ItemsApi* | [**CreateItem**](docs/V1ItemsApi.md#createitem) | **POST** /v1/{location_id}/items
+*V1ItemsApi* | [**CreateModifierList**](docs/V1ItemsApi.md#createmodifierlist) | **POST** /v1/{location_id}/modifier-lists
+*V1ItemsApi* | [**CreateModifierOption**](docs/V1ItemsApi.md#createmodifieroption) | **POST** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options
+*V1ItemsApi* | [**CreatePage**](docs/V1ItemsApi.md#createpage) | **POST** /v1/{location_id}/pages
+*V1ItemsApi* | [**CreateVariation**](docs/V1ItemsApi.md#createvariation) | **POST** /v1/{location_id}/items/{item_id}/variations
+*V1ItemsApi* | [**DeleteCategory**](docs/V1ItemsApi.md#deletecategory) | **DELETE** /v1/{location_id}/categories/{category_id}
+*V1ItemsApi* | [**DeleteDiscount**](docs/V1ItemsApi.md#deletediscount) | **DELETE** /v1/{location_id}/discounts/{discount_id}
+*V1ItemsApi* | [**DeleteFee**](docs/V1ItemsApi.md#deletefee) | **DELETE** /v1/{location_id}/fees/{fee_id}
+*V1ItemsApi* | [**DeleteItem**](docs/V1ItemsApi.md#deleteitem) | **DELETE** /v1/{location_id}/items/{item_id}
+*V1ItemsApi* | [**DeleteModifierList**](docs/V1ItemsApi.md#deletemodifierlist) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id}
+*V1ItemsApi* | [**DeleteModifierOption**](docs/V1ItemsApi.md#deletemodifieroption) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id}
+*V1ItemsApi* | [**DeletePage**](docs/V1ItemsApi.md#deletepage) | **DELETE** /v1/{location_id}/pages/{page_id}
+*V1ItemsApi* | [**DeletePageCell**](docs/V1ItemsApi.md#deletepagecell) | **DELETE** /v1/{location_id}/pages/{page_id}/cells
+*V1ItemsApi* | [**DeleteVariation**](docs/V1ItemsApi.md#deletevariation) | **DELETE** /v1/{location_id}/items/{item_id}/variations/{variation_id}
+*V1ItemsApi* | [**ListCategories**](docs/V1ItemsApi.md#listcategories) | **GET** /v1/{location_id}/categories
+*V1ItemsApi* | [**ListDiscounts**](docs/V1ItemsApi.md#listdiscounts) | **GET** /v1/{location_id}/discounts
+*V1ItemsApi* | [**ListFees**](docs/V1ItemsApi.md#listfees) | **GET** /v1/{location_id}/fees
+*V1ItemsApi* | [**ListInventory**](docs/V1ItemsApi.md#listinventory) | **GET** /v1/{location_id}/inventory
+*V1ItemsApi* | [**ListItems**](docs/V1ItemsApi.md#listitems) | **GET** /v1/{location_id}/items
+*V1ItemsApi* | [**ListModifierLists**](docs/V1ItemsApi.md#listmodifierlists) | **GET** /v1/{location_id}/modifier-lists
+*V1ItemsApi* | [**ListPages**](docs/V1ItemsApi.md#listpages) | **GET** /v1/{location_id}/pages
+*V1ItemsApi* | [**RemoveFee**](docs/V1ItemsApi.md#removefee) | **DELETE** /v1/{location_id}/items/{item_id}/fees/{fee_id}
+*V1ItemsApi* | [**RemoveModifierList**](docs/V1ItemsApi.md#removemodifierlist) | **DELETE** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id}
+*V1ItemsApi* | [**RetrieveItem**](docs/V1ItemsApi.md#retrieveitem) | **GET** /v1/{location_id}/items/{item_id}
+*V1ItemsApi* | [**RetrieveModifierList**](docs/V1ItemsApi.md#retrievemodifierlist) | **GET** /v1/{location_id}/modifier-lists/{modifier_list_id}
+*V1ItemsApi* | [**UpdateCategory**](docs/V1ItemsApi.md#updatecategory) | **PUT** /v1/{location_id}/categories/{category_id}
+*V1ItemsApi* | [**UpdateDiscount**](docs/V1ItemsApi.md#updatediscount) | **PUT** /v1/{location_id}/discounts/{discount_id}
+*V1ItemsApi* | [**UpdateFee**](docs/V1ItemsApi.md#updatefee) | **PUT** /v1/{location_id}/fees/{fee_id}
+*V1ItemsApi* | [**UpdateItem**](docs/V1ItemsApi.md#updateitem) | **PUT** /v1/{location_id}/items/{item_id}
+*V1ItemsApi* | [**UpdateModifierList**](docs/V1ItemsApi.md#updatemodifierlist) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id}
+*V1ItemsApi* | [**UpdateModifierOption**](docs/V1ItemsApi.md#updatemodifieroption) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id}
+*V1ItemsApi* | [**UpdatePage**](docs/V1ItemsApi.md#updatepage) | **PUT** /v1/{location_id}/pages/{page_id}
+*V1ItemsApi* | [**UpdatePageCell**](docs/V1ItemsApi.md#updatepagecell) | **PUT** /v1/{location_id}/pages/{page_id}/cells
+*V1ItemsApi* | [**UpdateVariation**](docs/V1ItemsApi.md#updatevariation) | **PUT** /v1/{location_id}/items/{item_id}/variations/{variation_id}
+*V1LocationsApi* | [**ListLocations**](docs/V1LocationsApi.md#listlocations) | **GET** /v1/me/locations
+*V1LocationsApi* | [**RetrieveBusiness**](docs/V1LocationsApi.md#retrievebusiness) | **GET** /v1/me
+*V1TransactionsApi* | [**CreateRefund**](docs/V1TransactionsApi.md#createrefund) | **POST** /v1/{location_id}/refunds
+*V1TransactionsApi* | [**ListBankAccounts**](docs/V1TransactionsApi.md#listbankaccounts) | **GET** /v1/{location_id}/bank-accounts
+*V1TransactionsApi* | [**ListOrders**](docs/V1TransactionsApi.md#listorders) | **GET** /v1/{location_id}/orders
+*V1TransactionsApi* | [**ListPayments**](docs/V1TransactionsApi.md#listpayments) | **GET** /v1/{location_id}/payments
+*V1TransactionsApi* | [**ListRefunds**](docs/V1TransactionsApi.md#listrefunds) | **GET** /v1/{location_id}/refunds
+*V1TransactionsApi* | [**ListSettlements**](docs/V1TransactionsApi.md#listsettlements) | **GET** /v1/{location_id}/settlements
+*V1TransactionsApi* | [**RetrieveBankAccount**](docs/V1TransactionsApi.md#retrievebankaccount) | **GET** /v1/{location_id}/bank-accounts/{bank_account_id}
+*V1TransactionsApi* | [**RetrieveOrder**](docs/V1TransactionsApi.md#retrieveorder) | **GET** /v1/{location_id}/orders/{order_id}
+*V1TransactionsApi* | [**RetrievePayment**](docs/V1TransactionsApi.md#retrievepayment) | **GET** /v1/{location_id}/payments/{payment_id}
+*V1TransactionsApi* | [**RetrieveSettlement**](docs/V1TransactionsApi.md#retrievesettlement) | **GET** /v1/{location_id}/settlements/{settlement_id}
+*V1TransactionsApi* | [**UpdateOrder**](docs/V1TransactionsApi.md#updateorder) | **PUT** /v1/{location_id}/orders/{order_id}
 
 
 ## Documentation for Models
 
  - [Model.Address](docs/Address.md)
+ - [Model.BatchDeleteCatalogObjectsRequest](docs/BatchDeleteCatalogObjectsRequest.md)
+ - [Model.BatchDeleteCatalogObjectsResponse](docs/BatchDeleteCatalogObjectsResponse.md)
+ - [Model.BatchRetrieveCatalogObjectsRequest](docs/BatchRetrieveCatalogObjectsRequest.md)
+ - [Model.BatchRetrieveCatalogObjectsResponse](docs/BatchRetrieveCatalogObjectsResponse.md)
+ - [Model.BatchUpsertCatalogObjectsRequest](docs/BatchUpsertCatalogObjectsRequest.md)
+ - [Model.BatchUpsertCatalogObjectsResponse](docs/BatchUpsertCatalogObjectsResponse.md)
  - [Model.CaptureTransactionRequest](docs/CaptureTransactionRequest.md)
  - [Model.CaptureTransactionResponse](docs/CaptureTransactionResponse.md)
  - [Model.Card](docs/Card.md)
+ - [Model.CatalogCategory](docs/CatalogCategory.md)
+ - [Model.CatalogDiscount](docs/CatalogDiscount.md)
+ - [Model.CatalogIdMapping](docs/CatalogIdMapping.md)
+ - [Model.CatalogInfoRequest](docs/CatalogInfoRequest.md)
+ - [Model.CatalogInfoResponse](docs/CatalogInfoResponse.md)
+ - [Model.CatalogInfoResponseLimits](docs/CatalogInfoResponseLimits.md)
+ - [Model.CatalogItem](docs/CatalogItem.md)
+ - [Model.CatalogItemModifierListInfo](docs/CatalogItemModifierListInfo.md)
+ - [Model.CatalogItemVariation](docs/CatalogItemVariation.md)
+ - [Model.CatalogModifier](docs/CatalogModifier.md)
+ - [Model.CatalogModifierList](docs/CatalogModifierList.md)
+ - [Model.CatalogModifierOverride](docs/CatalogModifierOverride.md)
+ - [Model.CatalogObject](docs/CatalogObject.md)
+ - [Model.CatalogObjectBatch](docs/CatalogObjectBatch.md)
+ - [Model.CatalogQuery](docs/CatalogQuery.md)
+ - [Model.CatalogQueryExact](docs/CatalogQueryExact.md)
+ - [Model.CatalogQueryItemsForModifierList](docs/CatalogQueryItemsForModifierList.md)
+ - [Model.CatalogQueryItemsForTax](docs/CatalogQueryItemsForTax.md)
+ - [Model.CatalogQueryPrefix](docs/CatalogQueryPrefix.md)
+ - [Model.CatalogQueryRange](docs/CatalogQueryRange.md)
+ - [Model.CatalogQuerySortedAttribute](docs/CatalogQuerySortedAttribute.md)
+ - [Model.CatalogQueryText](docs/CatalogQueryText.md)
+ - [Model.CatalogTax](docs/CatalogTax.md)
+ - [Model.CatalogV1Id](docs/CatalogV1Id.md)
  - [Model.ChargeRequest](docs/ChargeRequest.md)
  - [Model.ChargeResponse](docs/ChargeResponse.md)
  - [Model.Checkout](docs/Checkout.md)
@@ -136,7 +252,6 @@ Class | Method | HTTP request
  - [Model.CreateCustomerCardResponse](docs/CreateCustomerCardResponse.md)
  - [Model.CreateCustomerRequest](docs/CreateCustomerRequest.md)
  - [Model.CreateCustomerResponse](docs/CreateCustomerResponse.md)
- - [Model.CreateOrderRequest](docs/CreateOrderRequest.md)
  - [Model.CreateOrderRequestLineItem](docs/CreateOrderRequestLineItem.md)
  - [Model.CreateOrderRequestOrder](docs/CreateOrderRequestOrder.md)
  - [Model.CreateRefundRequest](docs/CreateRefundRequest.md)
@@ -144,11 +259,17 @@ Class | Method | HTTP request
  - [Model.Customer](docs/Customer.md)
  - [Model.CustomerGroupInfo](docs/CustomerGroupInfo.md)
  - [Model.CustomerPreferences](docs/CustomerPreferences.md)
+ - [Model.DeleteCatalogObjectRequest](docs/DeleteCatalogObjectRequest.md)
+ - [Model.DeleteCatalogObjectResponse](docs/DeleteCatalogObjectResponse.md)
  - [Model.DeleteCustomerCardRequest](docs/DeleteCustomerCardRequest.md)
  - [Model.DeleteCustomerCardResponse](docs/DeleteCustomerCardResponse.md)
  - [Model.DeleteCustomerRequest](docs/DeleteCustomerRequest.md)
  - [Model.DeleteCustomerResponse](docs/DeleteCustomerResponse.md)
+ - [Model.Device](docs/Device.md)
  - [Model.Error](docs/Error.md)
+ - [Model.ItemVariationLocationOverrides](docs/ItemVariationLocationOverrides.md)
+ - [Model.ListCatalogRequest](docs/ListCatalogRequest.md)
+ - [Model.ListCatalogResponse](docs/ListCatalogResponse.md)
  - [Model.ListCustomersRequest](docs/ListCustomersRequest.md)
  - [Model.ListCustomersResponse](docs/ListCustomersResponse.md)
  - [Model.ListLocationsRequest](docs/ListLocationsRequest.md)
@@ -162,16 +283,64 @@ Class | Method | HTTP request
  - [Model.Order](docs/Order.md)
  - [Model.OrderLineItem](docs/OrderLineItem.md)
  - [Model.Refund](docs/Refund.md)
+ - [Model.RetrieveCatalogObjectRequest](docs/RetrieveCatalogObjectRequest.md)
+ - [Model.RetrieveCatalogObjectResponse](docs/RetrieveCatalogObjectResponse.md)
  - [Model.RetrieveCustomerRequest](docs/RetrieveCustomerRequest.md)
  - [Model.RetrieveCustomerResponse](docs/RetrieveCustomerResponse.md)
  - [Model.RetrieveTransactionRequest](docs/RetrieveTransactionRequest.md)
  - [Model.RetrieveTransactionResponse](docs/RetrieveTransactionResponse.md)
+ - [Model.SearchCatalogObjectsRequest](docs/SearchCatalogObjectsRequest.md)
+ - [Model.SearchCatalogObjectsResponse](docs/SearchCatalogObjectsResponse.md)
  - [Model.Tender](docs/Tender.md)
  - [Model.TenderCardDetails](docs/TenderCardDetails.md)
  - [Model.TenderCashDetails](docs/TenderCashDetails.md)
  - [Model.Transaction](docs/Transaction.md)
  - [Model.UpdateCustomerRequest](docs/UpdateCustomerRequest.md)
  - [Model.UpdateCustomerResponse](docs/UpdateCustomerResponse.md)
+ - [Model.UpdateItemModifierListsRequest](docs/UpdateItemModifierListsRequest.md)
+ - [Model.UpdateItemModifierListsResponse](docs/UpdateItemModifierListsResponse.md)
+ - [Model.UpdateItemTaxesRequest](docs/UpdateItemTaxesRequest.md)
+ - [Model.UpdateItemTaxesResponse](docs/UpdateItemTaxesResponse.md)
+ - [Model.UpsertCatalogObjectRequest](docs/UpsertCatalogObjectRequest.md)
+ - [Model.UpsertCatalogObjectResponse](docs/UpsertCatalogObjectResponse.md)
+ - [Model.V1AdjustInventoryRequest](docs/V1AdjustInventoryRequest.md)
+ - [Model.V1BankAccount](docs/V1BankAccount.md)
+ - [Model.V1CashDrawerEvent](docs/V1CashDrawerEvent.md)
+ - [Model.V1CashDrawerShift](docs/V1CashDrawerShift.md)
+ - [Model.V1Category](docs/V1Category.md)
+ - [Model.V1CreateRefundRequest](docs/V1CreateRefundRequest.md)
+ - [Model.V1Discount](docs/V1Discount.md)
+ - [Model.V1Employee](docs/V1Employee.md)
+ - [Model.V1EmployeeRole](docs/V1EmployeeRole.md)
+ - [Model.V1Fee](docs/V1Fee.md)
+ - [Model.V1InventoryEntry](docs/V1InventoryEntry.md)
+ - [Model.V1Item](docs/V1Item.md)
+ - [Model.V1ItemImage](docs/V1ItemImage.md)
+ - [Model.V1Merchant](docs/V1Merchant.md)
+ - [Model.V1MerchantLocationDetails](docs/V1MerchantLocationDetails.md)
+ - [Model.V1ModifierList](docs/V1ModifierList.md)
+ - [Model.V1ModifierOption](docs/V1ModifierOption.md)
+ - [Model.V1Money](docs/V1Money.md)
+ - [Model.V1Order](docs/V1Order.md)
+ - [Model.V1OrderHistoryEntry](docs/V1OrderHistoryEntry.md)
+ - [Model.V1Page](docs/V1Page.md)
+ - [Model.V1PageCell](docs/V1PageCell.md)
+ - [Model.V1Payment](docs/V1Payment.md)
+ - [Model.V1PaymentDiscount](docs/V1PaymentDiscount.md)
+ - [Model.V1PaymentItemDetail](docs/V1PaymentItemDetail.md)
+ - [Model.V1PaymentItemization](docs/V1PaymentItemization.md)
+ - [Model.V1PaymentModifier](docs/V1PaymentModifier.md)
+ - [Model.V1PaymentTax](docs/V1PaymentTax.md)
+ - [Model.V1PhoneNumber](docs/V1PhoneNumber.md)
+ - [Model.V1Refund](docs/V1Refund.md)
+ - [Model.V1Settlement](docs/V1Settlement.md)
+ - [Model.V1SettlementEntry](docs/V1SettlementEntry.md)
+ - [Model.V1Tender](docs/V1Tender.md)
+ - [Model.V1Timecard](docs/V1Timecard.md)
+ - [Model.V1TimecardEvent](docs/V1TimecardEvent.md)
+ - [Model.V1UpdateModifierListRequest](docs/V1UpdateModifierListRequest.md)
+ - [Model.V1UpdateOrderRequest](docs/V1UpdateOrderRequest.md)
+ - [Model.V1Variation](docs/V1Variation.md)
  - [Model.VoidTransactionRequest](docs/VoidTransactionRequest.md)
  - [Model.VoidTransactionResponse](docs/VoidTransactionResponse.md)
 
