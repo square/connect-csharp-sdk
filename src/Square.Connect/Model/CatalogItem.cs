@@ -85,7 +85,7 @@ namespace Square.Connect.Model
         /// <param name="Name">The item&#39;s name. Searchable. (required).</param>
         /// <param name="Description">The item&#39;s description. Searchable..</param>
         /// <param name="Abbreviation">The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable..</param>
-        /// <param name="LabelColor">The color of the item&#39;s display label in the Square Point of Sale app.  Searchable..</param>
+        /// <param name="LabelColor">The color of the item&#39;s display label in the Square Point of Sale app..</param>
         /// <param name="AvailableOnline">If &#x60;true&#x60;, the item can be added to shipping orders from the merchant&#39;s online store..</param>
         /// <param name="AvailableForPickup">If &#x60;true&#x60;, the item can be added to pickup orders from the merchant&#39;s online store..</param>
         /// <param name="AvailableElectronically">If &#x60;true&#x60;, the item can be added to electronically fulfilled orders from the merchant&#39;s online store..</param>
@@ -141,9 +141,9 @@ namespace Square.Connect.Model
         [DataMember(Name="abbreviation", EmitDefaultValue=false)]
         public string Abbreviation { get; set; }
         /// <summary>
-        /// The color of the item&#39;s display label in the Square Point of Sale app.  Searchable.
+        /// The color of the item&#39;s display label in the Square Point of Sale app.
         /// </summary>
-        /// <value>The color of the item&#39;s display label in the Square Point of Sale app.  Searchable.</value>
+        /// <value>The color of the item&#39;s display label in the Square Point of Sale app.</value>
         [DataMember(Name="label_color", EmitDefaultValue=false)]
         public string LabelColor { get; set; }
         /// <summary>

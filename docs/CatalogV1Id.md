@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_CatalogV1Id** | **string** | The ID for an object in Connect V1, if different from its Connect V2 ID. | [optional] 
-**LocationId** | **string** | The ID of the location this Connect V1 ID is associated with. | [optional] 
+**LocationId** | **string** | The ID of the [location][#type-location] this Connect V1 ID is associated with. | [optional] 
 
 
 

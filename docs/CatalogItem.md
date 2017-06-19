@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The item&#39;s name. Searchable. | 
 **Description** | **string** | The item&#39;s description. Searchable. | [optional] 
 **Abbreviation** | **string** | The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable. | [optional] 
-**LabelColor** | **string** | The color of the item&#39;s display label in the Square Point of Sale app.  Searchable. | [optional] 
+**LabelColor** | **string** | The color of the item&#39;s display label in the Square Point of Sale app. | [optional] 
 **AvailableOnline** | **bool?** | If &#x60;true&#x60;, the item can be added to shipping orders from the merchant&#39;s online store. | [optional] 
 **AvailableForPickup** | **bool?** | If &#x60;true&#x60;, the item can be added to pickup orders from the merchant&#39;s online store. | [optional] 
 **AvailableElectronically** | **bool?** | If &#x60;true&#x60;, the item can be added to electronically fulfilled orders from the merchant&#39;s online store. | [optional] 

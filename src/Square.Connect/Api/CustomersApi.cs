@@ -49,7 +49,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -61,7 +61,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -158,7 +158,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -170,7 +170,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -204,7 +204,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -216,7 +216,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.
+        /// Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -313,7 +313,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -325,7 +325,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -608,7 +608,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// CreateCustomerCard Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -621,7 +621,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// CreateCustomerCard Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -695,7 +695,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// CreateCustomerCard Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -709,7 +709,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.
+        /// CreateCustomerCard Adds a card on file to an existing customer. In the United States Square takes care of automatically updating any cards on file that might have expired since you first attached them to a customer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -1385,7 +1385,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -1398,7 +1398,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -1472,7 +1472,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -1486,7 +1486,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. The ID of the customer may change if the customer has been merged into another customer.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>

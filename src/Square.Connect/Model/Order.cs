@@ -37,13 +37,17 @@ namespace Square.Connect.Model
         /// <param name="ReferenceId">A client specified identifier to associate an entity in another system with this order..</param>
         /// <param name="LineItems">The line items included in the order. Every order has at least one line item..</param>
         /// <param name="TotalMoney">The total amount of money to collect for the order..</param>
-        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), Money TotalMoney = default(Money))
+        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order..</param>
+        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order..</param>
+        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
         {
             this.Id = Id;
             this.LocationId = LocationId;
             this.ReferenceId = ReferenceId;
             this.LineItems = LineItems;
             this.TotalMoney = TotalMoney;
+            this.TotalTaxMoney = TotalTaxMoney;
+            this.TotalDiscountMoney = TotalDiscountMoney;
         }
         
         /// <summary>
@@ -77,6 +81,18 @@ namespace Square.Connect.Model
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>
+        /// The total tax amount of money to collect for the order.
+        /// </summary>
+        /// <value>The total tax amount of money to collect for the order.</value>
+        [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
+        public Money TotalTaxMoney { get; set; }
+        /// <summary>
+        /// The total discount amount of money to collect for the order.
+        /// </summary>
+        /// <value>The total discount amount of money to collect for the order.</value>
+        [DataMember(Name="total_discount_money", EmitDefaultValue=false)]
+        public Money TotalDiscountMoney { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +105,8 @@ namespace Square.Connect.Model
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  TotalMoney: ").Append(TotalMoney).Append("\n");
+            sb.Append("  TotalTaxMoney: ").Append(TotalTaxMoney).Append("\n");
+            sb.Append("  TotalDiscountMoney: ").Append(TotalDiscountMoney).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -149,6 +167,16 @@ namespace Square.Connect.Model
                     this.TotalMoney == other.TotalMoney ||
                     this.TotalMoney != null &&
                     this.TotalMoney.Equals(other.TotalMoney)
+                ) && 
+                (
+                    this.TotalTaxMoney == other.TotalTaxMoney ||
+                    this.TotalTaxMoney != null &&
+                    this.TotalTaxMoney.Equals(other.TotalTaxMoney)
+                ) && 
+                (
+                    this.TotalDiscountMoney == other.TotalDiscountMoney ||
+                    this.TotalDiscountMoney != null &&
+                    this.TotalDiscountMoney.Equals(other.TotalDiscountMoney)
                 );
         }
 
@@ -173,6 +201,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.LineItems.GetHashCode();
                 if (this.TotalMoney != null)
                     hash = hash * 59 + this.TotalMoney.GetHashCode();
+                if (this.TotalTaxMoney != null)
+                    hash = hash * 59 + this.TotalTaxMoney.GetHashCode();
+                if (this.TotalDiscountMoney != null)
+                    hash = hash * 59 + this.TotalDiscountMoney.GetHashCode();
                 return hash;
             }
         }
