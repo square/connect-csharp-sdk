@@ -46,7 +46,7 @@ namespace Square.Connect.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Square-Connect-CSharp/2.1.0"
+                             string userAgent = "Square-Connect-CSharp/2.2.0"
                             )
         {
             setApiClientUsingDefault(apiClient);
