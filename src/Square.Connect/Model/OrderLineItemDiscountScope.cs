@@ -32,9 +32,9 @@ namespace Square.Connect.Model
     {
         
         /// <summary>
-        /// Enum LINEITEM for "LINEITEM"
+        /// Enum LINEITEM for "LINE_ITEM"
         /// </summary>
-        [EnumMember(Value = "LINEITEM")]
+        [EnumMember(Value = "LINE_ITEM")]
         LINEITEM,
         
         /// <summary>

@@ -1,4 +1,4 @@
-# Square.Connect.Model.OrderLineItemDiscountDiscountType
+# Square.Connect.Model.OrderLineItemTaxType
 ## Properties
 
 Name | Type | Description | Notes

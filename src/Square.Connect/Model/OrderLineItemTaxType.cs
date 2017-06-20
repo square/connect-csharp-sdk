@@ -24,11 +24,11 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents how a discount applied to a line item or an order.
+    /// Represents how a tax applied to a line item or an order.
     /// </summary>
-    /// <value>Represents how a discount applied to a line item or an order.</value>
+    /// <value>Represents how a tax applied to a line item or an order.</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum OrderLineItemDiscountDiscountType
+    public enum OrderLineItemTaxType
     {
         
         /// <summary>
@@ -38,28 +38,16 @@ namespace Square.Connect.Model
         UNKNOWN,
         
         /// <summary>
-        /// Enum FIXEDPERCENTAGE for "FIXED_PERCENTAGE"
+        /// Enum ADDITIVE for "ADDITIVE"
         /// </summary>
-        [EnumMember(Value = "FIXED_PERCENTAGE")]
-        FIXEDPERCENTAGE,
+        [EnumMember(Value = "ADDITIVE")]
+        ADDITIVE,
         
         /// <summary>
-        /// Enum FIXEDAMOUNT for "FIXED_AMOUNT"
+        /// Enum INCLUSIVE for "INCLUSIVE"
         /// </summary>
-        [EnumMember(Value = "FIXED_AMOUNT")]
-        FIXEDAMOUNT,
-        
-        /// <summary>
-        /// Enum VARIABLEPERCENTAGE for "VARIABLE_PERCENTAGE"
-        /// </summary>
-        [EnumMember(Value = "VARIABLE_PERCENTAGE")]
-        VARIABLEPERCENTAGE,
-        
-        /// <summary>
-        /// Enum VARIABLEAMOUNT for "VARIABLE_AMOUNT"
-        /// </summary>
-        [EnumMember(Value = "VARIABLE_AMOUNT")]
-        VARIABLEAMOUNT
+        [EnumMember(Value = "INCLUSIVE")]
+        INCLUSIVE
     }
 
 }

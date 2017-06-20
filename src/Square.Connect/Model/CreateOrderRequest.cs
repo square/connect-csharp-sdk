@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the parameters that can be included in the body of a request to the [CreateOrder](#endpoint-createorder) endpoint.
+    /// Defines the parameters that can be included in the body of a request to the [CreateCheckout](#endpoint-createcheckout) endpoint.
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequest :  IEquatable<CreateOrderRequest>, IValidatableObject
@@ -37,12 +37,11 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequest" /> class.
         /// </summary>
-        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information..</param>
         /// <param name="ReferenceId">An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
         /// <param name="LineItems">The line items to associate with this order.  Each line item represents a different product (or a custom monetary amount) to include in a purchase. (required).</param>
         /// <param name="Taxes">The taxes include the custom taxes..</param>
         /// <param name="Discounts">The discounts include the custom discounts ..</param>
-        public CreateOrderRequest(string IdempotencyKey = default(string), string ReferenceId = default(string), List<CreateOrderRequestLineItem> LineItems = default(List<CreateOrderRequestLineItem>), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
+        public CreateOrderRequest(string ReferenceId = default(string), List<CreateOrderRequestLineItem> LineItems = default(List<CreateOrderRequestLineItem>), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
         {
             // to ensure "LineItems" is required (not null)
             if (LineItems == null)
@@ -53,18 +52,11 @@ namespace Square.Connect.Model
             {
                 this.LineItems = LineItems;
             }
-            this.IdempotencyKey = IdempotencyKey;
             this.ReferenceId = ReferenceId;
             this.Taxes = Taxes;
             this.Discounts = Discounts;
         }
         
-        /// <summary>
-        /// A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
-        /// </summary>
-        /// <value>A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.</value>
-        [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
-        public string IdempotencyKey { get; set; }
         /// <summary>
         /// An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
         /// </summary>
@@ -97,7 +89,6 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateOrderRequest {\n");
-            sb.Append("  IdempotencyKey: ").Append(IdempotencyKey).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
@@ -139,11 +130,6 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.IdempotencyKey == other.IdempotencyKey ||
-                    this.IdempotencyKey != null &&
-                    this.IdempotencyKey.Equals(other.IdempotencyKey)
-                ) && 
-                (
                     this.ReferenceId == other.ReferenceId ||
                     this.ReferenceId != null &&
                     this.ReferenceId.Equals(other.ReferenceId)
@@ -176,8 +162,6 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.IdempotencyKey != null)
-                    hash = hash * 59 + this.IdempotencyKey.GetHashCode();
                 if (this.ReferenceId != null)
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
                 if (this.LineItems != null)
@@ -192,12 +176,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // IdempotencyKey (string) maxLength
-            if(this.IdempotencyKey != null && this.IdempotencyKey.Length > 192)
-            {
-                yield return new ValidationResult("Invalid value for IdempotencyKey, length must be less than 192.", new [] { "IdempotencyKey" });
-            }
-
             // ReferenceId (string) maxLength
             if(this.ReferenceId != null && this.ReferenceId.Length > 40)
             {
