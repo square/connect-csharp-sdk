@@ -73,7 +73,7 @@ namespace Example
         // Retrieving your location IDs
         public void RetrieveLocations()
         {
-            LocationsApi _locationsApi = new LocationsApi();
+            LocationsApi _locationsApi = new LocationApi();
             var response = _locationsApi.ListLocations();
         }
 
