@@ -95,11 +95,11 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="CatalogObject" /> class.
         /// </summary>
         /// <param name="Type">The type of this object. Each object type has expected properties expressed in a structured format within its corresponding &#x60;*_data&#x60; field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values. (required).</param>
-        /// <param name="Id">A unique Square-assigned identifier to reference this object in the catalog. (required).</param>
+        /// <param name="Id">An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a &#x60;&#39;#&#39;&#x60; character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references. (required).</param>
         /// <param name="UpdatedAt">Last modification [timestamp](#workingwithdates) in RFC 3339 format, e.g., &#x60;\&quot;2016-08-15T23:59:33.123Z\&quot;&#x60; would indicate the UTC time (denoted by &#x60;Z&#x60;) of August 15, 2016 at 23:59:33 and 123 milliseconds..</param>
         /// <param name="Version">The version of the object. When updating an object, the version supplied by the must match the version in the database, otherwise the write will be rejected as conflicting..</param>
-        /// <param name="IsDeleted">If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time. being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time..</param>
-        /// <param name="CatalogV1Ids">The Connect V1 IDs for this object at each location where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs..</param>
+        /// <param name="IsDeleted">If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time..</param>
+        /// <param name="CatalogV1Ids">The Connect V1 IDs for this object at each [location][#type-location] where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs..</param>
         /// <param name="PresentAtAllLocations">If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field..</param>
         /// <param name="PresentAtLocationIds">A list of locations where the object is present, even if &#x60;present_at_all_locations&#x60; is &#x60;false&#x60;..</param>
         /// <param name="AbsentAtLocationIds">A list of locations where the object is not present, even if &#x60;present_at_all_locations&#x60; is &#x60;true&#x60;..</param>
@@ -147,9 +147,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A unique Square-assigned identifier to reference this object in the catalog.
+        /// An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a &#x60;&#39;#&#39;&#x60; character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.
         /// </summary>
-        /// <value>A unique Square-assigned identifier to reference this object in the catalog.</value>
+        /// <value>An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a &#x60;&#39;#&#39;&#x60; character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
@@ -165,15 +165,15 @@ namespace Square.Connect.Model
         [DataMember(Name="version", EmitDefaultValue=false)]
         public long? Version { get; set; }
         /// <summary>
-        /// If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time. being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time.
+        /// If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time. being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time.</value>
+        /// <value>If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time.</value>
         [DataMember(Name="is_deleted", EmitDefaultValue=false)]
         public bool? IsDeleted { get; set; }
         /// <summary>
-        /// The Connect V1 IDs for this object at each location where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+        /// The Connect V1 IDs for this object at each [location][#type-location] where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
         /// </summary>
-        /// <value>The Connect V1 IDs for this object at each location where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.</value>
+        /// <value>The Connect V1 IDs for this object at each [location][#type-location] where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.</value>
         [DataMember(Name="catalog_v1_ids", EmitDefaultValue=false)]
         public List<CatalogV1Id> CatalogV1Ids { get; set; }
         /// <summary>

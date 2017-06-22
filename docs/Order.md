@@ -3,11 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The order&#39;s unique ID.  This value is not present if the order was not created with the [CreateOrder](#endpoint-createorder) endpoint. | [optional] 
 **LocationId** | **string** | The ID of the merchant location this order is associated with. | [optional] 
 **ReferenceId** | **string** | A client specified identifier to associate an entity in another system with this order. | [optional] 
 **LineItems** | [**List&lt;OrderLineItem&gt;**](OrderLineItem.md) | The line items included in the order. Every order has at least one line item. | [optional] 
 **TotalMoney** | [**Money**](Money.md) | The total amount of money to collect for the order. | [optional] 
+**TotalTaxMoney** | [**Money**](Money.md) | The total tax amount of money to collect for the order. | [optional] 
+**TotalDiscountMoney** | [**Money**](Money.md) | The total discount amount of money to collect for the order. | [optional] 
 
 
 

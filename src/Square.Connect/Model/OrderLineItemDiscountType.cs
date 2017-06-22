@@ -24,42 +24,42 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// The type of a [CatalogItem](#type-catalogitem). Connect V2 only allows the creation of `REGULAR` items.
+    /// Indicates how the discount is applied to the associated line item or order.
     /// </summary>
-    /// <value>The type of a [CatalogItem](#type-catalogitem). Connect V2 only allows the creation of `REGULAR` items.</value>
+    /// <value>Indicates how the discount is applied to the associated line item or order.</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum CatalogItemProductType
+    public enum OrderLineItemDiscountType
     {
         
         /// <summary>
-        /// Enum REGULAR for "REGULAR"
+        /// Enum UNKNOWN for "UNKNOWN"
         /// </summary>
-        [EnumMember(Value = "REGULAR")]
-        REGULAR,
+        [EnumMember(Value = "UNKNOWN")]
+        UNKNOWN,
         
         /// <summary>
-        /// Enum GIFTCARD for "GIFT_CARD"
+        /// Enum FIXEDPERCENTAGE for "FIXED_PERCENTAGE"
         /// </summary>
-        [EnumMember(Value = "GIFT_CARD")]
-        GIFTCARD,
+        [EnumMember(Value = "FIXED_PERCENTAGE")]
+        FIXEDPERCENTAGE,
         
         /// <summary>
-        /// Enum APPOINTMENTSSERVICE for "APPOINTMENTS_SERVICE"
+        /// Enum FIXEDAMOUNT for "FIXED_AMOUNT"
         /// </summary>
-        [EnumMember(Value = "APPOINTMENTS_SERVICE")]
-        APPOINTMENTSSERVICE,
+        [EnumMember(Value = "FIXED_AMOUNT")]
+        FIXEDAMOUNT,
         
         /// <summary>
-        /// Enum RETAILITEM for "RETAIL_ITEM"
+        /// Enum VARIABLEPERCENTAGE for "VARIABLE_PERCENTAGE"
         /// </summary>
-        [EnumMember(Value = "RETAIL_ITEM")]
-        RETAILITEM,
+        [EnumMember(Value = "VARIABLE_PERCENTAGE")]
+        VARIABLEPERCENTAGE,
         
         /// <summary>
-        /// Enum RESTAURANTITEM for "RESTAURANT_ITEM"
+        /// Enum VARIABLEAMOUNT for "VARIABLE_AMOUNT"
         /// </summary>
-        [EnumMember(Value = "RESTAURANT_ITEM")]
-        RESTAURANTITEM
+        [EnumMember(Value = "VARIABLE_AMOUNT")]
+        VARIABLEAMOUNT
     }
 
 }
