@@ -3,7 +3,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The line item&#39;s ID, unique only within this order. | [optional] 
 **Name** | **string** | The name of the line item. | [optional] 
 **Quantity** | **string** | The quantity of the product to purchase. Currently, this string must have an integer value. | [optional] 
 **Taxes** | [**List&lt;OrderLineItemTax&gt;**](OrderLineItemTax.md) | The taxes applied to this line item. | [optional] 

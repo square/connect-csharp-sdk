@@ -32,7 +32,6 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
         /// </summary>
-        /// <param name="Id">The line item&#39;s ID, unique only within this order..</param>
         /// <param name="Name">The name of the line item..</param>
         /// <param name="Quantity">The quantity of the product to purchase. Currently, this string must have an integer value..</param>
         /// <param name="Taxes">The taxes applied to this line item..</param>
@@ -41,9 +40,8 @@ namespace Square.Connect.Model
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the line item..</param>
         /// <param name="TotalMoney">The total amount of money to collect for this line item..</param>
-        public OrderLineItem(string Id = default(string), string Name = default(string), string Quantity = default(string), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
+        public OrderLineItem(string Name = default(string), string Quantity = default(string), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
-            this.Id = Id;
             this.Name = Name;
             this.Quantity = Quantity;
             this.Taxes = Taxes;
@@ -54,12 +52,6 @@ namespace Square.Connect.Model
             this.TotalMoney = TotalMoney;
         }
         
-        /// <summary>
-        /// The line item&#39;s ID, unique only within this order.
-        /// </summary>
-        /// <value>The line item&#39;s ID, unique only within this order.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; set; }
         /// <summary>
         /// The name of the line item.
         /// </summary>
@@ -116,7 +108,6 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OrderLineItem {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
@@ -161,11 +152,6 @@ namespace Square.Connect.Model
                 return false;
 
             return 
-                (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
-                ) && 
                 (
                     this.Name == other.Name ||
                     this.Name != null &&
@@ -219,8 +205,6 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Quantity != null)

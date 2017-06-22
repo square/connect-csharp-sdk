@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents how a tax applied to a line item or an order.
+    /// Indicates how the tax is applied to the associated line item or order.
     /// </summary>
-    /// <value>Represents how a tax applied to a line item or an order.</value>
+    /// <value>Indicates how the tax is applied to the associated line item or order.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum OrderLineItemTaxType
     {

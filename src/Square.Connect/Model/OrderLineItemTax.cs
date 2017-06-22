@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class OrderLineItemTax :  IEquatable<OrderLineItemTax>, IValidatableObject
     {
         /// <summary>
-        /// The type of a tax is either INCLUSIVE or ADDITIVE.
+        /// Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
         /// </summary>
-        /// <value>The type of a tax is either INCLUSIVE or ADDITIVE.</value>
+        /// <value>Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -57,16 +57,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of a tax is either INCLUSIVE or ADDITIVE.
+        /// Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
         /// </summary>
-        /// <value>The type of a tax is either INCLUSIVE or ADDITIVE.</value>
+        /// <value>Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemTax" /> class.
         /// </summary>
         /// <param name="Name">The tax&#39;s name..</param>
-        /// <param name="Type">The type of a tax is either INCLUSIVE or ADDITIVE..</param>
+        /// <param name="Type">Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values..</param>
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%..</param>
         /// <param name="AppliedMoney">The amount of the money applied by the tax in an order..</param>
         public OrderLineItemTax(string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money))

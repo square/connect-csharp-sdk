@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class CreateOrderRequestTax :  IEquatable<CreateOrderRequestTax>, IValidatableObject
     {
         /// <summary>
-        /// The type is either `ADDITIVE` or `INCLUSIVE`.  The default is ADDITIVE.
+        /// Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
         /// </summary>
-        /// <value>The type is either `ADDITIVE` or `INCLUSIVE`.  The default is ADDITIVE.</value>
+        /// <value>Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -57,16 +57,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type is either `ADDITIVE` or `INCLUSIVE`.  The default is ADDITIVE.
+        /// Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
         /// </summary>
-        /// <value>The type is either `ADDITIVE` or `INCLUSIVE`.  The default is ADDITIVE.</value>
+        /// <value>Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestTax" /> class.
         /// </summary>
         /// <param name="Name">The tax&#39;s name..</param>
-        /// <param name="Type">The type is either &#x60;ADDITIVE&#x60; or &#x60;INCLUSIVE&#x60;.  The default is ADDITIVE..</param>
+        /// <param name="Type">Indicates the calculation method used to apply the line item tax.  Default: &#x60;ADDITIVE&#x60;; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values..</param>
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
         public CreateOrderRequestTax(string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string))
         {

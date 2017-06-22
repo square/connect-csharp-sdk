@@ -33,8 +33,8 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="CreateOrderRequestDiscount" /> class.
         /// </summary>
         /// <param name="Name">The discount&#39;s name..</param>
-        /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
-        /// <param name="AmountMoney">The amount of the discount..</param>
+        /// <param name="Percentage">The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
+        /// <param name="AmountMoney">The monetary amount of the discount..</param>
         public CreateOrderRequestDiscount(string Name = default(string), string Percentage = default(string), Money AmountMoney = default(Money))
         {
             this.Name = Name;
@@ -49,15 +49,15 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
+        /// The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
         /// </summary>
-        /// <value>The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0</value>
+        /// <value>The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0</value>
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
-        /// The amount of the discount.
+        /// The monetary amount of the discount.
         /// </summary>
-        /// <value>The amount of the discount.</value>
+        /// <value>The monetary amount of the discount.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>

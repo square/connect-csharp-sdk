@@ -32,16 +32,14 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
-        /// <param name="Id">The order&#39;s unique ID.  This value is not present if the order was not created with the [CreateOrder](#endpoint-createorder) endpoint..</param>
         /// <param name="LocationId">The ID of the merchant location this order is associated with..</param>
         /// <param name="ReferenceId">A client specified identifier to associate an entity in another system with this order..</param>
         /// <param name="LineItems">The line items included in the order. Every order has at least one line item..</param>
         /// <param name="TotalMoney">The total amount of money to collect for the order..</param>
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order..</param>
-        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
+        public Order(string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
         {
-            this.Id = Id;
             this.LocationId = LocationId;
             this.ReferenceId = ReferenceId;
             this.LineItems = LineItems;
@@ -50,12 +48,6 @@ namespace Square.Connect.Model
             this.TotalDiscountMoney = TotalDiscountMoney;
         }
         
-        /// <summary>
-        /// The order&#39;s unique ID.  This value is not present if the order was not created with the [CreateOrder](#endpoint-createorder) endpoint.
-        /// </summary>
-        /// <value>The order&#39;s unique ID.  This value is not present if the order was not created with the [CreateOrder](#endpoint-createorder) endpoint.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; set; }
         /// <summary>
         /// The ID of the merchant location this order is associated with.
         /// </summary>
@@ -100,7 +92,6 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Order {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
@@ -144,11 +135,6 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
-                ) && 
-                (
                     this.LocationId == other.LocationId ||
                     this.LocationId != null &&
                     this.LocationId.Equals(other.LocationId)
@@ -191,8 +177,6 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
                 if (this.LocationId != null)
                     hash = hash * 59 + this.LocationId.GetHashCode();
                 if (this.ReferenceId != null)
