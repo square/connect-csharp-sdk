@@ -24,33 +24,37 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// The object describes the order.
+    /// Defines the parameters that can be included in the body of a request to the [CreateCheckout](#endpoint-createcheckout) endpoint.
     /// </summary>
     [DataContract]
-    public partial class CreateOrderRequestOrder :  IEquatable<CreateOrderRequestOrder>, IValidatableObject
+    public partial class CreateOrderRequest :  IEquatable<CreateOrderRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOrderRequestOrder" /> class.
+        /// Initializes a new instance of the <see cref="CreateOrderRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CreateOrderRequestOrder() { }
+        protected CreateOrderRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOrderRequestOrder" /> class.
+        /// Initializes a new instance of the <see cref="CreateOrderRequest" /> class.
         /// </summary>
         /// <param name="ReferenceId">An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
         /// <param name="LineItems">The line items to associate with this order.  Each line item represents a different product (or a custom monetary amount) to include in a purchase. (required).</param>
-        public CreateOrderRequestOrder(string ReferenceId = default(string), List<CreateOrderRequestLineItem> LineItems = default(List<CreateOrderRequestLineItem>))
+        /// <param name="Taxes">The taxes include the custom taxes..</param>
+        /// <param name="Discounts">The discounts include the custom discounts ..</param>
+        public CreateOrderRequest(string ReferenceId = default(string), List<CreateOrderRequestLineItem> LineItems = default(List<CreateOrderRequestLineItem>), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
         {
             // to ensure "LineItems" is required (not null)
             if (LineItems == null)
             {
-                throw new InvalidDataException("LineItems is a required property for CreateOrderRequestOrder and cannot be null");
+                throw new InvalidDataException("LineItems is a required property for CreateOrderRequest and cannot be null");
             }
             else
             {
                 this.LineItems = LineItems;
             }
             this.ReferenceId = ReferenceId;
+            this.Taxes = Taxes;
+            this.Discounts = Discounts;
         }
         
         /// <summary>
@@ -66,15 +70,29 @@ namespace Square.Connect.Model
         [DataMember(Name="line_items", EmitDefaultValue=false)]
         public List<CreateOrderRequestLineItem> LineItems { get; set; }
         /// <summary>
+        /// The taxes include the custom taxes.
+        /// </summary>
+        /// <value>The taxes include the custom taxes.</value>
+        [DataMember(Name="taxes", EmitDefaultValue=false)]
+        public List<CreateOrderRequestTax> Taxes { get; set; }
+        /// <summary>
+        /// The discounts include the custom discounts .
+        /// </summary>
+        /// <value>The discounts include the custom discounts .</value>
+        [DataMember(Name="discounts", EmitDefaultValue=false)]
+        public List<CreateOrderRequestDiscount> Discounts { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateOrderRequestOrder {\n");
+            sb.Append("class CreateOrderRequest {\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
+            sb.Append("  Taxes: ").Append(Taxes).Append("\n");
+            sb.Append("  Discounts: ").Append(Discounts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,15 +114,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CreateOrderRequestOrder);
+            return this.Equals(obj as CreateOrderRequest);
         }
 
         /// <summary>
-        /// Returns true if CreateOrderRequestOrder instances are equal
+        /// Returns true if CreateOrderRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of CreateOrderRequestOrder to be compared</param>
+        /// <param name="other">Instance of CreateOrderRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateOrderRequestOrder other)
+        public bool Equals(CreateOrderRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -120,6 +138,16 @@ namespace Square.Connect.Model
                     this.LineItems == other.LineItems ||
                     this.LineItems != null &&
                     this.LineItems.SequenceEqual(other.LineItems)
+                ) && 
+                (
+                    this.Taxes == other.Taxes ||
+                    this.Taxes != null &&
+                    this.Taxes.SequenceEqual(other.Taxes)
+                ) && 
+                (
+                    this.Discounts == other.Discounts ||
+                    this.Discounts != null &&
+                    this.Discounts.SequenceEqual(other.Discounts)
                 );
         }
 
@@ -138,6 +166,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
                 if (this.LineItems != null)
                     hash = hash * 59 + this.LineItems.GetHashCode();
+                if (this.Taxes != null)
+                    hash = hash * 59 + this.Taxes.GetHashCode();
+                if (this.Discounts != null)
+                    hash = hash * 59 + this.Discounts.GetHashCode();
                 return hash;
             }
         }

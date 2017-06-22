@@ -44,7 +44,7 @@ namespace Square.Connect.Model
         /// <param name="PrePopulateBuyerEmail">If provided, the buyer&#39;s email is pre-populated on the checkout page as an editable text field.  Default: none; only exists if explicitly set..</param>
         /// <param name="PrePopulateShippingAddress">If provided, the buyer&#39;s shipping info is pre-populated on the checkout page as editable text fields.  Default: none; only exists if explicitly set..</param>
         /// <param name="RedirectUrl">The URL to redirect to after checkout is completed with &#x60;checkoutId&#x60;, Square&#39;s &#x60;orderId&#x60;, &#x60;transactionId&#x60;, and &#x60;referenceId&#x60; appended as URL parameters. For example, if the provided redirect_url is &#x60;http://www.example.com/order-complete&#x60;, a successful transaction redirects the customer to:  &#x60;http://www.example.com/order-complete?checkoutId&#x3D;xxxxxx&amp;orderId&#x3D;xxxxxx&amp;referenceId&#x3D;xxxxxx&amp;transactionId&#x3D;xxxxxx&#x60;  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow.  Default: none; only exists if explicitly set..</param>
-        public CreateCheckoutRequest(string IdempotencyKey = default(string), CreateOrderRequestOrder Order = default(CreateOrderRequestOrder), bool? AskForShippingAddress = default(bool?), string MerchantSupportEmail = default(string), string PrePopulateBuyerEmail = default(string), Address PrePopulateShippingAddress = default(Address), string RedirectUrl = default(string))
+        public CreateCheckoutRequest(string IdempotencyKey = default(string), CreateOrderRequest Order = default(CreateOrderRequest), bool? AskForShippingAddress = default(bool?), string MerchantSupportEmail = default(string), string PrePopulateBuyerEmail = default(string), Address PrePopulateShippingAddress = default(Address), string RedirectUrl = default(string))
         {
             // to ensure "IdempotencyKey" is required (not null)
             if (IdempotencyKey == null)
@@ -82,7 +82,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The order including line items to be checked out.</value>
         [DataMember(Name="order", EmitDefaultValue=false)]
-        public CreateOrderRequestOrder Order { get; set; }
+        public CreateOrderRequest Order { get; set; }
         /// <summary>
         /// If &#x60;true&#x60;, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default: &#x60;false&#x60;.
         /// </summary>

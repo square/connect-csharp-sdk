@@ -92,7 +92,7 @@ namespace Square.Connect.Model
         /// <param name="Upc">The item variation&#39;s UPC, if any. Searchable..</param>
         /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values..</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if fixed pricing is used..</param>
-        /// <param name="LocationOverrides">Per-location price and inventory overrides..</param>
+        /// <param name="LocationOverrides">Per-[location][#type-location] price and inventory overrides..</param>
         /// <param name="TrackInventory">If &#x60;true&#x60;, inventory tracking is active for the variation..</param>
         /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for all possible values..</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
@@ -145,9 +145,9 @@ namespace Square.Connect.Model
         [DataMember(Name="price_money", EmitDefaultValue=false)]
         public Money PriceMoney { get; set; }
         /// <summary>
-        /// Per-location price and inventory overrides.
+        /// Per-[location][#type-location] price and inventory overrides.
         /// </summary>
-        /// <value>Per-location price and inventory overrides.</value>
+        /// <value>Per-[location][#type-location] price and inventory overrides.</value>
         [DataMember(Name="location_overrides", EmitDefaultValue=false)]
         public List<ItemVariationLocationOverrides> LocationOverrides { get; set; }
         /// <summary>

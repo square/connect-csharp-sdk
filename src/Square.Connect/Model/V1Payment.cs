@@ -56,7 +56,7 @@ namespace Square.Connect.Model
         /// <param name="Tender">All of the additive taxes associated with the payment..</param>
         /// <param name="Refunds">All of the refunds applied to the payment..</param>
         /// <param name="Itemizations">The items purchased in the payment..</param>
-        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), bool? CreatorId = default(bool?), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>))
+        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>))
         {
             this.Id = Id;
             this.MerchantId = MerchantId;
@@ -107,7 +107,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The unique identifier of the Square account that took the payment.</value>
         [DataMember(Name="creator_id", EmitDefaultValue=false)]
-        public bool? CreatorId { get; set; }
+        public string CreatorId { get; set; }
         /// <summary>
         /// The device that took the payment.
         /// </summary>

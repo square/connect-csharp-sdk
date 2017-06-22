@@ -37,20 +37,13 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestLineItem" /> class.
         /// </summary>
-        /// <param name="Name">The name of the line item. This value cannot exceed 500 characters. (required).</param>
+        /// <param name="Name">The name of the line item. This value cannot exceed 500 characters..</param>
         /// <param name="Quantity">The quantity to purchase, as a string representation of a number. Currently, only integer values are supported. (required).</param>
-        /// <param name="BasePriceMoney">The base price for a single unit of the line item&#39;s associated variation. If a line item represents a Custom Amount instead of a particular product, this field indicates that amount. (required).</param>
-        public CreateOrderRequestLineItem(string Name = default(string), string Quantity = default(string), Money BasePriceMoney = default(Money))
+        /// <param name="BasePriceMoney">The base price for a single unit of the line item&#39;s associated variation. If a line item represents a Custom Amount instead of a particular product, this field indicates that amount..</param>
+        /// <param name="Taxes">The taxes include the custom taxes..</param>
+        /// <param name="Discounts">The discounts include the custom discounts..</param>
+        public CreateOrderRequestLineItem(string Name = default(string), string Quantity = default(string), Money BasePriceMoney = default(Money), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for CreateOrderRequestLineItem and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
             // to ensure "Quantity" is required (not null)
             if (Quantity == null)
             {
@@ -60,15 +53,10 @@ namespace Square.Connect.Model
             {
                 this.Quantity = Quantity;
             }
-            // to ensure "BasePriceMoney" is required (not null)
-            if (BasePriceMoney == null)
-            {
-                throw new InvalidDataException("BasePriceMoney is a required property for CreateOrderRequestLineItem and cannot be null");
-            }
-            else
-            {
-                this.BasePriceMoney = BasePriceMoney;
-            }
+            this.Name = Name;
+            this.BasePriceMoney = BasePriceMoney;
+            this.Taxes = Taxes;
+            this.Discounts = Discounts;
         }
         
         /// <summary>
@@ -90,6 +78,18 @@ namespace Square.Connect.Model
         [DataMember(Name="base_price_money", EmitDefaultValue=false)]
         public Money BasePriceMoney { get; set; }
         /// <summary>
+        /// The taxes include the custom taxes.
+        /// </summary>
+        /// <value>The taxes include the custom taxes.</value>
+        [DataMember(Name="taxes", EmitDefaultValue=false)]
+        public List<CreateOrderRequestTax> Taxes { get; set; }
+        /// <summary>
+        /// The discounts include the custom discounts.
+        /// </summary>
+        /// <value>The discounts include the custom discounts.</value>
+        [DataMember(Name="discounts", EmitDefaultValue=false)]
+        public List<CreateOrderRequestDiscount> Discounts { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -100,6 +100,8 @@ namespace Square.Connect.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  BasePriceMoney: ").Append(BasePriceMoney).Append("\n");
+            sb.Append("  Taxes: ").Append(Taxes).Append("\n");
+            sb.Append("  Discounts: ").Append(Discounts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,6 +152,16 @@ namespace Square.Connect.Model
                     this.BasePriceMoney == other.BasePriceMoney ||
                     this.BasePriceMoney != null &&
                     this.BasePriceMoney.Equals(other.BasePriceMoney)
+                ) && 
+                (
+                    this.Taxes == other.Taxes ||
+                    this.Taxes != null &&
+                    this.Taxes.SequenceEqual(other.Taxes)
+                ) && 
+                (
+                    this.Discounts == other.Discounts ||
+                    this.Discounts != null &&
+                    this.Discounts.SequenceEqual(other.Discounts)
                 );
         }
 
@@ -170,6 +182,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Quantity.GetHashCode();
                 if (this.BasePriceMoney != null)
                     hash = hash * 59 + this.BasePriceMoney.GetHashCode();
+                if (this.Taxes != null)
+                    hash = hash * 59 + this.Taxes.GetHashCode();
+                if (this.Discounts != null)
+                    hash = hash * 59 + this.Discounts.GetHashCode();
                 return hash;
             }
         }
@@ -180,12 +196,6 @@ namespace Square.Connect.Model
             if(this.Name != null && this.Name.Length > 500)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be less than 500.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             // Quantity (string) minLength

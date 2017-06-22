@@ -410,6 +410,12 @@ namespace Square.Connect.Model
         INVALIDEMAILADDRESS,
         
         /// <summary>
+        /// Enum CHECKOUTEXPIRED for "CHECKOUT_EXPIRED"
+        /// </summary>
+        [EnumMember(Value = "CHECKOUT_EXPIRED")]
+        CHECKOUTEXPIRED,
+        
+        /// <summary>
         /// Enum CARDDECLINED for "CARD_DECLINED"
         /// </summary>
         [EnumMember(Value = "CARD_DECLINED")]
