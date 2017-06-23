@@ -78,8 +78,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Order&gt;</returns>
-        List<V1Order> ListOrders (string locationId, string order = null, int? limit = null);
+        List<V1Order> ListOrders (string locationId, string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for a merchant&#39;s online store orders.
@@ -91,8 +92,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Order&gt;</returns>
-        ApiResponse<List<V1Order>> ListOrdersWithHttpInfo (string locationId, string order = null, int? limit = null);
+        ApiResponse<List<V1Order>> ListOrdersWithHttpInfo (string locationId, string order = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
         /// </summary>
@@ -105,8 +107,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Payment&gt;</returns>
-        List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
@@ -120,8 +123,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Payment&gt;</returns>
-        ApiResponse<List<V1Payment>> ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        ApiResponse<List<V1Payment>> ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
@@ -134,8 +138,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Refund&gt;</returns>
-        List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
@@ -149,8 +154,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Refund&gt;</returns>
-        ApiResponse<List<V1Refund>> ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        ApiResponse<List<V1Refund>> ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
@@ -164,8 +170,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Settlement&gt;</returns>
-        List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
@@ -180,8 +187,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Settlement&gt;</returns>
-        ApiResponse<List<V1Settlement>> ListSettlementsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        ApiResponse<List<V1Settlement>> ListSettlementsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
         /// <summary>
         /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
@@ -355,8 +363,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Order&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Order>> ListOrdersAsync (string locationId, string order = null, int? limit = null);
+        System.Threading.Tasks.Task<List<V1Order>> ListOrdersAsync (string locationId, string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for a merchant&#39;s online store orders.
@@ -368,8 +377,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Order&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Order>>> ListOrdersAsyncWithHttpInfo (string locationId, string order = null, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Order>>> ListOrdersAsyncWithHttpInfo (string locationId, string order = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
         /// </summary>
@@ -382,8 +392,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Payment&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
@@ -397,8 +408,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Payment&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
@@ -411,8 +423,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Refund&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Refund>> ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        System.Threading.Tasks.Task<List<V1Refund>> ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
@@ -426,8 +439,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Refund&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
@@ -441,8 +455,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Settlement&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Settlement>> ListSettlementsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        System.Threading.Tasks.Task<List<V1Settlement>> ListSettlementsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
@@ -457,8 +472,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Settlement&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Settlement>>> ListSettlementsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Settlement>>> ListSettlementsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
         /// <summary>
         /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
@@ -1019,10 +1035,11 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Order&gt;</returns>
-        public List<V1Order> ListOrders (string locationId, string order = null, int? limit = null)
+        public List<V1Order> ListOrders (string locationId, string order = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Order>> localVarResponse = ListOrdersWithHttpInfo(locationId, order, limit);
+             ApiResponse<List<V1Order>> localVarResponse = ListOrdersWithHttpInfo(locationId, order, limit, batchToken);
              return localVarResponse.Data;
         }
 
@@ -1033,8 +1050,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Order&gt;</returns>
-        public ApiResponse< List<V1Order> > ListOrdersWithHttpInfo (string locationId, string order = null, int? limit = null)
+        public ApiResponse< List<V1Order> > ListOrdersWithHttpInfo (string locationId, string order = null, int? limit = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1065,6 +1083,7 @@ namespace Square.Connect.Api
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1099,10 +1118,11 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Order&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Order>> ListOrdersAsync (string locationId, string order = null, int? limit = null)
+        public async System.Threading.Tasks.Task<List<V1Order>> ListOrdersAsync (string locationId, string order = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Order>> localVarResponse = await ListOrdersAsyncWithHttpInfo(locationId, order, limit);
+             ApiResponse<List<V1Order>> localVarResponse = await ListOrdersAsyncWithHttpInfo(locationId, order, limit, batchToken);
              return localVarResponse.Data;
 
         }
@@ -1114,8 +1134,9 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Order&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Order>>> ListOrdersAsyncWithHttpInfo (string locationId, string order = null, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Order>>> ListOrdersAsyncWithHttpInfo (string locationId, string order = null, int? limit = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1146,6 +1167,7 @@ namespace Square.Connect.Api
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1182,10 +1204,11 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Payment&gt;</returns>
-        public List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Payment>> localVarResponse = ListPaymentsWithHttpInfo(locationId, order, beginTime, endTime, limit);
+             ApiResponse<List<V1Payment>> localVarResponse = ListPaymentsWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken);
              return localVarResponse.Data;
         }
 
@@ -1198,8 +1221,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Payment&gt;</returns>
-        public ApiResponse< List<V1Payment> > ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public ApiResponse< List<V1Payment> > ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1232,6 +1256,7 @@ namespace Square.Connect.Api
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1268,10 +1293,11 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Payment&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public async System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Payment>> localVarResponse = await ListPaymentsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit);
+             ApiResponse<List<V1Payment>> localVarResponse = await ListPaymentsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken);
              return localVarResponse.Data;
 
         }
@@ -1285,8 +1311,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Payment&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1319,6 +1346,7 @@ namespace Square.Connect.Api
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1355,10 +1383,11 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Refund&gt;</returns>
-        public List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Refund>> localVarResponse = ListRefundsWithHttpInfo(locationId, order, beginTime, endTime, limit);
+             ApiResponse<List<V1Refund>> localVarResponse = ListRefundsWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken);
              return localVarResponse.Data;
         }
 
@@ -1371,8 +1400,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Refund&gt;</returns>
-        public ApiResponse< List<V1Refund> > ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public ApiResponse< List<V1Refund> > ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1405,6 +1435,7 @@ namespace Square.Connect.Api
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1441,10 +1472,11 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Refund&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Refund>> ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public async System.Threading.Tasks.Task<List<V1Refund>> ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Refund>> localVarResponse = await ListRefundsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit);
+             ApiResponse<List<V1Refund>> localVarResponse = await ListRefundsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken);
              return localVarResponse.Data;
 
         }
@@ -1458,8 +1490,9 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Refund&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1492,6 +1525,7 @@ namespace Square.Connect.Api
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1529,10 +1563,11 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Settlement&gt;</returns>
-        public List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
+        public List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null)
         {
-             ApiResponse<List<V1Settlement>> localVarResponse = ListSettlementsWithHttpInfo(locationId, order, beginTime, endTime, limit, status);
+             ApiResponse<List<V1Settlement>> localVarResponse = ListSettlementsWithHttpInfo(locationId, order, beginTime, endTime, limit, status, batchToken);
              return localVarResponse.Data;
         }
 
@@ -1546,8 +1581,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Settlement&gt;</returns>
-        public ApiResponse< List<V1Settlement> > ListSettlementsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
+        public ApiResponse< List<V1Settlement> > ListSettlementsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1581,6 +1617,7 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1618,10 +1655,11 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Settlement&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Settlement>> ListSettlementsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
+        public async System.Threading.Tasks.Task<List<V1Settlement>> ListSettlementsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null)
         {
-             ApiResponse<List<V1Settlement>> localVarResponse = await ListSettlementsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit, status);
+             ApiResponse<List<V1Settlement>> localVarResponse = await ListSettlementsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit, status, batchToken);
              return localVarResponse.Data;
 
         }
@@ -1636,8 +1674,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Settlement&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Settlement>>> ListSettlementsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Settlement>>> ListSettlementsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1671,6 +1710,7 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
