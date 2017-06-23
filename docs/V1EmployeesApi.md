@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 <a name="createtimecard"></a>
 # **CreateTimecard**
-> V1Timecard CreateTimecard (V1Timecard body)
+> V1Timecard CreateTimecard (V1Timecard body, string batchToken = null)
 
 Creates a timecard for an employee. Each timecard corresponds to a single shift.
 
@@ -180,11 +180,12 @@ namespace Example
 
             var apiInstance = new V1EmployeesApi();
             var body = new V1Timecard(); // V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Creates a timecard for an employee. Each timecard corresponds to a single shift.
-                V1Timecard result = apiInstance.CreateTimecard(body);
+                V1Timecard result = apiInstance.CreateTimecard(body, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -201,6 +202,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**V1Timecard**](V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 

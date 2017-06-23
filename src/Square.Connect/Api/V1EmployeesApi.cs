@@ -74,8 +74,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>V1Timecard</returns>
-        V1Timecard CreateTimecard (V1Timecard body);
+        V1Timecard CreateTimecard (V1Timecard body, string batchToken = null);
 
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
@@ -85,8 +86,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        ApiResponse<V1Timecard> CreateTimecardWithHttpInfo (V1Timecard body);
+        ApiResponse<V1Timecard> CreateTimecardWithHttpInfo (V1Timecard body, string batchToken = null);
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
         /// </summary>
@@ -466,8 +468,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of V1Timecard</returns>
-        System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body);
+        System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body, string batchToken = null);
 
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
@@ -477,8 +480,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body);
+        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body, string batchToken = null);
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
         /// </summary>
@@ -1249,10 +1253,11 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>V1Timecard</returns>
-        public V1Timecard CreateTimecard (V1Timecard body)
+        public V1Timecard CreateTimecard (V1Timecard body, string batchToken = null)
         {
-             ApiResponse<V1Timecard> localVarResponse = CreateTimecardWithHttpInfo(body);
+             ApiResponse<V1Timecard> localVarResponse = CreateTimecardWithHttpInfo(body, batchToken);
              return localVarResponse.Data;
         }
 
@@ -1261,8 +1266,9 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        public ApiResponse< V1Timecard > CreateTimecardWithHttpInfo (V1Timecard body)
+        public ApiResponse< V1Timecard > CreateTimecardWithHttpInfo (V1Timecard body, string batchToken = null)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1290,6 +1296,7 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1330,10 +1337,11 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of V1Timecard</returns>
-        public async System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body)
+        public async System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body, string batchToken = null)
         {
-             ApiResponse<V1Timecard> localVarResponse = await CreateTimecardAsyncWithHttpInfo(body);
+             ApiResponse<V1Timecard> localVarResponse = await CreateTimecardAsyncWithHttpInfo(body, batchToken);
              return localVarResponse.Data;
 
         }
@@ -1343,8 +1351,9 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body, string batchToken = null)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1372,6 +1381,7 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
