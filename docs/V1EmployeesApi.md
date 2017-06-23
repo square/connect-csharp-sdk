@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 <a name="createtimecard"></a>
 # **CreateTimecard**
-> V1Timecard CreateTimecard (V1Timecard body)
+> V1Timecard CreateTimecard (V1Timecard body, string batchToken = null)
 
 Creates a timecard for an employee. Each timecard corresponds to a single shift.
 
@@ -180,11 +180,12 @@ namespace Example
 
             var apiInstance = new V1EmployeesApi();
             var body = new V1Timecard(); // V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Creates a timecard for an employee. Each timecard corresponds to a single shift.
-                V1Timecard result = apiInstance.CreateTimecard(body);
+                V1Timecard result = apiInstance.CreateTimecard(body, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -201,6 +202,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**V1Timecard**](V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -355,7 +357,7 @@ Name | Type | Description  | Notes
 
 <a name="listemployeeroles"></a>
 # **ListEmployeeRoles**
-> List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string cursor = null)
+> List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string batchToken = null)
 
 Provides summary information for all of a business's employee roles.
 
@@ -382,12 +384,12 @@ namespace Example
             var apiInstance = new V1EmployeesApi();
             var order = order_example;  // string | The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional) 
             var limit = 56;  // int? | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional) 
-            var cursor = cursor_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides summary information for all of a business's employee roles.
-                List&lt;V1EmployeeRole&gt; result = apiInstance.ListEmployeeRoles(order, limit, cursor);
+                List&lt;V1EmployeeRole&gt; result = apiInstance.ListEmployeeRoles(order, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -405,7 +407,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order** | **string**| The order in which employees are listed in the response, based on their created_at field.Default value: ASC  | [optional] 
  **limit** | **int?**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional] 
- **cursor** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -424,7 +426,7 @@ Name | Type | Description  | Notes
 
 <a name="listemployees"></a>
 # **ListEmployees**
-> List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null)
+> List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null)
 
 Provides summary information for all of a business's employees.
 
@@ -457,11 +459,12 @@ namespace Example
             var status = status_example;  // string | If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). (optional) 
             var externalId = externalId_example;  // string | If provided, the endpoint returns only employee entities with the specified external_id. (optional) 
             var limit = 56;  // int? | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides summary information for all of a business's employees.
-                List&lt;V1Employee&gt; result = apiInstance.ListEmployees(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit);
+                List&lt;V1Employee&gt; result = apiInstance.ListEmployees(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -485,6 +488,7 @@ Name | Type | Description  | Notes
  **status** | **string**| If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). | [optional] 
  **externalId** | **string**| If provided, the endpoint returns only employee entities with the specified external_id. | [optional] 
  **limit** | **int?**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
