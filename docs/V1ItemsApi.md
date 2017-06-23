@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 <a name="createitem"></a>
 # **CreateItem**
-> V1Item CreateItem (string locationId, V1Item body)
+> V1Item CreateItem (string locationId, V1Item body, string batchToken = null)
 
 Creates an item and at least one variation for it.
 
@@ -483,11 +483,12 @@ namespace Example
             var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create an item for.
             var body = new V1Item(); // V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Creates an item and at least one variation for it.
-                V1Item result = apiInstance.CreateItem(locationId, body);
+                V1Item result = apiInstance.CreateItem(locationId, body, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -505,6 +506,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **string**| The ID of the location to create an item for. | 
  **body** | [**V1Item**](V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -1601,7 +1603,7 @@ Name | Type | Description  | Notes
 
 <a name="listinventory"></a>
 # **ListInventory**
-> List<V1InventoryEntry> ListInventory (string locationId, int? limit = null)
+> List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null)
 
 Provides inventory information for all of a merchant's inventory-enabled item variations.
 
@@ -1628,11 +1630,12 @@ namespace Example
             var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var limit = 56;  // int? | The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides inventory information for all of a merchant's inventory-enabled item variations.
-                List&lt;V1InventoryEntry&gt; result = apiInstance.ListInventory(locationId, limit);
+                List&lt;V1InventoryEntry&gt; result = apiInstance.ListInventory(locationId, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1650,6 +1653,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **string**| The ID of the item&#39;s associated location. | 
  **limit** | **int?**| The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
