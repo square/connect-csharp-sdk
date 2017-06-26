@@ -177,9 +177,8 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>V1Item</returns>
-        V1Item CreateItem (string locationId, V1Item body, string batchToken = null);
+        V1Item CreateItem (string locationId, V1Item body);
 
         /// <summary>
         /// Creates an item and at least one variation for it.
@@ -190,9 +189,8 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of V1Item</returns>
-        ApiResponse<V1Item> CreateItemWithHttpInfo (string locationId, V1Item body, string batchToken = null);
+        ApiResponse<V1Item> CreateItemWithHttpInfo (string locationId, V1Item body);
         /// <summary>
         /// Creates an item modifier list and at least one modifier option for it.
         /// </summary>
@@ -600,8 +598,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Item&gt;</returns>
-        List<V1Item> ListItems (string locationId);
+        List<V1Item> ListItems (string locationId, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all of a location&#39;s items.
@@ -611,8 +610,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Item&gt;</returns>
-        ApiResponse<List<V1Item>> ListItemsWithHttpInfo (string locationId);
+        ApiResponse<List<V1Item>> ListItemsWithHttpInfo (string locationId, string batchToken = null);
         /// <summary>
         /// Lists all of a location&#39;s modifier lists.
         /// </summary>
@@ -1135,9 +1135,8 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of V1Item</returns>
-        System.Threading.Tasks.Task<V1Item> CreateItemAsync (string locationId, V1Item body, string batchToken = null);
+        System.Threading.Tasks.Task<V1Item> CreateItemAsync (string locationId, V1Item body);
 
         /// <summary>
         /// Creates an item and at least one variation for it.
@@ -1148,9 +1147,8 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Item>> CreateItemAsyncWithHttpInfo (string locationId, V1Item body, string batchToken = null);
+        System.Threading.Tasks.Task<ApiResponse<V1Item>> CreateItemAsyncWithHttpInfo (string locationId, V1Item body);
         /// <summary>
         /// Creates an item modifier list and at least one modifier option for it.
         /// </summary>
@@ -1558,8 +1556,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Item&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Item>> ListItemsAsync (string locationId);
+        System.Threading.Tasks.Task<List<V1Item>> ListItemsAsync (string locationId, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all of a location&#39;s items.
@@ -1569,8 +1568,9 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Item&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> ListItemsAsyncWithHttpInfo (string locationId);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> ListItemsAsyncWithHttpInfo (string locationId, string batchToken = null);
         /// <summary>
         /// Lists all of a location&#39;s modifier lists.
         /// </summary>
@@ -3114,11 +3114,10 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>V1Item</returns>
-        public V1Item CreateItem (string locationId, V1Item body, string batchToken = null)
+        public V1Item CreateItem (string locationId, V1Item body)
         {
-             ApiResponse<V1Item> localVarResponse = CreateItemWithHttpInfo(locationId, body, batchToken);
+             ApiResponse<V1Item> localVarResponse = CreateItemWithHttpInfo(locationId, body);
              return localVarResponse.Data;
         }
 
@@ -3128,9 +3127,8 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of V1Item</returns>
-        public ApiResponse< V1Item > CreateItemWithHttpInfo (string locationId, V1Item body, string batchToken = null)
+        public ApiResponse< V1Item > CreateItemWithHttpInfo (string locationId, V1Item body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -3162,7 +3160,6 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -3204,11 +3201,10 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of V1Item</returns>
-        public async System.Threading.Tasks.Task<V1Item> CreateItemAsync (string locationId, V1Item body, string batchToken = null)
+        public async System.Threading.Tasks.Task<V1Item> CreateItemAsync (string locationId, V1Item body)
         {
-             ApiResponse<V1Item> localVarResponse = await CreateItemAsyncWithHttpInfo(locationId, body, batchToken);
+             ApiResponse<V1Item> localVarResponse = await CreateItemAsyncWithHttpInfo(locationId, body);
              return localVarResponse.Data;
 
         }
@@ -3219,9 +3215,8 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (V1Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> CreateItemAsyncWithHttpInfo (string locationId, V1Item body, string batchToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Item>> CreateItemAsyncWithHttpInfo (string locationId, V1Item body)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -3253,7 +3248,6 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
-            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -6111,10 +6105,11 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Item&gt;</returns>
-        public List<V1Item> ListItems (string locationId)
+        public List<V1Item> ListItems (string locationId, string batchToken = null)
         {
-             ApiResponse<List<V1Item>> localVarResponse = ListItemsWithHttpInfo(locationId);
+             ApiResponse<List<V1Item>> localVarResponse = ListItemsWithHttpInfo(locationId, batchToken);
              return localVarResponse.Data;
         }
 
@@ -6123,8 +6118,9 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Item&gt;</returns>
-        public ApiResponse< List<V1Item> > ListItemsWithHttpInfo (string locationId)
+        public ApiResponse< List<V1Item> > ListItemsWithHttpInfo (string locationId, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -6153,6 +6149,7 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -6185,10 +6182,11 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Item&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Item>> ListItemsAsync (string locationId)
+        public async System.Threading.Tasks.Task<List<V1Item>> ListItemsAsync (string locationId, string batchToken = null)
         {
-             ApiResponse<List<V1Item>> localVarResponse = await ListItemsAsyncWithHttpInfo(locationId);
+             ApiResponse<List<V1Item>> localVarResponse = await ListItemsAsyncWithHttpInfo(locationId, batchToken);
              return localVarResponse.Data;
 
         }
@@ -6198,8 +6196,9 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Item&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> ListItemsAsyncWithHttpInfo (string locationId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> ListItemsAsyncWithHttpInfo (string locationId, string batchToken = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -6228,6 +6227,7 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required

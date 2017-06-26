@@ -74,9 +74,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>V1Timecard</returns>
-        V1Timecard CreateTimecard (V1Timecard body, string batchToken = null);
+        V1Timecard CreateTimecard (V1Timecard body);
 
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
@@ -86,9 +85,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        ApiResponse<V1Timecard> CreateTimecardWithHttpInfo (V1Timecard body, string batchToken = null);
+        ApiResponse<V1Timecard> CreateTimecardWithHttpInfo (V1Timecard body);
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
         /// </summary>
@@ -237,9 +235,9 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Timecard&gt;</returns>
-        List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -258,9 +256,9 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Timecard&gt;</returns>
-        ApiResponse<List<V1Timecard>> ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        ApiResponse<List<V1Timecard>> ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
@@ -468,9 +466,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of V1Timecard</returns>
-        System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body, string batchToken = null);
+        System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body);
 
         /// <summary>
         /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
@@ -480,9 +477,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body, string batchToken = null);
+        System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body);
         /// <summary>
         /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
         /// </summary>
@@ -631,9 +627,9 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Timecard&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Timecard>> ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        System.Threading.Tasks.Task<List<V1Timecard>> ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -652,9 +648,9 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Timecard&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
         /// <summary>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
@@ -1253,11 +1249,10 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>V1Timecard</returns>
-        public V1Timecard CreateTimecard (V1Timecard body, string batchToken = null)
+        public V1Timecard CreateTimecard (V1Timecard body)
         {
-             ApiResponse<V1Timecard> localVarResponse = CreateTimecardWithHttpInfo(body, batchToken);
+             ApiResponse<V1Timecard> localVarResponse = CreateTimecardWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -1266,9 +1261,8 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of V1Timecard</returns>
-        public ApiResponse< V1Timecard > CreateTimecardWithHttpInfo (V1Timecard body, string batchToken = null)
+        public ApiResponse< V1Timecard > CreateTimecardWithHttpInfo (V1Timecard body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1296,7 +1290,6 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1337,11 +1330,10 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of V1Timecard</returns>
-        public async System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body, string batchToken = null)
+        public async System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body)
         {
-             ApiResponse<V1Timecard> localVarResponse = await CreateTimecardAsyncWithHttpInfo(body, batchToken);
+             ApiResponse<V1Timecard> localVarResponse = await CreateTimecardAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -1351,9 +1343,8 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body, string batchToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1381,7 +1372,6 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2242,11 +2232,11 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Timecard&gt;</returns>
-        public List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Timecard>> localVarResponse = ListTimecardsWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
+             ApiResponse<List<V1Timecard>> localVarResponse = ListTimecardsWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, batchToken);
              return localVarResponse.Data;
         }
 
@@ -2264,9 +2254,9 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Timecard&gt;</returns>
-        public ApiResponse< List<V1Timecard> > ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public ApiResponse< List<V1Timecard> > ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null)
         {
 
             var localVarPath = "/v1/me/timecards";
@@ -2301,7 +2291,7 @@ namespace Square.Connect.Api
             if (endUpdatedAt != null) localVarQueryParams.Add("end_updated_at", Configuration.ApiClient.ParameterToString(endUpdatedAt)); // query parameter
             if (deleted != null) localVarQueryParams.Add("deleted", Configuration.ApiClient.ParameterToString(deleted)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-            if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2343,11 +2333,11 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Timecard&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Timecard>> ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public async System.Threading.Tasks.Task<List<V1Timecard>> ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null)
         {
-             ApiResponse<List<V1Timecard>> localVarResponse = await ListTimecardsAsyncWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
+             ApiResponse<List<V1Timecard>> localVarResponse = await ListTimecardsAsyncWithHttpInfo(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, batchToken);
              return localVarResponse.Data;
 
         }
@@ -2366,9 +2356,9 @@ namespace Square.Connect.Api
         /// <param name="endUpdatedAt">If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
-        /// <param name="cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Timecard&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null)
         {
 
             var localVarPath = "/v1/me/timecards";
@@ -2403,7 +2393,7 @@ namespace Square.Connect.Api
             if (endUpdatedAt != null) localVarQueryParams.Add("end_updated_at", Configuration.ApiClient.ParameterToString(endUpdatedAt)); // query parameter
             if (deleted != null) localVarQueryParams.Add("deleted", Configuration.ApiClient.ParameterToString(deleted)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-            if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+            if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
