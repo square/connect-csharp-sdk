@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 <a name="createtimecard"></a>
 # **CreateTimecard**
-> V1Timecard CreateTimecard (V1Timecard body, string batchToken = null)
+> V1Timecard CreateTimecard (V1Timecard body)
 
 Creates a timecard for an employee. Each timecard corresponds to a single shift.
 
@@ -180,12 +180,11 @@ namespace Example
 
             var apiInstance = new V1EmployeesApi();
             var body = new V1Timecard(); // V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
-            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Creates a timecard for an employee. Each timecard corresponds to a single shift.
-                V1Timecard result = apiInstance.CreateTimecard(body, batchToken);
+                V1Timecard result = apiInstance.CreateTimecard(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -202,7 +201,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**V1Timecard**](V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
- **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -572,7 +570,7 @@ Name | Type | Description  | Notes
 
 <a name="listtimecards"></a>
 # **ListTimecards**
-> List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string cursor = null)
+> List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null)
 
 Provides summary information for all of a business's employee timecards.
 
@@ -607,12 +605,12 @@ namespace Example
             var endUpdatedAt = endUpdatedAt_example;  // string | If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional) 
             var deleted = true;  // bool? | If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don't provide this parameter, both valid and deleted timecards are returned. (optional) 
             var limit = 56;  // int? | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional) 
-            var cursor = cursor_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides summary information for all of a business's employee timecards.
-                List&lt;V1Timecard&gt; result = apiInstance.ListTimecards(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
+                List&lt;V1Timecard&gt; result = apiInstance.ListTimecards(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -638,7 +636,7 @@ Name | Type | Description  | Notes
  **endUpdatedAt** | **string**| If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. | [optional] 
  **deleted** | **bool?**| If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. | [optional] 
  **limit** | **int?**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional] 
- **cursor** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
