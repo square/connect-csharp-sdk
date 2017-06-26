@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 <a name="createitem"></a>
 # **CreateItem**
-> V1Item CreateItem (string locationId, V1Item body, string batchToken = null)
+> V1Item CreateItem (string locationId, V1Item body)
 
 Creates an item and at least one variation for it.
 
@@ -483,12 +483,11 @@ namespace Example
             var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to create an item for.
             var body = new V1Item(); // V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
-            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Creates an item and at least one variation for it.
-                V1Item result = apiInstance.CreateItem(locationId, body, batchToken);
+                V1Item result = apiInstance.CreateItem(locationId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -506,7 +505,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **string**| The ID of the location to create an item for. | 
  **body** | [**V1Item**](V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
- **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
