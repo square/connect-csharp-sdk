@@ -58,6 +58,7 @@ Contact: developers@squareup.com
         <HintPath Condition="Exists('..\..\packages')">..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
       <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     
   </ItemGroup>
   <ItemGroup>
