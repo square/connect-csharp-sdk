@@ -73,7 +73,7 @@ namespace Example
         // Retrieving your location IDs
         public void RetrieveLocations()
         {
-            LocationsApi _locationsApi = new LocationApi();
+            LocationsApi _locationsApi = new LocationsApi();
             var response = _locationsApi.ListLocations();
         }
 
@@ -252,8 +252,10 @@ Class | Method | HTTP request
  - [Model.CreateCustomerCardResponse](docs/CreateCustomerCardResponse.md)
  - [Model.CreateCustomerRequest](docs/CreateCustomerRequest.md)
  - [Model.CreateCustomerResponse](docs/CreateCustomerResponse.md)
+ - [Model.CreateOrderRequest](docs/CreateOrderRequest.md)
+ - [Model.CreateOrderRequestDiscount](docs/CreateOrderRequestDiscount.md)
  - [Model.CreateOrderRequestLineItem](docs/CreateOrderRequestLineItem.md)
- - [Model.CreateOrderRequestOrder](docs/CreateOrderRequestOrder.md)
+ - [Model.CreateOrderRequestTax](docs/CreateOrderRequestTax.md)
  - [Model.CreateRefundRequest](docs/CreateRefundRequest.md)
  - [Model.CreateRefundResponse](docs/CreateRefundResponse.md)
  - [Model.Customer](docs/Customer.md)
@@ -282,6 +284,8 @@ Class | Method | HTTP request
  - [Model.Money](docs/Money.md)
  - [Model.Order](docs/Order.md)
  - [Model.OrderLineItem](docs/OrderLineItem.md)
+ - [Model.OrderLineItemDiscount](docs/OrderLineItemDiscount.md)
+ - [Model.OrderLineItemTax](docs/OrderLineItemTax.md)
  - [Model.Refund](docs/Refund.md)
  - [Model.RetrieveCatalogObjectRequest](docs/RetrieveCatalogObjectRequest.md)
  - [Model.RetrieveCatalogObjectResponse](docs/RetrieveCatalogObjectResponse.md)
@@ -364,8 +368,8 @@ Class | Method | HTTP request
   - BANK_ACCOUNTS_READ: GET endpoints related to a merchant&#39;s bank accounts
   - ITEMS_READ: GET endpoints related to a merchant&#39;s item library
   - ITEMS_WRITE: POST, PUT, and DELETE endpoints related to a merchant&#39;s item library
-  - ORDERS_READ: GET endpoints related to a merchant&#39;s Square online store.
-  - ORDERS_WRITE: POST, PUT, and DELETE endpoints related to a merchant&#39;s Square online store
+  - ORDERS_READ: GET endpoints related to a merchant&#39;s orders
+  - ORDERS_WRITE: POST, PUT, and DELETE endpoints related to a merchant&#39;s orders
   - EMPLOYEES_READ: GET endpoints related to employee management
   - EMPLOYEES_WRITE: POST, PUT, and DELETE endpoints related to employee management
   - TIMECARDS_READ: GET endpoints related to employee timecards

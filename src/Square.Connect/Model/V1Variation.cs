@@ -113,6 +113,7 @@ namespace Square.Connect.Model
         /// <param name="Id">The item variation&#39;s unique ID..</param>
         /// <param name="Name">The item variation&#39;s name..</param>
         /// <param name="ItemId">The ID of the variation&#39;s associated item..</param>
+        /// <param name="Ordinal">Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order.</param>
         /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale..</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if any..</param>
         /// <param name="Sku">The item variation&#39;s SKU, if any..</param>
@@ -120,11 +121,12 @@ namespace Square.Connect.Model
         /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold..</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard..</param>
         /// <param name="UserData">Arbitrary metadata associated with the variation. Cannot exceed 255 characters..</param>
-        public V1Variation(string Id = default(string), string Name = default(string), string ItemId = default(string), PricingTypeEnum? PricingType = default(PricingTypeEnum?), V1Money PriceMoney = default(V1Money), string Sku = default(string), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), int? InventoryAlertThreshold = default(int?), string UserData = default(string))
+        public V1Variation(string Id = default(string), string Name = default(string), string ItemId = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), V1Money PriceMoney = default(V1Money), string Sku = default(string), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), int? InventoryAlertThreshold = default(int?), string UserData = default(string))
         {
             this.Id = Id;
             this.Name = Name;
             this.ItemId = ItemId;
+            this.Ordinal = Ordinal;
             this.PricingType = PricingType;
             this.PriceMoney = PriceMoney;
             this.Sku = Sku;
@@ -152,6 +154,12 @@ namespace Square.Connect.Model
         /// <value>The ID of the variation&#39;s associated item.</value>
         [DataMember(Name="item_id", EmitDefaultValue=false)]
         public string ItemId { get; set; }
+        /// <summary>
+        /// Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
+        /// </summary>
+        /// <value>Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order</value>
+        [DataMember(Name="ordinal", EmitDefaultValue=false)]
+        public int? Ordinal { get; set; }
         /// <summary>
         /// The item variation&#39;s price, if any.
         /// </summary>
@@ -193,6 +201,7 @@ namespace Square.Connect.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ItemId: ").Append(ItemId).Append("\n");
+            sb.Append("  Ordinal: ").Append(Ordinal).Append("\n");
             sb.Append("  PricingType: ").Append(PricingType).Append("\n");
             sb.Append("  PriceMoney: ").Append(PriceMoney).Append("\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
@@ -252,6 +261,11 @@ namespace Square.Connect.Model
                     this.ItemId.Equals(other.ItemId)
                 ) && 
                 (
+                    this.Ordinal == other.Ordinal ||
+                    this.Ordinal != null &&
+                    this.Ordinal.Equals(other.Ordinal)
+                ) && 
+                (
                     this.PricingType == other.PricingType ||
                     this.PricingType != null &&
                     this.PricingType.Equals(other.PricingType)
@@ -305,6 +319,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.ItemId != null)
                     hash = hash * 59 + this.ItemId.GetHashCode();
+                if (this.Ordinal != null)
+                    hash = hash * 59 + this.Ordinal.GetHashCode();
                 if (this.PricingType != null)
                     hash = hash * 59 + this.PricingType.GetHashCode();
                 if (this.PriceMoney != null)

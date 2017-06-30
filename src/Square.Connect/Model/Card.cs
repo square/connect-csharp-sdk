@@ -108,7 +108,8 @@ namespace Square.Connect.Model
         /// <param name="ExpYear">The four-digit year of the card&#39;s expiration date..</param>
         /// <param name="CardholderName">The cardholder name. This value is present only if this object represents a customer&#39;s card on file..</param>
         /// <param name="BillingAddress">The card&#39;s billing address. This value is present only if this object represents a customer&#39;s card on file..</param>
-        public Card(string Id = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string Last4 = default(string), long? ExpMonth = default(long?), long? ExpYear = default(long?), string CardholderName = default(string), Address BillingAddress = default(Address))
+        /// <param name="Fingerprint">The unique string fingerprint for the card.  The fingerprint is based on the credit card number and is unique to the merchant.  If a card is used at multiple locations for the same merchant, it will have the same fingerprint in each case. Note: Fingerprint may not exist on old transactions..</param>
+        public Card(string Id = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string Last4 = default(string), long? ExpMonth = default(long?), long? ExpYear = default(long?), string CardholderName = default(string), Address BillingAddress = default(Address), string Fingerprint = default(string))
         {
             this.Id = Id;
             this.CardBrand = CardBrand;
@@ -117,6 +118,7 @@ namespace Square.Connect.Model
             this.ExpYear = ExpYear;
             this.CardholderName = CardholderName;
             this.BillingAddress = BillingAddress;
+            this.Fingerprint = Fingerprint;
         }
         
         /// <summary>
@@ -156,6 +158,12 @@ namespace Square.Connect.Model
         [DataMember(Name="billing_address", EmitDefaultValue=false)]
         public Address BillingAddress { get; set; }
         /// <summary>
+        /// The unique string fingerprint for the card.  The fingerprint is based on the credit card number and is unique to the merchant.  If a card is used at multiple locations for the same merchant, it will have the same fingerprint in each case. Note: Fingerprint may not exist on old transactions.
+        /// </summary>
+        /// <value>The unique string fingerprint for the card.  The fingerprint is based on the credit card number and is unique to the merchant.  If a card is used at multiple locations for the same merchant, it will have the same fingerprint in each case. Note: Fingerprint may not exist on old transactions.</value>
+        [DataMember(Name="fingerprint", EmitDefaultValue=false)]
+        public string Fingerprint { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -170,6 +178,7 @@ namespace Square.Connect.Model
             sb.Append("  ExpYear: ").Append(ExpYear).Append("\n");
             sb.Append("  CardholderName: ").Append(CardholderName).Append("\n");
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
+            sb.Append("  Fingerprint: ").Append(Fingerprint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -240,6 +249,11 @@ namespace Square.Connect.Model
                     this.BillingAddress == other.BillingAddress ||
                     this.BillingAddress != null &&
                     this.BillingAddress.Equals(other.BillingAddress)
+                ) && 
+                (
+                    this.Fingerprint == other.Fingerprint ||
+                    this.Fingerprint != null &&
+                    this.Fingerprint.Equals(other.Fingerprint)
                 );
         }
 
@@ -268,6 +282,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.CardholderName.GetHashCode();
                 if (this.BillingAddress != null)
                     hash = hash * 59 + this.BillingAddress.GetHashCode();
+                if (this.Fingerprint != null)
+                    hash = hash * 59 + this.Fingerprint.GetHashCode();
                 return hash;
             }
         }

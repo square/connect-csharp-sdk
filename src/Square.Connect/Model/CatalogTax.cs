@@ -94,7 +94,7 @@ namespace Square.Connect.Model
         /// <param name="Name">The tax&#39;s name. Searchable. (required).</param>
         /// <param name="CalculationPhase">Whether the tax is calculated based on a payment&#39;s subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for all possible values..</param>
         /// <param name="InclusionType">Whether the tax is &#x60;ADDITIVE&#x60; or &#x60;INCLUSIVE&#x60;. See [TaxInclusionType](#type-taxinclusiontype) for all possible values..</param>
-        /// <param name="Percentage">The percentage of the tax in decimal form, using a &#39;.&#39; as the decimal separator and without a &#39;%&#39; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%..</param>
+        /// <param name="Percentage">The percentage of the tax in decimal form, using a &#x60;&#39;.&#39;&#x60; as the decimal separator and without a &#x60;&#39;%&#39;&#x60; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%..</param>
         /// <param name="AppliesToCustomAmounts">If &#x60;true&#x60;, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular [CatalogItem](#type-catalogitem)..</param>
         /// <param name="Enabled">If &#x60;true&#x60;, the tax will be shown as enabled in the Square Point of Sale app..</param>
         public CatalogTax(string Name = default(string), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), InclusionTypeEnum? InclusionType = default(InclusionTypeEnum?), string Percentage = default(string), bool? AppliesToCustomAmounts = default(bool?), bool? Enabled = default(bool?))
@@ -122,9 +122,9 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The percentage of the tax in decimal form, using a &#39;.&#39; as the decimal separator and without a &#39;%&#39; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%.
+        /// The percentage of the tax in decimal form, using a &#x60;&#39;.&#39;&#x60; as the decimal separator and without a &#x60;&#39;%&#39;&#x60; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%.
         /// </summary>
-        /// <value>The percentage of the tax in decimal form, using a &#39;.&#39; as the decimal separator and without a &#39;%&#39; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%.</value>
+        /// <value>The percentage of the tax in decimal form, using a &#x60;&#39;.&#39;&#x60; as the decimal separator and without a &#x60;&#39;%&#39;&#x60; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%.</value>
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
