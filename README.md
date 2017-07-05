@@ -11,7 +11,7 @@ for the specification and template files we used to generate this.
 - .NET 4.5 or later
 
 ## Usage
-### **Obtain from [NuGet package manager](https://www.nuget.org/packages/Square.Connect/) (Recommended)** 
+### **Obtain from [NuGet package manager](https://www.nuget.org/packages/Square.Connect/) (Recommended)**
 ```
 PM> Install-Package Square.Connect
 ```
@@ -37,7 +37,7 @@ Option 1: Run the following command to generate the DLL
 
 Option 2: Import the `Square.Connect/Square.Connect.csproj` to your solution and build from VS
 
-Then include the DLLs (under the `bin` folder) in the C# project, 
+Then include the DLLs (under the `bin` folder) in the C# project,
 
 - RestSharp.dll
 - Newtonsoft.Json.dll
@@ -107,8 +107,8 @@ More examples are available at [connect-api-examples](https://github.com/square/
 
 All URIs are relative to [Square Connect Documentation](https://docs.connect.squareup.com/)
 
-Class | Method | HTTP request 
------------- | ------------- | ------------- 
+Class | Method | HTTP request
+------------ | ------------- | -------------
 *CatalogApi* | [**BatchDeleteCatalogObjects**](docs/CatalogApi.md#batchdeletecatalogobjects) | **POST** /v2/catalog/batch-delete
 *CatalogApi* | [**BatchRetrieveCatalogObjects**](docs/CatalogApi.md#batchretrievecatalogobjects) | **POST** /v2/catalog/batch-retrieve
 *CatalogApi* | [**BatchUpsertCatalogObjects**](docs/CatalogApi.md#batchupsertcatalogobjects) | **POST** /v2/catalog/batch-upsert
@@ -378,7 +378,7 @@ Class | Method | HTTP request
 
 ## Pagination of V1 Endpoints
 
-V1 Endpoints return pagination information via http headers. In order to obtain
+V1 Endpoints return pagination information via HTTP headers. In order to obtain
 response headers and extract the `batch_token` parameter you will need to follow
 the following steps:
 
