@@ -21,7 +21,7 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IOrderApi : IApiAccessor
+    public interface IOrdersApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -78,15 +78,15 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class OrderApi : IOrderApi
+    public partial class OrdersApi : IOrdersApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderApi"/> class.
+        /// Initializes a new instance of the <see cref="OrdersApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public OrderApi(String basePath)
+        public OrdersApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -100,12 +100,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrderApi"/> class
+        /// Initializes a new instance of the <see cref="OrdersApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public OrderApi(Configuration configuration = null)
+        public OrdersApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -208,10 +208,10 @@ namespace Square.Connect.Api
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrderApi->CreateOrder");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrdersApi->CreateOrder");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling OrderApi->CreateOrder");
+                throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->CreateOrder");
 
             var localVarPath = "/v2/locations/{location_id}/orders";
             var localVarPathParams = new Dictionary<String, String>();
@@ -296,10 +296,10 @@ namespace Square.Connect.Api
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
-                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrderApi->CreateOrder");
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrdersApi->CreateOrder");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling OrderApi->CreateOrder");
+                throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->CreateOrder");
 
             var localVarPath = "/v2/locations/{location_id}/orders";
             var localVarPathParams = new Dictionary<String, String>();

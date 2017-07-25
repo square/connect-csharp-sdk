@@ -129,7 +129,7 @@ Class | Method | HTTP request
 *CustomersApi* | [**RetrieveCustomer**](docs/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id}
 *CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
-*OrderApi* | [**CreateOrder**](docs/OrderApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
+*OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
 *TransactionsApi* | [**Charge**](docs/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions
 *TransactionsApi* | [**CreateRefund**](docs/TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund

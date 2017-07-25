@@ -1,10 +1,10 @@
-# Square.Connect.Api.OrderApi
+# Square.Connect.Api.OrdersApi
 
 All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOrder**](OrderApi.md#createorder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
+[**CreateOrder**](OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
 
 
 <a name="createorder"></a>
@@ -33,7 +33,7 @@ namespace Example
             // Configure OAuth2 access token for authorization: oauth2
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new OrderApi();
+            var apiInstance = new OrdersApi();
             var locationId = locationId_example;  // string | The ID of the business location to associate the order with.
             var body = new CreateOrderRequest(); // CreateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
@@ -45,7 +45,7 @@ namespace Example
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling OrderApi.CreateOrder: " + e.Message );
+                Debug.Print("Exception when calling OrdersApi.CreateOrder: " + e.Message );
             }
         }
     }
