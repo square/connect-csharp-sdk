@@ -116,8 +116,8 @@ namespace Square.Connect.Test
                         Type: TypeEnum.ITEMVARIATION,
                         Id: SMALL_COFFEE_ID,
                         ItemVariationData: new CatalogItemVariation(
-                            Name: "Small",
-                            ItemId: "#Coffee",
+							Name: "Small",
+							ItemId: COFFEE_ID,
                             PricingType: CatalogItemVariation.PricingTypeEnum.FIXEDPRICING,
                             PriceMoney: new Money(Amount: 195L, Currency: Money.CurrencyEnum.USD)
                         )
@@ -127,7 +127,7 @@ namespace Square.Connect.Test
                         Id: LARGE_COFFEE_ID,
                         ItemVariationData: new CatalogItemVariation(
                             Name: "Large",
-                            ItemId: "#Coffee",
+                            ItemId: COFFEE_ID,
                             PricingType: CatalogItemVariation.PricingTypeEnum.FIXEDPRICING,
                             PriceMoney: new Money(Amount: 250L, Currency: Money.CurrencyEnum.USD)
                         )
