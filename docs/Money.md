@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ------------ | -------------
+**UNKNOWNCURRENCY** | "UNKNOWN_CURRENCY"
 **AED** | "AED"
 **AFN** | "AFN"
 **ALL** | "ALL"

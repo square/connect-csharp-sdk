@@ -65,18 +65,26 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemTax" /> class.
         /// </summary>
+        /// <param name="CatalogObjectId">The catalog object id referencing [CatalogTax](#type-catalogtax)..</param>
         /// <param name="Name">The tax&#39;s name..</param>
         /// <param name="Type">Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values..</param>
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%..</param>
         /// <param name="AppliedMoney">The amount of the money applied by the tax in an order..</param>
-        public OrderLineItemTax(string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money))
+        public OrderLineItemTax(string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money))
         {
+            this.CatalogObjectId = CatalogObjectId;
             this.Name = Name;
             this.Type = Type;
             this.Percentage = Percentage;
             this.AppliedMoney = AppliedMoney;
         }
         
+        /// <summary>
+        /// The catalog object id referencing [CatalogTax](#type-catalogtax).
+        /// </summary>
+        /// <value>The catalog object id referencing [CatalogTax](#type-catalogtax).</value>
+        [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
+        public string CatalogObjectId { get; set; }
         /// <summary>
         /// The tax&#39;s name.
         /// </summary>
@@ -103,6 +111,7 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OrderLineItemTax {\n");
+            sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
@@ -144,6 +153,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.CatalogObjectId == other.CatalogObjectId ||
+                    this.CatalogObjectId != null &&
+                    this.CatalogObjectId.Equals(other.CatalogObjectId)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -176,6 +190,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.CatalogObjectId != null)
+                    hash = hash * 59 + this.CatalogObjectId.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Type != null)

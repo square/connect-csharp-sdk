@@ -32,6 +32,12 @@ namespace Square.Connect.Model
     {
         
         /// <summary>
+        /// Enum UNKNOWNCURRENCY for "UNKNOWN_CURRENCY"
+        /// </summary>
+        [EnumMember(Value = "UNKNOWN_CURRENCY")]
+        UNKNOWNCURRENCY,
+        
+        /// <summary>
         /// Enum AED for "AED"
         /// </summary>
         [EnumMember(Value = "AED")]
