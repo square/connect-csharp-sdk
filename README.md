@@ -129,6 +129,7 @@ Class | Method | HTTP request
 *CustomersApi* | [**RetrieveCustomer**](docs/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id}
 *CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
+*OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
 *TransactionsApi* | [**Charge**](docs/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions
 *TransactionsApi* | [**CreateRefund**](docs/TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund
@@ -255,7 +256,9 @@ Class | Method | HTTP request
  - [Model.CreateOrderRequest](docs/CreateOrderRequest.md)
  - [Model.CreateOrderRequestDiscount](docs/CreateOrderRequestDiscount.md)
  - [Model.CreateOrderRequestLineItem](docs/CreateOrderRequestLineItem.md)
+ - [Model.CreateOrderRequestModifier](docs/CreateOrderRequestModifier.md)
  - [Model.CreateOrderRequestTax](docs/CreateOrderRequestTax.md)
+ - [Model.CreateOrderResponse](docs/CreateOrderResponse.md)
  - [Model.CreateRefundRequest](docs/CreateRefundRequest.md)
  - [Model.CreateRefundResponse](docs/CreateRefundResponse.md)
  - [Model.Customer](docs/Customer.md)
@@ -285,6 +288,7 @@ Class | Method | HTTP request
  - [Model.Order](docs/Order.md)
  - [Model.OrderLineItem](docs/OrderLineItem.md)
  - [Model.OrderLineItemDiscount](docs/OrderLineItemDiscount.md)
+ - [Model.OrderLineItemModifier](docs/OrderLineItemModifier.md)
  - [Model.OrderLineItemTax](docs/OrderLineItemTax.md)
  - [Model.Refund](docs/Refund.md)
  - [Model.RetrieveCatalogObjectRequest](docs/RetrieveCatalogObjectRequest.md)

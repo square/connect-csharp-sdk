@@ -32,16 +32,24 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestDiscount" /> class.
         /// </summary>
+        /// <param name="CatalogObjectId">The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount..</param>
         /// <param name="Name">The discount&#39;s name..</param>
         /// <param name="Percentage">The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
         /// <param name="AmountMoney">The monetary amount of the discount..</param>
-        public CreateOrderRequestDiscount(string Name = default(string), string Percentage = default(string), Money AmountMoney = default(Money))
+        public CreateOrderRequestDiscount(string CatalogObjectId = default(string), string Name = default(string), string Percentage = default(string), Money AmountMoney = default(Money))
         {
+            this.CatalogObjectId = CatalogObjectId;
             this.Name = Name;
             this.Percentage = Percentage;
             this.AmountMoney = AmountMoney;
         }
         
+        /// <summary>
+        /// The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount.
+        /// </summary>
+        /// <value>The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount.</value>
+        [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
+        public string CatalogObjectId { get; set; }
         /// <summary>
         /// The discount&#39;s name.
         /// </summary>
@@ -68,6 +76,7 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateOrderRequestDiscount {\n");
+            sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
             sb.Append("  AmountMoney: ").Append(AmountMoney).Append("\n");
@@ -108,6 +117,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.CatalogObjectId == other.CatalogObjectId ||
+                    this.CatalogObjectId != null &&
+                    this.CatalogObjectId.Equals(other.CatalogObjectId)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -135,6 +149,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.CatalogObjectId != null)
+                    hash = hash * 59 + this.CatalogObjectId.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Percentage != null)
@@ -147,10 +163,22 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // CatalogObjectId (string) maxLength
+            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 30)
+            {
+                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 30.", new [] { "CatalogObjectId" });
+            }
+
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 255)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Percentage (string) maxLength
+            if(this.Percentage != null && this.Percentage.Length > 8)
+            {
+                yield return new ValidationResult("Invalid value for Percentage, length must be less than 8.", new [] { "Percentage" });
             }
 
             yield break;
