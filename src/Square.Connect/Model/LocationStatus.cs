@@ -24,30 +24,24 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Indicates whether this is a line item or order-level discount.
+    /// Indicates the location's status.
     /// </summary>
-    /// <value>Indicates whether this is a line item or order-level discount.</value>
+    /// <value>Indicates the location's status.</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum OrderLineItemDiscountScope
+    public enum LocationStatus
     {
         
         /// <summary>
-        /// Enum OTHERDISCOUNTSCOPE for "OTHER_DISCOUNT_SCOPE"
+        /// Enum ACTIVE for "ACTIVE"
         /// </summary>
-        [EnumMember(Value = "OTHER_DISCOUNT_SCOPE")]
-        OTHERDISCOUNTSCOPE,
+        [EnumMember(Value = "ACTIVE")]
+        ACTIVE,
         
         /// <summary>
-        /// Enum LINEITEM for "LINE_ITEM"
+        /// Enum INACTIVE for "INACTIVE"
         /// </summary>
-        [EnumMember(Value = "LINE_ITEM")]
-        LINEITEM,
-        
-        /// <summary>
-        /// Enum ORDER for "ORDER"
-        /// </summary>
-        [EnumMember(Value = "ORDER")]
-        ORDER
+        [EnumMember(Value = "INACTIVE")]
+        INACTIVE
     }
 
 }

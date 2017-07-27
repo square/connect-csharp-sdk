@@ -45,11 +45,38 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
+        /// The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+        /// </summary>
+        /// <value>The location's status  See [LocationStatus](#type-locationstatus) for possible values.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            
+            /// <summary>
+            /// Enum ACTIVE for "ACTIVE"
+            /// </summary>
+            [EnumMember(Value = "ACTIVE")]
+            ACTIVE,
+            
+            /// <summary>
+            /// Enum INACTIVE for "INACTIVE"
+            /// </summary>
+            [EnumMember(Value = "INACTIVE")]
+            INACTIVE
+        }
+
+        /// <summary>
         /// Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
         /// </summary>
         /// <value>Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.</value>
         [DataMember(Name="capabilities", EmitDefaultValue=false)]
         public List<CapabilitiesEnum> Capabilities { get; set; }
+        /// <summary>
+        /// The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+        /// </summary>
+        /// <value>The location's status  See [LocationStatus](#type-locationstatus) for possible values.</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Location" /> class.
         /// </summary>
@@ -58,13 +85,15 @@ namespace Square.Connect.Model
         /// <param name="Address">The location&#39;s physical address..</param>
         /// <param name="Timezone">The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone..</param>
         /// <param name="Capabilities">Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>))
+        /// <param name="Status">The location&#39;s status  See [LocationStatus](#type-locationstatus) for possible values..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?))
         {
             this.Id = Id;
             this.Name = Name;
             this.Address = Address;
             this.Timezone = Timezone;
             this.Capabilities = Capabilities;
+            this.Status = Status;
         }
         
         /// <summary>
@@ -104,6 +133,7 @@ namespace Square.Connect.Model
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  Timezone: ").Append(Timezone).Append("\n");
             sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -164,6 +194,11 @@ namespace Square.Connect.Model
                     this.Capabilities == other.Capabilities ||
                     this.Capabilities != null &&
                     this.Capabilities.SequenceEqual(other.Capabilities)
+                ) && 
+                (
+                    this.Status == other.Status ||
+                    this.Status != null &&
+                    this.Status.Equals(other.Status)
                 );
         }
 
@@ -188,6 +223,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Timezone.GetHashCode();
                 if (this.Capabilities != null)
                     hash = hash * 59 + this.Capabilities.GetHashCode();
+                if (this.Status != null)
+                    hash = hash * 59 + this.Status.GetHashCode();
                 return hash;
             }
         }

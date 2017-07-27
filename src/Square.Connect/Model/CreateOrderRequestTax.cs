@@ -65,16 +65,24 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestTax" /> class.
         /// </summary>
+        /// <param name="CatalogObjectId">The catalog object id from existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for a custom tax..</param>
         /// <param name="Name">The tax&#39;s name..</param>
         /// <param name="Type">Indicates the calculation method used to apply the line item tax.  Default: &#x60;ADDITIVE&#x60;; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values..</param>
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
-        public CreateOrderRequestTax(string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string))
+        public CreateOrderRequestTax(string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string))
         {
+            this.CatalogObjectId = CatalogObjectId;
             this.Name = Name;
             this.Type = Type;
             this.Percentage = Percentage;
         }
         
+        /// <summary>
+        /// The catalog object id from existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for a custom tax.
+        /// </summary>
+        /// <value>The catalog object id from existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for a custom tax.</value>
+        [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
+        public string CatalogObjectId { get; set; }
         /// <summary>
         /// The tax&#39;s name.
         /// </summary>
@@ -95,6 +103,7 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateOrderRequestTax {\n");
+            sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
@@ -135,6 +144,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.CatalogObjectId == other.CatalogObjectId ||
+                    this.CatalogObjectId != null &&
+                    this.CatalogObjectId.Equals(other.CatalogObjectId)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -162,6 +176,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.CatalogObjectId != null)
+                    hash = hash * 59 + this.CatalogObjectId.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Type != null)
@@ -174,10 +190,22 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // CatalogObjectId (string) maxLength
+            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 30)
+            {
+                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 30.", new [] { "CatalogObjectId" });
+            }
+
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 255)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Percentage (string) maxLength
+            if(this.Percentage != null && this.Percentage.Length > 8)
+            {
+                yield return new ValidationResult("Invalid value for Percentage, length must be less than 8.", new [] { "Percentage" });
             }
 
             yield break;
