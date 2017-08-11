@@ -1601,7 +1601,7 @@ Name | Type | Description  | Notes
 
 <a name="listinventory"></a>
 # **ListInventory**
-> List<V1InventoryEntry> ListInventory (string locationId, int? limit = null)
+> List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null)
 
 Provides inventory information for all of a merchant's inventory-enabled item variations.
 
@@ -1628,11 +1628,12 @@ namespace Example
             var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the item's associated location.
             var limit = 56;  // int? | The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides inventory information for all of a merchant's inventory-enabled item variations.
-                List&lt;V1InventoryEntry&gt; result = apiInstance.ListInventory(locationId, limit);
+                List&lt;V1InventoryEntry&gt; result = apiInstance.ListInventory(locationId, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1650,6 +1651,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **string**| The ID of the item&#39;s associated location. | 
  **limit** | **int?**| The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -1668,7 +1670,7 @@ Name | Type | Description  | Notes
 
 <a name="listitems"></a>
 # **ListItems**
-> List<V1Item> ListItems (string locationId)
+> List<V1Item> ListItems (string locationId, string batchToken = null)
 
 Provides summary information for all of a location's items.
 
@@ -1694,11 +1696,12 @@ namespace Example
 
             var apiInstance = new V1ItemsApi();
             var locationId = locationId_example;  // string | The ID of the location to list items for.
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides summary information for all of a location's items.
-                List&lt;V1Item&gt; result = apiInstance.ListItems(locationId);
+                List&lt;V1Item&gt; result = apiInstance.ListItems(locationId, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1715,6 +1718,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **string**| The ID of the location to list items for. | 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 

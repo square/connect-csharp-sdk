@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 <a name="listorders"></a>
 # **ListOrders**
-> List<V1Order> ListOrders (string locationId, string order = null, int? limit = null)
+> List<V1Order> ListOrders (string locationId, string order = null, int? limit = null, string batchToken = null)
 
 Provides summary information for a merchant's online store orders.
 
@@ -179,11 +179,12 @@ namespace Example
             var locationId = locationId_example;  // string | The ID of the location to list online store orders for.
             var order = order_example;  // string | TThe order in which payments are listed in the response. (optional) 
             var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides summary information for a merchant's online store orders.
-                List&lt;V1Order&gt; result = apiInstance.ListOrders(locationId, order, limit);
+                List&lt;V1Order&gt; result = apiInstance.ListOrders(locationId, order, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -202,6 +203,7 @@ Name | Type | Description  | Notes
  **locationId** | **string**| The ID of the location to list online store orders for. | 
  **order** | **string**| TThe order in which payments are listed in the response. | [optional] 
  **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -220,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="listpayments"></a>
 # **ListPayments**
-> List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+> List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
 
 Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
 
@@ -250,11 +252,12 @@ namespace Example
             var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional) 
             var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
             var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-                List&lt;V1Payment&gt; result = apiInstance.ListPayments(locationId, order, beginTime, endTime, limit);
+                List&lt;V1Payment&gt; result = apiInstance.ListPayments(locationId, order, beginTime, endTime, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -275,6 +278,7 @@ Name | Type | Description  | Notes
  **beginTime** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional] 
  **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
  **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -293,7 +297,7 @@ Name | Type | Description  | Notes
 
 <a name="listrefunds"></a>
 # **ListRefunds**
-> List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null)
+> List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
 
 Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
 
@@ -323,11 +327,12 @@ namespace Example
             var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional) 
             var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
             var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
-                List&lt;V1Refund&gt; result = apiInstance.ListRefunds(locationId, order, beginTime, endTime, limit);
+                List&lt;V1Refund&gt; result = apiInstance.ListRefunds(locationId, order, beginTime, endTime, limit, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -348,6 +353,7 @@ Name | Type | Description  | Notes
  **beginTime** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional] 
  **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
  **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
@@ -366,7 +372,7 @@ Name | Type | Description  | Notes
 
 <a name="listsettlements"></a>
 # **ListSettlements**
-> List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null)
+> List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null)
 
 Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
 
@@ -397,11 +403,12 @@ namespace Example
             var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
             var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
             var status = status_example;  // string | Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional) 
+            var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
                 // Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
-                List&lt;V1Settlement&gt; result = apiInstance.ListSettlements(locationId, order, beginTime, endTime, limit, status);
+                List&lt;V1Settlement&gt; result = apiInstance.ListSettlements(locationId, order, beginTime, endTime, limit, status, batchToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -423,6 +430,7 @@ Name | Type | Description  | Notes
  **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
  **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
  **status** | **string**| Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). | [optional] 
+ **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
 
