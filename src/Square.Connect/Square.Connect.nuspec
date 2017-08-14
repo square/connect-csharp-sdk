@@ -44,3 +44,4 @@
         <file src="bin/Square.Connect.xml" target="lib/net45"/>
     </files>
 </package>
+
