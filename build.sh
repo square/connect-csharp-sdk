@@ -39,7 +39,8 @@ echo "[INFO] Run 'mcs' to build bin/Square.Connect.dll"
 mcs -sdk:${netfx} -r:bin/Newtonsoft.Json.dll,\
 bin/RestSharp.dll,\
 System.ComponentModel.DataAnnotations.dll,\
-System.Runtime.Serialization.dll \
+System.Runtime.Serialization.dll,\
+System.Web.dll \
 -target:library \
 -out:bin/Square.Connect.dll \
 -recurse:"src/Square.Connect/*.cs" \
