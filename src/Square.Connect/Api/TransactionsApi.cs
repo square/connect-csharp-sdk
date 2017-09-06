@@ -74,7 +74,7 @@ namespace Square.Connect.Api
         /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
@@ -87,7 +87,7 @@ namespace Square.Connect.Api
         /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
@@ -251,7 +251,7 @@ namespace Square.Connect.Api
         /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
@@ -264,7 +264,7 @@ namespace Square.Connect.Api
         /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
@@ -825,7 +825,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
@@ -839,7 +839,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
@@ -918,7 +918,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>
@@ -933,7 +933,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+        /// CreateRefund Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original transaction&#39;s associated location.</param>

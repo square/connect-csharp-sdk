@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CatalogObjectId** | **string** | The catalog object id referencing [CatalogDiscount](#type-catalogdiscount). | [optional] 
 **Name** | **string** | The discount&#39;s name. | [optional] 
 **Type** | **TypeEnum** | The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified.  See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values. | [optional] 
 **Percentage** | **string** | The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  The percentage won&#39;t be set for an amount-based discount. | [optional] 
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ------------ | -------------
-**UNKNOWN** | "UNKNOWN"
+**UNKNOWNDISCOUNT** | "UNKNOWN_DISCOUNT"
 **FIXEDPERCENTAGE** | "FIXED_PERCENTAGE"
 **FIXEDAMOUNT** | "FIXED_AMOUNT"
 **VARIABLEPERCENTAGE** | "VARIABLE_PERCENTAGE"
@@ -26,6 +27,7 @@ Name | Value
 
 Name | Value
 ------------ | -------------
+**OTHERDISCOUNTSCOPE** | "OTHER_DISCOUNT_SCOPE"
 **LINEITEM** | "LINE_ITEM"
 **ORDER** | "ORDER"
 

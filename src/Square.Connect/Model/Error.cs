@@ -245,6 +245,18 @@ namespace Square.Connect.Model
             VALUEEMPTY,
             
             /// <summary>
+            /// Enum ARRAYLENGTHTOOLONG for "ARRAY_LENGTH_TOO_LONG"
+            /// </summary>
+            [EnumMember(Value = "ARRAY_LENGTH_TOO_LONG")]
+            ARRAYLENGTHTOOLONG,
+            
+            /// <summary>
+            /// Enum ARRAYLENGTHTOOSHORT for "ARRAY_LENGTH_TOO_SHORT"
+            /// </summary>
+            [EnumMember(Value = "ARRAY_LENGTH_TOO_SHORT")]
+            ARRAYLENGTHTOOSHORT,
+            
+            /// <summary>
             /// Enum ARRAYEMPTY for "ARRAY_EMPTY"
             /// </summary>
             [EnumMember(Value = "ARRAY_EMPTY")]

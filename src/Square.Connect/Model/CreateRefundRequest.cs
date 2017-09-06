@@ -192,6 +192,36 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // IdempotencyKey (string) maxLength
+            if(this.IdempotencyKey != null && this.IdempotencyKey.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for IdempotencyKey, length must be less than 192.", new [] { "IdempotencyKey" });
+            }
+
+            // IdempotencyKey (string) minLength
+            if(this.IdempotencyKey != null && this.IdempotencyKey.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for IdempotencyKey, length must be greater than 1.", new [] { "IdempotencyKey" });
+            }
+
+            // TenderId (string) maxLength
+            if(this.TenderId != null && this.TenderId.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for TenderId, length must be less than 192.", new [] { "TenderId" });
+            }
+
+            // TenderId (string) minLength
+            if(this.TenderId != null && this.TenderId.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for TenderId, length must be greater than 1.", new [] { "TenderId" });
+            }
+
+            // Reason (string) maxLength
+            if(this.Reason != null && this.Reason.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for Reason, length must be less than 192.", new [] { "Reason" });
+            }
+
             yield break;
         }
     }

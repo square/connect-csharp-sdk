@@ -32,6 +32,12 @@ namespace Square.Connect.Model
     {
         
         /// <summary>
+        /// Enum OTHERDISCOUNTSCOPE for "OTHER_DISCOUNT_SCOPE"
+        /// </summary>
+        [EnumMember(Value = "OTHER_DISCOUNT_SCOPE")]
+        OTHERDISCOUNTSCOPE,
+        
+        /// <summary>
         /// Enum LINEITEM for "LINE_ITEM"
         /// </summary>
         [EnumMember(Value = "LINE_ITEM")]

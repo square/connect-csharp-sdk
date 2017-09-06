@@ -48,9 +48,9 @@ namespace Square.Connect.Model
         /// <param name="ProcessingFeeMoney">The total of all processing fees collected by Square for the payment..</param>
         /// <param name="NetTotalMoney">The amount to be deposited into the merchant&#39;s bank account for the payment..</param>
         /// <param name="RefundedMoney">The total of all refunds applied to the payment..</param>
-        /// <param name="SwedishRoundingMoney">SwedishRoundingMoney.</param>
-        /// <param name="GrossSalesMoney">GrossSalesMoney.</param>
-        /// <param name="NetSalesMoney">NetSalesMoney.</param>
+        /// <param name="SwedishRoundingMoney">The total of all sales, including any applicable taxes, rounded to the smallest legal unit of currency (e.g., the nearest penny in USD, the nearest nickel in CAD).</param>
+        /// <param name="GrossSalesMoney">The total of all sales, including any applicable taxes..</param>
+        /// <param name="NetSalesMoney">The total of all sales, minus any applicable taxes..</param>
         /// <param name="InclusiveTax">All of the inclusive taxes associated with the payment..</param>
         /// <param name="AdditiveTax">All of the additive taxes associated with the payment..</param>
         /// <param name="Tender">All of the additive taxes associated with the payment..</param>
@@ -181,18 +181,21 @@ namespace Square.Connect.Model
         [DataMember(Name="refunded_money", EmitDefaultValue=false)]
         public V1Money RefundedMoney { get; set; }
         /// <summary>
-        /// Gets or Sets SwedishRoundingMoney
+        /// The total of all sales, including any applicable taxes, rounded to the smallest legal unit of currency (e.g., the nearest penny in USD, the nearest nickel in CAD)
         /// </summary>
+        /// <value>The total of all sales, including any applicable taxes, rounded to the smallest legal unit of currency (e.g., the nearest penny in USD, the nearest nickel in CAD)</value>
         [DataMember(Name="swedish_rounding_money", EmitDefaultValue=false)]
         public V1Money SwedishRoundingMoney { get; set; }
         /// <summary>
-        /// Gets or Sets GrossSalesMoney
+        /// The total of all sales, including any applicable taxes.
         /// </summary>
+        /// <value>The total of all sales, including any applicable taxes.</value>
         [DataMember(Name="gross_sales_money", EmitDefaultValue=false)]
         public V1Money GrossSalesMoney { get; set; }
         /// <summary>
-        /// Gets or Sets NetSalesMoney
+        /// The total of all sales, minus any applicable taxes.
         /// </summary>
+        /// <value>The total of all sales, minus any applicable taxes.</value>
         [DataMember(Name="net_sales_money", EmitDefaultValue=false)]
         public V1Money NetSalesMoney { get; set; }
         /// <summary>

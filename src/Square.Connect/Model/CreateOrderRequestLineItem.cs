@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a line item to include in an order. Each line item describes a different product to purchase, with its own quantity and price details.
+    /// Represents a line item to include in an order. Each line item describes a different product to purchase, with its own quantity and price details.  Line items can either reference objects from the merchant&#39;s catalog, or can alternatively specify a name and price instead.
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequestLineItem :  IEquatable<CreateOrderRequestLineItem>, IValidatableObject
@@ -37,12 +37,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestLineItem" /> class.
         /// </summary>
-        /// <param name="Name">The name of the line item. This value cannot exceed 500 characters..</param>
-        /// <param name="Quantity">The quantity to purchase, as a string representation of a number. Currently, only integer values are supported. (required).</param>
-        /// <param name="BasePriceMoney">The base price for a single unit of the line item&#39;s associated variation. If a line item represents a Custom Amount instead of a particular product, this field indicates that amount..</param>
-        /// <param name="Taxes">The taxes include the custom taxes..</param>
-        /// <param name="Discounts">The discounts include the custom discounts..</param>
-        public CreateOrderRequestLineItem(string Name = default(string), string Quantity = default(string), Money BasePriceMoney = default(Money), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
+        /// <param name="Name">Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide values in catalog_object_id..</param>
+        /// <param name="Quantity">The quantity to purchase, as a string representation of a number.  This string must have a positive integer value. (required).</param>
+        /// <param name="BasePriceMoney">Only used for ad hoc line items. The base price for a single unit of the line item&#39;s associated variation.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;..</param>
+        /// <param name="VariationName">Only used for ad hoc line items. The variation name of the line item. This value cannot exceed 255 characters.  If this value is not set for an ad hoc line item, the default value of &#x60;Regular&#x60; is used.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;..</param>
+        /// <param name="Note">The note of the line item. This value cannot exceed 50 characters..</param>
+        /// <param name="CatalogObjectId">Only used for Catalog line items. The catalog object ID from existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;..</param>
+        /// <param name="Modifiers">Only used for Catalog line items. The modifiers to include on the line item..</param>
+        /// <param name="Taxes">The taxes to include on the line item..</param>
+        /// <param name="Discounts">The discounts to include on the line item..</param>
+        public CreateOrderRequestLineItem(string Name = default(string), string Quantity = default(string), Money BasePriceMoney = default(Money), string VariationName = default(string), string Note = default(string), string CatalogObjectId = default(string), List<CreateOrderRequestModifier> Modifiers = default(List<CreateOrderRequestModifier>), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
         {
             // to ensure "Quantity" is required (not null)
             if (Quantity == null)
@@ -55,38 +59,66 @@ namespace Square.Connect.Model
             }
             this.Name = Name;
             this.BasePriceMoney = BasePriceMoney;
+            this.VariationName = VariationName;
+            this.Note = Note;
+            this.CatalogObjectId = CatalogObjectId;
+            this.Modifiers = Modifiers;
             this.Taxes = Taxes;
             this.Discounts = Discounts;
         }
         
         /// <summary>
-        /// The name of the line item. This value cannot exceed 500 characters.
+        /// Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide values in catalog_object_id.
         /// </summary>
-        /// <value>The name of the line item. This value cannot exceed 500 characters.</value>
+        /// <value>Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide values in catalog_object_id.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The quantity to purchase, as a string representation of a number. Currently, only integer values are supported.
+        /// The quantity to purchase, as a string representation of a number.  This string must have a positive integer value.
         /// </summary>
-        /// <value>The quantity to purchase, as a string representation of a number. Currently, only integer values are supported.</value>
+        /// <value>The quantity to purchase, as a string representation of a number.  This string must have a positive integer value.</value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
         /// <summary>
-        /// The base price for a single unit of the line item&#39;s associated variation. If a line item represents a Custom Amount instead of a particular product, this field indicates that amount.
+        /// Only used for ad hoc line items. The base price for a single unit of the line item&#39;s associated variation.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;.
         /// </summary>
-        /// <value>The base price for a single unit of the line item&#39;s associated variation. If a line item represents a Custom Amount instead of a particular product, this field indicates that amount.</value>
+        /// <value>Only used for ad hoc line items. The base price for a single unit of the line item&#39;s associated variation.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;.</value>
         [DataMember(Name="base_price_money", EmitDefaultValue=false)]
         public Money BasePriceMoney { get; set; }
         /// <summary>
-        /// The taxes include the custom taxes.
+        /// Only used for ad hoc line items. The variation name of the line item. This value cannot exceed 255 characters.  If this value is not set for an ad hoc line item, the default value of &#x60;Regular&#x60; is used.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;.
         /// </summary>
-        /// <value>The taxes include the custom taxes.</value>
+        /// <value>Only used for ad hoc line items. The variation name of the line item. This value cannot exceed 255 characters.  If this value is not set for an ad hoc line item, the default value of &#x60;Regular&#x60; is used.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;.</value>
+        [DataMember(Name="variation_name", EmitDefaultValue=false)]
+        public string VariationName { get; set; }
+        /// <summary>
+        /// The note of the line item. This value cannot exceed 50 characters.
+        /// </summary>
+        /// <value>The note of the line item. This value cannot exceed 50 characters.</value>
+        [DataMember(Name="note", EmitDefaultValue=false)]
+        public string Note { get; set; }
+        /// <summary>
+        /// Only used for Catalog line items. The catalog object ID from existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;.
+        /// </summary>
+        /// <value>Only used for Catalog line items. The catalog object ID from existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;.</value>
+        [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
+        public string CatalogObjectId { get; set; }
+        /// <summary>
+        /// Only used for Catalog line items. The modifiers to include on the line item.
+        /// </summary>
+        /// <value>Only used for Catalog line items. The modifiers to include on the line item.</value>
+        [DataMember(Name="modifiers", EmitDefaultValue=false)]
+        public List<CreateOrderRequestModifier> Modifiers { get; set; }
+        /// <summary>
+        /// The taxes to include on the line item.
+        /// </summary>
+        /// <value>The taxes to include on the line item.</value>
         [DataMember(Name="taxes", EmitDefaultValue=false)]
         public List<CreateOrderRequestTax> Taxes { get; set; }
         /// <summary>
-        /// The discounts include the custom discounts.
+        /// The discounts to include on the line item.
         /// </summary>
-        /// <value>The discounts include the custom discounts.</value>
+        /// <value>The discounts to include on the line item.</value>
         [DataMember(Name="discounts", EmitDefaultValue=false)]
         public List<CreateOrderRequestDiscount> Discounts { get; set; }
         /// <summary>
@@ -100,6 +132,10 @@ namespace Square.Connect.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  BasePriceMoney: ").Append(BasePriceMoney).Append("\n");
+            sb.Append("  VariationName: ").Append(VariationName).Append("\n");
+            sb.Append("  Note: ").Append(Note).Append("\n");
+            sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
+            sb.Append("  Modifiers: ").Append(Modifiers).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  Discounts: ").Append(Discounts).Append("\n");
             sb.Append("}\n");
@@ -154,6 +190,26 @@ namespace Square.Connect.Model
                     this.BasePriceMoney.Equals(other.BasePriceMoney)
                 ) && 
                 (
+                    this.VariationName == other.VariationName ||
+                    this.VariationName != null &&
+                    this.VariationName.Equals(other.VariationName)
+                ) && 
+                (
+                    this.Note == other.Note ||
+                    this.Note != null &&
+                    this.Note.Equals(other.Note)
+                ) && 
+                (
+                    this.CatalogObjectId == other.CatalogObjectId ||
+                    this.CatalogObjectId != null &&
+                    this.CatalogObjectId.Equals(other.CatalogObjectId)
+                ) && 
+                (
+                    this.Modifiers == other.Modifiers ||
+                    this.Modifiers != null &&
+                    this.Modifiers.SequenceEqual(other.Modifiers)
+                ) && 
+                (
                     this.Taxes == other.Taxes ||
                     this.Taxes != null &&
                     this.Taxes.SequenceEqual(other.Taxes)
@@ -182,6 +238,14 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Quantity.GetHashCode();
                 if (this.BasePriceMoney != null)
                     hash = hash * 59 + this.BasePriceMoney.GetHashCode();
+                if (this.VariationName != null)
+                    hash = hash * 59 + this.VariationName.GetHashCode();
+                if (this.Note != null)
+                    hash = hash * 59 + this.Note.GetHashCode();
+                if (this.CatalogObjectId != null)
+                    hash = hash * 59 + this.CatalogObjectId.GetHashCode();
+                if (this.Modifiers != null)
+                    hash = hash * 59 + this.Modifiers.GetHashCode();
                 if (this.Taxes != null)
                     hash = hash * 59 + this.Taxes.GetHashCode();
                 if (this.Discounts != null)
@@ -198,10 +262,34 @@ namespace Square.Connect.Model
                 yield return new ValidationResult("Invalid value for Name, length must be less than 500.", new [] { "Name" });
             }
 
+            // Quantity (string) maxLength
+            if(this.Quantity != null && this.Quantity.Length > 5)
+            {
+                yield return new ValidationResult("Invalid value for Quantity, length must be less than 5.", new [] { "Quantity" });
+            }
+
             // Quantity (string) minLength
             if(this.Quantity != null && this.Quantity.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for Quantity, length must be greater than 1.", new [] { "Quantity" });
+            }
+
+            // VariationName (string) maxLength
+            if(this.VariationName != null && this.VariationName.Length > 255)
+            {
+                yield return new ValidationResult("Invalid value for VariationName, length must be less than 255.", new [] { "VariationName" });
+            }
+
+            // Note (string) maxLength
+            if(this.Note != null && this.Note.Length > 50)
+            {
+                yield return new ValidationResult("Invalid value for Note, length must be less than 50.", new [] { "Note" });
+            }
+
+            // CatalogObjectId (string) maxLength
+            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 192.", new [] { "CatalogObjectId" });
             }
 
             yield break;

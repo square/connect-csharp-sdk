@@ -62,25 +62,15 @@ namespace Square.Connect.Model
         /// <param name="Type">The type of refund .</param>
         /// <param name="Reason">The merchant-specified reason for the refund..</param>
         /// <param name="RefundedMoney">The amount of money refunded. This amount is always negative..</param>
-        /// <param name="RefundedProcessingFeeMoney">The amount of processing fee money refunded..</param>
-        /// <param name="RefundedAdditiveTaxMoney">The amount of additive tax money refunded..</param>
-        /// <param name="RefundedInclusiveTaxMoney">The amount of inclusive tax money refunded..</param>
-        /// <param name="RefundedTipMoney">The amount of tip money refunded..</param>
-        /// <param name="RefundedDiscountMoney">The amount of discount money refunded..</param>
         /// <param name="CreatedAt">The time when the merchant initiated the refund for Square to process, in ISO 8601 format...</param>
         /// <param name="ProcessedAt">The time when Square processed the refund on behalf of the merchant, in ISO 8601 format..</param>
         /// <param name="PaymentId">The Square-issued ID of the payment the refund is applied to..</param>
         /// <param name="MerchantId">.</param>
-        public V1Refund(TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), V1Money RefundedProcessingFeeMoney = default(V1Money), V1Money RefundedAdditiveTaxMoney = default(V1Money), V1Money RefundedInclusiveTaxMoney = default(V1Money), V1Money RefundedTipMoney = default(V1Money), V1Money RefundedDiscountMoney = default(V1Money), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string))
+        public V1Refund(TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string))
         {
             this.Type = Type;
             this.Reason = Reason;
             this.RefundedMoney = RefundedMoney;
-            this.RefundedProcessingFeeMoney = RefundedProcessingFeeMoney;
-            this.RefundedAdditiveTaxMoney = RefundedAdditiveTaxMoney;
-            this.RefundedInclusiveTaxMoney = RefundedInclusiveTaxMoney;
-            this.RefundedTipMoney = RefundedTipMoney;
-            this.RefundedDiscountMoney = RefundedDiscountMoney;
             this.CreatedAt = CreatedAt;
             this.ProcessedAt = ProcessedAt;
             this.PaymentId = PaymentId;
@@ -99,36 +89,6 @@ namespace Square.Connect.Model
         /// <value>The amount of money refunded. This amount is always negative.</value>
         [DataMember(Name="refunded_money", EmitDefaultValue=false)]
         public V1Money RefundedMoney { get; set; }
-        /// <summary>
-        /// The amount of processing fee money refunded.
-        /// </summary>
-        /// <value>The amount of processing fee money refunded.</value>
-        [DataMember(Name="refunded_processing_fee_money", EmitDefaultValue=false)]
-        public V1Money RefundedProcessingFeeMoney { get; set; }
-        /// <summary>
-        /// The amount of additive tax money refunded.
-        /// </summary>
-        /// <value>The amount of additive tax money refunded.</value>
-        [DataMember(Name="refunded_additive_tax_money", EmitDefaultValue=false)]
-        public V1Money RefundedAdditiveTaxMoney { get; set; }
-        /// <summary>
-        /// The amount of inclusive tax money refunded.
-        /// </summary>
-        /// <value>The amount of inclusive tax money refunded.</value>
-        [DataMember(Name="refunded_inclusive_tax_money", EmitDefaultValue=false)]
-        public V1Money RefundedInclusiveTaxMoney { get; set; }
-        /// <summary>
-        /// The amount of tip money refunded.
-        /// </summary>
-        /// <value>The amount of tip money refunded.</value>
-        [DataMember(Name="refunded_tip_money", EmitDefaultValue=false)]
-        public V1Money RefundedTipMoney { get; set; }
-        /// <summary>
-        /// The amount of discount money refunded.
-        /// </summary>
-        /// <value>The amount of discount money refunded.</value>
-        [DataMember(Name="refunded_discount_money", EmitDefaultValue=false)]
-        public V1Money RefundedDiscountMoney { get; set; }
         /// <summary>
         /// The time when the merchant initiated the refund for Square to process, in ISO 8601 format..
         /// </summary>
@@ -164,11 +124,6 @@ namespace Square.Connect.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("  RefundedMoney: ").Append(RefundedMoney).Append("\n");
-            sb.Append("  RefundedProcessingFeeMoney: ").Append(RefundedProcessingFeeMoney).Append("\n");
-            sb.Append("  RefundedAdditiveTaxMoney: ").Append(RefundedAdditiveTaxMoney).Append("\n");
-            sb.Append("  RefundedInclusiveTaxMoney: ").Append(RefundedInclusiveTaxMoney).Append("\n");
-            sb.Append("  RefundedTipMoney: ").Append(RefundedTipMoney).Append("\n");
-            sb.Append("  RefundedDiscountMoney: ").Append(RefundedDiscountMoney).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ProcessedAt: ").Append(ProcessedAt).Append("\n");
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
@@ -225,31 +180,6 @@ namespace Square.Connect.Model
                     this.RefundedMoney.Equals(other.RefundedMoney)
                 ) && 
                 (
-                    this.RefundedProcessingFeeMoney == other.RefundedProcessingFeeMoney ||
-                    this.RefundedProcessingFeeMoney != null &&
-                    this.RefundedProcessingFeeMoney.Equals(other.RefundedProcessingFeeMoney)
-                ) && 
-                (
-                    this.RefundedAdditiveTaxMoney == other.RefundedAdditiveTaxMoney ||
-                    this.RefundedAdditiveTaxMoney != null &&
-                    this.RefundedAdditiveTaxMoney.Equals(other.RefundedAdditiveTaxMoney)
-                ) && 
-                (
-                    this.RefundedInclusiveTaxMoney == other.RefundedInclusiveTaxMoney ||
-                    this.RefundedInclusiveTaxMoney != null &&
-                    this.RefundedInclusiveTaxMoney.Equals(other.RefundedInclusiveTaxMoney)
-                ) && 
-                (
-                    this.RefundedTipMoney == other.RefundedTipMoney ||
-                    this.RefundedTipMoney != null &&
-                    this.RefundedTipMoney.Equals(other.RefundedTipMoney)
-                ) && 
-                (
-                    this.RefundedDiscountMoney == other.RefundedDiscountMoney ||
-                    this.RefundedDiscountMoney != null &&
-                    this.RefundedDiscountMoney.Equals(other.RefundedDiscountMoney)
-                ) && 
-                (
                     this.CreatedAt == other.CreatedAt ||
                     this.CreatedAt != null &&
                     this.CreatedAt.Equals(other.CreatedAt)
@@ -288,16 +218,6 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Reason.GetHashCode();
                 if (this.RefundedMoney != null)
                     hash = hash * 59 + this.RefundedMoney.GetHashCode();
-                if (this.RefundedProcessingFeeMoney != null)
-                    hash = hash * 59 + this.RefundedProcessingFeeMoney.GetHashCode();
-                if (this.RefundedAdditiveTaxMoney != null)
-                    hash = hash * 59 + this.RefundedAdditiveTaxMoney.GetHashCode();
-                if (this.RefundedInclusiveTaxMoney != null)
-                    hash = hash * 59 + this.RefundedInclusiveTaxMoney.GetHashCode();
-                if (this.RefundedTipMoney != null)
-                    hash = hash * 59 + this.RefundedTipMoney.GetHashCode();
-                if (this.RefundedDiscountMoney != null)
-                    hash = hash * 59 + this.RefundedDiscountMoney.GetHashCode();
                 if (this.CreatedAt != null)
                     hash = hash * 59 + this.CreatedAt.GetHashCode();
                 if (this.ProcessedAt != null)

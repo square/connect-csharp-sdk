@@ -33,20 +33,30 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
         /// </summary>
         /// <param name="Name">The name of the line item..</param>
-        /// <param name="Quantity">The quantity of the product to purchase. Currently, this string must have an integer value..</param>
+        /// <param name="Quantity">The quantity purchased, as a string representation of a number..</param>
+        /// <param name="Note">The note of the line item..</param>
+        /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item..</param>
+        /// <param name="VariationName">The name of the variation applied to this line item..</param>
+        /// <param name="Modifiers">The [CatalogModifier](#type-catalogmodifier)s applied to this line item..</param>
         /// <param name="Taxes">The taxes applied to this line item..</param>
         /// <param name="Discounts">The discounts applied to this line item..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>
+        /// <param name="GrossSalesMoney">The gross sales amount of money calculated as (item base price + modifiers price) * quantity..</param>
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the line item..</param>
         /// <param name="TotalMoney">The total amount of money to collect for this line item..</param>
-        public OrderLineItem(string Name = default(string), string Quantity = default(string), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
+        public OrderLineItem(string Name = default(string), string Quantity = default(string), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderLineItemModifier> Modifiers = default(List<OrderLineItemModifier>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money GrossSalesMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
             this.Name = Name;
             this.Quantity = Quantity;
+            this.Note = Note;
+            this.CatalogObjectId = CatalogObjectId;
+            this.VariationName = VariationName;
+            this.Modifiers = Modifiers;
             this.Taxes = Taxes;
             this.Discounts = Discounts;
             this.BasePriceMoney = BasePriceMoney;
+            this.GrossSalesMoney = GrossSalesMoney;
             this.TotalTaxMoney = TotalTaxMoney;
             this.TotalDiscountMoney = TotalDiscountMoney;
             this.TotalMoney = TotalMoney;
@@ -59,11 +69,35 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The quantity of the product to purchase. Currently, this string must have an integer value.
+        /// The quantity purchased, as a string representation of a number.
         /// </summary>
-        /// <value>The quantity of the product to purchase. Currently, this string must have an integer value.</value>
+        /// <value>The quantity purchased, as a string representation of a number.</value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
+        /// <summary>
+        /// The note of the line item.
+        /// </summary>
+        /// <value>The note of the line item.</value>
+        [DataMember(Name="note", EmitDefaultValue=false)]
+        public string Note { get; set; }
+        /// <summary>
+        /// The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item.
+        /// </summary>
+        /// <value>The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item.</value>
+        [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
+        public string CatalogObjectId { get; set; }
+        /// <summary>
+        /// The name of the variation applied to this line item.
+        /// </summary>
+        /// <value>The name of the variation applied to this line item.</value>
+        [DataMember(Name="variation_name", EmitDefaultValue=false)]
+        public string VariationName { get; set; }
+        /// <summary>
+        /// The [CatalogModifier](#type-catalogmodifier)s applied to this line item.
+        /// </summary>
+        /// <value>The [CatalogModifier](#type-catalogmodifier)s applied to this line item.</value>
+        [DataMember(Name="modifiers", EmitDefaultValue=false)]
+        public List<OrderLineItemModifier> Modifiers { get; set; }
         /// <summary>
         /// The taxes applied to this line item.
         /// </summary>
@@ -82,6 +116,12 @@ namespace Square.Connect.Model
         /// <value>The base price for a single unit of the line item.</value>
         [DataMember(Name="base_price_money", EmitDefaultValue=false)]
         public Money BasePriceMoney { get; set; }
+        /// <summary>
+        /// The gross sales amount of money calculated as (item base price + modifiers price) * quantity.
+        /// </summary>
+        /// <value>The gross sales amount of money calculated as (item base price + modifiers price) * quantity.</value>
+        [DataMember(Name="gross_sales_money", EmitDefaultValue=false)]
+        public Money GrossSalesMoney { get; set; }
         /// <summary>
         /// The total tax amount of money to collect for the line item.
         /// </summary>
@@ -110,9 +150,14 @@ namespace Square.Connect.Model
             sb.Append("class OrderLineItem {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  Note: ").Append(Note).Append("\n");
+            sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
+            sb.Append("  VariationName: ").Append(VariationName).Append("\n");
+            sb.Append("  Modifiers: ").Append(Modifiers).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  Discounts: ").Append(Discounts).Append("\n");
             sb.Append("  BasePriceMoney: ").Append(BasePriceMoney).Append("\n");
+            sb.Append("  GrossSalesMoney: ").Append(GrossSalesMoney).Append("\n");
             sb.Append("  TotalTaxMoney: ").Append(TotalTaxMoney).Append("\n");
             sb.Append("  TotalDiscountMoney: ").Append(TotalDiscountMoney).Append("\n");
             sb.Append("  TotalMoney: ").Append(TotalMoney).Append("\n");
@@ -163,6 +208,26 @@ namespace Square.Connect.Model
                     this.Quantity.Equals(other.Quantity)
                 ) && 
                 (
+                    this.Note == other.Note ||
+                    this.Note != null &&
+                    this.Note.Equals(other.Note)
+                ) && 
+                (
+                    this.CatalogObjectId == other.CatalogObjectId ||
+                    this.CatalogObjectId != null &&
+                    this.CatalogObjectId.Equals(other.CatalogObjectId)
+                ) && 
+                (
+                    this.VariationName == other.VariationName ||
+                    this.VariationName != null &&
+                    this.VariationName.Equals(other.VariationName)
+                ) && 
+                (
+                    this.Modifiers == other.Modifiers ||
+                    this.Modifiers != null &&
+                    this.Modifiers.SequenceEqual(other.Modifiers)
+                ) && 
+                (
                     this.Taxes == other.Taxes ||
                     this.Taxes != null &&
                     this.Taxes.SequenceEqual(other.Taxes)
@@ -176,6 +241,11 @@ namespace Square.Connect.Model
                     this.BasePriceMoney == other.BasePriceMoney ||
                     this.BasePriceMoney != null &&
                     this.BasePriceMoney.Equals(other.BasePriceMoney)
+                ) && 
+                (
+                    this.GrossSalesMoney == other.GrossSalesMoney ||
+                    this.GrossSalesMoney != null &&
+                    this.GrossSalesMoney.Equals(other.GrossSalesMoney)
                 ) && 
                 (
                     this.TotalTaxMoney == other.TotalTaxMoney ||
@@ -209,12 +279,22 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Quantity != null)
                     hash = hash * 59 + this.Quantity.GetHashCode();
+                if (this.Note != null)
+                    hash = hash * 59 + this.Note.GetHashCode();
+                if (this.CatalogObjectId != null)
+                    hash = hash * 59 + this.CatalogObjectId.GetHashCode();
+                if (this.VariationName != null)
+                    hash = hash * 59 + this.VariationName.GetHashCode();
+                if (this.Modifiers != null)
+                    hash = hash * 59 + this.Modifiers.GetHashCode();
                 if (this.Taxes != null)
                     hash = hash * 59 + this.Taxes.GetHashCode();
                 if (this.Discounts != null)
                     hash = hash * 59 + this.Discounts.GetHashCode();
                 if (this.BasePriceMoney != null)
                     hash = hash * 59 + this.BasePriceMoney.GetHashCode();
+                if (this.GrossSalesMoney != null)
+                    hash = hash * 59 + this.GrossSalesMoney.GetHashCode();
                 if (this.TotalTaxMoney != null)
                     hash = hash * 59 + this.TotalTaxMoney.GetHashCode();
                 if (this.TotalDiscountMoney != null)

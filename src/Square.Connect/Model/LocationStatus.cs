@@ -24,30 +24,24 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Indicates how the tax is applied to the associated line item or order.
+    /// Indicates the location's status.
     /// </summary>
-    /// <value>Indicates how the tax is applied to the associated line item or order.</value>
+    /// <value>Indicates the location's status.</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum OrderLineItemTaxType
+    public enum LocationStatus
     {
         
         /// <summary>
-        /// Enum UNKNOWNTAX for "UNKNOWN_TAX"
+        /// Enum ACTIVE for "ACTIVE"
         /// </summary>
-        [EnumMember(Value = "UNKNOWN_TAX")]
-        UNKNOWNTAX,
+        [EnumMember(Value = "ACTIVE")]
+        ACTIVE,
         
         /// <summary>
-        /// Enum ADDITIVE for "ADDITIVE"
+        /// Enum INACTIVE for "INACTIVE"
         /// </summary>
-        [EnumMember(Value = "ADDITIVE")]
-        ADDITIVE,
-        
-        /// <summary>
-        /// Enum INCLUSIVE for "INCLUSIVE"
-        /// </summary>
-        [EnumMember(Value = "INCLUSIVE")]
-        INCLUSIVE
+        [EnumMember(Value = "INACTIVE")]
+        INACTIVE
     }
 
 }

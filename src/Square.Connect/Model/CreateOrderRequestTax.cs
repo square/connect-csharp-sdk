@@ -24,24 +24,24 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a tax that applies to either a single line item or an entire order.
+    /// Represents a tax that can apply to either a single line item or an entire order.
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequestTax :  IEquatable<CreateOrderRequestTax>, IValidatableObject
     {
         /// <summary>
-        /// Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
+        /// Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
         /// </summary>
-        /// <value>Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
+        /// <value>Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
             
             /// <summary>
-            /// Enum UNKNOWN for "UNKNOWN"
+            /// Enum UNKNOWNTAX for "UNKNOWN_TAX"
             /// </summary>
-            [EnumMember(Value = "UNKNOWN")]
-            UNKNOWN,
+            [EnumMember(Value = "UNKNOWN_TAX")]
+            UNKNOWNTAX,
             
             /// <summary>
             /// Enum ADDITIVE for "ADDITIVE"
@@ -57,34 +57,42 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
+        /// Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
         /// </summary>
-        /// <value>Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
+        /// <value>Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestTax" /> class.
         /// </summary>
-        /// <param name="Name">The tax&#39;s name..</param>
-        /// <param name="Type">Indicates the calculation method used to apply the line item tax.  Default: &#x60;ADDITIVE&#x60;; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values..</param>
-        /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
-        public CreateOrderRequestTax(string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string))
+        /// <param name="CatalogObjectId">Only used for catalog taxes. The catalog object ID of an existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for an ad hoc tax..</param>
+        /// <param name="Name">Only used for ad hoc taxes. The tax&#39;s name.  Do not provide a value for this field if you set catalog_object_id..</param>
+        /// <param name="Type">Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: &#x60;ADDITIVE&#x60;; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values..</param>
+        /// <param name="Percentage">Only used for ad hoc taxes. The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
+        public CreateOrderRequestTax(string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string))
         {
+            this.CatalogObjectId = CatalogObjectId;
             this.Name = Name;
             this.Type = Type;
             this.Percentage = Percentage;
         }
         
         /// <summary>
-        /// The tax&#39;s name.
+        /// Only used for catalog taxes. The catalog object ID of an existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for an ad hoc tax.
         /// </summary>
-        /// <value>The tax&#39;s name.</value>
+        /// <value>Only used for catalog taxes. The catalog object ID of an existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for an ad hoc tax.</value>
+        [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
+        public string CatalogObjectId { get; set; }
+        /// <summary>
+        /// Only used for ad hoc taxes. The tax&#39;s name.  Do not provide a value for this field if you set catalog_object_id.
+        /// </summary>
+        /// <value>Only used for ad hoc taxes. The tax&#39;s name.  Do not provide a value for this field if you set catalog_object_id.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
+        /// Only used for ad hoc taxes. The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
         /// </summary>
-        /// <value>The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0</value>
+        /// <value>Only used for ad hoc taxes. The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0</value>
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
@@ -95,6 +103,7 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateOrderRequestTax {\n");
+            sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
@@ -135,6 +144,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.CatalogObjectId == other.CatalogObjectId ||
+                    this.CatalogObjectId != null &&
+                    this.CatalogObjectId.Equals(other.CatalogObjectId)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -162,6 +176,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.CatalogObjectId != null)
+                    hash = hash * 59 + this.CatalogObjectId.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Type != null)
@@ -174,10 +190,22 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // CatalogObjectId (string) maxLength
+            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 192.", new [] { "CatalogObjectId" });
+            }
+
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 255)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Percentage (string) maxLength
+            if(this.Percentage != null && this.Percentage.Length > 10)
+            {
+                yield return new ValidationResult("Invalid value for Percentage, length must be less than 10.", new [] { "Percentage" });
             }
 
             yield break;
