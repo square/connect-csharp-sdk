@@ -212,8 +212,6 @@ Class | Method | HTTP request
 ## Documentation for Models
 
  - [Model.Address](docs/Address.md)
- - [Model.ApplicationReceivable](docs/ApplicationReceivable.md)
- - [Model.ApplicationReceivableRefund](docs/ApplicationReceivableRefund.md)
  - [Model.BatchDeleteCatalogObjectsRequest](docs/BatchDeleteCatalogObjectsRequest.md)
  - [Model.BatchDeleteCatalogObjectsResponse](docs/BatchDeleteCatalogObjectsResponse.md)
  - [Model.BatchRetrieveCatalogObjectsRequest](docs/BatchRetrieveCatalogObjectsRequest.md)
