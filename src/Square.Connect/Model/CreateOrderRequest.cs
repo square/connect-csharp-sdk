@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the parameters that can be included in the body of a request to the [CreateOrder](#endpoint-createorder) endpoint.  It is also included in the body of a request to the [CreateCheckout](#endpoint-createcheckout) endpoint. The idempotency_key field is ignored when the CreateOrderRequest is included in a CreateCheckout request
+    /// 
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequest :  IEquatable<CreateOrderRequest>, IValidatableObject

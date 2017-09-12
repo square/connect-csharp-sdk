@@ -38,10 +38,10 @@ namespace Square.Connect.Model
         {
             
             /// <summary>
-            /// Enum UNKNOWN for "UNKNOWN"
+            /// Enum UNKNOWNTAX for "UNKNOWN_TAX"
             /// </summary>
-            [EnumMember(Value = "UNKNOWN")]
-            UNKNOWN,
+            [EnumMember(Value = "UNKNOWN_TAX")]
+            UNKNOWNTAX,
             
             /// <summary>
             /// Enum ADDITIVE for "ADDITIVE"

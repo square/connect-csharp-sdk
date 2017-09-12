@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ------------ | -------------
-**UNKNOWN** | "UNKNOWN"
+**UNKNOWNDISCOUNT** | "UNKNOWN_DISCOUNT"
 **FIXEDPERCENTAGE** | "FIXED_PERCENTAGE"
 **FIXEDAMOUNT** | "FIXED_AMOUNT"
 **VARIABLEPERCENTAGE** | "VARIABLE_PERCENTAGE"

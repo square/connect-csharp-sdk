@@ -25,10 +25,33 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// BatchRetrieveOrders
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>BatchRetrieveOrdersResponse</returns>
+        BatchRetrieveOrdersResponse BatchRetrieveOrders (string locationId, BatchRetrieveOrdersRequest body);
+
+        /// <summary>
+        /// BatchRetrieveOrders
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of BatchRetrieveOrdersResponse</returns>
+        ApiResponse<BatchRetrieveOrdersResponse> BatchRetrieveOrdersWithHttpInfo (string locationId, BatchRetrieveOrdersRequest body);
+        /// <summary>
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -40,7 +63,7 @@ namespace Square.Connect.Api
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -50,10 +73,33 @@ namespace Square.Connect.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
+        /// BatchRetrieveOrders
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of BatchRetrieveOrdersResponse</returns>
+        System.Threading.Tasks.Task<BatchRetrieveOrdersResponse> BatchRetrieveOrdersAsync (string locationId, BatchRetrieveOrdersRequest body);
+
+        /// <summary>
+        /// BatchRetrieveOrders
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (BatchRetrieveOrdersResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BatchRetrieveOrdersResponse>> BatchRetrieveOrdersAsyncWithHttpInfo (string locationId, BatchRetrieveOrdersRequest body);
+        /// <summary>
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -65,7 +111,7 @@ namespace Square.Connect.Api
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -185,7 +231,182 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>BatchRetrieveOrdersResponse</returns>
+        public BatchRetrieveOrdersResponse BatchRetrieveOrders (string locationId, BatchRetrieveOrdersRequest body)
+        {
+             ApiResponse<BatchRetrieveOrdersResponse> localVarResponse = BatchRetrieveOrdersWithHttpInfo(locationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of BatchRetrieveOrdersResponse</returns>
+        public ApiResponse< BatchRetrieveOrdersResponse > BatchRetrieveOrdersWithHttpInfo (string locationId, BatchRetrieveOrdersRequest body)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrdersApi->BatchRetrieveOrders");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->BatchRetrieveOrders");
+
+            var localVarPath = "/v2/locations/{location_id}/orders/batch-retrieve";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BatchRetrieveOrders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BatchRetrieveOrdersResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (BatchRetrieveOrdersResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchRetrieveOrdersResponse)));
+            
+        }
+
+        /// <summary>
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of BatchRetrieveOrdersResponse</returns>
+        public async System.Threading.Tasks.Task<BatchRetrieveOrdersResponse> BatchRetrieveOrdersAsync (string locationId, BatchRetrieveOrdersRequest body)
+        {
+             ApiResponse<BatchRetrieveOrdersResponse> localVarResponse = await BatchRetrieveOrdersAsyncWithHttpInfo(locationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the orders&#39; associated location.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (BatchRetrieveOrdersResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BatchRetrieveOrdersResponse>> BatchRetrieveOrdersAsyncWithHttpInfo (string locationId, BatchRetrieveOrdersRequest body)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrdersApi->BatchRetrieveOrders");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->BatchRetrieveOrders");
+
+            var localVarPath = "/v2/locations/{location_id}/orders/batch-retrieve";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BatchRetrieveOrders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BatchRetrieveOrdersResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (BatchRetrieveOrdersResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchRetrieveOrdersResponse)));
+            
+        }
+
+        /// <summary>
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -198,7 +419,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -272,7 +493,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -286,7 +507,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be included as referenced &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](https://docs.connect.squareup.com/articles/orders-overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>

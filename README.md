@@ -129,6 +129,7 @@ Class | Method | HTTP request
 *CustomersApi* | [**RetrieveCustomer**](docs/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id}
 *CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
+*OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
 *TransactionsApi* | [**Charge**](docs/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions
@@ -215,6 +216,8 @@ Class | Method | HTTP request
  - [Model.BatchDeleteCatalogObjectsResponse](docs/BatchDeleteCatalogObjectsResponse.md)
  - [Model.BatchRetrieveCatalogObjectsRequest](docs/BatchRetrieveCatalogObjectsRequest.md)
  - [Model.BatchRetrieveCatalogObjectsResponse](docs/BatchRetrieveCatalogObjectsResponse.md)
+ - [Model.BatchRetrieveOrdersRequest](docs/BatchRetrieveOrdersRequest.md)
+ - [Model.BatchRetrieveOrdersResponse](docs/BatchRetrieveOrdersResponse.md)
  - [Model.BatchUpsertCatalogObjectsRequest](docs/BatchUpsertCatalogObjectsRequest.md)
  - [Model.BatchUpsertCatalogObjectsResponse](docs/BatchUpsertCatalogObjectsResponse.md)
  - [Model.CaptureTransactionRequest](docs/CaptureTransactionRequest.md)

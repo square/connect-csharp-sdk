@@ -256,6 +256,12 @@ namespace Square.Connect.Model
                 yield return new ValidationResult("Invalid value for PrePopulateBuyerEmail, length must be less than 254.", new [] { "PrePopulateBuyerEmail" });
             }
 
+            // RedirectUrl (string) maxLength
+            if(this.RedirectUrl != null && this.RedirectUrl.Length > 800)
+            {
+                yield return new ValidationResult("Invalid value for RedirectUrl, length must be less than 800.", new [] { "RedirectUrl" });
+            }
+
             yield break;
         }
     }
