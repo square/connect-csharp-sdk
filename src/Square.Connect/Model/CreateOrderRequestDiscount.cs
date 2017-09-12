@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a discount that to either a single line item or an entire order.
+    /// Represents a discount that can apply to either a single line item or an entire order.
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequestDiscount :  IEquatable<CreateOrderRequestDiscount>, IValidatableObject
@@ -32,10 +32,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestDiscount" /> class.
         /// </summary>
-        /// <param name="CatalogObjectId">The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount..</param>
-        /// <param name="Name">The discount&#39;s name..</param>
-        /// <param name="Percentage">The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
-        /// <param name="AmountMoney">The monetary amount of the discount..</param>
+        /// <param name="CatalogObjectId">Only used for catalog taxes. The catalog object ID from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount..</param>
+        /// <param name="Name">Only used for ad hoc discounts. The discount&#39;s name..</param>
+        /// <param name="Percentage">Only used for ad hoc discounts. The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
+        /// <param name="AmountMoney">Only used for ad hoc discounts. The monetary amount of the discount..</param>
         public CreateOrderRequestDiscount(string CatalogObjectId = default(string), string Name = default(string), string Percentage = default(string), Money AmountMoney = default(Money))
         {
             this.CatalogObjectId = CatalogObjectId;
@@ -45,27 +45,27 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount.
+        /// Only used for catalog taxes. The catalog object ID from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount.
         /// </summary>
-        /// <value>The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount.</value>
+        /// <value>Only used for catalog taxes. The catalog object ID from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount.</value>
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>
-        /// The discount&#39;s name.
+        /// Only used for ad hoc discounts. The discount&#39;s name.
         /// </summary>
-        /// <value>The discount&#39;s name.</value>
+        /// <value>Only used for ad hoc discounts. The discount&#39;s name.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
+        /// Only used for ad hoc discounts. The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
         /// </summary>
-        /// <value>The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0</value>
+        /// <value>Only used for ad hoc discounts. The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0</value>
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
-        /// The monetary amount of the discount.
+        /// Only used for ad hoc discounts. The monetary amount of the discount.
         /// </summary>
-        /// <value>The monetary amount of the discount.</value>
+        /// <value>Only used for ad hoc discounts. The monetary amount of the discount.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
@@ -164,9 +164,9 @@ namespace Square.Connect.Model
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
             // CatalogObjectId (string) maxLength
-            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 30)
+            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 192)
             {
-                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 30.", new [] { "CatalogObjectId" });
+                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 192.", new [] { "CatalogObjectId" });
             }
 
             // Name (string) maxLength
@@ -176,9 +176,9 @@ namespace Square.Connect.Model
             }
 
             // Percentage (string) maxLength
-            if(this.Percentage != null && this.Percentage.Length > 8)
+            if(this.Percentage != null && this.Percentage.Length > 10)
             {
-                yield return new ValidationResult("Invalid value for Percentage, length must be less than 8.", new [] { "Percentage" });
+                yield return new ValidationResult("Invalid value for Percentage, length must be less than 10.", new [] { "Percentage" });
             }
 
             yield break;

@@ -24,39 +24,39 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a modifier applied to a single line item.
+    /// 
     /// </summary>
     [DataContract]
-    public partial class CreateOrderRequestModifier :  IEquatable<CreateOrderRequestModifier>, IValidatableObject
+    public partial class BatchRetrieveOrdersRequest :  IEquatable<BatchRetrieveOrdersRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOrderRequestModifier" /> class.
+        /// Initializes a new instance of the <see cref="BatchRetrieveOrdersRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CreateOrderRequestModifier() { }
+        protected BatchRetrieveOrdersRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOrderRequestModifier" /> class.
+        /// Initializes a new instance of the <see cref="BatchRetrieveOrdersRequest" /> class.
         /// </summary>
-        /// <param name="CatalogObjectId">The catalog object ID of a [CatalogModifier](#type-catalogmodifier). (required).</param>
-        public CreateOrderRequestModifier(string CatalogObjectId = default(string))
+        /// <param name="OrderIds">The IDs of the orders to retrieve. A maximum of 100 orders can be retrieved per request. (required).</param>
+        public BatchRetrieveOrdersRequest(List<string> OrderIds = default(List<string>))
         {
-            // to ensure "CatalogObjectId" is required (not null)
-            if (CatalogObjectId == null)
+            // to ensure "OrderIds" is required (not null)
+            if (OrderIds == null)
             {
-                throw new InvalidDataException("CatalogObjectId is a required property for CreateOrderRequestModifier and cannot be null");
+                throw new InvalidDataException("OrderIds is a required property for BatchRetrieveOrdersRequest and cannot be null");
             }
             else
             {
-                this.CatalogObjectId = CatalogObjectId;
+                this.OrderIds = OrderIds;
             }
         }
         
         /// <summary>
-        /// The catalog object ID of a [CatalogModifier](#type-catalogmodifier).
+        /// The IDs of the orders to retrieve. A maximum of 100 orders can be retrieved per request.
         /// </summary>
-        /// <value>The catalog object ID of a [CatalogModifier](#type-catalogmodifier).</value>
-        [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
-        public string CatalogObjectId { get; set; }
+        /// <value>The IDs of the orders to retrieve. A maximum of 100 orders can be retrieved per request.</value>
+        [DataMember(Name="order_ids", EmitDefaultValue=false)]
+        public List<string> OrderIds { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -64,8 +64,8 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateOrderRequestModifier {\n");
-            sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
+            sb.Append("class BatchRetrieveOrdersRequest {\n");
+            sb.Append("  OrderIds: ").Append(OrderIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +87,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CreateOrderRequestModifier);
+            return this.Equals(obj as BatchRetrieveOrdersRequest);
         }
 
         /// <summary>
-        /// Returns true if CreateOrderRequestModifier instances are equal
+        /// Returns true if BatchRetrieveOrdersRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of CreateOrderRequestModifier to be compared</param>
+        /// <param name="other">Instance of BatchRetrieveOrdersRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateOrderRequestModifier other)
+        public bool Equals(BatchRetrieveOrdersRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -103,9 +103,9 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.CatalogObjectId == other.CatalogObjectId ||
-                    this.CatalogObjectId != null &&
-                    this.CatalogObjectId.Equals(other.CatalogObjectId)
+                    this.OrderIds == other.OrderIds ||
+                    this.OrderIds != null &&
+                    this.OrderIds.SequenceEqual(other.OrderIds)
                 );
         }
 
@@ -120,26 +120,14 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.CatalogObjectId != null)
-                    hash = hash * 59 + this.CatalogObjectId.GetHashCode();
+                if (this.OrderIds != null)
+                    hash = hash * 59 + this.OrderIds.GetHashCode();
                 return hash;
             }
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // CatalogObjectId (string) maxLength
-            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 192)
-            {
-                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 192.", new [] { "CatalogObjectId" });
-            }
-
-            // CatalogObjectId (string) minLength
-            if(this.CatalogObjectId != null && this.CatalogObjectId.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be greater than 1.", new [] { "CatalogObjectId" });
-            }
-
             yield break;
         }
     }

@@ -1,9 +1,9 @@
-# Square.Connect.Model.CreateOrderRequestModifier
+# Square.Connect.Model.BatchRetrieveOrdersRequest
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CatalogObjectId** | **string** | The catalog object ID of a [CatalogModifier](#type-catalogmodifier). | 
+**OrderIds** | **List<string>** | The IDs of the orders to retrieve. A maximum of 100 orders can be retrieved per request. | 
 
 
 

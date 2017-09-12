@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ------------ | -------------
-**UNKNOWN** | "UNKNOWN"
+**UNKNOWNTAX** | "UNKNOWN_TAX"
 **ADDITIVE** | "ADDITIVE"
 **INCLUSIVE** | "INCLUSIVE"
 

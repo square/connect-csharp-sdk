@@ -296,6 +296,48 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // IdempotencyKey (string) maxLength
+            if(this.IdempotencyKey != null && this.IdempotencyKey.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for IdempotencyKey, length must be less than 192.", new [] { "IdempotencyKey" });
+            }
+
+            // IdempotencyKey (string) minLength
+            if(this.IdempotencyKey != null && this.IdempotencyKey.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for IdempotencyKey, length must be greater than 1.", new [] { "IdempotencyKey" });
+            }
+
+            // CardNonce (string) maxLength
+            if(this.CardNonce != null && this.CardNonce.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for CardNonce, length must be less than 192.", new [] { "CardNonce" });
+            }
+
+            // CustomerCardId (string) maxLength
+            if(this.CustomerCardId != null && this.CustomerCardId.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for CustomerCardId, length must be less than 192.", new [] { "CustomerCardId" });
+            }
+
+            // ReferenceId (string) maxLength
+            if(this.ReferenceId != null && this.ReferenceId.Length > 40)
+            {
+                yield return new ValidationResult("Invalid value for ReferenceId, length must be less than 40.", new [] { "ReferenceId" });
+            }
+
+            // Note (string) maxLength
+            if(this.Note != null && this.Note.Length > 60)
+            {
+                yield return new ValidationResult("Invalid value for Note, length must be less than 60.", new [] { "Note" });
+            }
+
+            // CustomerId (string) maxLength
+            if(this.CustomerId != null && this.CustomerId.Length > 50)
+            {
+                yield return new ValidationResult("Invalid value for CustomerId, length must be less than 50.", new [] { "CustomerId" });
+            }
+
             yield break;
         }
     }

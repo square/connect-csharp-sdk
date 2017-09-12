@@ -36,7 +36,7 @@ namespace Square.Connect.Model
         /// <param name="Sku"> The item&#39;s merchant-defined SKU, if any..</param>
         /// <param name="ItemId">The unique ID of the item purchased, if any..</param>
         /// <param name="ItemVariationId">The unique ID of the item variation purchased, if any..</param>
-        public V1PaymentItemDetail(string CategoryName = default(string), decimal? Sku = default(decimal?), string ItemId = default(string), string ItemVariationId = default(string))
+        public V1PaymentItemDetail(string CategoryName = default(string), string Sku = default(string), string ItemId = default(string), string ItemVariationId = default(string))
         {
             this.CategoryName = CategoryName;
             this.Sku = Sku;
@@ -55,7 +55,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value> The item&#39;s merchant-defined SKU, if any.</value>
         [DataMember(Name="sku", EmitDefaultValue=false)]
-        public decimal? Sku { get; set; }
+        public string Sku { get; set; }
         /// <summary>
         /// The unique ID of the item purchased, if any.
         /// </summary>

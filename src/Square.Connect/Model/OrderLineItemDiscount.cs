@@ -38,10 +38,10 @@ namespace Square.Connect.Model
         {
             
             /// <summary>
-            /// Enum UNKNOWN for "UNKNOWN"
+            /// Enum UNKNOWNDISCOUNT for "UNKNOWN_DISCOUNT"
             /// </summary>
-            [EnumMember(Value = "UNKNOWN")]
-            UNKNOWN,
+            [EnumMember(Value = "UNKNOWN_DISCOUNT")]
+            UNKNOWNDISCOUNT,
             
             /// <summary>
             /// Enum FIXEDPERCENTAGE for "FIXED_PERCENTAGE"
