@@ -45,26 +45,2685 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
+        /// The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+        /// </summary>
+        /// <value>The location's status  See [LocationStatus](#type-locationstatus) for possible values.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            
+            /// <summary>
+            /// Enum ACTIVE for "ACTIVE"
+            /// </summary>
+            [EnumMember(Value = "ACTIVE")]
+            ACTIVE,
+            
+            /// <summary>
+            /// Enum INACTIVE for "INACTIVE"
+            /// </summary>
+            [EnumMember(Value = "INACTIVE")]
+            INACTIVE
+        }
+
+        /// <summary>
+        /// The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.
+        /// </summary>
+        /// <value>The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CountryEnum
+        {
+            
+            /// <summary>
+            /// Enum ZZ for "ZZ"
+            /// </summary>
+            [EnumMember(Value = "ZZ")]
+            ZZ,
+            
+            /// <summary>
+            /// Enum AD for "AD"
+            /// </summary>
+            [EnumMember(Value = "AD")]
+            AD,
+            
+            /// <summary>
+            /// Enum AE for "AE"
+            /// </summary>
+            [EnumMember(Value = "AE")]
+            AE,
+            
+            /// <summary>
+            /// Enum AF for "AF"
+            /// </summary>
+            [EnumMember(Value = "AF")]
+            AF,
+            
+            /// <summary>
+            /// Enum AG for "AG"
+            /// </summary>
+            [EnumMember(Value = "AG")]
+            AG,
+            
+            /// <summary>
+            /// Enum AI for "AI"
+            /// </summary>
+            [EnumMember(Value = "AI")]
+            AI,
+            
+            /// <summary>
+            /// Enum AL for "AL"
+            /// </summary>
+            [EnumMember(Value = "AL")]
+            AL,
+            
+            /// <summary>
+            /// Enum AM for "AM"
+            /// </summary>
+            [EnumMember(Value = "AM")]
+            AM,
+            
+            /// <summary>
+            /// Enum AO for "AO"
+            /// </summary>
+            [EnumMember(Value = "AO")]
+            AO,
+            
+            /// <summary>
+            /// Enum AQ for "AQ"
+            /// </summary>
+            [EnumMember(Value = "AQ")]
+            AQ,
+            
+            /// <summary>
+            /// Enum AR for "AR"
+            /// </summary>
+            [EnumMember(Value = "AR")]
+            AR,
+            
+            /// <summary>
+            /// Enum AS for "AS"
+            /// </summary>
+            [EnumMember(Value = "AS")]
+            AS,
+            
+            /// <summary>
+            /// Enum AT for "AT"
+            /// </summary>
+            [EnumMember(Value = "AT")]
+            AT,
+            
+            /// <summary>
+            /// Enum AU for "AU"
+            /// </summary>
+            [EnumMember(Value = "AU")]
+            AU,
+            
+            /// <summary>
+            /// Enum AW for "AW"
+            /// </summary>
+            [EnumMember(Value = "AW")]
+            AW,
+            
+            /// <summary>
+            /// Enum AX for "AX"
+            /// </summary>
+            [EnumMember(Value = "AX")]
+            AX,
+            
+            /// <summary>
+            /// Enum AZ for "AZ"
+            /// </summary>
+            [EnumMember(Value = "AZ")]
+            AZ,
+            
+            /// <summary>
+            /// Enum BA for "BA"
+            /// </summary>
+            [EnumMember(Value = "BA")]
+            BA,
+            
+            /// <summary>
+            /// Enum BB for "BB"
+            /// </summary>
+            [EnumMember(Value = "BB")]
+            BB,
+            
+            /// <summary>
+            /// Enum BD for "BD"
+            /// </summary>
+            [EnumMember(Value = "BD")]
+            BD,
+            
+            /// <summary>
+            /// Enum BE for "BE"
+            /// </summary>
+            [EnumMember(Value = "BE")]
+            BE,
+            
+            /// <summary>
+            /// Enum BF for "BF"
+            /// </summary>
+            [EnumMember(Value = "BF")]
+            BF,
+            
+            /// <summary>
+            /// Enum BG for "BG"
+            /// </summary>
+            [EnumMember(Value = "BG")]
+            BG,
+            
+            /// <summary>
+            /// Enum BH for "BH"
+            /// </summary>
+            [EnumMember(Value = "BH")]
+            BH,
+            
+            /// <summary>
+            /// Enum BI for "BI"
+            /// </summary>
+            [EnumMember(Value = "BI")]
+            BI,
+            
+            /// <summary>
+            /// Enum BJ for "BJ"
+            /// </summary>
+            [EnumMember(Value = "BJ")]
+            BJ,
+            
+            /// <summary>
+            /// Enum BL for "BL"
+            /// </summary>
+            [EnumMember(Value = "BL")]
+            BL,
+            
+            /// <summary>
+            /// Enum BM for "BM"
+            /// </summary>
+            [EnumMember(Value = "BM")]
+            BM,
+            
+            /// <summary>
+            /// Enum BN for "BN"
+            /// </summary>
+            [EnumMember(Value = "BN")]
+            BN,
+            
+            /// <summary>
+            /// Enum BO for "BO"
+            /// </summary>
+            [EnumMember(Value = "BO")]
+            BO,
+            
+            /// <summary>
+            /// Enum BQ for "BQ"
+            /// </summary>
+            [EnumMember(Value = "BQ")]
+            BQ,
+            
+            /// <summary>
+            /// Enum BR for "BR"
+            /// </summary>
+            [EnumMember(Value = "BR")]
+            BR,
+            
+            /// <summary>
+            /// Enum BS for "BS"
+            /// </summary>
+            [EnumMember(Value = "BS")]
+            BS,
+            
+            /// <summary>
+            /// Enum BT for "BT"
+            /// </summary>
+            [EnumMember(Value = "BT")]
+            BT,
+            
+            /// <summary>
+            /// Enum BV for "BV"
+            /// </summary>
+            [EnumMember(Value = "BV")]
+            BV,
+            
+            /// <summary>
+            /// Enum BW for "BW"
+            /// </summary>
+            [EnumMember(Value = "BW")]
+            BW,
+            
+            /// <summary>
+            /// Enum BY for "BY"
+            /// </summary>
+            [EnumMember(Value = "BY")]
+            BY,
+            
+            /// <summary>
+            /// Enum BZ for "BZ"
+            /// </summary>
+            [EnumMember(Value = "BZ")]
+            BZ,
+            
+            /// <summary>
+            /// Enum CA for "CA"
+            /// </summary>
+            [EnumMember(Value = "CA")]
+            CA,
+            
+            /// <summary>
+            /// Enum CC for "CC"
+            /// </summary>
+            [EnumMember(Value = "CC")]
+            CC,
+            
+            /// <summary>
+            /// Enum CD for "CD"
+            /// </summary>
+            [EnumMember(Value = "CD")]
+            CD,
+            
+            /// <summary>
+            /// Enum CF for "CF"
+            /// </summary>
+            [EnumMember(Value = "CF")]
+            CF,
+            
+            /// <summary>
+            /// Enum CG for "CG"
+            /// </summary>
+            [EnumMember(Value = "CG")]
+            CG,
+            
+            /// <summary>
+            /// Enum CH for "CH"
+            /// </summary>
+            [EnumMember(Value = "CH")]
+            CH,
+            
+            /// <summary>
+            /// Enum CI for "CI"
+            /// </summary>
+            [EnumMember(Value = "CI")]
+            CI,
+            
+            /// <summary>
+            /// Enum CK for "CK"
+            /// </summary>
+            [EnumMember(Value = "CK")]
+            CK,
+            
+            /// <summary>
+            /// Enum CL for "CL"
+            /// </summary>
+            [EnumMember(Value = "CL")]
+            CL,
+            
+            /// <summary>
+            /// Enum CM for "CM"
+            /// </summary>
+            [EnumMember(Value = "CM")]
+            CM,
+            
+            /// <summary>
+            /// Enum CN for "CN"
+            /// </summary>
+            [EnumMember(Value = "CN")]
+            CN,
+            
+            /// <summary>
+            /// Enum CO for "CO"
+            /// </summary>
+            [EnumMember(Value = "CO")]
+            CO,
+            
+            /// <summary>
+            /// Enum CR for "CR"
+            /// </summary>
+            [EnumMember(Value = "CR")]
+            CR,
+            
+            /// <summary>
+            /// Enum CU for "CU"
+            /// </summary>
+            [EnumMember(Value = "CU")]
+            CU,
+            
+            /// <summary>
+            /// Enum CV for "CV"
+            /// </summary>
+            [EnumMember(Value = "CV")]
+            CV,
+            
+            /// <summary>
+            /// Enum CW for "CW"
+            /// </summary>
+            [EnumMember(Value = "CW")]
+            CW,
+            
+            /// <summary>
+            /// Enum CX for "CX"
+            /// </summary>
+            [EnumMember(Value = "CX")]
+            CX,
+            
+            /// <summary>
+            /// Enum CY for "CY"
+            /// </summary>
+            [EnumMember(Value = "CY")]
+            CY,
+            
+            /// <summary>
+            /// Enum CZ for "CZ"
+            /// </summary>
+            [EnumMember(Value = "CZ")]
+            CZ,
+            
+            /// <summary>
+            /// Enum DE for "DE"
+            /// </summary>
+            [EnumMember(Value = "DE")]
+            DE,
+            
+            /// <summary>
+            /// Enum DJ for "DJ"
+            /// </summary>
+            [EnumMember(Value = "DJ")]
+            DJ,
+            
+            /// <summary>
+            /// Enum DK for "DK"
+            /// </summary>
+            [EnumMember(Value = "DK")]
+            DK,
+            
+            /// <summary>
+            /// Enum DM for "DM"
+            /// </summary>
+            [EnumMember(Value = "DM")]
+            DM,
+            
+            /// <summary>
+            /// Enum DO for "DO"
+            /// </summary>
+            [EnumMember(Value = "DO")]
+            DO,
+            
+            /// <summary>
+            /// Enum DZ for "DZ"
+            /// </summary>
+            [EnumMember(Value = "DZ")]
+            DZ,
+            
+            /// <summary>
+            /// Enum EC for "EC"
+            /// </summary>
+            [EnumMember(Value = "EC")]
+            EC,
+            
+            /// <summary>
+            /// Enum EE for "EE"
+            /// </summary>
+            [EnumMember(Value = "EE")]
+            EE,
+            
+            /// <summary>
+            /// Enum EG for "EG"
+            /// </summary>
+            [EnumMember(Value = "EG")]
+            EG,
+            
+            /// <summary>
+            /// Enum EH for "EH"
+            /// </summary>
+            [EnumMember(Value = "EH")]
+            EH,
+            
+            /// <summary>
+            /// Enum ER for "ER"
+            /// </summary>
+            [EnumMember(Value = "ER")]
+            ER,
+            
+            /// <summary>
+            /// Enum ES for "ES"
+            /// </summary>
+            [EnumMember(Value = "ES")]
+            ES,
+            
+            /// <summary>
+            /// Enum ET for "ET"
+            /// </summary>
+            [EnumMember(Value = "ET")]
+            ET,
+            
+            /// <summary>
+            /// Enum FI for "FI"
+            /// </summary>
+            [EnumMember(Value = "FI")]
+            FI,
+            
+            /// <summary>
+            /// Enum FJ for "FJ"
+            /// </summary>
+            [EnumMember(Value = "FJ")]
+            FJ,
+            
+            /// <summary>
+            /// Enum FK for "FK"
+            /// </summary>
+            [EnumMember(Value = "FK")]
+            FK,
+            
+            /// <summary>
+            /// Enum FM for "FM"
+            /// </summary>
+            [EnumMember(Value = "FM")]
+            FM,
+            
+            /// <summary>
+            /// Enum FO for "FO"
+            /// </summary>
+            [EnumMember(Value = "FO")]
+            FO,
+            
+            /// <summary>
+            /// Enum FR for "FR"
+            /// </summary>
+            [EnumMember(Value = "FR")]
+            FR,
+            
+            /// <summary>
+            /// Enum GA for "GA"
+            /// </summary>
+            [EnumMember(Value = "GA")]
+            GA,
+            
+            /// <summary>
+            /// Enum GB for "GB"
+            /// </summary>
+            [EnumMember(Value = "GB")]
+            GB,
+            
+            /// <summary>
+            /// Enum GD for "GD"
+            /// </summary>
+            [EnumMember(Value = "GD")]
+            GD,
+            
+            /// <summary>
+            /// Enum GE for "GE"
+            /// </summary>
+            [EnumMember(Value = "GE")]
+            GE,
+            
+            /// <summary>
+            /// Enum GF for "GF"
+            /// </summary>
+            [EnumMember(Value = "GF")]
+            GF,
+            
+            /// <summary>
+            /// Enum GG for "GG"
+            /// </summary>
+            [EnumMember(Value = "GG")]
+            GG,
+            
+            /// <summary>
+            /// Enum GH for "GH"
+            /// </summary>
+            [EnumMember(Value = "GH")]
+            GH,
+            
+            /// <summary>
+            /// Enum GI for "GI"
+            /// </summary>
+            [EnumMember(Value = "GI")]
+            GI,
+            
+            /// <summary>
+            /// Enum GL for "GL"
+            /// </summary>
+            [EnumMember(Value = "GL")]
+            GL,
+            
+            /// <summary>
+            /// Enum GM for "GM"
+            /// </summary>
+            [EnumMember(Value = "GM")]
+            GM,
+            
+            /// <summary>
+            /// Enum GN for "GN"
+            /// </summary>
+            [EnumMember(Value = "GN")]
+            GN,
+            
+            /// <summary>
+            /// Enum GP for "GP"
+            /// </summary>
+            [EnumMember(Value = "GP")]
+            GP,
+            
+            /// <summary>
+            /// Enum GQ for "GQ"
+            /// </summary>
+            [EnumMember(Value = "GQ")]
+            GQ,
+            
+            /// <summary>
+            /// Enum GR for "GR"
+            /// </summary>
+            [EnumMember(Value = "GR")]
+            GR,
+            
+            /// <summary>
+            /// Enum GS for "GS"
+            /// </summary>
+            [EnumMember(Value = "GS")]
+            GS,
+            
+            /// <summary>
+            /// Enum GT for "GT"
+            /// </summary>
+            [EnumMember(Value = "GT")]
+            GT,
+            
+            /// <summary>
+            /// Enum GU for "GU"
+            /// </summary>
+            [EnumMember(Value = "GU")]
+            GU,
+            
+            /// <summary>
+            /// Enum GW for "GW"
+            /// </summary>
+            [EnumMember(Value = "GW")]
+            GW,
+            
+            /// <summary>
+            /// Enum GY for "GY"
+            /// </summary>
+            [EnumMember(Value = "GY")]
+            GY,
+            
+            /// <summary>
+            /// Enum HK for "HK"
+            /// </summary>
+            [EnumMember(Value = "HK")]
+            HK,
+            
+            /// <summary>
+            /// Enum HM for "HM"
+            /// </summary>
+            [EnumMember(Value = "HM")]
+            HM,
+            
+            /// <summary>
+            /// Enum HN for "HN"
+            /// </summary>
+            [EnumMember(Value = "HN")]
+            HN,
+            
+            /// <summary>
+            /// Enum HR for "HR"
+            /// </summary>
+            [EnumMember(Value = "HR")]
+            HR,
+            
+            /// <summary>
+            /// Enum HT for "HT"
+            /// </summary>
+            [EnumMember(Value = "HT")]
+            HT,
+            
+            /// <summary>
+            /// Enum HU for "HU"
+            /// </summary>
+            [EnumMember(Value = "HU")]
+            HU,
+            
+            /// <summary>
+            /// Enum ID for "ID"
+            /// </summary>
+            [EnumMember(Value = "ID")]
+            ID,
+            
+            /// <summary>
+            /// Enum IE for "IE"
+            /// </summary>
+            [EnumMember(Value = "IE")]
+            IE,
+            
+            /// <summary>
+            /// Enum IL for "IL"
+            /// </summary>
+            [EnumMember(Value = "IL")]
+            IL,
+            
+            /// <summary>
+            /// Enum IM for "IM"
+            /// </summary>
+            [EnumMember(Value = "IM")]
+            IM,
+            
+            /// <summary>
+            /// Enum IN for "IN"
+            /// </summary>
+            [EnumMember(Value = "IN")]
+            IN,
+            
+            /// <summary>
+            /// Enum IO for "IO"
+            /// </summary>
+            [EnumMember(Value = "IO")]
+            IO,
+            
+            /// <summary>
+            /// Enum IQ for "IQ"
+            /// </summary>
+            [EnumMember(Value = "IQ")]
+            IQ,
+            
+            /// <summary>
+            /// Enum IR for "IR"
+            /// </summary>
+            [EnumMember(Value = "IR")]
+            IR,
+            
+            /// <summary>
+            /// Enum IS for "IS"
+            /// </summary>
+            [EnumMember(Value = "IS")]
+            IS,
+            
+            /// <summary>
+            /// Enum IT for "IT"
+            /// </summary>
+            [EnumMember(Value = "IT")]
+            IT,
+            
+            /// <summary>
+            /// Enum JE for "JE"
+            /// </summary>
+            [EnumMember(Value = "JE")]
+            JE,
+            
+            /// <summary>
+            /// Enum JM for "JM"
+            /// </summary>
+            [EnumMember(Value = "JM")]
+            JM,
+            
+            /// <summary>
+            /// Enum JO for "JO"
+            /// </summary>
+            [EnumMember(Value = "JO")]
+            JO,
+            
+            /// <summary>
+            /// Enum JP for "JP"
+            /// </summary>
+            [EnumMember(Value = "JP")]
+            JP,
+            
+            /// <summary>
+            /// Enum KE for "KE"
+            /// </summary>
+            [EnumMember(Value = "KE")]
+            KE,
+            
+            /// <summary>
+            /// Enum KG for "KG"
+            /// </summary>
+            [EnumMember(Value = "KG")]
+            KG,
+            
+            /// <summary>
+            /// Enum KH for "KH"
+            /// </summary>
+            [EnumMember(Value = "KH")]
+            KH,
+            
+            /// <summary>
+            /// Enum KI for "KI"
+            /// </summary>
+            [EnumMember(Value = "KI")]
+            KI,
+            
+            /// <summary>
+            /// Enum KM for "KM"
+            /// </summary>
+            [EnumMember(Value = "KM")]
+            KM,
+            
+            /// <summary>
+            /// Enum KN for "KN"
+            /// </summary>
+            [EnumMember(Value = "KN")]
+            KN,
+            
+            /// <summary>
+            /// Enum KP for "KP"
+            /// </summary>
+            [EnumMember(Value = "KP")]
+            KP,
+            
+            /// <summary>
+            /// Enum KR for "KR"
+            /// </summary>
+            [EnumMember(Value = "KR")]
+            KR,
+            
+            /// <summary>
+            /// Enum KW for "KW"
+            /// </summary>
+            [EnumMember(Value = "KW")]
+            KW,
+            
+            /// <summary>
+            /// Enum KY for "KY"
+            /// </summary>
+            [EnumMember(Value = "KY")]
+            KY,
+            
+            /// <summary>
+            /// Enum KZ for "KZ"
+            /// </summary>
+            [EnumMember(Value = "KZ")]
+            KZ,
+            
+            /// <summary>
+            /// Enum LA for "LA"
+            /// </summary>
+            [EnumMember(Value = "LA")]
+            LA,
+            
+            /// <summary>
+            /// Enum LB for "LB"
+            /// </summary>
+            [EnumMember(Value = "LB")]
+            LB,
+            
+            /// <summary>
+            /// Enum LC for "LC"
+            /// </summary>
+            [EnumMember(Value = "LC")]
+            LC,
+            
+            /// <summary>
+            /// Enum LI for "LI"
+            /// </summary>
+            [EnumMember(Value = "LI")]
+            LI,
+            
+            /// <summary>
+            /// Enum LK for "LK"
+            /// </summary>
+            [EnumMember(Value = "LK")]
+            LK,
+            
+            /// <summary>
+            /// Enum LR for "LR"
+            /// </summary>
+            [EnumMember(Value = "LR")]
+            LR,
+            
+            /// <summary>
+            /// Enum LS for "LS"
+            /// </summary>
+            [EnumMember(Value = "LS")]
+            LS,
+            
+            /// <summary>
+            /// Enum LT for "LT"
+            /// </summary>
+            [EnumMember(Value = "LT")]
+            LT,
+            
+            /// <summary>
+            /// Enum LU for "LU"
+            /// </summary>
+            [EnumMember(Value = "LU")]
+            LU,
+            
+            /// <summary>
+            /// Enum LV for "LV"
+            /// </summary>
+            [EnumMember(Value = "LV")]
+            LV,
+            
+            /// <summary>
+            /// Enum LY for "LY"
+            /// </summary>
+            [EnumMember(Value = "LY")]
+            LY,
+            
+            /// <summary>
+            /// Enum MA for "MA"
+            /// </summary>
+            [EnumMember(Value = "MA")]
+            MA,
+            
+            /// <summary>
+            /// Enum MC for "MC"
+            /// </summary>
+            [EnumMember(Value = "MC")]
+            MC,
+            
+            /// <summary>
+            /// Enum MD for "MD"
+            /// </summary>
+            [EnumMember(Value = "MD")]
+            MD,
+            
+            /// <summary>
+            /// Enum ME for "ME"
+            /// </summary>
+            [EnumMember(Value = "ME")]
+            ME,
+            
+            /// <summary>
+            /// Enum MF for "MF"
+            /// </summary>
+            [EnumMember(Value = "MF")]
+            MF,
+            
+            /// <summary>
+            /// Enum MG for "MG"
+            /// </summary>
+            [EnumMember(Value = "MG")]
+            MG,
+            
+            /// <summary>
+            /// Enum MH for "MH"
+            /// </summary>
+            [EnumMember(Value = "MH")]
+            MH,
+            
+            /// <summary>
+            /// Enum MK for "MK"
+            /// </summary>
+            [EnumMember(Value = "MK")]
+            MK,
+            
+            /// <summary>
+            /// Enum ML for "ML"
+            /// </summary>
+            [EnumMember(Value = "ML")]
+            ML,
+            
+            /// <summary>
+            /// Enum MM for "MM"
+            /// </summary>
+            [EnumMember(Value = "MM")]
+            MM,
+            
+            /// <summary>
+            /// Enum MN for "MN"
+            /// </summary>
+            [EnumMember(Value = "MN")]
+            MN,
+            
+            /// <summary>
+            /// Enum MO for "MO"
+            /// </summary>
+            [EnumMember(Value = "MO")]
+            MO,
+            
+            /// <summary>
+            /// Enum MP for "MP"
+            /// </summary>
+            [EnumMember(Value = "MP")]
+            MP,
+            
+            /// <summary>
+            /// Enum MQ for "MQ"
+            /// </summary>
+            [EnumMember(Value = "MQ")]
+            MQ,
+            
+            /// <summary>
+            /// Enum MR for "MR"
+            /// </summary>
+            [EnumMember(Value = "MR")]
+            MR,
+            
+            /// <summary>
+            /// Enum MS for "MS"
+            /// </summary>
+            [EnumMember(Value = "MS")]
+            MS,
+            
+            /// <summary>
+            /// Enum MT for "MT"
+            /// </summary>
+            [EnumMember(Value = "MT")]
+            MT,
+            
+            /// <summary>
+            /// Enum MU for "MU"
+            /// </summary>
+            [EnumMember(Value = "MU")]
+            MU,
+            
+            /// <summary>
+            /// Enum MV for "MV"
+            /// </summary>
+            [EnumMember(Value = "MV")]
+            MV,
+            
+            /// <summary>
+            /// Enum MW for "MW"
+            /// </summary>
+            [EnumMember(Value = "MW")]
+            MW,
+            
+            /// <summary>
+            /// Enum MX for "MX"
+            /// </summary>
+            [EnumMember(Value = "MX")]
+            MX,
+            
+            /// <summary>
+            /// Enum MY for "MY"
+            /// </summary>
+            [EnumMember(Value = "MY")]
+            MY,
+            
+            /// <summary>
+            /// Enum MZ for "MZ"
+            /// </summary>
+            [EnumMember(Value = "MZ")]
+            MZ,
+            
+            /// <summary>
+            /// Enum NA for "NA"
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA,
+            
+            /// <summary>
+            /// Enum NC for "NC"
+            /// </summary>
+            [EnumMember(Value = "NC")]
+            NC,
+            
+            /// <summary>
+            /// Enum NE for "NE"
+            /// </summary>
+            [EnumMember(Value = "NE")]
+            NE,
+            
+            /// <summary>
+            /// Enum NF for "NF"
+            /// </summary>
+            [EnumMember(Value = "NF")]
+            NF,
+            
+            /// <summary>
+            /// Enum NG for "NG"
+            /// </summary>
+            [EnumMember(Value = "NG")]
+            NG,
+            
+            /// <summary>
+            /// Enum NI for "NI"
+            /// </summary>
+            [EnumMember(Value = "NI")]
+            NI,
+            
+            /// <summary>
+            /// Enum NL for "NL"
+            /// </summary>
+            [EnumMember(Value = "NL")]
+            NL,
+            
+            /// <summary>
+            /// Enum NO for "NO"
+            /// </summary>
+            [EnumMember(Value = "NO")]
+            NO,
+            
+            /// <summary>
+            /// Enum NP for "NP"
+            /// </summary>
+            [EnumMember(Value = "NP")]
+            NP,
+            
+            /// <summary>
+            /// Enum NR for "NR"
+            /// </summary>
+            [EnumMember(Value = "NR")]
+            NR,
+            
+            /// <summary>
+            /// Enum NU for "NU"
+            /// </summary>
+            [EnumMember(Value = "NU")]
+            NU,
+            
+            /// <summary>
+            /// Enum NZ for "NZ"
+            /// </summary>
+            [EnumMember(Value = "NZ")]
+            NZ,
+            
+            /// <summary>
+            /// Enum OM for "OM"
+            /// </summary>
+            [EnumMember(Value = "OM")]
+            OM,
+            
+            /// <summary>
+            /// Enum PA for "PA"
+            /// </summary>
+            [EnumMember(Value = "PA")]
+            PA,
+            
+            /// <summary>
+            /// Enum PE for "PE"
+            /// </summary>
+            [EnumMember(Value = "PE")]
+            PE,
+            
+            /// <summary>
+            /// Enum PF for "PF"
+            /// </summary>
+            [EnumMember(Value = "PF")]
+            PF,
+            
+            /// <summary>
+            /// Enum PG for "PG"
+            /// </summary>
+            [EnumMember(Value = "PG")]
+            PG,
+            
+            /// <summary>
+            /// Enum PH for "PH"
+            /// </summary>
+            [EnumMember(Value = "PH")]
+            PH,
+            
+            /// <summary>
+            /// Enum PK for "PK"
+            /// </summary>
+            [EnumMember(Value = "PK")]
+            PK,
+            
+            /// <summary>
+            /// Enum PL for "PL"
+            /// </summary>
+            [EnumMember(Value = "PL")]
+            PL,
+            
+            /// <summary>
+            /// Enum PM for "PM"
+            /// </summary>
+            [EnumMember(Value = "PM")]
+            PM,
+            
+            /// <summary>
+            /// Enum PN for "PN"
+            /// </summary>
+            [EnumMember(Value = "PN")]
+            PN,
+            
+            /// <summary>
+            /// Enum PR for "PR"
+            /// </summary>
+            [EnumMember(Value = "PR")]
+            PR,
+            
+            /// <summary>
+            /// Enum PS for "PS"
+            /// </summary>
+            [EnumMember(Value = "PS")]
+            PS,
+            
+            /// <summary>
+            /// Enum PT for "PT"
+            /// </summary>
+            [EnumMember(Value = "PT")]
+            PT,
+            
+            /// <summary>
+            /// Enum PW for "PW"
+            /// </summary>
+            [EnumMember(Value = "PW")]
+            PW,
+            
+            /// <summary>
+            /// Enum PY for "PY"
+            /// </summary>
+            [EnumMember(Value = "PY")]
+            PY,
+            
+            /// <summary>
+            /// Enum QA for "QA"
+            /// </summary>
+            [EnumMember(Value = "QA")]
+            QA,
+            
+            /// <summary>
+            /// Enum RE for "RE"
+            /// </summary>
+            [EnumMember(Value = "RE")]
+            RE,
+            
+            /// <summary>
+            /// Enum RO for "RO"
+            /// </summary>
+            [EnumMember(Value = "RO")]
+            RO,
+            
+            /// <summary>
+            /// Enum RS for "RS"
+            /// </summary>
+            [EnumMember(Value = "RS")]
+            RS,
+            
+            /// <summary>
+            /// Enum RU for "RU"
+            /// </summary>
+            [EnumMember(Value = "RU")]
+            RU,
+            
+            /// <summary>
+            /// Enum RW for "RW"
+            /// </summary>
+            [EnumMember(Value = "RW")]
+            RW,
+            
+            /// <summary>
+            /// Enum SA for "SA"
+            /// </summary>
+            [EnumMember(Value = "SA")]
+            SA,
+            
+            /// <summary>
+            /// Enum SB for "SB"
+            /// </summary>
+            [EnumMember(Value = "SB")]
+            SB,
+            
+            /// <summary>
+            /// Enum SC for "SC"
+            /// </summary>
+            [EnumMember(Value = "SC")]
+            SC,
+            
+            /// <summary>
+            /// Enum SD for "SD"
+            /// </summary>
+            [EnumMember(Value = "SD")]
+            SD,
+            
+            /// <summary>
+            /// Enum SE for "SE"
+            /// </summary>
+            [EnumMember(Value = "SE")]
+            SE,
+            
+            /// <summary>
+            /// Enum SG for "SG"
+            /// </summary>
+            [EnumMember(Value = "SG")]
+            SG,
+            
+            /// <summary>
+            /// Enum SH for "SH"
+            /// </summary>
+            [EnumMember(Value = "SH")]
+            SH,
+            
+            /// <summary>
+            /// Enum SI for "SI"
+            /// </summary>
+            [EnumMember(Value = "SI")]
+            SI,
+            
+            /// <summary>
+            /// Enum SJ for "SJ"
+            /// </summary>
+            [EnumMember(Value = "SJ")]
+            SJ,
+            
+            /// <summary>
+            /// Enum SK for "SK"
+            /// </summary>
+            [EnumMember(Value = "SK")]
+            SK,
+            
+            /// <summary>
+            /// Enum SL for "SL"
+            /// </summary>
+            [EnumMember(Value = "SL")]
+            SL,
+            
+            /// <summary>
+            /// Enum SM for "SM"
+            /// </summary>
+            [EnumMember(Value = "SM")]
+            SM,
+            
+            /// <summary>
+            /// Enum SN for "SN"
+            /// </summary>
+            [EnumMember(Value = "SN")]
+            SN,
+            
+            /// <summary>
+            /// Enum SO for "SO"
+            /// </summary>
+            [EnumMember(Value = "SO")]
+            SO,
+            
+            /// <summary>
+            /// Enum SR for "SR"
+            /// </summary>
+            [EnumMember(Value = "SR")]
+            SR,
+            
+            /// <summary>
+            /// Enum SS for "SS"
+            /// </summary>
+            [EnumMember(Value = "SS")]
+            SS,
+            
+            /// <summary>
+            /// Enum ST for "ST"
+            /// </summary>
+            [EnumMember(Value = "ST")]
+            ST,
+            
+            /// <summary>
+            /// Enum SV for "SV"
+            /// </summary>
+            [EnumMember(Value = "SV")]
+            SV,
+            
+            /// <summary>
+            /// Enum SX for "SX"
+            /// </summary>
+            [EnumMember(Value = "SX")]
+            SX,
+            
+            /// <summary>
+            /// Enum SY for "SY"
+            /// </summary>
+            [EnumMember(Value = "SY")]
+            SY,
+            
+            /// <summary>
+            /// Enum SZ for "SZ"
+            /// </summary>
+            [EnumMember(Value = "SZ")]
+            SZ,
+            
+            /// <summary>
+            /// Enum TC for "TC"
+            /// </summary>
+            [EnumMember(Value = "TC")]
+            TC,
+            
+            /// <summary>
+            /// Enum TD for "TD"
+            /// </summary>
+            [EnumMember(Value = "TD")]
+            TD,
+            
+            /// <summary>
+            /// Enum TF for "TF"
+            /// </summary>
+            [EnumMember(Value = "TF")]
+            TF,
+            
+            /// <summary>
+            /// Enum TG for "TG"
+            /// </summary>
+            [EnumMember(Value = "TG")]
+            TG,
+            
+            /// <summary>
+            /// Enum TH for "TH"
+            /// </summary>
+            [EnumMember(Value = "TH")]
+            TH,
+            
+            /// <summary>
+            /// Enum TJ for "TJ"
+            /// </summary>
+            [EnumMember(Value = "TJ")]
+            TJ,
+            
+            /// <summary>
+            /// Enum TK for "TK"
+            /// </summary>
+            [EnumMember(Value = "TK")]
+            TK,
+            
+            /// <summary>
+            /// Enum TL for "TL"
+            /// </summary>
+            [EnumMember(Value = "TL")]
+            TL,
+            
+            /// <summary>
+            /// Enum TM for "TM"
+            /// </summary>
+            [EnumMember(Value = "TM")]
+            TM,
+            
+            /// <summary>
+            /// Enum TN for "TN"
+            /// </summary>
+            [EnumMember(Value = "TN")]
+            TN,
+            
+            /// <summary>
+            /// Enum TO for "TO"
+            /// </summary>
+            [EnumMember(Value = "TO")]
+            TO,
+            
+            /// <summary>
+            /// Enum TR for "TR"
+            /// </summary>
+            [EnumMember(Value = "TR")]
+            TR,
+            
+            /// <summary>
+            /// Enum TT for "TT"
+            /// </summary>
+            [EnumMember(Value = "TT")]
+            TT,
+            
+            /// <summary>
+            /// Enum TV for "TV"
+            /// </summary>
+            [EnumMember(Value = "TV")]
+            TV,
+            
+            /// <summary>
+            /// Enum TW for "TW"
+            /// </summary>
+            [EnumMember(Value = "TW")]
+            TW,
+            
+            /// <summary>
+            /// Enum TZ for "TZ"
+            /// </summary>
+            [EnumMember(Value = "TZ")]
+            TZ,
+            
+            /// <summary>
+            /// Enum UA for "UA"
+            /// </summary>
+            [EnumMember(Value = "UA")]
+            UA,
+            
+            /// <summary>
+            /// Enum UG for "UG"
+            /// </summary>
+            [EnumMember(Value = "UG")]
+            UG,
+            
+            /// <summary>
+            /// Enum UM for "UM"
+            /// </summary>
+            [EnumMember(Value = "UM")]
+            UM,
+            
+            /// <summary>
+            /// Enum US for "US"
+            /// </summary>
+            [EnumMember(Value = "US")]
+            US,
+            
+            /// <summary>
+            /// Enum UY for "UY"
+            /// </summary>
+            [EnumMember(Value = "UY")]
+            UY,
+            
+            /// <summary>
+            /// Enum UZ for "UZ"
+            /// </summary>
+            [EnumMember(Value = "UZ")]
+            UZ,
+            
+            /// <summary>
+            /// Enum VA for "VA"
+            /// </summary>
+            [EnumMember(Value = "VA")]
+            VA,
+            
+            /// <summary>
+            /// Enum VC for "VC"
+            /// </summary>
+            [EnumMember(Value = "VC")]
+            VC,
+            
+            /// <summary>
+            /// Enum VE for "VE"
+            /// </summary>
+            [EnumMember(Value = "VE")]
+            VE,
+            
+            /// <summary>
+            /// Enum VG for "VG"
+            /// </summary>
+            [EnumMember(Value = "VG")]
+            VG,
+            
+            /// <summary>
+            /// Enum VI for "VI"
+            /// </summary>
+            [EnumMember(Value = "VI")]
+            VI,
+            
+            /// <summary>
+            /// Enum VN for "VN"
+            /// </summary>
+            [EnumMember(Value = "VN")]
+            VN,
+            
+            /// <summary>
+            /// Enum VU for "VU"
+            /// </summary>
+            [EnumMember(Value = "VU")]
+            VU,
+            
+            /// <summary>
+            /// Enum WF for "WF"
+            /// </summary>
+            [EnumMember(Value = "WF")]
+            WF,
+            
+            /// <summary>
+            /// Enum WS for "WS"
+            /// </summary>
+            [EnumMember(Value = "WS")]
+            WS,
+            
+            /// <summary>
+            /// Enum YE for "YE"
+            /// </summary>
+            [EnumMember(Value = "YE")]
+            YE,
+            
+            /// <summary>
+            /// Enum YT for "YT"
+            /// </summary>
+            [EnumMember(Value = "YT")]
+            YT,
+            
+            /// <summary>
+            /// Enum ZA for "ZA"
+            /// </summary>
+            [EnumMember(Value = "ZA")]
+            ZA,
+            
+            /// <summary>
+            /// Enum ZM for "ZM"
+            /// </summary>
+            [EnumMember(Value = "ZM")]
+            ZM,
+            
+            /// <summary>
+            /// Enum ZW for "ZW"
+            /// </summary>
+            [EnumMember(Value = "ZW")]
+            ZW
+        }
+
+        /// <summary>
+        /// The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.
+        /// </summary>
+        /// <value>The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CurrencyEnum
+        {
+            
+            /// <summary>
+            /// Enum UNKNOWNCURRENCY for "UNKNOWN_CURRENCY"
+            /// </summary>
+            [EnumMember(Value = "UNKNOWN_CURRENCY")]
+            UNKNOWNCURRENCY,
+            
+            /// <summary>
+            /// Enum AED for "AED"
+            /// </summary>
+            [EnumMember(Value = "AED")]
+            AED,
+            
+            /// <summary>
+            /// Enum AFN for "AFN"
+            /// </summary>
+            [EnumMember(Value = "AFN")]
+            AFN,
+            
+            /// <summary>
+            /// Enum ALL for "ALL"
+            /// </summary>
+            [EnumMember(Value = "ALL")]
+            ALL,
+            
+            /// <summary>
+            /// Enum AMD for "AMD"
+            /// </summary>
+            [EnumMember(Value = "AMD")]
+            AMD,
+            
+            /// <summary>
+            /// Enum ANG for "ANG"
+            /// </summary>
+            [EnumMember(Value = "ANG")]
+            ANG,
+            
+            /// <summary>
+            /// Enum AOA for "AOA"
+            /// </summary>
+            [EnumMember(Value = "AOA")]
+            AOA,
+            
+            /// <summary>
+            /// Enum ARS for "ARS"
+            /// </summary>
+            [EnumMember(Value = "ARS")]
+            ARS,
+            
+            /// <summary>
+            /// Enum AUD for "AUD"
+            /// </summary>
+            [EnumMember(Value = "AUD")]
+            AUD,
+            
+            /// <summary>
+            /// Enum AWG for "AWG"
+            /// </summary>
+            [EnumMember(Value = "AWG")]
+            AWG,
+            
+            /// <summary>
+            /// Enum AZN for "AZN"
+            /// </summary>
+            [EnumMember(Value = "AZN")]
+            AZN,
+            
+            /// <summary>
+            /// Enum BAM for "BAM"
+            /// </summary>
+            [EnumMember(Value = "BAM")]
+            BAM,
+            
+            /// <summary>
+            /// Enum BBD for "BBD"
+            /// </summary>
+            [EnumMember(Value = "BBD")]
+            BBD,
+            
+            /// <summary>
+            /// Enum BDT for "BDT"
+            /// </summary>
+            [EnumMember(Value = "BDT")]
+            BDT,
+            
+            /// <summary>
+            /// Enum BGN for "BGN"
+            /// </summary>
+            [EnumMember(Value = "BGN")]
+            BGN,
+            
+            /// <summary>
+            /// Enum BHD for "BHD"
+            /// </summary>
+            [EnumMember(Value = "BHD")]
+            BHD,
+            
+            /// <summary>
+            /// Enum BIF for "BIF"
+            /// </summary>
+            [EnumMember(Value = "BIF")]
+            BIF,
+            
+            /// <summary>
+            /// Enum BMD for "BMD"
+            /// </summary>
+            [EnumMember(Value = "BMD")]
+            BMD,
+            
+            /// <summary>
+            /// Enum BND for "BND"
+            /// </summary>
+            [EnumMember(Value = "BND")]
+            BND,
+            
+            /// <summary>
+            /// Enum BOB for "BOB"
+            /// </summary>
+            [EnumMember(Value = "BOB")]
+            BOB,
+            
+            /// <summary>
+            /// Enum BOV for "BOV"
+            /// </summary>
+            [EnumMember(Value = "BOV")]
+            BOV,
+            
+            /// <summary>
+            /// Enum BRL for "BRL"
+            /// </summary>
+            [EnumMember(Value = "BRL")]
+            BRL,
+            
+            /// <summary>
+            /// Enum BSD for "BSD"
+            /// </summary>
+            [EnumMember(Value = "BSD")]
+            BSD,
+            
+            /// <summary>
+            /// Enum BTN for "BTN"
+            /// </summary>
+            [EnumMember(Value = "BTN")]
+            BTN,
+            
+            /// <summary>
+            /// Enum BWP for "BWP"
+            /// </summary>
+            [EnumMember(Value = "BWP")]
+            BWP,
+            
+            /// <summary>
+            /// Enum BYR for "BYR"
+            /// </summary>
+            [EnumMember(Value = "BYR")]
+            BYR,
+            
+            /// <summary>
+            /// Enum BZD for "BZD"
+            /// </summary>
+            [EnumMember(Value = "BZD")]
+            BZD,
+            
+            /// <summary>
+            /// Enum CAD for "CAD"
+            /// </summary>
+            [EnumMember(Value = "CAD")]
+            CAD,
+            
+            /// <summary>
+            /// Enum CDF for "CDF"
+            /// </summary>
+            [EnumMember(Value = "CDF")]
+            CDF,
+            
+            /// <summary>
+            /// Enum CHE for "CHE"
+            /// </summary>
+            [EnumMember(Value = "CHE")]
+            CHE,
+            
+            /// <summary>
+            /// Enum CHF for "CHF"
+            /// </summary>
+            [EnumMember(Value = "CHF")]
+            CHF,
+            
+            /// <summary>
+            /// Enum CHW for "CHW"
+            /// </summary>
+            [EnumMember(Value = "CHW")]
+            CHW,
+            
+            /// <summary>
+            /// Enum CLF for "CLF"
+            /// </summary>
+            [EnumMember(Value = "CLF")]
+            CLF,
+            
+            /// <summary>
+            /// Enum CLP for "CLP"
+            /// </summary>
+            [EnumMember(Value = "CLP")]
+            CLP,
+            
+            /// <summary>
+            /// Enum CNY for "CNY"
+            /// </summary>
+            [EnumMember(Value = "CNY")]
+            CNY,
+            
+            /// <summary>
+            /// Enum COP for "COP"
+            /// </summary>
+            [EnumMember(Value = "COP")]
+            COP,
+            
+            /// <summary>
+            /// Enum COU for "COU"
+            /// </summary>
+            [EnumMember(Value = "COU")]
+            COU,
+            
+            /// <summary>
+            /// Enum CRC for "CRC"
+            /// </summary>
+            [EnumMember(Value = "CRC")]
+            CRC,
+            
+            /// <summary>
+            /// Enum CUC for "CUC"
+            /// </summary>
+            [EnumMember(Value = "CUC")]
+            CUC,
+            
+            /// <summary>
+            /// Enum CUP for "CUP"
+            /// </summary>
+            [EnumMember(Value = "CUP")]
+            CUP,
+            
+            /// <summary>
+            /// Enum CVE for "CVE"
+            /// </summary>
+            [EnumMember(Value = "CVE")]
+            CVE,
+            
+            /// <summary>
+            /// Enum CZK for "CZK"
+            /// </summary>
+            [EnumMember(Value = "CZK")]
+            CZK,
+            
+            /// <summary>
+            /// Enum DJF for "DJF"
+            /// </summary>
+            [EnumMember(Value = "DJF")]
+            DJF,
+            
+            /// <summary>
+            /// Enum DKK for "DKK"
+            /// </summary>
+            [EnumMember(Value = "DKK")]
+            DKK,
+            
+            /// <summary>
+            /// Enum DOP for "DOP"
+            /// </summary>
+            [EnumMember(Value = "DOP")]
+            DOP,
+            
+            /// <summary>
+            /// Enum DZD for "DZD"
+            /// </summary>
+            [EnumMember(Value = "DZD")]
+            DZD,
+            
+            /// <summary>
+            /// Enum EGP for "EGP"
+            /// </summary>
+            [EnumMember(Value = "EGP")]
+            EGP,
+            
+            /// <summary>
+            /// Enum ERN for "ERN"
+            /// </summary>
+            [EnumMember(Value = "ERN")]
+            ERN,
+            
+            /// <summary>
+            /// Enum ETB for "ETB"
+            /// </summary>
+            [EnumMember(Value = "ETB")]
+            ETB,
+            
+            /// <summary>
+            /// Enum EUR for "EUR"
+            /// </summary>
+            [EnumMember(Value = "EUR")]
+            EUR,
+            
+            /// <summary>
+            /// Enum FJD for "FJD"
+            /// </summary>
+            [EnumMember(Value = "FJD")]
+            FJD,
+            
+            /// <summary>
+            /// Enum FKP for "FKP"
+            /// </summary>
+            [EnumMember(Value = "FKP")]
+            FKP,
+            
+            /// <summary>
+            /// Enum GBP for "GBP"
+            /// </summary>
+            [EnumMember(Value = "GBP")]
+            GBP,
+            
+            /// <summary>
+            /// Enum GEL for "GEL"
+            /// </summary>
+            [EnumMember(Value = "GEL")]
+            GEL,
+            
+            /// <summary>
+            /// Enum GHS for "GHS"
+            /// </summary>
+            [EnumMember(Value = "GHS")]
+            GHS,
+            
+            /// <summary>
+            /// Enum GIP for "GIP"
+            /// </summary>
+            [EnumMember(Value = "GIP")]
+            GIP,
+            
+            /// <summary>
+            /// Enum GMD for "GMD"
+            /// </summary>
+            [EnumMember(Value = "GMD")]
+            GMD,
+            
+            /// <summary>
+            /// Enum GNF for "GNF"
+            /// </summary>
+            [EnumMember(Value = "GNF")]
+            GNF,
+            
+            /// <summary>
+            /// Enum GTQ for "GTQ"
+            /// </summary>
+            [EnumMember(Value = "GTQ")]
+            GTQ,
+            
+            /// <summary>
+            /// Enum GYD for "GYD"
+            /// </summary>
+            [EnumMember(Value = "GYD")]
+            GYD,
+            
+            /// <summary>
+            /// Enum HKD for "HKD"
+            /// </summary>
+            [EnumMember(Value = "HKD")]
+            HKD,
+            
+            /// <summary>
+            /// Enum HNL for "HNL"
+            /// </summary>
+            [EnumMember(Value = "HNL")]
+            HNL,
+            
+            /// <summary>
+            /// Enum HRK for "HRK"
+            /// </summary>
+            [EnumMember(Value = "HRK")]
+            HRK,
+            
+            /// <summary>
+            /// Enum HTG for "HTG"
+            /// </summary>
+            [EnumMember(Value = "HTG")]
+            HTG,
+            
+            /// <summary>
+            /// Enum HUF for "HUF"
+            /// </summary>
+            [EnumMember(Value = "HUF")]
+            HUF,
+            
+            /// <summary>
+            /// Enum IDR for "IDR"
+            /// </summary>
+            [EnumMember(Value = "IDR")]
+            IDR,
+            
+            /// <summary>
+            /// Enum ILS for "ILS"
+            /// </summary>
+            [EnumMember(Value = "ILS")]
+            ILS,
+            
+            /// <summary>
+            /// Enum INR for "INR"
+            /// </summary>
+            [EnumMember(Value = "INR")]
+            INR,
+            
+            /// <summary>
+            /// Enum IQD for "IQD"
+            /// </summary>
+            [EnumMember(Value = "IQD")]
+            IQD,
+            
+            /// <summary>
+            /// Enum IRR for "IRR"
+            /// </summary>
+            [EnumMember(Value = "IRR")]
+            IRR,
+            
+            /// <summary>
+            /// Enum ISK for "ISK"
+            /// </summary>
+            [EnumMember(Value = "ISK")]
+            ISK,
+            
+            /// <summary>
+            /// Enum JMD for "JMD"
+            /// </summary>
+            [EnumMember(Value = "JMD")]
+            JMD,
+            
+            /// <summary>
+            /// Enum JOD for "JOD"
+            /// </summary>
+            [EnumMember(Value = "JOD")]
+            JOD,
+            
+            /// <summary>
+            /// Enum JPY for "JPY"
+            /// </summary>
+            [EnumMember(Value = "JPY")]
+            JPY,
+            
+            /// <summary>
+            /// Enum KES for "KES"
+            /// </summary>
+            [EnumMember(Value = "KES")]
+            KES,
+            
+            /// <summary>
+            /// Enum KGS for "KGS"
+            /// </summary>
+            [EnumMember(Value = "KGS")]
+            KGS,
+            
+            /// <summary>
+            /// Enum KHR for "KHR"
+            /// </summary>
+            [EnumMember(Value = "KHR")]
+            KHR,
+            
+            /// <summary>
+            /// Enum KMF for "KMF"
+            /// </summary>
+            [EnumMember(Value = "KMF")]
+            KMF,
+            
+            /// <summary>
+            /// Enum KPW for "KPW"
+            /// </summary>
+            [EnumMember(Value = "KPW")]
+            KPW,
+            
+            /// <summary>
+            /// Enum KRW for "KRW"
+            /// </summary>
+            [EnumMember(Value = "KRW")]
+            KRW,
+            
+            /// <summary>
+            /// Enum KWD for "KWD"
+            /// </summary>
+            [EnumMember(Value = "KWD")]
+            KWD,
+            
+            /// <summary>
+            /// Enum KYD for "KYD"
+            /// </summary>
+            [EnumMember(Value = "KYD")]
+            KYD,
+            
+            /// <summary>
+            /// Enum KZT for "KZT"
+            /// </summary>
+            [EnumMember(Value = "KZT")]
+            KZT,
+            
+            /// <summary>
+            /// Enum LAK for "LAK"
+            /// </summary>
+            [EnumMember(Value = "LAK")]
+            LAK,
+            
+            /// <summary>
+            /// Enum LBP for "LBP"
+            /// </summary>
+            [EnumMember(Value = "LBP")]
+            LBP,
+            
+            /// <summary>
+            /// Enum LKR for "LKR"
+            /// </summary>
+            [EnumMember(Value = "LKR")]
+            LKR,
+            
+            /// <summary>
+            /// Enum LRD for "LRD"
+            /// </summary>
+            [EnumMember(Value = "LRD")]
+            LRD,
+            
+            /// <summary>
+            /// Enum LSL for "LSL"
+            /// </summary>
+            [EnumMember(Value = "LSL")]
+            LSL,
+            
+            /// <summary>
+            /// Enum LTL for "LTL"
+            /// </summary>
+            [EnumMember(Value = "LTL")]
+            LTL,
+            
+            /// <summary>
+            /// Enum LVL for "LVL"
+            /// </summary>
+            [EnumMember(Value = "LVL")]
+            LVL,
+            
+            /// <summary>
+            /// Enum LYD for "LYD"
+            /// </summary>
+            [EnumMember(Value = "LYD")]
+            LYD,
+            
+            /// <summary>
+            /// Enum MAD for "MAD"
+            /// </summary>
+            [EnumMember(Value = "MAD")]
+            MAD,
+            
+            /// <summary>
+            /// Enum MDL for "MDL"
+            /// </summary>
+            [EnumMember(Value = "MDL")]
+            MDL,
+            
+            /// <summary>
+            /// Enum MGA for "MGA"
+            /// </summary>
+            [EnumMember(Value = "MGA")]
+            MGA,
+            
+            /// <summary>
+            /// Enum MKD for "MKD"
+            /// </summary>
+            [EnumMember(Value = "MKD")]
+            MKD,
+            
+            /// <summary>
+            /// Enum MMK for "MMK"
+            /// </summary>
+            [EnumMember(Value = "MMK")]
+            MMK,
+            
+            /// <summary>
+            /// Enum MNT for "MNT"
+            /// </summary>
+            [EnumMember(Value = "MNT")]
+            MNT,
+            
+            /// <summary>
+            /// Enum MOP for "MOP"
+            /// </summary>
+            [EnumMember(Value = "MOP")]
+            MOP,
+            
+            /// <summary>
+            /// Enum MRO for "MRO"
+            /// </summary>
+            [EnumMember(Value = "MRO")]
+            MRO,
+            
+            /// <summary>
+            /// Enum MUR for "MUR"
+            /// </summary>
+            [EnumMember(Value = "MUR")]
+            MUR,
+            
+            /// <summary>
+            /// Enum MVR for "MVR"
+            /// </summary>
+            [EnumMember(Value = "MVR")]
+            MVR,
+            
+            /// <summary>
+            /// Enum MWK for "MWK"
+            /// </summary>
+            [EnumMember(Value = "MWK")]
+            MWK,
+            
+            /// <summary>
+            /// Enum MXN for "MXN"
+            /// </summary>
+            [EnumMember(Value = "MXN")]
+            MXN,
+            
+            /// <summary>
+            /// Enum MXV for "MXV"
+            /// </summary>
+            [EnumMember(Value = "MXV")]
+            MXV,
+            
+            /// <summary>
+            /// Enum MYR for "MYR"
+            /// </summary>
+            [EnumMember(Value = "MYR")]
+            MYR,
+            
+            /// <summary>
+            /// Enum MZN for "MZN"
+            /// </summary>
+            [EnumMember(Value = "MZN")]
+            MZN,
+            
+            /// <summary>
+            /// Enum NAD for "NAD"
+            /// </summary>
+            [EnumMember(Value = "NAD")]
+            NAD,
+            
+            /// <summary>
+            /// Enum NGN for "NGN"
+            /// </summary>
+            [EnumMember(Value = "NGN")]
+            NGN,
+            
+            /// <summary>
+            /// Enum NIO for "NIO"
+            /// </summary>
+            [EnumMember(Value = "NIO")]
+            NIO,
+            
+            /// <summary>
+            /// Enum NOK for "NOK"
+            /// </summary>
+            [EnumMember(Value = "NOK")]
+            NOK,
+            
+            /// <summary>
+            /// Enum NPR for "NPR"
+            /// </summary>
+            [EnumMember(Value = "NPR")]
+            NPR,
+            
+            /// <summary>
+            /// Enum NZD for "NZD"
+            /// </summary>
+            [EnumMember(Value = "NZD")]
+            NZD,
+            
+            /// <summary>
+            /// Enum OMR for "OMR"
+            /// </summary>
+            [EnumMember(Value = "OMR")]
+            OMR,
+            
+            /// <summary>
+            /// Enum PAB for "PAB"
+            /// </summary>
+            [EnumMember(Value = "PAB")]
+            PAB,
+            
+            /// <summary>
+            /// Enum PEN for "PEN"
+            /// </summary>
+            [EnumMember(Value = "PEN")]
+            PEN,
+            
+            /// <summary>
+            /// Enum PGK for "PGK"
+            /// </summary>
+            [EnumMember(Value = "PGK")]
+            PGK,
+            
+            /// <summary>
+            /// Enum PHP for "PHP"
+            /// </summary>
+            [EnumMember(Value = "PHP")]
+            PHP,
+            
+            /// <summary>
+            /// Enum PKR for "PKR"
+            /// </summary>
+            [EnumMember(Value = "PKR")]
+            PKR,
+            
+            /// <summary>
+            /// Enum PLN for "PLN"
+            /// </summary>
+            [EnumMember(Value = "PLN")]
+            PLN,
+            
+            /// <summary>
+            /// Enum PYG for "PYG"
+            /// </summary>
+            [EnumMember(Value = "PYG")]
+            PYG,
+            
+            /// <summary>
+            /// Enum QAR for "QAR"
+            /// </summary>
+            [EnumMember(Value = "QAR")]
+            QAR,
+            
+            /// <summary>
+            /// Enum RON for "RON"
+            /// </summary>
+            [EnumMember(Value = "RON")]
+            RON,
+            
+            /// <summary>
+            /// Enum RSD for "RSD"
+            /// </summary>
+            [EnumMember(Value = "RSD")]
+            RSD,
+            
+            /// <summary>
+            /// Enum RUB for "RUB"
+            /// </summary>
+            [EnumMember(Value = "RUB")]
+            RUB,
+            
+            /// <summary>
+            /// Enum RWF for "RWF"
+            /// </summary>
+            [EnumMember(Value = "RWF")]
+            RWF,
+            
+            /// <summary>
+            /// Enum SAR for "SAR"
+            /// </summary>
+            [EnumMember(Value = "SAR")]
+            SAR,
+            
+            /// <summary>
+            /// Enum SBD for "SBD"
+            /// </summary>
+            [EnumMember(Value = "SBD")]
+            SBD,
+            
+            /// <summary>
+            /// Enum SCR for "SCR"
+            /// </summary>
+            [EnumMember(Value = "SCR")]
+            SCR,
+            
+            /// <summary>
+            /// Enum SDG for "SDG"
+            /// </summary>
+            [EnumMember(Value = "SDG")]
+            SDG,
+            
+            /// <summary>
+            /// Enum SEK for "SEK"
+            /// </summary>
+            [EnumMember(Value = "SEK")]
+            SEK,
+            
+            /// <summary>
+            /// Enum SGD for "SGD"
+            /// </summary>
+            [EnumMember(Value = "SGD")]
+            SGD,
+            
+            /// <summary>
+            /// Enum SHP for "SHP"
+            /// </summary>
+            [EnumMember(Value = "SHP")]
+            SHP,
+            
+            /// <summary>
+            /// Enum SLL for "SLL"
+            /// </summary>
+            [EnumMember(Value = "SLL")]
+            SLL,
+            
+            /// <summary>
+            /// Enum SOS for "SOS"
+            /// </summary>
+            [EnumMember(Value = "SOS")]
+            SOS,
+            
+            /// <summary>
+            /// Enum SRD for "SRD"
+            /// </summary>
+            [EnumMember(Value = "SRD")]
+            SRD,
+            
+            /// <summary>
+            /// Enum SSP for "SSP"
+            /// </summary>
+            [EnumMember(Value = "SSP")]
+            SSP,
+            
+            /// <summary>
+            /// Enum STD for "STD"
+            /// </summary>
+            [EnumMember(Value = "STD")]
+            STD,
+            
+            /// <summary>
+            /// Enum SVC for "SVC"
+            /// </summary>
+            [EnumMember(Value = "SVC")]
+            SVC,
+            
+            /// <summary>
+            /// Enum SYP for "SYP"
+            /// </summary>
+            [EnumMember(Value = "SYP")]
+            SYP,
+            
+            /// <summary>
+            /// Enum SZL for "SZL"
+            /// </summary>
+            [EnumMember(Value = "SZL")]
+            SZL,
+            
+            /// <summary>
+            /// Enum THB for "THB"
+            /// </summary>
+            [EnumMember(Value = "THB")]
+            THB,
+            
+            /// <summary>
+            /// Enum TJS for "TJS"
+            /// </summary>
+            [EnumMember(Value = "TJS")]
+            TJS,
+            
+            /// <summary>
+            /// Enum TMT for "TMT"
+            /// </summary>
+            [EnumMember(Value = "TMT")]
+            TMT,
+            
+            /// <summary>
+            /// Enum TND for "TND"
+            /// </summary>
+            [EnumMember(Value = "TND")]
+            TND,
+            
+            /// <summary>
+            /// Enum TOP for "TOP"
+            /// </summary>
+            [EnumMember(Value = "TOP")]
+            TOP,
+            
+            /// <summary>
+            /// Enum TRY for "TRY"
+            /// </summary>
+            [EnumMember(Value = "TRY")]
+            TRY,
+            
+            /// <summary>
+            /// Enum TTD for "TTD"
+            /// </summary>
+            [EnumMember(Value = "TTD")]
+            TTD,
+            
+            /// <summary>
+            /// Enum TWD for "TWD"
+            /// </summary>
+            [EnumMember(Value = "TWD")]
+            TWD,
+            
+            /// <summary>
+            /// Enum TZS for "TZS"
+            /// </summary>
+            [EnumMember(Value = "TZS")]
+            TZS,
+            
+            /// <summary>
+            /// Enum UAH for "UAH"
+            /// </summary>
+            [EnumMember(Value = "UAH")]
+            UAH,
+            
+            /// <summary>
+            /// Enum UGX for "UGX"
+            /// </summary>
+            [EnumMember(Value = "UGX")]
+            UGX,
+            
+            /// <summary>
+            /// Enum USD for "USD"
+            /// </summary>
+            [EnumMember(Value = "USD")]
+            USD,
+            
+            /// <summary>
+            /// Enum USN for "USN"
+            /// </summary>
+            [EnumMember(Value = "USN")]
+            USN,
+            
+            /// <summary>
+            /// Enum USS for "USS"
+            /// </summary>
+            [EnumMember(Value = "USS")]
+            USS,
+            
+            /// <summary>
+            /// Enum UYI for "UYI"
+            /// </summary>
+            [EnumMember(Value = "UYI")]
+            UYI,
+            
+            /// <summary>
+            /// Enum UYU for "UYU"
+            /// </summary>
+            [EnumMember(Value = "UYU")]
+            UYU,
+            
+            /// <summary>
+            /// Enum UZS for "UZS"
+            /// </summary>
+            [EnumMember(Value = "UZS")]
+            UZS,
+            
+            /// <summary>
+            /// Enum VEF for "VEF"
+            /// </summary>
+            [EnumMember(Value = "VEF")]
+            VEF,
+            
+            /// <summary>
+            /// Enum VND for "VND"
+            /// </summary>
+            [EnumMember(Value = "VND")]
+            VND,
+            
+            /// <summary>
+            /// Enum VUV for "VUV"
+            /// </summary>
+            [EnumMember(Value = "VUV")]
+            VUV,
+            
+            /// <summary>
+            /// Enum WST for "WST"
+            /// </summary>
+            [EnumMember(Value = "WST")]
+            WST,
+            
+            /// <summary>
+            /// Enum XAF for "XAF"
+            /// </summary>
+            [EnumMember(Value = "XAF")]
+            XAF,
+            
+            /// <summary>
+            /// Enum XAG for "XAG"
+            /// </summary>
+            [EnumMember(Value = "XAG")]
+            XAG,
+            
+            /// <summary>
+            /// Enum XAU for "XAU"
+            /// </summary>
+            [EnumMember(Value = "XAU")]
+            XAU,
+            
+            /// <summary>
+            /// Enum XBA for "XBA"
+            /// </summary>
+            [EnumMember(Value = "XBA")]
+            XBA,
+            
+            /// <summary>
+            /// Enum XBB for "XBB"
+            /// </summary>
+            [EnumMember(Value = "XBB")]
+            XBB,
+            
+            /// <summary>
+            /// Enum XBC for "XBC"
+            /// </summary>
+            [EnumMember(Value = "XBC")]
+            XBC,
+            
+            /// <summary>
+            /// Enum XBD for "XBD"
+            /// </summary>
+            [EnumMember(Value = "XBD")]
+            XBD,
+            
+            /// <summary>
+            /// Enum XCD for "XCD"
+            /// </summary>
+            [EnumMember(Value = "XCD")]
+            XCD,
+            
+            /// <summary>
+            /// Enum XDR for "XDR"
+            /// </summary>
+            [EnumMember(Value = "XDR")]
+            XDR,
+            
+            /// <summary>
+            /// Enum XOF for "XOF"
+            /// </summary>
+            [EnumMember(Value = "XOF")]
+            XOF,
+            
+            /// <summary>
+            /// Enum XPD for "XPD"
+            /// </summary>
+            [EnumMember(Value = "XPD")]
+            XPD,
+            
+            /// <summary>
+            /// Enum XPF for "XPF"
+            /// </summary>
+            [EnumMember(Value = "XPF")]
+            XPF,
+            
+            /// <summary>
+            /// Enum XPT for "XPT"
+            /// </summary>
+            [EnumMember(Value = "XPT")]
+            XPT,
+            
+            /// <summary>
+            /// Enum XTS for "XTS"
+            /// </summary>
+            [EnumMember(Value = "XTS")]
+            XTS,
+            
+            /// <summary>
+            /// Enum XXX for "XXX"
+            /// </summary>
+            [EnumMember(Value = "XXX")]
+            XXX,
+            
+            /// <summary>
+            /// Enum YER for "YER"
+            /// </summary>
+            [EnumMember(Value = "YER")]
+            YER,
+            
+            /// <summary>
+            /// Enum ZAR for "ZAR"
+            /// </summary>
+            [EnumMember(Value = "ZAR")]
+            ZAR,
+            
+            /// <summary>
+            /// Enum ZMK for "ZMK"
+            /// </summary>
+            [EnumMember(Value = "ZMK")]
+            ZMK,
+            
+            /// <summary>
+            /// Enum ZMW for "ZMW"
+            /// </summary>
+            [EnumMember(Value = "ZMW")]
+            ZMW,
+            
+            /// <summary>
+            /// Enum BTC for "BTC"
+            /// </summary>
+            [EnumMember(Value = "BTC")]
+            BTC
+        }
+
+        /// <summary>
         /// Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
         /// </summary>
         /// <value>Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.</value>
         [DataMember(Name="capabilities", EmitDefaultValue=false)]
         public List<CapabilitiesEnum> Capabilities { get; set; }
         /// <summary>
+        /// The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+        /// </summary>
+        /// <value>The location's status  See [LocationStatus](#type-locationstatus) for possible values.</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public StatusEnum? Status { get; set; }
+        /// <summary>
+        /// The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.
+        /// </summary>
+        /// <value>The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.</value>
+        [DataMember(Name="country", EmitDefaultValue=false)]
+        public CountryEnum? Country { get; set; }
+        /// <summary>
+        /// The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.
+        /// </summary>
+        /// <value>The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.</value>
+        [DataMember(Name="currency", EmitDefaultValue=false)]
+        public CurrencyEnum? Currency { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Location" /> class.
         /// </summary>
         /// <param name="Id">The location&#39;s unique ID..</param>
-        /// <param name="Name">The location&#39;s name..</param>
+        /// <param name="Name">The location&#39;s name. Location names are set by the location owner and displayed in the dashboard as the location&#39;s nickname.</param>
         /// <param name="Address">The location&#39;s physical address..</param>
         /// <param name="Timezone">The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone..</param>
         /// <param name="Capabilities">Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>))
+        /// <param name="Status">The location&#39;s status  See [LocationStatus](#type-locationstatus) for possible values..</param>
+        /// <param name="CreatedAt">The time when the location was created, in RFC 3339 format..</param>
+        /// <param name="MerchantId">The identifier of the merchant that owns the location..</param>
+        /// <param name="Country">The location&#39;s country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values..</param>
+        /// <param name="LanguageCode">The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A)..</param>
+        /// <param name="Currency">The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is &#39;USD&#39;.  See [Currency](#type-currency) for possible values..</param>
+        /// <param name="PhoneNumber">The location&#39;s phone_number..</param>
+        /// <param name="BusinessName">The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string))
         {
             this.Id = Id;
             this.Name = Name;
             this.Address = Address;
             this.Timezone = Timezone;
             this.Capabilities = Capabilities;
+            this.Status = Status;
+            this.CreatedAt = CreatedAt;
+            this.MerchantId = MerchantId;
+            this.Country = Country;
+            this.LanguageCode = LanguageCode;
+            this.Currency = Currency;
+            this.PhoneNumber = PhoneNumber;
+            this.BusinessName = BusinessName;
         }
         
         /// <summary>
@@ -74,9 +2733,9 @@ namespace Square.Connect.Model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// The location&#39;s name.
+        /// The location&#39;s name. Location names are set by the location owner and displayed in the dashboard as the location&#39;s nickname
         /// </summary>
-        /// <value>The location&#39;s name.</value>
+        /// <value>The location&#39;s name. Location names are set by the location owner and displayed in the dashboard as the location&#39;s nickname</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -92,6 +2751,36 @@ namespace Square.Connect.Model
         [DataMember(Name="timezone", EmitDefaultValue=false)]
         public string Timezone { get; set; }
         /// <summary>
+        /// The time when the location was created, in RFC 3339 format.
+        /// </summary>
+        /// <value>The time when the location was created, in RFC 3339 format.</value>
+        [DataMember(Name="created_at", EmitDefaultValue=false)]
+        public string CreatedAt { get; set; }
+        /// <summary>
+        /// The identifier of the merchant that owns the location.
+        /// </summary>
+        /// <value>The identifier of the merchant that owns the location.</value>
+        [DataMember(Name="merchant_id", EmitDefaultValue=false)]
+        public string MerchantId { get; set; }
+        /// <summary>
+        /// The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
+        /// </summary>
+        /// <value>The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).</value>
+        [DataMember(Name="language_code", EmitDefaultValue=false)]
+        public string LanguageCode { get; set; }
+        /// <summary>
+        /// The location&#39;s phone_number.
+        /// </summary>
+        /// <value>The location&#39;s phone_number.</value>
+        [DataMember(Name="phone_number", EmitDefaultValue=false)]
+        public string PhoneNumber { get; set; }
+        /// <summary>
+        /// The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts.
+        /// </summary>
+        /// <value>The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts.</value>
+        [DataMember(Name="business_name", EmitDefaultValue=false)]
+        public string BusinessName { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,6 +2793,14 @@ namespace Square.Connect.Model
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  Timezone: ").Append(Timezone).Append("\n");
             sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
+            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  LanguageCode: ").Append(LanguageCode).Append("\n");
+            sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  BusinessName: ").Append(BusinessName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -164,6 +2861,46 @@ namespace Square.Connect.Model
                     this.Capabilities == other.Capabilities ||
                     this.Capabilities != null &&
                     this.Capabilities.SequenceEqual(other.Capabilities)
+                ) && 
+                (
+                    this.Status == other.Status ||
+                    this.Status != null &&
+                    this.Status.Equals(other.Status)
+                ) && 
+                (
+                    this.CreatedAt == other.CreatedAt ||
+                    this.CreatedAt != null &&
+                    this.CreatedAt.Equals(other.CreatedAt)
+                ) && 
+                (
+                    this.MerchantId == other.MerchantId ||
+                    this.MerchantId != null &&
+                    this.MerchantId.Equals(other.MerchantId)
+                ) && 
+                (
+                    this.Country == other.Country ||
+                    this.Country != null &&
+                    this.Country.Equals(other.Country)
+                ) && 
+                (
+                    this.LanguageCode == other.LanguageCode ||
+                    this.LanguageCode != null &&
+                    this.LanguageCode.Equals(other.LanguageCode)
+                ) && 
+                (
+                    this.Currency == other.Currency ||
+                    this.Currency != null &&
+                    this.Currency.Equals(other.Currency)
+                ) && 
+                (
+                    this.PhoneNumber == other.PhoneNumber ||
+                    this.PhoneNumber != null &&
+                    this.PhoneNumber.Equals(other.PhoneNumber)
+                ) && 
+                (
+                    this.BusinessName == other.BusinessName ||
+                    this.BusinessName != null &&
+                    this.BusinessName.Equals(other.BusinessName)
                 );
         }
 
@@ -188,6 +2925,22 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Timezone.GetHashCode();
                 if (this.Capabilities != null)
                     hash = hash * 59 + this.Capabilities.GetHashCode();
+                if (this.Status != null)
+                    hash = hash * 59 + this.Status.GetHashCode();
+                if (this.CreatedAt != null)
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                if (this.MerchantId != null)
+                    hash = hash * 59 + this.MerchantId.GetHashCode();
+                if (this.Country != null)
+                    hash = hash * 59 + this.Country.GetHashCode();
+                if (this.LanguageCode != null)
+                    hash = hash * 59 + this.LanguageCode.GetHashCode();
+                if (this.Currency != null)
+                    hash = hash * 59 + this.Currency.GetHashCode();
+                if (this.PhoneNumber != null)
+                    hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                if (this.BusinessName != null)
+                    hash = hash * 59 + this.BusinessName.GetHashCode();
                 return hash;
             }
         }

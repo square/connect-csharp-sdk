@@ -38,6 +38,12 @@ namespace Square.Connect.Model
         {
             
             /// <summary>
+            /// Enum UNKNOWNCURRENCY for "UNKNOWN_CURRENCY"
+            /// </summary>
+            [EnumMember(Value = "UNKNOWN_CURRENCY")]
+            UNKNOWNCURRENCY,
+            
+            /// <summary>
             /// Enum AED for "AED"
             /// </summary>
             [EnumMember(Value = "AED")]
@@ -1220,6 +1226,18 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // Amount (long?) maximum
+            if(this.Amount > (long?)99999999)
+            {
+                yield return new ValidationResult("Invalid value for Amount, must be a value less than or equal to 99999999.", new [] { "Amount" });
+            }
+
+            // Amount (long?) minimum
+            if(this.Amount < (long?)0)
+            {
+                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
+            }
+
             yield break;
         }
     }

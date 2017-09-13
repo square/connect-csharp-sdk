@@ -24,34 +24,39 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// An Items Connect V1 object ID along with its associated [location](#type-location) ID.
+    /// 
     /// </summary>
     [DataContract]
-    public partial class CatalogV1Id :  IEquatable<CatalogV1Id>, IValidatableObject
+    public partial class BatchRetrieveOrdersRequest :  IEquatable<BatchRetrieveOrdersRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogV1Id" /> class.
+        /// Initializes a new instance of the <see cref="BatchRetrieveOrdersRequest" /> class.
         /// </summary>
-        /// <param name="_CatalogV1Id">The ID for an object in Connect V1, if different from its Connect V2 ID..</param>
-        /// <param name="LocationId">The ID of the [location](#type-location) this Connect V1 ID is associated with..</param>
-        public CatalogV1Id(string _CatalogV1Id = default(string), string LocationId = default(string))
+        [JsonConstructorAttribute]
+        protected BatchRetrieveOrdersRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRetrieveOrdersRequest" /> class.
+        /// </summary>
+        /// <param name="OrderIds">The IDs of the orders to retrieve. A maximum of 100 orders can be retrieved per request. (required).</param>
+        public BatchRetrieveOrdersRequest(List<string> OrderIds = default(List<string>))
         {
-            this._CatalogV1Id = _CatalogV1Id;
-            this.LocationId = LocationId;
+            // to ensure "OrderIds" is required (not null)
+            if (OrderIds == null)
+            {
+                throw new InvalidDataException("OrderIds is a required property for BatchRetrieveOrdersRequest and cannot be null");
+            }
+            else
+            {
+                this.OrderIds = OrderIds;
+            }
         }
         
         /// <summary>
-        /// The ID for an object in Connect V1, if different from its Connect V2 ID.
+        /// The IDs of the orders to retrieve. A maximum of 100 orders can be retrieved per request.
         /// </summary>
-        /// <value>The ID for an object in Connect V1, if different from its Connect V2 ID.</value>
-        [DataMember(Name="catalog_v1_id", EmitDefaultValue=false)]
-        public string _CatalogV1Id { get; set; }
-        /// <summary>
-        /// The ID of the [location](#type-location) this Connect V1 ID is associated with.
-        /// </summary>
-        /// <value>The ID of the [location](#type-location) this Connect V1 ID is associated with.</value>
-        [DataMember(Name="location_id", EmitDefaultValue=false)]
-        public string LocationId { get; set; }
+        /// <value>The IDs of the orders to retrieve. A maximum of 100 orders can be retrieved per request.</value>
+        [DataMember(Name="order_ids", EmitDefaultValue=false)]
+        public List<string> OrderIds { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -59,9 +64,8 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CatalogV1Id {\n");
-            sb.Append("  _CatalogV1Id: ").Append(_CatalogV1Id).Append("\n");
-            sb.Append("  LocationId: ").Append(LocationId).Append("\n");
+            sb.Append("class BatchRetrieveOrdersRequest {\n");
+            sb.Append("  OrderIds: ").Append(OrderIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,15 +87,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CatalogV1Id);
+            return this.Equals(obj as BatchRetrieveOrdersRequest);
         }
 
         /// <summary>
-        /// Returns true if CatalogV1Id instances are equal
+        /// Returns true if BatchRetrieveOrdersRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of CatalogV1Id to be compared</param>
+        /// <param name="other">Instance of BatchRetrieveOrdersRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CatalogV1Id other)
+        public bool Equals(BatchRetrieveOrdersRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -99,14 +103,9 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this._CatalogV1Id == other._CatalogV1Id ||
-                    this._CatalogV1Id != null &&
-                    this._CatalogV1Id.Equals(other._CatalogV1Id)
-                ) && 
-                (
-                    this.LocationId == other.LocationId ||
-                    this.LocationId != null &&
-                    this.LocationId.Equals(other.LocationId)
+                    this.OrderIds == other.OrderIds ||
+                    this.OrderIds != null &&
+                    this.OrderIds.SequenceEqual(other.OrderIds)
                 );
         }
 
@@ -121,10 +120,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this._CatalogV1Id != null)
-                    hash = hash * 59 + this._CatalogV1Id.GetHashCode();
-                if (this.LocationId != null)
-                    hash = hash * 59 + this.LocationId.GetHashCode();
+                if (this.OrderIds != null)
+                    hash = hash * 59 + this.OrderIds.GetHashCode();
                 return hash;
             }
         }

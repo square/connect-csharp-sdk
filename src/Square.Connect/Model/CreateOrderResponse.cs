@@ -24,34 +24,34 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// An Items Connect V1 object ID along with its associated [location](#type-location) ID.
+    /// Defines the fields that are included in the response body of a request to the [CreateOrder](#endpoint-createorder) endpoint.  One of &#x60;errors&#x60; or &#x60;order&#x60; is present in a given response (never both).
     /// </summary>
     [DataContract]
-    public partial class CatalogV1Id :  IEquatable<CatalogV1Id>, IValidatableObject
+    public partial class CreateOrderResponse :  IEquatable<CreateOrderResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogV1Id" /> class.
+        /// Initializes a new instance of the <see cref="CreateOrderResponse" /> class.
         /// </summary>
-        /// <param name="_CatalogV1Id">The ID for an object in Connect V1, if different from its Connect V2 ID..</param>
-        /// <param name="LocationId">The ID of the [location](#type-location) this Connect V1 ID is associated with..</param>
-        public CatalogV1Id(string _CatalogV1Id = default(string), string LocationId = default(string))
+        /// <param name="Order">The newly created order..</param>
+        /// <param name="Errors">Any errors that occurred during the request..</param>
+        public CreateOrderResponse(Order Order = default(Order), List<Error> Errors = default(List<Error>))
         {
-            this._CatalogV1Id = _CatalogV1Id;
-            this.LocationId = LocationId;
+            this.Order = Order;
+            this.Errors = Errors;
         }
         
         /// <summary>
-        /// The ID for an object in Connect V1, if different from its Connect V2 ID.
+        /// The newly created order.
         /// </summary>
-        /// <value>The ID for an object in Connect V1, if different from its Connect V2 ID.</value>
-        [DataMember(Name="catalog_v1_id", EmitDefaultValue=false)]
-        public string _CatalogV1Id { get; set; }
+        /// <value>The newly created order.</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public Order Order { get; set; }
         /// <summary>
-        /// The ID of the [location](#type-location) this Connect V1 ID is associated with.
+        /// Any errors that occurred during the request.
         /// </summary>
-        /// <value>The ID of the [location](#type-location) this Connect V1 ID is associated with.</value>
-        [DataMember(Name="location_id", EmitDefaultValue=false)]
-        public string LocationId { get; set; }
+        /// <value>Any errors that occurred during the request.</value>
+        [DataMember(Name="errors", EmitDefaultValue=false)]
+        public List<Error> Errors { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -59,9 +59,9 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CatalogV1Id {\n");
-            sb.Append("  _CatalogV1Id: ").Append(_CatalogV1Id).Append("\n");
-            sb.Append("  LocationId: ").Append(LocationId).Append("\n");
+            sb.Append("class CreateOrderResponse {\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
+            sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,15 +83,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CatalogV1Id);
+            return this.Equals(obj as CreateOrderResponse);
         }
 
         /// <summary>
-        /// Returns true if CatalogV1Id instances are equal
+        /// Returns true if CreateOrderResponse instances are equal
         /// </summary>
-        /// <param name="other">Instance of CatalogV1Id to be compared</param>
+        /// <param name="other">Instance of CreateOrderResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CatalogV1Id other)
+        public bool Equals(CreateOrderResponse other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -99,14 +99,14 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this._CatalogV1Id == other._CatalogV1Id ||
-                    this._CatalogV1Id != null &&
-                    this._CatalogV1Id.Equals(other._CatalogV1Id)
+                    this.Order == other.Order ||
+                    this.Order != null &&
+                    this.Order.Equals(other.Order)
                 ) && 
                 (
-                    this.LocationId == other.LocationId ||
-                    this.LocationId != null &&
-                    this.LocationId.Equals(other.LocationId)
+                    this.Errors == other.Errors ||
+                    this.Errors != null &&
+                    this.Errors.SequenceEqual(other.Errors)
                 );
         }
 
@@ -121,10 +121,10 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this._CatalogV1Id != null)
-                    hash = hash * 59 + this._CatalogV1Id.GetHashCode();
-                if (this.LocationId != null)
-                    hash = hash * 59 + this.LocationId.GetHashCode();
+                if (this.Order != null)
+                    hash = hash * 59 + this.Order.GetHashCode();
+                if (this.Errors != null)
+                    hash = hash * 59 + this.Errors.GetHashCode();
                 return hash;
             }
         }
