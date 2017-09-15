@@ -48,7 +48,8 @@ namespace Square.Connect.Model
         /// <param name="BillingAddress">The buyer&#39;s billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;shipping_address&#x60; is provided..</param>
         /// <param name="ShippingAddress">The buyer&#39;s shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;billing_address&#x60; is provided..</param>
         /// <param name="BuyerEmailAddress">The buyer&#39;s email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided..</param>
-        public ChargeRequest(string IdempotencyKey = default(string), Money AmountMoney = default(Money), string CardNonce = default(string), string CustomerCardId = default(string), bool? DelayCapture = default(bool?), string ReferenceId = default(string), string Note = default(string), string CustomerId = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string BuyerEmailAddress = default(string))
+        /// <param name="OrderId">The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the &#x60;total_money&#x60; value of the order&#39;s &#x60;order_amounts&#x60; field..</param>
+        public ChargeRequest(string IdempotencyKey = default(string), Money AmountMoney = default(Money), string CardNonce = default(string), string CustomerCardId = default(string), bool? DelayCapture = default(bool?), string ReferenceId = default(string), string Note = default(string), string CustomerId = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string BuyerEmailAddress = default(string), string OrderId = default(string))
         {
             // to ensure "IdempotencyKey" is required (not null)
             if (IdempotencyKey == null)
@@ -77,6 +78,7 @@ namespace Square.Connect.Model
             this.BillingAddress = BillingAddress;
             this.ShippingAddress = ShippingAddress;
             this.BuyerEmailAddress = BuyerEmailAddress;
+            this.OrderId = OrderId;
         }
         
         /// <summary>
@@ -146,6 +148,12 @@ namespace Square.Connect.Model
         [DataMember(Name="buyer_email_address", EmitDefaultValue=false)]
         public string BuyerEmailAddress { get; set; }
         /// <summary>
+        /// The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the &#x60;total_money&#x60; value of the order&#39;s &#x60;order_amounts&#x60; field.
+        /// </summary>
+        /// <value>The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the &#x60;total_money&#x60; value of the order&#39;s &#x60;order_amounts&#x60; field.</value>
+        [DataMember(Name="order_id", EmitDefaultValue=false)]
+        public string OrderId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -164,6 +172,7 @@ namespace Square.Connect.Model
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  BuyerEmailAddress: ").Append(BuyerEmailAddress).Append("\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -254,6 +263,11 @@ namespace Square.Connect.Model
                     this.BuyerEmailAddress == other.BuyerEmailAddress ||
                     this.BuyerEmailAddress != null &&
                     this.BuyerEmailAddress.Equals(other.BuyerEmailAddress)
+                ) && 
+                (
+                    this.OrderId == other.OrderId ||
+                    this.OrderId != null &&
+                    this.OrderId.Equals(other.OrderId)
                 );
         }
 
@@ -290,6 +304,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ShippingAddress.GetHashCode();
                 if (this.BuyerEmailAddress != null)
                     hash = hash * 59 + this.BuyerEmailAddress.GetHashCode();
+                if (this.OrderId != null)
+                    hash = hash * 59 + this.OrderId.GetHashCode();
                 return hash;
             }
         }
@@ -336,6 +352,12 @@ namespace Square.Connect.Model
             if(this.CustomerId != null && this.CustomerId.Length > 50)
             {
                 yield return new ValidationResult("Invalid value for CustomerId, length must be less than 50.", new [] { "CustomerId" });
+            }
+
+            // OrderId (string) maxLength
+            if(this.OrderId != null && this.OrderId.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for OrderId, length must be less than 192.", new [] { "OrderId" });
             }
 
             yield break;
