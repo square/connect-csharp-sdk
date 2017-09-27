@@ -2670,6 +2670,27 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
+        /// The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+        /// </summary>
+        /// <value>The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        {
+            
+            /// <summary>
+            /// Enum PHYSICAL for "PHYSICAL"
+            /// </summary>
+            [EnumMember(Value = "PHYSICAL")]
+            PHYSICAL,
+            
+            /// <summary>
+            /// Enum MOBILE for "MOBILE"
+            /// </summary>
+            [EnumMember(Value = "MOBILE")]
+            MOBILE
+        }
+
+        /// <summary>
         /// Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
         /// </summary>
         /// <value>Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.</value>
@@ -2694,10 +2715,16 @@ namespace Square.Connect.Model
         [DataMember(Name="currency", EmitDefaultValue=false)]
         public CurrencyEnum? Currency { get; set; }
         /// <summary>
+        /// The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+        /// </summary>
+        /// <value>The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public TypeEnum? Type { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Location" /> class.
         /// </summary>
         /// <param name="Id">The location&#39;s unique ID..</param>
-        /// <param name="Name">The location&#39;s name. Location names are set by the location owner and displayed in the dashboard as the location&#39;s nickname.</param>
+        /// <param name="Name">The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname.</param>
         /// <param name="Address">The location&#39;s physical address..</param>
         /// <param name="Timezone">The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone..</param>
         /// <param name="Capabilities">Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values..</param>
@@ -2709,7 +2736,8 @@ namespace Square.Connect.Model
         /// <param name="Currency">The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is &#39;USD&#39;.  See [Currency](#type-currency) for possible values..</param>
         /// <param name="PhoneNumber">The location&#39;s phone_number..</param>
         /// <param name="BusinessName">The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string))
+        /// <param name="Type">The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?))
         {
             this.Id = Id;
             this.Name = Name;
@@ -2724,6 +2752,7 @@ namespace Square.Connect.Model
             this.Currency = Currency;
             this.PhoneNumber = PhoneNumber;
             this.BusinessName = BusinessName;
+            this.Type = Type;
         }
         
         /// <summary>
@@ -2733,9 +2762,9 @@ namespace Square.Connect.Model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// The location&#39;s name. Location names are set by the location owner and displayed in the dashboard as the location&#39;s nickname
+        /// The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname
         /// </summary>
-        /// <value>The location&#39;s name. Location names are set by the location owner and displayed in the dashboard as the location&#39;s nickname</value>
+        /// <value>The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -2801,6 +2830,7 @@ namespace Square.Connect.Model
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  BusinessName: ").Append(BusinessName).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2901,6 +2931,11 @@ namespace Square.Connect.Model
                     this.BusinessName == other.BusinessName ||
                     this.BusinessName != null &&
                     this.BusinessName.Equals(other.BusinessName)
+                ) && 
+                (
+                    this.Type == other.Type ||
+                    this.Type != null &&
+                    this.Type.Equals(other.Type)
                 );
         }
 
@@ -2941,6 +2976,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.PhoneNumber.GetHashCode();
                 if (this.BusinessName != null)
                     hash = hash * 59 + this.BusinessName.GetHashCode();
+                if (this.Type != null)
+                    hash = hash * 59 + this.Type.GetHashCode();
                 return hash;
             }
         }
