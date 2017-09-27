@@ -100,7 +100,7 @@ namespace Square.Connect.Model
         /// <param name="Version">The version of the object. When updating an object, the version supplied by the must match the version in the database, otherwise the write will be rejected as conflicting..</param>
         /// <param name="IsDeleted">If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time..</param>
         /// <param name="CatalogV1Ids">The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs..</param>
-        /// <param name="PresentAtAllLocations">If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field..</param>
+        /// <param name="PresentAtAllLocations">If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field. If not specified, defaults to &#x60;true&#x60;..</param>
         /// <param name="PresentAtLocationIds">A list of locations where the object is present, even if &#x60;present_at_all_locations&#x60; is &#x60;false&#x60;..</param>
         /// <param name="AbsentAtLocationIds">A list of locations where the object is not present, even if &#x60;present_at_all_locations&#x60; is &#x60;true&#x60;..</param>
         /// <param name="ItemData">Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type &#x60;ITEM&#x60;..</param>
@@ -177,9 +177,9 @@ namespace Square.Connect.Model
         [DataMember(Name="catalog_v1_ids", EmitDefaultValue=false)]
         public List<CatalogV1Id> CatalogV1Ids { get; set; }
         /// <summary>
-        /// If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field.
+        /// If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field. If not specified, defaults to &#x60;true&#x60;.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field.</value>
+        /// <value>If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field. If not specified, defaults to &#x60;true&#x60;.</value>
         [DataMember(Name="present_at_all_locations", EmitDefaultValue=false)]
         public bool? PresentAtAllLocations { get; set; }
         /// <summary>

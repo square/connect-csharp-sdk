@@ -24,18 +24,24 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Indicates payment capabilities that a business's location might or might not have enabled.
+    /// The status of domain registration.
     /// </summary>
-    /// <value>Indicates payment capabilities that a business's location might or might not have enabled.</value>
+    /// <value>The status of domain registration.</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum LocationCapability
+    public enum RegisterDomainResponseStatus
     {
         
         /// <summary>
-        /// Enum PROCESSING for "CREDIT_CARD_PROCESSING"
+        /// Enum PENDING for "PENDING"
         /// </summary>
-        [EnumMember(Value = "CREDIT_CARD_PROCESSING")]
-        PROCESSING
+        [EnumMember(Value = "PENDING")]
+        PENDING,
+        
+        /// <summary>
+        /// Enum VERIFIED for "VERIFIED"
+        /// </summary>
+        [EnumMember(Value = "VERIFIED")]
+        VERIFIED
     }
 
 }
