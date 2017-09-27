@@ -109,6 +109,7 @@ All URIs are relative to [Square Connect Documentation](https://docs.connect.squ
 
 Class | Method | HTTP request
 ------------ | ------------- | -------------
+*ApplePayApi* | [**RegisterDomain**](docs/ApplePayApi.md#registerdomain) | **POST** /v2/apple-pay/domains
 *CatalogApi* | [**BatchDeleteCatalogObjects**](docs/CatalogApi.md#batchdeletecatalogobjects) | **POST** /v2/catalog/batch-delete
 *CatalogApi* | [**BatchRetrieveCatalogObjects**](docs/CatalogApi.md#batchretrievecatalogobjects) | **POST** /v2/catalog/batch-retrieve
 *CatalogApi* | [**BatchUpsertCatalogObjects**](docs/CatalogApi.md#batchupsertcatalogobjects) | **POST** /v2/catalog/batch-upsert
@@ -294,6 +295,8 @@ Class | Method | HTTP request
  - [Model.OrderLineItemModifier](docs/OrderLineItemModifier.md)
  - [Model.OrderLineItemTax](docs/OrderLineItemTax.md)
  - [Model.Refund](docs/Refund.md)
+ - [Model.RegisterDomainRequest](docs/RegisterDomainRequest.md)
+ - [Model.RegisterDomainResponse](docs/RegisterDomainResponse.md)
  - [Model.RetrieveCatalogObjectRequest](docs/RetrieveCatalogObjectRequest.md)
  - [Model.RetrieveCatalogObjectResponse](docs/RetrieveCatalogObjectResponse.md)
  - [Model.RetrieveCustomerRequest](docs/RetrieveCustomerRequest.md)
