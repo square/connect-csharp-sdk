@@ -94,10 +94,13 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1EmployeeRole" /> class.
         /// </summary>
+        /// <param name="Id">The role&#39;s unique ID, Can only be set by Square..</param>
         /// <param name="Name">The role&#39;s merchant-defined name. (required).</param>
         /// <param name="Permissions">The role&#39;s permissions. (required).</param>
         /// <param name="IsOwner">If true, employees with this role have all permissions, regardless of the values indicated in permissions..</param>
-        public V1EmployeeRole(string Name = default(string), List<PermissionsEnum> Permissions = default(List<PermissionsEnum>), bool? IsOwner = default(bool?))
+        /// <param name="CreatedAt">The time when the employee entity was created, in ISO 8601 format. Is set by Square when the Role is created..</param>
+        /// <param name="UpdatedAt">The time when the employee entity was most recently updated, in ISO 8601 format. Is set by Square when the Role updated..</param>
+        public V1EmployeeRole(string Id = default(string), string Name = default(string), List<PermissionsEnum> Permissions = default(List<PermissionsEnum>), bool? IsOwner = default(bool?), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -117,7 +120,10 @@ namespace Square.Connect.Model
             {
                 this.Permissions = Permissions;
             }
+            this.Id = Id;
             this.IsOwner = IsOwner;
+            this.CreatedAt = CreatedAt;
+            this.UpdatedAt = UpdatedAt;
         }
         
         /// <summary>
@@ -125,7 +131,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The role&#39;s unique ID, Can only be set by Square.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; private set; }
+        public string Id { get; set; }
         /// <summary>
         /// The role&#39;s merchant-defined name.
         /// </summary>
@@ -143,13 +149,13 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The time when the employee entity was created, in ISO 8601 format. Is set by Square when the Role is created.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
-        public string CreatedAt { get; private set; }
+        public string CreatedAt { get; set; }
         /// <summary>
         /// The time when the employee entity was most recently updated, in ISO 8601 format. Is set by Square when the Role updated.
         /// </summary>
         /// <value>The time when the employee entity was most recently updated, in ISO 8601 format. Is set by Square when the Role updated.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
-        public string UpdatedAt { get; private set; }
+        public string UpdatedAt { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
