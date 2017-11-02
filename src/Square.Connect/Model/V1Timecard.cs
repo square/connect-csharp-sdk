@@ -37,12 +37,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1Timecard" /> class.
         /// </summary>
+        /// <param name="Id">The timecard&#39;s unique ID..</param>
         /// <param name="EmployeeId">The ID of the employee the timecard is associated with. (required).</param>
+        /// <param name="Deleted">If true, the timecard was deleted by the merchant, and it is no longer valid..</param>
         /// <param name="ClockinTime">The clock-in time for the timecard, in ISO 8601 format..</param>
         /// <param name="ClockoutTime">The clock-out time for the timecard, in ISO 8601 format. Provide this value only if importing timecard information from another system..</param>
         /// <param name="ClockinLocationId">The ID of the location the employee clocked in from, if any..</param>
         /// <param name="ClockoutLocationId">The ID of the location the employee clocked out from. Provide this value only if importing timecard information from another system..</param>
-        public V1Timecard(string EmployeeId = default(string), string ClockinTime = default(string), string ClockoutTime = default(string), string ClockinLocationId = default(string), string ClockoutLocationId = default(string))
+        /// <param name="CreatedAt">The time when the timecard was created, in ISO 8601 format..</param>
+        /// <param name="UpdatedAt">The time when the timecard was most recently updated, in ISO 8601 format..</param>
+        public V1Timecard(string Id = default(string), string EmployeeId = default(string), bool? Deleted = default(bool?), string ClockinTime = default(string), string ClockoutTime = default(string), string ClockinLocationId = default(string), string ClockoutLocationId = default(string), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             // to ensure "EmployeeId" is required (not null)
             if (EmployeeId == null)
@@ -53,10 +57,14 @@ namespace Square.Connect.Model
             {
                 this.EmployeeId = EmployeeId;
             }
+            this.Id = Id;
+            this.Deleted = Deleted;
             this.ClockinTime = ClockinTime;
             this.ClockoutTime = ClockoutTime;
             this.ClockinLocationId = ClockinLocationId;
             this.ClockoutLocationId = ClockoutLocationId;
+            this.CreatedAt = CreatedAt;
+            this.UpdatedAt = UpdatedAt;
         }
         
         /// <summary>
@@ -64,7 +72,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The timecard&#39;s unique ID.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; private set; }
+        public string Id { get; set; }
         /// <summary>
         /// The ID of the employee the timecard is associated with.
         /// </summary>
@@ -76,7 +84,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>If true, the timecard was deleted by the merchant, and it is no longer valid.</value>
         [DataMember(Name="deleted", EmitDefaultValue=false)]
-        public bool? Deleted { get; private set; }
+        public bool? Deleted { get; set; }
         /// <summary>
         /// The clock-in time for the timecard, in ISO 8601 format.
         /// </summary>
@@ -106,13 +114,13 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The time when the timecard was created, in ISO 8601 format.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
-        public string CreatedAt { get; private set; }
+        public string CreatedAt { get; set; }
         /// <summary>
         /// The time when the timecard was most recently updated, in ISO 8601 format.
         /// </summary>
         /// <value>The time when the timecard was most recently updated, in ISO 8601 format.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
-        public string UpdatedAt { get; private set; }
+        public string UpdatedAt { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -99,7 +99,8 @@ namespace Square.Connect.Model
         /// <param name="Type">The type of tender, such as &#x60;CARD&#x60; or &#x60;CASH&#x60;. (required).</param>
         /// <param name="CardDetails">The details of the card tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CARD&#x60;..</param>
         /// <param name="CashDetails">The details of the cash tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CASH&#x60;..</param>
-        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), TypeEnum? Type = default(TypeEnum?), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails))
+        /// <param name="AdditionalRecipients">Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration..</param>
+        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), TypeEnum? Type = default(TypeEnum?), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -120,6 +121,7 @@ namespace Square.Connect.Model
             this.CustomerId = CustomerId;
             this.CardDetails = CardDetails;
             this.CashDetails = CashDetails;
+            this.AdditionalRecipients = AdditionalRecipients;
         }
         
         /// <summary>
@@ -183,6 +185,12 @@ namespace Square.Connect.Model
         [DataMember(Name="cash_details", EmitDefaultValue=false)]
         public TenderCashDetails CashDetails { get; set; }
         /// <summary>
+        /// Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration.
+        /// </summary>
+        /// <value>Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration.</value>
+        [DataMember(Name="additional_recipients", EmitDefaultValue=false)]
+        public List<AdditionalRecipient> AdditionalRecipients { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -201,6 +209,7 @@ namespace Square.Connect.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CardDetails: ").Append(CardDetails).Append("\n");
             sb.Append("  CashDetails: ").Append(CashDetails).Append("\n");
+            sb.Append("  AdditionalRecipients: ").Append(AdditionalRecipients).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -291,6 +300,11 @@ namespace Square.Connect.Model
                     this.CashDetails == other.CashDetails ||
                     this.CashDetails != null &&
                     this.CashDetails.Equals(other.CashDetails)
+                ) && 
+                (
+                    this.AdditionalRecipients == other.AdditionalRecipients ||
+                    this.AdditionalRecipients != null &&
+                    this.AdditionalRecipients.SequenceEqual(other.AdditionalRecipients)
                 );
         }
 
@@ -327,6 +341,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.CardDetails.GetHashCode();
                 if (this.CashDetails != null)
                     hash = hash * 59 + this.CashDetails.GetHashCode();
+                if (this.AdditionalRecipients != null)
+                    hash = hash * 59 + this.AdditionalRecipients.GetHashCode();
                 return hash;
             }
         }

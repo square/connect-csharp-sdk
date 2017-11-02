@@ -49,7 +49,8 @@ namespace Square.Connect.Model
         /// <param name="ShippingAddress">The buyer&#39;s shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;billing_address&#x60; is provided..</param>
         /// <param name="BuyerEmailAddress">The buyer&#39;s email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided..</param>
         /// <param name="OrderId">The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the &#x60;total_money&#x60; value of the order&#39;s &#x60;order_amounts&#x60; field..</param>
-        public ChargeRequest(string IdempotencyKey = default(string), Money AmountMoney = default(Money), string CardNonce = default(string), string CustomerCardId = default(string), bool? DelayCapture = default(bool?), string ReferenceId = default(string), string Note = default(string), string CustomerId = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string BuyerEmailAddress = default(string), string OrderId = default(string))
+        /// <param name="AdditionalRecipients">The basic primitive of multi party settlement. The value is optional. The transation facilitated by you can be splited from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in you charge&#39;s request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field is currently not supported in sandbox..</param>
+        public ChargeRequest(string IdempotencyKey = default(string), Money AmountMoney = default(Money), string CardNonce = default(string), string CustomerCardId = default(string), bool? DelayCapture = default(bool?), string ReferenceId = default(string), string Note = default(string), string CustomerId = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string BuyerEmailAddress = default(string), string OrderId = default(string), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
         {
             // to ensure "IdempotencyKey" is required (not null)
             if (IdempotencyKey == null)
@@ -79,6 +80,7 @@ namespace Square.Connect.Model
             this.ShippingAddress = ShippingAddress;
             this.BuyerEmailAddress = BuyerEmailAddress;
             this.OrderId = OrderId;
+            this.AdditionalRecipients = AdditionalRecipients;
         }
         
         /// <summary>
@@ -154,6 +156,12 @@ namespace Square.Connect.Model
         [DataMember(Name="order_id", EmitDefaultValue=false)]
         public string OrderId { get; set; }
         /// <summary>
+        /// The basic primitive of multi party settlement. The value is optional. The transation facilitated by you can be splited from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in you charge&#39;s request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field is currently not supported in sandbox.
+        /// </summary>
+        /// <value>The basic primitive of multi party settlement. The value is optional. The transation facilitated by you can be splited from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in you charge&#39;s request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field is currently not supported in sandbox.</value>
+        [DataMember(Name="additional_recipients", EmitDefaultValue=false)]
+        public List<AdditionalRecipient> AdditionalRecipients { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -173,6 +181,7 @@ namespace Square.Connect.Model
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  BuyerEmailAddress: ").Append(BuyerEmailAddress).Append("\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  AdditionalRecipients: ").Append(AdditionalRecipients).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -268,6 +277,11 @@ namespace Square.Connect.Model
                     this.OrderId == other.OrderId ||
                     this.OrderId != null &&
                     this.OrderId.Equals(other.OrderId)
+                ) && 
+                (
+                    this.AdditionalRecipients == other.AdditionalRecipients ||
+                    this.AdditionalRecipients != null &&
+                    this.AdditionalRecipients.SequenceEqual(other.AdditionalRecipients)
                 );
         }
 
@@ -306,6 +320,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.BuyerEmailAddress.GetHashCode();
                 if (this.OrderId != null)
                     hash = hash * 59 + this.OrderId.GetHashCode();
+                if (this.AdditionalRecipients != null)
+                    hash = hash * 59 + this.AdditionalRecipients.GetHashCode();
                 return hash;
             }
         }

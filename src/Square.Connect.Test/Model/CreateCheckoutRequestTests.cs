@@ -32,8 +32,7 @@ namespace Square.Connect.Test
     [TestFixture]
     public class CreateCheckoutRequestTests
     {
-        // TODO uncomment below to declare an instance variable for CreateCheckoutRequest
-        //private CreateCheckoutRequest instance;
+        private CreateCheckoutRequest instance;
 
         /// <summary>
         /// Setup before each test
@@ -41,8 +40,11 @@ namespace Square.Connect.Test
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of CreateCheckoutRequest
-            //instance = new CreateCheckoutRequest();
+            instance = new CreateCheckoutRequest(
+                IdempotencyKey: Guid.NewGuid().ToString(),
+                Order: new CreateOrderRequest(
+                    LineItems: new List<CreateOrderRequestLineItem>()
+                ));
         }
 
         /// <summary>
@@ -60,8 +62,7 @@ namespace Square.Connect.Test
         [Test]
         public void CreateCheckoutRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" CreateCheckoutRequest
-            //Assert.IsInstanceOfType<CreateCheckoutRequest> (instance, "variable 'instance' is a CreateCheckoutRequest");
+            Assert.IsInstanceOf<CreateCheckoutRequest> (instance, "variable 'instance' is a CreateCheckoutRequest");
         }
 
         /// <summary>
@@ -119,6 +120,20 @@ namespace Square.Connect.Test
         public void RedirectUrlTest()
         {
             // TODO unit test for the property 'RedirectUrl'
+        }
+        /// <summary>
+        /// Test the property 'AdditionalRecipients'
+        /// </summary>
+        [Test]
+        public void AdditionalRecipientsTest()
+        {
+            Assert.DoesNotThrow(() => instance.AdditionalRecipients = new List<ChargeRequestAdditionalRecipient>(){
+                new ChargeRequestAdditionalRecipient(
+                    "location",
+                    "description",
+                    new Money(1, Money.CurrencyEnum.USD)
+                )
+            });
         }
 
     }

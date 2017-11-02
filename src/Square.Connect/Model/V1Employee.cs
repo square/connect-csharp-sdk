@@ -64,12 +64,17 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1Employee" /> class.
         /// </summary>
+        /// <param name="Id">The employee&#39;s unique ID..</param>
         /// <param name="FirstName">The employee&#39;s first name. (required).</param>
         /// <param name="LastName">The employee&#39;s last name. (required).</param>
         /// <param name="RoleIds">The ids of the employee&#39;s associated roles. Currently, you can specify only one or zero roles per employee..</param>
         /// <param name="AuthorizedLocationIds">The IDs of the locations the employee is allowed to clock in at..</param>
         /// <param name="Email">The employee&#39;s email address..</param>
-        public V1Employee(string FirstName = default(string), string LastName = default(string), List<string> RoleIds = default(List<string>), List<string> AuthorizedLocationIds = default(List<string>), string Email = default(string))
+        /// <param name="Status">CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. .</param>
+        /// <param name="ExternalId">An ID the merchant can set to associate the employee with an entity in another system..</param>
+        /// <param name="CreatedAt">The time when the employee entity was created, in ISO 8601 format..</param>
+        /// <param name="UpdatedAt">The time when the employee entity was most recently updated, in ISO 8601 format..</param>
+        public V1Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), List<string> RoleIds = default(List<string>), List<string> AuthorizedLocationIds = default(List<string>), string Email = default(string), StatusEnum? Status = default(StatusEnum?), string ExternalId = default(string), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             // to ensure "FirstName" is required (not null)
             if (FirstName == null)
@@ -89,9 +94,14 @@ namespace Square.Connect.Model
             {
                 this.LastName = LastName;
             }
+            this.Id = Id;
             this.RoleIds = RoleIds;
             this.AuthorizedLocationIds = AuthorizedLocationIds;
             this.Email = Email;
+            this.Status = Status;
+            this.ExternalId = ExternalId;
+            this.CreatedAt = CreatedAt;
+            this.UpdatedAt = UpdatedAt;
         }
         
         /// <summary>
@@ -99,7 +109,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The employee&#39;s unique ID.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; private set; }
+        public string Id { get; set; }
         /// <summary>
         /// The employee&#39;s first name.
         /// </summary>
@@ -135,19 +145,19 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>An ID the merchant can set to associate the employee with an entity in another system.</value>
         [DataMember(Name="external_id", EmitDefaultValue=false)]
-        public string ExternalId { get; private set; }
+        public string ExternalId { get; set; }
         /// <summary>
         /// The time when the employee entity was created, in ISO 8601 format.
         /// </summary>
         /// <value>The time when the employee entity was created, in ISO 8601 format.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
-        public string CreatedAt { get; private set; }
+        public string CreatedAt { get; set; }
         /// <summary>
         /// The time when the employee entity was most recently updated, in ISO 8601 format.
         /// </summary>
         /// <value>The time when the employee entity was most recently updated, in ISO 8601 format.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
-        public string UpdatedAt { get; private set; }
+        public string UpdatedAt { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -320,6 +320,12 @@ namespace Square.Connect.Model
         UNSUPPORTEDCARDBRAND,
         
         /// <summary>
+        /// Enum UNSUPPORTEDENTRYMETHOD for "UNSUPPORTED_ENTRY_METHOD"
+        /// </summary>
+        [EnumMember(Value = "UNSUPPORTED_ENTRY_METHOD")]
+        UNSUPPORTEDENTRYMETHOD,
+        
+        /// <summary>
         /// Enum INVALIDCARD for "INVALID_CARD"
         /// </summary>
         [EnumMember(Value = "INVALID_CARD")]
@@ -420,6 +426,12 @@ namespace Square.Connect.Model
         /// </summary>
         [EnumMember(Value = "INVALID_EMAIL_ADDRESS")]
         INVALIDEMAILADDRESS,
+        
+        /// <summary>
+        /// Enum INVALIDPHONENUMBER for "INVALID_PHONE_NUMBER"
+        /// </summary>
+        [EnumMember(Value = "INVALID_PHONE_NUMBER")]
+        INVALIDPHONENUMBER,
         
         /// <summary>
         /// Enum CHECKOUTEXPIRED for "CHECKOUT_EXPIRED"
