@@ -85,7 +85,8 @@ namespace Square.Connect.Model
         /// <param name="AmountMoney">The amount of money refunded to the buyer. (required).</param>
         /// <param name="Status">The current status of the refund (&#x60;PENDING&#x60;, &#x60;APPROVED&#x60;, &#x60;REJECTED&#x60;, or &#x60;FAILED&#x60;). (required).</param>
         /// <param name="ProcessingFeeMoney">The amount of Square processing fee money refunded to the *merchant*..</param>
-        public Refund(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string TenderId = default(string), string CreatedAt = default(string), string Reason = default(string), Money AmountMoney = default(Money), StatusEnum? Status = default(StatusEnum?), Money ProcessingFeeMoney = default(Money))
+        /// <param name="AdditionalRecipients">Additional recipients (other than the merchant) receiving a portion of this refund. For example, fees assessed on a refund of a purchase by a third party integration..</param>
+        public Refund(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string TenderId = default(string), string CreatedAt = default(string), string Reason = default(string), Money AmountMoney = default(Money), StatusEnum? Status = default(StatusEnum?), Money ProcessingFeeMoney = default(Money), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -152,6 +153,7 @@ namespace Square.Connect.Model
             }
             this.CreatedAt = CreatedAt;
             this.ProcessingFeeMoney = ProcessingFeeMoney;
+            this.AdditionalRecipients = AdditionalRecipients;
         }
         
         /// <summary>
@@ -203,6 +205,12 @@ namespace Square.Connect.Model
         [DataMember(Name="processing_fee_money", EmitDefaultValue=false)]
         public Money ProcessingFeeMoney { get; set; }
         /// <summary>
+        /// Additional recipients (other than the merchant) receiving a portion of this refund. For example, fees assessed on a refund of a purchase by a third party integration.
+        /// </summary>
+        /// <value>Additional recipients (other than the merchant) receiving a portion of this refund. For example, fees assessed on a refund of a purchase by a third party integration.</value>
+        [DataMember(Name="additional_recipients", EmitDefaultValue=false)]
+        public List<AdditionalRecipient> AdditionalRecipients { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -219,6 +227,7 @@ namespace Square.Connect.Model
             sb.Append("  AmountMoney: ").Append(AmountMoney).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  ProcessingFeeMoney: ").Append(ProcessingFeeMoney).Append("\n");
+            sb.Append("  AdditionalRecipients: ").Append(AdditionalRecipients).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -299,6 +308,11 @@ namespace Square.Connect.Model
                     this.ProcessingFeeMoney == other.ProcessingFeeMoney ||
                     this.ProcessingFeeMoney != null &&
                     this.ProcessingFeeMoney.Equals(other.ProcessingFeeMoney)
+                ) && 
+                (
+                    this.AdditionalRecipients == other.AdditionalRecipients ||
+                    this.AdditionalRecipients != null &&
+                    this.AdditionalRecipients.SequenceEqual(other.AdditionalRecipients)
                 );
         }
 
@@ -331,6 +345,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.ProcessingFeeMoney != null)
                     hash = hash * 59 + this.ProcessingFeeMoney.GetHashCode();
+                if (this.AdditionalRecipients != null)
+                    hash = hash * 59 + this.AdditionalRecipients.GetHashCode();
                 return hash;
             }
         }

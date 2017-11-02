@@ -41,7 +41,8 @@ namespace Square.Connect.Model
         /// <param name="RedirectUrl">The URL to redirect to after checkout is completed with &#x60;checkoutId&#x60;, Square&#39;s &#x60;orderId&#x60;, &#x60;transactionId&#x60;, and &#x60;referenceId&#x60; appended as URL parameters. For example, if the provided redirect_url is &#x60;http://www.example.com/order-complete&#x60;, a successful transaction redirects the customer to:  &#x60;http://www.example.com/order-complete?checkoutId&#x3D;xxxxxx&amp;orderId&#x3D;xxxxxx&amp;referenceId&#x3D;xxxxxx&amp;transactionId&#x3D;xxxxxx&#x60;  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow..</param>
         /// <param name="Order">Order to be checked out..</param>
         /// <param name="CreatedAt">The time when the checkout was created, in RFC 3339 format..</param>
-        public Checkout(string Id = default(string), string CheckoutPageUrl = default(string), bool? AskForShippingAddress = default(bool?), string MerchantSupportEmail = default(string), string PrePopulateBuyerEmail = default(string), Address PrePopulateShippingAddress = default(Address), string RedirectUrl = default(string), Order Order = default(Order), string CreatedAt = default(string))
+        /// <param name="AdditionalRecipients">Additional recipients (other than the merchant) receiving a portion of this checkout. For example, fees assessed on the purchase by a third party integration..</param>
+        public Checkout(string Id = default(string), string CheckoutPageUrl = default(string), bool? AskForShippingAddress = default(bool?), string MerchantSupportEmail = default(string), string PrePopulateBuyerEmail = default(string), Address PrePopulateShippingAddress = default(Address), string RedirectUrl = default(string), Order Order = default(Order), string CreatedAt = default(string), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
         {
             this.Id = Id;
             this.CheckoutPageUrl = CheckoutPageUrl;
@@ -52,6 +53,7 @@ namespace Square.Connect.Model
             this.RedirectUrl = RedirectUrl;
             this.Order = Order;
             this.CreatedAt = CreatedAt;
+            this.AdditionalRecipients = AdditionalRecipients;
         }
         
         /// <summary>
@@ -109,6 +111,12 @@ namespace Square.Connect.Model
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         public string CreatedAt { get; set; }
         /// <summary>
+        /// Additional recipients (other than the merchant) receiving a portion of this checkout. For example, fees assessed on the purchase by a third party integration.
+        /// </summary>
+        /// <value>Additional recipients (other than the merchant) receiving a portion of this checkout. For example, fees assessed on the purchase by a third party integration.</value>
+        [DataMember(Name="additional_recipients", EmitDefaultValue=false)]
+        public List<AdditionalRecipient> AdditionalRecipients { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -125,6 +133,7 @@ namespace Square.Connect.Model
             sb.Append("  RedirectUrl: ").Append(RedirectUrl).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  AdditionalRecipients: ").Append(AdditionalRecipients).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +214,11 @@ namespace Square.Connect.Model
                     this.CreatedAt == other.CreatedAt ||
                     this.CreatedAt != null &&
                     this.CreatedAt.Equals(other.CreatedAt)
+                ) && 
+                (
+                    this.AdditionalRecipients == other.AdditionalRecipients ||
+                    this.AdditionalRecipients != null &&
+                    this.AdditionalRecipients.SequenceEqual(other.AdditionalRecipients)
                 );
         }
 
@@ -237,6 +251,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Order.GetHashCode();
                 if (this.CreatedAt != null)
                     hash = hash * 59 + this.CreatedAt.GetHashCode();
+                if (this.AdditionalRecipients != null)
+                    hash = hash * 59 + this.AdditionalRecipients.GetHashCode();
                 return hash;
             }
         }

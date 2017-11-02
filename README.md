@@ -132,6 +132,8 @@ Class | Method | HTTP request
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
 *OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
+*ReportingApi* | [**ListAdditionalRecipientReceivableRefunds**](docs/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds
+*ReportingApi* | [**ListAdditionalRecipientReceivables**](docs/ReportingApi.md#listadditionalrecipientreceivables) | **GET** /v2/locations/{location_id}/additional-recipient-receivables
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
 *TransactionsApi* | [**Charge**](docs/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions
 *TransactionsApi* | [**CreateRefund**](docs/TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund
@@ -212,6 +214,9 @@ Class | Method | HTTP request
 
 ## Documentation for Models
 
+ - [Model.AdditionalRecipient](docs/AdditionalRecipient.md)
+ - [Model.AdditionalRecipientReceivable](docs/AdditionalRecipientReceivable.md)
+ - [Model.AdditionalRecipientReceivableRefund](docs/AdditionalRecipientReceivableRefund.md)
  - [Model.Address](docs/Address.md)
  - [Model.BatchDeleteCatalogObjectsRequest](docs/BatchDeleteCatalogObjectsRequest.md)
  - [Model.BatchDeleteCatalogObjectsResponse](docs/BatchDeleteCatalogObjectsResponse.md)
@@ -249,6 +254,7 @@ Class | Method | HTTP request
  - [Model.CatalogTax](docs/CatalogTax.md)
  - [Model.CatalogV1Id](docs/CatalogV1Id.md)
  - [Model.ChargeRequest](docs/ChargeRequest.md)
+ - [Model.ChargeRequestAdditionalRecipient](docs/ChargeRequestAdditionalRecipient.md)
  - [Model.ChargeResponse](docs/ChargeResponse.md)
  - [Model.Checkout](docs/Checkout.md)
  - [Model.CreateCheckoutRequest](docs/CreateCheckoutRequest.md)
@@ -277,6 +283,10 @@ Class | Method | HTTP request
  - [Model.Device](docs/Device.md)
  - [Model.Error](docs/Error.md)
  - [Model.ItemVariationLocationOverrides](docs/ItemVariationLocationOverrides.md)
+ - [Model.ListAdditionalRecipientReceivableRefundsRequest](docs/ListAdditionalRecipientReceivableRefundsRequest.md)
+ - [Model.ListAdditionalRecipientReceivableRefundsResponse](docs/ListAdditionalRecipientReceivableRefundsResponse.md)
+ - [Model.ListAdditionalRecipientReceivablesRequest](docs/ListAdditionalRecipientReceivablesRequest.md)
+ - [Model.ListAdditionalRecipientReceivablesResponse](docs/ListAdditionalRecipientReceivablesResponse.md)
  - [Model.ListCatalogRequest](docs/ListCatalogRequest.md)
  - [Model.ListCatalogResponse](docs/ListCatalogResponse.md)
  - [Model.ListCustomersRequest](docs/ListCustomersRequest.md)
