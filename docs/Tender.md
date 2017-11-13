@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CreatedAt** | **string** | The time when the tender was created, in RFC 3339 format. | [optional] 
 **Note** | **string** | An optional note associated with the tender at the time of payment. | [optional] 
 **AmountMoney** | [**Money**](Money.md) | The amount of the tender. | [optional] 
+**TipMoney** | [**Money**](Money.md) | The tip&#39;s amount of the tender. | [optional] 
 **ProcessingFeeMoney** | [**Money**](Money.md) | The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds. | [optional] 
 **CustomerId** | **string** | If the tender is associated with a customer or represents a customer&#39;s card on file, this is the ID of the associated customer. | [optional] 
 **Type** | **TypeEnum** | The type of tender, such as &#x60;CARD&#x60; or &#x60;CASH&#x60;. | 

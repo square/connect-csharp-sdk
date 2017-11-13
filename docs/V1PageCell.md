@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 **PageId** | **string** | The unique identifier of the page the cell is included on. | [optional] 
 **Row** | **int?** | The row of the cell. Always an integer between 0 and 4, inclusive. | [optional] 
 **Column** | **int?** | The column of the cell. Always an integer between 0 and 4, inclusive. | [optional] 
-**ObjectType** | **List<ObjectTypeEnum>** | The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER). | [optional] 
+**ObjectType** | **ObjectTypeEnum** | The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER). | [optional] 
 **ObjectId** | **string** | The unique identifier of the entity represented in the cell. Not present for cells with an object_type of PLACEHOLDER. | [optional] 
-**PlaceholderType** | **List<PlaceholderTypeEnum>** | For a cell with an object_type of PLACEHOLDER, this value indicates the cell&#39;s special behavior. | [optional] 
+**PlaceholderType** | **PlaceholderTypeEnum** | For a cell with an object_type of PLACEHOLDER, this value indicates the cell&#39;s special behavior. | [optional] 
 
 
-## List<ObjectTypeEnum>
+## ObjectTypeEnum
 
 Name | Value
 ------------ | -------------
@@ -21,7 +21,7 @@ Name | Value
 **PLACEHOLDER** | "PLACEHOLDER"
 
 
-## List<PlaceholderTypeEnum>
+## PlaceholderTypeEnum
 
 Name | Value
 ------------ | -------------

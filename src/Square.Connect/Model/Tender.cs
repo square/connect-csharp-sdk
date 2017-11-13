@@ -94,13 +94,14 @@ namespace Square.Connect.Model
         /// <param name="CreatedAt">The time when the tender was created, in RFC 3339 format..</param>
         /// <param name="Note">An optional note associated with the tender at the time of payment..</param>
         /// <param name="AmountMoney">The amount of the tender..</param>
+        /// <param name="TipMoney">The tip&#39;s amount of the tender..</param>
         /// <param name="ProcessingFeeMoney">The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds..</param>
         /// <param name="CustomerId">If the tender is associated with a customer or represents a customer&#39;s card on file, this is the ID of the associated customer..</param>
         /// <param name="Type">The type of tender, such as &#x60;CARD&#x60; or &#x60;CASH&#x60;. (required).</param>
         /// <param name="CardDetails">The details of the card tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CARD&#x60;..</param>
         /// <param name="CashDetails">The details of the cash tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CASH&#x60;..</param>
         /// <param name="AdditionalRecipients">Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration..</param>
-        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), TypeEnum? Type = default(TypeEnum?), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
+        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money TipMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), TypeEnum? Type = default(TypeEnum?), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -117,6 +118,7 @@ namespace Square.Connect.Model
             this.CreatedAt = CreatedAt;
             this.Note = Note;
             this.AmountMoney = AmountMoney;
+            this.TipMoney = TipMoney;
             this.ProcessingFeeMoney = ProcessingFeeMoney;
             this.CustomerId = CustomerId;
             this.CardDetails = CardDetails;
@@ -161,6 +163,12 @@ namespace Square.Connect.Model
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
+        /// The tip&#39;s amount of the tender.
+        /// </summary>
+        /// <value>The tip&#39;s amount of the tender.</value>
+        [DataMember(Name="tip_money", EmitDefaultValue=false)]
+        public Money TipMoney { get; set; }
+        /// <summary>
         /// The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds.
         /// </summary>
         /// <value>The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds.</value>
@@ -204,6 +212,7 @@ namespace Square.Connect.Model
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  AmountMoney: ").Append(AmountMoney).Append("\n");
+            sb.Append("  TipMoney: ").Append(TipMoney).Append("\n");
             sb.Append("  ProcessingFeeMoney: ").Append(ProcessingFeeMoney).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -277,6 +286,11 @@ namespace Square.Connect.Model
                     this.AmountMoney.Equals(other.AmountMoney)
                 ) && 
                 (
+                    this.TipMoney == other.TipMoney ||
+                    this.TipMoney != null &&
+                    this.TipMoney.Equals(other.TipMoney)
+                ) && 
+                (
                     this.ProcessingFeeMoney == other.ProcessingFeeMoney ||
                     this.ProcessingFeeMoney != null &&
                     this.ProcessingFeeMoney.Equals(other.ProcessingFeeMoney)
@@ -331,6 +345,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Note.GetHashCode();
                 if (this.AmountMoney != null)
                     hash = hash * 59 + this.AmountMoney.GetHashCode();
+                if (this.TipMoney != null)
+                    hash = hash * 59 + this.TipMoney.GetHashCode();
                 if (this.ProcessingFeeMoney != null)
                     hash = hash * 59 + this.ProcessingFeeMoney.GetHashCode();
                 if (this.CustomerId != null)

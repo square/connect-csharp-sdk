@@ -28,7 +28,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivableRefunds
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -43,7 +43,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivableRefunds
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -57,7 +57,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivables
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
@@ -72,7 +72,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivables
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
@@ -88,7 +88,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivableRefunds
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -103,7 +103,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivableRefunds
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -117,7 +117,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivables
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
@@ -132,7 +132,7 @@ namespace Square.Connect.Api
         /// ListAdditionalRecipientReceivables
         /// </summary>
         /// <remarks>
-        /// Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
@@ -255,7 +255,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivableRefunds Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivableRefunds Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -271,7 +271,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivableRefunds Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivableRefunds Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -341,7 +341,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivableRefunds Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivableRefunds Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -358,7 +358,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivableRefunds Lists Additional Recipient Receivable Refunds for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivableRefunds Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivableRefunds for.</param>
@@ -428,7 +428,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivables Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivables Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
@@ -444,7 +444,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivables Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivables Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
@@ -514,7 +514,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivables Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivables Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
@@ -531,7 +531,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListAdditionalRecipientReceivables Lists Additional Recipient Receivables for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListAdditionalRecipientReceivables Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the &#x60;additional_recipients&#x60; field in a transaction.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list AdditionalRecipientReceivables for.</param>
