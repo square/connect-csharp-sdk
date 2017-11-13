@@ -2737,7 +2737,8 @@ namespace Square.Connect.Model
         /// <param name="PhoneNumber">The location&#39;s phone_number..</param>
         /// <param name="BusinessName">The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts..</param>
         /// <param name="Type">The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?))
+        /// <param name="WebsiteUrl">The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?), string WebsiteUrl = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -2753,6 +2754,7 @@ namespace Square.Connect.Model
             this.PhoneNumber = PhoneNumber;
             this.BusinessName = BusinessName;
             this.Type = Type;
+            this.WebsiteUrl = WebsiteUrl;
         }
         
         /// <summary>
@@ -2810,6 +2812,12 @@ namespace Square.Connect.Model
         [DataMember(Name="business_name", EmitDefaultValue=false)]
         public string BusinessName { get; set; }
         /// <summary>
+        /// The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.
+        /// </summary>
+        /// <value>The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.</value>
+        [DataMember(Name="website_url", EmitDefaultValue=false)]
+        public string WebsiteUrl { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -2831,6 +2839,7 @@ namespace Square.Connect.Model
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  BusinessName: ").Append(BusinessName).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  WebsiteUrl: ").Append(WebsiteUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2936,6 +2945,11 @@ namespace Square.Connect.Model
                     this.Type == other.Type ||
                     this.Type != null &&
                     this.Type.Equals(other.Type)
+                ) && 
+                (
+                    this.WebsiteUrl == other.WebsiteUrl ||
+                    this.WebsiteUrl != null &&
+                    this.WebsiteUrl.Equals(other.WebsiteUrl)
                 );
         }
 
@@ -2978,6 +2992,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.BusinessName.GetHashCode();
                 if (this.Type != null)
                     hash = hash * 59 + this.Type.GetHashCode();
+                if (this.WebsiteUrl != null)
+                    hash = hash * 59 + this.WebsiteUrl.GetHashCode();
                 return hash;
             }
         }

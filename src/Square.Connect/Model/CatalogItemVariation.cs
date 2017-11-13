@@ -90,6 +90,7 @@ namespace Square.Connect.Model
         /// <param name="Name">The item variation&#39;s name. Searchable..</param>
         /// <param name="Sku">The item variation&#39;s SKU, if any. Searchable..</param>
         /// <param name="Upc">The item variation&#39;s UPC, if any. Searchable..</param>
+        /// <param name="Ordinal">The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique..</param>
         /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values..</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if fixed pricing is used..</param>
         /// <param name="LocationOverrides">Per-[location](#type-location) price and inventory overrides..</param>
@@ -98,12 +99,13 @@ namespace Square.Connect.Model
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
         /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable..</param>
         /// <param name="ServiceDuration">If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
-        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), PricingTypeEnum? PricingType = default(PricingTypeEnum?), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?))
+        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?))
         {
             this.ItemId = ItemId;
             this.Name = Name;
             this.Sku = Sku;
             this.Upc = Upc;
+            this.Ordinal = Ordinal;
             this.PricingType = PricingType;
             this.PriceMoney = PriceMoney;
             this.LocationOverrides = LocationOverrides;
@@ -138,6 +140,12 @@ namespace Square.Connect.Model
         /// <value>The item variation&#39;s UPC, if any. Searchable.</value>
         [DataMember(Name="upc", EmitDefaultValue=false)]
         public string Upc { get; set; }
+        /// <summary>
+        /// The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique.
+        /// </summary>
+        /// <value>The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique.</value>
+        [DataMember(Name="ordinal", EmitDefaultValue=false)]
+        public int? Ordinal { get; set; }
         /// <summary>
         /// The item variation&#39;s price, if fixed pricing is used.
         /// </summary>
@@ -186,6 +194,7 @@ namespace Square.Connect.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
             sb.Append("  Upc: ").Append(Upc).Append("\n");
+            sb.Append("  Ordinal: ").Append(Ordinal).Append("\n");
             sb.Append("  PricingType: ").Append(PricingType).Append("\n");
             sb.Append("  PriceMoney: ").Append(PriceMoney).Append("\n");
             sb.Append("  LocationOverrides: ").Append(LocationOverrides).Append("\n");
@@ -251,6 +260,11 @@ namespace Square.Connect.Model
                     this.Upc.Equals(other.Upc)
                 ) && 
                 (
+                    this.Ordinal == other.Ordinal ||
+                    this.Ordinal != null &&
+                    this.Ordinal.Equals(other.Ordinal)
+                ) && 
+                (
                     this.PricingType == other.PricingType ||
                     this.PricingType != null &&
                     this.PricingType.Equals(other.PricingType)
@@ -311,6 +325,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Sku.GetHashCode();
                 if (this.Upc != null)
                     hash = hash * 59 + this.Upc.GetHashCode();
+                if (this.Ordinal != null)
+                    hash = hash * 59 + this.Ordinal.GetHashCode();
                 if (this.PricingType != null)
                     hash = hash * 59 + this.PricingType.GetHashCode();
                 if (this.PriceMoney != null)

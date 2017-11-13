@@ -29,10 +29,10 @@ namespace Square.Connect.Model
     [DataContract]
     public partial class V1PageCell :  IEquatable<V1PageCell>, IValidatableObject
     {
-
         /// <summary>
-        /// Gets or Sets ObjectType
+        /// The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER).
         /// </summary>
+        /// <value>The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER).</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ObjectTypeEnum
         {
@@ -62,10 +62,10 @@ namespace Square.Connect.Model
             PLACEHOLDER
         }
 
-
         /// <summary>
-        /// Gets or Sets PlaceholderType
+        /// For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.
         /// </summary>
+        /// <value>For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PlaceholderTypeEnum
         {
@@ -94,13 +94,13 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER).</value>
         [DataMember(Name="object_type", EmitDefaultValue=false)]
-        public List<ObjectTypeEnum> ObjectType { get; set; }
+        public ObjectTypeEnum? ObjectType { get; set; }
         /// <summary>
         /// For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.
         /// </summary>
         /// <value>For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.</value>
         [DataMember(Name="placeholder_type", EmitDefaultValue=false)]
-        public List<PlaceholderTypeEnum> PlaceholderType { get; set; }
+        public PlaceholderTypeEnum? PlaceholderType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1PageCell" /> class.
         /// </summary>
@@ -110,7 +110,7 @@ namespace Square.Connect.Model
         /// <param name="ObjectType">The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER)..</param>
         /// <param name="ObjectId">The unique identifier of the entity represented in the cell. Not present for cells with an object_type of PLACEHOLDER..</param>
         /// <param name="PlaceholderType">For a cell with an object_type of PLACEHOLDER, this value indicates the cell&#39;s special behavior..</param>
-        public V1PageCell(string PageId = default(string), int? Row = default(int?), int? Column = default(int?), List<ObjectTypeEnum> ObjectType = default(List<ObjectTypeEnum>), string ObjectId = default(string), List<PlaceholderTypeEnum> PlaceholderType = default(List<PlaceholderTypeEnum>))
+        public V1PageCell(string PageId = default(string), int? Row = default(int?), int? Column = default(int?), ObjectTypeEnum? ObjectType = default(ObjectTypeEnum?), string ObjectId = default(string), PlaceholderTypeEnum? PlaceholderType = default(PlaceholderTypeEnum?))
         {
             this.PageId = PageId;
             this.Row = Row;
@@ -212,7 +212,7 @@ namespace Square.Connect.Model
                 (
                     this.ObjectType == other.ObjectType ||
                     this.ObjectType != null &&
-                    this.ObjectType.SequenceEqual(other.ObjectType)
+                    this.ObjectType.Equals(other.ObjectType)
                 ) && 
                 (
                     this.ObjectId == other.ObjectId ||
@@ -222,7 +222,7 @@ namespace Square.Connect.Model
                 (
                     this.PlaceholderType == other.PlaceholderType ||
                     this.PlaceholderType != null &&
-                    this.PlaceholderType.SequenceEqual(other.PlaceholderType)
+                    this.PlaceholderType.Equals(other.PlaceholderType)
                 );
         }
 
