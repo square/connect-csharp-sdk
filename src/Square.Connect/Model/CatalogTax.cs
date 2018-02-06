@@ -86,12 +86,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogTax" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CatalogTax() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogTax" /> class.
-        /// </summary>
-        /// <param name="Name">The tax&#39;s name. Searchable. (required).</param>
+        /// <param name="Name">The tax&#39;s name. Searchable..</param>
         /// <param name="CalculationPhase">Whether the tax is calculated based on a payment&#39;s subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for all possible values..</param>
         /// <param name="InclusionType">Whether the tax is &#x60;ADDITIVE&#x60; or &#x60;INCLUSIVE&#x60;. See [TaxInclusionType](#type-taxinclusiontype) for all possible values..</param>
         /// <param name="Percentage">The percentage of the tax in decimal form, using a &#x60;&#39;.&#39;&#x60; as the decimal separator and without a &#x60;&#39;%&#39;&#x60; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%..</param>
@@ -99,15 +94,7 @@ namespace Square.Connect.Model
         /// <param name="Enabled">If &#x60;true&#x60;, the tax will be shown as enabled in the Square Point of Sale app..</param>
         public CatalogTax(string Name = default(string), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), InclusionTypeEnum? InclusionType = default(InclusionTypeEnum?), string Percentage = default(string), bool? AppliesToCustomAmounts = default(bool?), bool? Enabled = default(bool?))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for CatalogTax and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
+            this.Name = Name;
             this.CalculationPhase = CalculationPhase;
             this.InclusionType = InclusionType;
             this.Percentage = Percentage;
@@ -250,12 +237,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

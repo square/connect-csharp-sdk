@@ -32,24 +32,11 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CatalogModifier() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogModifier" /> class.
-        /// </summary>
-        /// <param name="Name">The modifier&#39;s name. Searchable. (required).</param>
+        /// <param name="Name">The modifier&#39;s name. Searchable..</param>
         /// <param name="PriceMoney">The modifier&#39;s price..</param>
         public CatalogModifier(string Name = default(string), Money PriceMoney = default(Money))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for CatalogModifier and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
+            this.Name = Name;
             this.PriceMoney = PriceMoney;
         }
         
@@ -144,12 +131,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

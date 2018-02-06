@@ -59,25 +59,12 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifierList" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CatalogModifierList() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogModifierList" /> class.
-        /// </summary>
-        /// <param name="Name">The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. (required).</param>
+        /// <param name="Name">The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable..</param>
         /// <param name="SelectionType">Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for all possible values..</param>
         /// <param name="Modifiers">The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data..</param>
         public CatalogModifierList(string Name = default(string), SelectionTypeEnum? SelectionType = default(SelectionTypeEnum?), List<CatalogObject> Modifiers = default(List<CatalogObject>))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for CatalogModifierList and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
+            this.Name = Name;
             this.SelectionType = SelectionType;
             this.Modifiers = Modifiers;
         }
@@ -181,12 +168,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

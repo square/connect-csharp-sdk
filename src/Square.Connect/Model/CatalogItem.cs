@@ -77,12 +77,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CatalogItem() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogItem" /> class.
-        /// </summary>
-        /// <param name="Name">The item&#39;s name. Searchable. (required).</param>
+        /// <param name="Name">The item&#39;s name. Searchable..</param>
         /// <param name="Description">The item&#39;s description. Searchable..</param>
         /// <param name="Abbreviation">The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable..</param>
         /// <param name="LabelColor">The color of the item&#39;s display label in the Square Point of Sale app..</param>
@@ -98,15 +93,7 @@ namespace Square.Connect.Model
         /// <param name="SkipModifierScreen">If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors..</param>
         public CatalogItem(string Name = default(string), string Description = default(string), string Abbreviation = default(string), string LabelColor = default(string), bool? AvailableOnline = default(bool?), bool? AvailableForPickup = default(bool?), bool? AvailableElectronically = default(bool?), string CategoryId = default(string), List<string> TaxIds = default(List<string>), List<CatalogItemModifierListInfo> ModifierListInfo = default(List<CatalogItemModifierListInfo>), string ImageUrl = default(string), List<CatalogObject> Variations = default(List<CatalogObject>), ProductTypeEnum? ProductType = default(ProductTypeEnum?), bool? SkipModifierScreen = default(bool?))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for CatalogItem and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
+            this.Name = Name;
             this.Description = Description;
             this.Abbreviation = Abbreviation;
             this.LabelColor = LabelColor;
@@ -375,12 +362,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

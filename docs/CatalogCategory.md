@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The category&#39;s name. Searchable. | 
+**Name** | **string** | The category&#39;s name. Searchable. | [optional] 
 
 
 

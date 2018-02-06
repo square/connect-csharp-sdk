@@ -32,23 +32,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogCategory" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CatalogCategory() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogCategory" /> class.
-        /// </summary>
-        /// <param name="Name">The category&#39;s name. Searchable. (required).</param>
+        /// <param name="Name">The category&#39;s name. Searchable..</param>
         public CatalogCategory(string Name = default(string))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for CatalogCategory and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
+            this.Name = Name;
         }
         
         /// <summary>
@@ -128,12 +115,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }
