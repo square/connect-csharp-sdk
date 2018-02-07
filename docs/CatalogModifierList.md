@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. | 
+**Name** | **string** | The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. | [optional] 
 **SelectionType** | **SelectionTypeEnum** | Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for all possible values. | [optional] 
 **Modifiers** | [**List&lt;CatalogObject&gt;**](CatalogObject.md) | The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data. | [optional] 
 

@@ -455,6 +455,12 @@ namespace Square.Connect.Model
             INVALIDCARDDATA,
             
             /// <summary>
+            /// Enum LOCATIONMISMATCH for "LOCATION_MISMATCH"
+            /// </summary>
+            [EnumMember(Value = "LOCATION_MISMATCH")]
+            LOCATIONMISMATCH,
+            
+            /// <summary>
             /// Enum IDEMPOTENCYKEYREUSED for "IDEMPOTENCY_KEY_REUSED"
             /// </summary>
             [EnumMember(Value = "IDEMPOTENCY_KEY_REUSED")]
@@ -560,7 +566,13 @@ namespace Square.Connect.Model
             /// Enum SERVICEUNAVAILABLE for "SERVICE_UNAVAILABLE"
             /// </summary>
             [EnumMember(Value = "SERVICE_UNAVAILABLE")]
-            SERVICEUNAVAILABLE
+            SERVICEUNAVAILABLE,
+            
+            /// <summary>
+            /// Enum GATEWAYTIMEOUT for "GATEWAY_TIMEOUT"
+            /// </summary>
+            [EnumMember(Value = "GATEWAY_TIMEOUT")]
+            GATEWAYTIMEOUT
         }
 
         /// <summary>

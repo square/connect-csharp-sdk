@@ -42,7 +42,7 @@ namespace Square.Connect.Model
         /// <param name="BasePriceMoney">Only used for ad hoc line items. The base price for a single unit of the line item&#39;s associated variation.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;..</param>
         /// <param name="VariationName">Only used for ad hoc line items. The variation name of the line item. This value cannot exceed 255 characters.  If this value is not set for an ad hoc line item, the default value of &#x60;Regular&#x60; is used.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;..</param>
         /// <param name="Note">The note of the line item. This value cannot exceed 50 characters..</param>
-        /// <param name="CatalogObjectId">Only used for Catalog line items. The catalog object ID from existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;..</param>
+        /// <param name="CatalogObjectId">Only used for Catalog line items. The catalog object ID for an existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;..</param>
         /// <param name="Modifiers">Only used for Catalog line items. The modifiers to include on the line item..</param>
         /// <param name="Taxes">The taxes to include on the line item..</param>
         /// <param name="Discounts">The discounts to include on the line item..</param>
@@ -98,9 +98,9 @@ namespace Square.Connect.Model
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// Only used for Catalog line items. The catalog object ID from existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;.
+        /// Only used for Catalog line items. The catalog object ID for an existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;.
         /// </summary>
-        /// <value>Only used for Catalog line items. The catalog object ID from existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;.</value>
+        /// <value>Only used for Catalog line items. The catalog object ID for an existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;.</value>
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>

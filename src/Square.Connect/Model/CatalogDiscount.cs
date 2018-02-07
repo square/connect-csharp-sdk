@@ -71,12 +71,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogDiscount" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CatalogDiscount() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogDiscount" /> class.
-        /// </summary>
-        /// <param name="Name">The discount&#39;s name. Searchable. (required).</param>
+        /// <param name="Name">The discount&#39;s name. Searchable..</param>
         /// <param name="DiscountType">Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values..</param>
         /// <param name="Percentage">The percentage of the discount as a string representation of a decimal number, using a &#x60;.&#x60; as the decimal separator and without a &#x60;%&#x60; sign. A value of &#x60;7.5&#x60; corresponds to &#x60;7.5%&#x60;. Specify a percentage of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_PERCENTAGE&#x60;.  Do not include this field for amount-based or variable discounts..</param>
         /// <param name="AmountMoney">The amount of the discount. Specify an amount of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_AMOUNT&#x60;.  Do not include this field for percentage-based or variable discounts..</param>
@@ -84,15 +79,7 @@ namespace Square.Connect.Model
         /// <param name="LabelColor">The color of the discount&#39;s display label in the Square Point of Sale app..</param>
         public CatalogDiscount(string Name = default(string), DiscountTypeEnum? DiscountType = default(DiscountTypeEnum?), string Percentage = default(string), Money AmountMoney = default(Money), bool? PinRequired = default(bool?), string LabelColor = default(string))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for CatalogDiscount and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
+            this.Name = Name;
             this.DiscountType = DiscountType;
             this.Percentage = Percentage;
             this.AmountMoney = AmountMoney;
@@ -241,12 +228,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

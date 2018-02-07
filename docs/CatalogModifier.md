@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The modifier&#39;s name. Searchable. | 
+**Name** | **string** | The modifier&#39;s name. Searchable. | [optional] 
 **PriceMoney** | [**Money**](Money.md) | The modifier&#39;s price. | [optional] 
 
 

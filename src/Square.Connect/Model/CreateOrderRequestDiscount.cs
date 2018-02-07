@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestDiscount" /> class.
         /// </summary>
-        /// <param name="CatalogObjectId">Only used for catalog taxes. The catalog object ID from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount..</param>
+        /// <param name="CatalogObjectId">Only used for catalog discounts. The catalog object ID for an existing [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount..</param>
         /// <param name="Name">Only used for ad hoc discounts. The discount&#39;s name..</param>
         /// <param name="Percentage">Only used for ad hoc discounts. The percentage of the discount, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0.</param>
         /// <param name="AmountMoney">Only used for ad hoc discounts. The monetary amount of the discount..</param>
@@ -45,9 +45,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Only used for catalog taxes. The catalog object ID from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount.
+        /// Only used for catalog discounts. The catalog object ID for an existing [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount.
         /// </summary>
-        /// <value>Only used for catalog taxes. The catalog object ID from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount.</value>
+        /// <value>Only used for catalog discounts. The catalog object ID for an existing [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for an ad hoc discount.</value>
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>

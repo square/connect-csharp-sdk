@@ -134,6 +134,12 @@ namespace Square.Connect.Model
             INCENTEDPAYMENT,
             
             /// <summary>
+            /// Enum OTHER for "OTHER"
+            /// </summary>
+            [EnumMember(Value = "OTHER")]
+            OTHER,
+            
+            /// <summary>
             /// Enum RETURNEDACHENTRY for "RETURNED_ACH_ENTRY"
             /// </summary>
             [EnumMember(Value = "RETURNED_ACH_ENTRY")]
