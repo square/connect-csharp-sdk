@@ -32,8 +32,13 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected OrderLineItem() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
+        /// </summary>
         /// <param name="Name">The name of the line item..</param>
-        /// <param name="Quantity">The quantity purchased, as a string representation of a number..</param>
+        /// <param name="Quantity">The quantity purchased, as a string representation of a number. (required).</param>
         /// <param name="Note">The note of the line item..</param>
         /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item..</param>
         /// <param name="VariationName">The name of the variation applied to this line item..</param>
@@ -47,8 +52,16 @@ namespace Square.Connect.Model
         /// <param name="TotalMoney">The total amount of money to collect for this line item..</param>
         public OrderLineItem(string Name = default(string), string Quantity = default(string), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderLineItemModifier> Modifiers = default(List<OrderLineItemModifier>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money GrossSalesMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
+            // to ensure "Quantity" is required (not null)
+            if (Quantity == null)
+            {
+                throw new InvalidDataException("Quantity is a required property for OrderLineItem and cannot be null");
+            }
+            else
+            {
+                this.Quantity = Quantity;
+            }
             this.Name = Name;
-            this.Quantity = Quantity;
             this.Note = Note;
             this.CatalogObjectId = CatalogObjectId;
             this.VariationName = VariationName;
@@ -307,6 +320,42 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // Name (string) maxLength
+            if(this.Name != null && this.Name.Length > 500)
+            {
+                yield return new ValidationResult("Invalid value for Name, length must be less than 500.", new [] { "Name" });
+            }
+
+            // Quantity (string) maxLength
+            if(this.Quantity != null && this.Quantity.Length > 5)
+            {
+                yield return new ValidationResult("Invalid value for Quantity, length must be less than 5.", new [] { "Quantity" });
+            }
+
+            // Quantity (string) minLength
+            if(this.Quantity != null && this.Quantity.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for Quantity, length must be greater than 1.", new [] { "Quantity" });
+            }
+
+            // Note (string) maxLength
+            if(this.Note != null && this.Note.Length > 50)
+            {
+                yield return new ValidationResult("Invalid value for Note, length must be less than 50.", new [] { "Note" });
+            }
+
+            // CatalogObjectId (string) maxLength
+            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 192.", new [] { "CatalogObjectId" });
+            }
+
+            // VariationName (string) maxLength
+            if(this.VariationName != null && this.VariationName.Length > 255)
+            {
+                yield return new ValidationResult("Invalid value for VariationName, length must be less than 255.", new [] { "VariationName" });
+            }
+
             yield break;
         }
     }
