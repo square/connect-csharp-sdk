@@ -128,16 +128,16 @@ namespace Square.Connect.Model
             SUBSCRIPTIONFEEREFUND,
             
             /// <summary>
-            /// Enum INCENTEDPAYMENT for "INCENTED_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "INCENTED_PAYMENT")]
-            INCENTEDPAYMENT,
-            
-            /// <summary>
             /// Enum OTHER for "OTHER"
             /// </summary>
             [EnumMember(Value = "OTHER")]
             OTHER,
+            
+            /// <summary>
+            /// Enum INCENTEDPAYMENT for "INCENTED_PAYMENT"
+            /// </summary>
+            [EnumMember(Value = "INCENTED_PAYMENT")]
+            INCENTEDPAYMENT,
             
             /// <summary>
             /// Enum RETURNEDACHENTRY for "RETURNED_ACH_ENTRY"
