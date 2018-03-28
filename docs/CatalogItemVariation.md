@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **ItemId** | **string** | The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable. | [optional] 
 **Name** | **string** | The item variation&#39;s name. Searchable. | [optional] 
 **Sku** | **string** | The item variation&#39;s SKU, if any. Searchable. | [optional] 
-**Upc** | **string** | The item variation&#39;s UPC, if any. Searchable. | [optional] 
+**Upc** | **string** | The item variation&#39;s UPC, if any. Searchable in the Connect API. This field is only exposed in the Connect API. It is not exposed in Square&#39;s Dashboard, Square Point of Sale app or Retail Point of Sale app. | [optional] 
 **Ordinal** | **int?** | The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique. | [optional] 
 **PricingType** | **PricingTypeEnum** | Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values. | [optional] 
 **PriceMoney** | [**Money**](Money.md) | The item variation&#39;s price, if fixed pricing is used. | [optional] 

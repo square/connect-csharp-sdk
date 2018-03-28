@@ -28,7 +28,7 @@ namespace Square.Connect.Api
         /// BatchRetrieveOrders
         /// </summary>
         /// <remarks>
-        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>
@@ -40,7 +40,7 @@ namespace Square.Connect.Api
         /// BatchRetrieveOrders
         /// </summary>
         /// <remarks>
-        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>
@@ -76,7 +76,7 @@ namespace Square.Connect.Api
         /// BatchRetrieveOrders
         /// </summary>
         /// <remarks>
-        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>
@@ -88,7 +88,7 @@ namespace Square.Connect.Api
         /// BatchRetrieveOrders
         /// </summary>
         /// <remarks>
-        /// Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>
@@ -231,7 +231,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>
@@ -244,7 +244,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>
@@ -318,7 +318,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>
@@ -332,7 +332,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs. Only orders that have been successfully charged are included in the response.  If any of the order IDs in the request do not exist, or are associated with uncharged orders, then those orders will not be included in the set of orders in the response.  Note that in the future, uncharged orders may be returned by this endpoint.
+        /// BatchRetrieveOrders Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the orders&#39; associated location.</param>

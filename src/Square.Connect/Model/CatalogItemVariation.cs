@@ -89,7 +89,7 @@ namespace Square.Connect.Model
         /// <param name="ItemId">The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable..</param>
         /// <param name="Name">The item variation&#39;s name. Searchable..</param>
         /// <param name="Sku">The item variation&#39;s SKU, if any. Searchable..</param>
-        /// <param name="Upc">The item variation&#39;s UPC, if any. Searchable..</param>
+        /// <param name="Upc">The item variation&#39;s UPC, if any. Searchable in the Connect API. This field is only exposed in the Connect API. It is not exposed in Square&#39;s Dashboard, Square Point of Sale app or Retail Point of Sale app..</param>
         /// <param name="Ordinal">The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique..</param>
         /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values..</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if fixed pricing is used..</param>
@@ -135,9 +135,9 @@ namespace Square.Connect.Model
         [DataMember(Name="sku", EmitDefaultValue=false)]
         public string Sku { get; set; }
         /// <summary>
-        /// The item variation&#39;s UPC, if any. Searchable.
+        /// The item variation&#39;s UPC, if any. Searchable in the Connect API. This field is only exposed in the Connect API. It is not exposed in Square&#39;s Dashboard, Square Point of Sale app or Retail Point of Sale app.
         /// </summary>
-        /// <value>The item variation&#39;s UPC, if any. Searchable.</value>
+        /// <value>The item variation&#39;s UPC, if any. Searchable in the Connect API. This field is only exposed in the Connect API. It is not exposed in Square&#39;s Dashboard, Square Point of Sale app or Retail Point of Sale app.</value>
         [DataMember(Name="upc", EmitDefaultValue=false)]
         public string Upc { get; set; }
         /// <summary>

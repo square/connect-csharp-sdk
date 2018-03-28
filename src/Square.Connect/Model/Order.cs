@@ -32,19 +32,40 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected Order() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Order" /> class.
+        /// </summary>
         /// <param name="Id">The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-createorder) endpoint..</param>
-        /// <param name="LocationId">The ID of the merchant location this order is associated with..</param>
+        /// <param name="LocationId">The ID of the merchant location this order is associated with. (required).</param>
         /// <param name="ReferenceId">A client specified identifier to associate an entity in another system with this order..</param>
-        /// <param name="LineItems">The line items included in the order. Every order has at least one line item..</param>
+        /// <param name="LineItems">The line items included in the order. Every order has at least one line item. (required).</param>
         /// <param name="TotalMoney">The total amount of money to collect for the order..</param>
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order..</param>
         public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
         {
+            // to ensure "LocationId" is required (not null)
+            if (LocationId == null)
+            {
+                throw new InvalidDataException("LocationId is a required property for Order and cannot be null");
+            }
+            else
+            {
+                this.LocationId = LocationId;
+            }
+            // to ensure "LineItems" is required (not null)
+            if (LineItems == null)
+            {
+                throw new InvalidDataException("LineItems is a required property for Order and cannot be null");
+            }
+            else
+            {
+                this.LineItems = LineItems;
+            }
             this.Id = Id;
-            this.LocationId = LocationId;
             this.ReferenceId = ReferenceId;
-            this.LineItems = LineItems;
             this.TotalMoney = TotalMoney;
             this.TotalTaxMoney = TotalTaxMoney;
             this.TotalDiscountMoney = TotalDiscountMoney;
@@ -211,6 +232,18 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // LocationId (string) minLength
+            if(this.LocationId != null && this.LocationId.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for LocationId, length must be greater than 1.", new [] { "LocationId" });
+            }
+
+            // ReferenceId (string) maxLength
+            if(this.ReferenceId != null && this.ReferenceId.Length > 40)
+            {
+                yield return new ValidationResult("Invalid value for ReferenceId, length must be less than 40.", new [] { "ReferenceId" });
+            }
+
             yield break;
         }
     }

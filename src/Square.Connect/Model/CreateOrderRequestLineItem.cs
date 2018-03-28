@@ -37,9 +37,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestLineItem" /> class.
         /// </summary>
-        /// <param name="Name">Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide values in catalog_object_id..</param>
+        /// <param name="Name">Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide a value for &#x60;catalog_object_id&#x60;..</param>
         /// <param name="Quantity">The quantity to purchase, as a string representation of a number.  This string must have a positive integer value. (required).</param>
-        /// <param name="BasePriceMoney">Only used for ad hoc line items. The base price for a single unit of the line item&#39;s associated variation.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;..</param>
+        /// <param name="BasePriceMoney">The base price for a single unit of the line item.  &#x60;base_price_money&#x60; is required for ad hoc line items and variable priced [CatalogItemVariation](#type-catalogitemvariation)s. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the CatalogItemVariation&#39;s price..</param>
         /// <param name="VariationName">Only used for ad hoc line items. The variation name of the line item. This value cannot exceed 255 characters.  If this value is not set for an ad hoc line item, the default value of &#x60;Regular&#x60; is used.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;..</param>
         /// <param name="Note">The note of the line item. This value cannot exceed 50 characters..</param>
         /// <param name="CatalogObjectId">Only used for Catalog line items. The catalog object ID for an existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for &#x60;name&#x60; and &#x60;base_price_money&#x60;..</param>
@@ -68,9 +68,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide values in catalog_object_id.
+        /// Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide a value for &#x60;catalog_object_id&#x60;.
         /// </summary>
-        /// <value>Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide values in catalog_object_id.</value>
+        /// <value>Only used for ad hoc line items. The name of the line item. This value cannot exceed 500 characters.  Do not provide a value for this field if you provide a value for &#x60;catalog_object_id&#x60;.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -80,9 +80,9 @@ namespace Square.Connect.Model
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
         /// <summary>
-        /// Only used for ad hoc line items. The base price for a single unit of the line item&#39;s associated variation.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;.
+        /// The base price for a single unit of the line item.  &#x60;base_price_money&#x60; is required for ad hoc line items and variable priced [CatalogItemVariation](#type-catalogitemvariation)s. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the CatalogItemVariation&#39;s price.
         /// </summary>
-        /// <value>Only used for ad hoc line items. The base price for a single unit of the line item&#39;s associated variation.  Do not provide a value for this field if you provide a value for the &#x60;catalog_object_id&#x60;.</value>
+        /// <value>The base price for a single unit of the line item.  &#x60;base_price_money&#x60; is required for ad hoc line items and variable priced [CatalogItemVariation](#type-catalogitemvariation)s. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the CatalogItemVariation&#39;s price.</value>
         [DataMember(Name="base_price_money", EmitDefaultValue=false)]
         public Money BasePriceMoney { get; set; }
         /// <summary>

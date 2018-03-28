@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the line item. | [optional] 
-**Quantity** | **string** | The quantity purchased, as a string representation of a number. | [optional] 
+**Quantity** | **string** | The quantity purchased, as a string representation of a number. | 
 **Note** | **string** | The note of the line item. | [optional] 
 **CatalogObjectId** | **string** | The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item. | [optional] 
 **VariationName** | **string** | The name of the variation applied to this line item. | [optional] 

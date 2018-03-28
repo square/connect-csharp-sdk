@@ -163,6 +163,18 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // CatalogObjectId (string) maxLength
+            if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 192)
+            {
+                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 192.", new [] { "CatalogObjectId" });
+            }
+
+            // Name (string) maxLength
+            if(this.Name != null && this.Name.Length > 255)
+            {
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

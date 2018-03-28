@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a modifier applied to a single line item.
+    /// Represents a modifier applied to a single line item.  Modifiers can reference existing objects in a merchant catalog or be constructed ad hoc at the time of purchase by providing a name and price.
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequestModifier :  IEquatable<CreateOrderRequestModifier>, IValidatableObject
@@ -32,23 +32,14 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequestModifier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateOrderRequestModifier() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOrderRequestModifier" /> class.
-        /// </summary>
-        /// <param name="CatalogObjectId">The catalog object ID of a [CatalogModifier](#type-catalogmodifier). (required).</param>
-        public CreateOrderRequestModifier(string CatalogObjectId = default(string))
+        /// <param name="CatalogObjectId">The catalog object ID of a [CatalogModifier](#type-catalogmodifier)..</param>
+        /// <param name="Name">Only used for ad hoc modifiers. The name of the modifier. &#x60;name&#x60; cannot exceed 255 characters.  Do not provide a value for &#x60;name&#x60; if you provide a value for &#x60;catalog_object_id&#x60;..</param>
+        /// <param name="BasePriceMoney">Only used for ad hoc modifiers. The base price for the modifier.  Do not provide a value for &#x60;base_price_money&#x60; if you provide a value for &#x60;catalog_object_id&#x60;..</param>
+        public CreateOrderRequestModifier(string CatalogObjectId = default(string), string Name = default(string), Money BasePriceMoney = default(Money))
         {
-            // to ensure "CatalogObjectId" is required (not null)
-            if (CatalogObjectId == null)
-            {
-                throw new InvalidDataException("CatalogObjectId is a required property for CreateOrderRequestModifier and cannot be null");
-            }
-            else
-            {
-                this.CatalogObjectId = CatalogObjectId;
-            }
+            this.CatalogObjectId = CatalogObjectId;
+            this.Name = Name;
+            this.BasePriceMoney = BasePriceMoney;
         }
         
         /// <summary>
@@ -58,6 +49,18 @@ namespace Square.Connect.Model
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>
+        /// Only used for ad hoc modifiers. The name of the modifier. &#x60;name&#x60; cannot exceed 255 characters.  Do not provide a value for &#x60;name&#x60; if you provide a value for &#x60;catalog_object_id&#x60;.
+        /// </summary>
+        /// <value>Only used for ad hoc modifiers. The name of the modifier. &#x60;name&#x60; cannot exceed 255 characters.  Do not provide a value for &#x60;name&#x60; if you provide a value for &#x60;catalog_object_id&#x60;.</value>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
+        /// <summary>
+        /// Only used for ad hoc modifiers. The base price for the modifier.  Do not provide a value for &#x60;base_price_money&#x60; if you provide a value for &#x60;catalog_object_id&#x60;.
+        /// </summary>
+        /// <value>Only used for ad hoc modifiers. The base price for the modifier.  Do not provide a value for &#x60;base_price_money&#x60; if you provide a value for &#x60;catalog_object_id&#x60;.</value>
+        [DataMember(Name="base_price_money", EmitDefaultValue=false)]
+        public Money BasePriceMoney { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +69,8 @@ namespace Square.Connect.Model
             var sb = new StringBuilder();
             sb.Append("class CreateOrderRequestModifier {\n");
             sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  BasePriceMoney: ").Append(BasePriceMoney).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +111,16 @@ namespace Square.Connect.Model
                     this.CatalogObjectId == other.CatalogObjectId ||
                     this.CatalogObjectId != null &&
                     this.CatalogObjectId.Equals(other.CatalogObjectId)
+                ) && 
+                (
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.BasePriceMoney == other.BasePriceMoney ||
+                    this.BasePriceMoney != null &&
+                    this.BasePriceMoney.Equals(other.BasePriceMoney)
                 );
         }
 
@@ -122,6 +137,10 @@ namespace Square.Connect.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CatalogObjectId != null)
                     hash = hash * 59 + this.CatalogObjectId.GetHashCode();
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
+                if (this.BasePriceMoney != null)
+                    hash = hash * 59 + this.BasePriceMoney.GetHashCode();
                 return hash;
             }
         }
@@ -134,10 +153,10 @@ namespace Square.Connect.Model
                 yield return new ValidationResult("Invalid value for CatalogObjectId, length must be less than 192.", new [] { "CatalogObjectId" });
             }
 
-            // CatalogObjectId (string) minLength
-            if(this.CatalogObjectId != null && this.CatalogObjectId.Length < 1)
+            // Name (string) maxLength
+            if(this.Name != null && this.Name.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for CatalogObjectId, length must be greater than 1.", new [] { "CatalogObjectId" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
             }
 
             yield break;
