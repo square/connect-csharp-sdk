@@ -49,7 +49,7 @@ mono nuget.exe pack -version ${packageVersion} -basepath . src/Square.Connect/Sq
 if [ "${TRAVIS_PULL_REQUEST_BRANCH}" = "" -a "${TRAVIS_BRANCH}" = "master" ];
 then
   echo -e "\033[1;32mPublishing version ${packageVersion} to Nuget..."
-  mono nuget.exe push -apikey $NUGET_APIKEY *.nupkg
+  mono nuget.exe push -apikey $NUGET_APIKEY *.nupkg -Source https://api.nuget.org/v3/index.json
 else
   echo -e "\033[1;32mNot uploading pending changes until it's merged into master."
 fi
