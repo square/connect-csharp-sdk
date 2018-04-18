@@ -137,7 +137,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Refund&gt;</returns>
         List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
@@ -153,7 +153,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Refund&gt;</returns>
         ApiResponse<List<V1Refund>> ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
@@ -244,7 +244,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>V1Payment</returns>
         V1Payment RetrievePayment (string locationId, string paymentId);
 
@@ -256,7 +256,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>ApiResponse of V1Payment</returns>
         ApiResponse<V1Payment> RetrievePaymentWithHttpInfo (string locationId, string paymentId);
         /// <summary>
@@ -422,7 +422,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Refund&gt;</returns>
         System.Threading.Tasks.Task<List<V1Refund>> ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
@@ -438,7 +438,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Refund&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
@@ -529,7 +529,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>Task of V1Payment</returns>
         System.Threading.Tasks.Task<V1Payment> RetrievePaymentAsync (string locationId, string paymentId);
 
@@ -541,7 +541,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>Task of ApiResponse (V1Payment)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Payment>> RetrievePaymentAsyncWithHttpInfo (string locationId, string paymentId);
         /// <summary>
@@ -1382,7 +1382,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1Refund&gt;</returns>
         public List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
@@ -1399,7 +1399,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Refund&gt;</returns>
         public ApiResponse< List<V1Refund> > ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
@@ -1471,7 +1471,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1Refund&gt;</returns>
         public async System.Threading.Tasks.Task<List<V1Refund>> ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
@@ -1489,7 +1489,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
-        /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
+        /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Refund&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
@@ -2065,7 +2065,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>V1Payment</returns>
         public V1Payment RetrievePayment (string locationId, string paymentId)
         {
@@ -2078,7 +2078,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>ApiResponse of V1Payment</returns>
         public ApiResponse< V1Payment > RetrievePaymentWithHttpInfo (string locationId, string paymentId)
         {
@@ -2145,7 +2145,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>Task of V1Payment</returns>
         public async System.Threading.Tasks.Task<V1Payment> RetrievePaymentAsync (string locationId, string paymentId)
         {
@@ -2159,7 +2159,7 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
-        /// <param name="paymentId">The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.</param>
+        /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
         /// <returns>Task of ApiResponse (V1Payment)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<V1Payment>> RetrievePaymentAsyncWithHttpInfo (string locationId, string paymentId)
         {
