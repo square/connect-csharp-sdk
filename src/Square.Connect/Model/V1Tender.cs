@@ -234,7 +234,8 @@ namespace Square.Connect.Model
         /// <param name="TenderedMoney">The amount of total_money applied to the payment..</param>
         /// <param name="ChangeBackMoney">The amount of total_money returned to the buyer as change..</param>
         /// <param name="RefundedMoney">The total of all refunds applied to this tender. This amount is always negative or zero..</param>
-        public V1Tender(string Id = default(string), TypeEnum? Type = default(TypeEnum?), string Name = default(string), string EmployeeId = default(string), string ReceiptUrl = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string PanSuffix = default(string), EntryMethodEnum? EntryMethod = default(EntryMethodEnum?), string PaymentNote = default(string), V1Money TotalMoney = default(V1Money), V1Money TenderedMoney = default(V1Money), V1Money ChangeBackMoney = default(V1Money), V1Money RefundedMoney = default(V1Money))
+        /// <param name="IsExchange">Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange..</param>
+        public V1Tender(string Id = default(string), TypeEnum? Type = default(TypeEnum?), string Name = default(string), string EmployeeId = default(string), string ReceiptUrl = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string PanSuffix = default(string), EntryMethodEnum? EntryMethod = default(EntryMethodEnum?), string PaymentNote = default(string), V1Money TotalMoney = default(V1Money), V1Money TenderedMoney = default(V1Money), V1Money ChangeBackMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), bool? IsExchange = default(bool?))
         {
             this.Id = Id;
             this.Type = Type;
@@ -249,6 +250,7 @@ namespace Square.Connect.Model
             this.TenderedMoney = TenderedMoney;
             this.ChangeBackMoney = ChangeBackMoney;
             this.RefundedMoney = RefundedMoney;
+            this.IsExchange = IsExchange;
         }
         
         /// <summary>
@@ -312,6 +314,12 @@ namespace Square.Connect.Model
         [DataMember(Name="refunded_money", EmitDefaultValue=false)]
         public V1Money RefundedMoney { get; set; }
         /// <summary>
+        /// Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange.
+        /// </summary>
+        /// <value>Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange.</value>
+        [DataMember(Name="is_exchange", EmitDefaultValue=false)]
+        public bool? IsExchange { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -332,6 +340,7 @@ namespace Square.Connect.Model
             sb.Append("  TenderedMoney: ").Append(TenderedMoney).Append("\n");
             sb.Append("  ChangeBackMoney: ").Append(ChangeBackMoney).Append("\n");
             sb.Append("  RefundedMoney: ").Append(RefundedMoney).Append("\n");
+            sb.Append("  IsExchange: ").Append(IsExchange).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -432,6 +441,11 @@ namespace Square.Connect.Model
                     this.RefundedMoney == other.RefundedMoney ||
                     this.RefundedMoney != null &&
                     this.RefundedMoney.Equals(other.RefundedMoney)
+                ) && 
+                (
+                    this.IsExchange == other.IsExchange ||
+                    this.IsExchange != null &&
+                    this.IsExchange.Equals(other.IsExchange)
                 );
         }
 
@@ -472,6 +486,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ChangeBackMoney.GetHashCode();
                 if (this.RefundedMoney != null)
                     hash = hash * 59 + this.RefundedMoney.GetHashCode();
+                if (this.IsExchange != null)
+                    hash = hash * 59 + this.IsExchange.GetHashCode();
                 return hash;
             }
         }

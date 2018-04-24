@@ -99,7 +99,7 @@ namespace Square.Connect.Api
         /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -114,7 +114,7 @@ namespace Square.Connect.Api
         /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -128,7 +128,7 @@ namespace Square.Connect.Api
         /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
@@ -143,7 +143,7 @@ namespace Square.Connect.Api
         /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
@@ -276,7 +276,7 @@ namespace Square.Connect.Api
         /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -291,7 +291,7 @@ namespace Square.Connect.Api
         /// ListRefunds
         /// </summary>
         /// <remarks>
-        /// Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -305,7 +305,7 @@ namespace Square.Connect.Api
         /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
@@ -320,7 +320,7 @@ namespace Square.Connect.Api
         /// ListTransactions
         /// </summary>
         /// <remarks>
-        /// Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
@@ -1012,7 +1012,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1028,7 +1028,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1098,7 +1098,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1115,7 +1115,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListRefunds Lists refunds for one of a business&#39;s locations.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
+        /// ListRefunds Lists refunds for one of a business&#39;s locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square&#39;s Point of Sale applications.  Refunds with a &#x60;status&#x60; of &#x60;PENDING&#x60; are not currently included in this endpoint&#39;s response.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1185,7 +1185,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListTransactions Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
@@ -1201,7 +1201,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListTransactions Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
@@ -1271,7 +1271,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListTransactions Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>
@@ -1288,7 +1288,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListTransactions Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+        /// ListTransactions Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list transactions for.</param>

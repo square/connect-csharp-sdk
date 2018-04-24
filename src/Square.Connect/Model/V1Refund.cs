@@ -62,11 +62,12 @@ namespace Square.Connect.Model
         /// <param name="Type">The type of refund .</param>
         /// <param name="Reason">The merchant-specified reason for the refund..</param>
         /// <param name="RefundedMoney">The amount of money refunded. This amount is always negative..</param>
-        /// <param name="CreatedAt">The time when the merchant initiated the refund for Square to process, in ISO 8601 format...</param>
+        /// <param name="CreatedAt">The time when the merchant initiated the refund for Square to process, in ISO 8601 format..</param>
         /// <param name="ProcessedAt">The time when Square processed the refund on behalf of the merchant, in ISO 8601 format..</param>
-        /// <param name="PaymentId">The Square-issued ID of the payment the refund is applied to..</param>
+        /// <param name="PaymentId">A Square-issued ID associated with the refund. For single-tender refunds, payment_id is the ID of the original payment ID. For split-tender refunds, payment_id is the ID of the original tender. For exchange-based refunds (is_exchange &#x3D;&#x3D; true), payment_id is the ID of the original payment ID even if the payment includes other tenders..</param>
         /// <param name="MerchantId">.</param>
-        public V1Refund(TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string))
+        /// <param name="IsExchange">Indicates whether or not the refund is associated with an exchange. If is_exchange is true, the refund reflects the value of goods returned in the exchange not the total money refunded..</param>
+        public V1Refund(TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string), bool? IsExchange = default(bool?))
         {
             this.Type = Type;
             this.Reason = Reason;
@@ -75,6 +76,7 @@ namespace Square.Connect.Model
             this.ProcessedAt = ProcessedAt;
             this.PaymentId = PaymentId;
             this.MerchantId = MerchantId;
+            this.IsExchange = IsExchange;
         }
         
         /// <summary>
@@ -90,9 +92,9 @@ namespace Square.Connect.Model
         [DataMember(Name="refunded_money", EmitDefaultValue=false)]
         public V1Money RefundedMoney { get; set; }
         /// <summary>
-        /// The time when the merchant initiated the refund for Square to process, in ISO 8601 format..
+        /// The time when the merchant initiated the refund for Square to process, in ISO 8601 format.
         /// </summary>
-        /// <value>The time when the merchant initiated the refund for Square to process, in ISO 8601 format..</value>
+        /// <value>The time when the merchant initiated the refund for Square to process, in ISO 8601 format.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         public string CreatedAt { get; set; }
         /// <summary>
@@ -102,9 +104,9 @@ namespace Square.Connect.Model
         [DataMember(Name="processed_at", EmitDefaultValue=false)]
         public string ProcessedAt { get; set; }
         /// <summary>
-        /// The Square-issued ID of the payment the refund is applied to.
+        /// A Square-issued ID associated with the refund. For single-tender refunds, payment_id is the ID of the original payment ID. For split-tender refunds, payment_id is the ID of the original tender. For exchange-based refunds (is_exchange &#x3D;&#x3D; true), payment_id is the ID of the original payment ID even if the payment includes other tenders.
         /// </summary>
-        /// <value>The Square-issued ID of the payment the refund is applied to.</value>
+        /// <value>A Square-issued ID associated with the refund. For single-tender refunds, payment_id is the ID of the original payment ID. For split-tender refunds, payment_id is the ID of the original tender. For exchange-based refunds (is_exchange &#x3D;&#x3D; true), payment_id is the ID of the original payment ID even if the payment includes other tenders.</value>
         [DataMember(Name="payment_id", EmitDefaultValue=false)]
         public string PaymentId { get; set; }
         /// <summary>
@@ -113,6 +115,12 @@ namespace Square.Connect.Model
         /// <value></value>
         [DataMember(Name="merchant_id", EmitDefaultValue=false)]
         public string MerchantId { get; set; }
+        /// <summary>
+        /// Indicates whether or not the refund is associated with an exchange. If is_exchange is true, the refund reflects the value of goods returned in the exchange not the total money refunded.
+        /// </summary>
+        /// <value>Indicates whether or not the refund is associated with an exchange. If is_exchange is true, the refund reflects the value of goods returned in the exchange not the total money refunded.</value>
+        [DataMember(Name="is_exchange", EmitDefaultValue=false)]
+        public bool? IsExchange { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -128,6 +136,7 @@ namespace Square.Connect.Model
             sb.Append("  ProcessedAt: ").Append(ProcessedAt).Append("\n");
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
             sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
+            sb.Append("  IsExchange: ").Append(IsExchange).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -198,6 +207,11 @@ namespace Square.Connect.Model
                     this.MerchantId == other.MerchantId ||
                     this.MerchantId != null &&
                     this.MerchantId.Equals(other.MerchantId)
+                ) && 
+                (
+                    this.IsExchange == other.IsExchange ||
+                    this.IsExchange != null &&
+                    this.IsExchange.Equals(other.IsExchange)
                 );
         }
 
@@ -226,6 +240,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.PaymentId.GetHashCode();
                 if (this.MerchantId != null)
                     hash = hash * 59 + this.MerchantId.GetHashCode();
+                if (this.IsExchange != null)
+                    hash = hash * 59 + this.IsExchange.GetHashCode();
                 return hash;
             }
         }

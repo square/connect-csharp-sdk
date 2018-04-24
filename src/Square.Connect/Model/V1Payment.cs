@@ -54,7 +54,7 @@ namespace Square.Connect.Model
         /// <param name="InclusiveTax">All of the inclusive taxes associated with the payment..</param>
         /// <param name="AdditiveTax">All of the additive taxes associated with the payment..</param>
         /// <param name="Tender">All of the additive taxes associated with the payment..</param>
-        /// <param name="Refunds">All of the refunds applied to the payment..</param>
+        /// <param name="Refunds">All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange..</param>
         /// <param name="Itemizations">The items purchased in the payment..</param>
         public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>))
         {
@@ -217,9 +217,9 @@ namespace Square.Connect.Model
         [DataMember(Name="tender", EmitDefaultValue=false)]
         public List<V1Tender> Tender { get; set; }
         /// <summary>
-        /// All of the refunds applied to the payment.
+        /// All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange.
         /// </summary>
-        /// <value>All of the refunds applied to the payment.</value>
+        /// <value>All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange.</value>
         [DataMember(Name="refunds", EmitDefaultValue=false)]
         public List<V1Refund> Refunds { get; set; }
         /// <summary>

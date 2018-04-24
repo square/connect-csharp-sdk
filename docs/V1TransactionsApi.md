@@ -326,7 +326,7 @@ namespace Example
             var order = order_example;  // string | TThe order in which payments are listed in the response. (optional) 
             var beginTime = beginTime_example;  // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional) 
             var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
-            var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
+            var limit = 56;  // int? | The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional) 
             var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
  **order** | **string**| TThe order in which payments are listed in the response. | [optional] 
  **beginTime** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional] 
  **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
- **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
+ **limit** | **int?**| The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. | [optional] 
  **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
 ### Return type
@@ -609,7 +609,7 @@ namespace Example
 
             var apiInstance = new V1TransactionsApi();
             var locationId = locationId_example;  // string | The ID of the payment's associated location.
-            var paymentId = paymentId_example;  // string | The payment's Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.
+            var paymentId = paymentId_example;  // string | The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.
 
             try
             {
@@ -631,7 +631,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **string**| The ID of the payment&#39;s associated location. | 
- **paymentId** | **string**| The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint. | 
+ **paymentId** | **string**| The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint. | 
 
 ### Return type
 
