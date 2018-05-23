@@ -45,7 +45,8 @@ namespace Square.Connect.Model
         /// <param name="PrePopulateShippingAddress">If provided, the buyer&#39;s shipping info is pre-populated on the checkout page as editable text fields.  Default: none; only exists if explicitly set..</param>
         /// <param name="RedirectUrl">The URL to redirect to after checkout is completed with &#x60;checkoutId&#x60;, Square&#39;s &#x60;orderId&#x60;, &#x60;transactionId&#x60;, and &#x60;referenceId&#x60; appended as URL parameters. For example, if the provided redirect_url is &#x60;http://www.example.com/order-complete&#x60;, a successful transaction redirects the customer to:  &#x60;http://www.example.com/order-complete?checkoutId&#x3D;xxxxxx&amp;orderId&#x3D;xxxxxx&amp;referenceId&#x3D;xxxxxx&amp;transactionId&#x3D;xxxxxx&#x60;  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow.  Default: none; only exists if explicitly set..</param>
         /// <param name="AdditionalRecipients">The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;total_money&#x60; calculated by Square for your order. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox..</param>
-        public CreateCheckoutRequest(string IdempotencyKey = default(string), CreateOrderRequest Order = default(CreateOrderRequest), bool? AskForShippingAddress = default(bool?), string MerchantSupportEmail = default(string), string PrePopulateBuyerEmail = default(string), Address PrePopulateShippingAddress = default(Address), string RedirectUrl = default(string), List<ChargeRequestAdditionalRecipient> AdditionalRecipients = default(List<ChargeRequestAdditionalRecipient>))
+        /// <param name="Note">An optional note to associate with the checkout object.  This value cannot exceed 60 characters..</param>
+        public CreateCheckoutRequest(string IdempotencyKey = default(string), CreateOrderRequest Order = default(CreateOrderRequest), bool? AskForShippingAddress = default(bool?), string MerchantSupportEmail = default(string), string PrePopulateBuyerEmail = default(string), Address PrePopulateShippingAddress = default(Address), string RedirectUrl = default(string), List<ChargeRequestAdditionalRecipient> AdditionalRecipients = default(List<ChargeRequestAdditionalRecipient>), string Note = default(string))
         {
             // to ensure "IdempotencyKey" is required (not null)
             if (IdempotencyKey == null)
@@ -71,6 +72,7 @@ namespace Square.Connect.Model
             this.PrePopulateShippingAddress = PrePopulateShippingAddress;
             this.RedirectUrl = RedirectUrl;
             this.AdditionalRecipients = AdditionalRecipients;
+            this.Note = Note;
         }
         
         /// <summary>
@@ -122,6 +124,12 @@ namespace Square.Connect.Model
         [DataMember(Name="additional_recipients", EmitDefaultValue=false)]
         public List<ChargeRequestAdditionalRecipient> AdditionalRecipients { get; set; }
         /// <summary>
+        /// An optional note to associate with the checkout object.  This value cannot exceed 60 characters.
+        /// </summary>
+        /// <value>An optional note to associate with the checkout object.  This value cannot exceed 60 characters.</value>
+        [DataMember(Name="note", EmitDefaultValue=false)]
+        public string Note { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -137,6 +145,7 @@ namespace Square.Connect.Model
             sb.Append("  PrePopulateShippingAddress: ").Append(PrePopulateShippingAddress).Append("\n");
             sb.Append("  RedirectUrl: ").Append(RedirectUrl).Append("\n");
             sb.Append("  AdditionalRecipients: ").Append(AdditionalRecipients).Append("\n");
+            sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,6 +221,11 @@ namespace Square.Connect.Model
                     this.AdditionalRecipients == other.AdditionalRecipients ||
                     this.AdditionalRecipients != null &&
                     this.AdditionalRecipients.SequenceEqual(other.AdditionalRecipients)
+                ) && 
+                (
+                    this.Note == other.Note ||
+                    this.Note != null &&
+                    this.Note.Equals(other.Note)
                 );
         }
 
@@ -242,6 +256,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.RedirectUrl.GetHashCode();
                 if (this.AdditionalRecipients != null)
                     hash = hash * 59 + this.AdditionalRecipients.GetHashCode();
+                if (this.Note != null)
+                    hash = hash * 59 + this.Note.GetHashCode();
                 return hash;
             }
         }
@@ -276,6 +292,12 @@ namespace Square.Connect.Model
             if(this.RedirectUrl != null && this.RedirectUrl.Length > 800)
             {
                 yield return new ValidationResult("Invalid value for RedirectUrl, length must be less than 800.", new [] { "RedirectUrl" });
+            }
+
+            // Note (string) maxLength
+            if(this.Note != null && this.Note.Length > 60)
+            {
+                yield return new ValidationResult("Invalid value for Note, length must be less than 60.", new [] { "Note" });
             }
 
             yield break;

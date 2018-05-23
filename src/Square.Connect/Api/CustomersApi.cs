@@ -120,8 +120,10 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ListCustomersResponse</returns>
-        ListCustomersResponse ListCustomers (string cursor = null);
+        ListCustomersResponse ListCustomers (string cursor = null, string sortField = null, string sortOrder = null);
 
         /// <summary>
         /// ListCustomers
@@ -131,8 +133,10 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ApiResponse of ListCustomersResponse</returns>
-        ApiResponse<ListCustomersResponse> ListCustomersWithHttpInfo (string cursor = null);
+        ApiResponse<ListCustomersResponse> ListCustomersWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null);
         /// <summary>
         /// RetrieveCustomer
         /// </summary>
@@ -275,8 +279,10 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ListCustomersResponse</returns>
-        System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null);
+        System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null, string sortField = null, string sortOrder = null);
 
         /// <summary>
         /// ListCustomers
@@ -286,8 +292,10 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ListCustomersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null);
+        System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null);
         /// <summary>
         /// RetrieveCustomer
         /// </summary>
@@ -1097,10 +1105,12 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ListCustomersResponse</returns>
-        public ListCustomersResponse ListCustomers (string cursor = null)
+        public ListCustomersResponse ListCustomers (string cursor = null, string sortField = null, string sortOrder = null)
         {
-             ApiResponse<ListCustomersResponse> localVarResponse = ListCustomersWithHttpInfo(cursor);
+             ApiResponse<ListCustomersResponse> localVarResponse = ListCustomersWithHttpInfo(cursor, sortField, sortOrder);
              return localVarResponse.Data;
         }
 
@@ -1109,8 +1119,10 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ApiResponse of ListCustomersResponse</returns>
-        public ApiResponse< ListCustomersResponse > ListCustomersWithHttpInfo (string cursor = null)
+        public ApiResponse< ListCustomersResponse > ListCustomersWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null)
         {
 
             var localVarPath = "/v2/customers";
@@ -1136,6 +1148,8 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+            if (sortField != null) localVarQueryParams.Add("sort_field", Configuration.ApiClient.ParameterToString(sortField)); // query parameter
+            if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1168,10 +1182,12 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ListCustomersResponse</returns>
-        public async System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null)
+        public async System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null, string sortField = null, string sortOrder = null)
         {
-             ApiResponse<ListCustomersResponse> localVarResponse = await ListCustomersAsyncWithHttpInfo(cursor);
+             ApiResponse<ListCustomersResponse> localVarResponse = await ListCustomersAsyncWithHttpInfo(cursor, sortField, sortOrder);
              return localVarResponse.Data;
 
         }
@@ -1181,8 +1197,10 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ListCustomersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null)
         {
 
             var localVarPath = "/v2/customers";
@@ -1208,6 +1226,8 @@ namespace Square.Connect.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
+            if (sortField != null) localVarQueryParams.Add("sort_field", Configuration.ApiClient.ParameterToString(sortField)); // query parameter
+            if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
 
             // authentication (oauth2) required
             // oauth required

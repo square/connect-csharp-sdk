@@ -30,12 +30,70 @@ namespace Square.Connect.Model
     public partial class ListCustomersRequest :  IEquatable<ListCustomersRequest>, IValidatableObject
     {
         /// <summary>
+        /// Indicates how Customers should be sorted. Default: `DEFAULT`.
+        /// </summary>
+        /// <value>Indicates how Customers should be sorted. Default: `DEFAULT`.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SortFieldEnum
+        {
+            
+            /// <summary>
+            /// Enum DEFAULT for "DEFAULT"
+            /// </summary>
+            [EnumMember(Value = "DEFAULT")]
+            DEFAULT,
+            
+            /// <summary>
+            /// Enum CREATEDAT for "CREATED_AT"
+            /// </summary>
+            [EnumMember(Value = "CREATED_AT")]
+            CREATEDAT
+        }
+
+        /// <summary>
+        /// Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`.
+        /// </summary>
+        /// <value>Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SortOrderEnum
+        {
+            
+            /// <summary>
+            /// Enum DESC for "DESC"
+            /// </summary>
+            [EnumMember(Value = "DESC")]
+            DESC,
+            
+            /// <summary>
+            /// Enum ASC for "ASC"
+            /// </summary>
+            [EnumMember(Value = "ASC")]
+            ASC
+        }
+
+        /// <summary>
+        /// Indicates how Customers should be sorted. Default: `DEFAULT`.
+        /// </summary>
+        /// <value>Indicates how Customers should be sorted. Default: `DEFAULT`.</value>
+        [DataMember(Name="sort_field", EmitDefaultValue=false)]
+        public SortFieldEnum? SortField { get; set; }
+        /// <summary>
+        /// Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`.
+        /// </summary>
+        /// <value>Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`.</value>
+        [DataMember(Name="sort_order", EmitDefaultValue=false)]
+        public SortOrderEnum? SortOrder { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="ListCustomersRequest" /> class.
         /// </summary>
         /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information..</param>
-        public ListCustomersRequest(string Cursor = default(string))
+        /// <param name="SortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;..</param>
+        /// <param name="SortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;..</param>
+        public ListCustomersRequest(string Cursor = default(string), SortFieldEnum? SortField = default(SortFieldEnum?), SortOrderEnum? SortOrder = default(SortOrderEnum?))
         {
             this.Cursor = Cursor;
+            this.SortField = SortField;
+            this.SortOrder = SortOrder;
         }
         
         /// <summary>
@@ -53,6 +111,8 @@ namespace Square.Connect.Model
             var sb = new StringBuilder();
             sb.Append("class ListCustomersRequest {\n");
             sb.Append("  Cursor: ").Append(Cursor).Append("\n");
+            sb.Append("  SortField: ").Append(SortField).Append("\n");
+            sb.Append("  SortOrder: ").Append(SortOrder).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +153,16 @@ namespace Square.Connect.Model
                     this.Cursor == other.Cursor ||
                     this.Cursor != null &&
                     this.Cursor.Equals(other.Cursor)
+                ) && 
+                (
+                    this.SortField == other.SortField ||
+                    this.SortField != null &&
+                    this.SortField.Equals(other.SortField)
+                ) && 
+                (
+                    this.SortOrder == other.SortOrder ||
+                    this.SortOrder != null &&
+                    this.SortOrder.Equals(other.SortOrder)
                 );
         }
 
@@ -109,6 +179,10 @@ namespace Square.Connect.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Cursor != null)
                     hash = hash * 59 + this.Cursor.GetHashCode();
+                if (this.SortField != null)
+                    hash = hash * 59 + this.SortField.GetHashCode();
+                if (this.SortOrder != null)
+                    hash = hash * 59 + this.SortOrder.GetHashCode();
                 return hash;
             }
         }

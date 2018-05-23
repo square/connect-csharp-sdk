@@ -339,9 +339,9 @@ namespace Square.Connect.Model
             }
 
             // Note (string) maxLength
-            if(this.Note != null && this.Note.Length > 50)
+            if(this.Note != null && this.Note.Length > 500)
             {
-                yield return new ValidationResult("Invalid value for Note, length must be less than 50.", new [] { "Note" });
+                yield return new ValidationResult("Invalid value for Note, length must be less than 500.", new [] { "Note" });
             }
 
             // CatalogObjectId (string) maxLength
