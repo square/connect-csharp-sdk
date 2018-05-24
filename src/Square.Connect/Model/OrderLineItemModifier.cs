@@ -34,7 +34,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogModifier](#type-catalogmodifier)..</param>
         /// <param name="Name">The name of the item modifier..</param>
-        /// <param name="BasePriceMoney">The base price of the item modifier..</param>
+        /// <param name="BasePriceMoney">The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined [CatalogModifier](#type-catalogmodifier) price..</param>
         /// <param name="TotalPriceMoney">The total price of the item modifier for its line item. This is the modifier&#39;s base_price_money multiplied by the line item&#39;s quantity..</param>
         public OrderLineItemModifier(string CatalogObjectId = default(string), string Name = default(string), Money BasePriceMoney = default(Money), Money TotalPriceMoney = default(Money))
         {
@@ -57,9 +57,9 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The base price of the item modifier.
+        /// The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined [CatalogModifier](#type-catalogmodifier) price.
         /// </summary>
-        /// <value>The base price of the item modifier.</value>
+        /// <value>The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined [CatalogModifier](#type-catalogmodifier) price.</value>
         [DataMember(Name="base_price_money", EmitDefaultValue=false)]
         public Money BasePriceMoney { get; set; }
         /// <summary>

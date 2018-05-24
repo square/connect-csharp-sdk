@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **ModifierLists** | [**List&lt;V1Variation&gt;**](V1Variation.md) | The modifier lists that apply to the item, if any. | [optional] 
 **Fees** | [**List&lt;V1Fee&gt;**](V1Fee.md) | The fees that apply to the item, if any. | [optional] 
 **Taxable** | **bool?** | Deprecated. This field is not used. | [optional] 
+**CategoryId** | **string** | The ID of the item&#39;s category, if any. | [optional] 
+**AvailableForPickup** | **bool?** | If true, the item can be added to pickup orders from the merchant&#39;s online store. Default value: false | [optional] 
 
 
 ## TypeEnum

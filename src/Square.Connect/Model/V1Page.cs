@@ -34,7 +34,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Id">The page&#39;s unique identifier..</param>
         /// <param name="Name">The page&#39;s name, if any..</param>
-        /// <param name="PageIndex">The page&#39;s position in the merchant&#39;s list of pages. Always an integer between 0 and 4, inclusive..</param>
+        /// <param name="PageIndex">The page&#39;s position in the merchant&#39;s list of pages. Always an integer between 0 and 6, inclusive..</param>
         /// <param name="Cells">The cells included on the page..</param>
         public V1Page(string Id = default(string), string Name = default(string), int? PageIndex = default(int?), List<V1PageCell> Cells = default(List<V1PageCell>))
         {
@@ -57,9 +57,9 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The page&#39;s position in the merchant&#39;s list of pages. Always an integer between 0 and 4, inclusive.
+        /// The page&#39;s position in the merchant&#39;s list of pages. Always an integer between 0 and 6, inclusive.
         /// </summary>
-        /// <value>The page&#39;s position in the merchant&#39;s list of pages. Always an integer between 0 and 4, inclusive.</value>
+        /// <value>The page&#39;s position in the merchant&#39;s list of pages. Always an integer between 0 and 6, inclusive.</value>
         [DataMember(Name="page_index", EmitDefaultValue=false)]
         public int? PageIndex { get; set; }
         /// <summary>
@@ -163,6 +163,18 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // PageIndex (int?) maximum
+            if(this.PageIndex > (int?)6)
+            {
+                yield return new ValidationResult("Invalid value for PageIndex, must be a value less than or equal to 6.", new [] { "PageIndex" });
+            }
+
+            // PageIndex (int?) minimum
+            if(this.PageIndex < (int?)0)
+            {
+                yield return new ValidationResult("Invalid value for PageIndex, must be a value greater than or equal to 0.", new [] { "PageIndex" });
+            }
+
             yield break;
         }
     }

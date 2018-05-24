@@ -56,7 +56,9 @@ namespace Square.Connect.Model
         /// <param name="Tender">All of the additive taxes associated with the payment..</param>
         /// <param name="Refunds">All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange..</param>
         /// <param name="Itemizations">The items purchased in the payment..</param>
-        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>))
+        /// <param name="SurchargeMoney">The total of all surcharges applied to the payment..</param>
+        /// <param name="Surcharges">A list of all surcharges associated with the payment..</param>
+        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>), V1Money SurchargeMoney = default(V1Money), List<V1PaymentSurcharge> Surcharges = default(List<V1PaymentSurcharge>))
         {
             this.Id = Id;
             this.MerchantId = MerchantId;
@@ -82,6 +84,8 @@ namespace Square.Connect.Model
             this.Tender = Tender;
             this.Refunds = Refunds;
             this.Itemizations = Itemizations;
+            this.SurchargeMoney = SurchargeMoney;
+            this.Surcharges = Surcharges;
         }
         
         /// <summary>
@@ -229,6 +233,18 @@ namespace Square.Connect.Model
         [DataMember(Name="itemizations", EmitDefaultValue=false)]
         public List<V1PaymentItemization> Itemizations { get; set; }
         /// <summary>
+        /// The total of all surcharges applied to the payment.
+        /// </summary>
+        /// <value>The total of all surcharges applied to the payment.</value>
+        [DataMember(Name="surcharge_money", EmitDefaultValue=false)]
+        public V1Money SurchargeMoney { get; set; }
+        /// <summary>
+        /// A list of all surcharges associated with the payment.
+        /// </summary>
+        /// <value>A list of all surcharges associated with the payment.</value>
+        [DataMember(Name="surcharges", EmitDefaultValue=false)]
+        public List<V1PaymentSurcharge> Surcharges { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -260,6 +276,8 @@ namespace Square.Connect.Model
             sb.Append("  Tender: ").Append(Tender).Append("\n");
             sb.Append("  Refunds: ").Append(Refunds).Append("\n");
             sb.Append("  Itemizations: ").Append(Itemizations).Append("\n");
+            sb.Append("  SurchargeMoney: ").Append(SurchargeMoney).Append("\n");
+            sb.Append("  Surcharges: ").Append(Surcharges).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -415,6 +433,16 @@ namespace Square.Connect.Model
                     this.Itemizations == other.Itemizations ||
                     this.Itemizations != null &&
                     this.Itemizations.SequenceEqual(other.Itemizations)
+                ) && 
+                (
+                    this.SurchargeMoney == other.SurchargeMoney ||
+                    this.SurchargeMoney != null &&
+                    this.SurchargeMoney.Equals(other.SurchargeMoney)
+                ) && 
+                (
+                    this.Surcharges == other.Surcharges ||
+                    this.Surcharges != null &&
+                    this.Surcharges.SequenceEqual(other.Surcharges)
                 );
         }
 
@@ -477,6 +505,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Refunds.GetHashCode();
                 if (this.Itemizations != null)
                     hash = hash * 59 + this.Itemizations.GetHashCode();
+                if (this.SurchargeMoney != null)
+                    hash = hash * 59 + this.SurchargeMoney.GetHashCode();
+                if (this.Surcharges != null)
+                    hash = hash * 59 + this.Surcharges.GetHashCode();
                 return hash;
             }
         }

@@ -354,6 +354,7 @@ Class | Method | HTTP request
  - [Model.V1PaymentItemDetail](docs/V1PaymentItemDetail.md)
  - [Model.V1PaymentItemization](docs/V1PaymentItemization.md)
  - [Model.V1PaymentModifier](docs/V1PaymentModifier.md)
+ - [Model.V1PaymentSurcharge](docs/V1PaymentSurcharge.md)
  - [Model.V1PaymentTax](docs/V1PaymentTax.md)
  - [Model.V1PhoneNumber](docs/V1PhoneNumber.md)
  - [Model.V1Refund](docs/V1Refund.md)
