@@ -58,7 +58,7 @@ namespace Square.Connect.Model
         /// <param name="Itemizations">The items purchased in the payment..</param>
         /// <param name="SurchargeMoney">The total of all surcharges applied to the payment..</param>
         /// <param name="Surcharges">A list of all surcharges associated with the payment..</param>
-        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>), V1Money SurchargeMoney = default(V1Money), List<Definitionsv1PaymentSurcharge> Surcharges = default(List<Definitionsv1PaymentSurcharge>))
+        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>), V1Money SurchargeMoney = default(V1Money), List<V1PaymentSurcharge> Surcharges = default(List<V1PaymentSurcharge>))
         {
             this.Id = Id;
             this.MerchantId = MerchantId;
@@ -243,7 +243,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>A list of all surcharges associated with the payment.</value>
         [DataMember(Name="surcharges", EmitDefaultValue=false)]
-        public List<Definitionsv1PaymentSurcharge> Surcharges { get; set; }
+        public List<V1PaymentSurcharge> Surcharges { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
