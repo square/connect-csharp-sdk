@@ -32,8 +32,7 @@ namespace Square.Connect.Test
     [TestFixture]
     public class RefundTests
     {
-        // TODO uncomment below to declare an instance variable for Refund
-        //private Refund instance;
+        private Refund instance;
 
         /// <summary>
         /// Setup before each test
@@ -41,7 +40,15 @@ namespace Square.Connect.Test
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of Refund
+            instance = new Refund(
+                Id: Guid.NewGuid().ToString(),
+                LocationId: Guid.NewGuid().ToString(),
+                TransactionId: Guid.NewGuid().ToString(),
+                TenderId: Guid.NewGuid().ToString(),
+                Reason: "",
+                AmountMoney: new Money(1, Money.CurrencyEnum.USD),
+                Status: Refund.StatusEnum.APPROVED
+            );// TODO uncomment below to create an instance of Refund
             //instance = new Refund();
         }
 
@@ -60,8 +67,7 @@ namespace Square.Connect.Test
         [Test]
         public void RefundInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Refund
-            //Assert.IsInstanceOfType<Refund> (instance, "variable 'instance' is a Refund");
+            Assert.IsInstanceOf<Refund> (instance, "variable 'instance' is a Refund");
         }
 
         /// <summary>
@@ -142,7 +148,13 @@ namespace Square.Connect.Test
         [Test]
         public void AdditionalRecipientsTest()
         {
-            // TODO unit test for the property 'AdditionalRecipients'
+            Assert.DoesNotThrow(() => instance.AdditionalRecipients = new List<AdditionalRecipient>(){
+                new AdditionalRecipient(
+                    "location",
+                    "description",
+                    new Money(1, Money.CurrencyEnum.USD)
+                )
+            });
         }
 
     }

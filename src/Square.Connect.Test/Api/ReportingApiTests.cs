@@ -34,6 +34,7 @@ namespace Square.Connect.Test
     public class ReportingApiTests
     {
         private ReportingApi instance;
+        private string locationId;
 
         /// <summary>
         /// Setup before each unit test
@@ -42,6 +43,10 @@ namespace Square.Connect.Test
         public void Init()
         {
             instance = new ReportingApi();
+            var testAccounts = new TestAccounts();
+            var account = testAccounts["US-Prod"];
+            locationId = account.LocationId;
+            Configuration.Default.AccessToken = account.AccessToken;
         }
 
         /// <summary>
@@ -70,14 +75,7 @@ namespace Square.Connect.Test
         [Test]
         public void ListAdditionalRecipientReceivableRefundsTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string locationId = null;
-            //string beginTime = null;
-            //string endTime = null;
-            //string sortOrder = null;
-            //string cursor = null;
-            //var response = instance.ListAdditionalRecipientReceivableRefunds(locationId, beginTime, endTime, sortOrder, cursor);
-            //Assert.IsInstanceOf<ListAdditionalRecipientReceivableRefundsResponse> (response, "response is ListAdditionalRecipientReceivableRefundsResponse");
+            Assert.DoesNotThrow(() => instance.ListAdditionalRecipientReceivableRefunds(locationId));
         }
         
         /// <summary>
@@ -86,14 +84,7 @@ namespace Square.Connect.Test
         [Test]
         public void ListAdditionalRecipientReceivablesTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string locationId = null;
-            //string beginTime = null;
-            //string endTime = null;
-            //string sortOrder = null;
-            //string cursor = null;
-            //var response = instance.ListAdditionalRecipientReceivables(locationId, beginTime, endTime, sortOrder, cursor);
-            //Assert.IsInstanceOf<ListAdditionalRecipientReceivablesResponse> (response, "response is ListAdditionalRecipientReceivablesResponse");
+            Assert.DoesNotThrow(() => instance.ListAdditionalRecipientReceivables(locationId));
         }
         
     }

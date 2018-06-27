@@ -1,4 +1,4 @@
-/* 
+/*
  * Square Connect API
  *
  * Client library for accessing the Square Connect APIs
@@ -33,7 +33,9 @@ namespace Square.Connect.Test
     [TestFixture]
     public class CheckoutApiTests
     {
+        private TestAccounts testAccounts;
         private CheckoutApi instance;
+        private string locationId;
 
         /// <summary>
         /// Setup before each unit test
@@ -42,6 +44,10 @@ namespace Square.Connect.Test
         public void Init()
         {
             instance = new CheckoutApi();
+            testAccounts = new TestAccounts();
+            var testAccount = testAccounts["US-Prod-Sandbox"];
+            locationId = testAccount.LocationId;
+            Configuration.Default.AccessToken = testAccount.AccessToken;
         }
 
         /// <summary>
@@ -59,24 +65,96 @@ namespace Square.Connect.Test
         [Test]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' CheckoutApi
-            //Assert.IsInstanceOfType(typeof(CheckoutApi), instance, "instance is a CheckoutApi");
+            Assert.IsInstanceOf(typeof(CheckoutApi), instance, "instance is a CheckoutApi");
         }
 
-        
         /// <summary>
         /// Test CreateCheckout
         /// </summary>
         [Test]
         public void CreateCheckoutTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string locationId = null;
-            //CreateCheckoutRequest body = null;
-            //var response = instance.CreateCheckout(locationId, body);
-            //Assert.IsInstanceOf<CreateCheckoutResponse> (response, "response is CreateCheckoutResponse");
+
+            CreateCheckoutRequest body = new CreateCheckoutRequest(
+                IdempotencyKey: Guid.NewGuid().ToString(),
+                Order: new CreateOrderRequest(
+                    ReferenceId: "reference_id",
+                    LineItems: new List<CreateOrderRequestLineItem>() {
+                        new CreateOrderRequestLineItem(
+                            Name: "Printed T Shirt",
+                            Quantity: "2",
+                            BasePriceMoney: new Money(Amount: 1500, Currency: Money.CurrencyEnum.USD),
+                            Discounts: new List<CreateOrderRequestDiscount>() {
+                                new CreateOrderRequestDiscount(
+                                    Name: "7% off previous season item",
+                                    Percentage: "7"
+                                ),
+                                new CreateOrderRequestDiscount(
+                                    Name: "$3 off Customer Discount",
+                                    AmountMoney: new Money(300, Money.CurrencyEnum.USD)
+                                )
+                            }
+                        ),
+                        new CreateOrderRequestLineItem(
+                            Name: "Slim Jeans",
+                            Quantity: "1",
+                            BasePriceMoney: new Money(Amount: 2500, Currency: Money.CurrencyEnum.USD)
+                        ),
+                        new CreateOrderRequestLineItem(
+                            Name: "Woven Sweater",
+                            Quantity: "3",
+                            BasePriceMoney: new Money(Amount: 3500, Currency: Money.CurrencyEnum.USD),
+                            Discounts: new List<CreateOrderRequestDiscount>() {
+                                new CreateOrderRequestDiscount(
+                                    Name: "$11 off Customer Discount",
+                                    AmountMoney: new Money(1100, Money.CurrencyEnum.USD)
+                                )
+                            },
+                            Taxes: new List<CreateOrderRequestTax>() {
+                                new CreateOrderRequestTax(
+                                    Name: "Fair Trade Tax",
+                                    Percentage: "5"
+                                )
+                            }
+                        )
+                    },
+                    Discounts: new List<CreateOrderRequestDiscount>() {
+                        new CreateOrderRequestDiscount(
+                            Name: "Father's day 12% OFF",
+                            Percentage: "12"
+                        ),
+                        new CreateOrderRequestDiscount(
+                            Name: "Global Sales $55 OFF",
+                            AmountMoney: new Money(5500, Money.CurrencyEnum.USD)
+                        )
+                    },
+                    Taxes: new List<CreateOrderRequestTax>() {
+                        new CreateOrderRequestTax(
+                            Name: "Sales Tax",
+                            Percentage: "8.5"
+                        )
+                    }
+                ),
+                AskForShippingAddress: true,
+                MerchantSupportEmail: "merchant+support@website.com",
+                PrePopulateBuyerEmail: "example@email.com",
+                PrePopulateShippingAddress: new Address(
+                    AddressLine1: "1455 Market St.",
+                    AddressLine2: "Suite 600",
+                    Locality: "San Francisco",
+                    AdministrativeDistrictLevel1: "CA",
+                    PostalCode: "94103",
+                    Country: Address.CountryEnum.US,
+                    FirstName: "Jane",
+                    LastName: "Doe"
+                ),
+                RedirectUrl: "https://merchant.website.com/order-confirm"
+            );
+            var response = instance.CreateCheckout(locationId, body);
+            Assert.IsInstanceOf<CreateCheckoutResponse> (response, "response is CreateCheckoutResponse");
+            Assert.IsNull(response.Errors);
+            Assert.True(response.Checkout.CheckoutPageUrl.StartsWith("https://connect.", StringComparison.Ordinal));
         }
-        
     }
 
 }
