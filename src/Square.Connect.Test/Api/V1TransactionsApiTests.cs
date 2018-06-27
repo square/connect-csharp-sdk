@@ -99,7 +99,8 @@ namespace Square.Connect.Test
             //string locationId = null;
             //string order = null;
             //int? limit = null;
-            //var response = instance.ListOrders(locationId, order, limit);
+            //string batchToken = null;
+            //var response = instance.ListOrders(locationId, order, limit, batchToken);
             //Assert.IsInstanceOf<List<V1Order>> (response, "response is List<V1Order>");
         }
         
@@ -115,7 +116,8 @@ namespace Square.Connect.Test
             //string beginTime = null;
             //string endTime = null;
             //int? limit = null;
-            //var response = instance.ListPayments(locationId, order, beginTime, endTime, limit);
+            //string batchToken = null;
+            //var response = instance.ListPayments(locationId, order, beginTime, endTime, limit, batchToken);
             //Assert.IsInstanceOf<List<V1Payment>> (response, "response is List<V1Payment>");
         }
         
@@ -131,7 +133,8 @@ namespace Square.Connect.Test
             //string beginTime = null;
             //string endTime = null;
             //int? limit = null;
-            //var response = instance.ListRefunds(locationId, order, beginTime, endTime, limit);
+            //string batchToken = null;
+            //var response = instance.ListRefunds(locationId, order, beginTime, endTime, limit, batchToken);
             //Assert.IsInstanceOf<List<V1Refund>> (response, "response is List<V1Refund>");
         }
         
@@ -148,7 +151,8 @@ namespace Square.Connect.Test
             //string endTime = null;
             //int? limit = null;
             //string status = null;
-            //var response = instance.ListSettlements(locationId, order, beginTime, endTime, limit, status);
+            //string batchToken = null;
+            //var response = instance.ListSettlements(locationId, order, beginTime, endTime, limit, status, batchToken);
             //Assert.IsInstanceOf<List<V1Settlement>> (response, "response is List<V1Settlement>");
         }
         

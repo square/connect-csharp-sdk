@@ -104,6 +104,22 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'TotalMoney'
         }
+        /// <summary>
+        /// Test the property 'TotalTaxMoney'
+        /// </summary>
+        [Test]
+        public void TotalTaxMoneyTest()
+        {
+            // TODO unit test for the property 'TotalTaxMoney'
+        }
+        /// <summary>
+        /// Test the property 'TotalDiscountMoney'
+        /// </summary>
+        [Test]
+        public void TotalDiscountMoneyTest()
+        {
+            // TODO unit test for the property 'TotalDiscountMoney'
+        }
 
     }
 

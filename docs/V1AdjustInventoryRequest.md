@@ -4,8 +4,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **QuantityDelta** | **decimal?** | The number to adjust the variation&#39;s quantity by. | [optional] 
-**AdjustmentType** | **decimal?** | The reason for the inventory adjustment. | [optional] 
+**AdjustmentType** | **AdjustmentTypeEnum** | The reason for the inventory adjustment. | [optional] 
 **Memo** | **string** | A note about the inventory adjustment. | [optional] 
+
+
+## AdjustmentTypeEnum
+
+Name | Value
+------------ | -------------
+**SALE** | "SALE"
+**RECEIVESTOCK** | "RECEIVE_STOCK"
+**MANUALADJUST** | "MANUAL_ADJUST"
 
 
 

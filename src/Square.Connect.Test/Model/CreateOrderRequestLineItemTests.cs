@@ -88,6 +88,54 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'BasePriceMoney'
         }
+        /// <summary>
+        /// Test the property 'VariationName'
+        /// </summary>
+        [Test]
+        public void VariationNameTest()
+        {
+            // TODO unit test for the property 'VariationName'
+        }
+        /// <summary>
+        /// Test the property 'Note'
+        /// </summary>
+        [Test]
+        public void NoteTest()
+        {
+            // TODO unit test for the property 'Note'
+        }
+        /// <summary>
+        /// Test the property 'CatalogObjectId'
+        /// </summary>
+        [Test]
+        public void CatalogObjectIdTest()
+        {
+            // TODO unit test for the property 'CatalogObjectId'
+        }
+        /// <summary>
+        /// Test the property 'Modifiers'
+        /// </summary>
+        [Test]
+        public void ModifiersTest()
+        {
+            // TODO unit test for the property 'Modifiers'
+        }
+        /// <summary>
+        /// Test the property 'Taxes'
+        /// </summary>
+        [Test]
+        public void TaxesTest()
+        {
+            // TODO unit test for the property 'Taxes'
+        }
+        /// <summary>
+        /// Test the property 'Discounts'
+        /// </summary>
+        [Test]
+        public void DiscountsTest()
+        {
+            // TODO unit test for the property 'Discounts'
+        }
 
     }
 

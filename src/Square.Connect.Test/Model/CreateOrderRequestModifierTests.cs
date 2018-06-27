@@ -72,6 +72,22 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'CatalogObjectId'
         }
+        /// <summary>
+        /// Test the property 'Name'
+        /// </summary>
+        [Test]
+        public void NameTest()
+        {
+            // TODO unit test for the property 'Name'
+        }
+        /// <summary>
+        /// Test the property 'BasePriceMoney'
+        /// </summary>
+        [Test]
+        public void BasePriceMoneyTest()
+        {
+            // TODO unit test for the property 'BasePriceMoney'
+        }
 
     }
 

@@ -120,6 +120,14 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'BillingAddress'
         }
+        /// <summary>
+        /// Test the property 'Fingerprint'
+        /// </summary>
+        [Test]
+        public void FingerprintTest()
+        {
+            // TODO unit test for the property 'Fingerprint'
+        }
 
     }
 

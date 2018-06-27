@@ -30,12 +30,45 @@ namespace Square.Connect.Model
     public partial class V1AdjustInventoryRequest :  IEquatable<V1AdjustInventoryRequest>, IValidatableObject
     {
         /// <summary>
+        /// The reason for the inventory adjustment.
+        /// </summary>
+        /// <value>The reason for the inventory adjustment.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AdjustmentTypeEnum
+        {
+            
+            /// <summary>
+            /// Enum SALE for "SALE"
+            /// </summary>
+            [EnumMember(Value = "SALE")]
+            SALE,
+            
+            /// <summary>
+            /// Enum RECEIVESTOCK for "RECEIVE_STOCK"
+            /// </summary>
+            [EnumMember(Value = "RECEIVE_STOCK")]
+            RECEIVESTOCK,
+            
+            /// <summary>
+            /// Enum MANUALADJUST for "MANUAL_ADJUST"
+            /// </summary>
+            [EnumMember(Value = "MANUAL_ADJUST")]
+            MANUALADJUST
+        }
+
+        /// <summary>
+        /// The reason for the inventory adjustment.
+        /// </summary>
+        /// <value>The reason for the inventory adjustment.</value>
+        [DataMember(Name="adjustment_type", EmitDefaultValue=false)]
+        public AdjustmentTypeEnum? AdjustmentType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="V1AdjustInventoryRequest" /> class.
         /// </summary>
         /// <param name="QuantityDelta">The number to adjust the variation&#39;s quantity by..</param>
         /// <param name="AdjustmentType">The reason for the inventory adjustment..</param>
         /// <param name="Memo">A note about the inventory adjustment..</param>
-        public V1AdjustInventoryRequest(decimal? QuantityDelta = default(decimal?), decimal? AdjustmentType = default(decimal?), string Memo = default(string))
+        public V1AdjustInventoryRequest(decimal? QuantityDelta = default(decimal?), AdjustmentTypeEnum? AdjustmentType = default(AdjustmentTypeEnum?), string Memo = default(string))
         {
             this.QuantityDelta = QuantityDelta;
             this.AdjustmentType = AdjustmentType;
@@ -48,12 +81,6 @@ namespace Square.Connect.Model
         /// <value>The number to adjust the variation&#39;s quantity by.</value>
         [DataMember(Name="quantity_delta", EmitDefaultValue=false)]
         public decimal? QuantityDelta { get; set; }
-        /// <summary>
-        /// The reason for the inventory adjustment.
-        /// </summary>
-        /// <value>The reason for the inventory adjustment.</value>
-        [DataMember(Name="adjustment_type", EmitDefaultValue=false)]
-        public decimal? AdjustmentType { get; set; }
         /// <summary>
         /// A note about the inventory adjustment.
         /// </summary>

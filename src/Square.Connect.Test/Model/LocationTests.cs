@@ -104,6 +104,86 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'Capabilities'
         }
+        /// <summary>
+        /// Test the property 'Status'
+        /// </summary>
+        [Test]
+        public void StatusTest()
+        {
+            // TODO unit test for the property 'Status'
+        }
+        /// <summary>
+        /// Test the property 'CreatedAt'
+        /// </summary>
+        [Test]
+        public void CreatedAtTest()
+        {
+            // TODO unit test for the property 'CreatedAt'
+        }
+        /// <summary>
+        /// Test the property 'MerchantId'
+        /// </summary>
+        [Test]
+        public void MerchantIdTest()
+        {
+            // TODO unit test for the property 'MerchantId'
+        }
+        /// <summary>
+        /// Test the property 'Country'
+        /// </summary>
+        [Test]
+        public void CountryTest()
+        {
+            // TODO unit test for the property 'Country'
+        }
+        /// <summary>
+        /// Test the property 'LanguageCode'
+        /// </summary>
+        [Test]
+        public void LanguageCodeTest()
+        {
+            // TODO unit test for the property 'LanguageCode'
+        }
+        /// <summary>
+        /// Test the property 'Currency'
+        /// </summary>
+        [Test]
+        public void CurrencyTest()
+        {
+            // TODO unit test for the property 'Currency'
+        }
+        /// <summary>
+        /// Test the property 'PhoneNumber'
+        /// </summary>
+        [Test]
+        public void PhoneNumberTest()
+        {
+            // TODO unit test for the property 'PhoneNumber'
+        }
+        /// <summary>
+        /// Test the property 'BusinessName'
+        /// </summary>
+        [Test]
+        public void BusinessNameTest()
+        {
+            // TODO unit test for the property 'BusinessName'
+        }
+        /// <summary>
+        /// Test the property 'Type'
+        /// </summary>
+        [Test]
+        public void TypeTest()
+        {
+            // TODO unit test for the property 'Type'
+        }
+        /// <summary>
+        /// Test the property 'WebsiteUrl'
+        /// </summary>
+        [Test]
+        public void WebsiteUrlTest()
+        {
+            // TODO unit test for the property 'WebsiteUrl'
+        }
 
     }
 

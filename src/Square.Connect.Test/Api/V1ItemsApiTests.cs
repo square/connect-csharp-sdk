@@ -378,7 +378,8 @@ namespace Square.Connect.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string locationId = null;
             //int? limit = null;
-            //var response = instance.ListInventory(locationId, limit);
+            //string batchToken = null;
+            //var response = instance.ListInventory(locationId, limit, batchToken);
             //Assert.IsInstanceOf<List<V1InventoryEntry>> (response, "response is List<V1InventoryEntry>");
         }
         
@@ -390,7 +391,8 @@ namespace Square.Connect.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string locationId = null;
-            //var response = instance.ListItems(locationId);
+            //string batchToken = null;
+            //var response = instance.ListItems(locationId, batchToken);
             //Assert.IsInstanceOf<List<V1Item>> (response, "response is List<V1Item>");
         }
         

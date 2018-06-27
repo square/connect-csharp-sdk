@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Indicates whether this is a line item or order-level discount.
+    /// Indicates whether this is a line item or order level discount.
     /// </summary>
-    /// <value>Indicates whether this is a line item or order-level discount.</value>
+    /// <value>Indicates whether this is a line item or order level discount.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum OrderLineItemDiscountScope
     {

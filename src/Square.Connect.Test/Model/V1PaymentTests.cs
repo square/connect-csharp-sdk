@@ -256,6 +256,22 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'Itemizations'
         }
+        /// <summary>
+        /// Test the property 'SurchargeMoney'
+        /// </summary>
+        [Test]
+        public void SurchargeMoneyTest()
+        {
+            // TODO unit test for the property 'SurchargeMoney'
+        }
+        /// <summary>
+        /// Test the property 'Surcharges'
+        /// </summary>
+        [Test]
+        public void SurchargesTest()
+        {
+            // TODO unit test for the property 'Surcharges'
+        }
 
     }
 

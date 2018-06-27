@@ -176,6 +176,22 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'Taxable'
         }
+        /// <summary>
+        /// Test the property 'CategoryId'
+        /// </summary>
+        [Test]
+        public void CategoryIdTest()
+        {
+            // TODO unit test for the property 'CategoryId'
+        }
+        /// <summary>
+        /// Test the property 'AvailableForPickup'
+        /// </summary>
+        [Test]
+        public void AvailableForPickupTest()
+        {
+            // TODO unit test for the property 'AvailableForPickup'
+        }
 
     }
 

@@ -136,8 +136,8 @@ namespace Square.Connect.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string order = null;
             //int? limit = null;
-            //string cursor = null;
-            //var response = instance.ListEmployeeRoles(order, limit, cursor);
+            //string batchToken = null;
+            //var response = instance.ListEmployeeRoles(order, limit, batchToken);
             //Assert.IsInstanceOf<List<V1EmployeeRole>> (response, "response is List<V1EmployeeRole>");
         }
         
@@ -156,7 +156,8 @@ namespace Square.Connect.Test
             //string status = null;
             //string externalId = null;
             //int? limit = null;
-            //var response = instance.ListEmployees(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit);
+            //string batchToken = null;
+            //var response = instance.ListEmployees(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit, batchToken);
             //Assert.IsInstanceOf<List<V1Employee>> (response, "response is List<V1Employee>");
         }
         
@@ -189,8 +190,8 @@ namespace Square.Connect.Test
             //string endUpdatedAt = null;
             //bool? deleted = null;
             //int? limit = null;
-            //string cursor = null;
-            //var response = instance.ListTimecards(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, cursor);
+            //string batchToken = null;
+            //var response = instance.ListTimecards(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, batchToken);
             //Assert.IsInstanceOf<List<V1Timecard>> (response, "response is List<V1Timecard>");
         }
         

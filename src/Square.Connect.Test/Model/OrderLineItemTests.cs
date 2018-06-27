@@ -65,14 +65,6 @@ namespace Square.Connect.Test
         }
 
         /// <summary>
-        /// Test the property 'Id'
-        /// </summary>
-        [Test]
-        public void IdTest()
-        {
-            // TODO unit test for the property 'Id'
-        }
-        /// <summary>
         /// Test the property 'Name'
         /// </summary>
         [Test]
@@ -89,12 +81,84 @@ namespace Square.Connect.Test
             // TODO unit test for the property 'Quantity'
         }
         /// <summary>
+        /// Test the property 'Note'
+        /// </summary>
+        [Test]
+        public void NoteTest()
+        {
+            // TODO unit test for the property 'Note'
+        }
+        /// <summary>
+        /// Test the property 'CatalogObjectId'
+        /// </summary>
+        [Test]
+        public void CatalogObjectIdTest()
+        {
+            // TODO unit test for the property 'CatalogObjectId'
+        }
+        /// <summary>
+        /// Test the property 'VariationName'
+        /// </summary>
+        [Test]
+        public void VariationNameTest()
+        {
+            // TODO unit test for the property 'VariationName'
+        }
+        /// <summary>
+        /// Test the property 'Modifiers'
+        /// </summary>
+        [Test]
+        public void ModifiersTest()
+        {
+            // TODO unit test for the property 'Modifiers'
+        }
+        /// <summary>
+        /// Test the property 'Taxes'
+        /// </summary>
+        [Test]
+        public void TaxesTest()
+        {
+            // TODO unit test for the property 'Taxes'
+        }
+        /// <summary>
+        /// Test the property 'Discounts'
+        /// </summary>
+        [Test]
+        public void DiscountsTest()
+        {
+            // TODO unit test for the property 'Discounts'
+        }
+        /// <summary>
         /// Test the property 'BasePriceMoney'
         /// </summary>
         [Test]
         public void BasePriceMoneyTest()
         {
             // TODO unit test for the property 'BasePriceMoney'
+        }
+        /// <summary>
+        /// Test the property 'GrossSalesMoney'
+        /// </summary>
+        [Test]
+        public void GrossSalesMoneyTest()
+        {
+            // TODO unit test for the property 'GrossSalesMoney'
+        }
+        /// <summary>
+        /// Test the property 'TotalTaxMoney'
+        /// </summary>
+        [Test]
+        public void TotalTaxMoneyTest()
+        {
+            // TODO unit test for the property 'TotalTaxMoney'
+        }
+        /// <summary>
+        /// Test the property 'TotalDiscountMoney'
+        /// </summary>
+        [Test]
+        public void TotalDiscountMoneyTest()
+        {
+            // TODO unit test for the property 'TotalDiscountMoney'
         }
         /// <summary>
         /// Test the property 'TotalMoney'

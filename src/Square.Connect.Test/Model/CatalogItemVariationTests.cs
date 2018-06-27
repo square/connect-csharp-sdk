@@ -97,6 +97,14 @@ namespace Square.Connect.Test
             // TODO unit test for the property 'Upc'
         }
         /// <summary>
+        /// Test the property 'Ordinal'
+        /// </summary>
+        [Test]
+        public void OrdinalTest()
+        {
+            // TODO unit test for the property 'Ordinal'
+        }
+        /// <summary>
         /// Test the property 'PricingType'
         /// </summary>
         [Test]

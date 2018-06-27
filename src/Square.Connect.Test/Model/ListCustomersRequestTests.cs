@@ -72,6 +72,22 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'Cursor'
         }
+        /// <summary>
+        /// Test the property 'SortField'
+        /// </summary>
+        [Test]
+        public void SortFieldTest()
+        {
+            // TODO unit test for the property 'SortField'
+        }
+        /// <summary>
+        /// Test the property 'SortOrder'
+        /// </summary>
+        [Test]
+        public void SortOrderTest()
+        {
+            // TODO unit test for the property 'SortOrder'
+        }
 
     }
 

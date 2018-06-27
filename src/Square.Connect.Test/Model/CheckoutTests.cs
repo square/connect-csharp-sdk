@@ -136,6 +136,14 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'CreatedAt'
         }
+        /// <summary>
+        /// Test the property 'AdditionalRecipients'
+        /// </summary>
+        [Test]
+        public void AdditionalRecipientsTest()
+        {
+            // TODO unit test for the property 'AdditionalRecipients'
+        }
 
     }
 

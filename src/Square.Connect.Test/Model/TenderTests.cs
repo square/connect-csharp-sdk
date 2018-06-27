@@ -113,6 +113,14 @@ namespace Square.Connect.Test
             // TODO unit test for the property 'AmountMoney'
         }
         /// <summary>
+        /// Test the property 'TipMoney'
+        /// </summary>
+        [Test]
+        public void TipMoneyTest()
+        {
+            // TODO unit test for the property 'TipMoney'
+        }
+        /// <summary>
         /// Test the property 'ProcessingFeeMoney'
         /// </summary>
         [Test]
@@ -151,6 +159,14 @@ namespace Square.Connect.Test
         public void CashDetailsTest()
         {
             // TODO unit test for the property 'CashDetails'
+        }
+        /// <summary>
+        /// Test the property 'AdditionalRecipients'
+        /// </summary>
+        [Test]
+        public void AdditionalRecipientsTest()
+        {
+            // TODO unit test for the property 'AdditionalRecipients'
         }
 
     }

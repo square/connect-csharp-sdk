@@ -73,12 +73,36 @@ namespace Square.Connect.Test
             // TODO unit test for the property 'IdempotencyKey'
         }
         /// <summary>
-        /// Test the property 'Order'
+        /// Test the property 'ReferenceId'
         /// </summary>
         [Test]
-        public void OrderTest()
+        public void ReferenceIdTest()
         {
-            // TODO unit test for the property 'Order'
+            // TODO unit test for the property 'ReferenceId'
+        }
+        /// <summary>
+        /// Test the property 'LineItems'
+        /// </summary>
+        [Test]
+        public void LineItemsTest()
+        {
+            // TODO unit test for the property 'LineItems'
+        }
+        /// <summary>
+        /// Test the property 'Taxes'
+        /// </summary>
+        [Test]
+        public void TaxesTest()
+        {
+            // TODO unit test for the property 'Taxes'
+        }
+        /// <summary>
+        /// Test the property 'Discounts'
+        /// </summary>
+        [Test]
+        public void DiscountsTest()
+        {
+            // TODO unit test for the property 'Discounts'
         }
 
     }

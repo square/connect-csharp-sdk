@@ -152,6 +152,22 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'BuyerEmailAddress'
         }
+        /// <summary>
+        /// Test the property 'OrderId'
+        /// </summary>
+        [Test]
+        public void OrderIdTest()
+        {
+            // TODO unit test for the property 'OrderId'
+        }
+        /// <summary>
+        /// Test the property 'AdditionalRecipients'
+        /// </summary>
+        [Test]
+        public void AdditionalRecipientsTest()
+        {
+            // TODO unit test for the property 'AdditionalRecipients'
+        }
 
     }
 

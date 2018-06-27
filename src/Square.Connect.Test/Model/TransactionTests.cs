@@ -129,20 +129,20 @@ namespace Square.Connect.Test
             // TODO unit test for the property 'ClientId'
         }
         /// <summary>
-        /// Test the property 'Order'
-        /// </summary>
-        [Test]
-        public void OrderTest()
-        {
-            // TODO unit test for the property 'Order'
-        }
-        /// <summary>
         /// Test the property 'ShippingAddress'
         /// </summary>
         [Test]
         public void ShippingAddressTest()
         {
             // TODO unit test for the property 'ShippingAddress'
+        }
+        /// <summary>
+        /// Test the property 'OrderId'
+        /// </summary>
+        [Test]
+        public void OrderIdTest()
+        {
+            // TODO unit test for the property 'OrderId'
         }
 
     }

@@ -122,7 +122,9 @@ namespace Square.Connect.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string cursor = null;
-            //var response = instance.ListCustomers(cursor);
+            //string sortField = null;
+            //string sortOrder = null;
+            //var response = instance.ListCustomers(cursor, sortField, sortOrder);
             //Assert.IsInstanceOf<ListCustomersResponse> (response, "response is ListCustomersResponse");
         }
         

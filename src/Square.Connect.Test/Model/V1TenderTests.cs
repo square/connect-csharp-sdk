@@ -168,6 +168,14 @@ namespace Square.Connect.Test
         {
             // TODO unit test for the property 'RefundedMoney'
         }
+        /// <summary>
+        /// Test the property 'IsExchange'
+        /// </summary>
+        [Test]
+        public void IsExchangeTest()
+        {
+            // TODO unit test for the property 'IsExchange'
+        }
 
     }
 
