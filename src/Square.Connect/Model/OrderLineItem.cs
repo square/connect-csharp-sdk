@@ -38,7 +38,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
         /// </summary>
         /// <param name="Name">The name of the line item..</param>
-        /// <param name="Quantity">The quantity purchased, as a string representation of a number. (required).</param>
+        /// <param name="Quantity">The quantity purchased, as a string representation of a number.  This string must have a positive integer value. (required).</param>
         /// <param name="Note">The note of the line item..</param>
         /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item..</param>
         /// <param name="VariationName">The name of the variation applied to this line item..</param>
@@ -82,9 +82,9 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The quantity purchased, as a string representation of a number.
+        /// The quantity purchased, as a string representation of a number.  This string must have a positive integer value.
         /// </summary>
-        /// <value>The quantity purchased, as a string representation of a number.</value>
+        /// <value>The quantity purchased, as a string representation of a number.  This string must have a positive integer value.</value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
         /// <summary>

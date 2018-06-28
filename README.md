@@ -128,6 +128,7 @@ Class | Method | HTTP request
 *CustomersApi* | [**DeleteCustomerCard**](docs/CustomersApi.md#deletecustomercard) | **DELETE** /v2/customers/{customer_id}/cards/{card_id}
 *CustomersApi* | [**ListCustomers**](docs/CustomersApi.md#listcustomers) | **GET** /v2/customers
 *CustomersApi* | [**RetrieveCustomer**](docs/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id}
+*CustomersApi* | [**SearchCustomers**](docs/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search
 *CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
 *OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve
@@ -272,8 +273,12 @@ Class | Method | HTTP request
  - [Model.CreateRefundRequest](docs/CreateRefundRequest.md)
  - [Model.CreateRefundResponse](docs/CreateRefundResponse.md)
  - [Model.Customer](docs/Customer.md)
+ - [Model.CustomerCreationSourceFilter](docs/CustomerCreationSourceFilter.md)
+ - [Model.CustomerFilter](docs/CustomerFilter.md)
  - [Model.CustomerGroupInfo](docs/CustomerGroupInfo.md)
  - [Model.CustomerPreferences](docs/CustomerPreferences.md)
+ - [Model.CustomerQuery](docs/CustomerQuery.md)
+ - [Model.CustomerSort](docs/CustomerSort.md)
  - [Model.DeleteCatalogObjectRequest](docs/DeleteCatalogObjectRequest.md)
  - [Model.DeleteCatalogObjectResponse](docs/DeleteCatalogObjectResponse.md)
  - [Model.DeleteCustomerCardRequest](docs/DeleteCustomerCardRequest.md)
@@ -315,9 +320,12 @@ Class | Method | HTTP request
  - [Model.RetrieveTransactionResponse](docs/RetrieveTransactionResponse.md)
  - [Model.SearchCatalogObjectsRequest](docs/SearchCatalogObjectsRequest.md)
  - [Model.SearchCatalogObjectsResponse](docs/SearchCatalogObjectsResponse.md)
+ - [Model.SearchCustomersRequest](docs/SearchCustomersRequest.md)
+ - [Model.SearchCustomersResponse](docs/SearchCustomersResponse.md)
  - [Model.Tender](docs/Tender.md)
  - [Model.TenderCardDetails](docs/TenderCardDetails.md)
  - [Model.TenderCashDetails](docs/TenderCashDetails.md)
+ - [Model.TimeRange](docs/TimeRange.md)
  - [Model.Transaction](docs/Transaction.md)
  - [Model.UpdateCustomerRequest](docs/UpdateCustomerRequest.md)
  - [Model.UpdateCustomerResponse](docs/UpdateCustomerResponse.md)

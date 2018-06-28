@@ -24,26 +24,34 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [VoidTransaction](#endpoint-voidtransaction) endpoint.
+    /// Represents a generic time range. The start and end values are represented in RFC-3339 format. Time ranges are customized to be inclusive or exclusive based on the needs of a particular endpoint. Refer to the relevent endpoint-specific documentation to determine how time ranges are handled.
     /// </summary>
     [DataContract]
-    public partial class VoidTransactionResponse :  IEquatable<VoidTransactionResponse>, IValidatableObject
+    public partial class TimeRange :  IEquatable<TimeRange>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidTransactionResponse" /> class.
+        /// Initializes a new instance of the <see cref="TimeRange" /> class.
         /// </summary>
-        /// <param name="Errors">Any errors that occurred during the request..</param>
-        public VoidTransactionResponse(List<Error> Errors = default(List<Error>))
+        /// <param name="StartAt">A datetime value in RFC-3339 format indicating when the time range starts..</param>
+        /// <param name="EndAt">A datetime value in RFC-3339 format indicating when the time range ends..</param>
+        public TimeRange(string StartAt = default(string), string EndAt = default(string))
         {
-            this.Errors = Errors;
+            this.StartAt = StartAt;
+            this.EndAt = EndAt;
         }
         
         /// <summary>
-        /// Any errors that occurred during the request.
+        /// A datetime value in RFC-3339 format indicating when the time range starts.
         /// </summary>
-        /// <value>Any errors that occurred during the request.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<Error> Errors { get; set; }
+        /// <value>A datetime value in RFC-3339 format indicating when the time range starts.</value>
+        [DataMember(Name="start_at", EmitDefaultValue=false)]
+        public string StartAt { get; set; }
+        /// <summary>
+        /// A datetime value in RFC-3339 format indicating when the time range ends.
+        /// </summary>
+        /// <value>A datetime value in RFC-3339 format indicating when the time range ends.</value>
+        [DataMember(Name="end_at", EmitDefaultValue=false)]
+        public string EndAt { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -51,8 +59,9 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class VoidTransactionResponse {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("class TimeRange {\n");
+            sb.Append("  StartAt: ").Append(StartAt).Append("\n");
+            sb.Append("  EndAt: ").Append(EndAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,15 +83,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as VoidTransactionResponse);
+            return this.Equals(obj as TimeRange);
         }
 
         /// <summary>
-        /// Returns true if VoidTransactionResponse instances are equal
+        /// Returns true if TimeRange instances are equal
         /// </summary>
-        /// <param name="other">Instance of VoidTransactionResponse to be compared</param>
+        /// <param name="other">Instance of TimeRange to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(VoidTransactionResponse other)
+        public bool Equals(TimeRange other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -90,9 +99,14 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.Errors == other.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(other.Errors)
+                    this.StartAt == other.StartAt ||
+                    this.StartAt != null &&
+                    this.StartAt.Equals(other.StartAt)
+                ) && 
+                (
+                    this.EndAt == other.EndAt ||
+                    this.EndAt != null &&
+                    this.EndAt.Equals(other.EndAt)
                 );
         }
 
@@ -107,8 +121,10 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Errors != null)
-                    hash = hash * 59 + this.Errors.GetHashCode();
+                if (this.StartAt != null)
+                    hash = hash * 59 + this.StartAt.GetHashCode();
+                if (this.EndAt != null)
+                    hash = hash * 59 + this.EndAt.GetHashCode();
                 return hash;
             }
         }

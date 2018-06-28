@@ -24,26 +24,34 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [VoidTransaction](#endpoint-voidtransaction) endpoint.
+    /// Represents a query (filtering and sorting criteria) used to search for customer profiles.
     /// </summary>
     [DataContract]
-    public partial class VoidTransactionResponse :  IEquatable<VoidTransactionResponse>, IValidatableObject
+    public partial class CustomerQuery :  IEquatable<CustomerQuery>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="VoidTransactionResponse" /> class.
+        /// Initializes a new instance of the <see cref="CustomerQuery" /> class.
         /// </summary>
-        /// <param name="Errors">Any errors that occurred during the request..</param>
-        public VoidTransactionResponse(List<Error> Errors = default(List<Error>))
+        /// <param name="Filter">A list of filter criteria..</param>
+        /// <param name="Sort">Sort criteria for query results. The default sort behavior is to order customers alphabetically by &#x60;given_name&#x60; and &#x60;last_name&#x60;..</param>
+        public CustomerQuery(CustomerFilter Filter = default(CustomerFilter), CustomerSort Sort = default(CustomerSort))
         {
-            this.Errors = Errors;
+            this.Filter = Filter;
+            this.Sort = Sort;
         }
         
         /// <summary>
-        /// Any errors that occurred during the request.
+        /// A list of filter criteria.
         /// </summary>
-        /// <value>Any errors that occurred during the request.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<Error> Errors { get; set; }
+        /// <value>A list of filter criteria.</value>
+        [DataMember(Name="filter", EmitDefaultValue=false)]
+        public CustomerFilter Filter { get; set; }
+        /// <summary>
+        /// Sort criteria for query results. The default sort behavior is to order customers alphabetically by &#x60;given_name&#x60; and &#x60;last_name&#x60;.
+        /// </summary>
+        /// <value>Sort criteria for query results. The default sort behavior is to order customers alphabetically by &#x60;given_name&#x60; and &#x60;last_name&#x60;.</value>
+        [DataMember(Name="sort", EmitDefaultValue=false)]
+        public CustomerSort Sort { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -51,8 +59,9 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class VoidTransactionResponse {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("class CustomerQuery {\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  Sort: ").Append(Sort).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,15 +83,15 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as VoidTransactionResponse);
+            return this.Equals(obj as CustomerQuery);
         }
 
         /// <summary>
-        /// Returns true if VoidTransactionResponse instances are equal
+        /// Returns true if CustomerQuery instances are equal
         /// </summary>
-        /// <param name="other">Instance of VoidTransactionResponse to be compared</param>
+        /// <param name="other">Instance of CustomerQuery to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(VoidTransactionResponse other)
+        public bool Equals(CustomerQuery other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -90,9 +99,14 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.Errors == other.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(other.Errors)
+                    this.Filter == other.Filter ||
+                    this.Filter != null &&
+                    this.Filter.Equals(other.Filter)
+                ) && 
+                (
+                    this.Sort == other.Sort ||
+                    this.Sort != null &&
+                    this.Sort.Equals(other.Sort)
                 );
         }
 
@@ -107,8 +121,10 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Errors != null)
-                    hash = hash * 59 + this.Errors.GetHashCode();
+                if (this.Filter != null)
+                    hash = hash * 59 + this.Filter.GetHashCode();
+                if (this.Sort != null)
+                    hash = hash * 59 + this.Sort.GetHashCode();
                 return hash;
             }
         }
