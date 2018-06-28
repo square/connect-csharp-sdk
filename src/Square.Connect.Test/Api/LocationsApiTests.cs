@@ -78,7 +78,7 @@ namespace Square.Connect.Test
 
             Assert.IsInstanceOf<ListLocationsResponse> (response, "response type is not ListLocationsResponse.");
             Assert.IsInstanceOf<Location> (firstLocation, "response element type is not Location.");
-            Assert.AreEqual("CBASEEffqN8pnVNXwoCL0dSGMVAgAQ", firstLocation.Id, "first location id doesn't match.");
+            Assert.AreEqual(testAccounts["US-Prod-Sandbox"].LocationId, firstLocation.Id, "first location id doesn't match.");
         }
         
     }

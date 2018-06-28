@@ -24,30 +24,24 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Indicates whether this is a line item or order level discount.
+    /// Indicates whether customers should be included in, or excluded from, the result set when they match the filtering criteria.
     /// </summary>
-    /// <value>Indicates whether this is a line item or order level discount.</value>
+    /// <value>Indicates whether customers should be included in, or excluded from, the result set when they match the filtering criteria.</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum OrderLineItemDiscountScope
+    public enum CustomerInclusionExclusion
     {
         
         /// <summary>
-        /// Enum OTHERDISCOUNTSCOPE for "OTHER_DISCOUNT_SCOPE"
+        /// Enum INCLUDE for "INCLUDE"
         /// </summary>
-        [EnumMember(Value = "OTHER_DISCOUNT_SCOPE")]
-        OTHERDISCOUNTSCOPE,
+        [EnumMember(Value = "INCLUDE")]
+        INCLUDE,
         
         /// <summary>
-        /// Enum LINEITEM for "LINE_ITEM"
+        /// Enum EXCLUDE for "EXCLUDE"
         /// </summary>
-        [EnumMember(Value = "LINE_ITEM")]
-        LINEITEM,
-        
-        /// <summary>
-        /// Enum ORDER for "ORDER"
-        /// </summary>
-        [EnumMember(Value = "ORDER")]
-        ORDER
+        [EnumMember(Value = "EXCLUDE")]
+        EXCLUDE
     }
 
 }

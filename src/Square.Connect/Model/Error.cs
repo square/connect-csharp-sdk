@@ -341,6 +341,12 @@ namespace Square.Connect.Model
             NOFIELDSSET,
             
             /// <summary>
+            /// Enum DEPRECATEDFIELDSET for "DEPRECATED_FIELD_SET"
+            /// </summary>
+            [EnumMember(Value = "DEPRECATED_FIELD_SET")]
+            DEPRECATEDFIELDSET,
+            
+            /// <summary>
             /// Enum CARDEXPIRED for "CARD_EXPIRED"
             /// </summary>
             [EnumMember(Value = "CARD_EXPIRED")]
@@ -525,6 +531,12 @@ namespace Square.Connect.Model
             /// </summary>
             [EnumMember(Value = "NOT_FOUND")]
             NOTFOUND,
+            
+            /// <summary>
+            /// Enum METHODNOTALLOWED for "METHOD_NOT_ALLOWED"
+            /// </summary>
+            [EnumMember(Value = "METHOD_NOT_ALLOWED")]
+            METHODNOTALLOWED,
             
             /// <summary>
             /// Enum REQUESTTIMEOUT for "REQUEST_TIMEOUT"

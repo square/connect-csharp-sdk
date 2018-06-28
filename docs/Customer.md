@@ -18,6 +18,32 @@ Name | Type | Description | Notes
 **Note** | **string** | A note to associate with the customer. | [optional] 
 **Preferences** | [**CustomerPreferences**](CustomerPreferences.md) | The customer&#39;s preferences. | [optional] 
 **Groups** | [**List&lt;CustomerGroupInfo&gt;**](CustomerGroupInfo.md) | The groups the customer belongs to. | [optional] 
+**CreationSource** | **CreationSourceEnum** | A creation source represents the method used to create the customer profile. | [optional] 
+
+
+## CreationSourceEnum
+
+Name | Value
+------------ | -------------
+**OTHER** | "OTHER"
+**APPOINTMENTS** | "APPOINTMENTS"
+**COUPON** | "COUPON"
+**DELETIONRECOVERY** | "DELETION_RECOVERY"
+**DIRECTORY** | "DIRECTORY"
+**EGIFTING** | "EGIFTING"
+**EMAILCOLLECTION** | "EMAIL_COLLECTION"
+**FEEDBACK** | "FEEDBACK"
+**IMPORT** | "IMPORT"
+**INVOICES** | "INVOICES"
+**LOYALTY** | "LOYALTY"
+**MARKETING** | "MARKETING"
+**MERGE** | "MERGE"
+**ONLINESTORE** | "ONLINE_STORE"
+**INSTANTPROFILE** | "INSTANT_PROFILE"
+**TERMINAL** | "TERMINAL"
+**THIRDPARTY** | "THIRD_PARTY"
+**THIRDPARTYIMPORT** | "THIRD_PARTY_IMPORT"
+**UNMERGERECOVERY** | "UNMERGE_RECOVERY"
 
 
 
