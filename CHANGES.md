@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 2.9.1 (2018-07-09)
+
+Dependencies updated for compatibility with .NET Core 2.0
+
 ## Version 2.9.0 (2018-06-28)
 
 We have added search functionality to the Connect v2 Customer API.
