@@ -17,7 +17,7 @@ mono nuget.exe install src/Square.Connect/packages.config -o packages;
 echo "[INFO] Copy DLLs to the 'bin' folder"
 mkdir -p bin;
 cp packages/Newtonsoft.Json.8.0.3/lib/net45/Newtonsoft.Json.dll bin/Newtonsoft.Json.dll;
-cp packages/RestSharp.105.1.0/lib/net45/RestSharp.dll bin/RestSharp.dll;
+cp packages/RestSharp.106.2.2/lib/net452/RestSharp.dll bin/RestSharp.dll;
 
 echo "[INFO] Run 'mcs' to build bin/Square.Connect.dll"
 
