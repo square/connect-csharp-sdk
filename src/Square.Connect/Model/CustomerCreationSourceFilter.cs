@@ -174,9 +174,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The list of creation sources used as filtering criteria.
+        /// The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values.
         /// </summary>
-        /// <value>The list of creation sources used as filtering criteria.</value>
+        /// <value>The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values.</value>
         [DataMember(Name="values", EmitDefaultValue=false)]
         public List<ValuesEnum> Values { get; set; }
         /// <summary>
@@ -188,7 +188,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerCreationSourceFilter" /> class.
         /// </summary>
-        /// <param name="Values">The list of creation sources used as filtering criteria..</param>
+        /// <param name="Values">The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values..</param>
         /// <param name="Rule">Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values..</param>
         public CustomerCreationSourceFilter(List<ValuesEnum> Values = default(List<ValuesEnum>), RuleEnum? Rule = default(RuleEnum?))
         {
