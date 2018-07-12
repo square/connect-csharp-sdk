@@ -1,5 +1,48 @@
 # Change Log
 
+## Version 2.10.0 (2018-07-12)
+
+We introduce Square API versions. `Square-Version` is 2018-07-12 for this SDK.
+
+### How versioning works
+
+Square API versions (`Square-Version`) track changes in the evolution of Connect
+v2 APIs. The `Square-Version` naming scheme is `YYYY-MM-DD`, which indicates
+the date the version was released. Connect v1 APIs are not versioned. Square
+continues to support Connect v1, but future releases will focus on improving
+Connect v2 functionality.
+
+By default, new Square applications are pinned to the version current at the
+time the application was created in the Square Application Dashboard. Pinning an
+application sets the default `Square-Version` for the application. The default
+`Square-Version` of an application can be reviewed and updated at any time on
+the settings pages for the application.
+
+
+### Versioning and SDKs
+
+When a new `Square-Version` is released, new Connect SDKs are publish on GitHub
+and various package management systems.
+
+While SDK versions can be mapped to a related Square-version, SDK versions
+follow an independent, incremental versioning scheme to allow updates and
+improvements to the SDKs outside of `Square-Version` updates.
+
+
+### Migrating to new versions
+
+In most cases, Square-version migration should be straightforward, with known
+differences listed in the related Change Log.
+
+To test migrations, developers can override the default `Square-Version` of an
+application by explicitly setting the preferred `Square-Version` in the HTTP
+header of the Connect v2 API request for REST calls. Requesting an API version
+that does not exist returns an error. Successful API responses include the
+`Square-Version` header to indicate the API version used to process request.
+
+Connect SDK versions are locked to specific API versions and cannot be
+overwritten. Instead, the SDK must be upgraded to work with new API versions.
+
 ## Version 2.9.1 (2018-07-09)
 
 Dependencies updated for compatibility with .NET Core 2.0
