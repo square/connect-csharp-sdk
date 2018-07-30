@@ -21,68 +21,68 @@ namespace Square.Connect.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IApplePayApi : IApiAccessor
+    public interface IMobileAuthorizationApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// RegisterDomain
+        /// CreateMobileAuthorizationCode
         /// </summary>
         /// <remarks>
-        /// Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>RegisterDomainResponse</returns>
-        RegisterDomainResponse RegisterDomain (RegisterDomainRequest body);
+        /// <returns>CreateMobileAuthorizationCodeResponse</returns>
+        CreateMobileAuthorizationCodeResponse CreateMobileAuthorizationCode (CreateMobileAuthorizationCodeRequest body);
 
         /// <summary>
-        /// RegisterDomain
+        /// CreateMobileAuthorizationCode
         /// </summary>
         /// <remarks>
-        /// Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of RegisterDomainResponse</returns>
-        ApiResponse<RegisterDomainResponse> RegisterDomainWithHttpInfo (RegisterDomainRequest body);
+        /// <returns>ApiResponse of CreateMobileAuthorizationCodeResponse</returns>
+        ApiResponse<CreateMobileAuthorizationCodeResponse> CreateMobileAuthorizationCodeWithHttpInfo (CreateMobileAuthorizationCodeRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// RegisterDomain
+        /// CreateMobileAuthorizationCode
         /// </summary>
         /// <remarks>
-        /// Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of RegisterDomainResponse</returns>
-        System.Threading.Tasks.Task<RegisterDomainResponse> RegisterDomainAsync (RegisterDomainRequest body);
+        /// <returns>Task of CreateMobileAuthorizationCodeResponse</returns>
+        System.Threading.Tasks.Task<CreateMobileAuthorizationCodeResponse> CreateMobileAuthorizationCodeAsync (CreateMobileAuthorizationCodeRequest body);
 
         /// <summary>
-        /// RegisterDomain
+        /// CreateMobileAuthorizationCode
         /// </summary>
         /// <remarks>
-        /// Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (RegisterDomainResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RegisterDomainResponse>> RegisterDomainAsyncWithHttpInfo (RegisterDomainRequest body);
+        /// <returns>Task of ApiResponse (CreateMobileAuthorizationCodeResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateMobileAuthorizationCodeResponse>> CreateMobileAuthorizationCodeAsyncWithHttpInfo (CreateMobileAuthorizationCodeRequest body);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ApplePayApi : IApplePayApi
+    public partial class MobileAuthorizationApi : IMobileAuthorizationApi
     {
         private Square.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplePayApi"/> class.
+        /// Initializes a new instance of the <see cref="MobileAuthorizationApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ApplePayApi(String basePath)
+        public MobileAuthorizationApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -96,12 +96,12 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplePayApi"/> class
+        /// Initializes a new instance of the <see cref="MobileAuthorizationApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ApplePayApi(Configuration configuration = null)
+        public MobileAuthorizationApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -181,30 +181,30 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RegisterDomain Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// CreateMobileAuthorizationCode Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>RegisterDomainResponse</returns>
-        public RegisterDomainResponse RegisterDomain (RegisterDomainRequest body)
+        /// <returns>CreateMobileAuthorizationCodeResponse</returns>
+        public CreateMobileAuthorizationCodeResponse CreateMobileAuthorizationCode (CreateMobileAuthorizationCodeRequest body)
         {
-             ApiResponse<RegisterDomainResponse> localVarResponse = RegisterDomainWithHttpInfo(body);
+             ApiResponse<CreateMobileAuthorizationCodeResponse> localVarResponse = CreateMobileAuthorizationCodeWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// RegisterDomain Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// CreateMobileAuthorizationCode Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ApiResponse of RegisterDomainResponse</returns>
-        public ApiResponse< RegisterDomainResponse > RegisterDomainWithHttpInfo (RegisterDomainRequest body)
+        /// <returns>ApiResponse of CreateMobileAuthorizationCodeResponse</returns>
+        public ApiResponse< CreateMobileAuthorizationCodeResponse > CreateMobileAuthorizationCodeWithHttpInfo (CreateMobileAuthorizationCodeRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ApplePayApi->RegisterDomain");
+                throw new ApiException(400, "Missing required parameter 'body' when calling MobileAuthorizationApi->CreateMobileAuthorizationCode");
 
-            var localVarPath = "/v2/apple-pay/domains";
+            var localVarPath = "/mobile/authorization-code";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -251,42 +251,42 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("RegisterDomain", localVarResponse);
+                Exception exception = ExceptionFactory("CreateMobileAuthorizationCode", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RegisterDomainResponse>(localVarStatusCode,
+            return new ApiResponse<CreateMobileAuthorizationCodeResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RegisterDomainResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterDomainResponse)));
+                (CreateMobileAuthorizationCodeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateMobileAuthorizationCodeResponse)));
             
         }
 
         /// <summary>
-        /// RegisterDomain Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// CreateMobileAuthorizationCode Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of RegisterDomainResponse</returns>
-        public async System.Threading.Tasks.Task<RegisterDomainResponse> RegisterDomainAsync (RegisterDomainRequest body)
+        /// <returns>Task of CreateMobileAuthorizationCodeResponse</returns>
+        public async System.Threading.Tasks.Task<CreateMobileAuthorizationCodeResponse> CreateMobileAuthorizationCodeAsync (CreateMobileAuthorizationCodeRequest body)
         {
-             ApiResponse<RegisterDomainResponse> localVarResponse = await RegisterDomainAsyncWithHttpInfo(body);
+             ApiResponse<CreateMobileAuthorizationCodeResponse> localVarResponse = await CreateMobileAuthorizationCodeAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// RegisterDomain Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Embedding the Square Payment Form](/payments/sqpaymentform/overview) guide.
+        /// CreateMobileAuthorizationCode Generates code to authorize a mobile application to connect to a Square card reader  Authorization codes are one-time-use and expire __60 minutes__ after being issued.  __Important:__ The &#x60;Authorization&#x60; header you provide to this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Bearer ACCESS_TOKEN &#x60;&#x60;&#x60;  Replace &#x60;ACCESS_TOKEN&#x60; with a [valid production authorization credential](https://docs.connect.squareup.com/get-started#step-4-understand-the-different-application-credentials).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>Task of ApiResponse (RegisterDomainResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RegisterDomainResponse>> RegisterDomainAsyncWithHttpInfo (RegisterDomainRequest body)
+        /// <returns>Task of ApiResponse (CreateMobileAuthorizationCodeResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CreateMobileAuthorizationCodeResponse>> CreateMobileAuthorizationCodeAsyncWithHttpInfo (CreateMobileAuthorizationCodeRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ApplePayApi->RegisterDomain");
+                throw new ApiException(400, "Missing required parameter 'body' when calling MobileAuthorizationApi->CreateMobileAuthorizationCode");
 
-            var localVarPath = "/v2/apple-pay/domains";
+            var localVarPath = "/mobile/authorization-code";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -333,13 +333,13 @@ namespace Square.Connect.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("RegisterDomain", localVarResponse);
+                Exception exception = ExceptionFactory("CreateMobileAuthorizationCode", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RegisterDomainResponse>(localVarStatusCode,
+            return new ApiResponse<CreateMobileAuthorizationCodeResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RegisterDomainResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterDomainResponse)));
+                (CreateMobileAuthorizationCodeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateMobileAuthorizationCodeResponse)));
             
         }
 

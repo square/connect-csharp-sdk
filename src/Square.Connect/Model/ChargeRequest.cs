@@ -43,13 +43,13 @@ namespace Square.Connect.Model
         /// <param name="CustomerCardId">The ID of the customer card on file to charge. Do not provide a value for this field if you provide a value for &#x60;card_nonce&#x60;.  If you provide this value, you _must_ also provide a value for &#x60;customer_id&#x60;..</param>
         /// <param name="DelayCapture">If &#x60;true&#x60;, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransaction](#endpoint-voidtransaction) endpoint).  Default value: &#x60;false&#x60;.</param>
         /// <param name="ReferenceId">An optional ID you can associate with the transaction for your own purposes (such as to associate the transaction with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
-        /// <param name="Note">An optional note to associate with the transaction.  This value cannot exceed 60 characters..</param>
+        /// <param name="Note">.</param>
         /// <param name="CustomerId">The ID of the customer to associate this transaction with. This field is required if you provide a value for &#x60;customer_card_id&#x60;, and optional otherwise..</param>
         /// <param name="BillingAddress">The buyer&#39;s billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;shipping_address&#x60; is provided..</param>
         /// <param name="ShippingAddress">The buyer&#39;s shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;billing_address&#x60; is provided..</param>
         /// <param name="BuyerEmailAddress">The buyer&#39;s email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided..</param>
-        /// <param name="OrderId">The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the &#x60;total_money&#x60; value of the order&#39;s &#x60;order_amounts&#x60; field..</param>
-        /// <param name="AdditionalRecipients">The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in you charge&#39;s request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox..</param>
+        /// <param name="OrderId">The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the value of the order&#39;s &#x60;total_money&#x60; field..</param>
+        /// <param name="AdditionalRecipients">The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in the charge request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires the &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox..</param>
         public ChargeRequest(string IdempotencyKey = default(string), Money AmountMoney = default(Money), string CardNonce = default(string), string CustomerCardId = default(string), bool? DelayCapture = default(bool?), string ReferenceId = default(string), string Note = default(string), string CustomerId = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string BuyerEmailAddress = default(string), string OrderId = default(string), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
         {
             // to ensure "IdempotencyKey" is required (not null)
@@ -120,9 +120,9 @@ namespace Square.Connect.Model
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
         /// <summary>
-        /// An optional note to associate with the transaction.  This value cannot exceed 60 characters.
+        /// 
         /// </summary>
-        /// <value>An optional note to associate with the transaction.  This value cannot exceed 60 characters.</value>
+        /// <value></value>
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
@@ -150,15 +150,15 @@ namespace Square.Connect.Model
         [DataMember(Name="buyer_email_address", EmitDefaultValue=false)]
         public string BuyerEmailAddress { get; set; }
         /// <summary>
-        /// The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the &#x60;total_money&#x60; value of the order&#39;s &#x60;order_amounts&#x60; field.
+        /// The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the value of the order&#39;s &#x60;total_money&#x60; field.
         /// </summary>
-        /// <value>The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the &#x60;total_money&#x60; value of the order&#39;s &#x60;order_amounts&#x60; field.</value>
+        /// <value>The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the value of the order&#39;s &#x60;total_money&#x60; field.</value>
         [DataMember(Name="order_id", EmitDefaultValue=false)]
         public string OrderId { get; set; }
         /// <summary>
-        /// The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in you charge&#39;s request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox.
+        /// The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in the charge request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires the &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox.
         /// </summary>
-        /// <value>The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in you charge&#39;s request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox.</value>
+        /// <value>The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in the charge request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires the &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox.</value>
         [DataMember(Name="additional_recipients", EmitDefaultValue=false)]
         public List<AdditionalRecipient> AdditionalRecipients { get; set; }
         /// <summary>
