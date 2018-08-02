@@ -129,6 +129,7 @@ Class | Method | HTTP request
 *CustomersApi* | [**SearchCustomers**](docs/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search
 *CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
+*MobileAuthorizationApi* | [**CreateMobileAuthorizationCode**](docs/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code
 *OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
 *ReportingApi* | [**ListAdditionalRecipientReceivableRefunds**](docs/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds
@@ -262,6 +263,8 @@ Class | Method | HTTP request
  - [Model.CreateCustomerCardResponse](docs/CreateCustomerCardResponse.md)
  - [Model.CreateCustomerRequest](docs/CreateCustomerRequest.md)
  - [Model.CreateCustomerResponse](docs/CreateCustomerResponse.md)
+ - [Model.CreateMobileAuthorizationCodeRequest](docs/CreateMobileAuthorizationCodeRequest.md)
+ - [Model.CreateMobileAuthorizationCodeResponse](docs/CreateMobileAuthorizationCodeResponse.md)
  - [Model.CreateOrderRequest](docs/CreateOrderRequest.md)
  - [Model.CreateOrderRequestDiscount](docs/CreateOrderRequestDiscount.md)
  - [Model.CreateOrderRequestLineItem](docs/CreateOrderRequestLineItem.md)
