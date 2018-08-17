@@ -8,7 +8,7 @@ specification repository](https://github.com/square/connect-api-specification)
 for the specification and template files we used to generate this.
 
 ## Frameworks supported
-- .NET 4.5 or later
+- .NET Standard
 
 ## Usage
 ### **Obtain from [NuGet package manager](https://www.nuget.org/packages/Square.Connect/) (Recommended)**
@@ -20,13 +20,7 @@ PM> Install-Package Square.Connect
 
 #### Dependencies
 - [RestSharp] (https://www.nuget.org/packages/RestSharp) - 106.2.2 or later
-- [Json.NET] (https://www.nuget.org/packages/Newtonsoft.Json/) - 7.0.0 or later
-
-The DLLs included in the package may not be the latest version. We recommned using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
-```
-PM> Install-Package RestSharp
-PM> Install-Package Newtonsoft.Json
-```
+- [Json.NET] (https://www.nuget.org/packages/Newtonsoft.Json/) - 10.0.0 or later
 
 Option 1: Run the following command to generate the DLL
 

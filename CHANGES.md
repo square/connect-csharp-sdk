@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 2.10.2 (2018-08-16)
+
+The SDK target to .net standard 2.0 now.
+
 ## Version 2.10.1 (2018-08-02)
 
 We have added MobileAuthorization API.
