@@ -81,7 +81,7 @@ namespace Square.Connect.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "2.10.1";
+        public const string Version = "2.10.2";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -318,7 +318,7 @@ namespace Square.Connect.Client
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
             report += "    Version of the API: 2.0\n";
-            report += "    SDK Package Version: 2.10.1\n";
+            report += "    SDK Package Version: 2.10.2\n";
 
             return report;
         }
