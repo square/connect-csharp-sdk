@@ -8,7 +8,7 @@ specification repository](https://github.com/square/connect-api-specification)
 for the specification and template files we used to generate this.
 
 ## Frameworks supported
-- .NET Standard
+- .NET Standard 2.0
 
 ## Usage
 ### **Obtain from [NuGet package manager](https://www.nuget.org/packages/Square.Connect/) (Recommended)**
@@ -20,7 +20,7 @@ PM> Install-Package Square.Connect
 
 #### Dependencies
 - [RestSharp] (https://www.nuget.org/packages/RestSharp) - 106.3.1 or later
-- [Json.NET] (https://www.nuget.org/packages/Newtonsoft.Json/) - 10.0.0 or later
+- [Json.NET] (https://www.nuget.org/packages/Newtonsoft.Json/) - 11.0.2 or later
 
 Option 1: Run the following command to generate the DLL
 
@@ -122,6 +122,9 @@ Class | Method | HTTP request
 *CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
 *MobileAuthorizationApi* | [**CreateMobileAuthorizationCode**](docs/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code
+*OAuthApi* | [**ObtainToken**](docs/OAuthApi.md#obtaintoken) | **POST** /oauth2/token
+*OAuthApi* | [**RenewToken**](docs/OAuthApi.md#renewtoken) | **POST** /oauth2/clients/{client_id}/access-token/renew
+*OAuthApi* | [**RevokeToken**](docs/OAuthApi.md#revoketoken) | **POST** /oauth2/revoke
 *OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
 *ReportingApi* | [**ListAdditionalRecipientReceivableRefunds**](docs/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds
@@ -297,6 +300,8 @@ Class | Method | HTTP request
  - [Model.ListTransactionsResponse](docs/ListTransactionsResponse.md)
  - [Model.Location](docs/Location.md)
  - [Model.Money](docs/Money.md)
+ - [Model.ObtainTokenRequest](docs/ObtainTokenRequest.md)
+ - [Model.ObtainTokenResponse](docs/ObtainTokenResponse.md)
  - [Model.Order](docs/Order.md)
  - [Model.OrderLineItem](docs/OrderLineItem.md)
  - [Model.OrderLineItemDiscount](docs/OrderLineItemDiscount.md)
@@ -305,12 +310,16 @@ Class | Method | HTTP request
  - [Model.Refund](docs/Refund.md)
  - [Model.RegisterDomainRequest](docs/RegisterDomainRequest.md)
  - [Model.RegisterDomainResponse](docs/RegisterDomainResponse.md)
+ - [Model.RenewTokenRequest](docs/RenewTokenRequest.md)
+ - [Model.RenewTokenResponse](docs/RenewTokenResponse.md)
  - [Model.RetrieveCatalogObjectRequest](docs/RetrieveCatalogObjectRequest.md)
  - [Model.RetrieveCatalogObjectResponse](docs/RetrieveCatalogObjectResponse.md)
  - [Model.RetrieveCustomerRequest](docs/RetrieveCustomerRequest.md)
  - [Model.RetrieveCustomerResponse](docs/RetrieveCustomerResponse.md)
  - [Model.RetrieveTransactionRequest](docs/RetrieveTransactionRequest.md)
  - [Model.RetrieveTransactionResponse](docs/RetrieveTransactionResponse.md)
+ - [Model.RevokeTokenRequest](docs/RevokeTokenRequest.md)
+ - [Model.RevokeTokenResponse](docs/RevokeTokenResponse.md)
  - [Model.SearchCatalogObjectsRequest](docs/SearchCatalogObjectsRequest.md)
  - [Model.SearchCatalogObjectsResponse](docs/SearchCatalogObjectsResponse.md)
  - [Model.SearchCustomersRequest](docs/SearchCustomersRequest.md)
