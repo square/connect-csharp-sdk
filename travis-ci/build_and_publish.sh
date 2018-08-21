@@ -7,30 +7,12 @@ then
   exit 0
 fi
 
-netfx=${frameworkVersion#net}
-
 echo "[INFO] Target framework: ${frameworkVersion}"
-
-mozroots --import --sync
-mono nuget.exe install src/Square.Connect/packages.config -o packages;
-
-echo "[INFO] Copy DLLs to the 'bin' folder"
-mkdir -p bin;
-cp packages/Newtonsoft.Json.8.0.3/lib/net45/Newtonsoft.Json.dll bin/Newtonsoft.Json.dll;
-cp packages/RestSharp.106.2.2/lib/net452/RestSharp.dll bin/RestSharp.dll;
-
-echo "[INFO] Run 'mcs' to build bin/Square.Connect.dll"
-
-mcs -sdk:${netfx} -r:bin/Newtonsoft.Json.dll,\
-bin/RestSharp.dll,\
-System.ComponentModel.DataAnnotations.dll,\
-System.Web.dll,\
-System.Runtime.Serialization.dll \
--target:library \
--out:bin/Square.Connect.dll \
--recurse:"src/Square.Connect/*.cs" \
--doc:bin/Square.Connect.xml \
--platform:anycpu
+echo "[INFO] Run 'dotnet' to build bin/Square.Connect.dll"
+dotnet build src/Square.Connect/Square.Connect.csproj \
+-o ../../bin \
+-f $frameworkVersion \
+-c Release
 
 if [ $? -ne 0 ]
 then
@@ -43,13 +25,13 @@ fi
 # pack
 packageVersion="${releaseVersion}.${TRAVIS_BUILD_NUMBER}"
 echo "Packing version ${packageVersion} for release..."
-mono nuget.exe pack -version ${packageVersion} -basepath . src/Square.Connect/Square.Connect.nuspec
+dotnet pack src/Square.Connect/Square.Connect.csproj /p:PackageVersion=$packageVersion -c Release -o .
 
 # publish when it's not a pull request and it's on master branch.
 if [ "${TRAVIS_PULL_REQUEST_BRANCH}" = "" -a "${TRAVIS_BRANCH}" = "master" ];
 then
   echo -e "\033[1;32mPublishing version ${packageVersion} to Nuget..."
-  mono nuget.exe push -apikey $NUGET_APIKEY *.nupkg -Source https://api.nuget.org/v3/index.json
+  dotnet nuget push src/Square.Connect/*.nupkg -k $NUGET_APIKEY -s https://api.nuget.org/v3/index.json
 else
   echo -e "\033[1;32mNot uploading pending changes until it's merged into master."
 fi

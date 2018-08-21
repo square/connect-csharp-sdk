@@ -8,7 +8,7 @@ namespace Square.Connect.Test
 {
     public class TestAccounts
     {
-        private static readonly string jsonFilePath = @"../../../../travis-ci/accounts.json";
+        private static readonly string jsonFilePath = @"../../../../../travis-ci/accounts.json";
         private static Dictionary<String, AccountInfo> accounts;
 
         public AccountInfo this[String name]
