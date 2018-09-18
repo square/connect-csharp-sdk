@@ -120,6 +120,13 @@ Class | Method | HTTP request
 *CustomersApi* | [**RetrieveCustomer**](docs/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id}
 *CustomersApi* | [**SearchCustomers**](docs/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search
 *CustomersApi* | [**UpdateCustomer**](docs/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id}
+*InventoryApi* | [**BatchChangeInventory**](docs/InventoryApi.md#batchchangeinventory) | **POST** /v2/inventory/batch-change
+*InventoryApi* | [**BatchRetrieveInventoryChanges**](docs/InventoryApi.md#batchretrieveinventorychanges) | **POST** /v2/inventory/batch-retrieve-changes
+*InventoryApi* | [**BatchRetrieveInventoryCounts**](docs/InventoryApi.md#batchretrieveinventorycounts) | **POST** /v2/inventory/batch-retrieve-counts
+*InventoryApi* | [**RetrieveInventoryAdjustment**](docs/InventoryApi.md#retrieveinventoryadjustment) | **GET** /v2/inventory/adjustment/{adjustment_id}
+*InventoryApi* | [**RetrieveInventoryChanges**](docs/InventoryApi.md#retrieveinventorychanges) | **GET** /v2/inventory/{catalog_object_id}/changes
+*InventoryApi* | [**RetrieveInventoryCount**](docs/InventoryApi.md#retrieveinventorycount) | **GET** /v2/inventory/{catalog_object_id}
+*InventoryApi* | [**RetrieveInventoryPhysicalCount**](docs/InventoryApi.md#retrieveinventoryphysicalcount) | **GET** /v2/inventory/physical-count/{physical_count_id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
 *MobileAuthorizationApi* | [**CreateMobileAuthorizationCode**](docs/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code
 *OAuthApi* | [**ObtainToken**](docs/OAuthApi.md#obtaintoken) | **POST** /oauth2/token
@@ -213,10 +220,16 @@ Class | Method | HTTP request
  - [Model.AdditionalRecipientReceivable](docs/AdditionalRecipientReceivable.md)
  - [Model.AdditionalRecipientReceivableRefund](docs/AdditionalRecipientReceivableRefund.md)
  - [Model.Address](docs/Address.md)
+ - [Model.BatchChangeInventoryRequest](docs/BatchChangeInventoryRequest.md)
+ - [Model.BatchChangeInventoryResponse](docs/BatchChangeInventoryResponse.md)
  - [Model.BatchDeleteCatalogObjectsRequest](docs/BatchDeleteCatalogObjectsRequest.md)
  - [Model.BatchDeleteCatalogObjectsResponse](docs/BatchDeleteCatalogObjectsResponse.md)
  - [Model.BatchRetrieveCatalogObjectsRequest](docs/BatchRetrieveCatalogObjectsRequest.md)
  - [Model.BatchRetrieveCatalogObjectsResponse](docs/BatchRetrieveCatalogObjectsResponse.md)
+ - [Model.BatchRetrieveInventoryChangesRequest](docs/BatchRetrieveInventoryChangesRequest.md)
+ - [Model.BatchRetrieveInventoryChangesResponse](docs/BatchRetrieveInventoryChangesResponse.md)
+ - [Model.BatchRetrieveInventoryCountsRequest](docs/BatchRetrieveInventoryCountsRequest.md)
+ - [Model.BatchRetrieveInventoryCountsResponse](docs/BatchRetrieveInventoryCountsResponse.md)
  - [Model.BatchRetrieveOrdersRequest](docs/BatchRetrieveOrdersRequest.md)
  - [Model.BatchRetrieveOrdersResponse](docs/BatchRetrieveOrdersResponse.md)
  - [Model.BatchUpsertCatalogObjectsRequest](docs/BatchUpsertCatalogObjectsRequest.md)
@@ -283,6 +296,11 @@ Class | Method | HTTP request
  - [Model.DeleteCustomerResponse](docs/DeleteCustomerResponse.md)
  - [Model.Device](docs/Device.md)
  - [Model.Error](docs/Error.md)
+ - [Model.InventoryAdjustment](docs/InventoryAdjustment.md)
+ - [Model.InventoryChange](docs/InventoryChange.md)
+ - [Model.InventoryCount](docs/InventoryCount.md)
+ - [Model.InventoryPhysicalCount](docs/InventoryPhysicalCount.md)
+ - [Model.InventoryTransfer](docs/InventoryTransfer.md)
  - [Model.ItemVariationLocationOverrides](docs/ItemVariationLocationOverrides.md)
  - [Model.ListAdditionalRecipientReceivableRefundsRequest](docs/ListAdditionalRecipientReceivableRefundsRequest.md)
  - [Model.ListAdditionalRecipientReceivableRefundsResponse](docs/ListAdditionalRecipientReceivableRefundsResponse.md)
@@ -316,6 +334,14 @@ Class | Method | HTTP request
  - [Model.RetrieveCatalogObjectResponse](docs/RetrieveCatalogObjectResponse.md)
  - [Model.RetrieveCustomerRequest](docs/RetrieveCustomerRequest.md)
  - [Model.RetrieveCustomerResponse](docs/RetrieveCustomerResponse.md)
+ - [Model.RetrieveInventoryAdjustmentRequest](docs/RetrieveInventoryAdjustmentRequest.md)
+ - [Model.RetrieveInventoryAdjustmentResponse](docs/RetrieveInventoryAdjustmentResponse.md)
+ - [Model.RetrieveInventoryChangesRequest](docs/RetrieveInventoryChangesRequest.md)
+ - [Model.RetrieveInventoryChangesResponse](docs/RetrieveInventoryChangesResponse.md)
+ - [Model.RetrieveInventoryCountRequest](docs/RetrieveInventoryCountRequest.md)
+ - [Model.RetrieveInventoryCountResponse](docs/RetrieveInventoryCountResponse.md)
+ - [Model.RetrieveInventoryPhysicalCountRequest](docs/RetrieveInventoryPhysicalCountRequest.md)
+ - [Model.RetrieveInventoryPhysicalCountResponse](docs/RetrieveInventoryPhysicalCountResponse.md)
  - [Model.RetrieveTransactionRequest](docs/RetrieveTransactionRequest.md)
  - [Model.RetrieveTransactionResponse](docs/RetrieveTransactionResponse.md)
  - [Model.RevokeTokenRequest](docs/RevokeTokenRequest.md)
@@ -324,6 +350,7 @@ Class | Method | HTTP request
  - [Model.SearchCatalogObjectsResponse](docs/SearchCatalogObjectsResponse.md)
  - [Model.SearchCustomersRequest](docs/SearchCustomersRequest.md)
  - [Model.SearchCustomersResponse](docs/SearchCustomersResponse.md)
+ - [Model.SourceApplication](docs/SourceApplication.md)
  - [Model.Tender](docs/Tender.md)
  - [Model.TenderCardDetails](docs/TenderCardDetails.md)
  - [Model.TenderCashDetails](docs/TenderCashDetails.md)
@@ -407,6 +434,8 @@ Class | Method | HTTP request
   - TIMECARDS_WRITE: POST, PUT, and DELETE endpoints related to employee timecards
   - PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS: Allow third party applications to deduct a portion of each transaction amount.
   - PAYMENTS_WRITE_IN_PERSON: POST, PUT, and DELETE endpoints. Grants write access to transaction and refunds information.
+  - INVENTORY_READ: GET endpoints related to a merchant&#39;s inventory
+  - INVENTORY_WRITE: POST, PUT, and DELETE endpoints related to a merchant&#39;s inventory
 
 <a name="oauth2ClientSecret"></a>
 ### oauth2ClientSecret

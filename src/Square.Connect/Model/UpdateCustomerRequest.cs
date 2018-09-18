@@ -41,7 +41,8 @@ namespace Square.Connect.Model
         /// <param name="PhoneNumber">The customer&#39;s phone number..</param>
         /// <param name="ReferenceId">An optional second ID you can set to associate the customer with an entity in another system..</param>
         /// <param name="Note">An optional note to associate with the customer..</param>
-        public UpdateCustomerRequest(string GivenName = default(string), string FamilyName = default(string), string CompanyName = default(string), string Nickname = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string ReferenceId = default(string), string Note = default(string))
+        /// <param name="Birthday">The customer birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998..</param>
+        public UpdateCustomerRequest(string GivenName = default(string), string FamilyName = default(string), string CompanyName = default(string), string Nickname = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string ReferenceId = default(string), string Note = default(string), string Birthday = default(string))
         {
             this.GivenName = GivenName;
             this.FamilyName = FamilyName;
@@ -52,6 +53,7 @@ namespace Square.Connect.Model
             this.PhoneNumber = PhoneNumber;
             this.ReferenceId = ReferenceId;
             this.Note = Note;
+            this.Birthday = Birthday;
         }
         
         /// <summary>
@@ -109,6 +111,12 @@ namespace Square.Connect.Model
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
+        /// The customer birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.
+        /// </summary>
+        /// <value>The customer birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.</value>
+        [DataMember(Name="birthday", EmitDefaultValue=false)]
+        public string Birthday { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -125,6 +133,7 @@ namespace Square.Connect.Model
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
+            sb.Append("  Birthday: ").Append(Birthday).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +214,11 @@ namespace Square.Connect.Model
                     this.Note == other.Note ||
                     this.Note != null &&
                     this.Note.Equals(other.Note)
+                ) && 
+                (
+                    this.Birthday == other.Birthday ||
+                    this.Birthday != null &&
+                    this.Birthday.Equals(other.Birthday)
                 );
         }
 
@@ -237,6 +251,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
                 if (this.Note != null)
                     hash = hash * 59 + this.Note.GetHashCode();
+                if (this.Birthday != null)
+                    hash = hash * 59 + this.Birthday.GetHashCode();
                 return hash;
             }
         }

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **EmailAddress** | **string** | The customer&#39;s email address. | [optional] 
 **Address** | [**Address**](Address.md) | The customer&#39;s physical address. | [optional] 
 **PhoneNumber** | **string** | The customer&#39;s phone number. | [optional] 
+**Birthday** | **string** | The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998. | [optional] 
 **ReferenceId** | **string** | A second ID you can set to associate the customer with an entity in another system. | [optional] 
 **Note** | **string** | A note to associate with the customer. | [optional] 
 **Preferences** | [**CustomerPreferences**](CustomerPreferences.md) | The customer&#39;s preferences. | [optional] 
