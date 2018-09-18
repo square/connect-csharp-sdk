@@ -452,6 +452,12 @@ namespace Square.Connect.Model
         CHECKOUTEXPIRED,
         
         /// <summary>
+        /// Enum BADCERTIFICATE for "BAD_CERTIFICATE"
+        /// </summary>
+        [EnumMember(Value = "BAD_CERTIFICATE")]
+        BADCERTIFICATE,
+        
+        /// <summary>
         /// Enum CARDDECLINED for "CARD_DECLINED"
         /// </summary>
         [EnumMember(Value = "CARD_DECLINED")]
@@ -480,6 +486,12 @@ namespace Square.Connect.Model
         /// </summary>
         [EnumMember(Value = "NOT_FOUND")]
         NOTFOUND,
+        
+        /// <summary>
+        /// Enum APPLEPAYMENTPROCESSINGCERTIFICATEHASHNOTFOUND for "APPLE_PAYMENT_PROCESSING_CERTIFICATE_HASH_NOT_FOUND"
+        /// </summary>
+        [EnumMember(Value = "APPLE_PAYMENT_PROCESSING_CERTIFICATE_HASH_NOT_FOUND")]
+        APPLEPAYMENTPROCESSINGCERTIFICATEHASHNOTFOUND,
         
         /// <summary>
         /// Enum METHODNOTALLOWED for "METHOD_NOT_ALLOWED"

@@ -42,11 +42,14 @@ namespace Square.Connect.Model
         /// <param name="Deleted">If true, the timecard was deleted by the merchant, and it is no longer valid..</param>
         /// <param name="ClockinTime">The clock-in time for the timecard, in ISO 8601 format..</param>
         /// <param name="ClockoutTime">The clock-out time for the timecard, in ISO 8601 format. Provide this value only if importing timecard information from another system..</param>
-        /// <param name="ClockinLocationId">The ID of the location the employee clocked in from, if any..</param>
+        /// <param name="ClockinLocationId">The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules..</param>
         /// <param name="ClockoutLocationId">The ID of the location the employee clocked out from. Provide this value only if importing timecard information from another system..</param>
         /// <param name="CreatedAt">The time when the timecard was created, in ISO 8601 format..</param>
         /// <param name="UpdatedAt">The time when the timecard was most recently updated, in ISO 8601 format..</param>
-        public V1Timecard(string Id = default(string), string EmployeeId = default(string), bool? Deleted = default(bool?), string ClockinTime = default(string), string ClockoutTime = default(string), string ClockinLocationId = default(string), string ClockoutLocationId = default(string), string CreatedAt = default(string), string UpdatedAt = default(string))
+        /// <param name="RegularSecondsWorked">The total number of regular (non-overtime) seconds worked in the timecard..</param>
+        /// <param name="OvertimeSecondsWorked">The total number of overtime seconds worked in the timecard..</param>
+        /// <param name="DoubletimeSecondsWorked">The total number of doubletime seconds worked in the timecard..</param>
+        public V1Timecard(string Id = default(string), string EmployeeId = default(string), bool? Deleted = default(bool?), string ClockinTime = default(string), string ClockoutTime = default(string), string ClockinLocationId = default(string), string ClockoutLocationId = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), decimal? RegularSecondsWorked = default(decimal?), decimal? OvertimeSecondsWorked = default(decimal?), decimal? DoubletimeSecondsWorked = default(decimal?))
         {
             // to ensure "EmployeeId" is required (not null)
             if (EmployeeId == null)
@@ -65,6 +68,9 @@ namespace Square.Connect.Model
             this.ClockoutLocationId = ClockoutLocationId;
             this.CreatedAt = CreatedAt;
             this.UpdatedAt = UpdatedAt;
+            this.RegularSecondsWorked = RegularSecondsWorked;
+            this.OvertimeSecondsWorked = OvertimeSecondsWorked;
+            this.DoubletimeSecondsWorked = DoubletimeSecondsWorked;
         }
         
         /// <summary>
@@ -98,9 +104,9 @@ namespace Square.Connect.Model
         [DataMember(Name="clockout_time", EmitDefaultValue=false)]
         public string ClockoutTime { get; set; }
         /// <summary>
-        /// The ID of the location the employee clocked in from, if any.
+        /// The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules.
         /// </summary>
-        /// <value>The ID of the location the employee clocked in from, if any.</value>
+        /// <value>The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules.</value>
         [DataMember(Name="clockin_location_id", EmitDefaultValue=false)]
         public string ClockinLocationId { get; set; }
         /// <summary>
@@ -122,6 +128,24 @@ namespace Square.Connect.Model
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>
+        /// The total number of regular (non-overtime) seconds worked in the timecard.
+        /// </summary>
+        /// <value>The total number of regular (non-overtime) seconds worked in the timecard.</value>
+        [DataMember(Name="regular_seconds_worked", EmitDefaultValue=false)]
+        public decimal? RegularSecondsWorked { get; set; }
+        /// <summary>
+        /// The total number of overtime seconds worked in the timecard.
+        /// </summary>
+        /// <value>The total number of overtime seconds worked in the timecard.</value>
+        [DataMember(Name="overtime_seconds_worked", EmitDefaultValue=false)]
+        public decimal? OvertimeSecondsWorked { get; set; }
+        /// <summary>
+        /// The total number of doubletime seconds worked in the timecard.
+        /// </summary>
+        /// <value>The total number of doubletime seconds worked in the timecard.</value>
+        [DataMember(Name="doubletime_seconds_worked", EmitDefaultValue=false)]
+        public decimal? DoubletimeSecondsWorked { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +162,9 @@ namespace Square.Connect.Model
             sb.Append("  ClockoutLocationId: ").Append(ClockoutLocationId).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  RegularSecondsWorked: ").Append(RegularSecondsWorked).Append("\n");
+            sb.Append("  OvertimeSecondsWorked: ").Append(OvertimeSecondsWorked).Append("\n");
+            sb.Append("  DoubletimeSecondsWorked: ").Append(DoubletimeSecondsWorked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -218,6 +245,21 @@ namespace Square.Connect.Model
                     this.UpdatedAt == other.UpdatedAt ||
                     this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(other.UpdatedAt)
+                ) && 
+                (
+                    this.RegularSecondsWorked == other.RegularSecondsWorked ||
+                    this.RegularSecondsWorked != null &&
+                    this.RegularSecondsWorked.Equals(other.RegularSecondsWorked)
+                ) && 
+                (
+                    this.OvertimeSecondsWorked == other.OvertimeSecondsWorked ||
+                    this.OvertimeSecondsWorked != null &&
+                    this.OvertimeSecondsWorked.Equals(other.OvertimeSecondsWorked)
+                ) && 
+                (
+                    this.DoubletimeSecondsWorked == other.DoubletimeSecondsWorked ||
+                    this.DoubletimeSecondsWorked != null &&
+                    this.DoubletimeSecondsWorked.Equals(other.DoubletimeSecondsWorked)
                 );
         }
 
@@ -250,6 +292,12 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
                     hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                if (this.RegularSecondsWorked != null)
+                    hash = hash * 59 + this.RegularSecondsWorked.GetHashCode();
+                if (this.OvertimeSecondsWorked != null)
+                    hash = hash * 59 + this.OvertimeSecondsWorked.GetHashCode();
+                if (this.DoubletimeSecondsWorked != null)
+                    hash = hash * 59 + this.DoubletimeSecondsWorked.GetHashCode();
                 return hash;
             }
         }

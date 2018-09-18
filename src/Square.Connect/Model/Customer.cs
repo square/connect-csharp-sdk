@@ -177,12 +177,13 @@ namespace Square.Connect.Model
         /// <param name="EmailAddress">The customer&#39;s email address..</param>
         /// <param name="Address">The customer&#39;s physical address..</param>
         /// <param name="PhoneNumber">The customer&#39;s phone number..</param>
+        /// <param name="Birthday">The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998..</param>
         /// <param name="ReferenceId">A second ID you can set to associate the customer with an entity in another system..</param>
         /// <param name="Note">A note to associate with the customer..</param>
         /// <param name="Preferences">The customer&#39;s preferences..</param>
         /// <param name="Groups">The groups the customer belongs to..</param>
         /// <param name="CreationSource">A creation source represents the method used to create the customer profile..</param>
-        public Customer(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), List<Card> Cards = default(List<Card>), string GivenName = default(string), string FamilyName = default(string), string Nickname = default(string), string CompanyName = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string ReferenceId = default(string), string Note = default(string), CustomerPreferences Preferences = default(CustomerPreferences), List<CustomerGroupInfo> Groups = default(List<CustomerGroupInfo>), CreationSourceEnum? CreationSource = default(CreationSourceEnum?))
+        public Customer(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), List<Card> Cards = default(List<Card>), string GivenName = default(string), string FamilyName = default(string), string Nickname = default(string), string CompanyName = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string Birthday = default(string), string ReferenceId = default(string), string Note = default(string), CustomerPreferences Preferences = default(CustomerPreferences), List<CustomerGroupInfo> Groups = default(List<CustomerGroupInfo>), CreationSourceEnum? CreationSource = default(CreationSourceEnum?))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -219,6 +220,7 @@ namespace Square.Connect.Model
             this.EmailAddress = EmailAddress;
             this.Address = Address;
             this.PhoneNumber = PhoneNumber;
+            this.Birthday = Birthday;
             this.ReferenceId = ReferenceId;
             this.Note = Note;
             this.Preferences = Preferences;
@@ -293,6 +295,12 @@ namespace Square.Connect.Model
         [DataMember(Name="phone_number", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
         /// <summary>
+        /// The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.
+        /// </summary>
+        /// <value>The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.</value>
+        [DataMember(Name="birthday", EmitDefaultValue=false)]
+        public string Birthday { get; set; }
+        /// <summary>
         /// A second ID you can set to associate the customer with an entity in another system.
         /// </summary>
         /// <value>A second ID you can set to associate the customer with an entity in another system.</value>
@@ -335,6 +343,7 @@ namespace Square.Connect.Model
             sb.Append("  EmailAddress: ").Append(EmailAddress).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  Birthday: ").Append(Birthday).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  Preferences: ").Append(Preferences).Append("\n");
@@ -432,6 +441,11 @@ namespace Square.Connect.Model
                     this.PhoneNumber.Equals(other.PhoneNumber)
                 ) && 
                 (
+                    this.Birthday == other.Birthday ||
+                    this.Birthday != null &&
+                    this.Birthday.Equals(other.Birthday)
+                ) && 
+                (
                     this.ReferenceId == other.ReferenceId ||
                     this.ReferenceId != null &&
                     this.ReferenceId.Equals(other.ReferenceId)
@@ -491,6 +505,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Address.GetHashCode();
                 if (this.PhoneNumber != null)
                     hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                if (this.Birthday != null)
+                    hash = hash * 59 + this.Birthday.GetHashCode();
                 if (this.ReferenceId != null)
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
                 if (this.Note != null)
