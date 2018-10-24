@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **Itemizations** | [**List&lt;V1PaymentItemization&gt;**](V1PaymentItemization.md) | The items purchased in the payment. | [optional] 
 **SurchargeMoney** | [**V1Money**](V1Money.md) | The total of all surcharges applied to the payment. | [optional] 
 **Surcharges** | [**List&lt;V1PaymentSurcharge&gt;**](V1PaymentSurcharge.md) | A list of all surcharges associated with the payment. | [optional] 
+**IsPartial** | **bool?** | Indicates whether or not the payment is only partially paid for. If true, this payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed. | [optional] 
 
 
 

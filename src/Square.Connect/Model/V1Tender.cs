@@ -232,10 +232,12 @@ namespace Square.Connect.Model
         /// <param name="PaymentNote">Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER..</param>
         /// <param name="TotalMoney">The total amount of money provided in this form of tender..</param>
         /// <param name="TenderedMoney">The amount of total_money applied to the payment..</param>
+        /// <param name="TenderedAt">The time when the tender was created, in ISO 8601 format..</param>
+        /// <param name="SettledAt">The time when the tender was settled, in ISO 8601 format..</param>
         /// <param name="ChangeBackMoney">The amount of total_money returned to the buyer as change..</param>
         /// <param name="RefundedMoney">The total of all refunds applied to this tender. This amount is always negative or zero..</param>
         /// <param name="IsExchange">Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange..</param>
-        public V1Tender(string Id = default(string), TypeEnum? Type = default(TypeEnum?), string Name = default(string), string EmployeeId = default(string), string ReceiptUrl = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string PanSuffix = default(string), EntryMethodEnum? EntryMethod = default(EntryMethodEnum?), string PaymentNote = default(string), V1Money TotalMoney = default(V1Money), V1Money TenderedMoney = default(V1Money), V1Money ChangeBackMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), bool? IsExchange = default(bool?))
+        public V1Tender(string Id = default(string), TypeEnum? Type = default(TypeEnum?), string Name = default(string), string EmployeeId = default(string), string ReceiptUrl = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string PanSuffix = default(string), EntryMethodEnum? EntryMethod = default(EntryMethodEnum?), string PaymentNote = default(string), V1Money TotalMoney = default(V1Money), V1Money TenderedMoney = default(V1Money), string TenderedAt = default(string), string SettledAt = default(string), V1Money ChangeBackMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), bool? IsExchange = default(bool?))
         {
             this.Id = Id;
             this.Type = Type;
@@ -248,6 +250,8 @@ namespace Square.Connect.Model
             this.PaymentNote = PaymentNote;
             this.TotalMoney = TotalMoney;
             this.TenderedMoney = TenderedMoney;
+            this.TenderedAt = TenderedAt;
+            this.SettledAt = SettledAt;
             this.ChangeBackMoney = ChangeBackMoney;
             this.RefundedMoney = RefundedMoney;
             this.IsExchange = IsExchange;
@@ -302,6 +306,18 @@ namespace Square.Connect.Model
         [DataMember(Name="tendered_money", EmitDefaultValue=false)]
         public V1Money TenderedMoney { get; set; }
         /// <summary>
+        /// The time when the tender was created, in ISO 8601 format.
+        /// </summary>
+        /// <value>The time when the tender was created, in ISO 8601 format.</value>
+        [DataMember(Name="tendered_at", EmitDefaultValue=false)]
+        public string TenderedAt { get; set; }
+        /// <summary>
+        /// The time when the tender was settled, in ISO 8601 format.
+        /// </summary>
+        /// <value>The time when the tender was settled, in ISO 8601 format.</value>
+        [DataMember(Name="settled_at", EmitDefaultValue=false)]
+        public string SettledAt { get; set; }
+        /// <summary>
         /// The amount of total_money returned to the buyer as change.
         /// </summary>
         /// <value>The amount of total_money returned to the buyer as change.</value>
@@ -338,6 +354,8 @@ namespace Square.Connect.Model
             sb.Append("  PaymentNote: ").Append(PaymentNote).Append("\n");
             sb.Append("  TotalMoney: ").Append(TotalMoney).Append("\n");
             sb.Append("  TenderedMoney: ").Append(TenderedMoney).Append("\n");
+            sb.Append("  TenderedAt: ").Append(TenderedAt).Append("\n");
+            sb.Append("  SettledAt: ").Append(SettledAt).Append("\n");
             sb.Append("  ChangeBackMoney: ").Append(ChangeBackMoney).Append("\n");
             sb.Append("  RefundedMoney: ").Append(RefundedMoney).Append("\n");
             sb.Append("  IsExchange: ").Append(IsExchange).Append("\n");
@@ -433,6 +451,16 @@ namespace Square.Connect.Model
                     this.TenderedMoney.Equals(other.TenderedMoney)
                 ) && 
                 (
+                    this.TenderedAt == other.TenderedAt ||
+                    this.TenderedAt != null &&
+                    this.TenderedAt.Equals(other.TenderedAt)
+                ) && 
+                (
+                    this.SettledAt == other.SettledAt ||
+                    this.SettledAt != null &&
+                    this.SettledAt.Equals(other.SettledAt)
+                ) && 
+                (
                     this.ChangeBackMoney == other.ChangeBackMoney ||
                     this.ChangeBackMoney != null &&
                     this.ChangeBackMoney.Equals(other.ChangeBackMoney)
@@ -482,6 +510,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.TotalMoney.GetHashCode();
                 if (this.TenderedMoney != null)
                     hash = hash * 59 + this.TenderedMoney.GetHashCode();
+                if (this.TenderedAt != null)
+                    hash = hash * 59 + this.TenderedAt.GetHashCode();
+                if (this.SettledAt != null)
+                    hash = hash * 59 + this.SettledAt.GetHashCode();
                 if (this.ChangeBackMoney != null)
                     hash = hash * 59 + this.ChangeBackMoney.GetHashCode();
                 if (this.RefundedMoney != null)

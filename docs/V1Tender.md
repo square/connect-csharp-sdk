@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **PaymentNote** | **string** | Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER. | [optional] 
 **TotalMoney** | [**V1Money**](V1Money.md) | The total amount of money provided in this form of tender. | [optional] 
 **TenderedMoney** | [**V1Money**](V1Money.md) | The amount of total_money applied to the payment. | [optional] 
+**TenderedAt** | **string** | The time when the tender was created, in ISO 8601 format. | [optional] 
+**SettledAt** | **string** | The time when the tender was settled, in ISO 8601 format. | [optional] 
 **ChangeBackMoney** | [**V1Money**](V1Money.md) | The amount of total_money returned to the buyer as change. | [optional] 
 **RefundedMoney** | [**V1Money**](V1Money.md) | The total of all refunds applied to this tender. This amount is always negative or zero. | [optional] 
 **IsExchange** | **bool?** | Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange. | [optional] 

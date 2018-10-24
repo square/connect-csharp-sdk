@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="listpayments"></a>
 # **ListPayments**
-> List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
+> List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null)
 
 Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
 
@@ -253,11 +253,12 @@ namespace Example
             var endTime = endTime_example;  // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional) 
             var limit = 56;  // int? | The maximum number of payments to return in a single response. This value cannot exceed 200. (optional) 
             var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
+            var includePartial = true;  // bool? | Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional) 
 
             try
             {
                 // Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-                List&lt;V1Payment&gt; result = apiInstance.ListPayments(locationId, order, beginTime, endTime, limit, batchToken);
+                List&lt;V1Payment&gt; result = apiInstance.ListPayments(locationId, order, beginTime, endTime, limit, batchToken, includePartial);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -279,6 +280,7 @@ Name | Type | Description  | Notes
  **endTime** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional] 
  **limit** | **int?**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional] 
  **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
+ **includePartial** | **bool?**| Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. | [optional] 
 
 ### Return type
 

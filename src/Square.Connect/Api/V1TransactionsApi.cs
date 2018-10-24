@@ -108,8 +108,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>List&lt;V1Payment&gt;</returns>
-        List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
+        List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
 
         /// <summary>
         /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
@@ -124,8 +125,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Payment&gt;</returns>
-        ApiResponse<List<V1Payment>> ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
+        ApiResponse<List<V1Payment>> ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
         /// <summary>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
@@ -393,8 +395,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>Task of List&lt;V1Payment&gt;</returns>
-        System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
+        System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
 
         /// <summary>
         /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
@@ -409,8 +412,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Payment&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
+        System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
         /// <summary>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
@@ -1202,10 +1206,11 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>List&lt;V1Payment&gt;</returns>
-        public List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
+        public List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null)
         {
-             ApiResponse<List<V1Payment>> localVarResponse = ListPaymentsWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken);
+             ApiResponse<List<V1Payment>> localVarResponse = ListPaymentsWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken, includePartial);
              return localVarResponse.Data;
         }
 
@@ -1219,8 +1224,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1Payment&gt;</returns>
-        public ApiResponse< List<V1Payment> > ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
+        public ApiResponse< List<V1Payment> > ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1253,6 +1259,7 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
+            if (includePartial != null) localVarQueryParams.Add("include_partial", Configuration.ApiClient.ParameterToString(includePartial)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1290,10 +1297,11 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>Task of List&lt;V1Payment&gt;</returns>
-        public async System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
+        public async System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null)
         {
-             ApiResponse<List<V1Payment>> localVarResponse = await ListPaymentsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken);
+             ApiResponse<List<V1Payment>> localVarResponse = await ListPaymentsAsyncWithHttpInfo(locationId, order, beginTime, endTime, limit, batchToken, includePartial);
              return localVarResponse.Data;
 
         }
@@ -1308,8 +1316,9 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
+        /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1Payment&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null)
         {
             // verify the required parameter 'locationId' is set
             if (locationId == null)
@@ -1343,6 +1352,7 @@ namespace Square.Connect.Api
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
+            if (includePartial != null) localVarQueryParams.Add("include_partial", Configuration.ApiClient.ParameterToString(includePartial)); // query parameter
 
             // authentication (oauth2) required
             // oauth required

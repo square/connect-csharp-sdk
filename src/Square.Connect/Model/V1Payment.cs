@@ -58,7 +58,8 @@ namespace Square.Connect.Model
         /// <param name="Itemizations">The items purchased in the payment..</param>
         /// <param name="SurchargeMoney">The total of all surcharges applied to the payment..</param>
         /// <param name="Surcharges">A list of all surcharges associated with the payment..</param>
-        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>), V1Money SurchargeMoney = default(V1Money), List<V1PaymentSurcharge> Surcharges = default(List<V1PaymentSurcharge>))
+        /// <param name="IsPartial">Indicates whether or not the payment is only partially paid for. If true, this payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed..</param>
+        public V1Payment(string Id = default(string), string MerchantId = default(string), string CreatedAt = default(string), string CreatorId = default(string), Device Device = default(Device), string PaymentUrl = default(string), string ReceiptUrl = default(string), V1Money InclusiveTaxMoney = default(V1Money), V1Money AdditiveTaxMoney = default(V1Money), V1Money TaxMoney = default(V1Money), V1Money TipMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money TotalCollectedMoney = default(V1Money), V1Money ProcessingFeeMoney = default(V1Money), V1Money NetTotalMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), V1Money SwedishRoundingMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> InclusiveTax = default(List<V1PaymentTax>), List<V1PaymentTax> AdditiveTax = default(List<V1PaymentTax>), List<V1Tender> Tender = default(List<V1Tender>), List<V1Refund> Refunds = default(List<V1Refund>), List<V1PaymentItemization> Itemizations = default(List<V1PaymentItemization>), V1Money SurchargeMoney = default(V1Money), List<V1PaymentSurcharge> Surcharges = default(List<V1PaymentSurcharge>), bool? IsPartial = default(bool?))
         {
             this.Id = Id;
             this.MerchantId = MerchantId;
@@ -86,6 +87,7 @@ namespace Square.Connect.Model
             this.Itemizations = Itemizations;
             this.SurchargeMoney = SurchargeMoney;
             this.Surcharges = Surcharges;
+            this.IsPartial = IsPartial;
         }
         
         /// <summary>
@@ -245,6 +247,12 @@ namespace Square.Connect.Model
         [DataMember(Name="surcharges", EmitDefaultValue=false)]
         public List<V1PaymentSurcharge> Surcharges { get; set; }
         /// <summary>
+        /// Indicates whether or not the payment is only partially paid for. If true, this payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed.
+        /// </summary>
+        /// <value>Indicates whether or not the payment is only partially paid for. If true, this payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed.</value>
+        [DataMember(Name="is_partial", EmitDefaultValue=false)]
+        public bool? IsPartial { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -278,6 +286,7 @@ namespace Square.Connect.Model
             sb.Append("  Itemizations: ").Append(Itemizations).Append("\n");
             sb.Append("  SurchargeMoney: ").Append(SurchargeMoney).Append("\n");
             sb.Append("  Surcharges: ").Append(Surcharges).Append("\n");
+            sb.Append("  IsPartial: ").Append(IsPartial).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -443,6 +452,11 @@ namespace Square.Connect.Model
                     this.Surcharges == other.Surcharges ||
                     this.Surcharges != null &&
                     this.Surcharges.SequenceEqual(other.Surcharges)
+                ) && 
+                (
+                    this.IsPartial == other.IsPartial ||
+                    this.IsPartial != null &&
+                    this.IsPartial.Equals(other.IsPartial)
                 );
         }
 
@@ -509,6 +523,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.SurchargeMoney.GetHashCode();
                 if (this.Surcharges != null)
                     hash = hash * 59 + this.Surcharges.GetHashCode();
+                if (this.IsPartial != null)
+                    hash = hash * 59 + this.IsPartial.GetHashCode();
                 return hash;
             }
         }
