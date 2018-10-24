@@ -72,7 +72,7 @@ namespace Square.Connect.Model
         /// <param name="Type">Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group..</param>
         /// <param name="Taxable">Indicates whether the surcharge is taxable..</param>
         /// <param name="Taxes">The list of taxes that should be applied to the surcharge..</param>
-        /// <param name="SurchargeId">SurchargeId.</param>
+        /// <param name="SurchargeId">A Square-issued unique identifier associated with the surcharge..</param>
         public V1PaymentSurcharge(string Name = default(string), V1Money AppliedMoney = default(V1Money), string Rate = default(string), V1Money AmountMoney = default(V1Money), TypeEnum? Type = default(TypeEnum?), bool? Taxable = default(bool?), List<V1PaymentTax> Taxes = default(List<V1PaymentTax>), string SurchargeId = default(string))
         {
             this.Name = Name;
@@ -122,8 +122,9 @@ namespace Square.Connect.Model
         [DataMember(Name="taxes", EmitDefaultValue=false)]
         public List<V1PaymentTax> Taxes { get; set; }
         /// <summary>
-        /// Gets or Sets SurchargeId
+        /// A Square-issued unique identifier associated with the surcharge.
         /// </summary>
+        /// <value>A Square-issued unique identifier associated with the surcharge.</value>
         [DataMember(Name="surcharge_id", EmitDefaultValue=false)]
         public string SurchargeId { get; set; }
         /// <summary>
