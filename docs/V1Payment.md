@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The payment&#39;s unique identifier. | [optional] 
 **MerchantId** | **string** | The unique identifier of the merchant that took the payment. | [optional] 
-**CreatedAt** | **string** | The time when the payment was created, in ISO 8601 format. | [optional] 
+**CreatedAt** | **string** | The time when the payment was created, in ISO 8601 format. Reflects the time of the first payment if the object represents an incomplete partial payment, and the time of the last or complete payment otherwise. | [optional] 
 **CreatorId** | **string** | The unique identifier of the Square account that took the payment. | [optional] 
 **Device** | [**Device**](Device.md) | The device that took the payment. | [optional] 
 **PaymentUrl** | **string** | The URL of the payment&#39;s detail page in the merchant dashboard. The merchant must be signed in to the merchant dashboard to view this page. | [optional] 

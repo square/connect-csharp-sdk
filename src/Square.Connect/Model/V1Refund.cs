@@ -62,16 +62,36 @@ namespace Square.Connect.Model
         /// <param name="Type">The type of refund .</param>
         /// <param name="Reason">The merchant-specified reason for the refund..</param>
         /// <param name="RefundedMoney">The amount of money refunded. This amount is always negative..</param>
+        /// <param name="RefundedProcessingFeeMoney">The amount of processing fee money refunded. This amount is always positive..</param>
+        /// <param name="RefundedTaxMoney">The total amount of tax money refunded. This amount is always negative..</param>
+        /// <param name="RefundedAdditiveTaxMoney">The amount of additive tax money refunded. This amount is always negative..</param>
+        /// <param name="RefundedAdditiveTax">All of the additive taxes associated with the refund..</param>
+        /// <param name="RefundedInclusiveTaxMoney">The amount of inclusive tax money refunded. This amount is always negative..</param>
+        /// <param name="RefundedInclusiveTax">All of the inclusive taxes associated with the refund..</param>
+        /// <param name="RefundedTipMoney">The amount of tip money refunded. This amount is always negative..</param>
+        /// <param name="RefundedDiscountMoney">The amount of discount money refunded. This amount is always positive..</param>
+        /// <param name="RefundedSurchargeMoney">The amount of surcharge money refunded. This amount is always negative..</param>
+        /// <param name="RefundedSurcharges">A list of all surcharges associated with the refund..</param>
         /// <param name="CreatedAt">The time when the merchant initiated the refund for Square to process, in ISO 8601 format..</param>
         /// <param name="ProcessedAt">The time when Square processed the refund on behalf of the merchant, in ISO 8601 format..</param>
         /// <param name="PaymentId">A Square-issued ID associated with the refund. For single-tender refunds, payment_id is the ID of the original payment ID. For split-tender refunds, payment_id is the ID of the original tender. For exchange-based refunds (is_exchange &#x3D;&#x3D; true), payment_id is the ID of the original payment ID even if the payment includes other tenders..</param>
         /// <param name="MerchantId">.</param>
         /// <param name="IsExchange">Indicates whether or not the refund is associated with an exchange. If is_exchange is true, the refund reflects the value of goods returned in the exchange not the total money refunded..</param>
-        public V1Refund(TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string), bool? IsExchange = default(bool?))
+        public V1Refund(TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), V1Money RefundedProcessingFeeMoney = default(V1Money), V1Money RefundedTaxMoney = default(V1Money), V1Money RefundedAdditiveTaxMoney = default(V1Money), List<V1PaymentTax> RefundedAdditiveTax = default(List<V1PaymentTax>), V1Money RefundedInclusiveTaxMoney = default(V1Money), List<V1PaymentTax> RefundedInclusiveTax = default(List<V1PaymentTax>), V1Money RefundedTipMoney = default(V1Money), V1Money RefundedDiscountMoney = default(V1Money), V1Money RefundedSurchargeMoney = default(V1Money), List<V1PaymentSurcharge> RefundedSurcharges = default(List<V1PaymentSurcharge>), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string), bool? IsExchange = default(bool?))
         {
             this.Type = Type;
             this.Reason = Reason;
             this.RefundedMoney = RefundedMoney;
+            this.RefundedProcessingFeeMoney = RefundedProcessingFeeMoney;
+            this.RefundedTaxMoney = RefundedTaxMoney;
+            this.RefundedAdditiveTaxMoney = RefundedAdditiveTaxMoney;
+            this.RefundedAdditiveTax = RefundedAdditiveTax;
+            this.RefundedInclusiveTaxMoney = RefundedInclusiveTaxMoney;
+            this.RefundedInclusiveTax = RefundedInclusiveTax;
+            this.RefundedTipMoney = RefundedTipMoney;
+            this.RefundedDiscountMoney = RefundedDiscountMoney;
+            this.RefundedSurchargeMoney = RefundedSurchargeMoney;
+            this.RefundedSurcharges = RefundedSurcharges;
             this.CreatedAt = CreatedAt;
             this.ProcessedAt = ProcessedAt;
             this.PaymentId = PaymentId;
@@ -91,6 +111,66 @@ namespace Square.Connect.Model
         /// <value>The amount of money refunded. This amount is always negative.</value>
         [DataMember(Name="refunded_money", EmitDefaultValue=false)]
         public V1Money RefundedMoney { get; set; }
+        /// <summary>
+        /// The amount of processing fee money refunded. This amount is always positive.
+        /// </summary>
+        /// <value>The amount of processing fee money refunded. This amount is always positive.</value>
+        [DataMember(Name="refunded_processing_fee_money", EmitDefaultValue=false)]
+        public V1Money RefundedProcessingFeeMoney { get; set; }
+        /// <summary>
+        /// The total amount of tax money refunded. This amount is always negative.
+        /// </summary>
+        /// <value>The total amount of tax money refunded. This amount is always negative.</value>
+        [DataMember(Name="refunded_tax_money", EmitDefaultValue=false)]
+        public V1Money RefundedTaxMoney { get; set; }
+        /// <summary>
+        /// The amount of additive tax money refunded. This amount is always negative.
+        /// </summary>
+        /// <value>The amount of additive tax money refunded. This amount is always negative.</value>
+        [DataMember(Name="refunded_additive_tax_money", EmitDefaultValue=false)]
+        public V1Money RefundedAdditiveTaxMoney { get; set; }
+        /// <summary>
+        /// All of the additive taxes associated with the refund.
+        /// </summary>
+        /// <value>All of the additive taxes associated with the refund.</value>
+        [DataMember(Name="refunded_additive_tax", EmitDefaultValue=false)]
+        public List<V1PaymentTax> RefundedAdditiveTax { get; set; }
+        /// <summary>
+        /// The amount of inclusive tax money refunded. This amount is always negative.
+        /// </summary>
+        /// <value>The amount of inclusive tax money refunded. This amount is always negative.</value>
+        [DataMember(Name="refunded_inclusive_tax_money", EmitDefaultValue=false)]
+        public V1Money RefundedInclusiveTaxMoney { get; set; }
+        /// <summary>
+        /// All of the inclusive taxes associated with the refund.
+        /// </summary>
+        /// <value>All of the inclusive taxes associated with the refund.</value>
+        [DataMember(Name="refunded_inclusive_tax", EmitDefaultValue=false)]
+        public List<V1PaymentTax> RefundedInclusiveTax { get; set; }
+        /// <summary>
+        /// The amount of tip money refunded. This amount is always negative.
+        /// </summary>
+        /// <value>The amount of tip money refunded. This amount is always negative.</value>
+        [DataMember(Name="refunded_tip_money", EmitDefaultValue=false)]
+        public V1Money RefundedTipMoney { get; set; }
+        /// <summary>
+        /// The amount of discount money refunded. This amount is always positive.
+        /// </summary>
+        /// <value>The amount of discount money refunded. This amount is always positive.</value>
+        [DataMember(Name="refunded_discount_money", EmitDefaultValue=false)]
+        public V1Money RefundedDiscountMoney { get; set; }
+        /// <summary>
+        /// The amount of surcharge money refunded. This amount is always negative.
+        /// </summary>
+        /// <value>The amount of surcharge money refunded. This amount is always negative.</value>
+        [DataMember(Name="refunded_surcharge_money", EmitDefaultValue=false)]
+        public V1Money RefundedSurchargeMoney { get; set; }
+        /// <summary>
+        /// A list of all surcharges associated with the refund.
+        /// </summary>
+        /// <value>A list of all surcharges associated with the refund.</value>
+        [DataMember(Name="refunded_surcharges", EmitDefaultValue=false)]
+        public List<V1PaymentSurcharge> RefundedSurcharges { get; set; }
         /// <summary>
         /// The time when the merchant initiated the refund for Square to process, in ISO 8601 format.
         /// </summary>
@@ -132,6 +212,16 @@ namespace Square.Connect.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("  RefundedMoney: ").Append(RefundedMoney).Append("\n");
+            sb.Append("  RefundedProcessingFeeMoney: ").Append(RefundedProcessingFeeMoney).Append("\n");
+            sb.Append("  RefundedTaxMoney: ").Append(RefundedTaxMoney).Append("\n");
+            sb.Append("  RefundedAdditiveTaxMoney: ").Append(RefundedAdditiveTaxMoney).Append("\n");
+            sb.Append("  RefundedAdditiveTax: ").Append(RefundedAdditiveTax).Append("\n");
+            sb.Append("  RefundedInclusiveTaxMoney: ").Append(RefundedInclusiveTaxMoney).Append("\n");
+            sb.Append("  RefundedInclusiveTax: ").Append(RefundedInclusiveTax).Append("\n");
+            sb.Append("  RefundedTipMoney: ").Append(RefundedTipMoney).Append("\n");
+            sb.Append("  RefundedDiscountMoney: ").Append(RefundedDiscountMoney).Append("\n");
+            sb.Append("  RefundedSurchargeMoney: ").Append(RefundedSurchargeMoney).Append("\n");
+            sb.Append("  RefundedSurcharges: ").Append(RefundedSurcharges).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ProcessedAt: ").Append(ProcessedAt).Append("\n");
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
@@ -189,6 +279,56 @@ namespace Square.Connect.Model
                     this.RefundedMoney.Equals(other.RefundedMoney)
                 ) && 
                 (
+                    this.RefundedProcessingFeeMoney == other.RefundedProcessingFeeMoney ||
+                    this.RefundedProcessingFeeMoney != null &&
+                    this.RefundedProcessingFeeMoney.Equals(other.RefundedProcessingFeeMoney)
+                ) && 
+                (
+                    this.RefundedTaxMoney == other.RefundedTaxMoney ||
+                    this.RefundedTaxMoney != null &&
+                    this.RefundedTaxMoney.Equals(other.RefundedTaxMoney)
+                ) && 
+                (
+                    this.RefundedAdditiveTaxMoney == other.RefundedAdditiveTaxMoney ||
+                    this.RefundedAdditiveTaxMoney != null &&
+                    this.RefundedAdditiveTaxMoney.Equals(other.RefundedAdditiveTaxMoney)
+                ) && 
+                (
+                    this.RefundedAdditiveTax == other.RefundedAdditiveTax ||
+                    this.RefundedAdditiveTax != null &&
+                    this.RefundedAdditiveTax.SequenceEqual(other.RefundedAdditiveTax)
+                ) && 
+                (
+                    this.RefundedInclusiveTaxMoney == other.RefundedInclusiveTaxMoney ||
+                    this.RefundedInclusiveTaxMoney != null &&
+                    this.RefundedInclusiveTaxMoney.Equals(other.RefundedInclusiveTaxMoney)
+                ) && 
+                (
+                    this.RefundedInclusiveTax == other.RefundedInclusiveTax ||
+                    this.RefundedInclusiveTax != null &&
+                    this.RefundedInclusiveTax.SequenceEqual(other.RefundedInclusiveTax)
+                ) && 
+                (
+                    this.RefundedTipMoney == other.RefundedTipMoney ||
+                    this.RefundedTipMoney != null &&
+                    this.RefundedTipMoney.Equals(other.RefundedTipMoney)
+                ) && 
+                (
+                    this.RefundedDiscountMoney == other.RefundedDiscountMoney ||
+                    this.RefundedDiscountMoney != null &&
+                    this.RefundedDiscountMoney.Equals(other.RefundedDiscountMoney)
+                ) && 
+                (
+                    this.RefundedSurchargeMoney == other.RefundedSurchargeMoney ||
+                    this.RefundedSurchargeMoney != null &&
+                    this.RefundedSurchargeMoney.Equals(other.RefundedSurchargeMoney)
+                ) && 
+                (
+                    this.RefundedSurcharges == other.RefundedSurcharges ||
+                    this.RefundedSurcharges != null &&
+                    this.RefundedSurcharges.SequenceEqual(other.RefundedSurcharges)
+                ) && 
+                (
                     this.CreatedAt == other.CreatedAt ||
                     this.CreatedAt != null &&
                     this.CreatedAt.Equals(other.CreatedAt)
@@ -232,6 +372,26 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Reason.GetHashCode();
                 if (this.RefundedMoney != null)
                     hash = hash * 59 + this.RefundedMoney.GetHashCode();
+                if (this.RefundedProcessingFeeMoney != null)
+                    hash = hash * 59 + this.RefundedProcessingFeeMoney.GetHashCode();
+                if (this.RefundedTaxMoney != null)
+                    hash = hash * 59 + this.RefundedTaxMoney.GetHashCode();
+                if (this.RefundedAdditiveTaxMoney != null)
+                    hash = hash * 59 + this.RefundedAdditiveTaxMoney.GetHashCode();
+                if (this.RefundedAdditiveTax != null)
+                    hash = hash * 59 + this.RefundedAdditiveTax.GetHashCode();
+                if (this.RefundedInclusiveTaxMoney != null)
+                    hash = hash * 59 + this.RefundedInclusiveTaxMoney.GetHashCode();
+                if (this.RefundedInclusiveTax != null)
+                    hash = hash * 59 + this.RefundedInclusiveTax.GetHashCode();
+                if (this.RefundedTipMoney != null)
+                    hash = hash * 59 + this.RefundedTipMoney.GetHashCode();
+                if (this.RefundedDiscountMoney != null)
+                    hash = hash * 59 + this.RefundedDiscountMoney.GetHashCode();
+                if (this.RefundedSurchargeMoney != null)
+                    hash = hash * 59 + this.RefundedSurchargeMoney.GetHashCode();
+                if (this.RefundedSurcharges != null)
+                    hash = hash * 59 + this.RefundedSurcharges.GetHashCode();
                 if (this.CreatedAt != null)
                     hash = hash * 59 + this.CreatedAt.GetHashCode();
                 if (this.ProcessedAt != null)

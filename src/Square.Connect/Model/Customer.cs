@@ -169,7 +169,7 @@ namespace Square.Connect.Model
         /// <param name="Id">The customer&#39;s unique ID. (required).</param>
         /// <param name="CreatedAt">The time when the customer was created, in RFC 3339 format. (required).</param>
         /// <param name="UpdatedAt">The time when the customer was last updated, in RFC 3339 format. (required).</param>
-        /// <param name="Cards">The non-confidential details of the customer&#39;s cards on file..</param>
+        /// <param name="Cards">The payment details of the customer&#39;s cards on file..</param>
         /// <param name="GivenName">The customer&#39;s given (i.e., first) name..</param>
         /// <param name="FamilyName">The customer&#39;s family (i.e., last) name..</param>
         /// <param name="Nickname">The customer&#39;s nickname..</param>
@@ -247,9 +247,9 @@ namespace Square.Connect.Model
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>
-        /// The non-confidential details of the customer&#39;s cards on file.
+        /// The payment details of the customer&#39;s cards on file.
         /// </summary>
-        /// <value>The non-confidential details of the customer&#39;s cards on file.</value>
+        /// <value>The payment details of the customer&#39;s cards on file.</value>
         [DataMember(Name="cards", EmitDefaultValue=false)]
         public List<Card> Cards { get; set; }
         /// <summary>
