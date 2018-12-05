@@ -34,7 +34,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Id">The payment&#39;s unique identifier..</param>
         /// <param name="MerchantId">The unique identifier of the merchant that took the payment..</param>
-        /// <param name="CreatedAt">The time when the payment was created, in ISO 8601 format..</param>
+        /// <param name="CreatedAt">The time when the payment was created, in ISO 8601 format. Reflects the time of the first payment if the object represents an incomplete partial payment, and the time of the last or complete payment otherwise..</param>
         /// <param name="CreatorId">The unique identifier of the Square account that took the payment..</param>
         /// <param name="Device">The device that took the payment..</param>
         /// <param name="PaymentUrl">The URL of the payment&#39;s detail page in the merchant dashboard. The merchant must be signed in to the merchant dashboard to view this page..</param>
@@ -103,9 +103,9 @@ namespace Square.Connect.Model
         [DataMember(Name="merchant_id", EmitDefaultValue=false)]
         public string MerchantId { get; set; }
         /// <summary>
-        /// The time when the payment was created, in ISO 8601 format.
+        /// The time when the payment was created, in ISO 8601 format. Reflects the time of the first payment if the object represents an incomplete partial payment, and the time of the last or complete payment otherwise.
         /// </summary>
-        /// <value>The time when the payment was created, in ISO 8601 format.</value>
+        /// <value>The time when the payment was created, in ISO 8601 format. Reflects the time of the first payment if the object represents an incomplete partial payment, and the time of the last or complete payment otherwise.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         public string CreatedAt { get; set; }
         /// <summary>

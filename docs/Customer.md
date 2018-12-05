@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Id** | **string** | The customer&#39;s unique ID. | 
 **CreatedAt** | **string** | The time when the customer was created, in RFC 3339 format. | 
 **UpdatedAt** | **string** | The time when the customer was last updated, in RFC 3339 format. | 
-**Cards** | [**List&lt;Card&gt;**](Card.md) | The non-confidential details of the customer&#39;s cards on file. | [optional] 
+**Cards** | [**List&lt;Card&gt;**](Card.md) | The payment details of the customer&#39;s cards on file. | [optional] 
 **GivenName** | **string** | The customer&#39;s given (i.e., first) name. | [optional] 
 **FamilyName** | **string** | The customer&#39;s family (i.e., last) name. | [optional] 
 **Nickname** | **string** | The customer&#39;s nickname. | [optional] 

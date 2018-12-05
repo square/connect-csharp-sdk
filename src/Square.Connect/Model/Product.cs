@@ -74,6 +74,18 @@ namespace Square.Connect.Model
         PAYROLL,
         
         /// <summary>
+        /// Enum DASHBOARD for "DASHBOARD"
+        /// </summary>
+        [EnumMember(Value = "DASHBOARD")]
+        DASHBOARD,
+        
+        /// <summary>
+        /// Enum ITEMLIBRARYIMPORT for "ITEM_LIBRARY_IMPORT"
+        /// </summary>
+        [EnumMember(Value = "ITEM_LIBRARY_IMPORT")]
+        ITEMLIBRARYIMPORT,
+        
+        /// <summary>
         /// Enum OTHER for "OTHER"
         /// </summary>
         [EnumMember(Value = "OTHER")]

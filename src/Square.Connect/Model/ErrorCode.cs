@@ -248,6 +248,12 @@ namespace Square.Connect.Model
         EXPECTEDARRAY,
         
         /// <summary>
+        /// Enum EXPECTEDMAP for "EXPECTED_MAP"
+        /// </summary>
+        [EnumMember(Value = "EXPECTED_MAP")]
+        EXPECTEDMAP,
+        
+        /// <summary>
         /// Enum EXPECTEDBASE64ENCODEDBYTEARRAY for "EXPECTED_BASE64_ENCODED_BYTE_ARRAY"
         /// </summary>
         [EnumMember(Value = "EXPECTED_BASE64_ENCODED_BYTE_ARRAY")]
@@ -330,6 +336,12 @@ namespace Square.Connect.Model
         /// </summary>
         [EnumMember(Value = "UNSUPPORTED_ENTRY_METHOD")]
         UNSUPPORTEDENTRYMETHOD,
+        
+        /// <summary>
+        /// Enum INVALIDENCRYPTEDCARD for "INVALID_ENCRYPTED_CARD"
+        /// </summary>
+        [EnumMember(Value = "INVALID_ENCRYPTED_CARD")]
+        INVALIDENCRYPTEDCARD,
         
         /// <summary>
         /// Enum INVALIDCARD for "INVALID_CARD"
