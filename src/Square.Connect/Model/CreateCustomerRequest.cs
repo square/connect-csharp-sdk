@@ -32,6 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCustomerRequest" /> class.
         /// </summary>
+        /// <param name="IdempotencyKey">The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information..</param>
         /// <param name="GivenName">The customer&#39;s given (i.e., first) name..</param>
         /// <param name="FamilyName">The customer&#39;s family (i.e., last) name..</param>
         /// <param name="CompanyName">The name of the customer&#39;s company..</param>
@@ -42,8 +43,9 @@ namespace Square.Connect.Model
         /// <param name="ReferenceId">An optional second ID you can set to associate the customer with an entity in another system..</param>
         /// <param name="Note">An optional note to associate with the customer..</param>
         /// <param name="Birthday">The customer birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998..</param>
-        public CreateCustomerRequest(string GivenName = default(string), string FamilyName = default(string), string CompanyName = default(string), string Nickname = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string ReferenceId = default(string), string Note = default(string), string Birthday = default(string))
+        public CreateCustomerRequest(string IdempotencyKey = default(string), string GivenName = default(string), string FamilyName = default(string), string CompanyName = default(string), string Nickname = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string ReferenceId = default(string), string Note = default(string), string Birthday = default(string))
         {
+            this.IdempotencyKey = IdempotencyKey;
             this.GivenName = GivenName;
             this.FamilyName = FamilyName;
             this.CompanyName = CompanyName;
@@ -56,6 +58,12 @@ namespace Square.Connect.Model
             this.Birthday = Birthday;
         }
         
+        /// <summary>
+        /// The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information.
+        /// </summary>
+        /// <value>The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information.</value>
+        [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
+        public string IdempotencyKey { get; set; }
         /// <summary>
         /// The customer&#39;s given (i.e., first) name.
         /// </summary>
@@ -124,6 +132,7 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateCustomerRequest {\n");
+            sb.Append("  IdempotencyKey: ").Append(IdempotencyKey).Append("\n");
             sb.Append("  GivenName: ").Append(GivenName).Append("\n");
             sb.Append("  FamilyName: ").Append(FamilyName).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
@@ -170,6 +179,11 @@ namespace Square.Connect.Model
                 return false;
 
             return 
+                (
+                    this.IdempotencyKey == other.IdempotencyKey ||
+                    this.IdempotencyKey != null &&
+                    this.IdempotencyKey.Equals(other.IdempotencyKey)
+                ) && 
                 (
                     this.GivenName == other.GivenName ||
                     this.GivenName != null &&
@@ -233,6 +247,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.IdempotencyKey != null)
+                    hash = hash * 59 + this.IdempotencyKey.GetHashCode();
                 if (this.GivenName != null)
                     hash = hash * 59 + this.GivenName.GetHashCode();
                 if (this.FamilyName != null)

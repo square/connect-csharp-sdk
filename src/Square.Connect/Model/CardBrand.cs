@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Indicates a credit card's brand, such as `VISA`.
+    /// Indicates a credit card's brand, such as `VISA` or `MASTERCARD`.
     /// </summary>
-    /// <value>Indicates a credit card's brand, such as `VISA`.</value>
+    /// <value>Indicates a credit card's brand, such as `VISA` or `MASTERCARD`.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CardBrand
     {
