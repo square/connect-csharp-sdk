@@ -28,6 +28,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.12.0")]
-[assembly: AssemblyFileVersion("2.12.0")]
-[assembly: AssemblyInformationalVersion("Square-Connect-CSharp/2.20181205.0")]
+[assembly: AssemblyVersion("2.13.0")]
+[assembly: AssemblyFileVersion("2.13.0")]
+[assembly: AssemblyInformationalVersion("Square-Connect-CSharp/2.20181212.0")]
