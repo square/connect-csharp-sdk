@@ -148,7 +148,7 @@ namespace Square.Connect.Test
                     FirstName: "Jane",
                     LastName: "Doe"
                 ),
-                RedirectUrl: "https://docs.connect.squareup.com/order-confirm"
+                RedirectUrl: "https://merchant.website.com/order-confirm"
             );
             var response = instance.CreateCheckout(locationId, body);
             Assert.IsInstanceOf<CreateCheckoutResponse> (response, "response is CreateCheckoutResponse");
