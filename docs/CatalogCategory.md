@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The category&#39;s name. Searchable. | [optional] 
+**Name** | **string** | The category&#39;s name. Searchable. This field has max length of 255 Unicode code points. | [optional] 
 
 
 

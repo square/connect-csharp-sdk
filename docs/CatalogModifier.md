@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The modifier&#39;s name. Searchable. | [optional] 
+**Name** | **string** | The modifier&#39;s name. Searchable. This field has max length of 255 Unicode code points. | [optional] 
 **PriceMoney** | [**Money**](Money.md) | The modifier&#39;s price. | [optional] 
 
 

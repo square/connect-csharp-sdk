@@ -40,11 +40,14 @@ namespace Square.Connect.Model
         /// <param name="Id">The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-createorder) endpoint..</param>
         /// <param name="LocationId">The ID of the merchant location this order is associated with. (required).</param>
         /// <param name="ReferenceId">A client specified identifier to associate an entity in another system with this order..</param>
-        /// <param name="LineItems">The line items included in the order. Every order has at least one line item. (required).</param>
+        /// <param name="LineItems">The line items included in the order..</param>
+        /// <param name="Taxes">A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list..</param>
+        /// <param name="Discounts">A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list..</param>
+        /// <param name="Fulfillments">Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments..</param>
         /// <param name="TotalMoney">The total amount of money to collect for the order..</param>
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order..</param>
-        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
+        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
         {
             // to ensure "LocationId" is required (not null)
             if (LocationId == null)
@@ -55,17 +58,12 @@ namespace Square.Connect.Model
             {
                 this.LocationId = LocationId;
             }
-            // to ensure "LineItems" is required (not null)
-            if (LineItems == null)
-            {
-                throw new InvalidDataException("LineItems is a required property for Order and cannot be null");
-            }
-            else
-            {
-                this.LineItems = LineItems;
-            }
             this.Id = Id;
             this.ReferenceId = ReferenceId;
+            this.LineItems = LineItems;
+            this.Taxes = Taxes;
+            this.Discounts = Discounts;
+            this.Fulfillments = Fulfillments;
             this.TotalMoney = TotalMoney;
             this.TotalTaxMoney = TotalTaxMoney;
             this.TotalDiscountMoney = TotalDiscountMoney;
@@ -90,11 +88,29 @@ namespace Square.Connect.Model
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
         /// <summary>
-        /// The line items included in the order. Every order has at least one line item.
+        /// The line items included in the order.
         /// </summary>
-        /// <value>The line items included in the order. Every order has at least one line item.</value>
+        /// <value>The line items included in the order.</value>
         [DataMember(Name="line_items", EmitDefaultValue=false)]
         public List<OrderLineItem> LineItems { get; set; }
+        /// <summary>
+        /// A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list.
+        /// </summary>
+        /// <value>A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list.</value>
+        [DataMember(Name="taxes", EmitDefaultValue=false)]
+        public List<OrderLineItemTax> Taxes { get; set; }
+        /// <summary>
+        /// A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list.
+        /// </summary>
+        /// <value>A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list.</value>
+        [DataMember(Name="discounts", EmitDefaultValue=false)]
+        public List<OrderLineItemDiscount> Discounts { get; set; }
+        /// <summary>
+        /// Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments.
+        /// </summary>
+        /// <value>Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments.</value>
+        [DataMember(Name="fulfillments", EmitDefaultValue=false)]
+        public List<OrderFulfillment> Fulfillments { get; set; }
         /// <summary>
         /// The total amount of money to collect for the order.
         /// </summary>
@@ -125,6 +141,9 @@ namespace Square.Connect.Model
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
+            sb.Append("  Taxes: ").Append(Taxes).Append("\n");
+            sb.Append("  Discounts: ").Append(Discounts).Append("\n");
+            sb.Append("  Fulfillments: ").Append(Fulfillments).Append("\n");
             sb.Append("  TotalMoney: ").Append(TotalMoney).Append("\n");
             sb.Append("  TotalTaxMoney: ").Append(TotalTaxMoney).Append("\n");
             sb.Append("  TotalDiscountMoney: ").Append(TotalDiscountMoney).Append("\n");
@@ -185,6 +204,21 @@ namespace Square.Connect.Model
                     this.LineItems.SequenceEqual(other.LineItems)
                 ) && 
                 (
+                    this.Taxes == other.Taxes ||
+                    this.Taxes != null &&
+                    this.Taxes.SequenceEqual(other.Taxes)
+                ) && 
+                (
+                    this.Discounts == other.Discounts ||
+                    this.Discounts != null &&
+                    this.Discounts.SequenceEqual(other.Discounts)
+                ) && 
+                (
+                    this.Fulfillments == other.Fulfillments ||
+                    this.Fulfillments != null &&
+                    this.Fulfillments.SequenceEqual(other.Fulfillments)
+                ) && 
+                (
                     this.TotalMoney == other.TotalMoney ||
                     this.TotalMoney != null &&
                     this.TotalMoney.Equals(other.TotalMoney)
@@ -220,6 +254,12 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
                 if (this.LineItems != null)
                     hash = hash * 59 + this.LineItems.GetHashCode();
+                if (this.Taxes != null)
+                    hash = hash * 59 + this.Taxes.GetHashCode();
+                if (this.Discounts != null)
+                    hash = hash * 59 + this.Discounts.GetHashCode();
+                if (this.Fulfillments != null)
+                    hash = hash * 59 + this.Fulfillments.GetHashCode();
                 if (this.TotalMoney != null)
                     hash = hash * 59 + this.TotalMoney.GetHashCode();
                 if (this.TotalTaxMoney != null)

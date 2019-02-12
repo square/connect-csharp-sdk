@@ -71,12 +71,12 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogDiscount" /> class.
         /// </summary>
-        /// <param name="Name">The discount&#39;s name. Searchable..</param>
+        /// <param name="Name">The discount&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
         /// <param name="DiscountType">Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values..</param>
         /// <param name="Percentage">The percentage of the discount as a string representation of a decimal number, using a &#x60;.&#x60; as the decimal separator and without a &#x60;%&#x60; sign. A value of &#x60;7.5&#x60; corresponds to &#x60;7.5%&#x60;. Specify a percentage of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_PERCENTAGE&#x60;.  Do not include this field for amount-based or variable discounts..</param>
         /// <param name="AmountMoney">The amount of the discount. Specify an amount of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_AMOUNT&#x60;.  Do not include this field for percentage-based or variable discounts..</param>
         /// <param name="PinRequired">Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment in the Square Point of Sale app..</param>
-        /// <param name="LabelColor">The color of the discount&#39;s display label in the Square Point of Sale app..</param>
+        /// <param name="LabelColor">The color of the discount&#39;s display label in the Square Point of Sale app. This must be a valid hex color code..</param>
         public CatalogDiscount(string Name = default(string), DiscountTypeEnum? DiscountType = default(DiscountTypeEnum?), string Percentage = default(string), Money AmountMoney = default(Money), bool? PinRequired = default(bool?), string LabelColor = default(string))
         {
             this.Name = Name;
@@ -88,9 +88,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The discount&#39;s name. Searchable.
+        /// The discount&#39;s name. Searchable. This field has max length of 255 Unicode code points.
         /// </summary>
-        /// <value>The discount&#39;s name. Searchable.</value>
+        /// <value>The discount&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -112,9 +112,9 @@ namespace Square.Connect.Model
         [DataMember(Name="pin_required", EmitDefaultValue=false)]
         public bool? PinRequired { get; set; }
         /// <summary>
-        /// The color of the discount&#39;s display label in the Square Point of Sale app.
+        /// The color of the discount&#39;s display label in the Square Point of Sale app. This must be a valid hex color code.
         /// </summary>
-        /// <value>The color of the discount&#39;s display label in the Square Point of Sale app.</value>
+        /// <value>The color of the discount&#39;s display label in the Square Point of Sale app. This must be a valid hex color code.</value>
         [DataMember(Name="label_color", EmitDefaultValue=false)]
         public string LabelColor { get; set; }
         /// <summary>

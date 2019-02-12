@@ -563,6 +563,12 @@ namespace Square.Connect.Model
             METHODNOTALLOWED,
             
             /// <summary>
+            /// Enum NOTACCEPTABLE for "NOT_ACCEPTABLE"
+            /// </summary>
+            [EnumMember(Value = "NOT_ACCEPTABLE")]
+            NOTACCEPTABLE,
+            
+            /// <summary>
             /// Enum REQUESTTIMEOUT for "REQUEST_TIMEOUT"
             /// </summary>
             [EnumMember(Value = "REQUEST_TIMEOUT")]

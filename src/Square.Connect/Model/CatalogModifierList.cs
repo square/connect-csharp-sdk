@@ -59,7 +59,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifierList" /> class.
         /// </summary>
-        /// <param name="Name">The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable..</param>
+        /// <param name="Name">The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
         /// <param name="SelectionType">Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for all possible values..</param>
         /// <param name="Modifiers">The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data..</param>
         public CatalogModifierList(string Name = default(string), SelectionTypeEnum? SelectionType = default(SelectionTypeEnum?), List<CatalogObject> Modifiers = default(List<CatalogObject>))
@@ -70,9 +70,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable.
+        /// The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points.
         /// </summary>
-        /// <value>The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable.</value>
+        /// <value>The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>

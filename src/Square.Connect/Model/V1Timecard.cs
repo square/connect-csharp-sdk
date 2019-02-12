@@ -42,7 +42,7 @@ namespace Square.Connect.Model
         /// <param name="Deleted">If true, the timecard was deleted by the merchant, and it is no longer valid..</param>
         /// <param name="ClockinTime">The clock-in time for the timecard, in ISO 8601 format..</param>
         /// <param name="ClockoutTime">The clock-out time for the timecard, in ISO 8601 format. Provide this value only if importing timecard information from another system..</param>
-        /// <param name="ClockinLocationId">The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules..</param>
+        /// <param name="ClockinLocationId">The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard���s timezone and overtime rules..</param>
         /// <param name="ClockoutLocationId">The ID of the location the employee clocked out from. Provide this value only if importing timecard information from another system..</param>
         /// <param name="CreatedAt">The time when the timecard was created, in ISO 8601 format..</param>
         /// <param name="UpdatedAt">The time when the timecard was most recently updated, in ISO 8601 format..</param>
@@ -104,9 +104,9 @@ namespace Square.Connect.Model
         [DataMember(Name="clockout_time", EmitDefaultValue=false)]
         public string ClockoutTime { get; set; }
         /// <summary>
-        /// The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules.
+        /// The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard���s timezone and overtime rules.
         /// </summary>
-        /// <value>The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules.</value>
+        /// <value>The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard���s timezone and overtime rules.</value>
         [DataMember(Name="clockin_location_id", EmitDefaultValue=false)]
         public string ClockinLocationId { get; set; }
         /// <summary>

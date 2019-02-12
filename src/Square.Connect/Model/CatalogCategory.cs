@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogCategory" /> class.
         /// </summary>
-        /// <param name="Name">The category&#39;s name. Searchable..</param>
+        /// <param name="Name">The category&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
         public CatalogCategory(string Name = default(string))
         {
             this.Name = Name;
         }
         
         /// <summary>
-        /// The category&#39;s name. Searchable.
+        /// The category&#39;s name. Searchable. This field has max length of 255 Unicode code points.
         /// </summary>
-        /// <value>The category&#39;s name. Searchable.</value>
+        /// <value>The category&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>

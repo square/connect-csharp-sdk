@@ -57,11 +57,44 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
+        /// Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.
+        /// </summary>
+        /// <value>Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ScopeEnum
+        {
+            
+            /// <summary>
+            /// Enum OTHERTAXSCOPE for "OTHER_TAX_SCOPE"
+            /// </summary>
+            [EnumMember(Value = "OTHER_TAX_SCOPE")]
+            OTHERTAXSCOPE,
+            
+            /// <summary>
+            /// Enum LINEITEM for "LINE_ITEM"
+            /// </summary>
+            [EnumMember(Value = "LINE_ITEM")]
+            LINEITEM,
+            
+            /// <summary>
+            /// Enum ORDER for "ORDER"
+            /// </summary>
+            [EnumMember(Value = "ORDER")]
+            ORDER
+        }
+
+        /// <summary>
         /// Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
         /// </summary>
         /// <value>Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
+        /// <summary>
+        /// Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.
+        /// </summary>
+        /// <value>Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.</value>
+        [DataMember(Name="scope", EmitDefaultValue=false)]
+        public ScopeEnum? Scope { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemTax" /> class.
         /// </summary>
@@ -70,13 +103,15 @@ namespace Square.Connect.Model
         /// <param name="Type">Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values..</param>
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%..</param>
         /// <param name="AppliedMoney">The amount of the money applied by the tax in an order..</param>
-        public OrderLineItemTax(string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money))
+        /// <param name="Scope">Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values..</param>
+        public OrderLineItemTax(string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money), ScopeEnum? Scope = default(ScopeEnum?))
         {
             this.CatalogObjectId = CatalogObjectId;
             this.Name = Name;
             this.Type = Type;
             this.Percentage = Percentage;
             this.AppliedMoney = AppliedMoney;
+            this.Scope = Scope;
         }
         
         /// <summary>
@@ -116,6 +151,7 @@ namespace Square.Connect.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
             sb.Append("  AppliedMoney: ").Append(AppliedMoney).Append("\n");
+            sb.Append("  Scope: ").Append(Scope).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -176,6 +212,11 @@ namespace Square.Connect.Model
                     this.AppliedMoney == other.AppliedMoney ||
                     this.AppliedMoney != null &&
                     this.AppliedMoney.Equals(other.AppliedMoney)
+                ) && 
+                (
+                    this.Scope == other.Scope ||
+                    this.Scope != null &&
+                    this.Scope.Equals(other.Scope)
                 );
         }
 
@@ -200,6 +241,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Percentage.GetHashCode();
                 if (this.AppliedMoney != null)
                     hash = hash * 59 + this.AppliedMoney.GetHashCode();
+                if (this.Scope != null)
+                    hash = hash * 59 + this.Scope.GetHashCode();
                 return hash;
             }
         }

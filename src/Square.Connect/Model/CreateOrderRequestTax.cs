@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a tax that can apply to either a single line item or an entire order.
+    /// __Deprecated__: Please use the [OrderLineItemTax](#type-orderlineitemtax) type in the order field of [CreateOrderRequest](#type-createorderrequest) instead.  Represents a tax that can apply to either a single line item or an entire order.
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequestTax :  IEquatable<CreateOrderRequestTax>, IValidatableObject
