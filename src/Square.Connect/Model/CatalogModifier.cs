@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifier" /> class.
         /// </summary>
-        /// <param name="Name">The modifier&#39;s name. Searchable..</param>
+        /// <param name="Name">The modifier&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
         /// <param name="PriceMoney">The modifier&#39;s price..</param>
         public CatalogModifier(string Name = default(string), Money PriceMoney = default(Money))
         {
@@ -41,9 +41,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The modifier&#39;s name. Searchable.
+        /// The modifier&#39;s name. Searchable. This field has max length of 255 Unicode code points.
         /// </summary>
-        /// <value>The modifier&#39;s name. Searchable.</value>
+        /// <value>The modifier&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>

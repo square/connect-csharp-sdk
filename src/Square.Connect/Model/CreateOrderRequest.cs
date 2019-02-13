@@ -32,33 +32,28 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrderRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateOrderRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOrderRequest" /> class.
-        /// </summary>
+        /// <param name="Order">The order to create. If this field is set, then the only other top-level field that can be set is the idempotency_key..</param>
         /// <param name="IdempotencyKey">A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information..</param>
-        /// <param name="ReferenceId">An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
-        /// <param name="LineItems">The line items to associate with this order.  Each line item represents a different product to include in a purchase. (required).</param>
-        /// <param name="Taxes">The taxes to include on the order..</param>
-        /// <param name="Discounts">The discounts to include on the order..</param>
-        public CreateOrderRequest(string IdempotencyKey = default(string), string ReferenceId = default(string), List<CreateOrderRequestLineItem> LineItems = default(List<CreateOrderRequestLineItem>), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
+        /// <param name="ReferenceId">__Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
+        /// <param name="LineItems">__Deprecated__: Please set the line_items on the nested [order](#type-order) field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase..</param>
+        /// <param name="Taxes">__Deprecated__: Please set the taxes on the nested [order](#type-order) field instead.  The taxes to include on the order..</param>
+        /// <param name="Discounts">__Deprecated__: Please set the discounts on the nested [order](#type-order) field instead.  The discounts to include on the order..</param>
+        public CreateOrderRequest(Order Order = default(Order), string IdempotencyKey = default(string), string ReferenceId = default(string), List<CreateOrderRequestLineItem> LineItems = default(List<CreateOrderRequestLineItem>), List<CreateOrderRequestTax> Taxes = default(List<CreateOrderRequestTax>), List<CreateOrderRequestDiscount> Discounts = default(List<CreateOrderRequestDiscount>))
         {
-            // to ensure "LineItems" is required (not null)
-            if (LineItems == null)
-            {
-                throw new InvalidDataException("LineItems is a required property for CreateOrderRequest and cannot be null");
-            }
-            else
-            {
-                this.LineItems = LineItems;
-            }
+            this.Order = Order;
             this.IdempotencyKey = IdempotencyKey;
             this.ReferenceId = ReferenceId;
+            this.LineItems = LineItems;
             this.Taxes = Taxes;
             this.Discounts = Discounts;
         }
         
+        /// <summary>
+        /// The order to create. If this field is set, then the only other top-level field that can be set is the idempotency_key.
+        /// </summary>
+        /// <value>The order to create. If this field is set, then the only other top-level field that can be set is the idempotency_key.</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public Order Order { get; set; }
         /// <summary>
         /// A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
         /// </summary>
@@ -66,27 +61,27 @@ namespace Square.Connect.Model
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>
-        /// An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
+        /// __Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
         /// </summary>
-        /// <value>An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.</value>
+        /// <value>__Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.</value>
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
         /// <summary>
-        /// The line items to associate with this order.  Each line item represents a different product to include in a purchase.
+        /// __Deprecated__: Please set the line_items on the nested [order](#type-order) field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase.
         /// </summary>
-        /// <value>The line items to associate with this order.  Each line item represents a different product to include in a purchase.</value>
+        /// <value>__Deprecated__: Please set the line_items on the nested [order](#type-order) field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase.</value>
         [DataMember(Name="line_items", EmitDefaultValue=false)]
         public List<CreateOrderRequestLineItem> LineItems { get; set; }
         /// <summary>
-        /// The taxes to include on the order.
+        /// __Deprecated__: Please set the taxes on the nested [order](#type-order) field instead.  The taxes to include on the order.
         /// </summary>
-        /// <value>The taxes to include on the order.</value>
+        /// <value>__Deprecated__: Please set the taxes on the nested [order](#type-order) field instead.  The taxes to include on the order.</value>
         [DataMember(Name="taxes", EmitDefaultValue=false)]
         public List<CreateOrderRequestTax> Taxes { get; set; }
         /// <summary>
-        /// The discounts to include on the order.
+        /// __Deprecated__: Please set the discounts on the nested [order](#type-order) field instead.  The discounts to include on the order.
         /// </summary>
-        /// <value>The discounts to include on the order.</value>
+        /// <value>__Deprecated__: Please set the discounts on the nested [order](#type-order) field instead.  The discounts to include on the order.</value>
         [DataMember(Name="discounts", EmitDefaultValue=false)]
         public List<CreateOrderRequestDiscount> Discounts { get; set; }
         /// <summary>
@@ -97,6 +92,7 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateOrderRequest {\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  IdempotencyKey: ").Append(IdempotencyKey).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
@@ -139,6 +135,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.Order == other.Order ||
+                    this.Order != null &&
+                    this.Order.Equals(other.Order)
+                ) && 
+                (
                     this.IdempotencyKey == other.IdempotencyKey ||
                     this.IdempotencyKey != null &&
                     this.IdempotencyKey.Equals(other.IdempotencyKey)
@@ -176,6 +177,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Order != null)
+                    hash = hash * 59 + this.Order.GetHashCode();
                 if (this.IdempotencyKey != null)
                     hash = hash * 59 + this.IdempotencyKey.GetHashCode();
                 if (this.ReferenceId != null)

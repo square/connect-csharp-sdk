@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Possible kinds of [CatalogObject](#type-catalogobject)s returned from the Catalog, each contaning type-specific properties in the `*_data` field corresponding to the object type.
+    /// Possible kinds of [CatalogObject](#type-catalogobject)s returned from the Catalog, each containing type-specific properties in the `*_data` field corresponding to the object type.
     /// </summary>
-    /// <value>Possible kinds of [CatalogObject](#type-catalogobject)s returned from the Catalog, each contaning type-specific properties in the `*_data` field corresponding to the object type.</value>
+    /// <value>Possible kinds of [CatalogObject](#type-catalogobject)s returned from the Catalog, each containing type-specific properties in the `*_data` field corresponding to the object type.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CatalogObjectType
     {

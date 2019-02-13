@@ -46,7 +46,7 @@ namespace Square.Connect.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Square-Connect-CSharp/2.20181212.0"
+                             string userAgent = "Square-Connect-CSharp/2.20190213.0"
                             )
         {
             setApiClientUsingDefault(apiClient);
@@ -81,7 +81,7 @@ namespace Square.Connect.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "2.13.0";
+        public const string Version = "2.14.0";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -318,7 +318,7 @@ namespace Square.Connect.Client
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
             report += "    Version of the API: 2.0\n";
-            report += "    SDK Package Version: 2.13.0\n";
+            report += "    SDK Package Version: 2.14.0\n";
 
             return report;
         }

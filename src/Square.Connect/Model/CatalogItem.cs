@@ -77,10 +77,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogItem" /> class.
         /// </summary>
-        /// <param name="Name">The item&#39;s name. Searchable..</param>
-        /// <param name="Description">The item&#39;s description. Searchable..</param>
-        /// <param name="Abbreviation">The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable..</param>
-        /// <param name="LabelColor">The color of the item&#39;s display label in the Square Point of Sale app..</param>
+        /// <param name="Name">The item&#39;s name. Searchable. This field must not be empty. This field has max length of 512 Unicode code points..</param>
+        /// <param name="Description">The item&#39;s description. Searchable. This field has max length of 4096 Unicode code points..</param>
+        /// <param name="Abbreviation">The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used. Searchable. This field has max length of 24 Unicode code points..</param>
+        /// <param name="LabelColor">The color of the item&#39;s display label in the Square Point of Sale app. This must be a valid hex color code..</param>
         /// <param name="AvailableOnline">If &#x60;true&#x60;, the item can be added to shipping orders from the merchant&#39;s online store..</param>
         /// <param name="AvailableForPickup">If &#x60;true&#x60;, the item can be added to pickup orders from the merchant&#39;s online store..</param>
         /// <param name="AvailableElectronically">If &#x60;true&#x60;, the item can be added to electronically fulfilled orders from the merchant&#39;s online store..</param>
@@ -110,27 +110,27 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The item&#39;s name. Searchable.
+        /// The item&#39;s name. Searchable. This field must not be empty. This field has max length of 512 Unicode code points.
         /// </summary>
-        /// <value>The item&#39;s name. Searchable.</value>
+        /// <value>The item&#39;s name. Searchable. This field must not be empty. This field has max length of 512 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The item&#39;s description. Searchable.
+        /// The item&#39;s description. Searchable. This field has max length of 4096 Unicode code points.
         /// </summary>
-        /// <value>The item&#39;s description. Searchable.</value>
+        /// <value>The item&#39;s description. Searchable. This field has max length of 4096 Unicode code points.</value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable.
+        /// The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used. Searchable. This field has max length of 24 Unicode code points.
         /// </summary>
-        /// <value>The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable.</value>
+        /// <value>The text of the item&#39;s display label in the Square Point of Sale app. Only up to the first five characters of the string are used. Searchable. This field has max length of 24 Unicode code points.</value>
         [DataMember(Name="abbreviation", EmitDefaultValue=false)]
         public string Abbreviation { get; set; }
         /// <summary>
-        /// The color of the item&#39;s display label in the Square Point of Sale app.
+        /// The color of the item&#39;s display label in the Square Point of Sale app. This must be a valid hex color code.
         /// </summary>
-        /// <value>The color of the item&#39;s display label in the Square Point of Sale app.</value>
+        /// <value>The color of the item&#39;s display label in the Square Point of Sale app. This must be a valid hex color code.</value>
         [DataMember(Name="label_color", EmitDefaultValue=false)]
         public string LabelColor { get; set; }
         /// <summary>

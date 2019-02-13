@@ -43,8 +43,8 @@ namespace Square.Connect.Model
         /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item..</param>
         /// <param name="VariationName">The name of the variation applied to this line item..</param>
         /// <param name="Modifiers">The [CatalogModifier](#type-catalogmodifier)s applied to this line item..</param>
-        /// <param name="Taxes">The taxes applied to this line item..</param>
-        /// <param name="Discounts">The discounts applied to this line item..</param>
+        /// <param name="Taxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list..</param>
+        /// <param name="Discounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>
         /// <param name="GrossSalesMoney">The gross sales amount of money calculated as (item base price + modifiers price) * quantity..</param>
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item..</param>
@@ -112,15 +112,15 @@ namespace Square.Connect.Model
         [DataMember(Name="modifiers", EmitDefaultValue=false)]
         public List<OrderLineItemModifier> Modifiers { get; set; }
         /// <summary>
-        /// The taxes applied to this line item.
+        /// A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.
         /// </summary>
-        /// <value>The taxes applied to this line item.</value>
+        /// <value>A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.</value>
         [DataMember(Name="taxes", EmitDefaultValue=false)]
         public List<OrderLineItemTax> Taxes { get; set; }
         /// <summary>
-        /// The discounts applied to this line item.
+        /// A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.
         /// </summary>
-        /// <value>The discounts applied to this line item.</value>
+        /// <value>A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.</value>
         [DataMember(Name="discounts", EmitDefaultValue=false)]
         public List<OrderLineItemDiscount> Discounts { get; set; }
         /// <summary>

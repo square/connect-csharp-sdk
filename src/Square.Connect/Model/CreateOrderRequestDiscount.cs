@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a discount that can apply to either a single line item or an entire order.
+    /// __Deprecated__: Please use the [OrderLineItemDiscount](#type-orderlineitemdiscount) type in the order field of [CreateOrderRequest](#type-createorderrequest) instead.  Represents a discount that can apply to either a single line item or an entire order.
     /// </summary>
     [DataContract]
     public partial class CreateOrderRequestDiscount :  IEquatable<CreateOrderRequestDiscount>, IValidatableObject
