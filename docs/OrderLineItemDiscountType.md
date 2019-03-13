@@ -1,4 +1,9 @@
 # Square.Connect.Model.OrderLineItemDiscountType
+
+### Description
+
+Indicates how the discount is applied to the associated line item or order.
+
 ## Properties
 
 Name | Type | Description | Notes

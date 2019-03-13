@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="CreateOrderRequest" /> class.
         /// </summary>
         /// <param name="Order">The order to create. If this field is set, then the only other top-level field that can be set is the idempotency_key..</param>
-        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information..</param>
+        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency](/basics/api101/idempotency) for more information..</param>
         /// <param name="ReferenceId">__Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
         /// <param name="LineItems">__Deprecated__: Please set the line_items on the nested [order](#type-order) field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase..</param>
         /// <param name="Taxes">__Deprecated__: Please set the taxes on the nested [order](#type-order) field instead.  The taxes to include on the order..</param>
@@ -55,9 +55,9 @@ namespace Square.Connect.Model
         [DataMember(Name="order", EmitDefaultValue=false)]
         public Order Order { get; set; }
         /// <summary>
-        /// A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
+        /// A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency](/basics/api101/idempotency) for more information.
         /// </summary>
-        /// <value>A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.</value>
+        /// <value>A value you specify that uniquely identifies this order among orders you&#39;ve created.  If you&#39;re unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency](/basics/api101/idempotency) for more information.</value>
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>

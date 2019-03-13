@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogQueryItemsForTax
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

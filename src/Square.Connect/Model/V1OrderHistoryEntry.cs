@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1OrderHistoryEntry :  IEquatable<V1OrderHistoryEntry>, IValidatableObject
     {
         /// <summary>
-        /// The type of action performed on the order.
+        /// The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values
         /// </summary>
-        /// <value>The type of action performed on the order.</value>
+        /// <value>The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ActionEnum
         {
@@ -81,15 +81,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of action performed on the order.
+        /// The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values
         /// </summary>
-        /// <value>The type of action performed on the order.</value>
+        /// <value>The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values</value>
         [DataMember(Name="action", EmitDefaultValue=false)]
         public ActionEnum? Action { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1OrderHistoryEntry" /> class.
         /// </summary>
-        /// <param name="Action">The type of action performed on the order..</param>
+        /// <param name="Action">The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values.</param>
         /// <param name="CreatedAt">The time when the action was performed, in ISO 8601 format..</param>
         public V1OrderHistoryEntry(ActionEnum? Action = default(ActionEnum?), string CreatedAt = default(string))
         {

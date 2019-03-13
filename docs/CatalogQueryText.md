@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogQueryText
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,9 @@
 # Square.Connect.Model.V1PaymentModifier
+
+### Description
+
+V1PaymentModifier
+
 ## Properties
 
 Name | Type | Description | Notes

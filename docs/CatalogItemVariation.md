@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogItemVariation
+
+### Description
+
+An item variation (i.e., product) in the Catalog object model.
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -14,7 +19,7 @@ Name | Type | Description | Notes
 **TrackInventory** | **bool?** | If &#x60;true&#x60;, inventory tracking is active for the variation. | [optional] 
 **InventoryAlertType** | **InventoryAlertTypeEnum** | Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for all possible values. | [optional] 
 **InventoryAlertThreshold** | **long?** | If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer. | [optional] 
-**UserData** | **string** | Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points. | [optional] 
+**UserData** | **string** | Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable. | [optional] 
 **ServiceDuration** | **long?** | If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second). | [optional] 
 
 

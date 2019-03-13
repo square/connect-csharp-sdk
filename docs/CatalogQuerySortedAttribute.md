@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogQuerySortedAttribute
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

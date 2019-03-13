@@ -1,4 +1,9 @@
 # Square.Connect.Model.ListLocationsResponse
+
+### Description
+
+Defines the fields that are included in the response body of a request to the [ListLocations](#endpoint-listlocations) endpoint.  One of `errors` or `locations` is present in a given response (never both).
+
 ## Properties
 
 Name | Type | Description | Notes

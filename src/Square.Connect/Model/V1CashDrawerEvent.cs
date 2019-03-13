@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1CashDrawerEvent :  IEquatable<V1CashDrawerEvent>, IValidatableObject
     {
         /// <summary>
-        /// The type of event that occurred.
+        /// The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values
         /// </summary>
-        /// <value>The type of event that occurred.</value>
+        /// <value>The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EventTypeEnum
         {
@@ -93,9 +93,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of event that occurred.
+        /// The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values
         /// </summary>
-        /// <value>The type of event that occurred.</value>
+        /// <value>The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values</value>
         [DataMember(Name="event_type", EmitDefaultValue=false)]
         public EventTypeEnum? EventType { get; set; }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Id">The event&#39;s unique ID..</param>
         /// <param name="EmployeeId">The ID of the employee that created the event..</param>
-        /// <param name="EventType">The type of event that occurred..</param>
+        /// <param name="EventType">The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values.</param>
         /// <param name="EventMoney">The amount of money that was added to or removed from the cash drawer because of the event. This value can be positive (for added money) or negative (for removed money)..</param>
         /// <param name="CreatedAt">The time when the event occurred, in ISO 8601 format..</param>
         /// <param name="Description">An optional description of the event, entered by the employee that created it..</param>

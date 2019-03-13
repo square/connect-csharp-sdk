@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogIdMapping
+
+### Description
+
+A mapping between a client-supplied temporary ID and a permanent server ID.
+
 ## Properties
 
 Name | Type | Description | Notes

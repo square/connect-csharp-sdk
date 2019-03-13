@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogInfoResponseLimits
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

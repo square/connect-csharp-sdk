@@ -97,7 +97,7 @@ namespace Square.Connect.Model
         /// <param name="TrackInventory">If &#x60;true&#x60;, inventory tracking is active for the variation..</param>
         /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for all possible values..</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
-        /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points..</param>
+        /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable..</param>
         /// <param name="ServiceDuration">If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
         public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?))
         {
@@ -171,9 +171,9 @@ namespace Square.Connect.Model
         [DataMember(Name="inventory_alert_threshold", EmitDefaultValue=false)]
         public long? InventoryAlertThreshold { get; set; }
         /// <summary>
-        /// Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.
+        /// Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.
         /// </summary>
-        /// <value>Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.</value>
+        /// <value>Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.</value>
         [DataMember(Name="user_data", EmitDefaultValue=false)]
         public string UserData { get; set; }
         /// <summary>

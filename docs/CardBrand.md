@@ -1,4 +1,9 @@
 # Square.Connect.Model.CardBrand
+
+### Description
+
+Indicates a card's brand, such as `VISA` or `MASTERCARD`.
+
 ## Properties
 
 Name | Type | Description | Notes

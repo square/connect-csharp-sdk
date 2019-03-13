@@ -30,12 +30,18 @@ namespace Square.Connect.Model
     public partial class V1Money :  IEquatable<V1Money>, IValidatableObject
     {
         /// <summary>
-        /// 
+        ///  See [Currency](#type-currency) for possible values
         /// </summary>
-        /// <value></value>
+        /// <value> See [Currency](#type-currency) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CurrencyCodeEnum
         {
+            
+            /// <summary>
+            /// Enum UNKNOWNCURRENCY for "UNKNOWN_CURRENCY"
+            /// </summary>
+            [EnumMember(Value = "UNKNOWN_CURRENCY")]
+            UNKNOWNCURRENCY,
             
             /// <summary>
             /// Enum AED for "AED"
@@ -1119,16 +1125,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// 
+        ///  See [Currency](#type-currency) for possible values
         /// </summary>
-        /// <value></value>
+        /// <value> See [Currency](#type-currency) for possible values</value>
         [DataMember(Name="currency_code", EmitDefaultValue=false)]
         public CurrencyCodeEnum? CurrencyCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1Money" /> class.
         /// </summary>
         /// <param name="Amount">Amount in the lowest denominated value of this Currency. E.g. in USD these are cents, in JPY they are Yen (which do not have a &#39;cent&#39; concept)..</param>
-        /// <param name="CurrencyCode">.</param>
+        /// <param name="CurrencyCode"> See [Currency](#type-currency) for possible values.</param>
         public V1Money(int? Amount = default(int?), CurrencyCodeEnum? CurrencyCode = default(CurrencyCodeEnum?))
         {
             this.Amount = Amount;

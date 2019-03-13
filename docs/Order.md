@@ -1,4 +1,9 @@
 # Square.Connect.Model.Order
+
+### Description
+
+Contains all information related to a single order to process with Square, including line items that specify the products to purchase
+
 ## Properties
 
 Name | Type | Description | Notes

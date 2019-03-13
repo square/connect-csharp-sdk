@@ -1,4 +1,9 @@
 # Square.Connect.Model.TenderCardDetailsEntryMethod
+
+### Description
+
+Indicates the method used to enter the card's details.
+
 ## Properties
 
 Name | Type | Description | Notes

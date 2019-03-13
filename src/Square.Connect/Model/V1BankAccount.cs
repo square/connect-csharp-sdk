@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1BankAccount :  IEquatable<V1BankAccount>, IValidatableObject
     {
         /// <summary>
-        /// The bank account's type (for example, savings or checking).
+        /// The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values
         /// </summary>
-        /// <value>The bank account's type (for example, savings or checking).</value>
+        /// <value>The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -75,9 +75,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The bank account's type (for example, savings or checking).
+        /// The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values
         /// </summary>
-        /// <value>The bank account's type (for example, savings or checking).</value>
+        /// <value>The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Square.Connect.Model
         /// <param name="RoutingNumber">The bank account&#39;s routing number..</param>
         /// <param name="AccountNumberSuffix">The last few digits of the bank account number..</param>
         /// <param name="CurrencyCode">The currency code of the currency associated with the bank account, in ISO 4217 format. For example, the currency code for US dollars is USD..</param>
-        /// <param name="Type">The bank account&#39;s type (for example, savings or checking)..</param>
+        /// <param name="Type">The bank account&#39;s type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values.</param>
         public V1BankAccount(string Id = default(string), string MerchantId = default(string), string BankName = default(string), string Name = default(string), string RoutingNumber = default(string), string AccountNumberSuffix = default(string), string CurrencyCode = default(string), TypeEnum? Type = default(TypeEnum?))
         {
             this.Id = Id;

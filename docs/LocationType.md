@@ -1,4 +1,9 @@
 # Square.Connect.Model.LocationType
+
+### Description
+
+Indicates the location's type.
+
 ## Properties
 
 Name | Type | Description | Notes

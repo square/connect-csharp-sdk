@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1AdjustInventoryRequest :  IEquatable<V1AdjustInventoryRequest>, IValidatableObject
     {
         /// <summary>
-        /// The reason for the inventory adjustment.
+        /// The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values
         /// </summary>
-        /// <value>The reason for the inventory adjustment.</value>
+        /// <value>The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AdjustmentTypeEnum
         {
@@ -57,16 +57,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The reason for the inventory adjustment.
+        /// The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values
         /// </summary>
-        /// <value>The reason for the inventory adjustment.</value>
+        /// <value>The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values</value>
         [DataMember(Name="adjustment_type", EmitDefaultValue=false)]
         public AdjustmentTypeEnum? AdjustmentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1AdjustInventoryRequest" /> class.
         /// </summary>
         /// <param name="QuantityDelta">The number to adjust the variation&#39;s quantity by..</param>
-        /// <param name="AdjustmentType">The reason for the inventory adjustment..</param>
+        /// <param name="AdjustmentType">The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values.</param>
         /// <param name="Memo">A note about the inventory adjustment..</param>
         public V1AdjustInventoryRequest(decimal? QuantityDelta = default(decimal?), AdjustmentTypeEnum? AdjustmentType = default(AdjustmentTypeEnum?), string Memo = default(string))
         {

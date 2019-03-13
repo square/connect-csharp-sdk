@@ -62,7 +62,7 @@ namespace Square.Connect.Model
         /// <param name="BeginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year..</param>
         /// <param name="EndTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time..</param>
         /// <param name="SortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60;.</param>
-        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information..</param>
+        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information..</param>
         public ListAdditionalRecipientReceivablesRequest(string BeginTime = default(string), string EndTime = default(string), SortOrderEnum? SortOrder = default(SortOrderEnum?), string Cursor = default(string))
         {
             this.BeginTime = BeginTime;
@@ -84,9 +84,9 @@ namespace Square.Connect.Model
         [DataMember(Name="end_time", EmitDefaultValue=false)]
         public string EndTime { get; set; }
         /// <summary>
-        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.</value>
+        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

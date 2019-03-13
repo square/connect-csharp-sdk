@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Variation :  IEquatable<V1Variation>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale.
+        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale.</value>
+        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PricingTypeEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold.
+        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold.</value>
+        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InventoryAlertTypeEnum
         {
@@ -96,15 +96,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale.
+        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale.</value>
+        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values</value>
         [DataMember(Name="pricing_type", EmitDefaultValue=false)]
         public PricingTypeEnum? PricingType { get; set; }
         /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold.
+        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold.</value>
+        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values</value>
         [DataMember(Name="inventory_alert_type", EmitDefaultValue=false)]
         public InventoryAlertTypeEnum? InventoryAlertType { get; set; }
         /// <summary>
@@ -114,11 +114,11 @@ namespace Square.Connect.Model
         /// <param name="Name">The item variation&#39;s name..</param>
         /// <param name="ItemId">The ID of the variation&#39;s associated item..</param>
         /// <param name="Ordinal">Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order.</param>
-        /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale..</param>
+        /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values.</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if any..</param>
         /// <param name="Sku">The item variation&#39;s SKU, if any..</param>
         /// <param name="TrackInventory">If true, inventory tracking is active for the variation..</param>
-        /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold..</param>
+        /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values.</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard..</param>
         /// <param name="UserData">Arbitrary metadata associated with the variation. Cannot exceed 255 characters..</param>
         public V1Variation(string Id = default(string), string Name = default(string), string ItemId = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), V1Money PriceMoney = default(V1Money), string Sku = default(string), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), int? InventoryAlertThreshold = default(int?), string UserData = default(string))

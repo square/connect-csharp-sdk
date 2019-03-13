@@ -1,4 +1,9 @@
 # Square.Connect.Model.RegisterDomainResponseStatus
+
+### Description
+
+The status of domain registration.
+
 ## Properties
 
 Name | Type | Description | Notes

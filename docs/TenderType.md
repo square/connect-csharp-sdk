@@ -1,4 +1,9 @@
 # Square.Connect.Model.TenderType
+
+### Description
+
+Indicates a tender's type.
+
 ## Properties
 
 Name | Type | Description | Notes

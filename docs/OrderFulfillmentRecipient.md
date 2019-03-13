@@ -1,4 +1,9 @@
 # Square.Connect.Model.OrderFulfillmentRecipient
+
+### Description
+
+The recipient of a fulfillment.
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,9 @@
 # Square.Connect.Model.UpdateItemTaxesRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

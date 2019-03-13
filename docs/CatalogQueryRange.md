@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogQueryRange
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

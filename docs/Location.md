@@ -1,4 +1,9 @@
 # Square.Connect.Model.Location
+
+### Description
+
+Represents one of a business's locations.
+
 ## Properties
 
 Name | Type | Description | Notes

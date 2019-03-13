@@ -4,26 +4,26 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateRefund**](V1TransactionsApi.md#createrefund) | **POST** /v1/{location_id}/refunds | Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
-[**ListBankAccounts**](V1TransactionsApi.md#listbankaccounts) | **GET** /v1/{location_id}/bank-accounts | Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-[**ListOrders**](V1TransactionsApi.md#listorders) | **GET** /v1/{location_id}/orders | Provides summary information for a merchant&#39;s online store orders.
-[**ListPayments**](V1TransactionsApi.md#listpayments) | **GET** /v1/{location_id}/payments | Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-[**ListRefunds**](V1TransactionsApi.md#listrefunds) | **GET** /v1/{location_id}/refunds | Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-[**ListSettlements**](V1TransactionsApi.md#listsettlements) | **GET** /v1/{location_id}/settlements | Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
-[**RetrieveBankAccount**](V1TransactionsApi.md#retrievebankaccount) | **GET** /v1/{location_id}/bank-accounts/{bank_account_id} | Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-[**RetrieveOrder**](V1TransactionsApi.md#retrieveorder) | **GET** /v1/{location_id}/orders/{order_id} | Provides comprehensive information for a single online store order, including the order&#39;s history.
-[**RetrievePayment**](V1TransactionsApi.md#retrievepayment) | **GET** /v1/{location_id}/payments/{payment_id} | Provides comprehensive information for a single payment.
-[**RetrieveSettlement**](V1TransactionsApi.md#retrievesettlement) | **GET** /v1/{location_id}/settlements/{settlement_id} | Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-[**UpdateOrder**](V1TransactionsApi.md#updateorder) | **PUT** /v1/{location_id}/orders/{order_id} | Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+[**CreateRefund**](V1TransactionsApi.md#createrefund) | **POST** /v1/{location_id}/refunds | CreateRefund
+[**ListBankAccounts**](V1TransactionsApi.md#listbankaccounts) | **GET** /v1/{location_id}/bank-accounts | ListBankAccounts
+[**ListOrders**](V1TransactionsApi.md#listorders) | **GET** /v1/{location_id}/orders | ListOrders
+[**ListPayments**](V1TransactionsApi.md#listpayments) | **GET** /v1/{location_id}/payments | ListPayments
+[**ListRefunds**](V1TransactionsApi.md#listrefunds) | **GET** /v1/{location_id}/refunds | ListRefunds
+[**ListSettlements**](V1TransactionsApi.md#listsettlements) | **GET** /v1/{location_id}/settlements | ListSettlements
+[**RetrieveBankAccount**](V1TransactionsApi.md#retrievebankaccount) | **GET** /v1/{location_id}/bank-accounts/{bank_account_id} | RetrieveBankAccount
+[**RetrieveOrder**](V1TransactionsApi.md#retrieveorder) | **GET** /v1/{location_id}/orders/{order_id} | RetrieveOrder
+[**RetrievePayment**](V1TransactionsApi.md#retrievepayment) | **GET** /v1/{location_id}/payments/{payment_id} | RetrievePayment
+[**RetrieveSettlement**](V1TransactionsApi.md#retrievesettlement) | **GET** /v1/{location_id}/settlements/{settlement_id} | RetrieveSettlement
+[**UpdateOrder**](V1TransactionsApi.md#updateorder) | **PUT** /v1/{location_id}/orders/{order_id} | UpdateOrder
 
 
 <a name="createrefund"></a>
 # **CreateRefund**
 > V1Refund CreateRefund (string locationId, V1CreateRefundRequest body)
 
-Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+CreateRefund
 
-Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
 
 ### Example
 ```csharp
@@ -49,7 +49,7 @@ namespace Example
 
             try
             {
-                // Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+                // CreateRefund
                 V1Refund result = apiInstance.CreateRefund(locationId, body);
                 Debug.WriteLine(result);
             }
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 # **ListBankAccounts**
 > List<V1BankAccount> ListBankAccounts (string locationId)
 
-Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+ListBankAccounts
 
 Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
 
@@ -115,7 +115,7 @@ namespace Example
 
             try
             {
-                // Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+                // ListBankAccounts
                 List&lt;V1BankAccount&gt; result = apiInstance.ListBankAccounts(locationId);
                 Debug.WriteLine(result);
             }
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 # **ListOrders**
 > List<V1Order> ListOrders (string locationId, string order = null, int? limit = null, string batchToken = null)
 
-Provides summary information for a merchant's online store orders.
+ListOrders
 
 Provides summary information for a merchant's online store orders.
 
@@ -183,7 +183,7 @@ namespace Example
 
             try
             {
-                // Provides summary information for a merchant's online store orders.
+                // ListOrders
                 List&lt;V1Order&gt; result = apiInstance.ListOrders(locationId, order, limit, batchToken);
                 Debug.WriteLine(result);
             }
@@ -224,9 +224,9 @@ Name | Type | Description  | Notes
 # **ListPayments**
 > List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null)
 
-Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+ListPayments
 
-Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a `created_at` value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
 
 ### Example
 ```csharp
@@ -257,7 +257,7 @@ namespace Example
 
             try
             {
-                // Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+                // ListPayments
                 List&lt;V1Payment&gt; result = apiInstance.ListPayments(locationId, order, beginTime, endTime, limit, batchToken, includePartial);
                 Debug.WriteLine(result);
             }
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 # **ListRefunds**
 > List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null)
 
-Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
+ListRefunds
 
 Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
 
@@ -333,7 +333,7 @@ namespace Example
 
             try
             {
-                // Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
+                // ListRefunds
                 List&lt;V1Refund&gt; result = apiInstance.ListRefunds(locationId, order, beginTime, endTime, limit, batchToken);
                 Debug.WriteLine(result);
             }
@@ -376,9 +376,9 @@ Name | Type | Description  | Notes
 # **ListSettlements**
 > List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null)
 
-Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
+ListSettlements
 
-Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length. 
+Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
 
 ### Example
 ```csharp
@@ -409,7 +409,7 @@ namespace Example
 
             try
             {
-                // Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
+                // ListSettlements
                 List&lt;V1Settlement&gt; result = apiInstance.ListSettlements(locationId, order, beginTime, endTime, limit, status, batchToken);
                 Debug.WriteLine(result);
             }
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 # **RetrieveBankAccount**
 > V1BankAccount RetrieveBankAccount (string locationId, string bankAccountId)
 
-Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+RetrieveBankAccount
 
 Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
 
@@ -481,7 +481,7 @@ namespace Example
 
             try
             {
-                // Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+                // RetrieveBankAccount
                 V1BankAccount result = apiInstance.RetrieveBankAccount(locationId, bankAccountId);
                 Debug.WriteLine(result);
             }
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 # **RetrieveOrder**
 > V1Order RetrieveOrder (string locationId, string orderId)
 
-Provides comprehensive information for a single online store order, including the order's history.
+RetrieveOrder
 
 Provides comprehensive information for a single online store order, including the order's history.
 
@@ -548,7 +548,7 @@ namespace Example
 
             try
             {
-                // Provides comprehensive information for a single online store order, including the order's history.
+                // RetrieveOrder
                 V1Order result = apiInstance.RetrieveOrder(locationId, orderId);
                 Debug.WriteLine(result);
             }
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 # **RetrievePayment**
 > V1Payment RetrievePayment (string locationId, string paymentId)
 
-Provides comprehensive information for a single payment.
+RetrievePayment
 
 Provides comprehensive information for a single payment.
 
@@ -615,7 +615,7 @@ namespace Example
 
             try
             {
-                // Provides comprehensive information for a single payment.
+                // RetrievePayment
                 V1Payment result = apiInstance.RetrievePayment(locationId, paymentId);
                 Debug.WriteLine(result);
             }
@@ -654,9 +654,9 @@ Name | Type | Description  | Notes
 # **RetrieveSettlement**
 > V1Settlement RetrieveSettlement (string locationId, string settlementId)
 
-Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+RetrieveSettlement
 
-Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+Provides comprehensive information for a single settlement.  The returned `Settlement` objects include an `entries` field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
 
 ### Example
 ```csharp
@@ -682,7 +682,7 @@ namespace Example
 
             try
             {
-                // Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+                // RetrieveSettlement
                 V1Settlement result = apiInstance.RetrieveSettlement(locationId, settlementId);
                 Debug.WriteLine(result);
             }
@@ -721,7 +721,7 @@ Name | Type | Description  | Notes
 # **UpdateOrder**
 > V1Order UpdateOrder (string locationId, string orderId, V1UpdateOrderRequest body)
 
-Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+UpdateOrder
 
 Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
 
@@ -750,7 +750,7 @@ namespace Example
 
             try
             {
-                // Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+                // UpdateOrder
                 V1Order result = apiInstance.UpdateOrder(locationId, orderId, body);
                 Debug.WriteLine(result);
             }

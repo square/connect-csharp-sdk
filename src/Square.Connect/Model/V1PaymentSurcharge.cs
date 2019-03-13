@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1PaymentSurcharge :  IEquatable<V1PaymentSurcharge>, IValidatableObject
     {
         /// <summary>
-        /// Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group.
+        /// Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values
         /// </summary>
-        /// <value>Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group.</value>
+        /// <value>Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -57,9 +57,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group.
+        /// Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values
         /// </summary>
-        /// <value>Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group.</value>
+        /// <value>Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Square.Connect.Model
         /// <param name="AppliedMoney">The amount of money applied to the order as a result of the surcharge..</param>
         /// <param name="Rate">The amount of the surcharge as a percentage. The percentage is provided as a string representing the decimal equivalent of the percentage. For example, \&quot;0.7\&quot; corresponds to a 7% surcharge. Exactly one of rate or amount_money should be set..</param>
         /// <param name="AmountMoney">The amount of the surcharge as a Money object. Exactly one of rate or amount_money should be set..</param>
-        /// <param name="Type">Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group..</param>
+        /// <param name="Type">Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values.</param>
         /// <param name="Taxable">Indicates whether the surcharge is taxable..</param>
         /// <param name="Taxes">The list of taxes that should be applied to the surcharge..</param>
         /// <param name="SurchargeId">A Square-issued unique identifier associated with the surcharge..</param>

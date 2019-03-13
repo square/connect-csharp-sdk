@@ -25,7 +25,7 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory
         /// </summary>
         /// <remarks>
         /// Adjusts an item variation&#39;s current available inventory.
@@ -38,7 +38,7 @@ namespace Square.Connect.Api
         V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body);
 
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory
         /// </summary>
         /// <remarks>
         /// Adjusts an item variation&#39;s current available inventory.
@@ -50,7 +50,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1InventoryEntry</returns>
         ApiResponse<V1InventoryEntry> AdjustInventoryWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body);
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee
         /// </summary>
         /// <remarks>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
@@ -63,7 +63,7 @@ namespace Square.Connect.Api
         V1Item ApplyFee (string locationId, string itemId, string feeId);
 
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee
         /// </summary>
         /// <remarks>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
@@ -75,7 +75,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> ApplyFeeWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList
         /// </summary>
         /// <remarks>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
@@ -88,7 +88,7 @@ namespace Square.Connect.Api
         V1Item ApplyModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList
         /// </summary>
         /// <remarks>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
@@ -100,7 +100,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> ApplyModifierListWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
-        /// Creates an item category.
+        /// CreateCategory
         /// </summary>
         /// <remarks>
         /// Creates an item category.
@@ -112,7 +112,7 @@ namespace Square.Connect.Api
         V1Category CreateCategory (string locationId, V1Category body);
 
         /// <summary>
-        /// Creates an item category.
+        /// CreateCategory
         /// </summary>
         /// <remarks>
         /// Creates an item category.
@@ -123,7 +123,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Category</returns>
         ApiResponse<V1Category> CreateCategoryWithHttpInfo (string locationId, V1Category body);
         /// <summary>
-        /// Creates a discount.
+        /// CreateDiscount
         /// </summary>
         /// <remarks>
         /// Creates a discount.
@@ -135,7 +135,7 @@ namespace Square.Connect.Api
         V1Discount CreateDiscount (string locationId, V1Discount body);
 
         /// <summary>
-        /// Creates a discount.
+        /// CreateDiscount
         /// </summary>
         /// <remarks>
         /// Creates a discount.
@@ -146,7 +146,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Discount</returns>
         ApiResponse<V1Discount> CreateDiscountWithHttpInfo (string locationId, V1Discount body);
         /// <summary>
-        /// Creates a fee (tax).
+        /// CreateFee
         /// </summary>
         /// <remarks>
         /// Creates a fee (tax).
@@ -158,7 +158,7 @@ namespace Square.Connect.Api
         V1Fee CreateFee (string locationId, V1Fee body);
 
         /// <summary>
-        /// Creates a fee (tax).
+        /// CreateFee
         /// </summary>
         /// <remarks>
         /// Creates a fee (tax).
@@ -169,10 +169,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Fee</returns>
         ApiResponse<V1Fee> CreateFeeWithHttpInfo (string locationId, V1Fee body);
         /// <summary>
-        /// Creates an item and at least one variation for it.
+        /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it.
+        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -181,10 +181,10 @@ namespace Square.Connect.Api
         V1Item CreateItem (string locationId, V1Item body);
 
         /// <summary>
-        /// Creates an item and at least one variation for it.
+        /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it.
+        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -192,7 +192,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> CreateItemWithHttpInfo (string locationId, V1Item body);
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList
         /// </summary>
         /// <remarks>
         /// Creates an item modifier list and at least one modifier option for it.
@@ -204,7 +204,7 @@ namespace Square.Connect.Api
         V1ModifierList CreateModifierList (string locationId, V1ModifierList body);
 
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList
         /// </summary>
         /// <remarks>
         /// Creates an item modifier list and at least one modifier option for it.
@@ -215,7 +215,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1ModifierList</returns>
         ApiResponse<V1ModifierList> CreateModifierListWithHttpInfo (string locationId, V1ModifierList body);
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption
         /// </summary>
         /// <remarks>
         /// Creates an item modifier option and adds it to a modifier list.
@@ -228,7 +228,7 @@ namespace Square.Connect.Api
         V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body);
 
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption
         /// </summary>
         /// <remarks>
         /// Creates an item modifier option and adds it to a modifier list.
@@ -240,7 +240,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1ModifierOption</returns>
         ApiResponse<V1ModifierOption> CreateModifierOptionWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body);
         /// <summary>
-        /// Creates a Favorites page in Square Register.
+        /// CreatePage
         /// </summary>
         /// <remarks>
         /// Creates a Favorites page in Square Register.
@@ -252,7 +252,7 @@ namespace Square.Connect.Api
         V1Page CreatePage (string locationId, V1Page body);
 
         /// <summary>
-        /// Creates a Favorites page in Square Register.
+        /// CreatePage
         /// </summary>
         /// <remarks>
         /// Creates a Favorites page in Square Register.
@@ -263,7 +263,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Page</returns>
         ApiResponse<V1Page> CreatePageWithHttpInfo (string locationId, V1Page body);
         /// <summary>
-        /// Creates an item variation for an existing item.
+        /// CreateVariation
         /// </summary>
         /// <remarks>
         /// Creates an item variation for an existing item.
@@ -276,7 +276,7 @@ namespace Square.Connect.Api
         V1Variation CreateVariation (string locationId, string itemId, V1Variation body);
 
         /// <summary>
-        /// Creates an item variation for an existing item.
+        /// CreateVariation
         /// </summary>
         /// <remarks>
         /// Creates an item variation for an existing item.
@@ -288,10 +288,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Variation</returns>
         ApiResponse<V1Variation> CreateVariationWithHttpInfo (string locationId, string itemId, V1Variation body);
         /// <summary>
-        /// Deletes an existing item category.
+        /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category.
+        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -300,10 +300,10 @@ namespace Square.Connect.Api
         V1Category DeleteCategory (string locationId, string categoryId);
 
         /// <summary>
-        /// Deletes an existing item category.
+        /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category.
+        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -311,10 +311,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Category</returns>
         ApiResponse<V1Category> DeleteCategoryWithHttpInfo (string locationId, string categoryId);
         /// <summary>
-        /// Deletes an existing discount.
+        /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount.
+        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -323,10 +323,10 @@ namespace Square.Connect.Api
         V1Discount DeleteDiscount (string locationId, string discountId);
 
         /// <summary>
-        /// Deletes an existing discount.
+        /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount.
+        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -334,10 +334,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Discount</returns>
         ApiResponse<V1Discount> DeleteDiscountWithHttpInfo (string locationId, string discountId);
         /// <summary>
-        /// Deletes an existing fee (tax).
+        /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax).
+        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -346,10 +346,10 @@ namespace Square.Connect.Api
         V1Fee DeleteFee (string locationId, string feeId);
 
         /// <summary>
-        /// Deletes an existing fee (tax).
+        /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax).
+        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -357,10 +357,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Fee</returns>
         ApiResponse<V1Fee> DeleteFeeWithHttpInfo (string locationId, string feeId);
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it.
+        /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it.
+        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -369,10 +369,10 @@ namespace Square.Connect.Api
         V1Item DeleteItem (string locationId, string itemId);
 
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it.
+        /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it.
+        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -380,10 +380,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> DeleteItemWithHttpInfo (string locationId, string itemId);
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -392,10 +392,10 @@ namespace Square.Connect.Api
         V1ModifierList DeleteModifierList (string locationId, string modifierListId);
 
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -403,10 +403,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1ModifierList</returns>
         ApiResponse<V1ModifierList> DeleteModifierListWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -416,10 +416,10 @@ namespace Square.Connect.Api
         V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId);
 
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -428,10 +428,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1ModifierOption</returns>
         ApiResponse<V1ModifierOption> DeleteModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId);
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -440,10 +440,10 @@ namespace Square.Connect.Api
         V1Page DeletePage (string locationId, string pageId);
 
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -451,10 +451,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Page</returns>
         ApiResponse<V1Page> DeletePageWithHttpInfo (string locationId, string pageId);
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -465,10 +465,10 @@ namespace Square.Connect.Api
         V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null);
 
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -478,10 +478,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Page</returns>
         ApiResponse<V1Page> DeletePageCellWithHttpInfo (string locationId, string pageId, string row = null, string column = null);
         /// <summary>
-        /// Deletes an existing item variation from an item.
+        /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item.
+        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -491,10 +491,10 @@ namespace Square.Connect.Api
         V1Variation DeleteVariation (string locationId, string itemId, string variationId);
 
         /// <summary>
-        /// Deletes an existing item variation from an item.
+        /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item.
+        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -503,7 +503,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Variation</returns>
         ApiResponse<V1Variation> DeleteVariationWithHttpInfo (string locationId, string itemId, string variationId);
         /// <summary>
-        /// Lists all of a location&#39;s item categories.
+        /// ListCategories
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s item categories.
@@ -514,7 +514,7 @@ namespace Square.Connect.Api
         List<V1Category> ListCategories (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s item categories.
+        /// ListCategories
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s item categories.
@@ -524,7 +524,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Category&gt;</returns>
         ApiResponse<List<V1Category>> ListCategoriesWithHttpInfo (string locationId);
         /// <summary>
-        /// Lists all of a location&#39;s discounts.
+        /// ListDiscounts
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s discounts.
@@ -535,7 +535,7 @@ namespace Square.Connect.Api
         List<V1Discount> ListDiscounts (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s discounts.
+        /// ListDiscounts
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s discounts.
@@ -545,7 +545,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Discount&gt;</returns>
         ApiResponse<List<V1Discount>> ListDiscountsWithHttpInfo (string locationId);
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// ListFees
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s fees (taxes).
@@ -556,7 +556,7 @@ namespace Square.Connect.Api
         List<V1Fee> ListFees (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// ListFees
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s fees (taxes).
@@ -566,7 +566,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Fee&gt;</returns>
         ApiResponse<List<V1Fee>> ListFeesWithHttpInfo (string locationId);
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory
         /// </summary>
         /// <remarks>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
@@ -579,7 +579,7 @@ namespace Square.Connect.Api
         List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory
         /// </summary>
         /// <remarks>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
@@ -591,7 +591,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1InventoryEntry&gt;</returns>
         ApiResponse<List<V1InventoryEntry>> ListInventoryWithHttpInfo (string locationId, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items.
+        /// ListItems
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a location&#39;s items.
@@ -603,7 +603,7 @@ namespace Square.Connect.Api
         List<V1Item> ListItems (string locationId, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items.
+        /// ListItems
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a location&#39;s items.
@@ -614,7 +614,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Item&gt;</returns>
         ApiResponse<List<V1Item>> ListItemsWithHttpInfo (string locationId, string batchToken = null);
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s modifier lists.
@@ -625,7 +625,7 @@ namespace Square.Connect.Api
         List<V1ModifierList> ListModifierLists (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s modifier lists.
@@ -635,7 +635,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1ModifierList&gt;</returns>
         ApiResponse<List<V1ModifierList>> ListModifierListsWithHttpInfo (string locationId);
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
@@ -646,7 +646,7 @@ namespace Square.Connect.Api
         List<V1Page> ListPages (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
@@ -656,7 +656,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Page&gt;</returns>
         ApiResponse<List<V1Page>> ListPagesWithHttpInfo (string locationId);
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee
         /// </summary>
         /// <remarks>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
@@ -669,7 +669,7 @@ namespace Square.Connect.Api
         V1Item RemoveFee (string locationId, string itemId, string feeId);
 
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee
         /// </summary>
         /// <remarks>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
@@ -681,7 +681,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> RemoveFeeWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList
         /// </summary>
         /// <remarks>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
@@ -694,7 +694,7 @@ namespace Square.Connect.Api
         V1Item RemoveModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList
         /// </summary>
         /// <remarks>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
@@ -706,7 +706,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> RemoveModifierListWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem
         /// </summary>
         /// <remarks>
         /// Provides the details for a single item, including associated modifier lists and fees.
@@ -718,7 +718,7 @@ namespace Square.Connect.Api
         V1Item RetrieveItem (string locationId, string itemId);
 
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem
         /// </summary>
         /// <remarks>
         /// Provides the details for a single item, including associated modifier lists and fees.
@@ -729,7 +729,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> RetrieveItemWithHttpInfo (string locationId, string itemId);
         /// <summary>
-        /// Provides the details for a single modifier list.
+        /// RetrieveModifierList
         /// </summary>
         /// <remarks>
         /// Provides the details for a single modifier list.
@@ -741,7 +741,7 @@ namespace Square.Connect.Api
         V1ModifierList RetrieveModifierList (string locationId, string modifierListId);
 
         /// <summary>
-        /// Provides the details for a single modifier list.
+        /// RetrieveModifierList
         /// </summary>
         /// <remarks>
         /// Provides the details for a single modifier list.
@@ -752,7 +752,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1ModifierList</returns>
         ApiResponse<V1ModifierList> RetrieveModifierListWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
-        /// Modifies the details of an existing item category.
+        /// UpdateCategory
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item category.
@@ -765,7 +765,7 @@ namespace Square.Connect.Api
         V1Category UpdateCategory (string locationId, string categoryId, V1Category body);
 
         /// <summary>
-        /// Modifies the details of an existing item category.
+        /// UpdateCategory
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item category.
@@ -777,7 +777,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Category</returns>
         ApiResponse<V1Category> UpdateCategoryWithHttpInfo (string locationId, string categoryId, V1Category body);
         /// <summary>
-        /// Modifies the details of an existing discount.
+        /// UpdateDiscount
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing discount.
@@ -790,7 +790,7 @@ namespace Square.Connect.Api
         V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body);
 
         /// <summary>
-        /// Modifies the details of an existing discount.
+        /// UpdateDiscount
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing discount.
@@ -802,7 +802,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Discount</returns>
         ApiResponse<V1Discount> UpdateDiscountWithHttpInfo (string locationId, string discountId, V1Discount body);
         /// <summary>
-        /// Modifies the details of an existing fee (tax).
+        /// UpdateFee
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing fee (tax).
@@ -815,7 +815,7 @@ namespace Square.Connect.Api
         V1Fee UpdateFee (string locationId, string feeId, V1Fee body);
 
         /// <summary>
-        /// Modifies the details of an existing fee (tax).
+        /// UpdateFee
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing fee (tax).
@@ -827,7 +827,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Fee</returns>
         ApiResponse<V1Fee> UpdateFeeWithHttpInfo (string locationId, string feeId, V1Fee body);
         /// <summary>
-        /// Modifies the core details of an existing item.
+        /// UpdateItem
         /// </summary>
         /// <remarks>
         /// Modifies the core details of an existing item.
@@ -840,7 +840,7 @@ namespace Square.Connect.Api
         V1Item UpdateItem (string locationId, string itemId, V1Item body);
 
         /// <summary>
-        /// Modifies the core details of an existing item.
+        /// UpdateItem
         /// </summary>
         /// <remarks>
         /// Modifies the core details of an existing item.
@@ -852,7 +852,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Item</returns>
         ApiResponse<V1Item> UpdateItemWithHttpInfo (string locationId, string itemId, V1Item body);
         /// <summary>
-        /// Modifies the details of an existing item modifier list.
+        /// UpdateModifierList
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier list.
@@ -865,7 +865,7 @@ namespace Square.Connect.Api
         V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body);
 
         /// <summary>
-        /// Modifies the details of an existing item modifier list.
+        /// UpdateModifierList
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier list.
@@ -877,7 +877,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1ModifierList</returns>
         ApiResponse<V1ModifierList> UpdateModifierListWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body);
         /// <summary>
-        /// Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier option.
@@ -891,7 +891,7 @@ namespace Square.Connect.Api
         V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
 
         /// <summary>
-        /// Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier option.
@@ -904,7 +904,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1ModifierOption</returns>
         ApiResponse<V1ModifierOption> UpdateModifierOptionWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage
         /// </summary>
         /// <remarks>
         /// Modifies the details of a Favorites page in Square Register.
@@ -917,7 +917,7 @@ namespace Square.Connect.Api
         V1Page UpdatePage (string locationId, string pageId, V1Page body);
 
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage
         /// </summary>
         /// <remarks>
         /// Modifies the details of a Favorites page in Square Register.
@@ -929,7 +929,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Page</returns>
         ApiResponse<V1Page> UpdatePageWithHttpInfo (string locationId, string pageId, V1Page body);
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell
         /// </summary>
         /// <remarks>
         /// Modifies a cell of a Favorites page in Square Register.
@@ -942,7 +942,7 @@ namespace Square.Connect.Api
         V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body);
 
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell
         /// </summary>
         /// <remarks>
         /// Modifies a cell of a Favorites page in Square Register.
@@ -954,7 +954,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Page</returns>
         ApiResponse<V1Page> UpdatePageCellWithHttpInfo (string locationId, string pageId, V1PageCell body);
         /// <summary>
-        /// Modifies the details of an existing item variation.
+        /// UpdateVariation
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item variation.
@@ -968,7 +968,7 @@ namespace Square.Connect.Api
         V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body);
 
         /// <summary>
-        /// Modifies the details of an existing item variation.
+        /// UpdateVariation
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item variation.
@@ -983,7 +983,7 @@ namespace Square.Connect.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory
         /// </summary>
         /// <remarks>
         /// Adjusts an item variation&#39;s current available inventory.
@@ -996,7 +996,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1InventoryEntry> AdjustInventoryAsync (string locationId, string variationId, V1AdjustInventoryRequest body);
 
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory
         /// </summary>
         /// <remarks>
         /// Adjusts an item variation&#39;s current available inventory.
@@ -1008,7 +1008,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1InventoryEntry)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1InventoryEntry>> AdjustInventoryAsyncWithHttpInfo (string locationId, string variationId, V1AdjustInventoryRequest body);
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee
         /// </summary>
         /// <remarks>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
@@ -1021,7 +1021,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> ApplyFeeAsync (string locationId, string itemId, string feeId);
 
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee
         /// </summary>
         /// <remarks>
         /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
@@ -1033,7 +1033,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> ApplyFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList
         /// </summary>
         /// <remarks>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
@@ -1046,7 +1046,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> ApplyModifierListAsync (string locationId, string modifierListId, string itemId);
 
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList
         /// </summary>
         /// <remarks>
         /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
@@ -1058,7 +1058,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> ApplyModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
-        /// Creates an item category.
+        /// CreateCategory
         /// </summary>
         /// <remarks>
         /// Creates an item category.
@@ -1070,7 +1070,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Category> CreateCategoryAsync (string locationId, V1Category body);
 
         /// <summary>
-        /// Creates an item category.
+        /// CreateCategory
         /// </summary>
         /// <remarks>
         /// Creates an item category.
@@ -1081,7 +1081,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Category)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Category>> CreateCategoryAsyncWithHttpInfo (string locationId, V1Category body);
         /// <summary>
-        /// Creates a discount.
+        /// CreateDiscount
         /// </summary>
         /// <remarks>
         /// Creates a discount.
@@ -1093,7 +1093,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Discount> CreateDiscountAsync (string locationId, V1Discount body);
 
         /// <summary>
-        /// Creates a discount.
+        /// CreateDiscount
         /// </summary>
         /// <remarks>
         /// Creates a discount.
@@ -1104,7 +1104,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Discount)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Discount>> CreateDiscountAsyncWithHttpInfo (string locationId, V1Discount body);
         /// <summary>
-        /// Creates a fee (tax).
+        /// CreateFee
         /// </summary>
         /// <remarks>
         /// Creates a fee (tax).
@@ -1116,7 +1116,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Fee> CreateFeeAsync (string locationId, V1Fee body);
 
         /// <summary>
-        /// Creates a fee (tax).
+        /// CreateFee
         /// </summary>
         /// <remarks>
         /// Creates a fee (tax).
@@ -1127,10 +1127,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Fee)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Fee>> CreateFeeAsyncWithHttpInfo (string locationId, V1Fee body);
         /// <summary>
-        /// Creates an item and at least one variation for it.
+        /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it.
+        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1139,10 +1139,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> CreateItemAsync (string locationId, V1Item body);
 
         /// <summary>
-        /// Creates an item and at least one variation for it.
+        /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it.
+        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1150,7 +1150,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> CreateItemAsyncWithHttpInfo (string locationId, V1Item body);
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList
         /// </summary>
         /// <remarks>
         /// Creates an item modifier list and at least one modifier option for it.
@@ -1162,7 +1162,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1ModifierList> CreateModifierListAsync (string locationId, V1ModifierList body);
 
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList
         /// </summary>
         /// <remarks>
         /// Creates an item modifier list and at least one modifier option for it.
@@ -1173,7 +1173,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> CreateModifierListAsyncWithHttpInfo (string locationId, V1ModifierList body);
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption
         /// </summary>
         /// <remarks>
         /// Creates an item modifier option and adds it to a modifier list.
@@ -1186,7 +1186,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1ModifierOption> CreateModifierOptionAsync (string locationId, string modifierListId, V1ModifierOption body);
 
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption
         /// </summary>
         /// <remarks>
         /// Creates an item modifier option and adds it to a modifier list.
@@ -1198,7 +1198,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> CreateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, V1ModifierOption body);
         /// <summary>
-        /// Creates a Favorites page in Square Register.
+        /// CreatePage
         /// </summary>
         /// <remarks>
         /// Creates a Favorites page in Square Register.
@@ -1210,7 +1210,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Page> CreatePageAsync (string locationId, V1Page body);
 
         /// <summary>
-        /// Creates a Favorites page in Square Register.
+        /// CreatePage
         /// </summary>
         /// <remarks>
         /// Creates a Favorites page in Square Register.
@@ -1221,7 +1221,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Page)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Page>> CreatePageAsyncWithHttpInfo (string locationId, V1Page body);
         /// <summary>
-        /// Creates an item variation for an existing item.
+        /// CreateVariation
         /// </summary>
         /// <remarks>
         /// Creates an item variation for an existing item.
@@ -1234,7 +1234,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Variation> CreateVariationAsync (string locationId, string itemId, V1Variation body);
 
         /// <summary>
-        /// Creates an item variation for an existing item.
+        /// CreateVariation
         /// </summary>
         /// <remarks>
         /// Creates an item variation for an existing item.
@@ -1246,10 +1246,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Variation)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Variation>> CreateVariationAsyncWithHttpInfo (string locationId, string itemId, V1Variation body);
         /// <summary>
-        /// Deletes an existing item category.
+        /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category.
+        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1258,10 +1258,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Category> DeleteCategoryAsync (string locationId, string categoryId);
 
         /// <summary>
-        /// Deletes an existing item category.
+        /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category.
+        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1269,10 +1269,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Category)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Category>> DeleteCategoryAsyncWithHttpInfo (string locationId, string categoryId);
         /// <summary>
-        /// Deletes an existing discount.
+        /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount.
+        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1281,10 +1281,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Discount> DeleteDiscountAsync (string locationId, string discountId);
 
         /// <summary>
-        /// Deletes an existing discount.
+        /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount.
+        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1292,10 +1292,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Discount)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Discount>> DeleteDiscountAsyncWithHttpInfo (string locationId, string discountId);
         /// <summary>
-        /// Deletes an existing fee (tax).
+        /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax).
+        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1304,10 +1304,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Fee> DeleteFeeAsync (string locationId, string feeId);
 
         /// <summary>
-        /// Deletes an existing fee (tax).
+        /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax).
+        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1315,10 +1315,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Fee)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Fee>> DeleteFeeAsyncWithHttpInfo (string locationId, string feeId);
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it.
+        /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it.
+        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1327,10 +1327,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> DeleteItemAsync (string locationId, string itemId);
 
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it.
+        /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it.
+        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1338,10 +1338,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> DeleteItemAsyncWithHttpInfo (string locationId, string itemId);
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1350,10 +1350,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1ModifierList> DeleteModifierListAsync (string locationId, string modifierListId);
 
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it.
+        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1361,10 +1361,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> DeleteModifierListAsyncWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1374,10 +1374,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1ModifierOption> DeleteModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId);
 
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list.
+        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1386,10 +1386,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> DeleteModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId);
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1398,10 +1398,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Page> DeletePageAsync (string locationId, string pageId);
 
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells.
+        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1409,10 +1409,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Page)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Page>> DeletePageAsyncWithHttpInfo (string locationId, string pageId);
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1423,10 +1423,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Page> DeletePageCellAsync (string locationId, string pageId, string row = null, string column = null);
 
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register.
+        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1436,10 +1436,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Page)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Page>> DeletePageCellAsyncWithHttpInfo (string locationId, string pageId, string row = null, string column = null);
         /// <summary>
-        /// Deletes an existing item variation from an item.
+        /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item.
+        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1449,10 +1449,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Variation> DeleteVariationAsync (string locationId, string itemId, string variationId);
 
         /// <summary>
-        /// Deletes an existing item variation from an item.
+        /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item.
+        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1461,7 +1461,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Variation)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Variation>> DeleteVariationAsyncWithHttpInfo (string locationId, string itemId, string variationId);
         /// <summary>
-        /// Lists all of a location&#39;s item categories.
+        /// ListCategories
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s item categories.
@@ -1472,7 +1472,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Category>> ListCategoriesAsync (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s item categories.
+        /// ListCategories
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s item categories.
@@ -1482,7 +1482,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Category&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Category>>> ListCategoriesAsyncWithHttpInfo (string locationId);
         /// <summary>
-        /// Lists all of a location&#39;s discounts.
+        /// ListDiscounts
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s discounts.
@@ -1493,7 +1493,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Discount>> ListDiscountsAsync (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s discounts.
+        /// ListDiscounts
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s discounts.
@@ -1503,7 +1503,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Discount&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Discount>>> ListDiscountsAsyncWithHttpInfo (string locationId);
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// ListFees
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s fees (taxes).
@@ -1514,7 +1514,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Fee>> ListFeesAsync (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// ListFees
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s fees (taxes).
@@ -1524,7 +1524,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Fee&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Fee>>> ListFeesAsyncWithHttpInfo (string locationId);
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory
         /// </summary>
         /// <remarks>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
@@ -1537,7 +1537,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1InventoryEntry>> ListInventoryAsync (string locationId, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory
         /// </summary>
         /// <remarks>
         /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
@@ -1549,7 +1549,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1InventoryEntry&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1InventoryEntry>>> ListInventoryAsyncWithHttpInfo (string locationId, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items.
+        /// ListItems
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a location&#39;s items.
@@ -1561,7 +1561,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Item>> ListItemsAsync (string locationId, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items.
+        /// ListItems
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a location&#39;s items.
@@ -1572,7 +1572,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Item&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Item>>> ListItemsAsyncWithHttpInfo (string locationId, string batchToken = null);
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s modifier lists.
@@ -1583,7 +1583,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1ModifierList>> ListModifierListsAsync (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s modifier lists.
@@ -1593,7 +1593,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1ModifierList&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1ModifierList>>> ListModifierListsAsyncWithHttpInfo (string locationId);
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
@@ -1604,7 +1604,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Page>> ListPagesAsync (string locationId);
 
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages
         /// </summary>
         /// <remarks>
         /// Lists all of a location&#39;s Favorites pages in Square Register.
@@ -1614,7 +1614,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Page&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Page>>> ListPagesAsyncWithHttpInfo (string locationId);
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee
         /// </summary>
         /// <remarks>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
@@ -1627,7 +1627,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> RemoveFeeAsync (string locationId, string itemId, string feeId);
 
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee
         /// </summary>
         /// <remarks>
         /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
@@ -1639,7 +1639,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> RemoveFeeAsyncWithHttpInfo (string locationId, string itemId, string feeId);
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList
         /// </summary>
         /// <remarks>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
@@ -1652,7 +1652,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> RemoveModifierListAsync (string locationId, string modifierListId, string itemId);
 
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList
         /// </summary>
         /// <remarks>
         /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
@@ -1664,7 +1664,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> RemoveModifierListAsyncWithHttpInfo (string locationId, string modifierListId, string itemId);
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem
         /// </summary>
         /// <remarks>
         /// Provides the details for a single item, including associated modifier lists and fees.
@@ -1676,7 +1676,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> RetrieveItemAsync (string locationId, string itemId);
 
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem
         /// </summary>
         /// <remarks>
         /// Provides the details for a single item, including associated modifier lists and fees.
@@ -1687,7 +1687,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> RetrieveItemAsyncWithHttpInfo (string locationId, string itemId);
         /// <summary>
-        /// Provides the details for a single modifier list.
+        /// RetrieveModifierList
         /// </summary>
         /// <remarks>
         /// Provides the details for a single modifier list.
@@ -1699,7 +1699,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1ModifierList> RetrieveModifierListAsync (string locationId, string modifierListId);
 
         /// <summary>
-        /// Provides the details for a single modifier list.
+        /// RetrieveModifierList
         /// </summary>
         /// <remarks>
         /// Provides the details for a single modifier list.
@@ -1710,7 +1710,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> RetrieveModifierListAsyncWithHttpInfo (string locationId, string modifierListId);
         /// <summary>
-        /// Modifies the details of an existing item category.
+        /// UpdateCategory
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item category.
@@ -1723,7 +1723,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Category> UpdateCategoryAsync (string locationId, string categoryId, V1Category body);
 
         /// <summary>
-        /// Modifies the details of an existing item category.
+        /// UpdateCategory
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item category.
@@ -1735,7 +1735,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Category)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Category>> UpdateCategoryAsyncWithHttpInfo (string locationId, string categoryId, V1Category body);
         /// <summary>
-        /// Modifies the details of an existing discount.
+        /// UpdateDiscount
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing discount.
@@ -1748,7 +1748,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Discount> UpdateDiscountAsync (string locationId, string discountId, V1Discount body);
 
         /// <summary>
-        /// Modifies the details of an existing discount.
+        /// UpdateDiscount
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing discount.
@@ -1760,7 +1760,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Discount)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Discount>> UpdateDiscountAsyncWithHttpInfo (string locationId, string discountId, V1Discount body);
         /// <summary>
-        /// Modifies the details of an existing fee (tax).
+        /// UpdateFee
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing fee (tax).
@@ -1773,7 +1773,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Fee> UpdateFeeAsync (string locationId, string feeId, V1Fee body);
 
         /// <summary>
-        /// Modifies the details of an existing fee (tax).
+        /// UpdateFee
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing fee (tax).
@@ -1785,7 +1785,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Fee)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Fee>> UpdateFeeAsyncWithHttpInfo (string locationId, string feeId, V1Fee body);
         /// <summary>
-        /// Modifies the core details of an existing item.
+        /// UpdateItem
         /// </summary>
         /// <remarks>
         /// Modifies the core details of an existing item.
@@ -1798,7 +1798,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Item> UpdateItemAsync (string locationId, string itemId, V1Item body);
 
         /// <summary>
-        /// Modifies the core details of an existing item.
+        /// UpdateItem
         /// </summary>
         /// <remarks>
         /// Modifies the core details of an existing item.
@@ -1810,7 +1810,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Item)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Item>> UpdateItemAsyncWithHttpInfo (string locationId, string itemId, V1Item body);
         /// <summary>
-        /// Modifies the details of an existing item modifier list.
+        /// UpdateModifierList
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier list.
@@ -1823,7 +1823,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1ModifierList> UpdateModifierListAsync (string locationId, string modifierListId, V1UpdateModifierListRequest body);
 
         /// <summary>
-        /// Modifies the details of an existing item modifier list.
+        /// UpdateModifierList
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier list.
@@ -1835,7 +1835,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1ModifierList)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1ModifierList>> UpdateModifierListAsyncWithHttpInfo (string locationId, string modifierListId, V1UpdateModifierListRequest body);
         /// <summary>
-        /// Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier option.
@@ -1849,7 +1849,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1ModifierOption> UpdateModifierOptionAsync (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
 
         /// <summary>
-        /// Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item modifier option.
@@ -1862,7 +1862,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1ModifierOption)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1ModifierOption>> UpdateModifierOptionAsyncWithHttpInfo (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage
         /// </summary>
         /// <remarks>
         /// Modifies the details of a Favorites page in Square Register.
@@ -1875,7 +1875,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Page> UpdatePageAsync (string locationId, string pageId, V1Page body);
 
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage
         /// </summary>
         /// <remarks>
         /// Modifies the details of a Favorites page in Square Register.
@@ -1887,7 +1887,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Page)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Page>> UpdatePageAsyncWithHttpInfo (string locationId, string pageId, V1Page body);
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell
         /// </summary>
         /// <remarks>
         /// Modifies a cell of a Favorites page in Square Register.
@@ -1900,7 +1900,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Page> UpdatePageCellAsync (string locationId, string pageId, V1PageCell body);
 
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell
         /// </summary>
         /// <remarks>
         /// Modifies a cell of a Favorites page in Square Register.
@@ -1912,7 +1912,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Page)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Page>> UpdatePageCellAsyncWithHttpInfo (string locationId, string pageId, V1PageCell body);
         /// <summary>
-        /// Modifies the details of an existing item variation.
+        /// UpdateVariation
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item variation.
@@ -1926,7 +1926,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Variation> UpdateVariationAsync (string locationId, string itemId, string variationId, V1Variation body);
 
         /// <summary>
-        /// Modifies the details of an existing item variation.
+        /// UpdateVariation
         /// </summary>
         /// <remarks>
         /// Modifies the details of an existing item variation.
@@ -2051,7 +2051,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory. Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2065,7 +2065,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory. Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2105,6 +2105,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -2143,7 +2144,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory. Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2158,7 +2159,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Adjusts an item variation&#39;s current available inventory. Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2237,7 +2238,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register. Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2251,7 +2252,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register. Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2291,6 +2292,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -2322,7 +2324,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register. Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2337,7 +2339,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register. Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2409,7 +2411,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item. Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2423,7 +2425,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item. Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2463,6 +2465,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -2494,7 +2497,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item. Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2509,7 +2512,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item. Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2581,7 +2584,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item category. Creates an item category.
+        /// CreateCategory Creates an item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2594,7 +2597,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item category. Creates an item category.
+        /// CreateCategory Creates an item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2630,6 +2633,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2667,7 +2671,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item category. Creates an item category.
+        /// CreateCategory Creates an item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2681,7 +2685,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item category. Creates an item category.
+        /// CreateCategory Creates an item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2755,7 +2759,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a discount. Creates a discount.
+        /// CreateDiscount Creates a discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2768,7 +2772,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a discount. Creates a discount.
+        /// CreateDiscount Creates a discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2804,6 +2808,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2841,7 +2846,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a discount. Creates a discount.
+        /// CreateDiscount Creates a discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2855,7 +2860,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a discount. Creates a discount.
+        /// CreateDiscount Creates a discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2929,7 +2934,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a fee (tax). Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -2942,7 +2947,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a fee (tax). Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -2978,6 +2983,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3015,7 +3021,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a fee (tax). Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -3029,7 +3035,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a fee (tax). Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -3103,7 +3109,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item and at least one variation for it. Creates an item and at least one variation for it.
+        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3116,7 +3122,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item and at least one variation for it. Creates an item and at least one variation for it.
+        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3152,6 +3158,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3189,7 +3196,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item and at least one variation for it. Creates an item and at least one variation for it.
+        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3203,7 +3210,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item and at least one variation for it. Creates an item and at least one variation for it.
+        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3277,7 +3284,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it. Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3290,7 +3297,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it. Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3326,6 +3333,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3363,7 +3371,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it. Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3377,7 +3385,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier list and at least one modifier option for it. Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3451,7 +3459,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list. Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3465,7 +3473,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list. Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3505,6 +3513,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3543,7 +3552,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list. Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3558,7 +3567,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item modifier option and adds it to a modifier list. Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3637,7 +3646,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a Favorites page in Square Register. Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3650,7 +3659,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a Favorites page in Square Register. Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3686,6 +3695,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3723,7 +3733,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a Favorites page in Square Register. Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3737,7 +3747,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a Favorites page in Square Register. Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3811,7 +3821,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item variation for an existing item. Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3825,7 +3835,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item variation for an existing item. Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3865,6 +3875,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3903,7 +3914,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item variation for an existing item. Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3918,7 +3929,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an item variation for an existing item. Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3997,7 +4008,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item category. Deletes an existing item category.
+        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4010,7 +4021,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item category. Deletes an existing item category.
+        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4046,6 +4057,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
 
@@ -4076,7 +4088,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item category. Deletes an existing item category.
+        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4090,7 +4102,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item category. Deletes an existing item category.
+        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4157,7 +4169,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing discount. Deletes an existing discount.
+        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4170,7 +4182,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing discount. Deletes an existing discount.
+        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4206,6 +4218,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
 
@@ -4236,7 +4249,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing discount. Deletes an existing discount.
+        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4250,7 +4263,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing discount. Deletes an existing discount.
+        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4317,7 +4330,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing fee (tax). Deletes an existing fee (tax).
+        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4330,7 +4343,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing fee (tax). Deletes an existing fee (tax).
+        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4366,6 +4379,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
 
@@ -4396,7 +4410,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing fee (tax). Deletes an existing fee (tax).
+        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4410,7 +4424,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing fee (tax). Deletes an existing fee (tax).
+        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4477,7 +4491,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it. Deletes an existing item and all item variations associated with it.
+        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4490,7 +4504,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it. Deletes an existing item and all item variations associated with it.
+        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4526,6 +4540,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -4556,7 +4571,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it. Deletes an existing item and all item variations associated with it.
+        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4570,7 +4585,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item and all item variations associated with it. Deletes an existing item and all item variations associated with it.
+        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4637,7 +4652,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it. Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4650,7 +4665,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it. Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4686,6 +4701,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -4716,7 +4732,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it. Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4730,7 +4746,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier list and all modifier options associated with it. Deletes an existing item modifier list and all modifier options associated with it.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4797,7 +4813,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list. Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4811,7 +4827,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list. Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4851,6 +4867,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -4882,7 +4899,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list. Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4897,7 +4914,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item modifier option from a modifier list. Deletes an existing item modifier option from a modifier list.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4969,7 +4986,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells. Deletes an existing Favorites page and all of its cells.
+        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -4982,7 +4999,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells. Deletes an existing Favorites page and all of its cells.
+        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5018,6 +5035,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
 
@@ -5048,7 +5066,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells. Deletes an existing Favorites page and all of its cells.
+        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5062,7 +5080,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing Favorites page and all of its cells. Deletes an existing Favorites page and all of its cells.
+        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5129,7 +5147,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register. Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5144,7 +5162,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register. Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5182,6 +5200,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (row != null) localVarQueryParams.Add("row", Configuration.ApiClient.ParameterToString(row)); // query parameter
@@ -5214,7 +5233,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register. Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5230,7 +5249,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a cell from a Favorites page in Square Register. Deletes a cell from a Favorites page in Square Register.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5301,7 +5320,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item variation from an item. Deletes an existing item variation from an item.
+        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5315,7 +5334,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item variation from an item. Deletes an existing item variation from an item.
+        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5355,6 +5374,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
@@ -5386,7 +5406,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item variation from an item. Deletes an existing item variation from an item.
+        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5401,7 +5421,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes an existing item variation from an item. Deletes an existing item variation from an item.
+        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5473,7 +5493,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s item categories. Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all of a location&#39;s item categories.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5485,7 +5505,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s item categories. Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all of a location&#39;s item categories.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5517,6 +5537,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5546,7 +5567,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s item categories. Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all of a location&#39;s item categories.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5559,7 +5580,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s item categories. Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all of a location&#39;s item categories.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5621,7 +5642,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s discounts. Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all of a location&#39;s discounts.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5633,7 +5654,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s discounts. Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all of a location&#39;s discounts.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5665,6 +5686,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5694,7 +5716,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s discounts. Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all of a location&#39;s discounts.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5707,7 +5729,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s discounts. Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all of a location&#39;s discounts.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5769,7 +5791,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes). Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all of a location&#39;s fees (taxes).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5781,7 +5803,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes). Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all of a location&#39;s fees (taxes).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5813,6 +5835,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5842,7 +5865,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes). Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all of a location&#39;s fees (taxes).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5855,7 +5878,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s fees (taxes). Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all of a location&#39;s fees (taxes).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5917,7 +5940,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations. Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5931,7 +5954,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations. Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5965,6 +5988,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
@@ -5996,7 +6020,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations. Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6011,7 +6035,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations. Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6077,7 +6101,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items. Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information for all of a location&#39;s items.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6090,7 +6114,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items. Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information for all of a location&#39;s items.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6123,6 +6147,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
@@ -6153,7 +6178,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items. Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information for all of a location&#39;s items.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6167,7 +6192,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a location&#39;s items. Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information for all of a location&#39;s items.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6231,7 +6256,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists. Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all of a location&#39;s modifier lists.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6243,7 +6268,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists. Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all of a location&#39;s modifier lists.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6275,6 +6300,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6304,7 +6330,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists. Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all of a location&#39;s modifier lists.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6317,7 +6343,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s modifier lists. Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all of a location&#39;s modifier lists.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6379,7 +6405,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register. Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6391,7 +6417,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register. Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6423,6 +6449,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6452,7 +6479,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register. Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6465,7 +6492,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Lists all of a location&#39;s Favorites pages in Square Register. Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6527,7 +6554,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register. Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6541,7 +6568,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register. Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6581,6 +6608,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -6612,7 +6640,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register. Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6627,7 +6655,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register. Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6699,7 +6727,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item. Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6713,7 +6741,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item. Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6753,6 +6781,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -6784,7 +6813,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item. Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6799,7 +6828,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item. Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6871,7 +6900,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees. Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6884,7 +6913,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees. Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6920,6 +6949,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -6950,7 +6980,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees. Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6964,7 +6994,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single item, including associated modifier lists and fees. Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7031,7 +7061,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single modifier list. Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7044,7 +7074,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single modifier list. Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7080,6 +7110,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -7110,7 +7141,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single modifier list. Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7124,7 +7155,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single modifier list. Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7191,7 +7222,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item category. Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7205,7 +7236,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item category. Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7245,6 +7276,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7283,7 +7315,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item category. Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7298,7 +7330,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item category. Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7377,7 +7409,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing discount. Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7391,7 +7423,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing discount. Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7431,6 +7463,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7469,7 +7502,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing discount. Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7484,7 +7517,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing discount. Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7563,7 +7596,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing fee (tax). Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7577,7 +7610,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing fee (tax). Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7617,6 +7650,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7655,7 +7689,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing fee (tax). Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7670,7 +7704,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing fee (tax). Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7749,7 +7783,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the core details of an existing item. Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7763,7 +7797,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the core details of an existing item. Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7803,6 +7837,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7841,7 +7876,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the core details of an existing item. Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7856,7 +7891,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the core details of an existing item. Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7935,7 +7970,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier list. Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7949,7 +7984,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier list. Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7989,6 +8024,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8027,7 +8063,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier list. Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8042,7 +8078,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier list. Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8121,7 +8157,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier option. Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8136,7 +8172,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier option. Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8180,6 +8216,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -8219,7 +8256,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier option. Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8235,7 +8272,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item modifier option. Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8319,7 +8356,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register. Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8333,7 +8370,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register. Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8373,6 +8410,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8411,7 +8449,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register. Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8426,7 +8464,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of a Favorites page in Square Register. Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8505,7 +8543,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register. Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8519,7 +8557,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register. Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8559,6 +8597,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8597,7 +8636,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register. Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8612,7 +8651,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a cell of a Favorites page in Square Register. Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8691,7 +8730,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item variation. Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8706,7 +8745,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item variation. Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8750,6 +8789,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
@@ -8789,7 +8829,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item variation. Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8805,7 +8845,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an existing item variation. Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>

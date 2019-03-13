@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1PageCell :  IEquatable<V1PageCell>, IValidatableObject
     {
         /// <summary>
-        /// The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER).
+        /// The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER). See [V1PageCellObjectType](#type-v1pagecellobjecttype) for possible values
         /// </summary>
-        /// <value>The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER).</value>
+        /// <value>The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER). See [V1PageCellObjectType](#type-v1pagecellobjecttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ObjectTypeEnum
         {
@@ -63,9 +63,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.
+        /// For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior. See [V1PageCellPlaceholderType](#type-v1pagecellplaceholdertype) for possible values
         /// </summary>
-        /// <value>For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.</value>
+        /// <value>For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior. See [V1PageCellPlaceholderType](#type-v1pagecellplaceholdertype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PlaceholderTypeEnum
         {
@@ -90,15 +90,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER).
+        /// The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER). See [V1PageCellObjectType](#type-v1pagecellobjecttype) for possible values
         /// </summary>
-        /// <value>The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER).</value>
+        /// <value>The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER). See [V1PageCellObjectType](#type-v1pagecellobjecttype) for possible values</value>
         [DataMember(Name="object_type", EmitDefaultValue=false)]
         public ObjectTypeEnum? ObjectType { get; set; }
         /// <summary>
-        /// For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.
+        /// For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior. See [V1PageCellPlaceholderType](#type-v1pagecellplaceholdertype) for possible values
         /// </summary>
-        /// <value>For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior.</value>
+        /// <value>For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior. See [V1PageCellPlaceholderType](#type-v1pagecellplaceholdertype) for possible values</value>
         [DataMember(Name="placeholder_type", EmitDefaultValue=false)]
         public PlaceholderTypeEnum? PlaceholderType { get; set; }
         /// <summary>
@@ -107,9 +107,9 @@ namespace Square.Connect.Model
         /// <param name="PageId">The unique identifier of the page the cell is included on..</param>
         /// <param name="Row">The row of the cell. Always an integer between 0 and 4, inclusive..</param>
         /// <param name="Column">The column of the cell. Always an integer between 0 and 4, inclusive..</param>
-        /// <param name="ObjectType">The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER)..</param>
+        /// <param name="ObjectType">The type of entity represented in the cell (ITEM, DISCOUNT, CATEGORY, or PLACEHOLDER). See [V1PageCellObjectType](#type-v1pagecellobjecttype) for possible values.</param>
         /// <param name="ObjectId">The unique identifier of the entity represented in the cell. Not present for cells with an object_type of PLACEHOLDER..</param>
-        /// <param name="PlaceholderType">For a cell with an object_type of PLACEHOLDER, this value indicates the cell&#39;s special behavior..</param>
+        /// <param name="PlaceholderType">For a cell with an object_type of PLACEHOLDER, this value indicates the cell&#39;s special behavior. See [V1PageCellPlaceholderType](#type-v1pagecellplaceholdertype) for possible values.</param>
         public V1PageCell(string PageId = default(string), int? Row = default(int?), int? Column = default(int?), ObjectTypeEnum? ObjectType = default(ObjectTypeEnum?), string ObjectId = default(string), PlaceholderTypeEnum? PlaceholderType = default(PlaceholderTypeEnum?))
         {
             this.PageId = PageId;

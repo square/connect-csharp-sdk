@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Fee :  IEquatable<V1Fee>, IValidatableObject
     {
         /// <summary>
-        /// Forthcoming
+        /// Forthcoming See [V1FeeCalculationPhase](#type-v1feecalculationphase) for possible values
         /// </summary>
-        /// <value>Forthcoming</value>
+        /// <value>Forthcoming See [V1FeeCalculationPhase](#type-v1feecalculationphase) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CalculationPhaseEnum
         {
@@ -57,9 +57,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees.
+        /// The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees. See [V1FeeAdjustmentType](#type-v1feeadjustmenttype) for possible values
         /// </summary>
-        /// <value>The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees.</value>
+        /// <value>The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees. See [V1FeeAdjustmentType](#type-v1feeadjustmenttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AdjustmentTypeEnum
         {
@@ -72,9 +72,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Whether the fee is ADDITIVE or INCLUSIVE.
+        /// Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values
         /// </summary>
-        /// <value>Whether the fee is ADDITIVE or INCLUSIVE.</value>
+        /// <value>Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InclusionTypeEnum
         {
@@ -93,9 +93,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants.
+        /// In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values
         /// </summary>
-        /// <value>In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants.</value>
+        /// <value>In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -150,27 +150,27 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Forthcoming
+        /// Forthcoming See [V1FeeCalculationPhase](#type-v1feecalculationphase) for possible values
         /// </summary>
-        /// <value>Forthcoming</value>
+        /// <value>Forthcoming See [V1FeeCalculationPhase](#type-v1feecalculationphase) for possible values</value>
         [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
         public CalculationPhaseEnum? CalculationPhase { get; set; }
         /// <summary>
-        /// The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees.
+        /// The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees. See [V1FeeAdjustmentType](#type-v1feeadjustmenttype) for possible values
         /// </summary>
-        /// <value>The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees.</value>
+        /// <value>The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees. See [V1FeeAdjustmentType](#type-v1feeadjustmenttype) for possible values</value>
         [DataMember(Name="adjustment_type", EmitDefaultValue=false)]
         public AdjustmentTypeEnum? AdjustmentType { get; set; }
         /// <summary>
-        /// Whether the fee is ADDITIVE or INCLUSIVE.
+        /// Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values
         /// </summary>
-        /// <value>Whether the fee is ADDITIVE or INCLUSIVE.</value>
+        /// <value>Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values</value>
         [DataMember(Name="inclusion_type", EmitDefaultValue=false)]
         public InclusionTypeEnum? InclusionType { get; set; }
         /// <summary>
-        /// In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants.
+        /// In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values
         /// </summary>
-        /// <value>In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants.</value>
+        /// <value>In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
@@ -179,12 +179,12 @@ namespace Square.Connect.Model
         /// <param name="Id">The fee&#39;s unique ID..</param>
         /// <param name="Name">The fee&#39;s name..</param>
         /// <param name="Rate">The rate of the fee, as a string representation of a decimal number. A value of 0.07 corresponds to a rate of 7%..</param>
-        /// <param name="CalculationPhase">Forthcoming.</param>
-        /// <param name="AdjustmentType">The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees..</param>
+        /// <param name="CalculationPhase">Forthcoming See [V1FeeCalculationPhase](#type-v1feecalculationphase) for possible values.</param>
+        /// <param name="AdjustmentType">The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees. See [V1FeeAdjustmentType](#type-v1feeadjustmenttype) for possible values.</param>
         /// <param name="AppliesToCustomAmounts">If true, the fee applies to custom amounts entered into Square Register that are not associated with a particular item..</param>
         /// <param name="Enabled">If true, the fee is applied to all appropriate items. If false, the fee is not applied at all..</param>
-        /// <param name="InclusionType">Whether the fee is ADDITIVE or INCLUSIVE..</param>
-        /// <param name="Type">In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants..</param>
+        /// <param name="InclusionType">Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values.</param>
+        /// <param name="Type">In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values.</param>
         public V1Fee(string Id = default(string), string Name = default(string), string Rate = default(string), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), AdjustmentTypeEnum? AdjustmentType = default(AdjustmentTypeEnum?), bool? AppliesToCustomAmounts = default(bool?), bool? Enabled = default(bool?), InclusionTypeEnum? InclusionType = default(InclusionTypeEnum?), TypeEnum? Type = default(TypeEnum?))
         {
             this.Id = Id;

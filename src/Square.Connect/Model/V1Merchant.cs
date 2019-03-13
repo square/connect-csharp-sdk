@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Merchant :  IEquatable<V1Merchant>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION.
+        /// Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION.</value>
+        /// <value>Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AccountTypeEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of business operated by the merchant.
+        /// The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values
         /// </summary>
-        /// <value>The type of business operated by the merchant.</value>
+        /// <value>The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BusinessTypeEnum
         {
@@ -360,15 +360,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION.
+        /// Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION.</value>
+        /// <value>Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values</value>
         [DataMember(Name="account_type", EmitDefaultValue=false)]
         public AccountTypeEnum? AccountType { get; set; }
         /// <summary>
-        /// The type of business operated by the merchant.
+        /// The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values
         /// </summary>
-        /// <value>The type of business operated by the merchant.</value>
+        /// <value>The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values</value>
         [DataMember(Name="business_type", EmitDefaultValue=false)]
         public BusinessTypeEnum? BusinessType { get; set; }
         /// <summary>
@@ -377,7 +377,7 @@ namespace Square.Connect.Model
         /// <param name="Id">The merchant account&#39;s unique identifier..</param>
         /// <param name="Name">The name associated with the merchant account..</param>
         /// <param name="Email">The email address associated with the merchant account..</param>
-        /// <param name="AccountType">Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION..</param>
+        /// <param name="AccountType">Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values.</param>
         /// <param name="AccountCapabilities">Capabilities that are enabled for the merchant&#39;s Square account. Capabilities that are not listed in this array are not enabled for the account..</param>
         /// <param name="CountryCode">The country associated with the merchant account, in ISO 3166-1-alpha-2 format..</param>
         /// <param name="LanguageCode">The language associated with the merchant account, in BCP 47 format..</param>
@@ -385,11 +385,11 @@ namespace Square.Connect.Model
         /// <param name="BusinessName">The name of the merchant&#39;s business..</param>
         /// <param name="BusinessAddress">The address of the merchant&#39;s business..</param>
         /// <param name="BusinessPhone">The phone number of the merchant&#39;s business..</param>
-        /// <param name="BusinessType">The type of business operated by the merchant..</param>
-        /// <param name="ShippingAddress_">The merchant&#39;s shipping address..</param>
-        /// <param name="LocationDetails">LocationDetails.</param>
+        /// <param name="BusinessType">The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values.</param>
+        /// <param name="ShippingAddress">The merchant&#39;s shipping address..</param>
+        /// <param name="LocationDetails">Additional information for a single-location account specified by its associated business account, if it has one..</param>
         /// <param name="MarketUrl">The URL of the merchant&#39;s online store..</param>
-        public V1Merchant(string Id = default(string), string Name = default(string), string Email = default(string), AccountTypeEnum? AccountType = default(AccountTypeEnum?), List<string> AccountCapabilities = default(List<string>), string CountryCode = default(string), string LanguageCode = default(string), string CurrencyCode = default(string), string BusinessName = default(string), Address BusinessAddress = default(Address), V1PhoneNumber BusinessPhone = default(V1PhoneNumber), BusinessTypeEnum? BusinessType = default(BusinessTypeEnum?), Address ShippingAddress_ = default(Address), V1MerchantLocationDetails LocationDetails = default(V1MerchantLocationDetails), string MarketUrl = default(string))
+        public V1Merchant(string Id = default(string), string Name = default(string), string Email = default(string), AccountTypeEnum? AccountType = default(AccountTypeEnum?), List<string> AccountCapabilities = default(List<string>), string CountryCode = default(string), string LanguageCode = default(string), string CurrencyCode = default(string), string BusinessName = default(string), Address BusinessAddress = default(Address), V1PhoneNumber BusinessPhone = default(V1PhoneNumber), BusinessTypeEnum? BusinessType = default(BusinessTypeEnum?), Address ShippingAddress = default(Address), V1MerchantLocationDetails LocationDetails = default(V1MerchantLocationDetails), string MarketUrl = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -403,7 +403,7 @@ namespace Square.Connect.Model
             this.BusinessAddress = BusinessAddress;
             this.BusinessPhone = BusinessPhone;
             this.BusinessType = BusinessType;
-            this.ShippingAddress_ = ShippingAddress_;
+            this.ShippingAddress = ShippingAddress;
             this.LocationDetails = LocationDetails;
             this.MarketUrl = MarketUrl;
         }
@@ -472,11 +472,12 @@ namespace Square.Connect.Model
         /// The merchant&#39;s shipping address.
         /// </summary>
         /// <value>The merchant&#39;s shipping address.</value>
-        [DataMember(Name="shipping_address ", EmitDefaultValue=false)]
-        public Address ShippingAddress_ { get; set; }
+        [DataMember(Name="shipping_address", EmitDefaultValue=false)]
+        public Address ShippingAddress { get; set; }
         /// <summary>
-        /// Gets or Sets LocationDetails
+        /// Additional information for a single-location account specified by its associated business account, if it has one.
         /// </summary>
+        /// <value>Additional information for a single-location account specified by its associated business account, if it has one.</value>
         [DataMember(Name="location_details", EmitDefaultValue=false)]
         public V1MerchantLocationDetails LocationDetails { get; set; }
         /// <summary>
@@ -505,7 +506,7 @@ namespace Square.Connect.Model
             sb.Append("  BusinessAddress: ").Append(BusinessAddress).Append("\n");
             sb.Append("  BusinessPhone: ").Append(BusinessPhone).Append("\n");
             sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
-            sb.Append("  ShippingAddress_: ").Append(ShippingAddress_).Append("\n");
+            sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  LocationDetails: ").Append(LocationDetails).Append("\n");
             sb.Append("  MarketUrl: ").Append(MarketUrl).Append("\n");
             sb.Append("}\n");
@@ -605,9 +606,9 @@ namespace Square.Connect.Model
                     this.BusinessType.Equals(other.BusinessType)
                 ) && 
                 (
-                    this.ShippingAddress_ == other.ShippingAddress_ ||
-                    this.ShippingAddress_ != null &&
-                    this.ShippingAddress_.Equals(other.ShippingAddress_)
+                    this.ShippingAddress == other.ShippingAddress ||
+                    this.ShippingAddress != null &&
+                    this.ShippingAddress.Equals(other.ShippingAddress)
                 ) && 
                 (
                     this.LocationDetails == other.LocationDetails ||
@@ -656,8 +657,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.BusinessPhone.GetHashCode();
                 if (this.BusinessType != null)
                     hash = hash * 59 + this.BusinessType.GetHashCode();
-                if (this.ShippingAddress_ != null)
-                    hash = hash * 59 + this.ShippingAddress_.GetHashCode();
+                if (this.ShippingAddress != null)
+                    hash = hash * 59 + this.ShippingAddress.GetHashCode();
                 if (this.LocationDetails != null)
                     hash = hash * 59 + this.LocationDetails.GetHashCode();
                 if (this.MarketUrl != null)

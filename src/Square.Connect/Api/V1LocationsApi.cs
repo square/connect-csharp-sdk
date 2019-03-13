@@ -25,7 +25,7 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations
         /// </summary>
         /// <remarks>
         /// Provides details for a business&#39;s locations, including their IDs.
@@ -35,7 +35,7 @@ namespace Square.Connect.Api
         List<V1Merchant> ListLocations ();
 
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations
         /// </summary>
         /// <remarks>
         /// Provides details for a business&#39;s locations, including their IDs.
@@ -44,7 +44,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
         ApiResponse<List<V1Merchant>> ListLocationsWithHttpInfo ();
         /// <summary>
-        /// Get a business&#39;s information.
+        /// RetrieveBusiness
         /// </summary>
         /// <remarks>
         /// Get a business&#39;s information.
@@ -54,7 +54,7 @@ namespace Square.Connect.Api
         V1Merchant RetrieveBusiness ();
 
         /// <summary>
-        /// Get a business&#39;s information.
+        /// RetrieveBusiness
         /// </summary>
         /// <remarks>
         /// Get a business&#39;s information.
@@ -65,7 +65,7 @@ namespace Square.Connect.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations
         /// </summary>
         /// <remarks>
         /// Provides details for a business&#39;s locations, including their IDs.
@@ -75,7 +75,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Merchant>> ListLocationsAsync ();
 
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations
         /// </summary>
         /// <remarks>
         /// Provides details for a business&#39;s locations, including their IDs.
@@ -84,7 +84,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Merchant>>> ListLocationsAsyncWithHttpInfo ();
         /// <summary>
-        /// Get a business&#39;s information.
+        /// RetrieveBusiness
         /// </summary>
         /// <remarks>
         /// Get a business&#39;s information.
@@ -94,7 +94,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Merchant> RetrieveBusinessAsync ();
 
         /// <summary>
-        /// Get a business&#39;s information.
+        /// RetrieveBusiness
         /// </summary>
         /// <remarks>
         /// Get a business&#39;s information.
@@ -215,7 +215,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;V1Merchant&gt;</returns>
@@ -226,7 +226,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
@@ -254,6 +254,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
 
             // authentication (oauth2) required
             // oauth required
@@ -282,7 +283,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;V1Merchant&gt;</returns>
@@ -294,7 +295,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides details for a business&#39;s locations, including their IDs. Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
@@ -351,7 +352,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Get a business&#39;s information. Get a business&#39;s information.
+        /// RetrieveBusiness Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>V1Merchant</returns>
@@ -362,7 +363,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Get a business&#39;s information. Get a business&#39;s information.
+        /// RetrieveBusiness Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of V1Merchant</returns>
@@ -390,6 +391,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
 
             // authentication (oauth2) required
             // oauth required
@@ -418,7 +420,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Get a business&#39;s information. Get a business&#39;s information.
+        /// RetrieveBusiness Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of V1Merchant</returns>
@@ -430,7 +432,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Get a business&#39;s information. Get a business&#39;s information.
+        /// RetrieveBusiness Get a business&#39;s information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (V1Merchant)</returns>

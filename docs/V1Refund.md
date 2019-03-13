@@ -1,9 +1,14 @@
 # Square.Connect.Model.V1Refund
+
+### Description
+
+V1Refund
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **TypeEnum** | The type of refund  | [optional] 
+**Type** | **TypeEnum** | The type of refund See [V1RefundType](#type-v1refundtype) for possible values | [optional] 
 **Reason** | **string** | The merchant-specified reason for the refund. | [optional] 
 **RefundedMoney** | [**V1Money**](V1Money.md) | The amount of money refunded. This amount is always negative. | [optional] 
 **RefundedProcessingFeeMoney** | [**V1Money**](V1Money.md) | The amount of processing fee money refunded. This amount is always positive. | [optional] 

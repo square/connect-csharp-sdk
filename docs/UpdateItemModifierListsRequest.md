@@ -1,4 +1,9 @@
 # Square.Connect.Model.UpdateItemModifierListsRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

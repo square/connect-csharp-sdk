@@ -34,7 +34,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
         /// <param name="Changes">The current calculated inventory changes for the requested objects and locations..</param>
-        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information..</param>
+        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information..</param>
         public BatchRetrieveInventoryChangesResponse(List<Error> Errors = default(List<Error>), List<InventoryChange> Changes = default(List<InventoryChange>), string Cursor = default(string))
         {
             this.Errors = Errors;
@@ -55,9 +55,9 @@ namespace Square.Connect.Model
         [DataMember(Name="changes", EmitDefaultValue=false)]
         public List<InventoryChange> Changes { get; set; }
         /// <summary>
-        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information.
+        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information.</value>
+        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

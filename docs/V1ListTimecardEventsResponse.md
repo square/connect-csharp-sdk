@@ -1,0 +1,16 @@
+# Square.Connect.Model.V1ListTimecardEventsResponse
+
+### Description
+
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Items** | [**List&lt;V1TimecardEvent&gt;**](V1TimecardEvent.md) |  | [optional] 
+
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

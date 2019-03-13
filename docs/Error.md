@@ -1,4 +1,9 @@
 # Square.Connect.Model.Error
+
+### Description
+
+Represents an error encountered during a request to the Connect API.
+
 ## Properties
 
 Name | Type | Description | Notes

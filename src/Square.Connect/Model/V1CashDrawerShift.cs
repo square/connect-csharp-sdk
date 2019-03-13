@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1CashDrawerShift :  IEquatable<V1CashDrawerShift>, IValidatableObject
     {
         /// <summary>
-        /// The shift's current state.
+        /// The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values
         /// </summary>
-        /// <value>The shift's current state.</value>
+        /// <value>The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EventTypeEnum
         {
@@ -57,16 +57,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The shift's current state.
+        /// The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values
         /// </summary>
-        /// <value>The shift's current state.</value>
+        /// <value>The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values</value>
         [DataMember(Name="event_type", EmitDefaultValue=false)]
         public EventTypeEnum? EventType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1CashDrawerShift" /> class.
         /// </summary>
         /// <param name="Id">The shift&#39;s unique ID..</param>
-        /// <param name="EventType">The shift&#39;s current state..</param>
+        /// <param name="EventType">The shift&#39;s current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values.</param>
         /// <param name="OpenedAt">The time when the shift began, in ISO 8601 format..</param>
         /// <param name="EndedAt">The time when the shift ended, in ISO 8601 format..</param>
         /// <param name="ClosedAt">The time when the shift was closed, in ISO 8601 format..</param>

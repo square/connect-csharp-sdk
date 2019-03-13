@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Item :  IEquatable<V1Item>, IValidatableObject
     {
         /// <summary>
-        /// The item's type. This value is NORMAL for almost all items.
+        /// The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values
         /// </summary>
-        /// <value>The item's type. This value is NORMAL for almost all items.</value>
+        /// <value>The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -57,9 +57,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
         /// </summary>
-        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.</value>
+        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ColorEnum
         {
@@ -120,9 +120,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE.
+        /// Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values
         /// </summary>
-        /// <value>Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE.</value>
+        /// <value>Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VisibilityEnum
         {
@@ -141,21 +141,21 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The item's type. This value is NORMAL for almost all items.
+        /// The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values
         /// </summary>
-        /// <value>The item's type. This value is NORMAL for almost all items.</value>
+        /// <value>The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
         /// </summary>
-        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.</value>
+        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values</value>
         [DataMember(Name="color", EmitDefaultValue=false)]
         public ColorEnum? Color { get; set; }
         /// <summary>
-        /// Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE.
+        /// Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values
         /// </summary>
-        /// <value>Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE.</value>
+        /// <value>Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values</value>
         [DataMember(Name="visibility", EmitDefaultValue=false)]
         public VisibilityEnum? Visibility { get; set; }
         /// <summary>
@@ -164,10 +164,10 @@ namespace Square.Connect.Model
         /// <param name="Id">The item&#39;s ID. Must be unique among all entity IDs ever provided on behalf of the merchant. You can never reuse an ID. This value can include alphanumeric characters, dashes (-), and underscores (_)..</param>
         /// <param name="Name">The item&#39;s name..</param>
         /// <param name="Description">The item&#39;s description..</param>
-        /// <param name="Type">The item&#39;s type. This value is NORMAL for almost all items..</param>
-        /// <param name="Color">The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6..</param>
+        /// <param name="Type">The item&#39;s type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values.</param>
+        /// <param name="Color">The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values.</param>
         /// <param name="Abbreviation">The text of the item&#39;s display label in Square Register. Only up to the first five characters of the string are used..</param>
-        /// <param name="Visibility">Indicates whether the item is viewable from the merchant&#39;s online store (PUBLIC) or PRIVATE..</param>
+        /// <param name="Visibility">Indicates whether the item is viewable from the merchant&#39;s online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values.</param>
         /// <param name="AvailableOnline">If true, the item can be added to shipping orders from the merchant&#39;s online store..</param>
         /// <param name="MasterImage">The item&#39;s master image, if any..</param>
         /// <param name="Category">The category the item belongs to, if any..</param>

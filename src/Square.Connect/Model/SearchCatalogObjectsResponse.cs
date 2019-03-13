@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="SearchCatalogObjectsResponse" /> class.
         /// </summary>
         /// <param name="Errors">The set of [Error](#type-error)s encountered..</param>
-        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information..</param>
+        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information..</param>
         /// <param name="Objects">The [CatalogObject](#type-catalogobject)s returned..</param>
         /// <param name="RelatedObjects">A list of [CatalogObject](#type-catalogobject)s referenced by the objects in the &#x60;objects&#x60; field..</param>
         public SearchCatalogObjectsResponse(List<Error> Errors = default(List<Error>), string Cursor = default(string), List<CatalogObject> Objects = default(List<CatalogObject>), List<CatalogObject> RelatedObjects = default(List<CatalogObject>))
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information.
+        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information.</value>
+        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

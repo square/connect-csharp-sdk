@@ -1,4 +1,9 @@
 # Square.Connect.Model.InventoryChangeType
+
+### Description
+
+Indicates how the inventory change was applied to a tracked quantity of items.
+
 ## Properties
 
 Name | Type | Description | Notes

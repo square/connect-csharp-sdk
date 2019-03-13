@@ -1,10 +1,15 @@
 # Square.Connect.Model.V1SettlementEntry
+
+### Description
+
+V1SettlementEntry
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentId** | **string** | The settlement&#39;s unique identifier. | [optional] 
-**Type** | **TypeEnum** | The settlement&#39;s current status. | [optional] 
+**Type** | **TypeEnum** | The settlement&#39;s current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values | [optional] 
 **AmountMoney** | [**V1Money**](V1Money.md) | The total amount of money this entry contributes to the total settlement amount. | [optional] 
 **FeeMoney** | [**V1Money**](V1Money.md) | The amount of all Square fees associated with this settlement entry. This value is always negative or zero. | [optional] 
 
@@ -33,6 +38,7 @@ Name | Value
 **RETURNEDACHENTRY** | "RETURNED_ACH_ENTRY"
 **RETURNEDSQUARE275** | "RETURNED_SQUARE_275"
 **SQUARE275** | "SQUARE_275"
+**SQUARECARD** | "SQUARE_CARD"
 
 
 

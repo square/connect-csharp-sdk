@@ -1,4 +1,9 @@
 # Square.Connect.Model.CustomerSort
+
+### Description
+
+Indicates the field to use for sorting customer profiles. For example, by total money spent with the merchant or the date of their first purchase.
+
 ## Properties
 
 Name | Type | Description | Notes

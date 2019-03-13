@@ -81,9 +81,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The role's permissions.
+        /// The role's permissions. See [V1EmployeeRolePermissions](#type-v1employeerolepermissions) for possible values
         /// </summary>
-        /// <value>The role's permissions.</value>
+        /// <value>The role's permissions. See [V1EmployeeRolePermissions](#type-v1employeerolepermissions) for possible values</value>
         [DataMember(Name="permissions", EmitDefaultValue=false)]
         public List<PermissionsEnum> Permissions { get; set; }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Id">The role&#39;s unique ID, Can only be set by Square..</param>
         /// <param name="Name">The role&#39;s merchant-defined name. (required).</param>
-        /// <param name="Permissions">The role&#39;s permissions. (required).</param>
+        /// <param name="Permissions">The role&#39;s permissions. See [V1EmployeeRolePermissions](#type-v1employeerolepermissions) for possible values (required).</param>
         /// <param name="IsOwner">If true, employees with this role have all permissions, regardless of the values indicated in permissions..</param>
         /// <param name="CreatedAt">The time when the employee entity was created, in ISO 8601 format. Is set by Square when the Role is created..</param>
         /// <param name="UpdatedAt">The time when the employee entity was most recently updated, in ISO 8601 format. Is set by Square when the Role updated..</param>

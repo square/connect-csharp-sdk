@@ -1,4 +1,9 @@
 # Square.Connect.Model.V1InventoryEntry
+
+### Description
+
+V1InventoryEntry
+
 ## Properties
 
 Name | Type | Description | Notes

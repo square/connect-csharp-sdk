@@ -1,4 +1,9 @@
 # Square.Connect.Model.OrderFulfillmentPickupDetailsScheduleType
+
+### Description
+
+The schedule type of the pickup fulfillment.
+
 ## Properties
 
 Name | Type | Description | Notes

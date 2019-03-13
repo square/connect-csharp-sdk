@@ -1,4 +1,9 @@
 # Square.Connect.Model.InventoryState
+
+### Description
+
+Indicates the state of a tracked item quantity in the lifecycle of goods.
+
 ## Properties
 
 Name | Type | Description | Notes

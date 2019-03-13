@@ -25,10 +25,10 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Creates an employee for a business.
+        /// CreateEmployee
         /// </summary>
         /// <remarks>
-        /// Creates an employee for a business.
+        ///  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -36,20 +36,20 @@ namespace Square.Connect.Api
         V1Employee CreateEmployee (V1Employee body);
 
         /// <summary>
-        /// Creates an employee for a business.
+        /// CreateEmployee
         /// </summary>
         /// <remarks>
-        /// Creates an employee for a business.
+        ///  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Employee</returns>
         ApiResponse<V1Employee> CreateEmployeeWithHttpInfo (V1Employee body);
         /// <summary>
-        /// Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole
         /// </summary>
         /// <remarks>
-        /// Creates an employee role you can then assign to employees.
+        /// Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
@@ -57,20 +57,20 @@ namespace Square.Connect.Api
         V1EmployeeRole CreateEmployeeRole (V1EmployeeRole employeeRole);
 
         /// <summary>
-        /// Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole
         /// </summary>
         /// <remarks>
-        /// Creates an employee role you can then assign to employees.
+        /// Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>ApiResponse of V1EmployeeRole</returns>
         ApiResponse<V1EmployeeRole> CreateEmployeeRoleWithHttpInfo (V1EmployeeRole employeeRole);
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard
         /// </summary>
         /// <remarks>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -78,20 +78,20 @@ namespace Square.Connect.Api
         V1Timecard CreateTimecard (V1Timecard body);
 
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard
         /// </summary>
         /// <remarks>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
         ApiResponse<V1Timecard> CreateTimecardWithHttpInfo (V1Timecard body);
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard
         /// </summary>
         /// <remarks>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
@@ -99,17 +99,17 @@ namespace Square.Connect.Api
         Object DeleteTimecard (string timecardId);
 
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard
         /// </summary>
         /// <remarks>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> DeleteTimecardWithHttpInfo (string timecardId);
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts
         /// </summary>
         /// <remarks>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
@@ -123,7 +123,7 @@ namespace Square.Connect.Api
         List<V1CashDrawerShift> ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null);
 
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts
         /// </summary>
         /// <remarks>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
@@ -136,38 +136,38 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1CashDrawerShift&gt;</returns>
         ApiResponse<List<V1CashDrawerShift>> ListCashDrawerShiftsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null);
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee roles.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1EmployeeRole&gt;</returns>
         List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee roles.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1EmployeeRole&gt;</returns>
         ApiResponse<List<V1EmployeeRole>> ListEmployeeRolesWithHttpInfo (string order = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employees.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -180,13 +180,13 @@ namespace Square.Connect.Api
         List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employees.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -198,10 +198,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Employee&gt;</returns>
         ApiResponse<List<V1Employee>> ListEmployeesWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
@@ -209,17 +209,17 @@ namespace Square.Connect.Api
         List<V1TimecardEvent> ListTimecardEvents (string timecardId);
 
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>ApiResponse of List&lt;V1TimecardEvent&gt;</returns>
         ApiResponse<List<V1TimecardEvent>> ListTimecardEventsWithHttpInfo (string timecardId);
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -240,7 +240,7 @@ namespace Square.Connect.Api
         List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -260,7 +260,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Timecard&gt;</returns>
         ApiResponse<List<V1Timecard>> ListTimecardsWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift
         /// </summary>
         /// <remarks>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
@@ -272,7 +272,7 @@ namespace Square.Connect.Api
         V1CashDrawerShift RetrieveCashDrawerShift (string locationId, string shiftId);
 
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift
         /// </summary>
         /// <remarks>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
@@ -283,7 +283,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1CashDrawerShift</returns>
         ApiResponse<V1CashDrawerShift> RetrieveCashDrawerShiftWithHttpInfo (string locationId, string shiftId);
         /// <summary>
-        /// Provides the details for a single employee.
+        /// RetrieveEmployee
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee.
@@ -294,7 +294,7 @@ namespace Square.Connect.Api
         V1Employee RetrieveEmployee (string employeeId);
 
         /// <summary>
-        /// Provides the details for a single employee.
+        /// RetrieveEmployee
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee.
@@ -304,7 +304,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Employee</returns>
         ApiResponse<V1Employee> RetrieveEmployeeWithHttpInfo (string employeeId);
         /// <summary>
-        /// Provides the details for a single employee role.
+        /// RetrieveEmployeeRole
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee role.
@@ -315,7 +315,7 @@ namespace Square.Connect.Api
         V1EmployeeRole RetrieveEmployeeRole (string roleId);
 
         /// <summary>
-        /// Provides the details for a single employee role.
+        /// RetrieveEmployeeRole
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee role.
@@ -325,10 +325,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1EmployeeRole</returns>
         ApiResponse<V1EmployeeRole> RetrieveEmployeeRoleWithHttpInfo (string roleId);
         /// <summary>
-        /// Provides the details for a single timecard.
+        /// RetrieveTimecard
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single timecard.
+        /// Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
@@ -336,17 +336,17 @@ namespace Square.Connect.Api
         V1Timecard RetrieveTimecard (string timecardId);
 
         /// <summary>
-        /// Provides the details for a single timecard.
+        /// RetrieveTimecard
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single timecard.
+        /// Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
         ApiResponse<V1Timecard> RetrieveTimecardWithHttpInfo (string timecardId);
         /// <summary>
-        /// V1 UpdateEmployee
+        /// UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -358,7 +358,7 @@ namespace Square.Connect.Api
         V1Employee UpdateEmployee (string employeeId, V1Employee body);
 
         /// <summary>
-        /// V1 UpdateEmployee
+        /// UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -369,7 +369,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Employee</returns>
         ApiResponse<V1Employee> UpdateEmployeeWithHttpInfo (string employeeId, V1Employee body);
         /// <summary>
-        /// Modifies the details of an employee role.
+        /// UpdateEmployeeRole
         /// </summary>
         /// <remarks>
         /// Modifies the details of an employee role.
@@ -381,7 +381,7 @@ namespace Square.Connect.Api
         V1EmployeeRole UpdateEmployeeRole (string roleId, V1EmployeeRole body);
 
         /// <summary>
-        /// Modifies the details of an employee role.
+        /// UpdateEmployeeRole
         /// </summary>
         /// <remarks>
         /// Modifies the details of an employee role.
@@ -392,35 +392,35 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1EmployeeRole</returns>
         ApiResponse<V1EmployeeRole> UpdateEmployeeRoleWithHttpInfo (string roleId, V1EmployeeRole body);
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard
         /// </summary>
         /// <remarks>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>V1Timecard</returns>
         V1Timecard UpdateTimecard (string timecardId, V1Timecard body);
 
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard
         /// </summary>
         /// <remarks>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
         ApiResponse<V1Timecard> UpdateTimecardWithHttpInfo (string timecardId, V1Timecard body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Creates an employee for a business.
+        /// CreateEmployee
         /// </summary>
         /// <remarks>
-        /// Creates an employee for a business.
+        ///  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -428,20 +428,20 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Employee> CreateEmployeeAsync (V1Employee body);
 
         /// <summary>
-        /// Creates an employee for a business.
+        /// CreateEmployee
         /// </summary>
         /// <remarks>
-        /// Creates an employee for a business.
+        ///  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Employee)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Employee>> CreateEmployeeAsyncWithHttpInfo (V1Employee body);
         /// <summary>
-        /// Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole
         /// </summary>
         /// <remarks>
-        /// Creates an employee role you can then assign to employees.
+        /// Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
@@ -449,20 +449,20 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1EmployeeRole> CreateEmployeeRoleAsync (V1EmployeeRole employeeRole);
 
         /// <summary>
-        /// Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole
         /// </summary>
         /// <remarks>
-        /// Creates an employee role you can then assign to employees.
+        /// Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> CreateEmployeeRoleAsyncWithHttpInfo (V1EmployeeRole employeeRole);
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard
         /// </summary>
         /// <remarks>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -470,20 +470,20 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Timecard> CreateTimecardAsync (V1Timecard body);
 
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard
         /// </summary>
         /// <remarks>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Timecard>> CreateTimecardAsyncWithHttpInfo (V1Timecard body);
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard
         /// </summary>
         /// <remarks>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
@@ -491,17 +491,17 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<Object> DeleteTimecardAsync (string timecardId);
 
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard
         /// </summary>
         /// <remarks>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTimecardAsyncWithHttpInfo (string timecardId);
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts
         /// </summary>
         /// <remarks>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
@@ -515,7 +515,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1CashDrawerShift>> ListCashDrawerShiftsAsync (string locationId, string order = null, string beginTime = null, string endTime = null);
 
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts
         /// </summary>
         /// <remarks>
         /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
@@ -528,38 +528,38 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1CashDrawerShift&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1CashDrawerShift>>> ListCashDrawerShiftsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null);
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee roles.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1EmployeeRole&gt;</returns>
         System.Threading.Tasks.Task<List<V1EmployeeRole>> ListEmployeeRolesAsync (string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee roles.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1EmployeeRole&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1EmployeeRole>>> ListEmployeeRolesAsyncWithHttpInfo (string order = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employees.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -572,13 +572,13 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Employee>> ListEmployeesAsync (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employees.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -590,10 +590,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Employee&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Employee>>> ListEmployeesAsyncWithHttpInfo (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
@@ -601,17 +601,17 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1TimecardEvent>> ListTimecardEventsAsync (string timecardId);
 
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all events associated with a particular timecard.
+        /// Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
         /// <returns>Task of ApiResponse (List&lt;V1TimecardEvent&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1TimecardEvent>>> ListTimecardEventsAsyncWithHttpInfo (string timecardId);
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -632,7 +632,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Timecard>> ListTimecardsAsync (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards
         /// </summary>
         /// <remarks>
         /// Provides summary information for all of a business&#39;s employee timecards.
@@ -652,7 +652,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Timecard&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Timecard>>> ListTimecardsAsyncWithHttpInfo (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift
         /// </summary>
         /// <remarks>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
@@ -664,7 +664,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1CashDrawerShift> RetrieveCashDrawerShiftAsync (string locationId, string shiftId);
 
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift
         /// </summary>
         /// <remarks>
         /// Provides the details for a single cash drawer shift, including all events that occurred during the shift.
@@ -675,7 +675,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1CashDrawerShift)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1CashDrawerShift>> RetrieveCashDrawerShiftAsyncWithHttpInfo (string locationId, string shiftId);
         /// <summary>
-        /// Provides the details for a single employee.
+        /// RetrieveEmployee
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee.
@@ -686,7 +686,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Employee> RetrieveEmployeeAsync (string employeeId);
 
         /// <summary>
-        /// Provides the details for a single employee.
+        /// RetrieveEmployee
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee.
@@ -696,7 +696,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Employee)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Employee>> RetrieveEmployeeAsyncWithHttpInfo (string employeeId);
         /// <summary>
-        /// Provides the details for a single employee role.
+        /// RetrieveEmployeeRole
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee role.
@@ -707,7 +707,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1EmployeeRole> RetrieveEmployeeRoleAsync (string roleId);
 
         /// <summary>
-        /// Provides the details for a single employee role.
+        /// RetrieveEmployeeRole
         /// </summary>
         /// <remarks>
         /// Provides the details for a single employee role.
@@ -717,10 +717,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> RetrieveEmployeeRoleAsyncWithHttpInfo (string roleId);
         /// <summary>
-        /// Provides the details for a single timecard.
+        /// RetrieveTimecard
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single timecard.
+        /// Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
@@ -728,17 +728,17 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Timecard> RetrieveTimecardAsync (string timecardId);
 
         /// <summary>
-        /// Provides the details for a single timecard.
+        /// RetrieveTimecard
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single timecard.
+        /// Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Timecard>> RetrieveTimecardAsyncWithHttpInfo (string timecardId);
         /// <summary>
-        /// V1 UpdateEmployee
+        /// UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -750,7 +750,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Employee> UpdateEmployeeAsync (string employeeId, V1Employee body);
 
         /// <summary>
-        /// V1 UpdateEmployee
+        /// UpdateEmployee
         /// </summary>
         /// <remarks>
         /// 
@@ -761,7 +761,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Employee)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Employee>> UpdateEmployeeAsyncWithHttpInfo (string employeeId, V1Employee body);
         /// <summary>
-        /// Modifies the details of an employee role.
+        /// UpdateEmployeeRole
         /// </summary>
         /// <remarks>
         /// Modifies the details of an employee role.
@@ -773,7 +773,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1EmployeeRole> UpdateEmployeeRoleAsync (string roleId, V1EmployeeRole body);
 
         /// <summary>
-        /// Modifies the details of an employee role.
+        /// UpdateEmployeeRole
         /// </summary>
         /// <remarks>
         /// Modifies the details of an employee role.
@@ -784,26 +784,26 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1EmployeeRole)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1EmployeeRole>> UpdateEmployeeRoleAsyncWithHttpInfo (string roleId, V1EmployeeRole body);
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard
         /// </summary>
         /// <remarks>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Timecard</returns>
         System.Threading.Tasks.Task<V1Timecard> UpdateTimecardAsync (string timecardId, V1Timecard body);
 
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard
         /// </summary>
         /// <remarks>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Timecard>> UpdateTimecardAsyncWithHttpInfo (string timecardId, V1Timecard body);
         #endregion Asynchronous Operations
@@ -919,7 +919,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee for a business. Creates an employee for a business.
+        /// CreateEmployee  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -931,7 +931,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee for a business. Creates an employee for a business.
+        /// CreateEmployee  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -963,6 +963,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -999,7 +1000,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee for a business. Creates an employee for a business.
+        /// CreateEmployee  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -1012,7 +1013,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee for a business. Creates an employee for a business.
+        /// CreateEmployee  Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of &#x60;INACTIVE&#x60;. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  &lt;aside class&#x3D;\&quot;important\&quot;&gt; Employee entities cannot be deleted. To disable employee profiles, set the employee&#39;s status to &lt;code&gt;INACTIVE&lt;/code&gt; &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -1081,7 +1082,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee role you can then assign to employees. Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
@@ -1093,7 +1094,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee role you can then assign to employees. Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
@@ -1125,6 +1126,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (employeeRole != null && employeeRole.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(employeeRole); // http body (model) parameter
@@ -1161,7 +1163,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee role you can then assign to employees. Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
@@ -1174,7 +1176,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates an employee role you can then assign to employees. Creates an employee role you can then assign to employees.
+        /// CreateEmployeeRole Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \&quot;Shift Manager\&quot; role might be able to issue refunds in Square Point of Sale, whereas an employee with a \&quot;Clerk\&quot; role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
@@ -1243,7 +1245,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift. Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -1255,7 +1257,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift. Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -1287,6 +1289,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1323,7 +1326,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift. Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -1336,7 +1339,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Creates a timecard for an employee. Each timecard corresponds to a single shift. Creates a timecard for an employee. Each timecard corresponds to a single shift.
+        /// CreateTimecard Creates a timecard for an employee and clocks them in with an &#x60;API_CREATE&#x60; event and a &#x60;clockin_time&#x60; set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the &#x60;clockin_time&#x60; and* &#x60;clockout_time&#x60; in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the &#x60;clockin_time&#x60; and &#x60;clockout_time&#x60; fields. An employee is considered clocked in if they have a timecard that doesn&#39;t have a &#x60;clockout_time&#x60; set. An employee that is currently clocked in cannot be clocked in a second time.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -1405,7 +1408,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information. Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
@@ -1417,7 +1420,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information. Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
@@ -1449,6 +1452,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
 
             // authentication (oauth2) required
@@ -1478,7 +1482,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information. Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
@@ -1491,7 +1495,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information. Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+        /// DeleteTimecard Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The &#x60;deleted&#x60; field of the &#x60;Timecard&#x60; object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the &#x60;deleted&#x60; query parameter in the list request.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
@@ -1553,7 +1557,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days. Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -1568,7 +1572,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days. Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -1603,6 +1607,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1635,7 +1640,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days. Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -1651,7 +1656,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days. Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+        /// ListCashDrawerShifts Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -1719,10 +1724,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles. Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles Provides summary information for all of a business&#39;s employee roles.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>List&lt;V1EmployeeRole&gt;</returns>
@@ -1733,10 +1738,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles. Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles Provides summary information for all of a business&#39;s employee roles.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>ApiResponse of List&lt;V1EmployeeRole&gt;</returns>
@@ -1764,6 +1769,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
@@ -1795,10 +1801,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles. Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles Provides summary information for all of a business&#39;s employee roles.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of List&lt;V1EmployeeRole&gt;</returns>
@@ -1810,10 +1816,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee roles. Provides summary information for all of a business&#39;s employee roles.
+        /// ListEmployeeRoles Provides summary information for all of a business&#39;s employee roles.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;V1EmployeeRole&gt;)</returns>
@@ -1873,10 +1879,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees. Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees Provides summary information for all of a business&#39;s employees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -1893,10 +1899,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees. Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees Provides summary information for all of a business&#39;s employees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -1930,6 +1936,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginUpdatedAt != null) localVarQueryParams.Add("begin_updated_at", Configuration.ApiClient.ParameterToString(beginUpdatedAt)); // query parameter
             if (endUpdatedAt != null) localVarQueryParams.Add("end_updated_at", Configuration.ApiClient.ParameterToString(endUpdatedAt)); // query parameter
@@ -1967,10 +1974,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees. Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees Provides summary information for all of a business&#39;s employees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -1988,10 +1995,10 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employees. Provides summary information for all of a business&#39;s employees.
+        /// ListEmployees Provides summary information for all of a business&#39;s employees.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional)</param>
+        /// <param name="order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional)</param>
         /// <param name="beginUpdatedAt">If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional)</param>
         /// <param name="endUpdatedAt">If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional)</param>
         /// <param name="beginCreatedAt">If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional)</param>
@@ -2063,7 +2070,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard. Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
@@ -2075,7 +2082,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard. Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
@@ -2107,7 +2114,8 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            if (timecardId != null) localVarQueryParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2136,7 +2144,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard. Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
@@ -2149,7 +2157,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all events associated with a particular timecard. Provides summary information for all events associated with a particular timecard.
+        /// ListTimecardEvents Provides summary information for all events associated with a particular timecard.  &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
@@ -2182,7 +2190,7 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
+            if (timecardId != null) localVarQueryParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2211,7 +2219,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards. Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards Provides summary information for all of a business&#39;s employee timecards.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order">The order in which timecards are listed in the response, based on their created_at field. (optional)</param>
@@ -2233,7 +2241,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards. Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards Provides summary information for all of a business&#39;s employee timecards.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order">The order in which timecards are listed in the response, based on their created_at field. (optional)</param>
@@ -2272,6 +2280,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (employeeId != null) localVarQueryParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // query parameter
             if (beginClockinTime != null) localVarQueryParams.Add("begin_clockin_time", Configuration.ApiClient.ParameterToString(beginClockinTime)); // query parameter
@@ -2311,7 +2320,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards. Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards Provides summary information for all of a business&#39;s employee timecards.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order">The order in which timecards are listed in the response, based on their created_at field. (optional)</param>
@@ -2334,7 +2343,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all of a business&#39;s employee timecards. Provides summary information for all of a business&#39;s employee timecards.
+        /// ListTimecards Provides summary information for all of a business&#39;s employee timecards.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order">The order in which timecards are listed in the response, based on their created_at field. (optional)</param>
@@ -2413,7 +2422,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift. Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -2426,7 +2435,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift. Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -2462,6 +2471,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (shiftId != null) localVarPathParams.Add("shift_id", Configuration.ApiClient.ParameterToString(shiftId)); // path parameter
 
@@ -2492,7 +2502,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift. Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -2506,7 +2516,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single cash drawer shift, including all events that occurred during the shift. Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+        /// RetrieveCashDrawerShift Provides the details for a single cash drawer shift, including all events that occurred during the shift.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
@@ -2573,7 +2583,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee. Provides the details for a single employee.
+        /// RetrieveEmployee Provides the details for a single employee.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
@@ -2585,7 +2595,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee. Provides the details for a single employee.
+        /// RetrieveEmployee Provides the details for a single employee.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
@@ -2617,6 +2627,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (employeeId != null) localVarPathParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // path parameter
 
             // authentication (oauth2) required
@@ -2646,7 +2657,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee. Provides the details for a single employee.
+        /// RetrieveEmployee Provides the details for a single employee.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
@@ -2659,7 +2670,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee. Provides the details for a single employee.
+        /// RetrieveEmployee Provides the details for a single employee.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
@@ -2721,7 +2732,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee role. Provides the details for a single employee role.
+        /// RetrieveEmployeeRole Provides the details for a single employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
@@ -2733,7 +2744,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee role. Provides the details for a single employee role.
+        /// RetrieveEmployeeRole Provides the details for a single employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
@@ -2765,6 +2776,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (roleId != null) localVarPathParams.Add("role_id", Configuration.ApiClient.ParameterToString(roleId)); // path parameter
 
             // authentication (oauth2) required
@@ -2794,7 +2806,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee role. Provides the details for a single employee role.
+        /// RetrieveEmployeeRole Provides the details for a single employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
@@ -2807,7 +2819,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single employee role. Provides the details for a single employee role.
+        /// RetrieveEmployeeRole Provides the details for a single employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
@@ -2869,7 +2881,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single timecard. Provides the details for a single timecard.
+        /// RetrieveTimecard Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
@@ -2881,7 +2893,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single timecard. Provides the details for a single timecard.
+        /// RetrieveTimecard Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
@@ -2913,6 +2925,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
 
             // authentication (oauth2) required
@@ -2942,7 +2955,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single timecard. Provides the details for a single timecard.
+        /// RetrieveTimecard Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
@@ -2955,7 +2968,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for a single timecard. Provides the details for a single timecard.
+        /// RetrieveTimecard Provides the details for a single timecard. &lt;aside&gt; Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. &lt;/aside&gt;
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
@@ -3017,7 +3030,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// V1 UpdateEmployee 
+        /// UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
@@ -3030,7 +3043,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// V1 UpdateEmployee 
+        /// UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
@@ -3066,6 +3079,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (employeeId != null) localVarPathParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3103,7 +3117,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// V1 UpdateEmployee 
+        /// UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
@@ -3117,7 +3131,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// V1 UpdateEmployee 
+        /// UpdateEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
@@ -3191,7 +3205,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an employee role. Modifies the details of an employee role.
+        /// UpdateEmployeeRole Modifies the details of an employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The ID of the role to modify.</param>
@@ -3204,7 +3218,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an employee role. Modifies the details of an employee role.
+        /// UpdateEmployeeRole Modifies the details of an employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The ID of the role to modify.</param>
@@ -3240,6 +3254,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (roleId != null) localVarPathParams.Add("role_id", Configuration.ApiClient.ParameterToString(roleId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3277,7 +3292,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an employee role. Modifies the details of an employee role.
+        /// UpdateEmployeeRole Modifies the details of an employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The ID of the role to modify.</param>
@@ -3291,7 +3306,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies the details of an employee role. Modifies the details of an employee role.
+        /// UpdateEmployeeRole Modifies the details of an employee role.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The ID of the role to modify.</param>
@@ -3365,11 +3380,11 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint. Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>V1Timecard</returns>
         public V1Timecard UpdateTimecard (string timecardId, V1Timecard body)
         {
@@ -3378,11 +3393,11 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint. Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of V1Timecard</returns>
         public ApiResponse< V1Timecard > UpdateTimecardWithHttpInfo (string timecardId, V1Timecard body)
         {
@@ -3414,6 +3429,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3451,11 +3467,11 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint. Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>Task of V1Timecard</returns>
         public async System.Threading.Tasks.Task<V1Timecard> UpdateTimecardAsync (string timecardId, V1Timecard body)
         {
@@ -3465,11 +3481,11 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint. Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+        /// UpdateTimecard Modifies the details of a timecard with an &#x60;API_EDIT&#x60; event for the timecard. Updating an active timecard with a &#x60;clockout_time&#x60; clocks the employee out.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
-        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (V1Timecard)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<V1Timecard>> UpdateTimecardAsyncWithHttpInfo (string timecardId, V1Timecard body)
         {

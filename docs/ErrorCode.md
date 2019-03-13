@@ -1,4 +1,9 @@
 # Square.Connect.Model.ErrorCode
+
+### Description
+
+Indicates specific errors that can occur during a request to the Connect API.
+
 ## Properties
 
 Name | Type | Description | Notes

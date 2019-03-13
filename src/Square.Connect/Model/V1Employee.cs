@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Employee :  IEquatable<V1Employee>, IValidatableObject
     {
         /// <summary>
-        /// CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. 
+        /// CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values
         /// </summary>
-        /// <value>CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. </value>
+        /// <value>CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. 
+        /// CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values
         /// </summary>
-        /// <value>CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. </value>
+        /// <value>CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Square.Connect.Model
         /// <param name="RoleIds">The ids of the employee&#39;s associated roles. Currently, you can specify only one or zero roles per employee..</param>
         /// <param name="AuthorizedLocationIds">The IDs of the locations the employee is allowed to clock in at..</param>
         /// <param name="Email">The employee&#39;s email address..</param>
-        /// <param name="Status">CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. .</param>
+        /// <param name="Status">CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values.</param>
         /// <param name="ExternalId">An ID the merchant can set to associate the employee with an entity in another system..</param>
         /// <param name="CreatedAt">The time when the employee entity was created, in ISO 8601 format..</param>
         /// <param name="UpdatedAt">The time when the employee entity was most recently updated, in ISO 8601 format..</param>

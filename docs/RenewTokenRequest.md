@@ -1,4 +1,9 @@
 # Square.Connect.Model.RenewTokenRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

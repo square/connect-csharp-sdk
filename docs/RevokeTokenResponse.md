@@ -1,4 +1,9 @@
 # Square.Connect.Model.RevokeTokenResponse
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

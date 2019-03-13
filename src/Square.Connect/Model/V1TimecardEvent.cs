@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1TimecardEvent :  IEquatable<V1TimecardEvent>, IValidatableObject
     {
         /// <summary>
-        /// The ID of the timecard to list events for.
+        /// The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values
         /// </summary>
-        /// <value>The ID of the timecard to list events for.</value>
+        /// <value>The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EventTypeEnum
         {
@@ -87,16 +87,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The ID of the timecard to list events for.
+        /// The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values
         /// </summary>
-        /// <value>The ID of the timecard to list events for.</value>
+        /// <value>The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values</value>
         [DataMember(Name="event_type", EmitDefaultValue=false)]
         public EventTypeEnum? EventType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1TimecardEvent" /> class.
         /// </summary>
         /// <param name="Id">The event&#39;s unique ID..</param>
-        /// <param name="EventType">The ID of the timecard to list events for..</param>
+        /// <param name="EventType">The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values.</param>
         /// <param name="ClockinTime">The time the employee clocked in, in ISO 8601 format..</param>
         /// <param name="ClockoutTime">The time the employee clocked out, in ISO 8601 format..</param>
         /// <param name="CreatedAt">The time when the event was created, in ISO 8601 format..</param>

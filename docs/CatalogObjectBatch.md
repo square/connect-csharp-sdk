@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogObjectBatch
+
+### Description
+
+A batch of [CatalogObject](#type-catalogobject)s.
+
 ## Properties
 
 Name | Type | Description | Notes

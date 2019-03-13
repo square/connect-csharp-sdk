@@ -1,4 +1,9 @@
 # Square.Connect.Model.DeleteCustomerCardRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -24,15 +24,15 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// V1Tender
+    /// A tender represents a discrete monetary exchange. Square represents this exchange as a money object with a specific currency and amount, where the amount is given in the smallest denomination of the given currency.  Square POS can accept more than one form of tender for a single payment (such as by splitting a bill between a credit card and a gift card). The &#x60;tender&#x60; field of the Payment object lists all forms of tender used for the payment.  Split tender payments behave slightly differently from single tender payments:  The receipt_url for a split tender corresponds only to the first tender listed in the tender field. To get the receipt URLs for the remaining tenders, use the receipt_url fields of the corresponding Tender objects.  *A note on gift cards**: when a customer purchases a Square gift card from a merchant, the merchant receives the full amount of the gift card in the associated payment.  When that gift card is used as a tender, the balance of the gift card is reduced and the merchant receives no funds. A &#x60;Tender&#x60; object with a type of &#x60;SQUARE_GIFT_CARD&#x60; indicates a gift card was used for some or all of the associated payment.
     /// </summary>
     [DataContract]
     public partial class V1Tender :  IEquatable<V1Tender>, IValidatableObject
     {
         /// <summary>
-        /// The type of tender.
+        /// The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
         /// </summary>
-        /// <value>The type of tender.</value>
+        /// <value>The type of tender. See [V1TenderType](#type-v1tendertype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -87,9 +87,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The brand of credit card provided.
+        /// The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
         /// </summary>
-        /// <value>The brand of credit card provided.</value>
+        /// <value>The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CardBrandEnum
         {
@@ -107,9 +107,9 @@ namespace Square.Connect.Model
             VISA,
             
             /// <summary>
-            /// Enum MASTERCARD for "MASTER_CARD"
+            /// Enum MASTERCARD for "MASTERCARD"
             /// </summary>
-            [EnumMember(Value = "MASTER_CARD")]
+            [EnumMember(Value = "MASTERCARD")]
             MASTERCARD,
             
             /// <summary>
@@ -150,9 +150,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The tender's unique ID.
+        /// The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
         /// </summary>
-        /// <value>The tender's unique ID.</value>
+        /// <value>The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EntryMethodEnum
         {
@@ -201,34 +201,34 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of tender.
+        /// The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
         /// </summary>
-        /// <value>The type of tender.</value>
+        /// <value>The type of tender. See [V1TenderType](#type-v1tendertype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// The brand of credit card provided.
+        /// The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
         /// </summary>
-        /// <value>The brand of credit card provided.</value>
+        /// <value>The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values</value>
         [DataMember(Name="card_brand", EmitDefaultValue=false)]
         public CardBrandEnum? CardBrand { get; set; }
         /// <summary>
-        /// The tender's unique ID.
+        /// The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
         /// </summary>
-        /// <value>The tender's unique ID.</value>
+        /// <value>The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values</value>
         [DataMember(Name="entry_method", EmitDefaultValue=false)]
         public EntryMethodEnum? EntryMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1Tender" /> class.
         /// </summary>
         /// <param name="Id">The tender&#39;s unique ID..</param>
-        /// <param name="Type">The type of tender..</param>
+        /// <param name="Type">The type of tender. See [V1TenderType](#type-v1tendertype) for possible values.</param>
         /// <param name="Name">A human-readable description of the tender..</param>
         /// <param name="EmployeeId">The ID of the employee that processed the tender..</param>
         /// <param name="ReceiptUrl">The URL of the receipt for the tender..</param>
-        /// <param name="CardBrand">The brand of credit card provided..</param>
+        /// <param name="CardBrand">The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values.</param>
         /// <param name="PanSuffix">The last four digits of the provided credit card&#39;s account number..</param>
-        /// <param name="EntryMethod">The tender&#39;s unique ID..</param>
+        /// <param name="EntryMethod">The tender&#39;s unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values.</param>
         /// <param name="PaymentNote">Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER..</param>
         /// <param name="TotalMoney">The total amount of money provided in this form of tender..</param>
         /// <param name="TenderedMoney">The amount of total_money applied to the payment..</param>

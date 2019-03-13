@@ -1,4 +1,9 @@
 # Square.Connect.Model.RetrieveTransactionRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes
