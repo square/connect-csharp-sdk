@@ -1,4 +1,9 @@
 # Square.Connect.Model.Product
+
+### Description
+
+Indicates the Square product used to generate an inventory change.
+
 ## Properties
 
 Name | Type | Description | Notes

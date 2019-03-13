@@ -1,4 +1,9 @@
 # Square.Connect.Model.RetrieveCatalogObjectResponse
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

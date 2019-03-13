@@ -1,4 +1,9 @@
 # Square.Connect.Model.InventoryCount
+
+### Description
+
+Represents the estimated quantity of items in a particular state at a particular location based on the known history of physical counts and inventory adjustments.
+
 ## Properties
 
 Name | Type | Description | Notes

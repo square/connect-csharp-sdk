@@ -1,4 +1,9 @@
 # Square.Connect.Model.RefundStatus
+
+### Description
+
+Indicates a refund's current status.
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,9 @@
 # Square.Connect.Model.V1ItemImage
+
+### Description
+
+V1ItemImage
+
 ## Properties
 
 Name | Type | Description | Notes

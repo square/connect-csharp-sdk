@@ -1,4 +1,9 @@
 # Square.Connect.Model.V1BankAccount
+
+### Description
+
+V1BankAccount
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -10,7 +15,7 @@ Name | Type | Description | Notes
 **RoutingNumber** | **string** | The bank account&#39;s routing number. | [optional] 
 **AccountNumberSuffix** | **string** | The last few digits of the bank account number. | [optional] 
 **CurrencyCode** | **string** | The currency code of the currency associated with the bank account, in ISO 4217 format. For example, the currency code for US dollars is USD. | [optional] 
-**Type** | **TypeEnum** | The bank account&#39;s type (for example, savings or checking). | [optional] 
+**Type** | **TypeEnum** | The bank account&#39;s type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values | [optional] 
 
 
 ## TypeEnum

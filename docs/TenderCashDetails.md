@@ -1,4 +1,9 @@
 # Square.Connect.Model.TenderCashDetails
+
+### Description
+
+Represents the details of a tender with `type` `CASH`.
+
 ## Properties
 
 Name | Type | Description | Notes

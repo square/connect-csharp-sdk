@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents an error encountered during a request to the Connect API.  See [Handling errors](#handlingerrors) for more information.
+    /// Represents an error encountered during a request to the Connect API.
     /// </summary>
     [DataContract]
     public partial class Error :  IEquatable<Error>, IValidatableObject

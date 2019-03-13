@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1SettlementEntry :  IEquatable<V1SettlementEntry>, IValidatableObject
     {
         /// <summary>
-        /// The settlement's current status.
+        /// The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values
         /// </summary>
-        /// <value>The settlement's current status.</value>
+        /// <value>The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -155,20 +155,26 @@ namespace Square.Connect.Model
             /// Enum SQUARE275 for "SQUARE_275"
             /// </summary>
             [EnumMember(Value = "SQUARE_275")]
-            SQUARE275
+            SQUARE275,
+            
+            /// <summary>
+            /// Enum SQUARECARD for "SQUARE_CARD"
+            /// </summary>
+            [EnumMember(Value = "SQUARE_CARD")]
+            SQUARECARD
         }
 
         /// <summary>
-        /// The settlement's current status.
+        /// The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values
         /// </summary>
-        /// <value>The settlement's current status.</value>
+        /// <value>The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1SettlementEntry" /> class.
         /// </summary>
         /// <param name="PaymentId">The settlement&#39;s unique identifier..</param>
-        /// <param name="Type">The settlement&#39;s current status..</param>
+        /// <param name="Type">The settlement&#39;s current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values.</param>
         /// <param name="AmountMoney">The total amount of money this entry contributes to the total settlement amount..</param>
         /// <param name="FeeMoney">The amount of all Square fees associated with this settlement entry. This value is always negative or zero..</param>
         public V1SettlementEntry(string PaymentId = default(string), TypeEnum? Type = default(TypeEnum?), V1Money AmountMoney = default(V1Money), V1Money FeeMoney = default(V1Money))

@@ -1,4 +1,9 @@
 # Square.Connect.Model.Device
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

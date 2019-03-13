@@ -1,4 +1,9 @@
 # Square.Connect.Model.V1Category
+
+### Description
+
+V1Category
+
 ## Properties
 
 Name | Type | Description | Notes

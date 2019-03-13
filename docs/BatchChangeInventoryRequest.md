@@ -1,4 +1,9 @@
 # Square.Connect.Model.BatchChangeInventoryRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

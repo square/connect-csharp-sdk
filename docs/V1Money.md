@@ -1,16 +1,22 @@
 # Square.Connect.Model.V1Money
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | **int?** | Amount in the lowest denominated value of this Currency. E.g. in USD these are cents, in JPY they are Yen (which do not have a &#39;cent&#39; concept). | [optional] 
-**CurrencyCode** | **CurrencyCodeEnum** |  | [optional] 
+**CurrencyCode** | **CurrencyCodeEnum** |  See [Currency](#type-currency) for possible values | [optional] 
 
 
 ## CurrencyCodeEnum
 
 Name | Value
 ------------ | -------------
+**UNKNOWNCURRENCY** | "UNKNOWN_CURRENCY"
 **AED** | "AED"
 **AFN** | "AFN"
 **ALL** | "ALL"

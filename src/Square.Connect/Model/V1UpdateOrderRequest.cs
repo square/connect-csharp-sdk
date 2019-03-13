@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1UpdateOrderRequest :  IEquatable<V1UpdateOrderRequest>, IValidatableObject
     {
         /// <summary>
-        /// The action to perform on the order (COMPLETE, CANCEL, or REFUND).
+        /// The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values
         /// </summary>
-        /// <value>The action to perform on the order (COMPLETE, CANCEL, or REFUND).</value>
+        /// <value>The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ActionEnum
         {
@@ -57,9 +57,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The action to perform on the order (COMPLETE, CANCEL, or REFUND).
+        /// The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values
         /// </summary>
-        /// <value>The action to perform on the order (COMPLETE, CANCEL, or REFUND).</value>
+        /// <value>The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values</value>
         [DataMember(Name="action", EmitDefaultValue=false)]
         public ActionEnum? Action { get; set; }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1UpdateOrderRequest" /> class.
         /// </summary>
-        /// <param name="Action">The action to perform on the order (COMPLETE, CANCEL, or REFUND). (required).</param>
+        /// <param name="Action">The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values (required).</param>
         /// <param name="ShippedTrackingNumber">The tracking number of the shipment associated with the order. Only valid if action is COMPLETE..</param>
         /// <param name="CompletedNote">A merchant-specified note about the completion of the order. Only valid if action is COMPLETE..</param>
         /// <param name="RefundedNote">A merchant-specified note about the refunding of the order. Only valid if action is REFUND..</param>

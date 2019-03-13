@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Order :  IEquatable<V1Order>, IValidatableObject
     {
         /// <summary>
-        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.
+        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values
         /// </summary>
-        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.</value>
+        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StateEnum
         {
@@ -75,9 +75,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.
+        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values
         /// </summary>
-        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.</value>
+        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
         public StateEnum? State { get; set; }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Square.Connect.Model
         /// <param name="BuyerEmail">The email address of the order&#39;s buyer..</param>
         /// <param name="RecipientName">The name of the order&#39;s buyer..</param>
         /// <param name="RecipientPhoneNumber">The phone number to use for the order&#39;s delivery..</param>
-        /// <param name="State">Whether the tax is an ADDITIVE tax or an INCLUSIVE tax..</param>
+        /// <param name="State">Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values.</param>
         /// <param name="ShippingAddress">The address to ship the order to..</param>
         /// <param name="SubtotalMoney">The amount of all items purchased in the order, before taxes and shipping..</param>
         /// <param name="TotalShippingMoney">The shipping cost for the order..</param>

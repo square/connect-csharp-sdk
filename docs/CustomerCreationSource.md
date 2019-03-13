@@ -1,4 +1,9 @@
 # Square.Connect.Model.CustomerCreationSource
+
+### Description
+
+Indicates the method used to create the customer profile.
+
 ## Properties
 
 Name | Type | Description | Notes

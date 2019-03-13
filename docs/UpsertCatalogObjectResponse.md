@@ -1,4 +1,9 @@
 # Square.Connect.Model.UpsertCatalogObjectResponse
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

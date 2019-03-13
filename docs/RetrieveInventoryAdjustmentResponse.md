@@ -1,4 +1,9 @@
 # Square.Connect.Model.RetrieveInventoryAdjustmentResponse
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

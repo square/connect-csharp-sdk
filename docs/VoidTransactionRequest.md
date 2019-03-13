@@ -1,4 +1,9 @@
 # Square.Connect.Model.VoidTransactionRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

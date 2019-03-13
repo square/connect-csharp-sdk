@@ -1,4 +1,9 @@
 # Square.Connect.Model.RetrieveCustomerRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

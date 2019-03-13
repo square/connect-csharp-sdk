@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1CreateRefundRequest :  IEquatable<V1CreateRefundRequest>, IValidatableObject
     {
         /// <summary>
-        /// TThe type of refund (FULL or PARTIAL).
+        /// TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values
         /// </summary>
-        /// <value>TThe type of refund (FULL or PARTIAL).</value>
+        /// <value>TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// TThe type of refund (FULL or PARTIAL).
+        /// TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values
         /// </summary>
-        /// <value>TThe type of refund (FULL or PARTIAL).</value>
+        /// <value>TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1CreateRefundRequest" /> class.
         /// </summary>
-        /// <param name="PaymentId">The ID of the payment to refund. If you&#39;re creating a PARTIAL refund for a split tender payment, instead provide the id of the particular tender you want to refund. See Split Tender Payments for details. (required).</param>
-        /// <param name="Type">TThe type of refund (FULL or PARTIAL). (required).</param>
+        /// <param name="PaymentId">The ID of the payment to refund. If you are creating a &#x60;PARTIAL&#x60; refund for a split tender payment, instead provide the id of the particular tender you want to refund. (required).</param>
+        /// <param name="Type">TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values (required).</param>
         /// <param name="Reason">The reason for the refund. (required).</param>
         /// <param name="RefundedMoney">The amount of money to refund. Required only for PARTIAL refunds..</param>
         /// <param name="RequestIdempotenceKey">An optional key to ensure idempotence if you issue the same PARTIAL refund request more than once..</param>
@@ -103,9 +103,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The ID of the payment to refund. If you&#39;re creating a PARTIAL refund for a split tender payment, instead provide the id of the particular tender you want to refund. See Split Tender Payments for details.
+        /// The ID of the payment to refund. If you are creating a &#x60;PARTIAL&#x60; refund for a split tender payment, instead provide the id of the particular tender you want to refund.
         /// </summary>
-        /// <value>The ID of the payment to refund. If you&#39;re creating a PARTIAL refund for a split tender payment, instead provide the id of the particular tender you want to refund. See Split Tender Payments for details.</value>
+        /// <value>The ID of the payment to refund. If you are creating a &#x60;PARTIAL&#x60; refund for a split tender payment, instead provide the id of the particular tender you want to refund.</value>
         [DataMember(Name="payment_id", EmitDefaultValue=false)]
         public string PaymentId { get; set; }
         /// <summary>

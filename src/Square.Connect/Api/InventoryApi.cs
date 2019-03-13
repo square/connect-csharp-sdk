@@ -117,7 +117,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryChangesResponse</returns>
         RetrieveInventoryChangesResponse RetrieveInventoryChanges (string catalogObjectId, string locationIds = null, string cursor = null);
 
@@ -130,7 +130,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryChangesResponse</returns>
         ApiResponse<RetrieveInventoryChangesResponse> RetrieveInventoryChangesWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -142,7 +142,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryCountResponse</returns>
         RetrieveInventoryCountResponse RetrieveInventoryCount (string catalogObjectId, string locationIds = null, string cursor = null);
 
@@ -155,7 +155,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryCountResponse</returns>
         ApiResponse<RetrieveInventoryCountResponse> RetrieveInventoryCountWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -274,7 +274,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryChangesResponse</returns>
         System.Threading.Tasks.Task<RetrieveInventoryChangesResponse> RetrieveInventoryChangesAsync (string catalogObjectId, string locationIds = null, string cursor = null);
 
@@ -287,7 +287,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryChangesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryChangesResponse>> RetrieveInventoryChangesAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -299,7 +299,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryCountResponse</returns>
         System.Threading.Tasks.Task<RetrieveInventoryCountResponse> RetrieveInventoryCountAsync (string catalogObjectId, string locationIds = null, string cursor = null);
 
@@ -312,7 +312,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryCountResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryCountResponse>> RetrieveInventoryCountAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -493,7 +493,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-02-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -656,7 +656,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-02-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -819,7 +819,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-02-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -982,7 +982,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-02-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (adjustmentId != null) localVarPathParams.Add("adjustment_id", Configuration.ApiClient.ParameterToString(adjustmentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1092,7 +1092,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryChangesResponse</returns>
         public RetrieveInventoryChangesResponse RetrieveInventoryChanges (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1106,7 +1106,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryChangesResponse</returns>
         public ApiResponse< RetrieveInventoryChangesResponse > RetrieveInventoryChangesWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1135,7 +1135,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-02-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1172,7 +1172,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryChangesResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveInventoryChangesResponse> RetrieveInventoryChangesAsync (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1187,7 +1187,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryChangesResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryChangesResponse>> RetrieveInventoryChangesAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1253,7 +1253,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryCountResponse</returns>
         public RetrieveInventoryCountResponse RetrieveInventoryCount (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1267,7 +1267,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryCountResponse</returns>
         public ApiResponse< RetrieveInventoryCountResponse > RetrieveInventoryCountWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1296,7 +1296,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-02-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1333,7 +1333,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryCountResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveInventoryCountResponse> RetrieveInventoryCountAsync (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1348,7 +1348,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryCountResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryCountResponse>> RetrieveInventoryCountAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1453,7 +1453,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-02-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (physicalCountId != null) localVarPathParams.Add("physical_count_id", Configuration.ApiClient.ParameterToString(physicalCountId)); // path parameter
 
             // authentication (oauth2) required

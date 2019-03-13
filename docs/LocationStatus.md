@@ -1,4 +1,9 @@
 # Square.Connect.Model.LocationStatus
+
+### Description
+
+Indicates the location's status.
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,9 @@
 # Square.Connect.Model.V1Order
+
+### Description
+
+V1Order
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -8,7 +13,7 @@ Name | Type | Description | Notes
 **BuyerEmail** | **string** | The email address of the order&#39;s buyer. | [optional] 
 **RecipientName** | **string** | The name of the order&#39;s buyer. | [optional] 
 **RecipientPhoneNumber** | **string** | The phone number to use for the order&#39;s delivery. | [optional] 
-**State** | **StateEnum** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. | [optional] 
+**State** | **StateEnum** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values | [optional] 
 **ShippingAddress** | [**Address**](Address.md) | The address to ship the order to. | [optional] 
 **SubtotalMoney** | [**V1Money**](V1Money.md) | The amount of all items purchased in the order, before taxes and shipping. | [optional] 
 **TotalShippingMoney** | [**V1Money**](V1Money.md) | The shipping cost for the order. | [optional] 

@@ -25,10 +25,10 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -37,10 +37,10 @@ namespace Square.Connect.Api
         V1Refund CreateRefund (string locationId, V1CreateRefundRequest body);
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -48,7 +48,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Refund</returns>
         ApiResponse<V1Refund> CreateRefundWithHttpInfo (string locationId, V1CreateRefundRequest body);
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -59,7 +59,7 @@ namespace Square.Connect.Api
         List<V1BankAccount> ListBankAccounts (string locationId);
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -69,7 +69,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1BankAccount&gt;</returns>
         ApiResponse<List<V1BankAccount>> ListBankAccountsWithHttpInfo (string locationId);
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders
         /// </summary>
         /// <remarks>
         /// Provides summary information for a merchant&#39;s online store orders.
@@ -83,7 +83,7 @@ namespace Square.Connect.Api
         List<V1Order> ListOrders (string locationId, string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders
         /// </summary>
         /// <remarks>
         /// Provides summary information for a merchant&#39;s online store orders.
@@ -96,10 +96,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Order&gt;</returns>
         ApiResponse<List<V1Order>> ListOrdersWithHttpInfo (string locationId, string order = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -113,10 +113,10 @@ namespace Square.Connect.Api
         List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
 
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -129,7 +129,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Payment&gt;</returns>
         ApiResponse<List<V1Payment>> ListPaymentsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
@@ -145,7 +145,7 @@ namespace Square.Connect.Api
         List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
@@ -160,10 +160,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Refund&gt;</returns>
         ApiResponse<List<V1Refund>> ListRefundsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListSettlements
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -177,10 +177,10 @@ namespace Square.Connect.Api
         List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListSettlements
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -193,7 +193,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of List&lt;V1Settlement&gt;</returns>
         ApiResponse<List<V1Settlement>> ListSettlementsWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -205,7 +205,7 @@ namespace Square.Connect.Api
         V1BankAccount RetrieveBankAccount (string locationId, string bankAccountId);
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -216,7 +216,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1BankAccount</returns>
         ApiResponse<V1BankAccount> RetrieveBankAccountWithHttpInfo (string locationId, string bankAccountId);
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single online store order, including the order&#39;s history.
@@ -228,7 +228,7 @@ namespace Square.Connect.Api
         V1Order RetrieveOrder (string locationId, string orderId);
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single online store order, including the order&#39;s history.
@@ -239,7 +239,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Order</returns>
         ApiResponse<V1Order> RetrieveOrderWithHttpInfo (string locationId, string orderId);
         /// <summary>
-        /// Provides comprehensive information for a single payment.
+        /// RetrievePayment
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single payment.
@@ -251,7 +251,7 @@ namespace Square.Connect.Api
         V1Payment RetrievePayment (string locationId, string paymentId);
 
         /// <summary>
-        /// Provides comprehensive information for a single payment.
+        /// RetrievePayment
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single payment.
@@ -262,10 +262,10 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Payment</returns>
         ApiResponse<V1Payment> RetrievePaymentWithHttpInfo (string locationId, string paymentId);
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -274,10 +274,10 @@ namespace Square.Connect.Api
         V1Settlement RetrieveSettlement (string locationId, string settlementId);
 
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -285,7 +285,7 @@ namespace Square.Connect.Api
         /// <returns>ApiResponse of V1Settlement</returns>
         ApiResponse<V1Settlement> RetrieveSettlementWithHttpInfo (string locationId, string settlementId);
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder
         /// </summary>
         /// <remarks>
         /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
@@ -298,7 +298,7 @@ namespace Square.Connect.Api
         V1Order UpdateOrder (string locationId, string orderId, V1UpdateOrderRequest body);
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder
         /// </summary>
         /// <remarks>
         /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
@@ -312,10 +312,10 @@ namespace Square.Connect.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -324,10 +324,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Refund> CreateRefundAsync (string locationId, V1CreateRefundRequest body);
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund
         /// </summary>
         /// <remarks>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -335,7 +335,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Refund)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Refund>> CreateRefundAsyncWithHttpInfo (string locationId, V1CreateRefundRequest body);
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -346,7 +346,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1BankAccount>> ListBankAccountsAsync (string locationId);
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -356,7 +356,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1BankAccount&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1BankAccount>>> ListBankAccountsAsyncWithHttpInfo (string locationId);
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders
         /// </summary>
         /// <remarks>
         /// Provides summary information for a merchant&#39;s online store orders.
@@ -370,7 +370,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Order>> ListOrdersAsync (string locationId, string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders
         /// </summary>
         /// <remarks>
         /// Provides summary information for a merchant&#39;s online store orders.
@@ -383,10 +383,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Order&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Order>>> ListOrdersAsyncWithHttpInfo (string locationId, string order = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -400,10 +400,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Payment>> ListPaymentsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
 
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -416,7 +416,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Payment&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Payment>>> ListPaymentsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
@@ -432,7 +432,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Refund>> ListRefundsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds
         /// </summary>
         /// <remarks>
         /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
@@ -447,10 +447,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Refund&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Refund>>> ListRefundsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListSettlements
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -464,10 +464,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<List<V1Settlement>> ListSettlementsAsync (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
+        /// ListSettlements
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -480,7 +480,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (List&lt;V1Settlement&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<V1Settlement>>> ListSettlementsAsyncWithHttpInfo (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -492,7 +492,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1BankAccount> RetrieveBankAccountAsync (string locationId, string bankAccountId);
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount
         /// </summary>
         /// <remarks>
         /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
@@ -503,7 +503,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1BankAccount)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1BankAccount>> RetrieveBankAccountAsyncWithHttpInfo (string locationId, string bankAccountId);
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single online store order, including the order&#39;s history.
@@ -515,7 +515,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Order> RetrieveOrderAsync (string locationId, string orderId);
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single online store order, including the order&#39;s history.
@@ -526,7 +526,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Order)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Order>> RetrieveOrderAsyncWithHttpInfo (string locationId, string orderId);
         /// <summary>
-        /// Provides comprehensive information for a single payment.
+        /// RetrievePayment
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single payment.
@@ -538,7 +538,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Payment> RetrievePaymentAsync (string locationId, string paymentId);
 
         /// <summary>
-        /// Provides comprehensive information for a single payment.
+        /// RetrievePayment
         /// </summary>
         /// <remarks>
         /// Provides comprehensive information for a single payment.
@@ -549,10 +549,10 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Payment)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Payment>> RetrievePaymentAsyncWithHttpInfo (string locationId, string paymentId);
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -561,10 +561,10 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Settlement> RetrieveSettlementAsync (string locationId, string settlementId);
 
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement
         /// </summary>
         /// <remarks>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -572,7 +572,7 @@ namespace Square.Connect.Api
         /// <returns>Task of ApiResponse (V1Settlement)</returns>
         System.Threading.Tasks.Task<ApiResponse<V1Settlement>> RetrieveSettlementAsyncWithHttpInfo (string locationId, string settlementId);
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder
         /// </summary>
         /// <remarks>
         /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
@@ -585,7 +585,7 @@ namespace Square.Connect.Api
         System.Threading.Tasks.Task<V1Order> UpdateOrderAsync (string locationId, string orderId, V1UpdateOrderRequest body);
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder
         /// </summary>
         /// <remarks>
         /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
@@ -709,7 +709,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -722,7 +722,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -758,6 +758,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -795,7 +796,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -809,7 +810,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment. Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+        /// CreateRefund Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
@@ -883,7 +884,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list bank accounts for.</param>
@@ -895,7 +896,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list bank accounts for.</param>
@@ -927,6 +928,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -956,7 +958,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list bank accounts for.</param>
@@ -969,7 +971,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// ListBankAccounts Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list bank accounts for.</param>
@@ -1031,7 +1033,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders Provides summary information for a merchant&#39;s online store orders.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
@@ -1046,7 +1048,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders Provides summary information for a merchant&#39;s online store orders.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
@@ -1081,6 +1083,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
@@ -1113,7 +1116,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders Provides summary information for a merchant&#39;s online store orders.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
@@ -1129,7 +1132,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for a merchant&#39;s online store orders. Provides summary information for a merchant&#39;s online store orders.
+        /// ListOrders Provides summary information for a merchant&#39;s online store orders.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list online store orders for.</param>
@@ -1197,7 +1200,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1215,7 +1218,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1253,6 +1256,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1288,7 +1292,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1307,7 +1311,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates. Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+        /// ListPayments Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1381,7 +1385,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1398,7 +1402,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1435,6 +1439,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1469,7 +1474,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1487,7 +1492,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
+        /// ListRefunds Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list refunds for.</param>
@@ -1559,7 +1564,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// ListSettlements Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1577,7 +1582,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// ListSettlements Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1615,6 +1620,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1650,7 +1656,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// ListSettlements Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1669,7 +1675,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length. 
+        /// ListSettlements Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations.</param>
@@ -1743,7 +1749,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
@@ -1756,7 +1762,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
@@ -1792,6 +1798,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (bankAccountId != null) localVarPathParams.Add("bank_account_id", Configuration.ApiClient.ParameterToString(bankAccountId)); // path parameter
 
@@ -1822,7 +1829,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
@@ -1836,7 +1843,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API. Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+        /// RetrieveBankAccount Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
@@ -1903,7 +1910,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder Provides comprehensive information for a single online store order, including the order&#39;s history.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
@@ -1916,7 +1923,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder Provides comprehensive information for a single online store order, including the order&#39;s history.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
@@ -1952,6 +1959,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
 
@@ -1982,7 +1990,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder Provides comprehensive information for a single online store order, including the order&#39;s history.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
@@ -1996,7 +2004,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single online store order, including the order&#39;s history. Provides comprehensive information for a single online store order, including the order&#39;s history.
+        /// RetrieveOrder Provides comprehensive information for a single online store order, including the order&#39;s history.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
@@ -2063,7 +2071,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
+        /// RetrievePayment Provides comprehensive information for a single payment.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
@@ -2076,7 +2084,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
+        /// RetrievePayment Provides comprehensive information for a single payment.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
@@ -2112,6 +2120,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
@@ -2142,7 +2151,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
+        /// RetrievePayment Provides comprehensive information for a single payment.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
@@ -2156,7 +2165,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single payment. Provides comprehensive information for a single payment.
+        /// RetrievePayment Provides comprehensive information for a single payment.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
@@ -2223,7 +2232,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -2236,7 +2245,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -2272,6 +2281,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (settlementId != null) localVarPathParams.Add("settlement_id", Configuration.ApiClient.ParameterToString(settlementId)); // path parameter
 
@@ -2302,7 +2312,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -2316,7 +2326,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total. Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
+        /// RetrieveSettlement Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
@@ -2383,7 +2393,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
@@ -2397,7 +2407,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
@@ -2437,6 +2447,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-03-13");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -2475,7 +2486,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
@@ -2490,7 +2501,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions: Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+        /// UpdateOrder Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>

@@ -1,9 +1,14 @@
 # Square.Connect.Model.V1OrderHistoryEntry
+
+### Description
+
+V1OrderHistoryEntry
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Action** | **ActionEnum** | The type of action performed on the order. | [optional] 
+**Action** | **ActionEnum** | The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values | [optional] 
 **CreatedAt** | **string** | The time when the action was performed, in ISO 8601 format. | [optional] 
 
 

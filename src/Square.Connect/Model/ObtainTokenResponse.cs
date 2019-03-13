@@ -32,14 +32,15 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ObtainTokenResponse" /> class.
         /// </summary>
-        /// <param name="AccessToken">Your application&#39;s access token. You provide this token in a header with every request to Connect API endpoints. See [Request and response headers](https://docs.connect.squareup.com/api/connect/v2/#requestandresponseheaders) for the format of this header..</param>
+        /// <param name="AccessToken">A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information..</param>
         /// <param name="TokenType">This value is always _bearer_..</param>
         /// <param name="ExpiresAt">The date when access_token expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format..</param>
         /// <param name="MerchantId">The ID of the authorizing merchant&#39;s business..</param>
-        /// <param name="SubscriptionId">The ID of the merchant [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) associated with the authorization. Only present if the merchant signed up for a subscription during authorization..</param>
+        /// <param name="SubscriptionId">__Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if  the merchant signed up for a subscription during authorization..</param>
         /// <param name="PlanId">The ID of the [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
         /// <param name="IdToken">Then OpenID token belonging to this this person. Only present if the OPENID scope is included in the authorize request..</param>
-        public ObtainTokenResponse(string AccessToken = default(string), string TokenType = default(string), string ExpiresAt = default(string), string MerchantId = default(string), string SubscriptionId = default(string), string PlanId = default(string), string IdToken = default(string))
+        /// <param name="RefreshToken">A refresh token.  For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management)..</param>
+        public ObtainTokenResponse(string AccessToken = default(string), string TokenType = default(string), string ExpiresAt = default(string), string MerchantId = default(string), string SubscriptionId = default(string), string PlanId = default(string), string IdToken = default(string), string RefreshToken = default(string))
         {
             this.AccessToken = AccessToken;
             this.TokenType = TokenType;
@@ -48,12 +49,13 @@ namespace Square.Connect.Model
             this.SubscriptionId = SubscriptionId;
             this.PlanId = PlanId;
             this.IdToken = IdToken;
+            this.RefreshToken = RefreshToken;
         }
         
         /// <summary>
-        /// Your application&#39;s access token. You provide this token in a header with every request to Connect API endpoints. See [Request and response headers](https://docs.connect.squareup.com/api/connect/v2/#requestandresponseheaders) for the format of this header.
+        /// A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
         /// </summary>
-        /// <value>Your application&#39;s access token. You provide this token in a header with every request to Connect API endpoints. See [Request and response headers](https://docs.connect.squareup.com/api/connect/v2/#requestandresponseheaders) for the format of this header.</value>
+        /// <value>A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.</value>
         [DataMember(Name="access_token", EmitDefaultValue=false)]
         public string AccessToken { get; set; }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Square.Connect.Model
         [DataMember(Name="merchant_id", EmitDefaultValue=false)]
         public string MerchantId { get; set; }
         /// <summary>
-        /// The ID of the merchant [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) associated with the authorization. Only present if the merchant signed up for a subscription during authorization.
+        /// __Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if  the merchant signed up for a subscription during authorization.
         /// </summary>
-        /// <value>The ID of the merchant [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) associated with the authorization. Only present if the merchant signed up for a subscription during authorization.</value>
+        /// <value>__Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if  the merchant signed up for a subscription during authorization.</value>
         [DataMember(Name="subscription_id", EmitDefaultValue=false)]
         public string SubscriptionId { get; set; }
         /// <summary>
@@ -93,6 +95,12 @@ namespace Square.Connect.Model
         [DataMember(Name="id_token", EmitDefaultValue=false)]
         public string IdToken { get; set; }
         /// <summary>
+        /// A refresh token.  For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).
+        /// </summary>
+        /// <value>A refresh token.  For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).</value>
+        [DataMember(Name="refresh_token", EmitDefaultValue=false)]
+        public string RefreshToken { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,6 +115,7 @@ namespace Square.Connect.Model
             sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("  IdToken: ").Append(IdToken).Append("\n");
+            sb.Append("  RefreshToken: ").Append(RefreshToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,6 +186,11 @@ namespace Square.Connect.Model
                     this.IdToken == other.IdToken ||
                     this.IdToken != null &&
                     this.IdToken.Equals(other.IdToken)
+                ) && 
+                (
+                    this.RefreshToken == other.RefreshToken ||
+                    this.RefreshToken != null &&
+                    this.RefreshToken.Equals(other.RefreshToken)
                 );
         }
 
@@ -205,6 +219,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.PlanId.GetHashCode();
                 if (this.IdToken != null)
                     hash = hash * 59 + this.IdToken.GetHashCode();
+                if (this.RefreshToken != null)
+                    hash = hash * 59 + this.RefreshToken.GetHashCode();
                 return hash;
             }
         }

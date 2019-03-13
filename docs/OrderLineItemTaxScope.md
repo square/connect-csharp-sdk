@@ -1,4 +1,9 @@
 # Square.Connect.Model.OrderLineItemTaxScope
+
+### Description
+
+Indicates whether this is a line item or order level tax.
+
 ## Properties
 
 Name | Type | Description | Notes

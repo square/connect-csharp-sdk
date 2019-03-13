@@ -32,34 +32,40 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ObtainTokenRequest" /> class.
         /// </summary>
-        /// <param name="ClientId">Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps)..</param>
-        /// <param name="ClientSecret">Your application&#39;s secret, available from the [application dashboard](https://connect.squareup.com/apps)..</param>
-        /// <param name="Code">The authorization code to exchange..</param>
+        /// <param name="ClientId">The Square-issued ID of your application, available from the [application dashboard](https://connect.squareup.com/apps)..</param>
+        /// <param name="ClientSecret">The Square-issued application secret for your application,  available from the [application dashboard](https://connect.squareup.com/apps)..</param>
+        /// <param name="Code">The authorization code to exchange.  This is required if &#x60;grant_type&#x60; is set to &#x60;authorization_code&#x60;, to indicate that  the application wants to exchange an authorization code for an OAuth access token..</param>
         /// <param name="RedirectUri">The redirect URL assigned in the [application dashboard](https://connect.squareup.com/apps)..</param>
-        public ObtainTokenRequest(string ClientId = default(string), string ClientSecret = default(string), string Code = default(string), string RedirectUri = default(string))
+        /// <param name="GrantType">Specifies the method to request an OAuth access token.  Valid values are: &#x60;authorization_code&#x60;, &#x60;refresh_token&#x60;, and &#x60;migration_token&#x60;.</param>
+        /// <param name="RefreshToken">A valid refresh token for generating a new OAuth access token.  A valid refresh token is required if &#x60;grant_type&#x60; is set to &#x60;refresh_token&#x60; ,   to indicate the application wants a replacement for an expired OAuth access token..</param>
+        /// <param name="MigrationToken">Legacy OAuth access token obtained using a Connect API version prior  to 2019-03-13. This parameter is required if &#x60;grant_type&#x60; is set to  &#x60;migration_token&#x60; to indicate that the application wants to get a replacement   OAuth access token. The response also returns a refresh token.  For more information, see [Migrate to Using Refresh Tokens](/authz/oauth/migration)..</param>
+        public ObtainTokenRequest(string ClientId = default(string), string ClientSecret = default(string), string Code = default(string), string RedirectUri = default(string), string GrantType = default(string), string RefreshToken = default(string), string MigrationToken = default(string))
         {
             this.ClientId = ClientId;
             this.ClientSecret = ClientSecret;
             this.Code = Code;
             this.RedirectUri = RedirectUri;
+            this.GrantType = GrantType;
+            this.RefreshToken = RefreshToken;
+            this.MigrationToken = MigrationToken;
         }
         
         /// <summary>
-        /// Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps).
+        /// The Square-issued ID of your application, available from the [application dashboard](https://connect.squareup.com/apps).
         /// </summary>
-        /// <value>Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps).</value>
+        /// <value>The Square-issued ID of your application, available from the [application dashboard](https://connect.squareup.com/apps).</value>
         [DataMember(Name="client_id", EmitDefaultValue=false)]
         public string ClientId { get; set; }
         /// <summary>
-        /// Your application&#39;s secret, available from the [application dashboard](https://connect.squareup.com/apps).
+        /// The Square-issued application secret for your application,  available from the [application dashboard](https://connect.squareup.com/apps).
         /// </summary>
-        /// <value>Your application&#39;s secret, available from the [application dashboard](https://connect.squareup.com/apps).</value>
+        /// <value>The Square-issued application secret for your application,  available from the [application dashboard](https://connect.squareup.com/apps).</value>
         [DataMember(Name="client_secret", EmitDefaultValue=false)]
         public string ClientSecret { get; set; }
         /// <summary>
-        /// The authorization code to exchange.
+        /// The authorization code to exchange.  This is required if &#x60;grant_type&#x60; is set to &#x60;authorization_code&#x60;, to indicate that  the application wants to exchange an authorization code for an OAuth access token.
         /// </summary>
-        /// <value>The authorization code to exchange.</value>
+        /// <value>The authorization code to exchange.  This is required if &#x60;grant_type&#x60; is set to &#x60;authorization_code&#x60;, to indicate that  the application wants to exchange an authorization code for an OAuth access token.</value>
         [DataMember(Name="code", EmitDefaultValue=false)]
         public string Code { get; set; }
         /// <summary>
@@ -68,6 +74,24 @@ namespace Square.Connect.Model
         /// <value>The redirect URL assigned in the [application dashboard](https://connect.squareup.com/apps).</value>
         [DataMember(Name="redirect_uri", EmitDefaultValue=false)]
         public string RedirectUri { get; set; }
+        /// <summary>
+        /// Specifies the method to request an OAuth access token.  Valid values are: &#x60;authorization_code&#x60;, &#x60;refresh_token&#x60;, and &#x60;migration_token&#x60;
+        /// </summary>
+        /// <value>Specifies the method to request an OAuth access token.  Valid values are: &#x60;authorization_code&#x60;, &#x60;refresh_token&#x60;, and &#x60;migration_token&#x60;</value>
+        [DataMember(Name="grant_type", EmitDefaultValue=false)]
+        public string GrantType { get; set; }
+        /// <summary>
+        /// A valid refresh token for generating a new OAuth access token.  A valid refresh token is required if &#x60;grant_type&#x60; is set to &#x60;refresh_token&#x60; ,   to indicate the application wants a replacement for an expired OAuth access token.
+        /// </summary>
+        /// <value>A valid refresh token for generating a new OAuth access token.  A valid refresh token is required if &#x60;grant_type&#x60; is set to &#x60;refresh_token&#x60; ,   to indicate the application wants a replacement for an expired OAuth access token.</value>
+        [DataMember(Name="refresh_token", EmitDefaultValue=false)]
+        public string RefreshToken { get; set; }
+        /// <summary>
+        /// Legacy OAuth access token obtained using a Connect API version prior  to 2019-03-13. This parameter is required if &#x60;grant_type&#x60; is set to  &#x60;migration_token&#x60; to indicate that the application wants to get a replacement   OAuth access token. The response also returns a refresh token.  For more information, see [Migrate to Using Refresh Tokens](/authz/oauth/migration).
+        /// </summary>
+        /// <value>Legacy OAuth access token obtained using a Connect API version prior  to 2019-03-13. This parameter is required if &#x60;grant_type&#x60; is set to  &#x60;migration_token&#x60; to indicate that the application wants to get a replacement   OAuth access token. The response also returns a refresh token.  For more information, see [Migrate to Using Refresh Tokens](/authz/oauth/migration).</value>
+        [DataMember(Name="migration_token", EmitDefaultValue=false)]
+        public string MigrationToken { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -80,6 +104,9 @@ namespace Square.Connect.Model
             sb.Append("  ClientSecret: ").Append(ClientSecret).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  RedirectUri: ").Append(RedirectUri).Append("\n");
+            sb.Append("  GrantType: ").Append(GrantType).Append("\n");
+            sb.Append("  RefreshToken: ").Append(RefreshToken).Append("\n");
+            sb.Append("  MigrationToken: ").Append(MigrationToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,6 +162,21 @@ namespace Square.Connect.Model
                     this.RedirectUri == other.RedirectUri ||
                     this.RedirectUri != null &&
                     this.RedirectUri.Equals(other.RedirectUri)
+                ) && 
+                (
+                    this.GrantType == other.GrantType ||
+                    this.GrantType != null &&
+                    this.GrantType.Equals(other.GrantType)
+                ) && 
+                (
+                    this.RefreshToken == other.RefreshToken ||
+                    this.RefreshToken != null &&
+                    this.RefreshToken.Equals(other.RefreshToken)
+                ) && 
+                (
+                    this.MigrationToken == other.MigrationToken ||
+                    this.MigrationToken != null &&
+                    this.MigrationToken.Equals(other.MigrationToken)
                 );
         }
 
@@ -157,6 +199,12 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Code.GetHashCode();
                 if (this.RedirectUri != null)
                     hash = hash * 59 + this.RedirectUri.GetHashCode();
+                if (this.GrantType != null)
+                    hash = hash * 59 + this.GrantType.GetHashCode();
+                if (this.RefreshToken != null)
+                    hash = hash * 59 + this.RefreshToken.GetHashCode();
+                if (this.MigrationToken != null)
+                    hash = hash * 59 + this.MigrationToken.GetHashCode();
                 return hash;
             }
         }

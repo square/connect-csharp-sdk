@@ -4,31 +4,31 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateEmployee**](V1EmployeesApi.md#createemployee) | **POST** /v1/me/employees | Creates an employee for a business.
-[**CreateEmployeeRole**](V1EmployeesApi.md#createemployeerole) | **POST** /v1/me/roles | Creates an employee role you can then assign to employees.
-[**CreateTimecard**](V1EmployeesApi.md#createtimecard) | **POST** /v1/me/timecards | Creates a timecard for an employee. Each timecard corresponds to a single shift.
-[**DeleteTimecard**](V1EmployeesApi.md#deletetimecard) | **DELETE** /v1/me/timecards/{timecard_id} | Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
-[**ListCashDrawerShifts**](V1EmployeesApi.md#listcashdrawershifts) | **GET** /v1/{location_id}/cash-drawer-shifts | Provides the details for all of a location&#39;s cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
-[**ListEmployeeRoles**](V1EmployeesApi.md#listemployeeroles) | **GET** /v1/me/roles | Provides summary information for all of a business&#39;s employee roles.
-[**ListEmployees**](V1EmployeesApi.md#listemployees) | **GET** /v1/me/employees | Provides summary information for all of a business&#39;s employees.
-[**ListTimecardEvents**](V1EmployeesApi.md#listtimecardevents) | **GET** /v1/me/timecards/{timecard_id}/events | Provides summary information for all events associated with a particular timecard.
-[**ListTimecards**](V1EmployeesApi.md#listtimecards) | **GET** /v1/me/timecards | Provides summary information for all of a business&#39;s employee timecards.
-[**RetrieveCashDrawerShift**](V1EmployeesApi.md#retrievecashdrawershift) | **GET** /v1/{location_id}/cash-drawer-shifts/{shift_id} | Provides the details for a single cash drawer shift, including all events that occurred during the shift.
-[**RetrieveEmployee**](V1EmployeesApi.md#retrieveemployee) | **GET** /v1/me/employees/{employee_id} | Provides the details for a single employee.
-[**RetrieveEmployeeRole**](V1EmployeesApi.md#retrieveemployeerole) | **GET** /v1/me/roles/{role_id} | Provides the details for a single employee role.
-[**RetrieveTimecard**](V1EmployeesApi.md#retrievetimecard) | **GET** /v1/me/timecards/{timecard_id} | Provides the details for a single timecard.
-[**UpdateEmployee**](V1EmployeesApi.md#updateemployee) | **PUT** /v1/me/employees/{employee_id} | V1 UpdateEmployee
-[**UpdateEmployeeRole**](V1EmployeesApi.md#updateemployeerole) | **PUT** /v1/me/roles/{role_id} | Modifies the details of an employee role.
-[**UpdateTimecard**](V1EmployeesApi.md#updatetimecard) | **PUT** /v1/me/timecards/{timecard_id} | Modifies a timecard&#39;s details. This creates an API_EDIT event for the timecard. You can view a timecard&#39;s event history with the List Timecard Events endpoint.
+[**CreateEmployee**](V1EmployeesApi.md#createemployee) | **POST** /v1/me/employees | CreateEmployee
+[**CreateEmployeeRole**](V1EmployeesApi.md#createemployeerole) | **POST** /v1/me/roles | CreateEmployeeRole
+[**CreateTimecard**](V1EmployeesApi.md#createtimecard) | **POST** /v1/me/timecards | CreateTimecard
+[**DeleteTimecard**](V1EmployeesApi.md#deletetimecard) | **DELETE** /v1/me/timecards/{timecard_id} | DeleteTimecard
+[**ListCashDrawerShifts**](V1EmployeesApi.md#listcashdrawershifts) | **GET** /v1/{location_id}/cash-drawer-shifts | ListCashDrawerShifts
+[**ListEmployeeRoles**](V1EmployeesApi.md#listemployeeroles) | **GET** /v1/me/roles | ListEmployeeRoles
+[**ListEmployees**](V1EmployeesApi.md#listemployees) | **GET** /v1/me/employees | ListEmployees
+[**ListTimecardEvents**](V1EmployeesApi.md#listtimecardevents) | **GET** /v1/me/timecards/{timecard_id}/events | ListTimecardEvents
+[**ListTimecards**](V1EmployeesApi.md#listtimecards) | **GET** /v1/me/timecards | ListTimecards
+[**RetrieveCashDrawerShift**](V1EmployeesApi.md#retrievecashdrawershift) | **GET** /v1/{location_id}/cash-drawer-shifts/{shift_id} | RetrieveCashDrawerShift
+[**RetrieveEmployee**](V1EmployeesApi.md#retrieveemployee) | **GET** /v1/me/employees/{employee_id} | RetrieveEmployee
+[**RetrieveEmployeeRole**](V1EmployeesApi.md#retrieveemployeerole) | **GET** /v1/me/roles/{role_id} | RetrieveEmployeeRole
+[**RetrieveTimecard**](V1EmployeesApi.md#retrievetimecard) | **GET** /v1/me/timecards/{timecard_id} | RetrieveTimecard
+[**UpdateEmployee**](V1EmployeesApi.md#updateemployee) | **PUT** /v1/me/employees/{employee_id} | UpdateEmployee
+[**UpdateEmployeeRole**](V1EmployeesApi.md#updateemployeerole) | **PUT** /v1/me/roles/{role_id} | UpdateEmployeeRole
+[**UpdateTimecard**](V1EmployeesApi.md#updatetimecard) | **PUT** /v1/me/timecards/{timecard_id} | UpdateTimecard
 
 
 <a name="createemployee"></a>
 # **CreateEmployee**
 > V1Employee CreateEmployee (V1Employee body)
 
-Creates an employee for a business.
+CreateEmployee
 
-Creates an employee for a business.
+ Use the CreateEmployee endpoint to add an employee to a Square account. Employees created with the Connect API have an initial status of `INACTIVE`. Inactive employees cannot sign in to Square Point of Sale until they are activated from the Square Dashboard. Employee status cannot be changed with the Connect API.  <aside class=\"important\"> Employee entities cannot be deleted. To disable employee profiles, set the employee's status to <code>INACTIVE</code> </aside>
 
 ### Example
 ```csharp
@@ -53,7 +53,7 @@ namespace Example
 
             try
             {
-                // Creates an employee for a business.
+                // CreateEmployee
                 V1Employee result = apiInstance.CreateEmployee(body);
                 Debug.WriteLine(result);
             }
@@ -91,9 +91,9 @@ Name | Type | Description  | Notes
 # **CreateEmployeeRole**
 > V1EmployeeRole CreateEmployeeRole (V1EmployeeRole employeeRole)
 
-Creates an employee role you can then assign to employees.
+CreateEmployeeRole
 
-Creates an employee role you can then assign to employees.
+Creates an employee role you can then assign to employees.  Square accounts can include any number of roles that can be assigned to employees. These roles define the actions and permissions granted to an employee with that role. For example, an employee with a \"Shift Manager\" role might be able to issue refunds in Square Point of Sale, whereas an employee with a \"Clerk\" role might not.  Roles are assigned with the [V1UpdateEmployee](#endpoint-v1updateemployee) endpoint. An employee can have only one role at a time.  If an employee has no role, they have none of the permissions associated with roles. All employees can accept payments with Square Point of Sale.
 
 ### Example
 ```csharp
@@ -118,7 +118,7 @@ namespace Example
 
             try
             {
-                // Creates an employee role you can then assign to employees.
+                // CreateEmployeeRole
                 V1EmployeeRole result = apiInstance.CreateEmployeeRole(employeeRole);
                 Debug.WriteLine(result);
             }
@@ -156,9 +156,9 @@ Name | Type | Description  | Notes
 # **CreateTimecard**
 > V1Timecard CreateTimecard (V1Timecard body)
 
-Creates a timecard for an employee. Each timecard corresponds to a single shift.
+CreateTimecard
 
-Creates a timecard for an employee. Each timecard corresponds to a single shift.
+Creates a timecard for an employee and clocks them in with an `API_CREATE` event and a `clockin_time` set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the `clockin_time` and* `clockout_time` in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the `clockin_time` and `clockout_time` fields. An employee is considered clocked in if they have a timecard that doesn't have a `clockout_time` set. An employee that is currently clocked in cannot be clocked in a second time.
 
 ### Example
 ```csharp
@@ -183,7 +183,7 @@ namespace Example
 
             try
             {
-                // Creates a timecard for an employee. Each timecard corresponds to a single shift.
+                // CreateTimecard
                 V1Timecard result = apiInstance.CreateTimecard(body);
                 Debug.WriteLine(result);
             }
@@ -221,9 +221,9 @@ Name | Type | Description  | Notes
 # **DeleteTimecard**
 > Object DeleteTimecard (string timecardId)
 
-Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+DeleteTimecard
 
-Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The `deleted` field of the `Timecard` object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the `deleted` query parameter in the list request.  <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
 
 ### Example
 ```csharp
@@ -248,7 +248,7 @@ namespace Example
 
             try
             {
-                // Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+                // DeleteTimecard
                 Object result = apiInstance.DeleteTimecard(timecardId);
                 Debug.WriteLine(result);
             }
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 # **ListCashDrawerShifts**
 > List<V1CashDrawerShift> ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null)
 
-Provides the details for all of a location's cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+ListCashDrawerShifts
 
 Provides the details for all of a location's cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
 
@@ -316,7 +316,7 @@ namespace Example
 
             try
             {
-                // Provides the details for all of a location's cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+                // ListCashDrawerShifts
                 List&lt;V1CashDrawerShift&gt; result = apiInstance.ListCashDrawerShifts(locationId, order, beginTime, endTime);
                 Debug.WriteLine(result);
             }
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 # **ListEmployeeRoles**
 > List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string batchToken = null)
 
-Provides summary information for all of a business's employee roles.
+ListEmployeeRoles
 
 Provides summary information for all of a business's employee roles.
 
@@ -380,13 +380,13 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new V1EmployeesApi();
-            var order = order_example;  // string | The order in which employees are listed in the response, based on their created_at field.Default value: ASC  (optional) 
+            var order = order_example;  // string | The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional) 
             var limit = 56;  // int? | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional) 
             var batchToken = batchToken_example;  // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional) 
 
             try
             {
-                // Provides summary information for all of a business's employee roles.
+                // ListEmployeeRoles
                 List&lt;V1EmployeeRole&gt; result = apiInstance.ListEmployeeRoles(order, limit, batchToken);
                 Debug.WriteLine(result);
             }
@@ -403,7 +403,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | **string**| The order in which employees are listed in the response, based on their created_at field.Default value: ASC  | [optional] 
+ **order** | **string**| The order in which employees are listed in the response, based on their created_at field.Default value: ASC | [optional] 
  **limit** | **int?**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional] 
  **batchToken** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 # **ListEmployees**
 > List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null)
 
-Provides summary information for all of a business's employees.
+ListEmployees
 
 Provides summary information for all of a business's employees.
 
@@ -449,7 +449,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new V1EmployeesApi();
-            var order = order_example;  // string | The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  (optional) 
+            var order = order_example;  // string | The order in which employees are listed in the response, based on their created_at field.      Default value: ASC (optional) 
             var beginUpdatedAt = beginUpdatedAt_example;  // string | If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format (optional) 
             var endUpdatedAt = endUpdatedAt_example;  // string | If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. (optional) 
             var beginCreatedAt = beginCreatedAt_example;  // string | If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. (optional) 
@@ -461,7 +461,7 @@ namespace Example
 
             try
             {
-                // Provides summary information for all of a business's employees.
+                // ListEmployees
                 List&lt;V1Employee&gt; result = apiInstance.ListEmployees(order, beginUpdatedAt, endUpdatedAt, beginCreatedAt, endCreatedAt, status, externalId, limit, batchToken);
                 Debug.WriteLine(result);
             }
@@ -478,7 +478,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | **string**| The order in which employees are listed in the response, based on their created_at field.      Default value: ASC  | [optional] 
+ **order** | **string**| The order in which employees are listed in the response, based on their created_at field.      Default value: ASC | [optional] 
  **beginUpdatedAt** | **string**| If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format | [optional] 
  **endUpdatedAt** | **string**| If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format. | [optional] 
  **beginCreatedAt** | **string**| If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format. | [optional] 
@@ -507,9 +507,9 @@ Name | Type | Description  | Notes
 # **ListTimecardEvents**
 > List<V1TimecardEvent> ListTimecardEvents (string timecardId)
 
-Provides summary information for all events associated with a particular timecard.
+ListTimecardEvents
 
-Provides summary information for all events associated with a particular timecard.
+Provides summary information for all events associated with a particular timecard.  <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
 
 ### Example
 ```csharp
@@ -534,7 +534,7 @@ namespace Example
 
             try
             {
-                // Provides summary information for all events associated with a particular timecard.
+                // ListTimecardEvents
                 List&lt;V1TimecardEvent&gt; result = apiInstance.ListTimecardEvents(timecardId);
                 Debug.WriteLine(result);
             }
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 # **ListTimecards**
 > List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null)
 
-Provides summary information for all of a business's employee timecards.
+ListTimecards
 
 Provides summary information for all of a business's employee timecards.
 
@@ -609,7 +609,7 @@ namespace Example
 
             try
             {
-                // Provides summary information for all of a business's employee timecards.
+                // ListTimecards
                 List&lt;V1Timecard&gt; result = apiInstance.ListTimecards(order, employeeId, beginClockinTime, endClockinTime, beginClockoutTime, endClockoutTime, beginUpdatedAt, endUpdatedAt, deleted, limit, batchToken);
                 Debug.WriteLine(result);
             }
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 # **RetrieveCashDrawerShift**
 > V1CashDrawerShift RetrieveCashDrawerShift (string locationId, string shiftId)
 
-Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+RetrieveCashDrawerShift
 
 Provides the details for a single cash drawer shift, including all events that occurred during the shift.
 
@@ -685,7 +685,7 @@ namespace Example
 
             try
             {
-                // Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+                // RetrieveCashDrawerShift
                 V1CashDrawerShift result = apiInstance.RetrieveCashDrawerShift(locationId, shiftId);
                 Debug.WriteLine(result);
             }
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 # **RetrieveEmployee**
 > V1Employee RetrieveEmployee (string employeeId)
 
-Provides the details for a single employee.
+RetrieveEmployee
 
 Provides the details for a single employee.
 
@@ -751,7 +751,7 @@ namespace Example
 
             try
             {
-                // Provides the details for a single employee.
+                // RetrieveEmployee
                 V1Employee result = apiInstance.RetrieveEmployee(employeeId);
                 Debug.WriteLine(result);
             }
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 # **RetrieveEmployeeRole**
 > V1EmployeeRole RetrieveEmployeeRole (string roleId)
 
-Provides the details for a single employee role.
+RetrieveEmployeeRole
 
 Provides the details for a single employee role.
 
@@ -816,7 +816,7 @@ namespace Example
 
             try
             {
-                // Provides the details for a single employee role.
+                // RetrieveEmployeeRole
                 V1EmployeeRole result = apiInstance.RetrieveEmployeeRole(roleId);
                 Debug.WriteLine(result);
             }
@@ -854,9 +854,9 @@ Name | Type | Description  | Notes
 # **RetrieveTimecard**
 > V1Timecard RetrieveTimecard (string timecardId)
 
-Provides the details for a single timecard.
+RetrieveTimecard
 
-Provides the details for a single timecard.
+Provides the details for a single timecard. <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
 
 ### Example
 ```csharp
@@ -881,7 +881,7 @@ namespace Example
 
             try
             {
-                // Provides the details for a single timecard.
+                // RetrieveTimecard
                 V1Timecard result = apiInstance.RetrieveTimecard(timecardId);
                 Debug.WriteLine(result);
             }
@@ -919,7 +919,9 @@ Name | Type | Description  | Notes
 # **UpdateEmployee**
 > V1Employee UpdateEmployee (string employeeId, V1Employee body)
 
-V1 UpdateEmployee
+UpdateEmployee
+
+
 
 ### Example
 ```csharp
@@ -945,7 +947,7 @@ namespace Example
 
             try
             {
-                // V1 UpdateEmployee
+                // UpdateEmployee
                 V1Employee result = apiInstance.UpdateEmployee(employeeId, body);
                 Debug.WriteLine(result);
             }
@@ -984,7 +986,7 @@ Name | Type | Description  | Notes
 # **UpdateEmployeeRole**
 > V1EmployeeRole UpdateEmployeeRole (string roleId, V1EmployeeRole body)
 
-Modifies the details of an employee role.
+UpdateEmployeeRole
 
 Modifies the details of an employee role.
 
@@ -1012,7 +1014,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of an employee role.
+                // UpdateEmployeeRole
                 V1EmployeeRole result = apiInstance.UpdateEmployeeRole(roleId, body);
                 Debug.WriteLine(result);
             }
@@ -1051,9 +1053,9 @@ Name | Type | Description  | Notes
 # **UpdateTimecard**
 > V1Timecard UpdateTimecard (string timecardId, V1Timecard body)
 
-Modifies a timecard's details. This creates an API_EDIT event for the timecard. You can view a timecard's event history with the List Timecard Events endpoint.
+UpdateTimecard
 
-Modifies a timecard's details. This creates an API_EDIT event for the timecard. You can view a timecard's event history with the List Timecard Events endpoint.
+Modifies the details of a timecard with an `API_EDIT` event for the timecard. Updating an active timecard with a `clockout_time` clocks the employee out.
 
 ### Example
 ```csharp
@@ -1075,11 +1077,11 @@ namespace Example
 
             var apiInstance = new V1EmployeesApi();
             var timecardId = timecardId_example;  // string | TThe ID of the timecard to modify.
-            var body = new V1Timecard(); // V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+            var body = new V1Timecard(); // V1Timecard | An object containing the fields to POST for the request. See the corresponding object definition for field details.
 
             try
             {
-                // Modifies a timecard's details. This creates an API_EDIT event for the timecard. You can view a timecard's event history with the List Timecard Events endpoint.
+                // UpdateTimecard
                 V1Timecard result = apiInstance.UpdateTimecard(timecardId, body);
                 Debug.WriteLine(result);
             }
@@ -1097,7 +1099,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timecardId** | **string**| TThe ID of the timecard to modify. | 
- **body** | [**V1Timecard**](V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
+ **body** | [**V1Timecard**](V1Timecard.md)| An object containing the fields to POST for the request. See the corresponding object definition for field details. | 
 
 ### Return type
 

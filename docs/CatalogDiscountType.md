@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogDiscountType
+
+### Description
+
+How to apply a [CatalogDiscount](#type-catalogdiscount) to a [CatalogItem](#type-catalogitem).
+
 ## Properties
 
 Name | Type | Description | Notes

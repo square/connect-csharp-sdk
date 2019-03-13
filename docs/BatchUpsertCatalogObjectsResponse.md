@@ -1,4 +1,9 @@
 # Square.Connect.Model.BatchUpsertCatalogObjectsResponse
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

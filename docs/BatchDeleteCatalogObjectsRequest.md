@@ -1,4 +1,9 @@
 # Square.Connect.Model.BatchDeleteCatalogObjectsRequest
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

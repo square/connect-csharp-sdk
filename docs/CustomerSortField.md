@@ -1,4 +1,9 @@
 # Square.Connect.Model.CustomerSortField
+
+### Description
+
+Indicates the sort criteria for a list of Customers.
+
 ## Properties
 
 Name | Type | Description | Notes

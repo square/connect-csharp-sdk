@@ -1,4 +1,9 @@
 # Square.Connect.Model.CatalogQueryItemsForModifierList
+
+### Description
+
+
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,9 @@
 # Square.Connect.Model.OrderFulfillmentState
+
+### Description
+
+The state of the fulfillment.
+
 ## Properties
 
 Name | Type | Description | Notes

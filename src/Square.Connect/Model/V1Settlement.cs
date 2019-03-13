@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Settlement :  IEquatable<V1Settlement>, IValidatableObject
     {
         /// <summary>
-        /// The settlement's current status.
+        /// The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values
         /// </summary>
-        /// <value>The settlement's current status.</value>
+        /// <value>The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -51,16 +51,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The settlement's current status.
+        /// The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values
         /// </summary>
-        /// <value>The settlement's current status.</value>
+        /// <value>The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1Settlement" /> class.
         /// </summary>
         /// <param name="Id">The settlement&#39;s unique identifier..</param>
-        /// <param name="Status">The settlement&#39;s current status..</param>
+        /// <param name="Status">The settlement&#39;s current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values.</param>
         /// <param name="TotalMoney">The amount of money involved in the settlement. A positive amount indicates a deposit, and a negative amount indicates a withdrawal. This amount is never zero..</param>
         /// <param name="InitiatedAt">The time when the settlement was submitted for deposit or withdrawal, in ISO 8601 format..</param>
         /// <param name="BankAccountId">The Square-issued unique identifier for the bank account associated with the settlement..</param>

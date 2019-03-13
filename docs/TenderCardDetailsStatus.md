@@ -1,4 +1,9 @@
 # Square.Connect.Model.TenderCardDetailsStatus
+
+### Description
+
+Indicates the card transaction's current status.
+
 ## Properties
 
 Name | Type | Description | Notes

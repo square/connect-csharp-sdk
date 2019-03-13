@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Discount :  IEquatable<V1Discount>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the discount is a FIXED value or entered at the time of sale.
+        /// Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the discount is a FIXED value or entered at the time of sale.</value>
+        /// <value>Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DiscountTypeEnum
         {
@@ -57,9 +57,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
         /// </summary>
-        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.</value>
+        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ColorEnum
         {
@@ -120,15 +120,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the discount is a FIXED value or entered at the time of sale.
+        /// Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the discount is a FIXED value or entered at the time of sale.</value>
+        /// <value>Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values</value>
         [DataMember(Name="discount_type", EmitDefaultValue=false)]
         public DiscountTypeEnum? DiscountType { get; set; }
         /// <summary>
-        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
         /// </summary>
-        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.</value>
+        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values</value>
         [DataMember(Name="color", EmitDefaultValue=false)]
         public ColorEnum? Color { get; set; }
         /// <summary>
@@ -138,9 +138,9 @@ namespace Square.Connect.Model
         /// <param name="Name">The discount&#39;s name..</param>
         /// <param name="Rate">The rate of the discount, as a string representation of a decimal number. A value of 0.07 corresponds to a rate of 7%. This rate is 0 if discount_type is VARIABLE_PERCENTAGE..</param>
         /// <param name="AmountMoney">The amount of the discount. This amount is 0 if discount_type is VARIABLE_AMOUNT. This field is not included for rate-based discounts..</param>
-        /// <param name="DiscountType">Indicates whether the discount is a FIXED value or entered at the time of sale..</param>
+        /// <param name="DiscountType">Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values.</param>
         /// <param name="PinRequired">Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment..</param>
-        /// <param name="Color">The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6..</param>
+        /// <param name="Color">The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values.</param>
         public V1Discount(string Id = default(string), string Name = default(string), string Rate = default(string), V1Money AmountMoney = default(V1Money), DiscountTypeEnum? DiscountType = default(DiscountTypeEnum?), bool? PinRequired = default(bool?), ColorEnum? Color = default(ColorEnum?))
         {
             this.Id = Id;

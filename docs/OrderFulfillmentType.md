@@ -1,4 +1,9 @@
 # Square.Connect.Model.OrderFulfillmentType
+
+### Description
+
+The type of fulfillment.
+
 ## Properties
 
 Name | Type | Description | Notes

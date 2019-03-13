@@ -1,4 +1,9 @@
 # Square.Connect.Model.TransactionProduct
+
+### Description
+
+Indicates the Square product used to process a transaction.
+
 ## Properties
 
 Name | Type | Description | Notes

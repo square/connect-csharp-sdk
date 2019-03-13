@@ -1,4 +1,9 @@
 # Square.Connect.Model.Checkout
+
+### Description
+
+Square Checkout lets merchants accept online payments for supported payment types using a checkout workflow hosted on squareup.com.
+
 ## Properties
 
 Name | Type | Description | Notes

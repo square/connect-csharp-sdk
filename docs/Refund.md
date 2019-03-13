@@ -1,4 +1,9 @@
 # Square.Connect.Model.Refund
+
+### Description
+
+Represents a refund processed for a Square transaction.
+
 ## Properties
 
 Name | Type | Description | Notes

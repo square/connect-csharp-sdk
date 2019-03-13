@@ -1,4 +1,9 @@
 # Square.Connect.Model.TaxCalculationPhase
+
+### Description
+
+When to calculate the taxes due on a cart.
+
 ## Properties
 
 Name | Type | Description | Notes

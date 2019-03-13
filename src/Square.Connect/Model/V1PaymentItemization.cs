@@ -24,15 +24,15 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// V1PaymentItemization
+    /// Payment include an&#x60; itemizations&#x60; field that lists the items purchased, along with associated fees, modifiers, and discounts. Each itemization has an &#x60;itemization_type&#x60; field that indicates which of the following the itemization represents:  &lt;ul&gt; &lt;li&gt;An item variation from the merchant&#39;s item library&lt;/li&gt; &lt;li&gt;A custom monetary amount&lt;/li&gt; &lt;li&gt; An action performed on a Square gift card, such as activating or reloading it. &lt;/li&gt; &lt;/ul&gt;  *Note**: itemization information included in a &#x60;Payment&#x60; object reflects details collected **at the time of the payment**. Details such as the name or price of items might have changed since the payment was processed.
     /// </summary>
     [DataContract]
     public partial class V1PaymentItemization :  IEquatable<V1PaymentItemization>, IValidatableObject
     {
         /// <summary>
-        /// The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT
+        /// The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values
         /// </summary>
-        /// <value>The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT</value>
+        /// <value>The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ItemizationTypeEnum
         {
@@ -75,9 +75,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT
+        /// The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values
         /// </summary>
-        /// <value>The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT</value>
+        /// <value>The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values</value>
         [DataMember(Name="itemization_type", EmitDefaultValue=false)]
         public ItemizationTypeEnum? ItemizationType { get; set; }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Name">The item&#39;s name..</param>
         /// <param name="Quantity">The quantity of the item purchased. This can be a decimal value..</param>
-        /// <param name="ItemizationType">The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT.</param>
+        /// <param name="ItemizationType">The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values.</param>
         /// <param name="ItemDetail">Details of the item, including its unique identifier and the identifier of the item variation purchased..</param>
         /// <param name="Notes">Notes entered by the merchant about the item at the time of payment, if any..</param>
         /// <param name="ItemVariationName">The name of the item variation purchased, if any..</param>

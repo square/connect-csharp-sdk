@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1Refund :  IEquatable<V1Refund>, IValidatableObject
     {
         /// <summary>
-        /// The type of refund 
+        /// The type of refund See [V1RefundType](#type-v1refundtype) for possible values
         /// </summary>
-        /// <value>The type of refund </value>
+        /// <value>The type of refund See [V1RefundType](#type-v1refundtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -51,15 +51,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of refund 
+        /// The type of refund See [V1RefundType](#type-v1refundtype) for possible values
         /// </summary>
-        /// <value>The type of refund </value>
+        /// <value>The type of refund See [V1RefundType](#type-v1refundtype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1Refund" /> class.
         /// </summary>
-        /// <param name="Type">The type of refund .</param>
+        /// <param name="Type">The type of refund See [V1RefundType](#type-v1refundtype) for possible values.</param>
         /// <param name="Reason">The merchant-specified reason for the refund..</param>
         /// <param name="RefundedMoney">The amount of money refunded. This amount is always negative..</param>
         /// <param name="RefundedProcessingFeeMoney">The amount of processing fee money refunded. This amount is always positive..</param>

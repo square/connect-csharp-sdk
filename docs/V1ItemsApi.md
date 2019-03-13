@@ -4,53 +4,53 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AdjustInventory**](V1ItemsApi.md#adjustinventory) | **POST** /v1/{location_id}/inventory/{variation_id} | Adjusts an item variation&#39;s current available inventory.
-[**ApplyFee**](V1ItemsApi.md#applyfee) | **PUT** /v1/{location_id}/items/{item_id}/fees/{fee_id} | Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
-[**ApplyModifierList**](V1ItemsApi.md#applymodifierlist) | **PUT** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
-[**CreateCategory**](V1ItemsApi.md#createcategory) | **POST** /v1/{location_id}/categories | Creates an item category.
-[**CreateDiscount**](V1ItemsApi.md#creatediscount) | **POST** /v1/{location_id}/discounts | Creates a discount.
-[**CreateFee**](V1ItemsApi.md#createfee) | **POST** /v1/{location_id}/fees | Creates a fee (tax).
-[**CreateItem**](V1ItemsApi.md#createitem) | **POST** /v1/{location_id}/items | Creates an item and at least one variation for it.
-[**CreateModifierList**](V1ItemsApi.md#createmodifierlist) | **POST** /v1/{location_id}/modifier-lists | Creates an item modifier list and at least one modifier option for it.
-[**CreateModifierOption**](V1ItemsApi.md#createmodifieroption) | **POST** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options | Creates an item modifier option and adds it to a modifier list.
-[**CreatePage**](V1ItemsApi.md#createpage) | **POST** /v1/{location_id}/pages | Creates a Favorites page in Square Register.
-[**CreateVariation**](V1ItemsApi.md#createvariation) | **POST** /v1/{location_id}/items/{item_id}/variations | Creates an item variation for an existing item.
-[**DeleteCategory**](V1ItemsApi.md#deletecategory) | **DELETE** /v1/{location_id}/categories/{category_id} | Deletes an existing item category.
-[**DeleteDiscount**](V1ItemsApi.md#deletediscount) | **DELETE** /v1/{location_id}/discounts/{discount_id} | Deletes an existing discount.
-[**DeleteFee**](V1ItemsApi.md#deletefee) | **DELETE** /v1/{location_id}/fees/{fee_id} | Deletes an existing fee (tax).
-[**DeleteItem**](V1ItemsApi.md#deleteitem) | **DELETE** /v1/{location_id}/items/{item_id} | Deletes an existing item and all item variations associated with it.
-[**DeleteModifierList**](V1ItemsApi.md#deletemodifierlist) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id} | Deletes an existing item modifier list and all modifier options associated with it.
-[**DeleteModifierOption**](V1ItemsApi.md#deletemodifieroption) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | Deletes an existing item modifier option from a modifier list.
-[**DeletePage**](V1ItemsApi.md#deletepage) | **DELETE** /v1/{location_id}/pages/{page_id} | Deletes an existing Favorites page and all of its cells.
-[**DeletePageCell**](V1ItemsApi.md#deletepagecell) | **DELETE** /v1/{location_id}/pages/{page_id}/cells | Deletes a cell from a Favorites page in Square Register.
-[**DeleteVariation**](V1ItemsApi.md#deletevariation) | **DELETE** /v1/{location_id}/items/{item_id}/variations/{variation_id} | Deletes an existing item variation from an item.
-[**ListCategories**](V1ItemsApi.md#listcategories) | **GET** /v1/{location_id}/categories | Lists all of a location&#39;s item categories.
-[**ListDiscounts**](V1ItemsApi.md#listdiscounts) | **GET** /v1/{location_id}/discounts | Lists all of a location&#39;s discounts.
-[**ListFees**](V1ItemsApi.md#listfees) | **GET** /v1/{location_id}/fees | Lists all of a location&#39;s fees (taxes).
-[**ListInventory**](V1ItemsApi.md#listinventory) | **GET** /v1/{location_id}/inventory | Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
-[**ListItems**](V1ItemsApi.md#listitems) | **GET** /v1/{location_id}/items | Provides summary information for all of a location&#39;s items.
-[**ListModifierLists**](V1ItemsApi.md#listmodifierlists) | **GET** /v1/{location_id}/modifier-lists | Lists all of a location&#39;s modifier lists.
-[**ListPages**](V1ItemsApi.md#listpages) | **GET** /v1/{location_id}/pages | Lists all of a location&#39;s Favorites pages in Square Register.
-[**RemoveFee**](V1ItemsApi.md#removefee) | **DELETE** /v1/{location_id}/items/{item_id}/fees/{fee_id} | Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
-[**RemoveModifierList**](V1ItemsApi.md#removemodifierlist) | **DELETE** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
-[**RetrieveItem**](V1ItemsApi.md#retrieveitem) | **GET** /v1/{location_id}/items/{item_id} | Provides the details for a single item, including associated modifier lists and fees.
-[**RetrieveModifierList**](V1ItemsApi.md#retrievemodifierlist) | **GET** /v1/{location_id}/modifier-lists/{modifier_list_id} | Provides the details for a single modifier list.
-[**UpdateCategory**](V1ItemsApi.md#updatecategory) | **PUT** /v1/{location_id}/categories/{category_id} | Modifies the details of an existing item category.
-[**UpdateDiscount**](V1ItemsApi.md#updatediscount) | **PUT** /v1/{location_id}/discounts/{discount_id} | Modifies the details of an existing discount.
-[**UpdateFee**](V1ItemsApi.md#updatefee) | **PUT** /v1/{location_id}/fees/{fee_id} | Modifies the details of an existing fee (tax).
-[**UpdateItem**](V1ItemsApi.md#updateitem) | **PUT** /v1/{location_id}/items/{item_id} | Modifies the core details of an existing item.
-[**UpdateModifierList**](V1ItemsApi.md#updatemodifierlist) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id} | Modifies the details of an existing item modifier list.
-[**UpdateModifierOption**](V1ItemsApi.md#updatemodifieroption) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | Modifies the details of an existing item modifier option.
-[**UpdatePage**](V1ItemsApi.md#updatepage) | **PUT** /v1/{location_id}/pages/{page_id} | Modifies the details of a Favorites page in Square Register.
-[**UpdatePageCell**](V1ItemsApi.md#updatepagecell) | **PUT** /v1/{location_id}/pages/{page_id}/cells | Modifies a cell of a Favorites page in Square Register.
-[**UpdateVariation**](V1ItemsApi.md#updatevariation) | **PUT** /v1/{location_id}/items/{item_id}/variations/{variation_id} | Modifies the details of an existing item variation.
+[**AdjustInventory**](V1ItemsApi.md#adjustinventory) | **POST** /v1/{location_id}/inventory/{variation_id} | AdjustInventory
+[**ApplyFee**](V1ItemsApi.md#applyfee) | **PUT** /v1/{location_id}/items/{item_id}/fees/{fee_id} | ApplyFee
+[**ApplyModifierList**](V1ItemsApi.md#applymodifierlist) | **PUT** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | ApplyModifierList
+[**CreateCategory**](V1ItemsApi.md#createcategory) | **POST** /v1/{location_id}/categories | CreateCategory
+[**CreateDiscount**](V1ItemsApi.md#creatediscount) | **POST** /v1/{location_id}/discounts | CreateDiscount
+[**CreateFee**](V1ItemsApi.md#createfee) | **POST** /v1/{location_id}/fees | CreateFee
+[**CreateItem**](V1ItemsApi.md#createitem) | **POST** /v1/{location_id}/items | CreateItem
+[**CreateModifierList**](V1ItemsApi.md#createmodifierlist) | **POST** /v1/{location_id}/modifier-lists | CreateModifierList
+[**CreateModifierOption**](V1ItemsApi.md#createmodifieroption) | **POST** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options | CreateModifierOption
+[**CreatePage**](V1ItemsApi.md#createpage) | **POST** /v1/{location_id}/pages | CreatePage
+[**CreateVariation**](V1ItemsApi.md#createvariation) | **POST** /v1/{location_id}/items/{item_id}/variations | CreateVariation
+[**DeleteCategory**](V1ItemsApi.md#deletecategory) | **DELETE** /v1/{location_id}/categories/{category_id} | DeleteCategory
+[**DeleteDiscount**](V1ItemsApi.md#deletediscount) | **DELETE** /v1/{location_id}/discounts/{discount_id} | DeleteDiscount
+[**DeleteFee**](V1ItemsApi.md#deletefee) | **DELETE** /v1/{location_id}/fees/{fee_id} | DeleteFee
+[**DeleteItem**](V1ItemsApi.md#deleteitem) | **DELETE** /v1/{location_id}/items/{item_id} | DeleteItem
+[**DeleteModifierList**](V1ItemsApi.md#deletemodifierlist) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id} | DeleteModifierList
+[**DeleteModifierOption**](V1ItemsApi.md#deletemodifieroption) | **DELETE** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | DeleteModifierOption
+[**DeletePage**](V1ItemsApi.md#deletepage) | **DELETE** /v1/{location_id}/pages/{page_id} | DeletePage
+[**DeletePageCell**](V1ItemsApi.md#deletepagecell) | **DELETE** /v1/{location_id}/pages/{page_id}/cells | DeletePageCell
+[**DeleteVariation**](V1ItemsApi.md#deletevariation) | **DELETE** /v1/{location_id}/items/{item_id}/variations/{variation_id} | DeleteVariation
+[**ListCategories**](V1ItemsApi.md#listcategories) | **GET** /v1/{location_id}/categories | ListCategories
+[**ListDiscounts**](V1ItemsApi.md#listdiscounts) | **GET** /v1/{location_id}/discounts | ListDiscounts
+[**ListFees**](V1ItemsApi.md#listfees) | **GET** /v1/{location_id}/fees | ListFees
+[**ListInventory**](V1ItemsApi.md#listinventory) | **GET** /v1/{location_id}/inventory | ListInventory
+[**ListItems**](V1ItemsApi.md#listitems) | **GET** /v1/{location_id}/items | ListItems
+[**ListModifierLists**](V1ItemsApi.md#listmodifierlists) | **GET** /v1/{location_id}/modifier-lists | ListModifierLists
+[**ListPages**](V1ItemsApi.md#listpages) | **GET** /v1/{location_id}/pages | ListPages
+[**RemoveFee**](V1ItemsApi.md#removefee) | **DELETE** /v1/{location_id}/items/{item_id}/fees/{fee_id} | RemoveFee
+[**RemoveModifierList**](V1ItemsApi.md#removemodifierlist) | **DELETE** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | RemoveModifierList
+[**RetrieveItem**](V1ItemsApi.md#retrieveitem) | **GET** /v1/{location_id}/items/{item_id} | RetrieveItem
+[**RetrieveModifierList**](V1ItemsApi.md#retrievemodifierlist) | **GET** /v1/{location_id}/modifier-lists/{modifier_list_id} | RetrieveModifierList
+[**UpdateCategory**](V1ItemsApi.md#updatecategory) | **PUT** /v1/{location_id}/categories/{category_id} | UpdateCategory
+[**UpdateDiscount**](V1ItemsApi.md#updatediscount) | **PUT** /v1/{location_id}/discounts/{discount_id} | UpdateDiscount
+[**UpdateFee**](V1ItemsApi.md#updatefee) | **PUT** /v1/{location_id}/fees/{fee_id} | UpdateFee
+[**UpdateItem**](V1ItemsApi.md#updateitem) | **PUT** /v1/{location_id}/items/{item_id} | UpdateItem
+[**UpdateModifierList**](V1ItemsApi.md#updatemodifierlist) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id} | UpdateModifierList
+[**UpdateModifierOption**](V1ItemsApi.md#updatemodifieroption) | **PUT** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | UpdateModifierOption
+[**UpdatePage**](V1ItemsApi.md#updatepage) | **PUT** /v1/{location_id}/pages/{page_id} | UpdatePage
+[**UpdatePageCell**](V1ItemsApi.md#updatepagecell) | **PUT** /v1/{location_id}/pages/{page_id}/cells | UpdatePageCell
+[**UpdateVariation**](V1ItemsApi.md#updatevariation) | **PUT** /v1/{location_id}/items/{item_id}/variations/{variation_id} | UpdateVariation
 
 
 <a name="adjustinventory"></a>
 # **AdjustInventory**
 > V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body)
 
-Adjusts an item variation's current available inventory.
+AdjustInventory
 
 Adjusts an item variation's current available inventory.
 
@@ -79,7 +79,7 @@ namespace Example
 
             try
             {
-                // Adjusts an item variation's current available inventory.
+                // AdjustInventory
                 V1InventoryEntry result = apiInstance.AdjustInventory(locationId, variationId, body);
                 Debug.WriteLine(result);
             }
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 # **ApplyFee**
 > V1Item ApplyFee (string locationId, string itemId, string feeId)
 
-Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+ApplyFee
 
 Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
 
@@ -148,7 +148,7 @@ namespace Example
 
             try
             {
-                // Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+                // ApplyFee
                 V1Item result = apiInstance.ApplyFee(locationId, itemId, feeId);
                 Debug.WriteLine(result);
             }
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 # **ApplyModifierList**
 > V1Item ApplyModifierList (string locationId, string modifierListId, string itemId)
 
-Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+ApplyModifierList
 
 Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
 
@@ -217,7 +217,7 @@ namespace Example
 
             try
             {
-                // Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+                // ApplyModifierList
                 V1Item result = apiInstance.ApplyModifierList(locationId, modifierListId, itemId);
                 Debug.WriteLine(result);
             }
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 # **CreateCategory**
 > V1Category CreateCategory (string locationId, V1Category body)
 
-Creates an item category.
+CreateCategory
 
 Creates an item category.
 
@@ -285,7 +285,7 @@ namespace Example
 
             try
             {
-                // Creates an item category.
+                // CreateCategory
                 V1Category result = apiInstance.CreateCategory(locationId, body);
                 Debug.WriteLine(result);
             }
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 # **CreateDiscount**
 > V1Discount CreateDiscount (string locationId, V1Discount body)
 
-Creates a discount.
+CreateDiscount
 
 Creates a discount.
 
@@ -352,7 +352,7 @@ namespace Example
 
             try
             {
-                // Creates a discount.
+                // CreateDiscount
                 V1Discount result = apiInstance.CreateDiscount(locationId, body);
                 Debug.WriteLine(result);
             }
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 # **CreateFee**
 > V1Fee CreateFee (string locationId, V1Fee body)
 
-Creates a fee (tax).
+CreateFee
 
 Creates a fee (tax).
 
@@ -419,7 +419,7 @@ namespace Example
 
             try
             {
-                // Creates a fee (tax).
+                // CreateFee
                 V1Fee result = apiInstance.CreateFee(locationId, body);
                 Debug.WriteLine(result);
             }
@@ -458,9 +458,9 @@ Name | Type | Description  | Notes
 # **CreateItem**
 > V1Item CreateItem (string locationId, V1Item body)
 
-Creates an item and at least one variation for it.
+CreateItem
 
-Creates an item and at least one variation for it.
+Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its `id`. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a `user_data` string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
 
 ### Example
 ```csharp
@@ -486,7 +486,7 @@ namespace Example
 
             try
             {
-                // Creates an item and at least one variation for it.
+                // CreateItem
                 V1Item result = apiInstance.CreateItem(locationId, body);
                 Debug.WriteLine(result);
             }
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 # **CreateModifierList**
 > V1ModifierList CreateModifierList (string locationId, V1ModifierList body)
 
-Creates an item modifier list and at least one modifier option for it.
+CreateModifierList
 
 Creates an item modifier list and at least one modifier option for it.
 
@@ -553,7 +553,7 @@ namespace Example
 
             try
             {
-                // Creates an item modifier list and at least one modifier option for it.
+                // CreateModifierList
                 V1ModifierList result = apiInstance.CreateModifierList(locationId, body);
                 Debug.WriteLine(result);
             }
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 # **CreateModifierOption**
 > V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body)
 
-Creates an item modifier option and adds it to a modifier list.
+CreateModifierOption
 
 Creates an item modifier option and adds it to a modifier list.
 
@@ -621,7 +621,7 @@ namespace Example
 
             try
             {
-                // Creates an item modifier option and adds it to a modifier list.
+                // CreateModifierOption
                 V1ModifierOption result = apiInstance.CreateModifierOption(locationId, modifierListId, body);
                 Debug.WriteLine(result);
             }
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
 # **CreatePage**
 > V1Page CreatePage (string locationId, V1Page body)
 
-Creates a Favorites page in Square Register.
+CreatePage
 
 Creates a Favorites page in Square Register.
 
@@ -689,7 +689,7 @@ namespace Example
 
             try
             {
-                // Creates a Favorites page in Square Register.
+                // CreatePage
                 V1Page result = apiInstance.CreatePage(locationId, body);
                 Debug.WriteLine(result);
             }
@@ -728,7 +728,7 @@ Name | Type | Description  | Notes
 # **CreateVariation**
 > V1Variation CreateVariation (string locationId, string itemId, V1Variation body)
 
-Creates an item variation for an existing item.
+CreateVariation
 
 Creates an item variation for an existing item.
 
@@ -757,7 +757,7 @@ namespace Example
 
             try
             {
-                // Creates an item variation for an existing item.
+                // CreateVariation
                 V1Variation result = apiInstance.CreateVariation(locationId, itemId, body);
                 Debug.WriteLine(result);
             }
@@ -797,9 +797,9 @@ Name | Type | Description  | Notes
 # **DeleteCategory**
 > V1Category DeleteCategory (string locationId, string categoryId)
 
-Deletes an existing item category.
+DeleteCategory
 
-Deletes an existing item category.
+Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteCategoryRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -825,7 +825,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing item category.
+                // DeleteCategory
                 V1Category result = apiInstance.DeleteCategory(locationId, categoryId);
                 Debug.WriteLine(result);
             }
@@ -864,9 +864,9 @@ Name | Type | Description  | Notes
 # **DeleteDiscount**
 > V1Discount DeleteDiscount (string locationId, string discountId)
 
-Deletes an existing discount.
+DeleteDiscount
 
-Deletes an existing discount.
+Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteDiscountRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -892,7 +892,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing discount.
+                // DeleteDiscount
                 V1Discount result = apiInstance.DeleteDiscount(locationId, discountId);
                 Debug.WriteLine(result);
             }
@@ -931,9 +931,9 @@ Name | Type | Description  | Notes
 # **DeleteFee**
 > V1Fee DeleteFee (string locationId, string feeId)
 
-Deletes an existing fee (tax).
+DeleteFee
 
-Deletes an existing fee (tax).
+Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteFeeRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -959,7 +959,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing fee (tax).
+                // DeleteFee
                 V1Fee result = apiInstance.DeleteFee(locationId, feeId);
                 Debug.WriteLine(result);
             }
@@ -998,9 +998,9 @@ Name | Type | Description  | Notes
 # **DeleteItem**
 > V1Item DeleteItem (string locationId, string itemId)
 
-Deletes an existing item and all item variations associated with it.
+DeleteItem
 
-Deletes an existing item and all item variations associated with it.
+Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteItemRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1026,7 +1026,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing item and all item variations associated with it.
+                // DeleteItem
                 V1Item result = apiInstance.DeleteItem(locationId, itemId);
                 Debug.WriteLine(result);
             }
@@ -1065,9 +1065,9 @@ Name | Type | Description  | Notes
 # **DeleteModifierList**
 > V1ModifierList DeleteModifierList (string locationId, string modifierListId)
 
-Deletes an existing item modifier list and all modifier options associated with it.
+DeleteModifierList
 
-Deletes an existing item modifier list and all modifier options associated with it.
+Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierListRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1093,7 +1093,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing item modifier list and all modifier options associated with it.
+                // DeleteModifierList
                 V1ModifierList result = apiInstance.DeleteModifierList(locationId, modifierListId);
                 Debug.WriteLine(result);
             }
@@ -1132,9 +1132,9 @@ Name | Type | Description  | Notes
 # **DeleteModifierOption**
 > V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId)
 
-Deletes an existing item modifier option from a modifier list.
+DeleteModifierOption
 
-Deletes an existing item modifier option from a modifier list.
+Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierOptionRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1161,7 +1161,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing item modifier option from a modifier list.
+                // DeleteModifierOption
                 V1ModifierOption result = apiInstance.DeleteModifierOption(locationId, modifierListId, modifierOptionId);
                 Debug.WriteLine(result);
             }
@@ -1201,9 +1201,9 @@ Name | Type | Description  | Notes
 # **DeletePage**
 > V1Page DeletePage (string locationId, string pageId)
 
-Deletes an existing Favorites page and all of its cells.
+DeletePage
 
-Deletes an existing Favorites page and all of its cells.
+Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1229,7 +1229,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing Favorites page and all of its cells.
+                // DeletePage
                 V1Page result = apiInstance.DeletePage(locationId, pageId);
                 Debug.WriteLine(result);
             }
@@ -1268,9 +1268,9 @@ Name | Type | Description  | Notes
 # **DeletePageCell**
 > V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null)
 
-Deletes a cell from a Favorites page in Square Register.
+DeletePageCell
 
-Deletes a cell from a Favorites page in Square Register.
+Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageCellRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1298,7 +1298,7 @@ namespace Example
 
             try
             {
-                // Deletes a cell from a Favorites page in Square Register.
+                // DeletePageCell
                 V1Page result = apiInstance.DeletePageCell(locationId, pageId, row, column);
                 Debug.WriteLine(result);
             }
@@ -1339,9 +1339,9 @@ Name | Type | Description  | Notes
 # **DeleteVariation**
 > V1Variation DeleteVariation (string locationId, string itemId, string variationId)
 
-Deletes an existing item variation from an item.
+DeleteVariation
 
-Deletes an existing item variation from an item.
+Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteVariationRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1368,7 +1368,7 @@ namespace Example
 
             try
             {
-                // Deletes an existing item variation from an item.
+                // DeleteVariation
                 V1Variation result = apiInstance.DeleteVariation(locationId, itemId, variationId);
                 Debug.WriteLine(result);
             }
@@ -1408,7 +1408,7 @@ Name | Type | Description  | Notes
 # **ListCategories**
 > List<V1Category> ListCategories (string locationId)
 
-Lists all of a location's item categories.
+ListCategories
 
 Lists all of a location's item categories.
 
@@ -1435,7 +1435,7 @@ namespace Example
 
             try
             {
-                // Lists all of a location's item categories.
+                // ListCategories
                 List&lt;V1Category&gt; result = apiInstance.ListCategories(locationId);
                 Debug.WriteLine(result);
             }
@@ -1473,7 +1473,7 @@ Name | Type | Description  | Notes
 # **ListDiscounts**
 > List<V1Discount> ListDiscounts (string locationId)
 
-Lists all of a location's discounts.
+ListDiscounts
 
 Lists all of a location's discounts.
 
@@ -1500,7 +1500,7 @@ namespace Example
 
             try
             {
-                // Lists all of a location's discounts.
+                // ListDiscounts
                 List&lt;V1Discount&gt; result = apiInstance.ListDiscounts(locationId);
                 Debug.WriteLine(result);
             }
@@ -1538,7 +1538,7 @@ Name | Type | Description  | Notes
 # **ListFees**
 > List<V1Fee> ListFees (string locationId)
 
-Lists all of a location's fees (taxes).
+ListFees
 
 Lists all of a location's fees (taxes).
 
@@ -1565,7 +1565,7 @@ namespace Example
 
             try
             {
-                // Lists all of a location's fees (taxes).
+                // ListFees
                 List&lt;V1Fee&gt; result = apiInstance.ListFees(locationId);
                 Debug.WriteLine(result);
             }
@@ -1603,7 +1603,7 @@ Name | Type | Description  | Notes
 # **ListInventory**
 > List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null)
 
-Provides inventory information for all of a merchant's inventory-enabled item variations.
+ListInventory
 
 Provides inventory information for all of a merchant's inventory-enabled item variations.
 
@@ -1632,7 +1632,7 @@ namespace Example
 
             try
             {
-                // Provides inventory information for all of a merchant's inventory-enabled item variations.
+                // ListInventory
                 List&lt;V1InventoryEntry&gt; result = apiInstance.ListInventory(locationId, limit, batchToken);
                 Debug.WriteLine(result);
             }
@@ -1672,7 +1672,7 @@ Name | Type | Description  | Notes
 # **ListItems**
 > List<V1Item> ListItems (string locationId, string batchToken = null)
 
-Provides summary information for all of a location's items.
+ListItems
 
 Provides summary information for all of a location's items.
 
@@ -1700,7 +1700,7 @@ namespace Example
 
             try
             {
-                // Provides summary information for all of a location's items.
+                // ListItems
                 List&lt;V1Item&gt; result = apiInstance.ListItems(locationId, batchToken);
                 Debug.WriteLine(result);
             }
@@ -1739,7 +1739,7 @@ Name | Type | Description  | Notes
 # **ListModifierLists**
 > List<V1ModifierList> ListModifierLists (string locationId)
 
-Lists all of a location's modifier lists.
+ListModifierLists
 
 Lists all of a location's modifier lists.
 
@@ -1766,7 +1766,7 @@ namespace Example
 
             try
             {
-                // Lists all of a location's modifier lists.
+                // ListModifierLists
                 List&lt;V1ModifierList&gt; result = apiInstance.ListModifierLists(locationId);
                 Debug.WriteLine(result);
             }
@@ -1804,7 +1804,7 @@ Name | Type | Description  | Notes
 # **ListPages**
 > List<V1Page> ListPages (string locationId)
 
-Lists all of a location's Favorites pages in Square Register.
+ListPages
 
 Lists all of a location's Favorites pages in Square Register.
 
@@ -1831,7 +1831,7 @@ namespace Example
 
             try
             {
-                // Lists all of a location's Favorites pages in Square Register.
+                // ListPages
                 List&lt;V1Page&gt; result = apiInstance.ListPages(locationId);
                 Debug.WriteLine(result);
             }
@@ -1869,7 +1869,7 @@ Name | Type | Description  | Notes
 # **RemoveFee**
 > V1Item RemoveFee (string locationId, string itemId, string feeId)
 
-Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+RemoveFee
 
 Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
 
@@ -1898,7 +1898,7 @@ namespace Example
 
             try
             {
-                // Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+                // RemoveFee
                 V1Item result = apiInstance.RemoveFee(locationId, itemId, feeId);
                 Debug.WriteLine(result);
             }
@@ -1938,7 +1938,7 @@ Name | Type | Description  | Notes
 # **RemoveModifierList**
 > V1Item RemoveModifierList (string locationId, string modifierListId, string itemId)
 
-Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+RemoveModifierList
 
 Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
 
@@ -1967,7 +1967,7 @@ namespace Example
 
             try
             {
-                // Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+                // RemoveModifierList
                 V1Item result = apiInstance.RemoveModifierList(locationId, modifierListId, itemId);
                 Debug.WriteLine(result);
             }
@@ -2007,7 +2007,7 @@ Name | Type | Description  | Notes
 # **RetrieveItem**
 > V1Item RetrieveItem (string locationId, string itemId)
 
-Provides the details for a single item, including associated modifier lists and fees.
+RetrieveItem
 
 Provides the details for a single item, including associated modifier lists and fees.
 
@@ -2035,7 +2035,7 @@ namespace Example
 
             try
             {
-                // Provides the details for a single item, including associated modifier lists and fees.
+                // RetrieveItem
                 V1Item result = apiInstance.RetrieveItem(locationId, itemId);
                 Debug.WriteLine(result);
             }
@@ -2074,7 +2074,7 @@ Name | Type | Description  | Notes
 # **RetrieveModifierList**
 > V1ModifierList RetrieveModifierList (string locationId, string modifierListId)
 
-Provides the details for a single modifier list.
+RetrieveModifierList
 
 Provides the details for a single modifier list.
 
@@ -2102,7 +2102,7 @@ namespace Example
 
             try
             {
-                // Provides the details for a single modifier list.
+                // RetrieveModifierList
                 V1ModifierList result = apiInstance.RetrieveModifierList(locationId, modifierListId);
                 Debug.WriteLine(result);
             }
@@ -2141,7 +2141,7 @@ Name | Type | Description  | Notes
 # **UpdateCategory**
 > V1Category UpdateCategory (string locationId, string categoryId, V1Category body)
 
-Modifies the details of an existing item category.
+UpdateCategory
 
 Modifies the details of an existing item category.
 
@@ -2170,7 +2170,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of an existing item category.
+                // UpdateCategory
                 V1Category result = apiInstance.UpdateCategory(locationId, categoryId, body);
                 Debug.WriteLine(result);
             }
@@ -2210,7 +2210,7 @@ Name | Type | Description  | Notes
 # **UpdateDiscount**
 > V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body)
 
-Modifies the details of an existing discount.
+UpdateDiscount
 
 Modifies the details of an existing discount.
 
@@ -2239,7 +2239,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of an existing discount.
+                // UpdateDiscount
                 V1Discount result = apiInstance.UpdateDiscount(locationId, discountId, body);
                 Debug.WriteLine(result);
             }
@@ -2279,7 +2279,7 @@ Name | Type | Description  | Notes
 # **UpdateFee**
 > V1Fee UpdateFee (string locationId, string feeId, V1Fee body)
 
-Modifies the details of an existing fee (tax).
+UpdateFee
 
 Modifies the details of an existing fee (tax).
 
@@ -2308,7 +2308,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of an existing fee (tax).
+                // UpdateFee
                 V1Fee result = apiInstance.UpdateFee(locationId, feeId, body);
                 Debug.WriteLine(result);
             }
@@ -2348,7 +2348,7 @@ Name | Type | Description  | Notes
 # **UpdateItem**
 > V1Item UpdateItem (string locationId, string itemId, V1Item body)
 
-Modifies the core details of an existing item.
+UpdateItem
 
 Modifies the core details of an existing item.
 
@@ -2377,7 +2377,7 @@ namespace Example
 
             try
             {
-                // Modifies the core details of an existing item.
+                // UpdateItem
                 V1Item result = apiInstance.UpdateItem(locationId, itemId, body);
                 Debug.WriteLine(result);
             }
@@ -2417,7 +2417,7 @@ Name | Type | Description  | Notes
 # **UpdateModifierList**
 > V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body)
 
-Modifies the details of an existing item modifier list.
+UpdateModifierList
 
 Modifies the details of an existing item modifier list.
 
@@ -2446,7 +2446,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of an existing item modifier list.
+                // UpdateModifierList
                 V1ModifierList result = apiInstance.UpdateModifierList(locationId, modifierListId, body);
                 Debug.WriteLine(result);
             }
@@ -2486,7 +2486,7 @@ Name | Type | Description  | Notes
 # **UpdateModifierOption**
 > V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
 
-Modifies the details of an existing item modifier option.
+UpdateModifierOption
 
 Modifies the details of an existing item modifier option.
 
@@ -2516,7 +2516,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of an existing item modifier option.
+                // UpdateModifierOption
                 V1ModifierOption result = apiInstance.UpdateModifierOption(locationId, modifierListId, modifierOptionId, body);
                 Debug.WriteLine(result);
             }
@@ -2557,7 +2557,7 @@ Name | Type | Description  | Notes
 # **UpdatePage**
 > V1Page UpdatePage (string locationId, string pageId, V1Page body)
 
-Modifies the details of a Favorites page in Square Register.
+UpdatePage
 
 Modifies the details of a Favorites page in Square Register.
 
@@ -2586,7 +2586,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of a Favorites page in Square Register.
+                // UpdatePage
                 V1Page result = apiInstance.UpdatePage(locationId, pageId, body);
                 Debug.WriteLine(result);
             }
@@ -2626,7 +2626,7 @@ Name | Type | Description  | Notes
 # **UpdatePageCell**
 > V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body)
 
-Modifies a cell of a Favorites page in Square Register.
+UpdatePageCell
 
 Modifies a cell of a Favorites page in Square Register.
 
@@ -2655,7 +2655,7 @@ namespace Example
 
             try
             {
-                // Modifies a cell of a Favorites page in Square Register.
+                // UpdatePageCell
                 V1Page result = apiInstance.UpdatePageCell(locationId, pageId, body);
                 Debug.WriteLine(result);
             }
@@ -2695,7 +2695,7 @@ Name | Type | Description  | Notes
 # **UpdateVariation**
 > V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body)
 
-Modifies the details of an existing item variation.
+UpdateVariation
 
 Modifies the details of an existing item variation.
 
@@ -2725,7 +2725,7 @@ namespace Example
 
             try
             {
-                // Modifies the details of an existing item variation.
+                // UpdateVariation
                 V1Variation result = apiInstance.UpdateVariation(locationId, itemId, variationId, body);
                 Debug.WriteLine(result);
             }

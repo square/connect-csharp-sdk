@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Device
+    /// 
     /// </summary>
     [DataContract]
     public partial class Device :  IEquatable<Device>, IValidatableObject

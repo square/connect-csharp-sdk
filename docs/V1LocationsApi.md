@@ -4,15 +4,15 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListLocations**](V1LocationsApi.md#listlocations) | **GET** /v1/me/locations | Provides details for a business&#39;s locations, including their IDs.
-[**RetrieveBusiness**](V1LocationsApi.md#retrievebusiness) | **GET** /v1/me | Get a business&#39;s information.
+[**ListLocations**](V1LocationsApi.md#listlocations) | **GET** /v1/me/locations | ListLocations
+[**RetrieveBusiness**](V1LocationsApi.md#retrievebusiness) | **GET** /v1/me | RetrieveBusiness
 
 
 <a name="listlocations"></a>
 # **ListLocations**
 > List<V1Merchant> ListLocations ()
 
-Provides details for a business's locations, including their IDs.
+ListLocations
 
 Provides details for a business's locations, including their IDs.
 
@@ -38,7 +38,7 @@ namespace Example
 
             try
             {
-                // Provides details for a business's locations, including their IDs.
+                // ListLocations
                 List&lt;V1Merchant&gt; result = apiInstance.ListLocations();
                 Debug.WriteLine(result);
             }
@@ -73,7 +73,7 @@ This endpoint does not need any parameter.
 # **RetrieveBusiness**
 > V1Merchant RetrieveBusiness ()
 
-Get a business's information.
+RetrieveBusiness
 
 Get a business's information.
 
@@ -99,7 +99,7 @@ namespace Example
 
             try
             {
-                // Get a business's information.
+                // RetrieveBusiness
                 V1Merchant result = apiInstance.RetrieveBusiness();
                 Debug.WriteLine(result);
             }

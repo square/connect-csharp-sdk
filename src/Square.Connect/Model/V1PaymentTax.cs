@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class V1PaymentTax :  IEquatable<V1PaymentTax>, IValidatableObject
     {
         /// <summary>
-        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.
+        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1PaymentTaxInclusionType](#type-v1paymenttaxinclusiontype) for possible values
         /// </summary>
-        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.</value>
+        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1PaymentTaxInclusionType](#type-v1paymenttaxinclusiontype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InclusionTypeEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.
+        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1PaymentTaxInclusionType](#type-v1paymenttaxinclusiontype) for possible values
         /// </summary>
-        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.</value>
+        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1PaymentTaxInclusionType](#type-v1paymenttaxinclusiontype) for possible values</value>
         [DataMember(Name="inclusion_type", EmitDefaultValue=false)]
         public InclusionTypeEnum? InclusionType { get; set; }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Square.Connect.Model
         /// <param name="Name">The merchant-defined name of the tax..</param>
         /// <param name="AppliedMoney">The amount of money that this tax adds to the payment..</param>
         /// <param name="Rate">The rate of the tax, as a string representation of a decimal number. A value of 0.07 corresponds to a rate of 7%..</param>
-        /// <param name="InclusionType">Whether the tax is an ADDITIVE tax or an INCLUSIVE tax..</param>
+        /// <param name="InclusionType">Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1PaymentTaxInclusionType](#type-v1paymenttaxinclusiontype) for possible values.</param>
         /// <param name="FeeId">The ID of the tax, if available. Taxes applied in older versions of Square Register might not have an ID..</param>
         public V1PaymentTax(List<Error> Errors = default(List<Error>), string Name = default(string), V1Money AppliedMoney = default(V1Money), string Rate = default(string), InclusionTypeEnum? InclusionType = default(InclusionTypeEnum?), string FeeId = default(string))
         {
