@@ -84,7 +84,7 @@ namespace Square.Connect.Model
         /// <param name="ClosedCashMoney">The amount of money found in the cash drawer at the end of the shift by an auditing employee..</param>
         /// <param name="Device">The device running Square Register that was connected to the cash drawer..</param>
         /// <param name="Events">All of the events (payments, refunds, and so on) that involved the cash drawer during the shift..</param>
-        public V1CashDrawerShift(string Id = default(string), EventTypeEnum? EventType = default(EventTypeEnum?), string OpenedAt = default(string), bool? EndedAt = default(bool?), string ClosedAt = default(string), List<string> EmployeeIds = default(List<string>), string OpeningEmployeeId = default(string), string EndingEmployeeId = default(string), string ClosingEmployeeId = default(string), string Description = default(string), V1Money StartingCashMoney = default(V1Money), V1Money CashPaymentMoney = default(V1Money), V1Money CashRefundsMoney = default(V1Money), V1Money CashPaidInMoney = default(V1Money), V1Money CashPaidOutMoney = default(V1Money), V1Money ExpectedCashMoney = default(V1Money), V1Money ClosedCashMoney = default(V1Money), Device Device = default(Device), List<V1CashDrawerEvent> Events = default(List<V1CashDrawerEvent>))
+        public V1CashDrawerShift(string Id = default(string), EventTypeEnum? EventType = default(EventTypeEnum?), string OpenedAt = default(string), string EndedAt = default(string), string ClosedAt = default(string), List<string> EmployeeIds = default(List<string>), string OpeningEmployeeId = default(string), string EndingEmployeeId = default(string), string ClosingEmployeeId = default(string), string Description = default(string), V1Money StartingCashMoney = default(V1Money), V1Money CashPaymentMoney = default(V1Money), V1Money CashRefundsMoney = default(V1Money), V1Money CashPaidInMoney = default(V1Money), V1Money CashPaidOutMoney = default(V1Money), V1Money ExpectedCashMoney = default(V1Money), V1Money ClosedCashMoney = default(V1Money), Device Device = default(Device), List<V1CashDrawerEvent> Events = default(List<V1CashDrawerEvent>))
         {
             this.Id = Id;
             this.EventType = EventType;
@@ -124,7 +124,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The time when the shift ended, in ISO 8601 format.</value>
         [DataMember(Name="ended_at", EmitDefaultValue=false)]
-        public bool? EndedAt { get; set; }
+        public string EndedAt { get; set; }
         /// <summary>
         /// The time when the shift was closed, in ISO 8601 format.
         /// </summary>

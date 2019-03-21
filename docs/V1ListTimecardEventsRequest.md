@@ -8,7 +8,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TimecardId** | **string** | The ID of the timecard to list events for. | 
 
 
 
