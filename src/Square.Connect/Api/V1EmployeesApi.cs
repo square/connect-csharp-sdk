@@ -2115,7 +2115,7 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             localVarHeaderParams.Add("Square-Version", "2019-03-13");
-            if (timecardId != null) localVarQueryParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // query parameter
+            if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2190,7 +2190,7 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (timecardId != null) localVarQueryParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // query parameter
+            if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required

@@ -33,30 +33,10 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="V1ListTimecardEventsRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected V1ListTimecardEventsRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="V1ListTimecardEventsRequest" /> class.
-        /// </summary>
-        /// <param name="TimecardId">The ID of the timecard to list events for. (required).</param>
-        public V1ListTimecardEventsRequest(string TimecardId = default(string))
+        public V1ListTimecardEventsRequest()
         {
-            // to ensure "TimecardId" is required (not null)
-            if (TimecardId == null)
-            {
-                throw new InvalidDataException("TimecardId is a required property for V1ListTimecardEventsRequest and cannot be null");
-            }
-            else
-            {
-                this.TimecardId = TimecardId;
-            }
         }
         
-        /// <summary>
-        /// The ID of the timecard to list events for.
-        /// </summary>
-        /// <value>The ID of the timecard to list events for.</value>
-        [DataMember(Name="timecard_id", EmitDefaultValue=false)]
-        public string TimecardId { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -65,7 +45,6 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class V1ListTimecardEventsRequest {\n");
-            sb.Append("  TimecardId: ").Append(TimecardId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,12 +80,7 @@ namespace Square.Connect.Model
             if (other == null)
                 return false;
 
-            return 
-                (
-                    this.TimecardId == other.TimecardId ||
-                    this.TimecardId != null &&
-                    this.TimecardId.Equals(other.TimecardId)
-                );
+            return false;
         }
 
         /// <summary>
@@ -120,8 +94,6 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.TimecardId != null)
-                    hash = hash * 59 + this.TimecardId.GetHashCode();
                 return hash;
             }
         }
