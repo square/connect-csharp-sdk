@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class Employee :  IEquatable<Employee>, IValidatableObject
     {
         /// <summary>
-        /// Specifies the status of the employee being fetched.
+        /// Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
         /// </summary>
-        /// <value>Specifies the status of the employee being fetched.</value>
+        /// <value>Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Specifies the status of the employee being fetched.
+        /// Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
         /// </summary>
-        /// <value>Specifies the status of the employee being fetched.</value>
+        /// <value>Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Square.Connect.Model
         /// <param name="FirstName">Given (first) name of the employee..</param>
         /// <param name="LastName">Family (last) name of the employee.</param>
         /// <param name="LocationIds">A list of location IDs where this employee has access..</param>
-        /// <param name="Status">Specifies the status of the employee being fetched..</param>
+        /// <param name="Status">Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values.</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format..</param>
         /// <param name="UpdatedAt">A read-only timestamp in RFC 3339 format..</param>
         public Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), List<string> LocationIds = default(List<string>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string UpdatedAt = default(string))

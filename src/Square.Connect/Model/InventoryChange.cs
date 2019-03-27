@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class InventoryChange :  IEquatable<InventoryChange>, IValidatableObject
     {
         /// <summary>
-        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for all possible values.
+        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values
         /// </summary>
-        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for all possible values.</value>
+        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -57,15 +57,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for all possible values.
+        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values
         /// </summary>
-        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for all possible values.</value>
+        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryChange" /> class.
         /// </summary>
-        /// <param name="Type">Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for all possible values..</param>
+        /// <param name="Type">Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values.</param>
         /// <param name="PhysicalCount">Contains details about the physical count when &#x60;type&#x60; is &#x60;PHYSICAL_COUNT&#x60; and unset for all other types..</param>
         /// <param name="Adjustment">Contains details about the inventory adjustment when &#x60;type&#x60; is &#x60;ADJUSTMENT&#x60; and unset for all other types..</param>
         /// <param name="Transfer">Contains details about the inventory transfer when &#x60;type&#x60; is &#x60;TRANSFER&#x60; and unset for all other types..</param>

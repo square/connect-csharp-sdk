@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class Error :  IEquatable<Error>, IValidatableObject
     {
         /// <summary>
-        /// The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values.
+        /// The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values
         /// </summary>
-        /// <value>The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values.</value>
+        /// <value>The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CategoryEnum
         {
@@ -618,9 +618,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values.
+        /// The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values
         /// </summary>
-        /// <value>The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values.</value>
+        /// <value>The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values</value>
         [DataMember(Name="category", EmitDefaultValue=false)]
         public CategoryEnum? Category { get; set; }
         /// <summary>
@@ -637,7 +637,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        /// <param name="Category">The error&#39;s high-level category. See [ErrorCategory](#type-errorcategory) for possible values. (required).</param>
+        /// <param name="Category">The error&#39;s high-level category. See [ErrorCategory](#type-errorcategory) for possible values (required).</param>
         /// <param name="Code">The error&#39;s specific code. See [ErrorCode](#type-errorcode) for possible values (required).</param>
         /// <param name="Detail">A human-readable description of the error for debugging purposes..</param>
         /// <param name="Field">The name of the field provided in the original request that the error pertains to, if any..</param>

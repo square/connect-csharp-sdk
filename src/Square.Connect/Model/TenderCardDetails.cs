@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class TenderCardDetails :  IEquatable<TenderCardDetails>, IValidatableObject
     {
         /// <summary>
-        /// The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.
+        /// The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
         /// </summary>
-        /// <value>The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.</value>
+        /// <value>The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -63,9 +63,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The method used to enter the card's details for the transaction.
+        /// The method used to enter the card's details for the transaction. See [TenderCardDetailsEntryMethod](#type-tendercarddetailsentrymethod) for possible values
         /// </summary>
-        /// <value>The method used to enter the card's details for the transaction.</value>
+        /// <value>The method used to enter the card's details for the transaction. See [TenderCardDetailsEntryMethod](#type-tendercarddetailsentrymethod) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EntryMethodEnum
         {
@@ -102,23 +102,23 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.
+        /// The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
         /// </summary>
-        /// <value>The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.</value>
+        /// <value>The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
-        /// The method used to enter the card's details for the transaction.
+        /// The method used to enter the card's details for the transaction. See [TenderCardDetailsEntryMethod](#type-tendercarddetailsentrymethod) for possible values
         /// </summary>
-        /// <value>The method used to enter the card's details for the transaction.</value>
+        /// <value>The method used to enter the card's details for the transaction. See [TenderCardDetailsEntryMethod](#type-tendercarddetailsentrymethod) for possible values</value>
         [DataMember(Name="entry_method", EmitDefaultValue=false)]
         public EntryMethodEnum? EntryMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TenderCardDetails" /> class.
         /// </summary>
-        /// <param name="Status">The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values..</param>
+        /// <param name="Status">The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.</param>
         /// <param name="Card">The credit card&#39;s non-confidential details..</param>
-        /// <param name="EntryMethod">The method used to enter the card&#39;s details for the transaction..</param>
+        /// <param name="EntryMethod">The method used to enter the card&#39;s details for the transaction. See [TenderCardDetailsEntryMethod](#type-tendercarddetailsentrymethod) for possible values.</param>
         public TenderCardDetails(StatusEnum? Status = default(StatusEnum?), Card Card = default(Card), EntryMethodEnum? EntryMethod = default(EntryMethodEnum?))
         {
             this.Status = Status;

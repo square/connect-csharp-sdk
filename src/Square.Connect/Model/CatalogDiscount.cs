@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class CatalogDiscount :  IEquatable<CatalogDiscount>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values.
+        /// Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values.</value>
+        /// <value>Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DiscountTypeEnum
         {
@@ -63,16 +63,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values.
+        /// Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values.</value>
+        /// <value>Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values</value>
         [DataMember(Name="discount_type", EmitDefaultValue=false)]
         public DiscountTypeEnum? DiscountType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogDiscount" /> class.
         /// </summary>
         /// <param name="Name">The discount&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
-        /// <param name="DiscountType">Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values..</param>
+        /// <param name="DiscountType">Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values.</param>
         /// <param name="Percentage">The percentage of the discount as a string representation of a decimal number, using a &#x60;.&#x60; as the decimal separator and without a &#x60;%&#x60; sign. A value of &#x60;7.5&#x60; corresponds to &#x60;7.5%&#x60;. Specify a percentage of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_PERCENTAGE&#x60;.  Do not include this field for amount-based or variable discounts..</param>
         /// <param name="AmountMoney">The amount of the discount. Specify an amount of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_AMOUNT&#x60;.  Do not include this field for percentage-based or variable discounts..</param>
         /// <param name="PinRequired">Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment in the Square Point of Sale app..</param>

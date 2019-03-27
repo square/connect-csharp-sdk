@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LocationId** | **List<string>** | Fetch shifts for the specified location. | [optional] 
 **EmployeeId** | **List<string>** | Fetch shifts for the specified employee. | [optional] 
-**Status** | **StatusEnum** | Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. | [optional] 
+**Status** | **StatusEnum** | Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values | [optional] 
 **Start** | [**TimeRange**](TimeRange.md) | Fetch &#x60;Shift&#x60;s that start in the time range - Inclusive. | [optional] 
 **End** | [**TimeRange**](TimeRange.md) | Fetch the &#x60;Shift&#x60;s that end in the time range - Inclusive. | [optional] 
 **Workday** | [**ShiftWorkday**](ShiftWorkday.md) | Fetch the &#x60;Shift&#x60;s based on workday date range. | [optional] 

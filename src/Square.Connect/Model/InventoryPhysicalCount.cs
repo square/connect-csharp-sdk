@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class InventoryPhysicalCount :  IEquatable<InventoryPhysicalCount>, IValidatableObject
     {
         /// <summary>
-        /// The current [InventoryState](#type-inventorystate) for the related quantity of items.
+        /// The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
         /// </summary>
-        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items.</value>
+        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StateEnum
         {
@@ -111,9 +111,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The current [InventoryState](#type-inventorystate) for the related quantity of items.
+        /// The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
         /// </summary>
-        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items.</value>
+        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
         public StateEnum? State { get; set; }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Square.Connect.Model
         /// <param name="ReferenceId">An optional ID provided by the application to tie the [InventoryPhysicalCount](#type-inventoryphysicalcount) to an external system..</param>
         /// <param name="CatalogObjectId">The Square generated ID of the [CatalogObject](#type-catalogobject) being tracked..</param>
         /// <param name="CatalogObjectType">The [CatalogObjectType](#type-catalogobjecttype) of the [CatalogObject](#type-catalogobject) being tracked. Tracking is only supported for the &#x60;ITEM_VARIATION&#x60; type..</param>
-        /// <param name="State">The current [InventoryState](#type-inventorystate) for the related quantity of items..</param>
+        /// <param name="State">The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values.</param>
         /// <param name="LocationId">The Square ID of the [Location](#type-location) where the related quantity of items are being tracked..</param>
         /// <param name="Quantity">The number of items affected by the physical count as a decimal string. Fractional quantities are not supported..</param>
         /// <param name="Source">Read-only information about the application that submitted the physical count..</param>

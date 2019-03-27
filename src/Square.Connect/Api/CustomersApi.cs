@@ -49,7 +49,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -61,7 +61,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -120,8 +120,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ListCustomersResponse</returns>
         ListCustomersResponse ListCustomers (string cursor = null, string sortField = null, string sortOrder = null);
 
@@ -133,8 +133,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ApiResponse of ListCustomersResponse</returns>
         ApiResponse<ListCustomersResponse> ListCustomersWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null);
         /// <summary>
@@ -229,7 +229,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -241,7 +241,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard
         /// </summary>
         /// <remarks>
-        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -300,8 +300,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ListCustomersResponse</returns>
         System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null, string sortField = null, string sortOrder = null);
 
@@ -313,8 +313,8 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ListCustomersResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null);
         /// <summary>
@@ -539,7 +539,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -658,7 +658,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -671,7 +671,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -707,7 +707,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -745,7 +745,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -759,7 +759,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.
+        /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to link the card on file to.</param>
@@ -877,7 +877,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
 
             // authentication (oauth2) required
@@ -1031,7 +1031,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (cardId != null) localVarPathParams.Add("card_id", Configuration.ApiClient.ParameterToString(cardId)); // path parameter
 
@@ -1147,8 +1147,8 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ListCustomersResponse</returns>
         public ListCustomersResponse ListCustomers (string cursor = null, string sortField = null, string sortOrder = null)
         {
@@ -1161,8 +1161,8 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>ApiResponse of ListCustomersResponse</returns>
         public ApiResponse< ListCustomersResponse > ListCustomersWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null)
         {
@@ -1188,7 +1188,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
             if (sortField != null) localVarQueryParams.Add("sort_field", Configuration.ApiClient.ParameterToString(sortField)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -1224,8 +1224,8 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ListCustomersResponse</returns>
         public async System.Threading.Tasks.Task<ListCustomersResponse> ListCustomersAsync (string cursor = null, string sortField = null, string sortOrder = null)
         {
@@ -1239,8 +1239,8 @@ namespace Square.Connect.Api
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)</param>
-        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)</param>
+        /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
+        /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ListCustomersResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ListCustomersResponse>> ListCustomersAsyncWithHttpInfo (string cursor = null, string sortField = null, string sortOrder = null)
         {
@@ -1342,7 +1342,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
 
             // authentication (oauth2) required
@@ -1491,7 +1491,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1659,7 +1659,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-13");
+            localVarHeaderParams.Add("Square-Version", "2019-03-27");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
