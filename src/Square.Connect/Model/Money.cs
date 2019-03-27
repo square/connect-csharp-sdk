@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class Money :  IEquatable<Money>, IValidatableObject
     {
         /// <summary>
-        /// The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`.  See [Currency](#type-currency) for possible values.
+        /// The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`. See [Currency](#type-currency) for possible values
         /// </summary>
-        /// <value>The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`.  See [Currency](#type-currency) for possible values.</value>
+        /// <value>The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`. See [Currency](#type-currency) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CurrencyEnum
         {
@@ -1125,16 +1125,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`.  See [Currency](#type-currency) for possible values.
+        /// The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`. See [Currency](#type-currency) for possible values
         /// </summary>
-        /// <value>The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`.  See [Currency](#type-currency) for possible values.</value>
+        /// <value>The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`. See [Currency](#type-currency) for possible values</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
         public CurrencyEnum? Currency { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Money" /> class.
         /// </summary>
         /// <param name="Amount">The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents..</param>
-        /// <param name="Currency">The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is &#x60;USD&#x60;.  See [Currency](#type-currency) for possible values..</param>
+        /// <param name="Currency">The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is &#x60;USD&#x60;. See [Currency](#type-currency) for possible values.</param>
         public Money(long? Amount = default(long?), CurrencyEnum? Currency = default(CurrencyEnum?))
         {
             this.Amount = Amount;

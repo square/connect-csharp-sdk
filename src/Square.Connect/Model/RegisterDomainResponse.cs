@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class RegisterDomainResponse :  IEquatable<RegisterDomainResponse>, IValidatableObject
     {
         /// <summary>
-        /// Status of the domain registration.  See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.
+        /// Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values
         /// </summary>
-        /// <value>Status of the domain registration.  See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.</value>
+        /// <value>Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -51,16 +51,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Status of the domain registration.  See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.
+        /// Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values
         /// </summary>
-        /// <value>Status of the domain registration.  See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.</value>
+        /// <value>Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisterDomainResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Status">Status of the domain registration.  See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values..</param>
+        /// <param name="Status">Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.</param>
         public RegisterDomainResponse(List<Error> Errors = default(List<Error>), StatusEnum? Status = default(StatusEnum?))
         {
             this.Errors = Errors;

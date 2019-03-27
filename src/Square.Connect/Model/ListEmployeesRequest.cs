@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class ListEmployeesRequest :  IEquatable<ListEmployeesRequest>, IValidatableObject
     {
         /// <summary>
-        /// Specifies the EmployeeStatus to filter the employee by.
+        /// Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values
         /// </summary>
-        /// <value>Specifies the EmployeeStatus to filter the employee by.</value>
+        /// <value>Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -51,16 +51,16 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Specifies the EmployeeStatus to filter the employee by.
+        /// Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values
         /// </summary>
-        /// <value>Specifies the EmployeeStatus to filter the employee by.</value>
+        /// <value>Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListEmployeesRequest" /> class.
         /// </summary>
         /// <param name="LocationId">Filter employees returned to only those that are associated with the specified location..</param>
-        /// <param name="Status">Specifies the EmployeeStatus to filter the employee by..</param>
+        /// <param name="Status">Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values.</param>
         /// <param name="Limit">The number of employees to be returned on each page..</param>
         /// <param name="Cursor">The token required to retrieve the specified page of results..</param>
         public ListEmployeesRequest(string LocationId = default(string), StatusEnum? Status = default(StatusEnum?), int? Limit = default(int?), string Cursor = default(string))

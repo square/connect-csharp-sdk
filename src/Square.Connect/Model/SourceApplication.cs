@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class SourceApplication :  IEquatable<SourceApplication>, IValidatableObject
     {
         /// <summary>
-        /// Read-only [Product](#type-product) type for the application.
+        /// Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values
         /// </summary>
-        /// <value>Read-only [Product](#type-product) type for the application.</value>
+        /// <value>Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ProductEnum
         {
@@ -99,15 +99,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Read-only [Product](#type-product) type for the application.
+        /// Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values
         /// </summary>
-        /// <value>Read-only [Product](#type-product) type for the application.</value>
+        /// <value>Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values</value>
         [DataMember(Name="product", EmitDefaultValue=false)]
         public ProductEnum? Product { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SourceApplication" /> class.
         /// </summary>
-        /// <param name="Product">Read-only [Product](#type-product) type for the application..</param>
+        /// <param name="Product">Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values.</param>
         /// <param name="ApplicationId">Read-only Square ID assigned to the application. Only used for [Product](#type-product) type &#x60;EXTERNAL_API&#x60;..</param>
         /// <param name="Name">Read-only display name assigned to the application (e.g. &#x60;\&quot;Custom Application\&quot;&#x60;, &#x60;\&quot;Square POS 4.74 for Android\&quot;&#x60;)..</param>
         public SourceApplication(ProductEnum? Product = default(ProductEnum?), string ApplicationId = default(string), string Name = default(string))

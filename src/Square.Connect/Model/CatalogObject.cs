@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class CatalogObject :  IEquatable<CatalogObject>, IValidatableObject
     {
         /// <summary>
-        /// The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values.
+        /// The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values
         /// </summary>
-        /// <value>The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values.</value>
+        /// <value>The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -42,6 +42,12 @@ namespace Square.Connect.Model
             /// </summary>
             [EnumMember(Value = "ITEM")]
             ITEM,
+            
+            /// <summary>
+            /// Enum IMAGE for "IMAGE"
+            /// </summary>
+            [EnumMember(Value = "IMAGE")]
+            IMAGE,
             
             /// <summary>
             /// Enum CATEGORY for "CATEGORY"
@@ -81,9 +87,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values.
+        /// The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values
         /// </summary>
-        /// <value>The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values.</value>
+        /// <value>The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
@@ -94,7 +100,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogObject" /> class.
         /// </summary>
-        /// <param name="Type">The type of this object. Each object type has expected properties expressed in a structured format within its corresponding &#x60;*_data&#x60; field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values. (required).</param>
+        /// <param name="Type">The type of this object. Each object type has expected properties expressed in a structured format within its corresponding &#x60;*_data&#x60; field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values (required).</param>
         /// <param name="Id">An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a &#x60;&#39;#&#39;&#x60; character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references. (required).</param>
         /// <param name="UpdatedAt">Last modification [timestamp](#workingwithdates) in RFC 3339 format, e.g., &#x60;\&quot;2016-08-15T23:59:33.123Z\&quot;&#x60; would indicate the UTC time (denoted by &#x60;Z&#x60;) of August 15, 2016 at 23:59:33 and 123 milliseconds..</param>
         /// <param name="Version">The version of the object. When updating an object, the version supplied by the must match the version in the database, otherwise the write will be rejected as conflicting..</param>
@@ -110,7 +116,8 @@ namespace Square.Connect.Model
         /// <param name="DiscountData">Structured data for a [CatalogDiscount](#type-catalogdiscount), set for CatalogObjects of type &#x60;DISCOUNT&#x60;..</param>
         /// <param name="ModifierListData">Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;..</param>
         /// <param name="ModifierData">Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;..</param>
-        public CatalogObject(TypeEnum? Type = default(TypeEnum?), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier))
+        /// <param name="ImageData">Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;..</param>
+        public CatalogObject(TypeEnum? Type = default(TypeEnum?), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogImage ImageData = default(CatalogImage))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -144,6 +151,7 @@ namespace Square.Connect.Model
             this.DiscountData = DiscountData;
             this.ModifierListData = ModifierListData;
             this.ModifierData = ModifierData;
+            this.ImageData = ImageData;
         }
         
         /// <summary>
@@ -237,6 +245,12 @@ namespace Square.Connect.Model
         [DataMember(Name="modifier_data", EmitDefaultValue=false)]
         public CatalogModifier ModifierData { get; set; }
         /// <summary>
+        /// Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;.
+        /// </summary>
+        /// <value>Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;.</value>
+        [DataMember(Name="image_data", EmitDefaultValue=false)]
+        public CatalogImage ImageData { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -260,6 +274,7 @@ namespace Square.Connect.Model
             sb.Append("  DiscountData: ").Append(DiscountData).Append("\n");
             sb.Append("  ModifierListData: ").Append(ModifierListData).Append("\n");
             sb.Append("  ModifierData: ").Append(ModifierData).Append("\n");
+            sb.Append("  ImageData: ").Append(ImageData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -375,6 +390,11 @@ namespace Square.Connect.Model
                     this.ModifierData == other.ModifierData ||
                     this.ModifierData != null &&
                     this.ModifierData.Equals(other.ModifierData)
+                ) && 
+                (
+                    this.ImageData == other.ImageData ||
+                    this.ImageData != null &&
+                    this.ImageData.Equals(other.ImageData)
                 );
         }
 
@@ -421,6 +441,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ModifierListData.GetHashCode();
                 if (this.ModifierData != null)
                     hash = hash * 59 + this.ModifierData.GetHashCode();
+                if (this.ImageData != null)
+                    hash = hash * 59 + this.ImageData.GetHashCode();
                 return hash;
             }
         }

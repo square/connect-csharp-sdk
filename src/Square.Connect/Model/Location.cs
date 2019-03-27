@@ -45,9 +45,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+        /// The location's status See [LocationStatus](#type-locationstatus) for possible values
         /// </summary>
-        /// <value>The location's status  See [LocationStatus](#type-locationstatus) for possible values.</value>
+        /// <value>The location's status See [LocationStatus](#type-locationstatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -66,9 +66,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.
+        /// The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
         /// </summary>
-        /// <value>The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.</value>
+        /// <value>The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CountryEnum
         {
@@ -1575,9 +1575,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.
+        /// The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values
         /// </summary>
-        /// <value>The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.</value>
+        /// <value>The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CurrencyEnum
         {
@@ -2670,9 +2670,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+        /// The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values
         /// </summary>
-        /// <value>The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.</value>
+        /// <value>The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -2691,33 +2691,33 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
+        /// Indicates which Square features are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values
         /// </summary>
-        /// <value>Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.</value>
+        /// <value>Indicates which Square features are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values</value>
         [DataMember(Name="capabilities", EmitDefaultValue=false)]
         public List<CapabilitiesEnum> Capabilities { get; set; }
         /// <summary>
-        /// The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+        /// The location's status See [LocationStatus](#type-locationstatus) for possible values
         /// </summary>
-        /// <value>The location's status  See [LocationStatus](#type-locationstatus) for possible values.</value>
+        /// <value>The location's status See [LocationStatus](#type-locationstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
-        /// The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.
+        /// The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
         /// </summary>
-        /// <value>The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.</value>
+        /// <value>The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values</value>
         [DataMember(Name="country", EmitDefaultValue=false)]
         public CountryEnum? Country { get; set; }
         /// <summary>
-        /// The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.
+        /// The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values
         /// </summary>
-        /// <value>The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.</value>
+        /// <value>The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
         public CurrencyEnum? Currency { get; set; }
         /// <summary>
-        /// The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+        /// The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values
         /// </summary>
-        /// <value>The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.</value>
+        /// <value>The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
@@ -2727,16 +2727,16 @@ namespace Square.Connect.Model
         /// <param name="Name">The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname.</param>
         /// <param name="Address">The location&#39;s physical address..</param>
         /// <param name="Timezone">The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone..</param>
-        /// <param name="Capabilities">Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values..</param>
-        /// <param name="Status">The location&#39;s status  See [LocationStatus](#type-locationstatus) for possible values..</param>
+        /// <param name="Capabilities">Indicates which Square features are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values.</param>
+        /// <param name="Status">The location&#39;s status See [LocationStatus](#type-locationstatus) for possible values.</param>
         /// <param name="CreatedAt">The time when the location was created, in RFC 3339 format..</param>
         /// <param name="MerchantId">The identifier of the merchant that owns the location..</param>
-        /// <param name="Country">The location&#39;s country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values..</param>
+        /// <param name="Country">The location&#39;s country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values.</param>
         /// <param name="LanguageCode">The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A)..</param>
-        /// <param name="Currency">The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is &#39;USD&#39;.  See [Currency](#type-currency) for possible values..</param>
+        /// <param name="Currency">The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is &#39;USD&#39;. See [Currency](#type-currency) for possible values.</param>
         /// <param name="PhoneNumber">The location&#39;s phone_number..</param>
         /// <param name="BusinessName">The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts..</param>
-        /// <param name="Type">The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values..</param>
+        /// <param name="Type">The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values.</param>
         /// <param name="WebsiteUrl">The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set..</param>
         public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?), string WebsiteUrl = default(string))
         {

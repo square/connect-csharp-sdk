@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class InventoryCount :  IEquatable<InventoryCount>, IValidatableObject
     {
         /// <summary>
-        /// The current [InventoryState](#type-inventorystate) for the related quantity of items.
+        /// The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
         /// </summary>
-        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items.</value>
+        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StateEnum
         {
@@ -111,9 +111,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The current [InventoryState](#type-inventorystate) for the related quantity of items.
+        /// The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
         /// </summary>
-        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items.</value>
+        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
         public StateEnum? State { get; set; }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="CatalogObjectId">The Square generated ID of the [CatalogObject](#type-catalogobject) being tracked..</param>
         /// <param name="CatalogObjectType">The [CatalogObjectType](#type-catalogobjecttype) of the [CatalogObject](#type-catalogobject) being tracked. Tracking is only supported for the &#x60;ITEM_VARIATION&#x60; type..</param>
-        /// <param name="State">The current [InventoryState](#type-inventorystate) for the related quantity of items..</param>
+        /// <param name="State">The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values.</param>
         /// <param name="LocationId">The Square ID of the [Location](#type-location) where the related quantity of items are being tracked..</param>
         /// <param name="Quantity">The number of items in the count as a decimal string. Fractional quantities are not supported..</param>
         /// <param name="CalculatedAt">A read-only timestamp in RFC 3339 format that indicates when Square received the most recent physical count or adjustment that had an affect on the estimated count..</param>

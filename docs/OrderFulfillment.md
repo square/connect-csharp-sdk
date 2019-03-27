@@ -8,8 +8,8 @@ Contains details on how to fulfill this order.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **TypeEnum** | The type of the fulfillment. | [optional] 
-**State** | **StateEnum** | The state of the fulfillment. | [optional] 
+**Type** | **TypeEnum** | The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values | [optional] 
+**State** | **StateEnum** | The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values | [optional] 
 **PickupDetails** | [**OrderFulfillmentPickupDetails**](OrderFulfillmentPickupDetails.md) | Contains pickup-specific details. Required when fulfillment type is &#x60;PICKUP&#x60;. | [optional] 
 
 

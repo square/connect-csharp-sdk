@@ -38,6 +38,12 @@ namespace Square.Connect.Model
         ITEM,
         
         /// <summary>
+        /// Enum IMAGE for "IMAGE"
+        /// </summary>
+        [EnumMember(Value = "IMAGE")]
+        IMAGE,
+        
+        /// <summary>
         /// Enum CATEGORY for "CATEGORY"
         /// </summary>
         [EnumMember(Value = "CATEGORY")]

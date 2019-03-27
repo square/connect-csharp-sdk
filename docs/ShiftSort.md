@@ -8,8 +8,8 @@ Sets the sort order of search results.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Field** | **FieldEnum** | The field to sort on. | [optional] 
-**Order** | **OrderEnum** | The order in which results are returned. Defaults to DESC. | [optional] 
+**Field** | **FieldEnum** | The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values | [optional] 
+**Order** | **OrderEnum** | The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values | [optional] 
 
 
 ## FieldEnum

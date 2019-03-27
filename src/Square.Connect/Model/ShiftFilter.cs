@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class ShiftFilter :  IEquatable<ShiftFilter>, IValidatableObject
     {
         /// <summary>
-        /// Fetch a `Shift` instance by `Shift.status`.
+        /// Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
         /// </summary>
-        /// <value>Fetch a `Shift` instance by `Shift.status`.</value>
+        /// <value>Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Fetch a `Shift` instance by `Shift.status`.
+        /// Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
         /// </summary>
-        /// <value>Fetch a `Shift` instance by `Shift.status`.</value>
+        /// <value>Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="LocationId">Fetch shifts for the specified location..</param>
         /// <param name="EmployeeId">Fetch shifts for the specified employee..</param>
-        /// <param name="Status">Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;..</param>
+        /// <param name="Status">Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values.</param>
         /// <param name="Start">Fetch &#x60;Shift&#x60;s that start in the time range - Inclusive..</param>
         /// <param name="End">Fetch the &#x60;Shift&#x60;s that end in the time range - Inclusive..</param>
         /// <param name="Workday">Fetch the &#x60;Shift&#x60;s based on workday date range..</param>

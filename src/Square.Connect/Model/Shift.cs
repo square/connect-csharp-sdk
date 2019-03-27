@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class Shift :  IEquatable<Shift>, IValidatableObject
     {
         /// <summary>
-        /// Describes working state of the current `Shift`.
+        /// Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values
         /// </summary>
-        /// <value>Describes working state of the current `Shift`.</value>
+        /// <value>Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Describes working state of the current `Shift`.
+        /// Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values
         /// </summary>
-        /// <value>Describes working state of the current `Shift`.</value>
+        /// <value>Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Square.Connect.Model
         /// <param name="EndAt">RFC 3339; shifted to timezone + offset. Precision up to the minute is respected; seconds are truncated. The &#x60;end_at&#x60; minute is not counted when the shift length is calculated. For example, a shift from &#x60;00:00&#x60; to &#x60;08:01&#x60; is considered an 8 hour shift (midnight to 8am)..</param>
         /// <param name="Wage">Job and pay related information..</param>
         /// <param name="Breaks">A list of any paid or unpaid breaks that were taken during this shift..</param>
-        /// <param name="Status">Describes working state of the current &#x60;Shift&#x60;..</param>
+        /// <param name="Status">Describes working state of the current &#x60;Shift&#x60;. See [ShiftStatus](#type-shiftstatus) for possible values.</param>
         /// <param name="Version">Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If not provided, Square executes a blind write; potentially overwriting data from another write..</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format; presented in UTC..</param>
         /// <param name="UpdatedAt">A read-only timestamp in RFC 3339 format; presented in UTC..</param>

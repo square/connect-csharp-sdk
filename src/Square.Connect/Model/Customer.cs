@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class Customer :  IEquatable<Customer>, IValidatableObject
     {
         /// <summary>
-        /// A creation source represents the method used to create the customer profile.
+        /// A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values
         /// </summary>
-        /// <value>A creation source represents the method used to create the customer profile.</value>
+        /// <value>A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CreationSourceEnum
         {
@@ -153,9 +153,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// A creation source represents the method used to create the customer profile.
+        /// A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values
         /// </summary>
-        /// <value>A creation source represents the method used to create the customer profile.</value>
+        /// <value>A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values</value>
         [DataMember(Name="creation_source", EmitDefaultValue=false)]
         public CreationSourceEnum? CreationSource { get; set; }
         /// <summary>
@@ -182,7 +182,7 @@ namespace Square.Connect.Model
         /// <param name="Note">A note to associate with the customer..</param>
         /// <param name="Preferences">The customer&#39;s preferences..</param>
         /// <param name="Groups">The groups the customer belongs to..</param>
-        /// <param name="CreationSource">A creation source represents the method used to create the customer profile..</param>
+        /// <param name="CreationSource">A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values.</param>
         public Customer(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), List<Card> Cards = default(List<Card>), string GivenName = default(string), string FamilyName = default(string), string Nickname = default(string), string CompanyName = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string Birthday = default(string), string ReferenceId = default(string), string Note = default(string), CustomerPreferences Preferences = default(CustomerPreferences), List<CustomerGroupInfo> Groups = default(List<CustomerGroupInfo>), CreationSourceEnum? CreationSource = default(CreationSourceEnum?))
         {
             // to ensure "Id" is required (not null)

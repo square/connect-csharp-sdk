@@ -53,7 +53,7 @@ namespace Square.Connect.Model
         /// <param name="NetSalesMoney">The total of all sales, minus any applicable taxes..</param>
         /// <param name="InclusiveTax">All of the inclusive taxes associated with the payment..</param>
         /// <param name="AdditiveTax">All of the additive taxes associated with the payment..</param>
-        /// <param name="Tender">All of the additive taxes associated with the payment..</param>
+        /// <param name="Tender">All of the tenders associated with the payment..</param>
         /// <param name="Refunds">All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange..</param>
         /// <param name="Itemizations">The items purchased in the payment..</param>
         /// <param name="SurchargeMoney">The total of all surcharges applied to the payment..</param>
@@ -217,9 +217,9 @@ namespace Square.Connect.Model
         [DataMember(Name="additive_tax", EmitDefaultValue=false)]
         public List<V1PaymentTax> AdditiveTax { get; set; }
         /// <summary>
-        /// All of the additive taxes associated with the payment.
+        /// All of the tenders associated with the payment.
         /// </summary>
-        /// <value>All of the additive taxes associated with the payment.</value>
+        /// <value>All of the tenders associated with the payment.</value>
         [DataMember(Name="tender", EmitDefaultValue=false)]
         public List<V1Tender> Tender { get; set; }
         /// <summary>

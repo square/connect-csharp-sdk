@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class Address :  IEquatable<Address>, IValidatableObject
     {
         /// <summary>
-        /// The address's country, in ISO 3166-1-alpha-2 format.
+        /// The address's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
         /// </summary>
-        /// <value>The address's country, in ISO 3166-1-alpha-2 format.</value>
+        /// <value>The address's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CountryEnum
         {
@@ -1539,9 +1539,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The address's country, in ISO 3166-1-alpha-2 format.
+        /// The address's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
         /// </summary>
-        /// <value>The address's country, in ISO 3166-1-alpha-2 format.</value>
+        /// <value>The address's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values</value>
         [DataMember(Name="country", EmitDefaultValue=false)]
         public CountryEnum? Country { get; set; }
         /// <summary>
@@ -1558,7 +1558,7 @@ namespace Square.Connect.Model
         /// <param name="AdministrativeDistrictLevel2">A civil entity within the address&#39;s &#x60;administrative_district_level_1&#x60;. In the US, this is the county..</param>
         /// <param name="AdministrativeDistrictLevel3">A civil entity within the address&#39;s &#x60;administrative_district_level_2&#x60;, if any..</param>
         /// <param name="PostalCode">The address&#39;s postal code..</param>
-        /// <param name="Country">The address&#39;s country, in ISO 3166-1-alpha-2 format..</param>
+        /// <param name="Country">The address&#39;s country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values.</param>
         /// <param name="FirstName">Optional first name when it&#39;s representing recipient..</param>
         /// <param name="LastName">Optional last name when it&#39;s representing recipient..</param>
         /// <param name="Organization">Optional organization name when it&#39;s representing recipient..</param>

@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class Refund :  IEquatable<Refund>, IValidatableObject
     {
         /// <summary>
-        /// The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`).
+        /// The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`). See [RefundStatus](#type-refundstatus) for possible values
         /// </summary>
-        /// <value>The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`).</value>
+        /// <value>The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`). See [RefundStatus](#type-refundstatus) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -63,9 +63,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`).
+        /// The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`). See [RefundStatus](#type-refundstatus) for possible values
         /// </summary>
-        /// <value>The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`).</value>
+        /// <value>The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`). See [RefundStatus](#type-refundstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Square.Connect.Model
         /// <param name="CreatedAt">The time when the refund was created, in RFC 3339 format..</param>
         /// <param name="Reason">The reason for the refund being issued. (required).</param>
         /// <param name="AmountMoney">The amount of money refunded to the buyer. (required).</param>
-        /// <param name="Status">The current status of the refund (&#x60;PENDING&#x60;, &#x60;APPROVED&#x60;, &#x60;REJECTED&#x60;, or &#x60;FAILED&#x60;). (required).</param>
+        /// <param name="Status">The current status of the refund (&#x60;PENDING&#x60;, &#x60;APPROVED&#x60;, &#x60;REJECTED&#x60;, or &#x60;FAILED&#x60;). See [RefundStatus](#type-refundstatus) for possible values (required).</param>
         /// <param name="ProcessingFeeMoney">The amount of Square processing fee money refunded to the *merchant*..</param>
         /// <param name="AdditionalRecipients">Additional recipients (other than the merchant) receiving a portion of this refund. For example, fees assessed on a refund of a purchase by a third party integration..</param>
         public Refund(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string TenderId = default(string), string CreatedAt = default(string), string Reason = default(string), Money AmountMoney = default(Money), StatusEnum? Status = default(StatusEnum?), Money ProcessingFeeMoney = default(Money), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))

@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class OrderFulfillment :  IEquatable<OrderFulfillment>, IValidatableObject
     {
         /// <summary>
-        /// The type of the fulfillment.
+        /// The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
         /// </summary>
-        /// <value>The type of the fulfillment.</value>
+        /// <value>The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -45,9 +45,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The state of the fulfillment.
+        /// The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
         /// </summary>
-        /// <value>The state of the fulfillment.</value>
+        /// <value>The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StateEnum
         {
@@ -90,22 +90,22 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The type of the fulfillment.
+        /// The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
         /// </summary>
-        /// <value>The type of the fulfillment.</value>
+        /// <value>The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// The state of the fulfillment.
+        /// The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
         /// </summary>
-        /// <value>The state of the fulfillment.</value>
+        /// <value>The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
         public StateEnum? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderFulfillment" /> class.
         /// </summary>
-        /// <param name="Type">The type of the fulfillment..</param>
-        /// <param name="State">The state of the fulfillment..</param>
+        /// <param name="Type">The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values.</param>
+        /// <param name="State">The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values.</param>
         /// <param name="PickupDetails">Contains pickup-specific details. Required when fulfillment type is &#x60;PICKUP&#x60;..</param>
         public OrderFulfillment(TypeEnum? Type = default(TypeEnum?), StateEnum? State = default(StateEnum?), OrderFulfillmentPickupDetails PickupDetails = default(OrderFulfillmentPickupDetails))
         {

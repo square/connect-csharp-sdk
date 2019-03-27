@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class CatalogQuerySortedAttribute :  IEquatable<CatalogQuerySortedAttribute>, IValidatableObject
     {
         /// <summary>
-        /// The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending).
+        /// The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values
         /// </summary>
-        /// <value>The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending).</value>
+        /// <value>The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SortOrderEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending).
+        /// The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values
         /// </summary>
-        /// <value>The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending).</value>
+        /// <value>The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values</value>
         [DataMember(Name="sort_order", EmitDefaultValue=false)]
         public SortOrderEnum? SortOrder { get; set; }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="AttributeName">The attribute whose value should be used as the sort key. (required).</param>
         /// <param name="InitialAttributeValue">The first attribute value to be returned by the query. Ascending sorts will return only objects with this value or greater, while descending sorts will return only objects with this value or less. If unset, start at the beginning (for ascending sorts) or end (for descending sorts)..</param>
-        /// <param name="SortOrder">The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending)..</param>
+        /// <param name="SortOrder">The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending). See [SortOrder](#type-sortorder) for possible values.</param>
         public CatalogQuerySortedAttribute(string AttributeName = default(string), string InitialAttributeValue = default(string), SortOrderEnum? SortOrder = default(SortOrderEnum?))
         {
             // to ensure "AttributeName" is required (not null)

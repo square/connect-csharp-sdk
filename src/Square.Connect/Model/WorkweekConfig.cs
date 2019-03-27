@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class WorkweekConfig :  IEquatable<WorkweekConfig>, IValidatableObject
     {
         /// <summary>
-        /// The day of the week on which a business week cuts over for compensation purposes.
+        /// The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values
         /// </summary>
-        /// <value>The day of the week on which a business week cuts over for compensation purposes.</value>
+        /// <value>The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StartOfWeekEnum
         {
@@ -81,9 +81,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The day of the week on which a business week cuts over for compensation purposes.
+        /// The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values
         /// </summary>
-        /// <value>The day of the week on which a business week cuts over for compensation purposes.</value>
+        /// <value>The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values</value>
         [DataMember(Name="start_of_week", EmitDefaultValue=false)]
         public StartOfWeekEnum? StartOfWeek { get; set; }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="WorkweekConfig" /> class.
         /// </summary>
         /// <param name="Id">UUID for this object.</param>
-        /// <param name="StartOfWeek">The day of the week on which a business week cuts over for compensation purposes. (required).</param>
+        /// <param name="StartOfWeek">The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values (required).</param>
         /// <param name="StartOfDayLocalTime">The local time at which a business week cuts over. Represented as a string in &#x60;HH:MM&#x60; format (&#x60;HH:MM:SS&#x60; is also accepted, but seconds are truncated). (required).</param>
         /// <param name="Version">Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If not provided, Square executes a blind write; potentially overwriting data from another write..</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format; presented in UTC.</param>

@@ -30,9 +30,9 @@ namespace Square.Connect.Model
     public partial class CatalogItemVariation :  IEquatable<CatalogItemVariation>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
+        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.</value>
+        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PricingTypeEnum
         {
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for all possible values.
+        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for all possible values.</value>
+        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InventoryAlertTypeEnum
         {
@@ -72,15 +72,15 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
+        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.</value>
+        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values</value>
         [DataMember(Name="pricing_type", EmitDefaultValue=false)]
         public PricingTypeEnum? PricingType { get; set; }
         /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for all possible values.
+        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values
         /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for all possible values.</value>
+        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values</value>
         [DataMember(Name="inventory_alert_type", EmitDefaultValue=false)]
         public InventoryAlertTypeEnum? InventoryAlertType { get; set; }
         /// <summary>
@@ -91,11 +91,11 @@ namespace Square.Connect.Model
         /// <param name="Sku">The item variation&#39;s SKU, if any. Searchable..</param>
         /// <param name="Upc">The item variation&#39;s UPC, if any. Searchable in the Connect API. This field is only exposed in the Connect API. It is not exposed in Square&#39;s Dashboard, Square Point of Sale app or Retail Point of Sale app..</param>
         /// <param name="Ordinal">The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique..</param>
-        /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values..</param>
+        /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values.</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if fixed pricing is used..</param>
         /// <param name="LocationOverrides">Per-[location](#type-location) price and inventory overrides..</param>
         /// <param name="TrackInventory">If &#x60;true&#x60;, inventory tracking is active for the variation..</param>
-        /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for all possible values..</param>
+        /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for possible values.</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
         /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable..</param>
         /// <param name="ServiceDuration">If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
