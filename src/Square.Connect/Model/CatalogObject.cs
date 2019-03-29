@@ -109,6 +109,7 @@ namespace Square.Connect.Model
         /// <param name="PresentAtAllLocations">If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field. If not specified, defaults to &#x60;true&#x60;..</param>
         /// <param name="PresentAtLocationIds">A list of locations where the object is present, even if &#x60;present_at_all_locations&#x60; is &#x60;false&#x60;..</param>
         /// <param name="AbsentAtLocationIds">A list of locations where the object is not present, even if &#x60;present_at_all_locations&#x60; is &#x60;true&#x60;..</param>
+        /// <param name="ImageId">Identifies the &#x60;CatalogImage&#x60; attached to this &#x60;CatalogObject&#x60;..</param>
         /// <param name="ItemData">Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type &#x60;ITEM&#x60;..</param>
         /// <param name="CategoryData">Structured data for a [CatalogCategory](#type-catalogcategory), set for CatalogObjects of type &#x60;CATEGORY&#x60;..</param>
         /// <param name="ItemVariationData">Structured data for a [CatalogItemVariation](#type-catalogitemvariation), set for CatalogObjects of type &#x60;ITEM_VARIATION&#x60;..</param>
@@ -117,7 +118,7 @@ namespace Square.Connect.Model
         /// <param name="ModifierListData">Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;..</param>
         /// <param name="ModifierData">Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;..</param>
         /// <param name="ImageData">Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;..</param>
-        public CatalogObject(TypeEnum? Type = default(TypeEnum?), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogImage ImageData = default(CatalogImage))
+        public CatalogObject(TypeEnum? Type = default(TypeEnum?), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), string ImageId = default(string), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogImage ImageData = default(CatalogImage))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -144,6 +145,7 @@ namespace Square.Connect.Model
             this.PresentAtAllLocations = PresentAtAllLocations;
             this.PresentAtLocationIds = PresentAtLocationIds;
             this.AbsentAtLocationIds = AbsentAtLocationIds;
+            this.ImageId = ImageId;
             this.ItemData = ItemData;
             this.CategoryData = CategoryData;
             this.ItemVariationData = ItemVariationData;
@@ -202,6 +204,12 @@ namespace Square.Connect.Model
         /// <value>A list of locations where the object is not present, even if &#x60;present_at_all_locations&#x60; is &#x60;true&#x60;.</value>
         [DataMember(Name="absent_at_location_ids", EmitDefaultValue=false)]
         public List<string> AbsentAtLocationIds { get; set; }
+        /// <summary>
+        /// Identifies the &#x60;CatalogImage&#x60; attached to this &#x60;CatalogObject&#x60;.
+        /// </summary>
+        /// <value>Identifies the &#x60;CatalogImage&#x60; attached to this &#x60;CatalogObject&#x60;.</value>
+        [DataMember(Name="image_id", EmitDefaultValue=false)]
+        public string ImageId { get; set; }
         /// <summary>
         /// Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type &#x60;ITEM&#x60;.
         /// </summary>
@@ -267,6 +275,7 @@ namespace Square.Connect.Model
             sb.Append("  PresentAtAllLocations: ").Append(PresentAtAllLocations).Append("\n");
             sb.Append("  PresentAtLocationIds: ").Append(PresentAtLocationIds).Append("\n");
             sb.Append("  AbsentAtLocationIds: ").Append(AbsentAtLocationIds).Append("\n");
+            sb.Append("  ImageId: ").Append(ImageId).Append("\n");
             sb.Append("  ItemData: ").Append(ItemData).Append("\n");
             sb.Append("  CategoryData: ").Append(CategoryData).Append("\n");
             sb.Append("  ItemVariationData: ").Append(ItemVariationData).Append("\n");
@@ -357,6 +366,11 @@ namespace Square.Connect.Model
                     this.AbsentAtLocationIds.SequenceEqual(other.AbsentAtLocationIds)
                 ) && 
                 (
+                    this.ImageId == other.ImageId ||
+                    this.ImageId != null &&
+                    this.ImageId.Equals(other.ImageId)
+                ) && 
+                (
                     this.ItemData == other.ItemData ||
                     this.ItemData != null &&
                     this.ItemData.Equals(other.ItemData)
@@ -427,6 +441,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.PresentAtLocationIds.GetHashCode();
                 if (this.AbsentAtLocationIds != null)
                     hash = hash * 59 + this.AbsentAtLocationIds.GetHashCode();
+                if (this.ImageId != null)
+                    hash = hash * 59 + this.ImageId.GetHashCode();
                 if (this.ItemData != null)
                     hash = hash * 59 + this.ItemData.GetHashCode();
                 if (this.CategoryData != null)
