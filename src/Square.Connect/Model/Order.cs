@@ -37,9 +37,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
-        /// <param name="Id">The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-createorder) endpoint..</param>
+        /// <param name="Id">The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint..</param>
         /// <param name="LocationId">The ID of the merchant location this order is associated with. (required).</param>
         /// <param name="ReferenceId">A client specified identifier to associate an entity in another system with this order..</param>
+        /// <param name="Source">The origination details of the order..</param>
         /// <param name="LineItems">The line items included in the order..</param>
         /// <param name="Taxes">A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list..</param>
         /// <param name="Discounts">A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list..</param>
@@ -47,7 +48,7 @@ namespace Square.Connect.Model
         /// <param name="TotalMoney">The total amount of money to collect for the order..</param>
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order..</param>
-        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
+        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), OrderSource Source = default(OrderSource), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
         {
             // to ensure "LocationId" is required (not null)
             if (LocationId == null)
@@ -60,6 +61,7 @@ namespace Square.Connect.Model
             }
             this.Id = Id;
             this.ReferenceId = ReferenceId;
+            this.Source = Source;
             this.LineItems = LineItems;
             this.Taxes = Taxes;
             this.Discounts = Discounts;
@@ -70,9 +72,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-createorder) endpoint.
+        /// The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.
         /// </summary>
-        /// <value>The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-createorder) endpoint.</value>
+        /// <value>The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
@@ -87,6 +89,12 @@ namespace Square.Connect.Model
         /// <value>A client specified identifier to associate an entity in another system with this order.</value>
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
+        /// <summary>
+        /// The origination details of the order.
+        /// </summary>
+        /// <value>The origination details of the order.</value>
+        [DataMember(Name="source", EmitDefaultValue=false)]
+        public OrderSource Source { get; set; }
         /// <summary>
         /// The line items included in the order.
         /// </summary>
@@ -140,6 +148,7 @@ namespace Square.Connect.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
+            sb.Append("  Source: ").Append(Source).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  Discounts: ").Append(Discounts).Append("\n");
@@ -199,6 +208,11 @@ namespace Square.Connect.Model
                     this.ReferenceId.Equals(other.ReferenceId)
                 ) && 
                 (
+                    this.Source == other.Source ||
+                    this.Source != null &&
+                    this.Source.Equals(other.Source)
+                ) && 
+                (
                     this.LineItems == other.LineItems ||
                     this.LineItems != null &&
                     this.LineItems.SequenceEqual(other.LineItems)
@@ -252,6 +266,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.LocationId.GetHashCode();
                 if (this.ReferenceId != null)
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
+                if (this.Source != null)
+                    hash = hash * 59 + this.Source.GetHashCode();
                 if (this.LineItems != null)
                     hash = hash * 59 + this.LineItems.GetHashCode();
                 if (this.Taxes != null)

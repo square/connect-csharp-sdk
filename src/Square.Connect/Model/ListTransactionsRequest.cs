@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the query parameters that can be included in a request to the [ListTransactions](#endpoint-listtransactions) endpoint.
+    /// Defines the query parameters that can be included in a request to the ListTransactions endpoint.
     /// </summary>
     [DataContract]
     public partial class ListTransactionsRequest :  IEquatable<ListTransactionsRequest>, IValidatableObject

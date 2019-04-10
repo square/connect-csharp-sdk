@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Defines the query parameters for calls to the CaptureTransaction endpoint.
     /// </summary>
     [DataContract]
     public partial class CaptureTransactionRequest :  IEquatable<CaptureTransactionRequest>, IValidatableObject

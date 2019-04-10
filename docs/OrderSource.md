@@ -1,13 +1,14 @@
-# Square.Connect.Model.RetrieveTransactionRequest
+# Square.Connect.Model.OrderSource
 
 ### Description
 
-Defines the request body fields for calls to the RetrieveTransaction endpoint.
+Represents the origination details of an order.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Name** | **string** | The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order. | [optional] 
 
 
 

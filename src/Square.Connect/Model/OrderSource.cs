@@ -24,19 +24,26 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in requests to the ListLocations endpoint.
+    /// Represents the origination details of an order.
     /// </summary>
     [DataContract]
-    public partial class ListLocationsRequest :  IEquatable<ListLocationsRequest>, IValidatableObject
+    public partial class OrderSource :  IEquatable<OrderSource>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListLocationsRequest" /> class.
+        /// Initializes a new instance of the <see cref="OrderSource" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        public ListLocationsRequest()
+        /// <param name="Name">The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order..</param>
+        public OrderSource(string Name = default(string))
         {
+            this.Name = Name;
         }
         
+        /// <summary>
+        /// The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.
+        /// </summary>
+        /// <value>The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.</value>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -44,7 +51,8 @@ namespace Square.Connect.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListLocationsRequest {\n");
+            sb.Append("class OrderSource {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,21 +74,26 @@ namespace Square.Connect.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ListLocationsRequest);
+            return this.Equals(obj as OrderSource);
         }
 
         /// <summary>
-        /// Returns true if ListLocationsRequest instances are equal
+        /// Returns true if OrderSource instances are equal
         /// </summary>
-        /// <param name="other">Instance of ListLocationsRequest to be compared</param>
+        /// <param name="other">Instance of OrderSource to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ListLocationsRequest other)
+        public bool Equals(OrderSource other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
                 return false;
 
-            return false;
+            return 
+                (
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
+                );
         }
 
         /// <summary>
@@ -94,6 +107,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
                 return hash;
             }
         }

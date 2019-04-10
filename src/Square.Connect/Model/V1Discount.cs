@@ -141,7 +141,8 @@ namespace Square.Connect.Model
         /// <param name="DiscountType">Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values.</param>
         /// <param name="PinRequired">Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment..</param>
         /// <param name="Color">The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values.</param>
-        public V1Discount(string Id = default(string), string Name = default(string), string Rate = default(string), V1Money AmountMoney = default(V1Money), DiscountTypeEnum? DiscountType = default(DiscountTypeEnum?), bool? PinRequired = default(bool?), ColorEnum? Color = default(ColorEnum?))
+        /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
+        public V1Discount(string Id = default(string), string Name = default(string), string Rate = default(string), V1Money AmountMoney = default(V1Money), DiscountTypeEnum? DiscountType = default(DiscountTypeEnum?), bool? PinRequired = default(bool?), ColorEnum? Color = default(ColorEnum?), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -150,6 +151,7 @@ namespace Square.Connect.Model
             this.DiscountType = DiscountType;
             this.PinRequired = PinRequired;
             this.Color = Color;
+            this.V2Id = V2Id;
         }
         
         /// <summary>
@@ -183,6 +185,12 @@ namespace Square.Connect.Model
         [DataMember(Name="pin_required", EmitDefaultValue=false)]
         public bool? PinRequired { get; set; }
         /// <summary>
+        /// The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+        /// </summary>
+        /// <value>The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.</value>
+        [DataMember(Name="v2_id", EmitDefaultValue=false)]
+        public string V2Id { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -197,6 +205,7 @@ namespace Square.Connect.Model
             sb.Append("  DiscountType: ").Append(DiscountType).Append("\n");
             sb.Append("  PinRequired: ").Append(PinRequired).Append("\n");
             sb.Append("  Color: ").Append(Color).Append("\n");
+            sb.Append("  V2Id: ").Append(V2Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -267,6 +276,11 @@ namespace Square.Connect.Model
                     this.Color == other.Color ||
                     this.Color != null &&
                     this.Color.Equals(other.Color)
+                ) && 
+                (
+                    this.V2Id == other.V2Id ||
+                    this.V2Id != null &&
+                    this.V2Id.Equals(other.V2Id)
                 );
         }
 
@@ -295,6 +309,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.PinRequired.GetHashCode();
                 if (this.Color != null)
                     hash = hash * 59 + this.Color.GetHashCode();
+                if (this.V2Id != null)
+                    hash = hash * 59 + this.V2Id.GetHashCode();
                 return hash;
             }
         }

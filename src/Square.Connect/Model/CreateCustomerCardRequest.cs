@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the request body of a request to the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+    /// Defines the fields that are included in the request body of a request to the CreateCustomerCard endpoint.
     /// </summary>
     [DataContract]
     public partial class CreateCustomerCardRequest :  IEquatable<CreateCustomerCardRequest>, IValidatableObject

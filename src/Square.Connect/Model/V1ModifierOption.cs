@@ -38,7 +38,8 @@ namespace Square.Connect.Model
         /// <param name="OnByDefault">If true, the modifier option is the default option in a modifier list for which selection_type is SINGLE..</param>
         /// <param name="Ordinal">Indicates the modifier option&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order..</param>
         /// <param name="ModifierListId">The ID of the modifier list the option belongs to..</param>
-        public V1ModifierOption(string Id = default(string), string Name = default(string), V1Money PriceMoney = default(V1Money), bool? OnByDefault = default(bool?), int? Ordinal = default(int?), string ModifierListId = default(string))
+        /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
+        public V1ModifierOption(string Id = default(string), string Name = default(string), V1Money PriceMoney = default(V1Money), bool? OnByDefault = default(bool?), int? Ordinal = default(int?), string ModifierListId = default(string), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -46,6 +47,7 @@ namespace Square.Connect.Model
             this.OnByDefault = OnByDefault;
             this.Ordinal = Ordinal;
             this.ModifierListId = ModifierListId;
+            this.V2Id = V2Id;
         }
         
         /// <summary>
@@ -85,6 +87,12 @@ namespace Square.Connect.Model
         [DataMember(Name="modifier_list_id", EmitDefaultValue=false)]
         public string ModifierListId { get; set; }
         /// <summary>
+        /// The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+        /// </summary>
+        /// <value>The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.</value>
+        [DataMember(Name="v2_id", EmitDefaultValue=false)]
+        public string V2Id { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -98,6 +106,7 @@ namespace Square.Connect.Model
             sb.Append("  OnByDefault: ").Append(OnByDefault).Append("\n");
             sb.Append("  Ordinal: ").Append(Ordinal).Append("\n");
             sb.Append("  ModifierListId: ").Append(ModifierListId).Append("\n");
+            sb.Append("  V2Id: ").Append(V2Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +172,11 @@ namespace Square.Connect.Model
                     this.ModifierListId == other.ModifierListId ||
                     this.ModifierListId != null &&
                     this.ModifierListId.Equals(other.ModifierListId)
+                ) && 
+                (
+                    this.V2Id == other.V2Id ||
+                    this.V2Id != null &&
+                    this.V2Id.Equals(other.V2Id)
                 );
         }
 
@@ -189,6 +203,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Ordinal.GetHashCode();
                 if (this.ModifierListId != null)
                     hash = hash * 59 + this.ModifierListId.GetHashCode();
+                if (this.V2Id != null)
+                    hash = hash * 59 + this.V2Id.GetHashCode();
                 return hash;
             }
         }

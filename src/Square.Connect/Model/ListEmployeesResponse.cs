@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [ListEmployees](#endpoint-listemployees) endpoint.  One of &#x60;errors&#x60; or &#x60;employees&#x60; is present in a given response (never both).
+    /// Defines the fields that are included in the response body of a request to the ListEmployees endpoint.  One of &#x60;errors&#x60; or &#x60;employees&#x60; is present in a given response (never both).
     /// </summary>
     [DataContract]
     public partial class ListEmployeesResponse :  IEquatable<ListEmployeesResponse>, IValidatableObject

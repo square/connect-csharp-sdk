@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Defines the fields that are included in requests to the DeleteCustomerCard endpoint.
     /// </summary>
     [DataContract]
     public partial class DeleteCustomerCardRequest :  IEquatable<DeleteCustomerCardRequest>, IValidatableObject
