@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the query parameters that can be included in a request to the [ListAdditionalRecipientReceivables](#endpoint-listadditionalrecipientreceivables) endpoint.
+    /// Defines the query parameters that can be included in a request to the ListAdditionalRecipientReceivables endpoint.
     /// </summary>
     [DataContract]
     public partial class ListAdditionalRecipientReceivablesRequest :  IEquatable<ListAdditionalRecipientReceivablesRequest>, IValidatableObject

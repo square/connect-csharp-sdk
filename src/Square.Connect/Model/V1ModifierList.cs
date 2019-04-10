@@ -63,12 +63,14 @@ namespace Square.Connect.Model
         /// <param name="Name">The modifier list&#39;s name..</param>
         /// <param name="SelectionType">Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values.</param>
         /// <param name="ModifierOptions">The options included in the modifier list..</param>
-        public V1ModifierList(string Id = default(string), string Name = default(string), SelectionTypeEnum? SelectionType = default(SelectionTypeEnum?), List<V1ModifierOption> ModifierOptions = default(List<V1ModifierOption>))
+        /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
+        public V1ModifierList(string Id = default(string), string Name = default(string), SelectionTypeEnum? SelectionType = default(SelectionTypeEnum?), List<V1ModifierOption> ModifierOptions = default(List<V1ModifierOption>), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
             this.SelectionType = SelectionType;
             this.ModifierOptions = ModifierOptions;
+            this.V2Id = V2Id;
         }
         
         /// <summary>
@@ -90,6 +92,12 @@ namespace Square.Connect.Model
         [DataMember(Name="modifier_options", EmitDefaultValue=false)]
         public List<V1ModifierOption> ModifierOptions { get; set; }
         /// <summary>
+        /// The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+        /// </summary>
+        /// <value>The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.</value>
+        [DataMember(Name="v2_id", EmitDefaultValue=false)]
+        public string V2Id { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -101,6 +109,7 @@ namespace Square.Connect.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  SelectionType: ").Append(SelectionType).Append("\n");
             sb.Append("  ModifierOptions: ").Append(ModifierOptions).Append("\n");
+            sb.Append("  V2Id: ").Append(V2Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -156,6 +165,11 @@ namespace Square.Connect.Model
                     this.ModifierOptions == other.ModifierOptions ||
                     this.ModifierOptions != null &&
                     this.ModifierOptions.SequenceEqual(other.ModifierOptions)
+                ) && 
+                (
+                    this.V2Id == other.V2Id ||
+                    this.V2Id != null &&
+                    this.V2Id.Equals(other.V2Id)
                 );
         }
 
@@ -178,6 +192,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.SelectionType.GetHashCode();
                 if (this.ModifierOptions != null)
                     hash = hash * 59 + this.ModifierOptions.GetHashCode();
+                if (this.V2Id != null)
+                    hash = hash * 59 + this.V2Id.GetHashCode();
                 return hash;
             }
         }

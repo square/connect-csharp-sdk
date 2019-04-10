@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the body parameters that can be provided in a request to the [UpdateCustomer](#endpoint-updatecustomer) endpoint.
+    /// Defines the body parameters that can be provided in a request to the UpdateCustomer endpoint.
     /// </summary>
     [DataContract]
     public partial class UpdateCustomerRequest :  IEquatable<UpdateCustomerRequest>, IValidatableObject

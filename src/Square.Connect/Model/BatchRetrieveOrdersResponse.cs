@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [BatchRetrieveOrders](#endpoint-batchretrieveorders) endpoint.
+    /// Defines the fields that are included in the response body of a request to the BatchRetrieveOrders endpoint.
     /// </summary>
     [DataContract]
     public partial class BatchRetrieveOrdersResponse :  IEquatable<BatchRetrieveOrdersResponse>, IValidatableObject

@@ -185,7 +185,8 @@ namespace Square.Connect.Model
         /// <param name="Enabled">If true, the fee is applied to all appropriate items. If false, the fee is not applied at all..</param>
         /// <param name="InclusionType">Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values.</param>
         /// <param name="Type">In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values.</param>
-        public V1Fee(string Id = default(string), string Name = default(string), string Rate = default(string), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), AdjustmentTypeEnum? AdjustmentType = default(AdjustmentTypeEnum?), bool? AppliesToCustomAmounts = default(bool?), bool? Enabled = default(bool?), InclusionTypeEnum? InclusionType = default(InclusionTypeEnum?), TypeEnum? Type = default(TypeEnum?))
+        /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
+        public V1Fee(string Id = default(string), string Name = default(string), string Rate = default(string), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), AdjustmentTypeEnum? AdjustmentType = default(AdjustmentTypeEnum?), bool? AppliesToCustomAmounts = default(bool?), bool? Enabled = default(bool?), InclusionTypeEnum? InclusionType = default(InclusionTypeEnum?), TypeEnum? Type = default(TypeEnum?), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -196,6 +197,7 @@ namespace Square.Connect.Model
             this.Enabled = Enabled;
             this.InclusionType = InclusionType;
             this.Type = Type;
+            this.V2Id = V2Id;
         }
         
         /// <summary>
@@ -229,6 +231,12 @@ namespace Square.Connect.Model
         [DataMember(Name="enabled", EmitDefaultValue=false)]
         public bool? Enabled { get; set; }
         /// <summary>
+        /// The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+        /// </summary>
+        /// <value>The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.</value>
+        [DataMember(Name="v2_id", EmitDefaultValue=false)]
+        public string V2Id { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -245,6 +253,7 @@ namespace Square.Connect.Model
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  InclusionType: ").Append(InclusionType).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  V2Id: ").Append(V2Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -325,6 +334,11 @@ namespace Square.Connect.Model
                     this.Type == other.Type ||
                     this.Type != null &&
                     this.Type.Equals(other.Type)
+                ) && 
+                (
+                    this.V2Id == other.V2Id ||
+                    this.V2Id != null &&
+                    this.V2Id.Equals(other.V2Id)
                 );
         }
 
@@ -357,6 +371,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.InclusionType.GetHashCode();
                 if (this.Type != null)
                     hash = hash * 59 + this.Type.GetHashCode();
+                if (this.V2Id != null)
+                    hash = hash * 59 + this.V2Id.GetHashCode();
                 return hash;
             }
         }

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the body parameters that can be provided in a request to the [CreateCustomer](#endpoint-createcustomer) endpoint.
+    /// Defines the body parameters that can be provided in a request to the CreateCustomer endpoint.
     /// </summary>
     [DataContract]
     public partial class CreateCustomerRequest :  IEquatable<CreateCustomerRequest>, IValidatableObject

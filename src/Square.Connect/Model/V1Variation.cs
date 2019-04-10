@@ -121,7 +121,8 @@ namespace Square.Connect.Model
         /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values.</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard..</param>
         /// <param name="UserData">Arbitrary metadata associated with the variation. Cannot exceed 255 characters..</param>
-        public V1Variation(string Id = default(string), string Name = default(string), string ItemId = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), V1Money PriceMoney = default(V1Money), string Sku = default(string), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), int? InventoryAlertThreshold = default(int?), string UserData = default(string))
+        /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
+        public V1Variation(string Id = default(string), string Name = default(string), string ItemId = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), V1Money PriceMoney = default(V1Money), string Sku = default(string), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), int? InventoryAlertThreshold = default(int?), string UserData = default(string), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -134,6 +135,7 @@ namespace Square.Connect.Model
             this.InventoryAlertType = InventoryAlertType;
             this.InventoryAlertThreshold = InventoryAlertThreshold;
             this.UserData = UserData;
+            this.V2Id = V2Id;
         }
         
         /// <summary>
@@ -191,6 +193,12 @@ namespace Square.Connect.Model
         [DataMember(Name="user_data", EmitDefaultValue=false)]
         public string UserData { get; set; }
         /// <summary>
+        /// The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+        /// </summary>
+        /// <value>The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.</value>
+        [DataMember(Name="v2_id", EmitDefaultValue=false)]
+        public string V2Id { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -209,6 +217,7 @@ namespace Square.Connect.Model
             sb.Append("  InventoryAlertType: ").Append(InventoryAlertType).Append("\n");
             sb.Append("  InventoryAlertThreshold: ").Append(InventoryAlertThreshold).Append("\n");
             sb.Append("  UserData: ").Append(UserData).Append("\n");
+            sb.Append("  V2Id: ").Append(V2Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -299,6 +308,11 @@ namespace Square.Connect.Model
                     this.UserData == other.UserData ||
                     this.UserData != null &&
                     this.UserData.Equals(other.UserData)
+                ) && 
+                (
+                    this.V2Id == other.V2Id ||
+                    this.V2Id != null &&
+                    this.V2Id.Equals(other.V2Id)
                 );
         }
 
@@ -335,6 +349,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.InventoryAlertThreshold.GetHashCode();
                 if (this.UserData != null)
                     hash = hash * 59 + this.UserData.GetHashCode();
+                if (this.V2Id != null)
+                    hash = hash * 59 + this.V2Id.GetHashCode();
                 return hash;
             }
         }

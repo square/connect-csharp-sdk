@@ -34,10 +34,12 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Id">The category&#39;s unique ID..</param>
         /// <param name="Name">The category&#39;s name..</param>
-        public V1Category(string Id = default(string), string Name = default(string))
+        /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
+        public V1Category(string Id = default(string), string Name = default(string), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
+            this.V2Id = V2Id;
         }
         
         /// <summary>
@@ -53,6 +55,12 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+        /// </summary>
+        /// <value>The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.</value>
+        [DataMember(Name="v2_id", EmitDefaultValue=false)]
+        public string V2Id { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -62,6 +70,7 @@ namespace Square.Connect.Model
             sb.Append("class V1Category {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  V2Id: ").Append(V2Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +116,11 @@ namespace Square.Connect.Model
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.V2Id == other.V2Id ||
+                    this.V2Id != null &&
+                    this.V2Id.Equals(other.V2Id)
                 );
         }
 
@@ -125,6 +139,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.V2Id != null)
+                    hash = hash * 59 + this.V2Id.GetHashCode();
                 return hash;
             }
         }

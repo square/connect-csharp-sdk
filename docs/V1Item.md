@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Taxable** | **bool?** | Deprecated. This field is not used. | [optional] 
 **CategoryId** | **string** | The ID of the item&#39;s category, if any. | [optional] 
 **AvailableForPickup** | **bool?** | If true, the item can be added to pickup orders from the merchant&#39;s online store. Default value: false | [optional] 
+**V2Id** | **string** | The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID. | [optional] 
 
 
 ## TypeEnum

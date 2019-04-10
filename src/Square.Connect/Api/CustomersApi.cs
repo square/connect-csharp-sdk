@@ -183,7 +183,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -195,7 +195,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -363,7 +363,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -375,7 +375,7 @@ namespace Square.Connect.Api
         /// UpdateCustomer
         /// </summary>
         /// <remarks>
-        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -539,7 +539,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -707,7 +707,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -877,7 +877,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
 
             // authentication (oauth2) required
@@ -1031,7 +1031,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (cardId != null) localVarPathParams.Add("card_id", Configuration.ApiClient.ParameterToString(cardId)); // path parameter
 
@@ -1188,7 +1188,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
             if (sortField != null) localVarQueryParams.Add("sort_field", Configuration.ApiClient.ParameterToString(sortField)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -1342,7 +1342,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
 
             // authentication (oauth2) required
@@ -1491,7 +1491,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1610,7 +1610,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -1623,7 +1623,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -1659,7 +1659,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -1697,7 +1697,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
@@ -1711,7 +1711,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+        /// UpdateCustomer Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#39;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-customers-createcustomercard) endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>

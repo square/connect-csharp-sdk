@@ -254,7 +254,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
 
             // authentication (oauth2) required
             // oauth required
@@ -391,7 +391,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-03-27");
+            localVarHeaderParams.Add("Square-Version", "2019-04-10");
 
             // authentication (oauth2) required
             // oauth required

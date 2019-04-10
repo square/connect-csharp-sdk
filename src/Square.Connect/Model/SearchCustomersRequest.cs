@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields included in the request body for the [SearchCustomers](#endpoint-searchcustomer) endpoint.
+    /// Defines the fields included in the request body for the SearchCustomers endpoint.
     /// </summary>
     [DataContract]
     public partial class SearchCustomersRequest :  IEquatable<SearchCustomersRequest>, IValidatableObject

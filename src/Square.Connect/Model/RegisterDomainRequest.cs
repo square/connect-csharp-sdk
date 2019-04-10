@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the parameters that can be included in the body of a request to the [RegisterDomain](#endpoint-registerdomain) endpoint.
+    /// Defines the parameters that can be included in the body of a request to the RegisterDomain endpoint.
     /// </summary>
     [DataContract]
     public partial class RegisterDomainRequest :  IEquatable<RegisterDomainRequest>, IValidatableObject

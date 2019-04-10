@@ -177,7 +177,8 @@ namespace Square.Connect.Model
         /// <param name="Taxable">Deprecated. This field is not used..</param>
         /// <param name="CategoryId">The ID of the item&#39;s category, if any..</param>
         /// <param name="AvailableForPickup">If true, the item can be added to pickup orders from the merchant&#39;s online store. Default value: false.</param>
-        public V1Item(string Id = default(string), string Name = default(string), string Description = default(string), TypeEnum? Type = default(TypeEnum?), ColorEnum? Color = default(ColorEnum?), string Abbreviation = default(string), VisibilityEnum? Visibility = default(VisibilityEnum?), bool? AvailableOnline = default(bool?), V1ItemImage MasterImage = default(V1ItemImage), V1Category Category = default(V1Category), List<V1Variation> Variations = default(List<V1Variation>), List<V1Variation> ModifierLists = default(List<V1Variation>), List<V1Fee> Fees = default(List<V1Fee>), bool? Taxable = default(bool?), string CategoryId = default(string), bool? AvailableForPickup = default(bool?))
+        /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
+        public V1Item(string Id = default(string), string Name = default(string), string Description = default(string), TypeEnum? Type = default(TypeEnum?), ColorEnum? Color = default(ColorEnum?), string Abbreviation = default(string), VisibilityEnum? Visibility = default(VisibilityEnum?), bool? AvailableOnline = default(bool?), V1ItemImage MasterImage = default(V1ItemImage), V1Category Category = default(V1Category), List<V1Variation> Variations = default(List<V1Variation>), List<V1Variation> ModifierLists = default(List<V1Variation>), List<V1Fee> Fees = default(List<V1Fee>), bool? Taxable = default(bool?), string CategoryId = default(string), bool? AvailableForPickup = default(bool?), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -195,6 +196,7 @@ namespace Square.Connect.Model
             this.Taxable = Taxable;
             this.CategoryId = CategoryId;
             this.AvailableForPickup = AvailableForPickup;
+            this.V2Id = V2Id;
         }
         
         /// <summary>
@@ -276,6 +278,12 @@ namespace Square.Connect.Model
         [DataMember(Name="available_for_pickup", EmitDefaultValue=false)]
         public bool? AvailableForPickup { get; set; }
         /// <summary>
+        /// The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+        /// </summary>
+        /// <value>The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.</value>
+        [DataMember(Name="v2_id", EmitDefaultValue=false)]
+        public string V2Id { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -299,6 +307,7 @@ namespace Square.Connect.Model
             sb.Append("  Taxable: ").Append(Taxable).Append("\n");
             sb.Append("  CategoryId: ").Append(CategoryId).Append("\n");
             sb.Append("  AvailableForPickup: ").Append(AvailableForPickup).Append("\n");
+            sb.Append("  V2Id: ").Append(V2Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -414,6 +423,11 @@ namespace Square.Connect.Model
                     this.AvailableForPickup == other.AvailableForPickup ||
                     this.AvailableForPickup != null &&
                     this.AvailableForPickup.Equals(other.AvailableForPickup)
+                ) && 
+                (
+                    this.V2Id == other.V2Id ||
+                    this.V2Id != null &&
+                    this.V2Id.Equals(other.V2Id)
                 );
         }
 
@@ -460,6 +474,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.CategoryId.GetHashCode();
                 if (this.AvailableForPickup != null)
                     hash = hash * 59 + this.AvailableForPickup.GetHashCode();
+                if (this.V2Id != null)
+                    hash = hash * 59 + this.V2Id.GetHashCode();
                 return hash;
             }
         }

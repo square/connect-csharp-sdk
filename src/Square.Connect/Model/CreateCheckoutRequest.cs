@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the parameters that can be included in the body of a request to the [CreateCheckout](#endpoint-createcheckout) endpoint.
+    /// Defines the parameters that can be included in the body of a request to the CreateCheckout endpoint.
     /// </summary>
     [DataContract]
     public partial class CreateCheckoutRequest :  IEquatable<CreateCheckoutRequest>, IValidatableObject
