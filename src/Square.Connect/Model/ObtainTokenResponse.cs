@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ObtainTokenResponse" /> class.
         /// </summary>
-        /// <param name="AccessToken">A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information..</param>
+        /// <param name="AccessToken">A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information..</param>
         /// <param name="TokenType">This value is always _bearer_..</param>
         /// <param name="ExpiresAt">The date when access_token expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format..</param>
         /// <param name="MerchantId">The ID of the authorizing merchant&#39;s business..</param>
@@ -53,9 +53,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
+        /// A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
         /// </summary>
-        /// <value>A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.</value>
+        /// <value>A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.</value>
         [DataMember(Name="access_token", EmitDefaultValue=false)]
         public string AccessToken { get; set; }
         /// <summary>

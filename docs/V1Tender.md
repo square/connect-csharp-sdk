@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Name** | **string** | A human-readable description of the tender. | [optional] 
 **EmployeeId** | **string** | The ID of the employee that processed the tender. | [optional] 
 **ReceiptUrl** | **string** | The URL of the receipt for the tender. | [optional] 
-**CardBrand** | **CardBrandEnum** | The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values | [optional] 
+**CardBrand** | **CardBrandEnum** | The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values | [optional] 
 **PanSuffix** | **string** | The last four digits of the provided credit card&#39;s account number. | [optional] 
 **EntryMethod** | **EntryMethodEnum** | The tender&#39;s unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values | [optional] 
 **PaymentNote** | **string** | Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER. | [optional] 
@@ -46,7 +46,7 @@ Name | Value
 ------------ | -------------
 **OTHERBRAND** | "OTHER_BRAND"
 **VISA** | "VISA"
-**MASTERCARD** | "MASTERCARD"
+**MASTERCARD** | "MASTER_CARD"
 **AMERICANEXPRESS** | "AMERICAN_EXPRESS"
 **DISCOVER** | "DISCOVER"
 **DISCOVERDINERS** | "DISCOVER_DINERS"

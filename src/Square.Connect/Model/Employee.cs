@@ -62,15 +62,19 @@ namespace Square.Connect.Model
         /// <param name="Id">UUID for this &#x60;Employee&#x60;..</param>
         /// <param name="FirstName">Given (first) name of the employee..</param>
         /// <param name="LastName">Family (last) name of the employee.</param>
+        /// <param name="Email">Email of the employee.</param>
+        /// <param name="PhoneNumber">Phone number of the employee in E.164 format, i.e. \&quot;+12125554250\&quot;.</param>
         /// <param name="LocationIds">A list of location IDs where this employee has access..</param>
         /// <param name="Status">Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values.</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format..</param>
         /// <param name="UpdatedAt">A read-only timestamp in RFC 3339 format..</param>
-        public Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), List<string> LocationIds = default(List<string>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string UpdatedAt = default(string))
+        public Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), string Email = default(string), string PhoneNumber = default(string), List<string> LocationIds = default(List<string>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             this.Id = Id;
             this.FirstName = FirstName;
             this.LastName = LastName;
+            this.Email = Email;
+            this.PhoneNumber = PhoneNumber;
             this.LocationIds = LocationIds;
             this.Status = Status;
             this.CreatedAt = CreatedAt;
@@ -95,6 +99,18 @@ namespace Square.Connect.Model
         /// <value>Family (last) name of the employee</value>
         [DataMember(Name="last_name", EmitDefaultValue=false)]
         public string LastName { get; set; }
+        /// <summary>
+        /// Email of the employee
+        /// </summary>
+        /// <value>Email of the employee</value>
+        [DataMember(Name="email", EmitDefaultValue=false)]
+        public string Email { get; set; }
+        /// <summary>
+        /// Phone number of the employee in E.164 format, i.e. \&quot;+12125554250\&quot;
+        /// </summary>
+        /// <value>Phone number of the employee in E.164 format, i.e. \&quot;+12125554250\&quot;</value>
+        [DataMember(Name="phone_number", EmitDefaultValue=false)]
+        public string PhoneNumber { get; set; }
         /// <summary>
         /// A list of location IDs where this employee has access.
         /// </summary>
@@ -124,6 +140,8 @@ namespace Square.Connect.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  LocationIds: ").Append(LocationIds).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -180,6 +198,16 @@ namespace Square.Connect.Model
                     this.LastName.Equals(other.LastName)
                 ) && 
                 (
+                    this.Email == other.Email ||
+                    this.Email != null &&
+                    this.Email.Equals(other.Email)
+                ) && 
+                (
+                    this.PhoneNumber == other.PhoneNumber ||
+                    this.PhoneNumber != null &&
+                    this.PhoneNumber.Equals(other.PhoneNumber)
+                ) && 
+                (
                     this.LocationIds == other.LocationIds ||
                     this.LocationIds != null &&
                     this.LocationIds.SequenceEqual(other.LocationIds)
@@ -218,6 +246,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.FirstName.GetHashCode();
                 if (this.LastName != null)
                     hash = hash * 59 + this.LastName.GetHashCode();
+                if (this.Email != null)
+                    hash = hash * 59 + this.Email.GetHashCode();
+                if (this.PhoneNumber != null)
+                    hash = hash * 59 + this.PhoneNumber.GetHashCode();
                 if (this.LocationIds != null)
                     hash = hash * 59 + this.LocationIds.GetHashCode();
                 if (this.Status != null)

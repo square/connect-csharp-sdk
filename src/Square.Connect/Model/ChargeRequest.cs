@@ -43,7 +43,7 @@ namespace Square.Connect.Model
         /// <param name="CustomerCardId">The ID of the customer card on file to charge. Do not provide a value for this field if you provide a value for &#x60;card_nonce&#x60;.  If you provide this value, you _must_ also provide a value for &#x60;customer_id&#x60;..</param>
         /// <param name="DelayCapture">If &#x60;true&#x60;, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransaction](#endpoint-voidtransaction) endpoint).  Default value: &#x60;false&#x60;.</param>
         /// <param name="ReferenceId">An optional ID you can associate with the transaction for your own purposes (such as to associate the transaction with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
-        /// <param name="Note">.</param>
+        /// <param name="Note">An optional note to associate with the transaction.  This value cannot exceed 60 characters..</param>
         /// <param name="CustomerId">The ID of the customer to associate this transaction with. This field is required if you provide a value for &#x60;customer_card_id&#x60;, and optional otherwise..</param>
         /// <param name="BillingAddress">The buyer&#39;s billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;shipping_address&#x60; is provided..</param>
         /// <param name="ShippingAddress">The buyer&#39;s shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;billing_address&#x60; is provided..</param>
@@ -120,9 +120,9 @@ namespace Square.Connect.Model
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
         /// <summary>
-        /// 
+        /// An optional note to associate with the transaction.  This value cannot exceed 60 characters.
         /// </summary>
-        /// <value></value>
+        /// <value>An optional note to associate with the transaction.  This value cannot exceed 60 characters.</value>
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
