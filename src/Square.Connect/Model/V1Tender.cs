@@ -87,9 +87,9 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
-        /// The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
+        /// The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
         /// </summary>
-        /// <value>The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values</value>
+        /// <value>The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CardBrandEnum
         {
@@ -107,9 +107,9 @@ namespace Square.Connect.Model
             VISA,
             
             /// <summary>
-            /// Enum MASTERCARD for "MASTERCARD"
+            /// Enum MASTERCARD for "MASTER_CARD"
             /// </summary>
-            [EnumMember(Value = "MASTERCARD")]
+            [EnumMember(Value = "MASTER_CARD")]
             MASTERCARD,
             
             /// <summary>
@@ -207,9 +207,9 @@ namespace Square.Connect.Model
         [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
+        /// The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
         /// </summary>
-        /// <value>The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values</value>
+        /// <value>The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values</value>
         [DataMember(Name="card_brand", EmitDefaultValue=false)]
         public CardBrandEnum? CardBrand { get; set; }
         /// <summary>
@@ -226,7 +226,7 @@ namespace Square.Connect.Model
         /// <param name="Name">A human-readable description of the tender..</param>
         /// <param name="EmployeeId">The ID of the employee that processed the tender..</param>
         /// <param name="ReceiptUrl">The URL of the receipt for the tender..</param>
-        /// <param name="CardBrand">The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values.</param>
+        /// <param name="CardBrand">The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values.</param>
         /// <param name="PanSuffix">The last four digits of the provided credit card&#39;s account number..</param>
         /// <param name="EntryMethod">The tender&#39;s unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values.</param>
         /// <param name="PaymentNote">Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER..</param>
