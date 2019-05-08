@@ -37,8 +37,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
         /// </summary>
+        /// <param name="Uid">The line item&#39;s Unique identifier, unique only within this order. This field is read-only..</param>
         /// <param name="Name">The name of the line item..</param>
-        /// <param name="Quantity">The quantity purchased, as a string representation of a number.  This string must have a positive integer value. (required).</param>
+        /// <param name="Quantity">The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities). (required).</param>
+        /// <param name="QuantityUnit">The unit and precision that this line item&#39;s quantity is measured in..</param>
         /// <param name="Note">The note of the line item..</param>
         /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item..</param>
         /// <param name="VariationName">The name of the variation applied to this line item..</param>
@@ -46,11 +48,12 @@ namespace Square.Connect.Model
         /// <param name="Taxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list..</param>
         /// <param name="Discounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>
-        /// <param name="GrossSalesMoney">The gross sales amount of money calculated as (item base price + modifiers price) * quantity..</param>
+        /// <param name="VariationTotalPriceMoney">The total price of all item variations sold in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers..</param>
+        /// <param name="GrossSalesMoney">The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price..</param>
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the line item..</param>
         /// <param name="TotalMoney">The total amount of money to collect for this line item..</param>
-        public OrderLineItem(string Name = default(string), string Quantity = default(string), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderLineItemModifier> Modifiers = default(List<OrderLineItemModifier>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money GrossSalesMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
+        public OrderLineItem(string Uid = default(string), string Name = default(string), string Quantity = default(string), OrderQuantityUnit QuantityUnit = default(OrderQuantityUnit), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderLineItemModifier> Modifiers = default(List<OrderLineItemModifier>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money VariationTotalPriceMoney = default(Money), Money GrossSalesMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
             // to ensure "Quantity" is required (not null)
             if (Quantity == null)
@@ -61,7 +64,9 @@ namespace Square.Connect.Model
             {
                 this.Quantity = Quantity;
             }
+            this.Uid = Uid;
             this.Name = Name;
+            this.QuantityUnit = QuantityUnit;
             this.Note = Note;
             this.CatalogObjectId = CatalogObjectId;
             this.VariationName = VariationName;
@@ -69,6 +74,7 @@ namespace Square.Connect.Model
             this.Taxes = Taxes;
             this.Discounts = Discounts;
             this.BasePriceMoney = BasePriceMoney;
+            this.VariationTotalPriceMoney = VariationTotalPriceMoney;
             this.GrossSalesMoney = GrossSalesMoney;
             this.TotalTaxMoney = TotalTaxMoney;
             this.TotalDiscountMoney = TotalDiscountMoney;
@@ -76,17 +82,29 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
+        /// The line item&#39;s Unique identifier, unique only within this order. This field is read-only.
+        /// </summary>
+        /// <value>The line item&#39;s Unique identifier, unique only within this order. This field is read-only.</value>
+        [DataMember(Name="uid", EmitDefaultValue=false)]
+        public string Uid { get; set; }
+        /// <summary>
         /// The name of the line item.
         /// </summary>
         /// <value>The name of the line item.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The quantity purchased, as a string representation of a number.  This string must have a positive integer value.
+        /// The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities).
         /// </summary>
-        /// <value>The quantity purchased, as a string representation of a number.  This string must have a positive integer value.</value>
+        /// <value>The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities).</value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
+        /// <summary>
+        /// The unit and precision that this line item&#39;s quantity is measured in.
+        /// </summary>
+        /// <value>The unit and precision that this line item&#39;s quantity is measured in.</value>
+        [DataMember(Name="quantity_unit", EmitDefaultValue=false)]
+        public OrderQuantityUnit QuantityUnit { get; set; }
         /// <summary>
         /// The note of the line item.
         /// </summary>
@@ -130,9 +148,15 @@ namespace Square.Connect.Model
         [DataMember(Name="base_price_money", EmitDefaultValue=false)]
         public Money BasePriceMoney { get; set; }
         /// <summary>
-        /// The gross sales amount of money calculated as (item base price + modifiers price) * quantity.
+        /// The total price of all item variations sold in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers.
         /// </summary>
-        /// <value>The gross sales amount of money calculated as (item base price + modifiers price) * quantity.</value>
+        /// <value>The total price of all item variations sold in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers.</value>
+        [DataMember(Name="variation_total_price_money", EmitDefaultValue=false)]
+        public Money VariationTotalPriceMoney { get; set; }
+        /// <summary>
+        /// The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.
+        /// </summary>
+        /// <value>The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.</value>
         [DataMember(Name="gross_sales_money", EmitDefaultValue=false)]
         public Money GrossSalesMoney { get; set; }
         /// <summary>
@@ -161,8 +185,10 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OrderLineItem {\n");
+            sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
             sb.Append("  VariationName: ").Append(VariationName).Append("\n");
@@ -170,6 +196,7 @@ namespace Square.Connect.Model
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  Discounts: ").Append(Discounts).Append("\n");
             sb.Append("  BasePriceMoney: ").Append(BasePriceMoney).Append("\n");
+            sb.Append("  VariationTotalPriceMoney: ").Append(VariationTotalPriceMoney).Append("\n");
             sb.Append("  GrossSalesMoney: ").Append(GrossSalesMoney).Append("\n");
             sb.Append("  TotalTaxMoney: ").Append(TotalTaxMoney).Append("\n");
             sb.Append("  TotalDiscountMoney: ").Append(TotalDiscountMoney).Append("\n");
@@ -211,6 +238,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.Uid == other.Uid ||
+                    this.Uid != null &&
+                    this.Uid.Equals(other.Uid)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -219,6 +251,11 @@ namespace Square.Connect.Model
                     this.Quantity == other.Quantity ||
                     this.Quantity != null &&
                     this.Quantity.Equals(other.Quantity)
+                ) && 
+                (
+                    this.QuantityUnit == other.QuantityUnit ||
+                    this.QuantityUnit != null &&
+                    this.QuantityUnit.Equals(other.QuantityUnit)
                 ) && 
                 (
                     this.Note == other.Note ||
@@ -256,6 +293,11 @@ namespace Square.Connect.Model
                     this.BasePriceMoney.Equals(other.BasePriceMoney)
                 ) && 
                 (
+                    this.VariationTotalPriceMoney == other.VariationTotalPriceMoney ||
+                    this.VariationTotalPriceMoney != null &&
+                    this.VariationTotalPriceMoney.Equals(other.VariationTotalPriceMoney)
+                ) && 
+                (
                     this.GrossSalesMoney == other.GrossSalesMoney ||
                     this.GrossSalesMoney != null &&
                     this.GrossSalesMoney.Equals(other.GrossSalesMoney)
@@ -288,10 +330,14 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Uid != null)
+                    hash = hash * 59 + this.Uid.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Quantity != null)
                     hash = hash * 59 + this.Quantity.GetHashCode();
+                if (this.QuantityUnit != null)
+                    hash = hash * 59 + this.QuantityUnit.GetHashCode();
                 if (this.Note != null)
                     hash = hash * 59 + this.Note.GetHashCode();
                 if (this.CatalogObjectId != null)
@@ -306,6 +352,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Discounts.GetHashCode();
                 if (this.BasePriceMoney != null)
                     hash = hash * 59 + this.BasePriceMoney.GetHashCode();
+                if (this.VariationTotalPriceMoney != null)
+                    hash = hash * 59 + this.VariationTotalPriceMoney.GetHashCode();
                 if (this.GrossSalesMoney != null)
                     hash = hash * 59 + this.GrossSalesMoney.GetHashCode();
                 if (this.TotalTaxMoney != null)
@@ -320,6 +368,12 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // Uid (string) maxLength
+            if(this.Uid != null && this.Uid.Length > 60)
+            {
+                yield return new ValidationResult("Invalid value for Uid, length must be less than 60.", new [] { "Uid" });
+            }
+
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 500)
             {
@@ -327,9 +381,9 @@ namespace Square.Connect.Model
             }
 
             // Quantity (string) maxLength
-            if(this.Quantity != null && this.Quantity.Length > 5)
+            if(this.Quantity != null && this.Quantity.Length > 12)
             {
-                yield return new ValidationResult("Invalid value for Quantity, length must be less than 5.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, length must be less than 12.", new [] { "Quantity" });
             }
 
             // Quantity (string) minLength

@@ -51,7 +51,7 @@ namespace Square.Connect.Api
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -63,13 +63,34 @@ namespace Square.Connect.Api
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateOrderResponse</returns>
         ApiResponse<CreateOrderResponse> CreateOrderWithHttpInfo (string locationId, CreateOrderRequest body);
+        /// <summary>
+        /// SearchOrders
+        /// </summary>
+        /// <remarks>
+        /// Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>SearchOrdersResponse</returns>
+        SearchOrdersResponse SearchOrders (SearchOrdersRequest body);
+
+        /// <summary>
+        /// SearchOrders
+        /// </summary>
+        /// <remarks>
+        /// Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of SearchOrdersResponse</returns>
+        ApiResponse<SearchOrdersResponse> SearchOrdersWithHttpInfo (SearchOrdersRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -99,7 +120,7 @@ namespace Square.Connect.Api
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -111,13 +132,34 @@ namespace Square.Connect.Api
         /// CreateOrder
         /// </summary>
         /// <remarks>
-        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateOrderResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateOrderResponse>> CreateOrderAsyncWithHttpInfo (string locationId, CreateOrderRequest body);
+        /// <summary>
+        /// SearchOrders
+        /// </summary>
+        /// <remarks>
+        /// Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of SearchOrdersResponse</returns>
+        System.Threading.Tasks.Task<SearchOrdersResponse> SearchOrdersAsync (SearchOrdersRequest body);
+
+        /// <summary>
+        /// SearchOrders
+        /// </summary>
+        /// <remarks>
+        /// Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (SearchOrdersResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SearchOrdersResponse>> SearchOrdersAsyncWithHttpInfo (SearchOrdersRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -280,7 +322,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-04-10");
+            localVarHeaderParams.Add("Square-Version", "2019-05-08");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -406,7 +448,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -419,7 +461,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -455,7 +497,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-04-10");
+            localVarHeaderParams.Add("Square-Version", "2019-05-08");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -493,7 +535,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -507,7 +549,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-transactions-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
+        /// CreateOrder Creates an [Order](#type-order) that can then be referenced as &#x60;order_id&#x60; in a request to the [Charge](#endpoint-charge) endpoint. Orders specify products for purchase, along with discounts, taxes, and other settings to apply to the purchase.  To associate a created order with a request to the Charge endpoint, provide the order&#39;s &#x60;id&#x60; in the &#x60;order_id&#x60; field of your request.  You cannot modify an order after you create it. If you need to modify an order, instead create a new order with modified details.  To learn more about the Orders API, see the [Orders API Overview](/products/orders/overview).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the order with.</param>
@@ -577,6 +619,169 @@ namespace Square.Connect.Api
             return new ApiResponse<CreateOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (CreateOrderResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateOrderResponse)));
+            
+        }
+
+        /// <summary>
+        /// SearchOrders Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>SearchOrdersResponse</returns>
+        public SearchOrdersResponse SearchOrders (SearchOrdersRequest body)
+        {
+             ApiResponse<SearchOrdersResponse> localVarResponse = SearchOrdersWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// SearchOrders Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of SearchOrdersResponse</returns>
+        public ApiResponse< SearchOrdersResponse > SearchOrdersWithHttpInfo (SearchOrdersRequest body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->SearchOrders");
+
+            var localVarPath = "/v2/orders/search";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-05-08");
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchOrders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SearchOrdersResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SearchOrdersResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SearchOrdersResponse)));
+            
+        }
+
+        /// <summary>
+        /// SearchOrders Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of SearchOrdersResponse</returns>
+        public async System.Threading.Tasks.Task<SearchOrdersResponse> SearchOrdersAsync (SearchOrdersRequest body)
+        {
+             ApiResponse<SearchOrdersResponse> localVarResponse = await SearchOrdersAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// SearchOrders Search all Orders for a merchant and return either [Orders](#type-order) or [OrderEntries](#type-orderentry).  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a &#x60;created_at&#x60; value that reflects the time the order was originally processed, not the time it was subsequently transmitted to Square. Consequently, the SearchOrder endpoint might list an offline Order chronologically between online Orders that were seen in a previous request.  By default, SearchOrders will return all results for all of the merchant’s locations. When fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (SearchOrdersResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SearchOrdersResponse>> SearchOrdersAsyncWithHttpInfo (SearchOrdersRequest body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->SearchOrders");
+
+            var localVarPath = "/v2/orders/search";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchOrders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SearchOrdersResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SearchOrdersResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SearchOrdersResponse)));
             
         }
 

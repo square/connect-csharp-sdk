@@ -150,6 +150,7 @@ Class | Method | HTTP request
 *OAuthApi* | [**RevokeToken**](docs/OAuthApi.md#revoketoken) | **POST** /oauth2/revoke
 *OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
+*OrdersApi* | [**SearchOrders**](docs/OrdersApi.md#searchorders) | **POST** /v2/orders/search
 *ReportingApi* | [**ListAdditionalRecipientReceivableRefunds**](docs/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds
 *ReportingApi* | [**ListAdditionalRecipientReceivables**](docs/ReportingApi.md#listadditionalrecipientreceivables) | **GET** /v2/locations/{location_id}/additional-recipient-receivables
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
@@ -251,6 +252,8 @@ Class | Method | HTTP request
  - [Model.BatchUpsertCatalogObjectsRequest](docs/BatchUpsertCatalogObjectsRequest.md)
  - [Model.BatchUpsertCatalogObjectsResponse](docs/BatchUpsertCatalogObjectsResponse.md)
  - [Model.BreakType](docs/BreakType.md)
+ - [Model.BusinessHours](docs/BusinessHours.md)
+ - [Model.BusinessHoursPeriod](docs/BusinessHoursPeriod.md)
  - [Model.CaptureTransactionRequest](docs/CaptureTransactionRequest.md)
  - [Model.CaptureTransactionResponse](docs/CaptureTransactionResponse.md)
  - [Model.Card](docs/Card.md)
@@ -360,11 +363,14 @@ Class | Method | HTTP request
  - [Model.ListWorkweekConfigsRequest](docs/ListWorkweekConfigsRequest.md)
  - [Model.ListWorkweekConfigsResponse](docs/ListWorkweekConfigsResponse.md)
  - [Model.Location](docs/Location.md)
+ - [Model.MeasurementUnit](docs/MeasurementUnit.md)
+ - [Model.MeasurementUnitCustom](docs/MeasurementUnitCustom.md)
  - [Model.ModelBreak](docs/ModelBreak.md)
  - [Model.Money](docs/Money.md)
  - [Model.ObtainTokenRequest](docs/ObtainTokenRequest.md)
  - [Model.ObtainTokenResponse](docs/ObtainTokenResponse.md)
  - [Model.Order](docs/Order.md)
+ - [Model.OrderEntry](docs/OrderEntry.md)
  - [Model.OrderFulfillment](docs/OrderFulfillment.md)
  - [Model.OrderFulfillmentPickupDetails](docs/OrderFulfillmentPickupDetails.md)
  - [Model.OrderFulfillmentRecipient](docs/OrderFulfillmentRecipient.md)
@@ -372,6 +378,14 @@ Class | Method | HTTP request
  - [Model.OrderLineItemDiscount](docs/OrderLineItemDiscount.md)
  - [Model.OrderLineItemModifier](docs/OrderLineItemModifier.md)
  - [Model.OrderLineItemTax](docs/OrderLineItemTax.md)
+ - [Model.OrderMoneyAmounts](docs/OrderMoneyAmounts.md)
+ - [Model.OrderQuantityUnit](docs/OrderQuantityUnit.md)
+ - [Model.OrderReturn](docs/OrderReturn.md)
+ - [Model.OrderReturnDiscount](docs/OrderReturnDiscount.md)
+ - [Model.OrderReturnLineItem](docs/OrderReturnLineItem.md)
+ - [Model.OrderReturnLineItemModifier](docs/OrderReturnLineItemModifier.md)
+ - [Model.OrderReturnTax](docs/OrderReturnTax.md)
+ - [Model.OrderRoundingAdjustment](docs/OrderRoundingAdjustment.md)
  - [Model.OrderSource](docs/OrderSource.md)
  - [Model.Refund](docs/Refund.md)
  - [Model.RegisterDomainRequest](docs/RegisterDomainRequest.md)
@@ -400,6 +414,16 @@ Class | Method | HTTP request
  - [Model.SearchCatalogObjectsResponse](docs/SearchCatalogObjectsResponse.md)
  - [Model.SearchCustomersRequest](docs/SearchCustomersRequest.md)
  - [Model.SearchCustomersResponse](docs/SearchCustomersResponse.md)
+ - [Model.SearchOrdersCustomerFilter](docs/SearchOrdersCustomerFilter.md)
+ - [Model.SearchOrdersDateTimeFilter](docs/SearchOrdersDateTimeFilter.md)
+ - [Model.SearchOrdersFilter](docs/SearchOrdersFilter.md)
+ - [Model.SearchOrdersFulfillmentFilter](docs/SearchOrdersFulfillmentFilter.md)
+ - [Model.SearchOrdersQuery](docs/SearchOrdersQuery.md)
+ - [Model.SearchOrdersRequest](docs/SearchOrdersRequest.md)
+ - [Model.SearchOrdersResponse](docs/SearchOrdersResponse.md)
+ - [Model.SearchOrdersSort](docs/SearchOrdersSort.md)
+ - [Model.SearchOrdersSourceFilter](docs/SearchOrdersSourceFilter.md)
+ - [Model.SearchOrdersStateFilter](docs/SearchOrdersStateFilter.md)
  - [Model.SearchShiftsRequest](docs/SearchShiftsRequest.md)
  - [Model.SearchShiftsResponse](docs/SearchShiftsResponse.md)
  - [Model.Shift](docs/Shift.md)

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a verified (re)count of items in a given state at a specific location. For example, the quantity of items currently on hand at a physical store).
+    /// Represents the quantity of an item variation that is physically present at a specific location, verified by a seller or a seller&#39;s employee. For example, a physical count might come from an employee counting the item variations on hand or from syncing with an external system.
     /// </summary>
     [DataContract]
     public partial class InventoryPhysicalCount :  IEquatable<InventoryPhysicalCount>, IValidatableObject
@@ -125,7 +125,7 @@ namespace Square.Connect.Model
         /// <param name="CatalogObjectType">The [CatalogObjectType](#type-catalogobjecttype) of the [CatalogObject](#type-catalogobject) being tracked. Tracking is only supported for the &#x60;ITEM_VARIATION&#x60; type..</param>
         /// <param name="State">The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values.</param>
         /// <param name="LocationId">The Square ID of the [Location](#type-location) where the related quantity of items are being tracked..</param>
-        /// <param name="Quantity">The number of items affected by the physical count as a decimal string. Fractional quantities are not supported..</param>
+        /// <param name="Quantity">The number of items affected by the physical count as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;. Read [Decimal Quantities (BETA)](/more-apis/inventory/overview#decimal-quantities-beta) for more information..</param>
         /// <param name="Source">Read-only information about the application that submitted the physical count..</param>
         /// <param name="EmployeeId">The Square ID of the [Employee](#type-employee) responsible for the physical count..</param>
         /// <param name="OccurredAt">A client-generated timestamp in RFC 3339 format that indicates when the physical count took place. For write actions, the &#x60;occurred_at&#x60; timestamp cannot be older than 24 hours or in the future relative to the time of the request..</param>
@@ -176,9 +176,9 @@ namespace Square.Connect.Model
         [DataMember(Name="location_id", EmitDefaultValue=false)]
         public string LocationId { get; set; }
         /// <summary>
-        /// The number of items affected by the physical count as a decimal string. Fractional quantities are not supported.
+        /// The number of items affected by the physical count as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;. Read [Decimal Quantities (BETA)](/more-apis/inventory/overview#decimal-quantities-beta) for more information.
         /// </summary>
-        /// <value>The number of items affected by the physical count as a decimal string. Fractional quantities are not supported.</value>
+        /// <value>The number of items affected by the physical count as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;. Read [Decimal Quantities (BETA)](/more-apis/inventory/overview#decimal-quantities-beta) for more information.</value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
         /// <summary>

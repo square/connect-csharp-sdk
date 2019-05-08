@@ -2738,7 +2738,8 @@ namespace Square.Connect.Model
         /// <param name="BusinessName">The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts..</param>
         /// <param name="Type">The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values.</param>
         /// <param name="WebsiteUrl">The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?), string WebsiteUrl = default(string))
+        /// <param name="BusinessHours">  The hours of operation for a business location.  Default: none; only exists if explicitly set..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours))
         {
             this.Id = Id;
             this.Name = Name;
@@ -2755,6 +2756,7 @@ namespace Square.Connect.Model
             this.BusinessName = BusinessName;
             this.Type = Type;
             this.WebsiteUrl = WebsiteUrl;
+            this.BusinessHours = BusinessHours;
         }
         
         /// <summary>
@@ -2818,6 +2820,12 @@ namespace Square.Connect.Model
         [DataMember(Name="website_url", EmitDefaultValue=false)]
         public string WebsiteUrl { get; set; }
         /// <summary>
+        ///   The hours of operation for a business location.  Default: none; only exists if explicitly set.
+        /// </summary>
+        /// <value>  The hours of operation for a business location.  Default: none; only exists if explicitly set.</value>
+        [DataMember(Name="business_hours", EmitDefaultValue=false)]
+        public BusinessHours BusinessHours { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -2840,6 +2848,7 @@ namespace Square.Connect.Model
             sb.Append("  BusinessName: ").Append(BusinessName).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  WebsiteUrl: ").Append(WebsiteUrl).Append("\n");
+            sb.Append("  BusinessHours: ").Append(BusinessHours).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2950,6 +2959,11 @@ namespace Square.Connect.Model
                     this.WebsiteUrl == other.WebsiteUrl ||
                     this.WebsiteUrl != null &&
                     this.WebsiteUrl.Equals(other.WebsiteUrl)
+                ) && 
+                (
+                    this.BusinessHours == other.BusinessHours ||
+                    this.BusinessHours != null &&
+                    this.BusinessHours.Equals(other.BusinessHours)
                 );
         }
 
@@ -2994,6 +3008,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Type.GetHashCode();
                 if (this.WebsiteUrl != null)
                     hash = hash * 59 + this.WebsiteUrl.GetHashCode();
+                if (this.BusinessHours != null)
+                    hash = hash * 59 + this.BusinessHours.GetHashCode();
                 return hash;
             }
         }

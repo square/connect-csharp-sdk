@@ -1,5 +1,15 @@
 # Change Log
 
+## Version 2.18.0 (2019-05-08)
+
+## Details
+
+* **Beta functionality**: Orders API &mdash; support for fractional quantities,
+  expanded metadata, and embedded information on payments, refunds, and returns.
+* **Beta functionality**: Inventory API &mdash; support for fractional quantities.
+* **New functionality**: `Locations.business_hours` &mdash; read-only field with
+  information about the business hours at a particular location.
+
 ## Version 2.17.1 (2019-04-24)
 
 ## Details

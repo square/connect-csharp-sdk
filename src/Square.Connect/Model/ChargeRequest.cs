@@ -45,9 +45,9 @@ namespace Square.Connect.Model
         /// <param name="ReferenceId">An optional ID you can associate with the transaction for your own purposes (such as to associate the transaction with an entity ID in your own database).  This value cannot exceed 40 characters..</param>
         /// <param name="Note">An optional note to associate with the transaction.  This value cannot exceed 60 characters..</param>
         /// <param name="CustomerId">The ID of the customer to associate this transaction with. This field is required if you provide a value for &#x60;customer_card_id&#x60;, and optional otherwise..</param>
-        /// <param name="BillingAddress">The buyer&#39;s billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;shipping_address&#x60; is provided..</param>
-        /// <param name="ShippingAddress">The buyer&#39;s shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;billing_address&#x60; is provided..</param>
-        /// <param name="BuyerEmailAddress">The buyer&#39;s email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided..</param>
+        /// <param name="BillingAddress">The buyer&#39;s billing address..</param>
+        /// <param name="ShippingAddress">The buyer&#39;s shipping address, if available..</param>
+        /// <param name="BuyerEmailAddress">The buyer&#39;s email address, if available..</param>
         /// <param name="OrderId">The ID of the order to associate with this transaction.  If you provide this value, the &#x60;amount_money&#x60; value of your request must __exactly match__ the value of the order&#39;s &#x60;total_money&#x60; field..</param>
         /// <param name="AdditionalRecipients">The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the &#x60;amount_money&#x60; value in your additional_recipients must not be more than 90% of the &#x60;amount_money&#x60; value in the charge request. The &#x60;location_id&#x60; must be the valid location of the app owner merchant.  This field requires the &#x60;PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS&#x60; OAuth permission.  This field is currently not supported in sandbox..</param>
         public ChargeRequest(string IdempotencyKey = default(string), Money AmountMoney = default(Money), string CardNonce = default(string), string CustomerCardId = default(string), bool? DelayCapture = default(bool?), string ReferenceId = default(string), string Note = default(string), string CustomerId = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string BuyerEmailAddress = default(string), string OrderId = default(string), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
@@ -132,21 +132,21 @@ namespace Square.Connect.Model
         [DataMember(Name="customer_id", EmitDefaultValue=false)]
         public string CustomerId { get; set; }
         /// <summary>
-        /// The buyer&#39;s billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;shipping_address&#x60; is provided.
+        /// The buyer&#39;s billing address.
         /// </summary>
-        /// <value>The buyer&#39;s billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;shipping_address&#x60; is provided.</value>
+        /// <value>The buyer&#39;s billing address.</value>
         [DataMember(Name="billing_address", EmitDefaultValue=false)]
         public Address BillingAddress { get; set; }
         /// <summary>
-        /// The buyer&#39;s shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;billing_address&#x60; is provided.
+        /// The buyer&#39;s shipping address, if available.
         /// </summary>
-        /// <value>The buyer&#39;s shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor &#x60;billing_address&#x60; is provided.</value>
+        /// <value>The buyer&#39;s shipping address, if available.</value>
         [DataMember(Name="shipping_address", EmitDefaultValue=false)]
         public Address ShippingAddress { get; set; }
         /// <summary>
-        /// The buyer&#39;s email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided.
+        /// The buyer&#39;s email address, if available.
         /// </summary>
-        /// <value>The buyer&#39;s email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided.</value>
+        /// <value>The buyer&#39;s email address, if available.</value>
         [DataMember(Name="buyer_email_address", EmitDefaultValue=false)]
         public string BuyerEmailAddress { get; set; }
         /// <summary>

@@ -98,14 +98,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemTax" /> class.
         /// </summary>
+        /// <param name="Uid">The tax&#39;s Unique identifier, unique only within this order. This field is read-only..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogTax](#type-catalogtax)..</param>
         /// <param name="Name">The tax&#39;s name..</param>
         /// <param name="Type">Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</param>
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%..</param>
         /// <param name="AppliedMoney">The amount of the money applied by the tax in an order..</param>
         /// <param name="Scope">Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.</param>
-        public OrderLineItemTax(string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money), ScopeEnum? Scope = default(ScopeEnum?))
+        public OrderLineItemTax(string Uid = default(string), string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money), ScopeEnum? Scope = default(ScopeEnum?))
         {
+            this.Uid = Uid;
             this.CatalogObjectId = CatalogObjectId;
             this.Name = Name;
             this.Type = Type;
@@ -114,6 +116,12 @@ namespace Square.Connect.Model
             this.Scope = Scope;
         }
         
+        /// <summary>
+        /// The tax&#39;s Unique identifier, unique only within this order. This field is read-only.
+        /// </summary>
+        /// <value>The tax&#39;s Unique identifier, unique only within this order. This field is read-only.</value>
+        [DataMember(Name="uid", EmitDefaultValue=false)]
+        public string Uid { get; set; }
         /// <summary>
         /// The catalog object id referencing [CatalogTax](#type-catalogtax).
         /// </summary>
@@ -146,6 +154,7 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OrderLineItemTax {\n");
+            sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  CatalogObjectId: ").Append(CatalogObjectId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -189,6 +198,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.Uid == other.Uid ||
+                    this.Uid != null &&
+                    this.Uid.Equals(other.Uid)
+                ) && 
+                (
                     this.CatalogObjectId == other.CatalogObjectId ||
                     this.CatalogObjectId != null &&
                     this.CatalogObjectId.Equals(other.CatalogObjectId)
@@ -231,6 +245,8 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Uid != null)
+                    hash = hash * 59 + this.Uid.GetHashCode();
                 if (this.CatalogObjectId != null)
                     hash = hash * 59 + this.CatalogObjectId.GetHashCode();
                 if (this.Name != null)
@@ -249,6 +265,12 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // Uid (string) maxLength
+            if(this.Uid != null && this.Uid.Length > 60)
+            {
+                yield return new ValidationResult("Invalid value for Uid, length must be less than 60.", new [] { "Uid" });
+            }
+
             // CatalogObjectId (string) maxLength
             if(this.CatalogObjectId != null && this.CatalogObjectId.Length > 192)
             {
