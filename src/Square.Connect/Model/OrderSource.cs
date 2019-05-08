@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderSource" /> class.
         /// </summary>
-        /// <param name="Name">The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order..</param>
+        /// <param name="Name">The name used to identify the place (physical or digital) that an order originates. If unset, the name defaults to the name of the application that created the order..</param>
         public OrderSource(string Name = default(string))
         {
             this.Name = Name;
         }
         
         /// <summary>
-        /// The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.
+        /// The name used to identify the place (physical or digital) that an order originates. If unset, the name defaults to the name of the application that created the order.
         /// </summary>
-        /// <value>The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.</value>
+        /// <value>The name used to identify the place (physical or digital) that an order originates. If unset, the name defaults to the name of the application that created the order.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>

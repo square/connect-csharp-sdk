@@ -521,6 +521,18 @@ namespace Square.Connect.Model
             BADCERTIFICATE,
             
             /// <summary>
+            /// Enum INVALIDSQUAREVERSIONFORMAT for "INVALID_SQUARE_VERSION_FORMAT"
+            /// </summary>
+            [EnumMember(Value = "INVALID_SQUARE_VERSION_FORMAT")]
+            INVALIDSQUAREVERSIONFORMAT,
+            
+            /// <summary>
+            /// Enum APIVERSIONINCOMPATIBLE for "API_VERSION_INCOMPATIBLE"
+            /// </summary>
+            [EnumMember(Value = "API_VERSION_INCOMPATIBLE")]
+            APIVERSIONINCOMPATIBLE,
+            
+            /// <summary>
             /// Enum CARDDECLINED for "CARD_DECLINED"
             /// </summary>
             [EnumMember(Value = "CARD_DECLINED")]

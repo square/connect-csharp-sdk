@@ -8,7 +8,7 @@ Represents the origination details of an order.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order. | [optional] 
+**Name** | **string** | The name used to identify the place (physical or digital) that an order originates. If unset, the name defaults to the name of the application that created the order. | [optional] 
 
 
 
