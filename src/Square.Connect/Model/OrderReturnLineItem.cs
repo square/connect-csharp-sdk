@@ -50,10 +50,10 @@ namespace Square.Connect.Model
         /// <param name="ReturnDiscounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>
         /// <param name="VariationTotalPriceMoney">The total price of all item variations returned in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers..</param>
-        /// <param name="GrossReturnMoney">The gross return amount of money calculated as (item base price + modifiers price) * quantity..</param>
-        /// <param name="TotalTaxMoney">The total tax amount of money to return for the line item..</param>
-        /// <param name="TotalDiscountMoney">The total discount amount of money to return for the line item..</param>
-        /// <param name="TotalMoney">The total amount of money to return for this line item..</param>
+        /// <param name="GrossReturnMoney">The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only..</param>
+        /// <param name="TotalTaxMoney">The total tax amount of money to return for the line item.  This field is read-only..</param>
+        /// <param name="TotalDiscountMoney">The total discount amount of money to return for the line item.  This field is read-only..</param>
+        /// <param name="TotalMoney">The total amount of money to return for this line item.  This field is read-only..</param>
         public OrderReturnLineItem(string Uid = default(string), string SourceLineItemUid = default(string), string Name = default(string), string Quantity = default(string), OrderQuantityUnit QuantityUnit = default(OrderQuantityUnit), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderReturnLineItemModifier> ReturnModifiers = default(List<OrderReturnLineItemModifier>), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>), List<OrderReturnDiscount> ReturnDiscounts = default(List<OrderReturnDiscount>), Money BasePriceMoney = default(Money), Money VariationTotalPriceMoney = default(Money), Money GrossReturnMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
             // to ensure "Quantity" is required (not null)
@@ -162,27 +162,27 @@ namespace Square.Connect.Model
         [DataMember(Name="variation_total_price_money", EmitDefaultValue=false)]
         public Money VariationTotalPriceMoney { get; set; }
         /// <summary>
-        /// The gross return amount of money calculated as (item base price + modifiers price) * quantity.
+        /// The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only.
         /// </summary>
-        /// <value>The gross return amount of money calculated as (item base price + modifiers price) * quantity.</value>
+        /// <value>The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only.</value>
         [DataMember(Name="gross_return_money", EmitDefaultValue=false)]
         public Money GrossReturnMoney { get; set; }
         /// <summary>
-        /// The total tax amount of money to return for the line item.
+        /// The total tax amount of money to return for the line item.  This field is read-only.
         /// </summary>
-        /// <value>The total tax amount of money to return for the line item.</value>
+        /// <value>The total tax amount of money to return for the line item.  This field is read-only.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
         /// <summary>
-        /// The total discount amount of money to return for the line item.
+        /// The total discount amount of money to return for the line item.  This field is read-only.
         /// </summary>
-        /// <value>The total discount amount of money to return for the line item.</value>
+        /// <value>The total discount amount of money to return for the line item.  This field is read-only.</value>
         [DataMember(Name="total_discount_money", EmitDefaultValue=false)]
         public Money TotalDiscountMoney { get; set; }
         /// <summary>
-        /// The total amount of money to return for this line item.
+        /// The total amount of money to return for this line item.  This field is read-only.
         /// </summary>
-        /// <value>The total amount of money to return for this line item.</value>
+        /// <value>The total amount of money to return for this line item.  This field is read-only.</value>
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>

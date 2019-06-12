@@ -34,10 +34,12 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Errors">The set of [Error](#type-error)s encountered..</param>
         /// <param name="Limits">.</param>
-        public CatalogInfoResponse(List<Error> Errors = default(List<Error>), CatalogInfoResponseLimits Limits = default(CatalogInfoResponseLimits))
+        /// <param name="StandardUnitDescriptionGroup">Names and abbreviations for standard units..</param>
+        public CatalogInfoResponse(List<Error> Errors = default(List<Error>), CatalogInfoResponseLimits Limits = default(CatalogInfoResponseLimits), StandardUnitDescriptionGroup StandardUnitDescriptionGroup = default(StandardUnitDescriptionGroup))
         {
             this.Errors = Errors;
             this.Limits = Limits;
+            this.StandardUnitDescriptionGroup = StandardUnitDescriptionGroup;
         }
         
         /// <summary>
@@ -53,6 +55,12 @@ namespace Square.Connect.Model
         [DataMember(Name="limits", EmitDefaultValue=false)]
         public CatalogInfoResponseLimits Limits { get; set; }
         /// <summary>
+        /// Names and abbreviations for standard units.
+        /// </summary>
+        /// <value>Names and abbreviations for standard units.</value>
+        [DataMember(Name="standard_unit_description_group", EmitDefaultValue=false)]
+        public StandardUnitDescriptionGroup StandardUnitDescriptionGroup { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -62,6 +70,7 @@ namespace Square.Connect.Model
             sb.Append("class CatalogInfoResponse {\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("  Limits: ").Append(Limits).Append("\n");
+            sb.Append("  StandardUnitDescriptionGroup: ").Append(StandardUnitDescriptionGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +116,11 @@ namespace Square.Connect.Model
                     this.Limits == other.Limits ||
                     this.Limits != null &&
                     this.Limits.Equals(other.Limits)
+                ) && 
+                (
+                    this.StandardUnitDescriptionGroup == other.StandardUnitDescriptionGroup ||
+                    this.StandardUnitDescriptionGroup != null &&
+                    this.StandardUnitDescriptionGroup.Equals(other.StandardUnitDescriptionGroup)
                 );
         }
 
@@ -125,6 +139,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Errors.GetHashCode();
                 if (this.Limits != null)
                     hash = hash * 59 + this.Limits.GetHashCode();
+                if (this.StandardUnitDescriptionGroup != null)
+                    hash = hash * 59 + this.StandardUnitDescriptionGroup.GetHashCode();
                 return hash;
             }
         }

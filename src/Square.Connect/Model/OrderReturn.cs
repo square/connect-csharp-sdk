@@ -32,18 +32,20 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturn" /> class.
         /// </summary>
-        /// <param name="Uid">The return&#39;s Unique identifier, unique only within this order. This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the return only within this order.  This field is read-only..</param>
         /// <param name="SourceOrderId">Order which contains the original sale of these returned line items. This will be unset for unlinked returns..</param>
         /// <param name="ReturnLineItems">Collection of line items which are being returned..</param>
+        /// <param name="ReturnServiceCharges">Collection of service charges which are being returned.  This field is read-only..</param>
         /// <param name="ReturnTaxes">Collection of taxes which are being returned..</param>
         /// <param name="ReturnDiscounts">Collection of discounts which are being returned..</param>
         /// <param name="RoundingAdjustment">A positive or negative rounding adjustment to the total value being returned. Commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency..</param>
         /// <param name="ReturnAmounts">Aggregate monetary value being returned by this Return entry..</param>
-        public OrderReturn(string Uid = default(string), string SourceOrderId = default(string), List<OrderReturnLineItem> ReturnLineItems = default(List<OrderReturnLineItem>), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>), List<OrderReturnDiscount> ReturnDiscounts = default(List<OrderReturnDiscount>), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts))
+        public OrderReturn(string Uid = default(string), string SourceOrderId = default(string), List<OrderReturnLineItem> ReturnLineItems = default(List<OrderReturnLineItem>), List<OrderReturnServiceCharge> ReturnServiceCharges = default(List<OrderReturnServiceCharge>), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>), List<OrderReturnDiscount> ReturnDiscounts = default(List<OrderReturnDiscount>), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts))
         {
             this.Uid = Uid;
             this.SourceOrderId = SourceOrderId;
             this.ReturnLineItems = ReturnLineItems;
+            this.ReturnServiceCharges = ReturnServiceCharges;
             this.ReturnTaxes = ReturnTaxes;
             this.ReturnDiscounts = ReturnDiscounts;
             this.RoundingAdjustment = RoundingAdjustment;
@@ -51,9 +53,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The return&#39;s Unique identifier, unique only within this order. This field is read-only.
+        /// Unique ID that identifies the return only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The return&#39;s Unique identifier, unique only within this order. This field is read-only.</value>
+        /// <value>Unique ID that identifies the return only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -68,6 +70,12 @@ namespace Square.Connect.Model
         /// <value>Collection of line items which are being returned.</value>
         [DataMember(Name="return_line_items", EmitDefaultValue=false)]
         public List<OrderReturnLineItem> ReturnLineItems { get; set; }
+        /// <summary>
+        /// Collection of service charges which are being returned.  This field is read-only.
+        /// </summary>
+        /// <value>Collection of service charges which are being returned.  This field is read-only.</value>
+        [DataMember(Name="return_service_charges", EmitDefaultValue=false)]
+        public List<OrderReturnServiceCharge> ReturnServiceCharges { get; set; }
         /// <summary>
         /// Collection of taxes which are being returned.
         /// </summary>
@@ -103,6 +111,7 @@ namespace Square.Connect.Model
             sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  SourceOrderId: ").Append(SourceOrderId).Append("\n");
             sb.Append("  ReturnLineItems: ").Append(ReturnLineItems).Append("\n");
+            sb.Append("  ReturnServiceCharges: ").Append(ReturnServiceCharges).Append("\n");
             sb.Append("  ReturnTaxes: ").Append(ReturnTaxes).Append("\n");
             sb.Append("  ReturnDiscounts: ").Append(ReturnDiscounts).Append("\n");
             sb.Append("  RoundingAdjustment: ").Append(RoundingAdjustment).Append("\n");
@@ -159,6 +168,11 @@ namespace Square.Connect.Model
                     this.ReturnLineItems.SequenceEqual(other.ReturnLineItems)
                 ) && 
                 (
+                    this.ReturnServiceCharges == other.ReturnServiceCharges ||
+                    this.ReturnServiceCharges != null &&
+                    this.ReturnServiceCharges.SequenceEqual(other.ReturnServiceCharges)
+                ) && 
+                (
                     this.ReturnTaxes == other.ReturnTaxes ||
                     this.ReturnTaxes != null &&
                     this.ReturnTaxes.SequenceEqual(other.ReturnTaxes)
@@ -197,6 +211,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.SourceOrderId.GetHashCode();
                 if (this.ReturnLineItems != null)
                     hash = hash * 59 + this.ReturnLineItems.GetHashCode();
+                if (this.ReturnServiceCharges != null)
+                    hash = hash * 59 + this.ReturnServiceCharges.GetHashCode();
                 if (this.ReturnTaxes != null)
                     hash = hash * 59 + this.ReturnTaxes.GetHashCode();
                 if (this.ReturnDiscounts != null)

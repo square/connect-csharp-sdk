@@ -110,7 +110,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturnDiscount" /> class.
         /// </summary>
-        /// <param name="Uid">The return discount&#39;s Unique identifier, unique only within this order..</param>
+        /// <param name="Uid">Unique ID that identifies the return discount only within this order.  This field is read-only..</param>
         /// <param name="SourceDiscountUid">&#x60;uid&#x60; of the Discount from the Order which contains the original application of this discount..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogDiscount](#type-catalogdiscount)..</param>
         /// <param name="Name">The discount&#39;s name..</param>
@@ -133,9 +133,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The return discount&#39;s Unique identifier, unique only within this order.
+        /// Unique ID that identifies the return discount only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The return discount&#39;s Unique identifier, unique only within this order.</value>
+        /// <value>Unique ID that identifies the return discount only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>

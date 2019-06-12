@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturnLineItemModifier" /> class.
         /// </summary>
-        /// <param name="Uid">The return modifier&#39;s Unique identifier, unique only within this order.</param>
+        /// <param name="Uid">Unique ID that identifies the return modifier only within this order.  This field is read-only..</param>
         /// <param name="SourceModifierUid">&#x60;uid&#x60; of the Modifier from the LineItem from the Order which contains the original sale of this line item modifier..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogModifier](#type-catalogmodifier)..</param>
         /// <param name="Name">The name of the item modifier..</param>
@@ -49,9 +49,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The return modifier&#39;s Unique identifier, unique only within this order
+        /// Unique ID that identifies the return modifier only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The return modifier&#39;s Unique identifier, unique only within this order</value>
+        /// <value>Unique ID that identifies the return modifier only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>

@@ -110,7 +110,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemDiscount" /> class.
         /// </summary>
-        /// <param name="Uid">The discount&#39;s Unique identifier, unique only within this order. This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the discount only within this order.  This field is read-only..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogDiscount](#type-catalogdiscount)..</param>
         /// <param name="Name">The discount&#39;s name..</param>
         /// <param name="Type">The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values.</param>
@@ -131,9 +131,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The discount&#39;s Unique identifier, unique only within this order. This field is read-only.
+        /// Unique ID that identifies the discount only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The discount&#39;s Unique identifier, unique only within this order. This field is read-only.</value>
+        /// <value>Unique ID that identifies the discount only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>

@@ -98,7 +98,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemTax" /> class.
         /// </summary>
-        /// <param name="Uid">The tax&#39;s Unique identifier, unique only within this order. This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the tax only within this order.  This field is read-only..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogTax](#type-catalogtax)..</param>
         /// <param name="Name">The tax&#39;s name..</param>
         /// <param name="Type">Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</param>
@@ -117,9 +117,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The tax&#39;s Unique identifier, unique only within this order. This field is read-only.
+        /// Unique ID that identifies the tax only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The tax&#39;s Unique identifier, unique only within this order. This field is read-only.</value>
+        /// <value>Unique ID that identifies the tax only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>

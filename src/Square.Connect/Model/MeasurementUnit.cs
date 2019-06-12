@@ -264,6 +264,27 @@ namespace Square.Connect.Model
         }
 
         /// <summary>
+        /// Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values
+        /// </summary>
+        /// <value>Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum GenericUnitEnum
+        {
+            
+            /// <summary>
+            /// Enum INVALIDGENERICUNIT for "INVALID_GENERIC_UNIT"
+            /// </summary>
+            [EnumMember(Value = "INVALID_GENERIC_UNIT")]
+            INVALIDGENERICUNIT,
+            
+            /// <summary>
+            /// Enum UNIT for "UNIT"
+            /// </summary>
+            [EnumMember(Value = "UNIT")]
+            UNIT
+        }
+
+        /// <summary>
         /// Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values
         /// </summary>
         /// <value>Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values</value>
@@ -288,6 +309,12 @@ namespace Square.Connect.Model
         [DataMember(Name="weight_unit", EmitDefaultValue=false)]
         public WeightUnitEnum? WeightUnit { get; set; }
         /// <summary>
+        /// Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values
+        /// </summary>
+        /// <value>Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values</value>
+        [DataMember(Name="generic_unit", EmitDefaultValue=false)]
+        public GenericUnitEnum? GenericUnit { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementUnit" /> class.
         /// </summary>
         /// <param name="CustomUnit">A custom unit of measurement defined by the seller using the Point of Sale app or ad-hoc as an order line item..</param>
@@ -295,13 +322,15 @@ namespace Square.Connect.Model
         /// <param name="LengthUnit">Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values.</param>
         /// <param name="VolumeUnit">Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values.</param>
         /// <param name="WeightUnit">Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values.</param>
-        public MeasurementUnit(MeasurementUnitCustom CustomUnit = default(MeasurementUnitCustom), AreaUnitEnum? AreaUnit = default(AreaUnitEnum?), LengthUnitEnum? LengthUnit = default(LengthUnitEnum?), VolumeUnitEnum? VolumeUnit = default(VolumeUnitEnum?), WeightUnitEnum? WeightUnit = default(WeightUnitEnum?))
+        /// <param name="GenericUnit">Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values.</param>
+        public MeasurementUnit(MeasurementUnitCustom CustomUnit = default(MeasurementUnitCustom), AreaUnitEnum? AreaUnit = default(AreaUnitEnum?), LengthUnitEnum? LengthUnit = default(LengthUnitEnum?), VolumeUnitEnum? VolumeUnit = default(VolumeUnitEnum?), WeightUnitEnum? WeightUnit = default(WeightUnitEnum?), GenericUnitEnum? GenericUnit = default(GenericUnitEnum?))
         {
             this.CustomUnit = CustomUnit;
             this.AreaUnit = AreaUnit;
             this.LengthUnit = LengthUnit;
             this.VolumeUnit = VolumeUnit;
             this.WeightUnit = WeightUnit;
+            this.GenericUnit = GenericUnit;
         }
         
         /// <summary>
@@ -323,6 +352,7 @@ namespace Square.Connect.Model
             sb.Append("  LengthUnit: ").Append(LengthUnit).Append("\n");
             sb.Append("  VolumeUnit: ").Append(VolumeUnit).Append("\n");
             sb.Append("  WeightUnit: ").Append(WeightUnit).Append("\n");
+            sb.Append("  GenericUnit: ").Append(GenericUnit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -383,6 +413,11 @@ namespace Square.Connect.Model
                     this.WeightUnit == other.WeightUnit ||
                     this.WeightUnit != null &&
                     this.WeightUnit.Equals(other.WeightUnit)
+                ) && 
+                (
+                    this.GenericUnit == other.GenericUnit ||
+                    this.GenericUnit != null &&
+                    this.GenericUnit.Equals(other.GenericUnit)
                 );
         }
 
@@ -407,6 +442,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.VolumeUnit.GetHashCode();
                 if (this.WeightUnit != null)
                     hash = hash * 59 + this.WeightUnit.GetHashCode();
+                if (this.GenericUnit != null)
+                    hash = hash * 59 + this.GenericUnit.GetHashCode();
                 return hash;
             }
         }

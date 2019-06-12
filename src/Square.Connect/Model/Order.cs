@@ -70,7 +70,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
-        /// <param name="Id">The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint..</param>
+        /// <param name="Id">The order&#39;s unique ID.  This field is read-only..</param>
         /// <param name="LocationId">The ID of the merchant location this order is associated with. (required).</param>
         /// <param name="ReferenceId">A client specified identifier to associate an entity in another system with this order..</param>
         /// <param name="Source">The origination details of the order..</param>
@@ -78,21 +78,23 @@ namespace Square.Connect.Model
         /// <param name="LineItems">The line items included in the order..</param>
         /// <param name="Taxes">A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list..</param>
         /// <param name="Discounts">A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list..</param>
+        /// <param name="ServiceCharges">A list of service charges applied to the order..</param>
         /// <param name="Fulfillments">Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments..</param>
-        /// <param name="Returns">Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced..</param>
-        /// <param name="ReturnAmounts">Rollup of returned money amounts..</param>
-        /// <param name="NetAmounts">Net money amounts (sale money - return money)..</param>
-        /// <param name="RoundingAdjustment">A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency..</param>
+        /// <param name="Returns">Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.  This field is read-only..</param>
+        /// <param name="ReturnAmounts">Rollup of returned money amounts.  This field is read-only..</param>
+        /// <param name="NetAmounts">Net money amounts (sale money - return money).  This field is read-only..</param>
+        /// <param name="RoundingAdjustment">A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only..</param>
         /// <param name="Tenders">The Tenders which were used to pay for the Order. This field is read-only..</param>
         /// <param name="Refunds">The Refunds that are part of this Order. This field is read-only..</param>
-        /// <param name="CreatedAt">Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
-        /// <param name="UpdatedAt">Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
-        /// <param name="ClosedAt">Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="CreatedAt">Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only..</param>
+        /// <param name="UpdatedAt">Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only..</param>
+        /// <param name="ClosedAt">Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only..</param>
         /// <param name="State">The current state of the order. &#x60;OPEN&#x60;,&#x60;COMPLETED&#x60;,&#x60;CANCELED&#x60; See [OrderState](#type-orderstate) for possible values.</param>
-        /// <param name="TotalMoney">The total amount of money to collect for the order..</param>
-        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order..</param>
-        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order..</param>
-        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), OrderSource Source = default(OrderSource), string CustomerId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), List<OrderReturn> Returns = default(List<OrderReturn>), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts), OrderMoneyAmounts NetAmounts = default(OrderMoneyAmounts), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), List<Tender> Tenders = default(List<Tender>), List<Refund> Refunds = default(List<Refund>), string CreatedAt = default(string), string UpdatedAt = default(string), string ClosedAt = default(string), StateEnum? State = default(StateEnum?), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money))
+        /// <param name="TotalMoney">The total amount of money to collect for the order.  This field is read-only..</param>
+        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order.  This field is read-only..</param>
+        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order.  This field is read-only..</param>
+        /// <param name="TotalServiceChargeMoney">The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only..</param>
+        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), OrderSource Source = default(OrderSource), string CustomerId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderServiceCharge> ServiceCharges = default(List<OrderServiceCharge>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), List<OrderReturn> Returns = default(List<OrderReturn>), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts), OrderMoneyAmounts NetAmounts = default(OrderMoneyAmounts), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), List<Tender> Tenders = default(List<Tender>), List<Refund> Refunds = default(List<Refund>), string CreatedAt = default(string), string UpdatedAt = default(string), string ClosedAt = default(string), StateEnum? State = default(StateEnum?), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalServiceChargeMoney = default(Money))
         {
             // to ensure "LocationId" is required (not null)
             if (LocationId == null)
@@ -110,6 +112,7 @@ namespace Square.Connect.Model
             this.LineItems = LineItems;
             this.Taxes = Taxes;
             this.Discounts = Discounts;
+            this.ServiceCharges = ServiceCharges;
             this.Fulfillments = Fulfillments;
             this.Returns = Returns;
             this.ReturnAmounts = ReturnAmounts;
@@ -124,12 +127,13 @@ namespace Square.Connect.Model
             this.TotalMoney = TotalMoney;
             this.TotalTaxMoney = TotalTaxMoney;
             this.TotalDiscountMoney = TotalDiscountMoney;
+            this.TotalServiceChargeMoney = TotalServiceChargeMoney;
         }
         
         /// <summary>
-        /// The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.
+        /// The order&#39;s unique ID.  This field is read-only.
         /// </summary>
-        /// <value>The order&#39;s unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.</value>
+        /// <value>The order&#39;s unique ID.  This field is read-only.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
@@ -175,33 +179,39 @@ namespace Square.Connect.Model
         [DataMember(Name="discounts", EmitDefaultValue=false)]
         public List<OrderLineItemDiscount> Discounts { get; set; }
         /// <summary>
+        /// A list of service charges applied to the order.
+        /// </summary>
+        /// <value>A list of service charges applied to the order.</value>
+        [DataMember(Name="service_charges", EmitDefaultValue=false)]
+        public List<OrderServiceCharge> ServiceCharges { get; set; }
+        /// <summary>
         /// Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments.
         /// </summary>
         /// <value>Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments.</value>
         [DataMember(Name="fulfillments", EmitDefaultValue=false)]
         public List<OrderFulfillment> Fulfillments { get; set; }
         /// <summary>
-        /// Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.
+        /// Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.  This field is read-only.
         /// </summary>
-        /// <value>Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.</value>
+        /// <value>Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.  This field is read-only.</value>
         [DataMember(Name="returns", EmitDefaultValue=false)]
         public List<OrderReturn> Returns { get; set; }
         /// <summary>
-        /// Rollup of returned money amounts.
+        /// Rollup of returned money amounts.  This field is read-only.
         /// </summary>
-        /// <value>Rollup of returned money amounts.</value>
+        /// <value>Rollup of returned money amounts.  This field is read-only.</value>
         [DataMember(Name="return_amounts", EmitDefaultValue=false)]
         public OrderMoneyAmounts ReturnAmounts { get; set; }
         /// <summary>
-        /// Net money amounts (sale money - return money).
+        /// Net money amounts (sale money - return money).  This field is read-only.
         /// </summary>
-        /// <value>Net money amounts (sale money - return money).</value>
+        /// <value>Net money amounts (sale money - return money).  This field is read-only.</value>
         [DataMember(Name="net_amounts", EmitDefaultValue=false)]
         public OrderMoneyAmounts NetAmounts { get; set; }
         /// <summary>
-        /// A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.
+        /// A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only.
         /// </summary>
-        /// <value>A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.</value>
+        /// <value>A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only.</value>
         [DataMember(Name="rounding_adjustment", EmitDefaultValue=false)]
         public OrderRoundingAdjustment RoundingAdjustment { get; set; }
         /// <summary>
@@ -217,41 +227,47 @@ namespace Square.Connect.Model
         [DataMember(Name="refunds", EmitDefaultValue=false)]
         public List<Refund> Refunds { get; set; }
         /// <summary>
-        /// Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
+        /// Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.
         /// </summary>
-        /// <value>Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
+        /// <value>Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         public string CreatedAt { get; set; }
         /// <summary>
-        /// Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
+        /// Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.
         /// </summary>
-        /// <value>Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
+        /// <value>Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>
-        /// Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
+        /// Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.
         /// </summary>
-        /// <value>Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
+        /// <value>Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.</value>
         [DataMember(Name="closed_at", EmitDefaultValue=false)]
         public string ClosedAt { get; set; }
         /// <summary>
-        /// The total amount of money to collect for the order.
+        /// The total amount of money to collect for the order.  This field is read-only.
         /// </summary>
-        /// <value>The total amount of money to collect for the order.</value>
+        /// <value>The total amount of money to collect for the order.  This field is read-only.</value>
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>
-        /// The total tax amount of money to collect for the order.
+        /// The total tax amount of money to collect for the order.  This field is read-only.
         /// </summary>
-        /// <value>The total tax amount of money to collect for the order.</value>
+        /// <value>The total tax amount of money to collect for the order.  This field is read-only.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
         /// <summary>
-        /// The total discount amount of money to collect for the order.
+        /// The total discount amount of money to collect for the order.  This field is read-only.
         /// </summary>
-        /// <value>The total discount amount of money to collect for the order.</value>
+        /// <value>The total discount amount of money to collect for the order.  This field is read-only.</value>
         [DataMember(Name="total_discount_money", EmitDefaultValue=false)]
         public Money TotalDiscountMoney { get; set; }
+        /// <summary>
+        /// The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only.
+        /// </summary>
+        /// <value>The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only.</value>
+        [DataMember(Name="total_service_charge_money", EmitDefaultValue=false)]
+        public Money TotalServiceChargeMoney { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -268,6 +284,7 @@ namespace Square.Connect.Model
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  Discounts: ").Append(Discounts).Append("\n");
+            sb.Append("  ServiceCharges: ").Append(ServiceCharges).Append("\n");
             sb.Append("  Fulfillments: ").Append(Fulfillments).Append("\n");
             sb.Append("  Returns: ").Append(Returns).Append("\n");
             sb.Append("  ReturnAmounts: ").Append(ReturnAmounts).Append("\n");
@@ -282,6 +299,7 @@ namespace Square.Connect.Model
             sb.Append("  TotalMoney: ").Append(TotalMoney).Append("\n");
             sb.Append("  TotalTaxMoney: ").Append(TotalTaxMoney).Append("\n");
             sb.Append("  TotalDiscountMoney: ").Append(TotalDiscountMoney).Append("\n");
+            sb.Append("  TotalServiceChargeMoney: ").Append(TotalServiceChargeMoney).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -359,6 +377,11 @@ namespace Square.Connect.Model
                     this.Discounts.SequenceEqual(other.Discounts)
                 ) && 
                 (
+                    this.ServiceCharges == other.ServiceCharges ||
+                    this.ServiceCharges != null &&
+                    this.ServiceCharges.SequenceEqual(other.ServiceCharges)
+                ) && 
+                (
                     this.Fulfillments == other.Fulfillments ||
                     this.Fulfillments != null &&
                     this.Fulfillments.SequenceEqual(other.Fulfillments)
@@ -427,6 +450,11 @@ namespace Square.Connect.Model
                     this.TotalDiscountMoney == other.TotalDiscountMoney ||
                     this.TotalDiscountMoney != null &&
                     this.TotalDiscountMoney.Equals(other.TotalDiscountMoney)
+                ) && 
+                (
+                    this.TotalServiceChargeMoney == other.TotalServiceChargeMoney ||
+                    this.TotalServiceChargeMoney != null &&
+                    this.TotalServiceChargeMoney.Equals(other.TotalServiceChargeMoney)
                 );
         }
 
@@ -457,6 +485,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Taxes.GetHashCode();
                 if (this.Discounts != null)
                     hash = hash * 59 + this.Discounts.GetHashCode();
+                if (this.ServiceCharges != null)
+                    hash = hash * 59 + this.ServiceCharges.GetHashCode();
                 if (this.Fulfillments != null)
                     hash = hash * 59 + this.Fulfillments.GetHashCode();
                 if (this.Returns != null)
@@ -485,6 +515,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.TotalTaxMoney.GetHashCode();
                 if (this.TotalDiscountMoney != null)
                     hash = hash * 59 + this.TotalDiscountMoney.GetHashCode();
+                if (this.TotalServiceChargeMoney != null)
+                    hash = hash * 59 + this.TotalServiceChargeMoney.GetHashCode();
                 return hash;
             }
         }

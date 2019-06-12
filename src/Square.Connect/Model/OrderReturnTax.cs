@@ -98,7 +98,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturnTax" /> class.
         /// </summary>
-        /// <param name="Uid">The return tax&#39;s Unique identifier, unique only within this order..</param>
+        /// <param name="Uid">Unique ID that identifies the return tax only within this order.  This field is read-only..</param>
         /// <param name="SourceTaxUid">&#x60;uid&#x60; of the Tax from the Order which contains the original charge of this tax..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogTax](#type-catalogtax)..</param>
         /// <param name="Name">The tax&#39;s name..</param>
@@ -119,9 +119,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The return tax&#39;s Unique identifier, unique only within this order.
+        /// Unique ID that identifies the return tax only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The return tax&#39;s Unique identifier, unique only within this order.</value>
+        /// <value>Unique ID that identifies the return tax only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>

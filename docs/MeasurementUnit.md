@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **LengthUnit** | **LengthUnitEnum** | Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values | [optional] 
 **VolumeUnit** | **VolumeUnitEnum** | Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values | [optional] 
 **WeightUnit** | **WeightUnitEnum** | Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values | [optional] 
+**GenericUnit** | **GenericUnitEnum** | Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values | [optional] 
 
 
 ## AreaUnitEnum
@@ -70,6 +71,14 @@ Name | Value
 **METRICMILLIGRAM** | "METRIC_MILLIGRAM"
 **METRICGRAM** | "METRIC_GRAM"
 **METRICKILOGRAM** | "METRIC_KILOGRAM"
+
+
+## GenericUnitEnum
+
+Name | Value
+------------ | -------------
+**INVALIDGENERICUNIT** | "INVALID_GENERIC_UNIT"
+**UNIT** | "UNIT"
 
 
 

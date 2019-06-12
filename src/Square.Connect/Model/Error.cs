@@ -353,6 +353,12 @@ namespace Square.Connect.Model
             DEPRECATEDFIELDSET,
             
             /// <summary>
+            /// Enum RETIREDFIELDSET for "RETIRED_FIELD_SET"
+            /// </summary>
+            [EnumMember(Value = "RETIRED_FIELD_SET")]
+            RETIREDFIELDSET,
+            
+            /// <summary>
             /// Enum CARDEXPIRED for "CARD_EXPIRED"
             /// </summary>
             [EnumMember(Value = "CARD_EXPIRED")]

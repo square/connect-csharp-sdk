@@ -2739,7 +2739,13 @@ namespace Square.Connect.Model
         /// <param name="Type">The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values.</param>
         /// <param name="WebsiteUrl">The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set..</param>
         /// <param name="BusinessHours">  The hours of operation for a business location.  Default: none; only exists if explicitly set..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours))
+        /// <param name="BusinessEmail">The email of the location..</param>
+        /// <param name="Description">The business description of the location..</param>
+        /// <param name="TwitterUsername">The Twitter username of the location without the &#39;.</param>
+        /// <param name="InstagramUsername">The Instagram username of the location without the &#39;.</param>
+        /// <param name="FacebookUrl">The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;..</param>
+        /// <param name="Coordinates">The physical coordinates (latitude and longitude) of the location..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<CapabilitiesEnum> Capabilities = default(List<CapabilitiesEnum>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string MerchantId = default(string), CountryEnum? Country = default(CountryEnum?), string LanguageCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string PhoneNumber = default(string), string BusinessName = default(string), TypeEnum? Type = default(TypeEnum?), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours), string BusinessEmail = default(string), string Description = default(string), string TwitterUsername = default(string), string InstagramUsername = default(string), string FacebookUrl = default(string), Coordinates Coordinates = default(Coordinates))
         {
             this.Id = Id;
             this.Name = Name;
@@ -2757,6 +2763,12 @@ namespace Square.Connect.Model
             this.Type = Type;
             this.WebsiteUrl = WebsiteUrl;
             this.BusinessHours = BusinessHours;
+            this.BusinessEmail = BusinessEmail;
+            this.Description = Description;
+            this.TwitterUsername = TwitterUsername;
+            this.InstagramUsername = InstagramUsername;
+            this.FacebookUrl = FacebookUrl;
+            this.Coordinates = Coordinates;
         }
         
         /// <summary>
@@ -2826,6 +2838,42 @@ namespace Square.Connect.Model
         [DataMember(Name="business_hours", EmitDefaultValue=false)]
         public BusinessHours BusinessHours { get; set; }
         /// <summary>
+        /// The email of the location.
+        /// </summary>
+        /// <value>The email of the location.</value>
+        [DataMember(Name="business_email", EmitDefaultValue=false)]
+        public string BusinessEmail { get; set; }
+        /// <summary>
+        /// The business description of the location.
+        /// </summary>
+        /// <value>The business description of the location.</value>
+        [DataMember(Name="description", EmitDefaultValue=false)]
+        public string Description { get; set; }
+        /// <summary>
+        /// The Twitter username of the location without the &#39;
+        /// </summary>
+        /// <value>The Twitter username of the location without the &#39;</value>
+        [DataMember(Name="twitter_username", EmitDefaultValue=false)]
+        public string TwitterUsername { get; set; }
+        /// <summary>
+        /// The Instagram username of the location without the &#39;
+        /// </summary>
+        /// <value>The Instagram username of the location without the &#39;</value>
+        [DataMember(Name="instagram_username", EmitDefaultValue=false)]
+        public string InstagramUsername { get; set; }
+        /// <summary>
+        /// The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;.
+        /// </summary>
+        /// <value>The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;.</value>
+        [DataMember(Name="facebook_url", EmitDefaultValue=false)]
+        public string FacebookUrl { get; set; }
+        /// <summary>
+        /// The physical coordinates (latitude and longitude) of the location.
+        /// </summary>
+        /// <value>The physical coordinates (latitude and longitude) of the location.</value>
+        [DataMember(Name="coordinates", EmitDefaultValue=false)]
+        public Coordinates Coordinates { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -2849,6 +2897,12 @@ namespace Square.Connect.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  WebsiteUrl: ").Append(WebsiteUrl).Append("\n");
             sb.Append("  BusinessHours: ").Append(BusinessHours).Append("\n");
+            sb.Append("  BusinessEmail: ").Append(BusinessEmail).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  TwitterUsername: ").Append(TwitterUsername).Append("\n");
+            sb.Append("  InstagramUsername: ").Append(InstagramUsername).Append("\n");
+            sb.Append("  FacebookUrl: ").Append(FacebookUrl).Append("\n");
+            sb.Append("  Coordinates: ").Append(Coordinates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -2964,6 +3018,36 @@ namespace Square.Connect.Model
                     this.BusinessHours == other.BusinessHours ||
                     this.BusinessHours != null &&
                     this.BusinessHours.Equals(other.BusinessHours)
+                ) && 
+                (
+                    this.BusinessEmail == other.BusinessEmail ||
+                    this.BusinessEmail != null &&
+                    this.BusinessEmail.Equals(other.BusinessEmail)
+                ) && 
+                (
+                    this.Description == other.Description ||
+                    this.Description != null &&
+                    this.Description.Equals(other.Description)
+                ) && 
+                (
+                    this.TwitterUsername == other.TwitterUsername ||
+                    this.TwitterUsername != null &&
+                    this.TwitterUsername.Equals(other.TwitterUsername)
+                ) && 
+                (
+                    this.InstagramUsername == other.InstagramUsername ||
+                    this.InstagramUsername != null &&
+                    this.InstagramUsername.Equals(other.InstagramUsername)
+                ) && 
+                (
+                    this.FacebookUrl == other.FacebookUrl ||
+                    this.FacebookUrl != null &&
+                    this.FacebookUrl.Equals(other.FacebookUrl)
+                ) && 
+                (
+                    this.Coordinates == other.Coordinates ||
+                    this.Coordinates != null &&
+                    this.Coordinates.Equals(other.Coordinates)
                 );
         }
 
@@ -3010,6 +3094,18 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.WebsiteUrl.GetHashCode();
                 if (this.BusinessHours != null)
                     hash = hash * 59 + this.BusinessHours.GetHashCode();
+                if (this.BusinessEmail != null)
+                    hash = hash * 59 + this.BusinessEmail.GetHashCode();
+                if (this.Description != null)
+                    hash = hash * 59 + this.Description.GetHashCode();
+                if (this.TwitterUsername != null)
+                    hash = hash * 59 + this.TwitterUsername.GetHashCode();
+                if (this.InstagramUsername != null)
+                    hash = hash * 59 + this.InstagramUsername.GetHashCode();
+                if (this.FacebookUrl != null)
+                    hash = hash * 59 + this.FacebookUrl.GetHashCode();
+                if (this.Coordinates != null)
+                    hash = hash * 59 + this.Coordinates.GetHashCode();
                 return hash;
             }
         }
