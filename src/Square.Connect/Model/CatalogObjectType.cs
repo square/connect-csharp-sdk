@@ -77,7 +77,25 @@ namespace Square.Connect.Model
         /// Enum MODIFIER for "MODIFIER"
         /// </summary>
         [EnumMember(Value = "MODIFIER")]
-        MODIFIER
+        MODIFIER,
+        
+        /// <summary>
+        /// Enum PRICINGRULE for "PRICING_RULE"
+        /// </summary>
+        [EnumMember(Value = "PRICING_RULE")]
+        PRICINGRULE,
+        
+        /// <summary>
+        /// Enum PRODUCTSET for "PRODUCT_SET"
+        /// </summary>
+        [EnumMember(Value = "PRODUCT_SET")]
+        PRODUCTSET,
+        
+        /// <summary>
+        /// Enum TIMEPERIOD for "TIME_PERIOD"
+        /// </summary>
+        [EnumMember(Value = "TIME_PERIOD")]
+        TIMEPERIOD
     }
 
 }

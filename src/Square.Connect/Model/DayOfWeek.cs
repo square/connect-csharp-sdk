@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    ///  Indicates the specific day  of the week.
+    /// Indicates the specific day  of the week.
     /// </summary>
-    /// <value> Indicates the specific day  of the week.</value>
+    /// <value>Indicates the specific day  of the week.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum DayOfWeek
     {

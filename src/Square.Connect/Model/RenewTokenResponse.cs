@@ -36,8 +36,8 @@ namespace Square.Connect.Model
         /// <param name="TokenType">This value is always _bearer_..</param>
         /// <param name="ExpiresAt">The date when access_token expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format..</param>
         /// <param name="MerchantId">The ID of the authorizing merchant&#39;s business..</param>
-        /// <param name="SubscriptionId">The ID of the merchant [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) associated with the authorization. Only present if the merchant signed up for a subscription during authorization..</param>
-        /// <param name="PlanId">The ID of the [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
+        /// <param name="SubscriptionId">__LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization..</param>
+        /// <param name="PlanId">__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
         public RenewTokenResponse(string AccessToken = default(string), string TokenType = default(string), string ExpiresAt = default(string), string MerchantId = default(string), string SubscriptionId = default(string), string PlanId = default(string))
         {
             this.AccessToken = AccessToken;
@@ -73,15 +73,15 @@ namespace Square.Connect.Model
         [DataMember(Name="merchant_id", EmitDefaultValue=false)]
         public string MerchantId { get; set; }
         /// <summary>
-        /// The ID of the merchant [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) associated with the authorization. Only present if the merchant signed up for a subscription during authorization.
+        /// __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization.
         /// </summary>
-        /// <value>The ID of the merchant [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) associated with the authorization. Only present if the merchant signed up for a subscription during authorization.</value>
+        /// <value>__LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization.</value>
         [DataMember(Name="subscription_id", EmitDefaultValue=false)]
         public string SubscriptionId { get; set; }
         /// <summary>
-        /// The ID of the [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+        /// __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
         /// </summary>
-        /// <value>The ID of the [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.</value>
+        /// <value>__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.</value>
         [DataMember(Name="plan_id", EmitDefaultValue=false)]
         public string PlanId { get; set; }
         /// <summary>

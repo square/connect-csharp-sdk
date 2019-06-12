@@ -1226,12 +1226,6 @@ namespace Square.Connect.Model
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
-            // Amount (long?) minimum
-            if(this.Amount < (long?)0)
-            {
-                yield return new ValidationResult("Invalid value for Amount, must be a value greater than or equal to 0.", new [] { "Amount" });
-            }
-
             yield break;
         }
     }

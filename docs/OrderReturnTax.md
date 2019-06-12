@@ -8,7 +8,7 @@ The line item tax being returned.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Uid** | **string** | The return tax&#39;s Unique identifier, unique only within this order. | [optional] 
+**Uid** | **string** | Unique ID that identifies the return tax only within this order.  This field is read-only. | [optional] 
 **SourceTaxUid** | **string** | &#x60;uid&#x60; of the Tax from the Order which contains the original charge of this tax. | [optional] 
 **CatalogObjectId** | **string** | The catalog object id referencing [CatalogTax](#type-catalogtax). | [optional] 
 **Name** | **string** | The tax&#39;s name. | [optional] 

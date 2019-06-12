@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **ModifierListData** | [**CatalogModifierList**](CatalogModifierList.md) | Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;. | [optional] 
 **ModifierData** | [**CatalogModifier**](CatalogModifier.md) | Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;. | [optional] 
 **ImageData** | [**CatalogImage**](CatalogImage.md) | Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;. | [optional] 
+**MeasurementUnitData** | [**CatalogMeasurementUnit**](CatalogMeasurementUnit.md) | Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;. | [optional] 
 
 
 ## TypeEnum
@@ -40,6 +41,9 @@ Name | Value
 **DISCOUNT** | "DISCOUNT"
 **MODIFIERLIST** | "MODIFIER_LIST"
 **MODIFIER** | "MODIFIER"
+**PRICINGRULE** | "PRICING_RULE"
+**PRODUCTSET** | "PRODUCT_SET"
+**TIMEPERIOD** | "TIME_PERIOD"
 
 
 

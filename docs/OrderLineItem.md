@@ -8,7 +8,7 @@ Represents a line item in an order. Each line item describes a different product
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Uid** | **string** | The line item&#39;s Unique identifier, unique only within this order. This field is read-only. | [optional] 
+**Uid** | **string** | Unique ID that identifies the line item only within this order.  This field is read-only. | [optional] 
 **Name** | **string** | The name of the line item. | [optional] 
 **Quantity** | **string** | The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities). | 
 **QuantityUnit** | [**OrderQuantityUnit**](OrderQuantityUnit.md) | The unit and precision that this line item&#39;s quantity is measured in. | [optional] 
@@ -20,10 +20,10 @@ Name | Type | Description | Notes
 **Discounts** | [**List&lt;OrderLineItemDiscount&gt;**](OrderLineItemDiscount.md) | A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list. | [optional] 
 **BasePriceMoney** | [**Money**](Money.md) | The base price for a single unit of the line item. | [optional] 
 **VariationTotalPriceMoney** | [**Money**](Money.md) | The total price of all item variations sold in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers. | [optional] 
-**GrossSalesMoney** | [**Money**](Money.md) | The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price. | [optional] 
-**TotalTaxMoney** | [**Money**](Money.md) | The total tax amount of money to collect for the line item. | [optional] 
-**TotalDiscountMoney** | [**Money**](Money.md) | The total discount amount of money to collect for the line item. | [optional] 
-**TotalMoney** | [**Money**](Money.md) | The total amount of money to collect for this line item. | [optional] 
+**GrossSalesMoney** | [**Money**](Money.md) | The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.  This field is read-only. | [optional] 
+**TotalTaxMoney** | [**Money**](Money.md) | The total tax amount of money to collect for the line item.  This field is read-only. | [optional] 
+**TotalDiscountMoney** | [**Money**](Money.md) | The total discount amount of money to collect for the line item.  This field is read-only. | [optional] 
+**TotalMoney** | [**Money**](Money.md) | The total amount of money to collect for this line item.  This field is read-only. | [optional] 
 
 
 

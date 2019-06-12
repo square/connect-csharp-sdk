@@ -24,6 +24,12 @@ Name | Type | Description | Notes
 **Type** | **TypeEnum** | The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values | [optional] 
 **WebsiteUrl** | **string** | The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set. | [optional] 
 **BusinessHours** | [**BusinessHours**](BusinessHours.md) |   The hours of operation for a business location.  Default: none; only exists if explicitly set. | [optional] 
+**BusinessEmail** | **string** | The email of the location. | [optional] 
+**Description** | **string** | The business description of the location. | [optional] 
+**TwitterUsername** | **string** | The Twitter username of the location without the &#39; | [optional] 
+**InstagramUsername** | **string** | The Instagram username of the location without the &#39; | [optional] 
+**FacebookUrl** | **string** | The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;. | [optional] 
+**Coordinates** | [**Coordinates**](Coordinates.md) | The physical coordinates (latitude and longitude) of the location. | [optional] 
 
 
 ## List<CapabilitiesEnum>

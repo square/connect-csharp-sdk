@@ -108,7 +108,7 @@ namespace Square.Connect.Model
         /// <param name="ExpYear">The four-digit year of the card&#39;s expiration date..</param>
         /// <param name="CardholderName">The name of the cardholder..</param>
         /// <param name="BillingAddress">The billing address for this card..</param>
-        /// <param name="Fingerprint">__Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application..</param>
+        /// <param name="Fingerprint">A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account..</param>
         public Card(string Id = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string Last4 = default(string), long? ExpMonth = default(long?), long? ExpYear = default(long?), string CardholderName = default(string), Address BillingAddress = default(Address), string Fingerprint = default(string))
         {
             this.Id = Id;
@@ -158,9 +158,9 @@ namespace Square.Connect.Model
         [DataMember(Name="billing_address", EmitDefaultValue=false)]
         public Address BillingAddress { get; set; }
         /// <summary>
-        /// __Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application.
+        /// A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account.
         /// </summary>
-        /// <value>__Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application.</value>
+        /// <value>A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account.</value>
         [DataMember(Name="fingerprint", EmitDefaultValue=false)]
         public string Fingerprint { get; set; }
         /// <summary>

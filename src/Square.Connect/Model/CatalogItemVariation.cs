@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// An item variation (i.e., product) in the Catalog object model.
+    /// An item variation (i.e., product) in the Catalog object model. Each item may have a maximum of 250 item variations.
     /// </summary>
     [DataContract]
     public partial class CatalogItemVariation :  IEquatable<CatalogItemVariation>, IValidatableObject
@@ -99,7 +99,9 @@ namespace Square.Connect.Model
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
         /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable..</param>
         /// <param name="ServiceDuration">If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
-        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?))
+        /// <param name="CatalogMeasurementUnitId">Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities..</param>
+        /// <param name="MeasurementUnitId">ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities..</param>
+        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?), string CatalogMeasurementUnitId = default(string), string MeasurementUnitId = default(string))
         {
             this.ItemId = ItemId;
             this.Name = Name;
@@ -114,6 +116,8 @@ namespace Square.Connect.Model
             this.InventoryAlertThreshold = InventoryAlertThreshold;
             this.UserData = UserData;
             this.ServiceDuration = ServiceDuration;
+            this.CatalogMeasurementUnitId = CatalogMeasurementUnitId;
+            this.MeasurementUnitId = MeasurementUnitId;
         }
         
         /// <summary>
@@ -183,6 +187,18 @@ namespace Square.Connect.Model
         [DataMember(Name="service_duration", EmitDefaultValue=false)]
         public long? ServiceDuration { get; set; }
         /// <summary>
+        /// Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.
+        /// </summary>
+        /// <value>Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.</value>
+        [DataMember(Name="catalog_measurement_unit_id", EmitDefaultValue=false)]
+        public string CatalogMeasurementUnitId { get; set; }
+        /// <summary>
+        /// ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
+        /// </summary>
+        /// <value>ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.</value>
+        [DataMember(Name="measurement_unit_id", EmitDefaultValue=false)]
+        public string MeasurementUnitId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -203,6 +219,8 @@ namespace Square.Connect.Model
             sb.Append("  InventoryAlertThreshold: ").Append(InventoryAlertThreshold).Append("\n");
             sb.Append("  UserData: ").Append(UserData).Append("\n");
             sb.Append("  ServiceDuration: ").Append(ServiceDuration).Append("\n");
+            sb.Append("  CatalogMeasurementUnitId: ").Append(CatalogMeasurementUnitId).Append("\n");
+            sb.Append("  MeasurementUnitId: ").Append(MeasurementUnitId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -303,6 +321,16 @@ namespace Square.Connect.Model
                     this.ServiceDuration == other.ServiceDuration ||
                     this.ServiceDuration != null &&
                     this.ServiceDuration.Equals(other.ServiceDuration)
+                ) && 
+                (
+                    this.CatalogMeasurementUnitId == other.CatalogMeasurementUnitId ||
+                    this.CatalogMeasurementUnitId != null &&
+                    this.CatalogMeasurementUnitId.Equals(other.CatalogMeasurementUnitId)
+                ) && 
+                (
+                    this.MeasurementUnitId == other.MeasurementUnitId ||
+                    this.MeasurementUnitId != null &&
+                    this.MeasurementUnitId.Equals(other.MeasurementUnitId)
                 );
         }
 
@@ -343,6 +371,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.UserData.GetHashCode();
                 if (this.ServiceDuration != null)
                     hash = hash * 59 + this.ServiceDuration.GetHashCode();
+                if (this.CatalogMeasurementUnitId != null)
+                    hash = hash * 59 + this.CatalogMeasurementUnitId.GetHashCode();
+                if (this.MeasurementUnitId != null)
+                    hash = hash * 59 + this.MeasurementUnitId.GetHashCode();
                 return hash;
             }
         }

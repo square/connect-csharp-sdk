@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRoundingAdjustment" /> class.
         /// </summary>
-        /// <param name="Uid">The rounding adjustment&#39;s Unique identifier, unique only within this order. This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the rounding adjustment only within this order.  This field is read-only..</param>
         /// <param name="Name">The name of the rounding adjustment from the original sale Order..</param>
         /// <param name="AmountMoney">Actual rounding adjustment amount..</param>
         public OrderRoundingAdjustment(string Uid = default(string), string Name = default(string), Money AmountMoney = default(Money))
@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The rounding adjustment&#39;s Unique identifier, unique only within this order. This field is read-only.
+        /// Unique ID that identifies the rounding adjustment only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The rounding adjustment&#39;s Unique identifier, unique only within this order. This field is read-only.</value>
+        /// <value>Unique ID that identifies the rounding adjustment only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>

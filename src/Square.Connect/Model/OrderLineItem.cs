@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
         /// </summary>
-        /// <param name="Uid">The line item&#39;s Unique identifier, unique only within this order. This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the line item only within this order.  This field is read-only..</param>
         /// <param name="Name">The name of the line item..</param>
         /// <param name="Quantity">The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities). (required).</param>
         /// <param name="QuantityUnit">The unit and precision that this line item&#39;s quantity is measured in..</param>
@@ -49,10 +49,10 @@ namespace Square.Connect.Model
         /// <param name="Discounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>
         /// <param name="VariationTotalPriceMoney">The total price of all item variations sold in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers..</param>
-        /// <param name="GrossSalesMoney">The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price..</param>
-        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item..</param>
-        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the line item..</param>
-        /// <param name="TotalMoney">The total amount of money to collect for this line item..</param>
+        /// <param name="GrossSalesMoney">The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.  This field is read-only..</param>
+        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item.  This field is read-only..</param>
+        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the line item.  This field is read-only..</param>
+        /// <param name="TotalMoney">The total amount of money to collect for this line item.  This field is read-only..</param>
         public OrderLineItem(string Uid = default(string), string Name = default(string), string Quantity = default(string), OrderQuantityUnit QuantityUnit = default(OrderQuantityUnit), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderLineItemModifier> Modifiers = default(List<OrderLineItemModifier>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money VariationTotalPriceMoney = default(Money), Money GrossSalesMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
             // to ensure "Quantity" is required (not null)
@@ -82,9 +82,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The line item&#39;s Unique identifier, unique only within this order. This field is read-only.
+        /// Unique ID that identifies the line item only within this order.  This field is read-only.
         /// </summary>
-        /// <value>The line item&#39;s Unique identifier, unique only within this order. This field is read-only.</value>
+        /// <value>Unique ID that identifies the line item only within this order.  This field is read-only.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -154,27 +154,27 @@ namespace Square.Connect.Model
         [DataMember(Name="variation_total_price_money", EmitDefaultValue=false)]
         public Money VariationTotalPriceMoney { get; set; }
         /// <summary>
-        /// The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.
+        /// The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.  This field is read-only.
         /// </summary>
-        /// <value>The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.</value>
+        /// <value>The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.  This field is read-only.</value>
         [DataMember(Name="gross_sales_money", EmitDefaultValue=false)]
         public Money GrossSalesMoney { get; set; }
         /// <summary>
-        /// The total tax amount of money to collect for the line item.
+        /// The total tax amount of money to collect for the line item.  This field is read-only.
         /// </summary>
-        /// <value>The total tax amount of money to collect for the line item.</value>
+        /// <value>The total tax amount of money to collect for the line item.  This field is read-only.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
         /// <summary>
-        /// The total discount amount of money to collect for the line item.
+        /// The total discount amount of money to collect for the line item.  This field is read-only.
         /// </summary>
-        /// <value>The total discount amount of money to collect for the line item.</value>
+        /// <value>The total discount amount of money to collect for the line item.  This field is read-only.</value>
         [DataMember(Name="total_discount_money", EmitDefaultValue=false)]
         public Money TotalDiscountMoney { get; set; }
         /// <summary>
-        /// The total amount of money to collect for this line item.
+        /// The total amount of money to collect for this line item.  This field is read-only.
         /// </summary>
-        /// <value>The total amount of money to collect for this line item.</value>
+        /// <value>The total amount of money to collect for this line item.  This field is read-only.</value>
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>

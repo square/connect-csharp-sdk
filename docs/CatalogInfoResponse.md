@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Errors** | [**List&lt;Error&gt;**](Error.md) | The set of [Error](#type-error)s encountered. | [optional] 
 **Limits** | [**CatalogInfoResponseLimits**](CatalogInfoResponseLimits.md) |  | [optional] 
+**StandardUnitDescriptionGroup** | [**StandardUnitDescriptionGroup**](StandardUnitDescriptionGroup.md) | Names and abbreviations for standard units. | [optional] 
 
 
 

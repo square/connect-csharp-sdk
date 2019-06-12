@@ -83,7 +83,25 @@ namespace Square.Connect.Model
             /// Enum MODIFIER for "MODIFIER"
             /// </summary>
             [EnumMember(Value = "MODIFIER")]
-            MODIFIER
+            MODIFIER,
+            
+            /// <summary>
+            /// Enum PRICINGRULE for "PRICING_RULE"
+            /// </summary>
+            [EnumMember(Value = "PRICING_RULE")]
+            PRICINGRULE,
+            
+            /// <summary>
+            /// Enum PRODUCTSET for "PRODUCT_SET"
+            /// </summary>
+            [EnumMember(Value = "PRODUCT_SET")]
+            PRODUCTSET,
+            
+            /// <summary>
+            /// Enum TIMEPERIOD for "TIME_PERIOD"
+            /// </summary>
+            [EnumMember(Value = "TIME_PERIOD")]
+            TIMEPERIOD
         }
 
         /// <summary>
@@ -118,7 +136,8 @@ namespace Square.Connect.Model
         /// <param name="ModifierListData">Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;..</param>
         /// <param name="ModifierData">Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;..</param>
         /// <param name="ImageData">Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;..</param>
-        public CatalogObject(TypeEnum? Type = default(TypeEnum?), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), string ImageId = default(string), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogImage ImageData = default(CatalogImage))
+        /// <param name="MeasurementUnitData">Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;..</param>
+        public CatalogObject(TypeEnum? Type = default(TypeEnum?), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), string ImageId = default(string), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogImage ImageData = default(CatalogImage), CatalogMeasurementUnit MeasurementUnitData = default(CatalogMeasurementUnit))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -154,6 +173,7 @@ namespace Square.Connect.Model
             this.ModifierListData = ModifierListData;
             this.ModifierData = ModifierData;
             this.ImageData = ImageData;
+            this.MeasurementUnitData = MeasurementUnitData;
         }
         
         /// <summary>
@@ -259,6 +279,12 @@ namespace Square.Connect.Model
         [DataMember(Name="image_data", EmitDefaultValue=false)]
         public CatalogImage ImageData { get; set; }
         /// <summary>
+        /// Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;.
+        /// </summary>
+        /// <value>Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;.</value>
+        [DataMember(Name="measurement_unit_data", EmitDefaultValue=false)]
+        public CatalogMeasurementUnit MeasurementUnitData { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -284,6 +310,7 @@ namespace Square.Connect.Model
             sb.Append("  ModifierListData: ").Append(ModifierListData).Append("\n");
             sb.Append("  ModifierData: ").Append(ModifierData).Append("\n");
             sb.Append("  ImageData: ").Append(ImageData).Append("\n");
+            sb.Append("  MeasurementUnitData: ").Append(MeasurementUnitData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -409,6 +436,11 @@ namespace Square.Connect.Model
                     this.ImageData == other.ImageData ||
                     this.ImageData != null &&
                     this.ImageData.Equals(other.ImageData)
+                ) && 
+                (
+                    this.MeasurementUnitData == other.MeasurementUnitData ||
+                    this.MeasurementUnitData != null &&
+                    this.MeasurementUnitData.Equals(other.MeasurementUnitData)
                 );
         }
 
@@ -459,6 +491,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ModifierData.GetHashCode();
                 if (this.ImageData != null)
                     hash = hash * 59 + this.ImageData.GetHashCode();
+                if (this.MeasurementUnitData != null)
+                    hash = hash * 59 + this.MeasurementUnitData.GetHashCode();
                 return hash;
             }
         }
