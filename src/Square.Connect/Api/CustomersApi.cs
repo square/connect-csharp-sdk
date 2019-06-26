@@ -52,7 +52,7 @@ namespace Square.Connect.Api
         /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateCustomerCardResponse</returns>
         CreateCustomerCardResponse CreateCustomerCard (string customerId, CreateCustomerCardRequest body);
@@ -64,7 +64,7 @@ namespace Square.Connect.Api
         /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateCustomerCardResponse</returns>
         ApiResponse<CreateCustomerCardResponse> CreateCustomerCardWithHttpInfo (string customerId, CreateCustomerCardRequest body);
@@ -232,7 +232,7 @@ namespace Square.Connect.Api
         /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateCustomerCardResponse</returns>
         System.Threading.Tasks.Task<CreateCustomerCardResponse> CreateCustomerCardAsync (string customerId, CreateCustomerCardRequest body);
@@ -244,7 +244,7 @@ namespace Square.Connect.Api
         /// Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateCustomerCardResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateCustomerCardResponse>> CreateCustomerCardAsyncWithHttpInfo (string customerId, CreateCustomerCardRequest body);
@@ -661,7 +661,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>CreateCustomerCardResponse</returns>
         public CreateCustomerCardResponse CreateCustomerCard (string customerId, CreateCustomerCardRequest body)
@@ -674,7 +674,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of CreateCustomerCardResponse</returns>
         public ApiResponse< CreateCustomerCardResponse > CreateCustomerCardWithHttpInfo (string customerId, CreateCustomerCardRequest body)
@@ -748,7 +748,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of CreateCustomerCardResponse</returns>
         public async System.Threading.Tasks.Task<CreateCustomerCardResponse> CreateCustomerCardAsync (string customerId, CreateCustomerCardRequest body)
@@ -762,7 +762,7 @@ namespace Square.Connect.Api
         /// CreateCustomerCard Adds a card on file to an existing customer.  As with charges, calls to &#x60;CreateCustomerCard&#x60; are idempotent. Multiple calls with the same card nonce return the same card record that was created with the provided nonce during the _first_ call.  Cards on file are automatically updated on a monthly basis to confirm they are still valid and can be charged.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerId">The ID of the customer to link the card on file to.</param>
+        /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (CreateCustomerCardResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<CreateCustomerCardResponse>> CreateCustomerCardAsyncWithHttpInfo (string customerId, CreateCustomerCardRequest body)

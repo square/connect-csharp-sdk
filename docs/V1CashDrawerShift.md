@@ -2,7 +2,7 @@
 
 ### Description
 
-V1CashDrawerShift
+Contains details for a single cash drawer shift.
 
 ## Properties
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **OpeningEmployeeId** | **string** | The ID of the employee that started the cash drawer shift. | [optional] 
 **EndingEmployeeId** | **string** | The ID of the employee that ended the cash drawer shift. | [optional] 
 **ClosingEmployeeId** | **string** | The ID of the employee that closed the cash drawer shift by auditing the cash drawer&#39;s contents. | [optional] 
-**Description** | **string** | The time when the timecard was created, in ISO 8601 format. | [optional] 
+**Description** | **string** | A description of the cash drawer shift. | [optional] 
 **StartingCashMoney** | [**V1Money**](V1Money.md) | The amount of money in the cash drawer at the start of the shift. | [optional] 
 **CashPaymentMoney** | [**V1Money**](V1Money.md) | The amount of money added to the cash drawer from cash payments. | [optional] 
 **CashRefundsMoney** | [**V1Money**](V1Money.md) | The amount of money removed from the cash drawer from cash refunds. This value is always negative or zero. | [optional] 

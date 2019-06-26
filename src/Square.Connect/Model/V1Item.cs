@@ -178,7 +178,7 @@ namespace Square.Connect.Model
         /// <param name="CategoryId">The ID of the item&#39;s category, if any..</param>
         /// <param name="AvailableForPickup">If true, the item can be added to pickup orders from the merchant&#39;s online store. Default value: false.</param>
         /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
-        public V1Item(string Id = default(string), string Name = default(string), string Description = default(string), TypeEnum? Type = default(TypeEnum?), ColorEnum? Color = default(ColorEnum?), string Abbreviation = default(string), VisibilityEnum? Visibility = default(VisibilityEnum?), bool? AvailableOnline = default(bool?), V1ItemImage MasterImage = default(V1ItemImage), V1Category Category = default(V1Category), List<V1Variation> Variations = default(List<V1Variation>), List<V1Variation> ModifierLists = default(List<V1Variation>), List<V1Fee> Fees = default(List<V1Fee>), bool? Taxable = default(bool?), string CategoryId = default(string), bool? AvailableForPickup = default(bool?), string V2Id = default(string))
+        public V1Item(string Id = default(string), string Name = default(string), string Description = default(string), TypeEnum? Type = default(TypeEnum?), ColorEnum? Color = default(ColorEnum?), string Abbreviation = default(string), VisibilityEnum? Visibility = default(VisibilityEnum?), bool? AvailableOnline = default(bool?), V1ItemImage MasterImage = default(V1ItemImage), V1Category Category = default(V1Category), List<V1Variation> Variations = default(List<V1Variation>), List<V1ModifierList> ModifierLists = default(List<V1ModifierList>), List<V1Fee> Fees = default(List<V1Fee>), bool? Taxable = default(bool?), string CategoryId = default(string), bool? AvailableForPickup = default(bool?), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -252,7 +252,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <value>The modifier lists that apply to the item, if any.</value>
         [DataMember(Name="modifier_lists", EmitDefaultValue=false)]
-        public List<V1Variation> ModifierLists { get; set; }
+        public List<V1ModifierList> ModifierLists { get; set; }
         /// <summary>
         /// The fees that apply to the item, if any.
         /// </summary>

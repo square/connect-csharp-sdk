@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// V1CashDrawerShift
+    /// Contains details for a single cash drawer shift.
     /// </summary>
     [DataContract]
     public partial class V1CashDrawerShift :  IEquatable<V1CashDrawerShift>, IValidatableObject
@@ -74,7 +74,7 @@ namespace Square.Connect.Model
         /// <param name="OpeningEmployeeId">The ID of the employee that started the cash drawer shift..</param>
         /// <param name="EndingEmployeeId">The ID of the employee that ended the cash drawer shift..</param>
         /// <param name="ClosingEmployeeId">The ID of the employee that closed the cash drawer shift by auditing the cash drawer&#39;s contents..</param>
-        /// <param name="Description">The time when the timecard was created, in ISO 8601 format..</param>
+        /// <param name="Description">A description of the cash drawer shift..</param>
         /// <param name="StartingCashMoney">The amount of money in the cash drawer at the start of the shift..</param>
         /// <param name="CashPaymentMoney">The amount of money added to the cash drawer from cash payments..</param>
         /// <param name="CashRefundsMoney">The amount of money removed from the cash drawer from cash refunds. This value is always negative or zero..</param>
@@ -156,9 +156,9 @@ namespace Square.Connect.Model
         [DataMember(Name="closing_employee_id", EmitDefaultValue=false)]
         public string ClosingEmployeeId { get; set; }
         /// <summary>
-        /// The time when the timecard was created, in ISO 8601 format.
+        /// A description of the cash drawer shift.
         /// </summary>
-        /// <value>The time when the timecard was created, in ISO 8601 format.</value>
+        /// <value>A description of the cash drawer shift.</value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
