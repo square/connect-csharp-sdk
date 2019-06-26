@@ -106,7 +106,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CustomersApi();
-            var customerId = customerId_example;  // string | The ID of the customer to link the card on file to.
+            var customerId = customerId_example;  // string | The Square ID of the customer profile the card is linked to.
             var body = new CreateCustomerCardRequest(); // CreateCustomerCardRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
@@ -128,7 +128,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **string**| The ID of the customer to link the card on file to. | 
+ **customerId** | **string**| The Square ID of the customer profile the card is linked to. | 
  **body** | [**CreateCustomerCardRequest**](CreateCustomerCardRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
 
 ### Return type
