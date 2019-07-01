@@ -30,70 +30,28 @@ namespace Square.Connect.Model
     public partial class CustomerSort :  IEquatable<CustomerSort>, IValidatableObject
     {
         /// <summary>
-        /// The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values
-        /// </summary>
-        /// <value>The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum FieldEnum
-        {
-            
-            /// <summary>
-            /// Enum DEFAULT for "DEFAULT"
-            /// </summary>
-            [EnumMember(Value = "DEFAULT")]
-            DEFAULT,
-            
-            /// <summary>
-            /// Enum CREATEDAT for "CREATED_AT"
-            /// </summary>
-            [EnumMember(Value = "CREATED_AT")]
-            CREATEDAT
-        }
-
-        /// <summary>
-        /// Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values
-        /// </summary>
-        /// <value>The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values</value>
-        [DataMember(Name="field", EmitDefaultValue=false)]
-        public FieldEnum? Field { get; set; }
-        /// <summary>
-        /// Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CustomerSort" /> class.
         /// </summary>
         /// <param name="Field">The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values.</param>
         /// <param name="Order">Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values.</param>
-        public CustomerSort(FieldEnum? Field = default(FieldEnum?), OrderEnum? Order = default(OrderEnum?))
+        public CustomerSort(string Field = default(string), string Order = default(string))
         {
             this.Field = Field;
             this.Order = Order;
         }
         
+        /// <summary>
+        /// The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values
+        /// </summary>
+        /// <value>The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values</value>
+        [DataMember(Name="field", EmitDefaultValue=false)]
+        public string Field { get; set; }
+        /// <summary>
+        /// Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

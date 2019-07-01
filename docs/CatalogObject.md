@@ -8,7 +8,7 @@ The wrapper object for object types in the Catalog data model. The type of a par
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **TypeEnum** | The type of this object. Each object type has expected properties expressed in a structured format within its corresponding &#x60;*_data&#x60; field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values | 
+**Type** | **string** | The type of this object. Each object type has expected properties expressed in a structured format within its corresponding &#x60;*_data&#x60; field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values | 
 **Id** | **string** | An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a &#x60;&#39;#&#39;&#x60; character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references. | 
 **UpdatedAt** | **string** | Last modification [timestamp](#workingwithdates) in RFC 3339 format, e.g., &#x60;\&quot;2016-08-15T23:59:33.123Z\&quot;&#x60; would indicate the UTC time (denoted by &#x60;Z&#x60;) of August 15, 2016 at 23:59:33 and 123 milliseconds. | [optional] 
 **Version** | **long?** | The version of the object. When updating an object, the version supplied must match the version in the database, otherwise the write will be rejected as conflicting. | [optional] 
@@ -27,23 +27,6 @@ Name | Type | Description | Notes
 **ModifierData** | [**CatalogModifier**](CatalogModifier.md) | Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;. | [optional] 
 **ImageData** | [**CatalogImage**](CatalogImage.md) | Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;. | [optional] 
 **MeasurementUnitData** | [**CatalogMeasurementUnit**](CatalogMeasurementUnit.md) | Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;. | [optional] 
-
-
-## TypeEnum
-
-Name | Value
------------- | -------------
-**ITEM** | "ITEM"
-**IMAGE** | "IMAGE"
-**CATEGORY** | "CATEGORY"
-**ITEMVARIATION** | "ITEM_VARIATION"
-**TAX** | "TAX"
-**DISCOUNT** | "DISCOUNT"
-**MODIFIERLIST** | "MODIFIER_LIST"
-**MODIFIER** | "MODIFIER"
-**PRICINGRULE** | "PRICING_RULE"
-**PRODUCTSET** | "PRODUCT_SET"
-**TIMEPERIOD** | "TIME_PERIOD"
 
 
 

@@ -30,60 +30,6 @@ namespace Square.Connect.Model
     public partial class V1ListSettlementsRequest :  IEquatable<V1ListSettlementsRequest>, IValidatableObject
     {
         /// <summary>
-        /// TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). See [V1ListSettlementsRequestStatus](#type-v1listsettlementsrequeststatus) for possible values
-        /// </summary>
-        /// <value>Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). See [V1ListSettlementsRequestStatus](#type-v1listsettlementsrequeststatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum SENT for "SENT"
-            /// </summary>
-            [EnumMember(Value = "SENT")]
-            SENT,
-            
-            /// <summary>
-            /// Enum FAILED for "FAILED"
-            /// </summary>
-            [EnumMember(Value = "FAILED")]
-            FAILED
-        }
-
-        /// <summary>
-        /// TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
-        /// Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). See [V1ListSettlementsRequestStatus](#type-v1listsettlementsrequeststatus) for possible values
-        /// </summary>
-        /// <value>Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). See [V1ListSettlementsRequestStatus](#type-v1listsettlementsrequeststatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1ListSettlementsRequest" /> class.
         /// </summary>
         /// <param name="Order">TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values.</param>
@@ -92,7 +38,7 @@ namespace Square.Connect.Model
         /// <param name="Limit">The maximum number of payments to return in a single response. This value cannot exceed 200..</param>
         /// <param name="Status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). See [V1ListSettlementsRequestStatus](#type-v1listsettlementsrequeststatus) for possible values.</param>
         /// <param name="BatchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint..</param>
-        public V1ListSettlementsRequest(OrderEnum? Order = default(OrderEnum?), string BeginTime = default(string), string EndTime = default(string), int? Limit = default(int?), StatusEnum? Status = default(StatusEnum?), string BatchToken = default(string))
+        public V1ListSettlementsRequest(string Order = default(string), string BeginTime = default(string), string EndTime = default(string), int? Limit = default(int?), string Status = default(string), string BatchToken = default(string))
         {
             this.Order = Order;
             this.BeginTime = BeginTime;
@@ -102,6 +48,12 @@ namespace Square.Connect.Model
             this.BatchToken = BatchToken;
         }
         
+        /// <summary>
+        /// TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
         /// </summary>
@@ -120,6 +72,12 @@ namespace Square.Connect.Model
         /// <value>The maximum number of payments to return in a single response. This value cannot exceed 200.</value>
         [DataMember(Name="limit", EmitDefaultValue=false)]
         public int? Limit { get; set; }
+        /// <summary>
+        /// Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). See [V1ListSettlementsRequestStatus](#type-v1listsettlementsrequeststatus) for possible values
+        /// </summary>
+        /// <value>Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). See [V1ListSettlementsRequestStatus](#type-v1listsettlementsrequeststatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// A pagination cursor to retrieve the next set of results for your original query to the endpoint.
         /// </summary>

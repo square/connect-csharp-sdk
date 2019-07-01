@@ -30,51 +30,6 @@ namespace Square.Connect.Model
     public partial class CatalogItem :  IEquatable<CatalogItem>, IValidatableObject
     {
         /// <summary>
-        /// The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
-        /// </summary>
-        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ProductTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum REGULAR for "REGULAR"
-            /// </summary>
-            [EnumMember(Value = "REGULAR")]
-            REGULAR,
-            
-            /// <summary>
-            /// Enum GIFTCARD for "GIFT_CARD"
-            /// </summary>
-            [EnumMember(Value = "GIFT_CARD")]
-            GIFTCARD,
-            
-            /// <summary>
-            /// Enum APPOINTMENTSSERVICE for "APPOINTMENTS_SERVICE"
-            /// </summary>
-            [EnumMember(Value = "APPOINTMENTS_SERVICE")]
-            APPOINTMENTSSERVICE,
-            
-            /// <summary>
-            /// Enum RETAILITEM for "RETAIL_ITEM"
-            /// </summary>
-            [EnumMember(Value = "RETAIL_ITEM")]
-            RETAILITEM,
-            
-            /// <summary>
-            /// Enum RESTAURANTITEM for "RESTAURANT_ITEM"
-            /// </summary>
-            [EnumMember(Value = "RESTAURANT_ITEM")]
-            RESTAURANTITEM
-        }
-
-        /// <summary>
-        /// The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
-        /// </summary>
-        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
-        [DataMember(Name="product_type", EmitDefaultValue=false)]
-        public ProductTypeEnum? ProductType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CatalogItem" /> class.
         /// </summary>
         /// <param name="Name">The item&#39;s name. Searchable. This field must not be empty. This field has max length of 512 Unicode code points..</param>
@@ -91,7 +46,7 @@ namespace Square.Connect.Model
         /// <param name="Variations">A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations.</param>
         /// <param name="ProductType">The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values.</param>
         /// <param name="SkipModifierScreen">If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors..</param>
-        public CatalogItem(string Name = default(string), string Description = default(string), string Abbreviation = default(string), string LabelColor = default(string), bool? AvailableOnline = default(bool?), bool? AvailableForPickup = default(bool?), bool? AvailableElectronically = default(bool?), string CategoryId = default(string), List<string> TaxIds = default(List<string>), List<CatalogItemModifierListInfo> ModifierListInfo = default(List<CatalogItemModifierListInfo>), string ImageUrl = default(string), List<CatalogObject> Variations = default(List<CatalogObject>), ProductTypeEnum? ProductType = default(ProductTypeEnum?), bool? SkipModifierScreen = default(bool?))
+        public CatalogItem(string Name = default(string), string Description = default(string), string Abbreviation = default(string), string LabelColor = default(string), bool? AvailableOnline = default(bool?), bool? AvailableForPickup = default(bool?), bool? AvailableElectronically = default(bool?), string CategoryId = default(string), List<string> TaxIds = default(List<string>), List<CatalogItemModifierListInfo> ModifierListInfo = default(List<CatalogItemModifierListInfo>), string ImageUrl = default(string), List<CatalogObject> Variations = default(List<CatalogObject>), string ProductType = default(string), bool? SkipModifierScreen = default(bool?))
         {
             this.Name = Name;
             this.Description = Description;
@@ -181,6 +136,12 @@ namespace Square.Connect.Model
         /// <value>A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations</value>
         [DataMember(Name="variations", EmitDefaultValue=false)]
         public List<CatalogObject> Variations { get; set; }
+        /// <summary>
+        /// The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
+        /// </summary>
+        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
+        [DataMember(Name="product_type", EmitDefaultValue=false)]
+        public string ProductType { get; set; }
         /// <summary>
         /// If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors.
         /// </summary>

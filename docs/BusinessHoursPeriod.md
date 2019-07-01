@@ -8,22 +8,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DayOfWeek** | **DayOfWeekEnum** | The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values | [optional] 
+**DayOfWeek** | **string** | The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values | [optional] 
 **StartLocalTime** | **string** | The start time of a business hours period, specified in local time using partial-time RFC3339 format. | [optional] 
 **EndLocalTime** | **string** | The end time of a business hours period, specified in local time using partial-time RFC3339 format. | [optional] 
-
-
-## DayOfWeekEnum
-
-Name | Value
------------- | -------------
-**SUN** | "SUN"
-**MON** | "MON"
-**TUE** | "TUE"
-**WED** | "WED"
-**THU** | "THU"
-**FRI** | "FRI"
-**SAT** | "SAT"
 
 
 

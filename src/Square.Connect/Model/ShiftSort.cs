@@ -30,82 +30,28 @@ namespace Square.Connect.Model
     public partial class ShiftSort :  IEquatable<ShiftSort>, IValidatableObject
     {
         /// <summary>
-        /// The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values
-        /// </summary>
-        /// <value>The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum FieldEnum
-        {
-            
-            /// <summary>
-            /// Enum STARTAT for "START_AT"
-            /// </summary>
-            [EnumMember(Value = "START_AT")]
-            STARTAT,
-            
-            /// <summary>
-            /// Enum ENDAT for "END_AT"
-            /// </summary>
-            [EnumMember(Value = "END_AT")]
-            ENDAT,
-            
-            /// <summary>
-            /// Enum CREATEDAT for "CREATED_AT"
-            /// </summary>
-            [EnumMember(Value = "CREATED_AT")]
-            CREATEDAT,
-            
-            /// <summary>
-            /// Enum UPDATEDAT for "UPDATED_AT"
-            /// </summary>
-            [EnumMember(Value = "UPDATED_AT")]
-            UPDATEDAT
-        }
-
-        /// <summary>
-        /// The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values
-        /// </summary>
-        /// <value>The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values</value>
-        [DataMember(Name="field", EmitDefaultValue=false)]
-        public FieldEnum? Field { get; set; }
-        /// <summary>
-        /// The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="ShiftSort" /> class.
         /// </summary>
         /// <param name="Field">The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values.</param>
         /// <param name="Order">The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values.</param>
-        public ShiftSort(FieldEnum? Field = default(FieldEnum?), OrderEnum? Order = default(OrderEnum?))
+        public ShiftSort(string Field = default(string), string Order = default(string))
         {
             this.Field = Field;
             this.Order = Order;
         }
         
+        /// <summary>
+        /// The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values
+        /// </summary>
+        /// <value>The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values</value>
+        [DataMember(Name="field", EmitDefaultValue=false)]
+        public string Field { get; set; }
+        /// <summary>
+        /// The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

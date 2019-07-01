@@ -30,154 +30,13 @@ namespace Square.Connect.Model
     public partial class V1SettlementEntry :  IEquatable<V1SettlementEntry>, IValidatableObject
     {
         /// <summary>
-        /// The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values
-        /// </summary>
-        /// <value>The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum ADJUSTMENT for "ADJUSTMENT"
-            /// </summary>
-            [EnumMember(Value = "ADJUSTMENT")]
-            ADJUSTMENT,
-            
-            /// <summary>
-            /// Enum BALANCECHARGE for "BALANCE_CHARGE"
-            /// </summary>
-            [EnumMember(Value = "BALANCE_CHARGE")]
-            BALANCECHARGE,
-            
-            /// <summary>
-            /// Enum CHARGE for "CHARGE"
-            /// </summary>
-            [EnumMember(Value = "CHARGE")]
-            CHARGE,
-            
-            /// <summary>
-            /// Enum FREEPROCESSING for "FREE_PROCESSING"
-            /// </summary>
-            [EnumMember(Value = "FREE_PROCESSING")]
-            FREEPROCESSING,
-            
-            /// <summary>
-            /// Enum HOLDADJUSTMENT for "HOLD_ADJUSTMENT"
-            /// </summary>
-            [EnumMember(Value = "HOLD_ADJUSTMENT")]
-            HOLDADJUSTMENT,
-            
-            /// <summary>
-            /// Enum PAIDSERVICEFEE for "PAID_SERVICE_FEE"
-            /// </summary>
-            [EnumMember(Value = "PAID_SERVICE_FEE")]
-            PAIDSERVICEFEE,
-            
-            /// <summary>
-            /// Enum PAIDSERVICEFEEREFUND for "PAID_SERVICE_FEE_REFUND"
-            /// </summary>
-            [EnumMember(Value = "PAID_SERVICE_FEE_REFUND")]
-            PAIDSERVICEFEEREFUND,
-            
-            /// <summary>
-            /// Enum REDEMPTIONCODE for "REDEMPTION_CODE"
-            /// </summary>
-            [EnumMember(Value = "REDEMPTION_CODE")]
-            REDEMPTIONCODE,
-            
-            /// <summary>
-            /// Enum REFUND for "REFUND"
-            /// </summary>
-            [EnumMember(Value = "REFUND")]
-            REFUND,
-            
-            /// <summary>
-            /// Enum RETURNEDPAYOUT for "RETURNED_PAYOUT"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_PAYOUT")]
-            RETURNEDPAYOUT,
-            
-            /// <summary>
-            /// Enum SQUARECAPITALADVANCE for "SQUARE_CAPITAL_ADVANCE"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_CAPITAL_ADVANCE")]
-            SQUARECAPITALADVANCE,
-            
-            /// <summary>
-            /// Enum SQUARECAPITALPAYMENT for "SQUARE_CAPITAL_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_CAPITAL_PAYMENT")]
-            SQUARECAPITALPAYMENT,
-            
-            /// <summary>
-            /// Enum SQUARECAPITALREVERSEDPAYMENT for "SQUARE_CAPITAL_REVERSED_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_CAPITAL_REVERSED_PAYMENT")]
-            SQUARECAPITALREVERSEDPAYMENT,
-            
-            /// <summary>
-            /// Enum SUBSCRIPTIONFEE for "SUBSCRIPTION_FEE"
-            /// </summary>
-            [EnumMember(Value = "SUBSCRIPTION_FEE")]
-            SUBSCRIPTIONFEE,
-            
-            /// <summary>
-            /// Enum SUBSCRIPTIONFEEREFUND for "SUBSCRIPTION_FEE_REFUND"
-            /// </summary>
-            [EnumMember(Value = "SUBSCRIPTION_FEE_REFUND")]
-            SUBSCRIPTIONFEEREFUND,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER,
-            
-            /// <summary>
-            /// Enum INCENTEDPAYMENT for "INCENTED_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "INCENTED_PAYMENT")]
-            INCENTEDPAYMENT,
-            
-            /// <summary>
-            /// Enum RETURNEDACHENTRY for "RETURNED_ACH_ENTRY"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_ACH_ENTRY")]
-            RETURNEDACHENTRY,
-            
-            /// <summary>
-            /// Enum RETURNEDSQUARE275 for "RETURNED_SQUARE_275"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_SQUARE_275")]
-            RETURNEDSQUARE275,
-            
-            /// <summary>
-            /// Enum SQUARE275 for "SQUARE_275"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_275")]
-            SQUARE275,
-            
-            /// <summary>
-            /// Enum SQUARECARD for "SQUARE_CARD"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_CARD")]
-            SQUARECARD
-        }
-
-        /// <summary>
-        /// The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values
-        /// </summary>
-        /// <value>The settlement's current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1SettlementEntry" /> class.
         /// </summary>
         /// <param name="PaymentId">The settlement&#39;s unique identifier..</param>
         /// <param name="Type">The settlement&#39;s current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values.</param>
         /// <param name="AmountMoney">The total amount of money this entry contributes to the total settlement amount..</param>
         /// <param name="FeeMoney">The amount of all Square fees associated with this settlement entry. This value is always negative or zero..</param>
-        public V1SettlementEntry(string PaymentId = default(string), TypeEnum? Type = default(TypeEnum?), V1Money AmountMoney = default(V1Money), V1Money FeeMoney = default(V1Money))
+        public V1SettlementEntry(string PaymentId = default(string), string Type = default(string), V1Money AmountMoney = default(V1Money), V1Money FeeMoney = default(V1Money))
         {
             this.PaymentId = PaymentId;
             this.Type = Type;
@@ -191,6 +50,12 @@ namespace Square.Connect.Model
         /// <value>The settlement&#39;s unique identifier.</value>
         [DataMember(Name="payment_id", EmitDefaultValue=false)]
         public string PaymentId { get; set; }
+        /// <summary>
+        /// The settlement&#39;s current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values
+        /// </summary>
+        /// <value>The settlement&#39;s current status. See [V1SettlementEntryType](#type-v1settlemententrytype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
         /// <summary>
         /// The total amount of money this entry contributes to the total settlement amount.
         /// </summary>

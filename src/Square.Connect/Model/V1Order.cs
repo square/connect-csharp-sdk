@@ -30,57 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Order :  IEquatable<V1Order>, IValidatableObject
     {
         /// <summary>
-        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values
-        /// </summary>
-        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
-        {
-            
-            /// <summary>
-            /// Enum PENDING for "PENDING"
-            /// </summary>
-            [EnumMember(Value = "PENDING")]
-            PENDING,
-            
-            /// <summary>
-            /// Enum OPEN for "OPEN"
-            /// </summary>
-            [EnumMember(Value = "OPEN")]
-            OPEN,
-            
-            /// <summary>
-            /// Enum COMPLETED for "COMPLETED"
-            /// </summary>
-            [EnumMember(Value = "COMPLETED")]
-            COMPLETED,
-            
-            /// <summary>
-            /// Enum CANCELED for "CANCELED"
-            /// </summary>
-            [EnumMember(Value = "CANCELED")]
-            CANCELED,
-            
-            /// <summary>
-            /// Enum REFUNDED for "REFUNDED"
-            /// </summary>
-            [EnumMember(Value = "REFUNDED")]
-            REFUNDED,
-            
-            /// <summary>
-            /// Enum REJECTED for "REJECTED"
-            /// </summary>
-            [EnumMember(Value = "REJECTED")]
-            REJECTED
-        }
-
-        /// <summary>
-        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values
-        /// </summary>
-        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? State { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Order" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
@@ -108,7 +57,7 @@ namespace Square.Connect.Model
         /// <param name="PromoCode">The promo code provided by the buyer, if any..</param>
         /// <param name="BtcReceiveAddress">For Bitcoin transactions, the address that the buyer sent Bitcoin to..</param>
         /// <param name="BtcPriceSatoshi">For Bitcoin transactions, the price of the buyer&#39;s order in satoshi (100 million satoshi equals 1 BTC)..</param>
-        public V1Order(List<Error> Errors = default(List<Error>), string Id = default(string), string BuyerEmail = default(string), string RecipientName = default(string), string RecipientPhoneNumber = default(string), StateEnum? State = default(StateEnum?), Address ShippingAddress = default(Address), V1Money SubtotalMoney = default(V1Money), V1Money TotalShippingMoney = default(V1Money), V1Money TotalTaxMoney = default(V1Money), V1Money TotalPriceMoney = default(V1Money), V1Money TotalDiscountMoney = default(V1Money), string CreatedAt = default(string), string UpdatedAt = default(string), string ExpiresAt = default(string), string PaymentId = default(string), string BuyerNote = default(string), string CompletedNote = default(string), string RefundedNote = default(string), string CanceledNote = default(string), V1Tender Tender = default(V1Tender), List<V1OrderHistoryEntry> OrderHistory = default(List<V1OrderHistoryEntry>), string PromoCode = default(string), string BtcReceiveAddress = default(string), decimal? BtcPriceSatoshi = default(decimal?))
+        public V1Order(List<Error> Errors = default(List<Error>), string Id = default(string), string BuyerEmail = default(string), string RecipientName = default(string), string RecipientPhoneNumber = default(string), string State = default(string), Address ShippingAddress = default(Address), V1Money SubtotalMoney = default(V1Money), V1Money TotalShippingMoney = default(V1Money), V1Money TotalTaxMoney = default(V1Money), V1Money TotalPriceMoney = default(V1Money), V1Money TotalDiscountMoney = default(V1Money), string CreatedAt = default(string), string UpdatedAt = default(string), string ExpiresAt = default(string), string PaymentId = default(string), string BuyerNote = default(string), string CompletedNote = default(string), string RefundedNote = default(string), string CanceledNote = default(string), V1Tender Tender = default(V1Tender), List<V1OrderHistoryEntry> OrderHistory = default(List<V1OrderHistoryEntry>), string PromoCode = default(string), string BtcReceiveAddress = default(string), decimal? BtcPriceSatoshi = default(decimal?))
         {
             this.Errors = Errors;
             this.Id = Id;
@@ -167,6 +116,12 @@ namespace Square.Connect.Model
         /// <value>The phone number to use for the order&#39;s delivery.</value>
         [DataMember(Name="recipient_phone_number", EmitDefaultValue=false)]
         public string RecipientPhoneNumber { get; set; }
+        /// <summary>
+        /// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values
+        /// </summary>
+        /// <value>Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values</value>
+        [DataMember(Name="state", EmitDefaultValue=false)]
+        public string State { get; set; }
         /// <summary>
         /// The address to ship the order to.
         /// </summary>

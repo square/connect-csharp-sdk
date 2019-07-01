@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Employee :  IEquatable<V1Employee>, IValidatableObject
     {
         /// <summary>
-        /// CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values
-        /// </summary>
-        /// <value>CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum ACTIVE for "ACTIVE"
-            /// </summary>
-            [EnumMember(Value = "ACTIVE")]
-            ACTIVE,
-            
-            /// <summary>
-            /// Enum INACTIVE for "INACTIVE"
-            /// </summary>
-            [EnumMember(Value = "INACTIVE")]
-            INACTIVE
-        }
-
-        /// <summary>
-        /// CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values
-        /// </summary>
-        /// <value>CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Employee" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -74,7 +47,7 @@ namespace Square.Connect.Model
         /// <param name="ExternalId">An ID the merchant can set to associate the employee with an entity in another system..</param>
         /// <param name="CreatedAt">The time when the employee entity was created, in ISO 8601 format..</param>
         /// <param name="UpdatedAt">The time when the employee entity was most recently updated, in ISO 8601 format..</param>
-        public V1Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), List<string> RoleIds = default(List<string>), List<string> AuthorizedLocationIds = default(List<string>), string Email = default(string), StatusEnum? Status = default(StatusEnum?), string ExternalId = default(string), string CreatedAt = default(string), string UpdatedAt = default(string))
+        public V1Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), List<string> RoleIds = default(List<string>), List<string> AuthorizedLocationIds = default(List<string>), string Email = default(string), string Status = default(string), string ExternalId = default(string), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             // to ensure "FirstName" is required (not null)
             if (FirstName == null)
@@ -140,6 +113,12 @@ namespace Square.Connect.Model
         /// <value>The employee&#39;s email address.</value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
+        /// <summary>
+        /// CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values
+        /// </summary>
+        /// <value>CWhether the employee is ACTIVE or INACTIVE. Inactive employees cannot sign in to Square Register.Merchants update this field from the Square Dashboard. See [V1EmployeeStatus](#type-v1employeestatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// An ID the merchant can set to associate the employee with an entity in another system.
         /// </summary>

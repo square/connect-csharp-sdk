@@ -30,84 +30,6 @@ namespace Square.Connect.Model
     public partial class OrderReturnDiscount :  IEquatable<OrderReturnDiscount>, IValidatableObject
     {
         /// <summary>
-        /// The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values
-        /// </summary>
-        /// <value>The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum UNKNOWNDISCOUNT for "UNKNOWN_DISCOUNT"
-            /// </summary>
-            [EnumMember(Value = "UNKNOWN_DISCOUNT")]
-            UNKNOWNDISCOUNT,
-            
-            /// <summary>
-            /// Enum FIXEDPERCENTAGE for "FIXED_PERCENTAGE"
-            /// </summary>
-            [EnumMember(Value = "FIXED_PERCENTAGE")]
-            FIXEDPERCENTAGE,
-            
-            /// <summary>
-            /// Enum FIXEDAMOUNT for "FIXED_AMOUNT"
-            /// </summary>
-            [EnumMember(Value = "FIXED_AMOUNT")]
-            FIXEDAMOUNT,
-            
-            /// <summary>
-            /// Enum VARIABLEPERCENTAGE for "VARIABLE_PERCENTAGE"
-            /// </summary>
-            [EnumMember(Value = "VARIABLE_PERCENTAGE")]
-            VARIABLEPERCENTAGE,
-            
-            /// <summary>
-            /// Enum VARIABLEAMOUNT for "VARIABLE_AMOUNT"
-            /// </summary>
-            [EnumMember(Value = "VARIABLE_AMOUNT")]
-            VARIABLEAMOUNT
-        }
-
-        /// <summary>
-        /// Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
-        /// </summary>
-        /// <value>Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ScopeEnum
-        {
-            
-            /// <summary>
-            /// Enum OTHERDISCOUNTSCOPE for "OTHER_DISCOUNT_SCOPE"
-            /// </summary>
-            [EnumMember(Value = "OTHER_DISCOUNT_SCOPE")]
-            OTHERDISCOUNTSCOPE,
-            
-            /// <summary>
-            /// Enum LINEITEM for "LINE_ITEM"
-            /// </summary>
-            [EnumMember(Value = "LINE_ITEM")]
-            LINEITEM,
-            
-            /// <summary>
-            /// Enum ORDER for "ORDER"
-            /// </summary>
-            [EnumMember(Value = "ORDER")]
-            ORDER
-        }
-
-        /// <summary>
-        /// The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values
-        /// </summary>
-        /// <value>The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
-        /// Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
-        /// </summary>
-        /// <value>Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values</value>
-        [DataMember(Name="scope", EmitDefaultValue=false)]
-        public ScopeEnum? Scope { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturnDiscount" /> class.
         /// </summary>
         /// <param name="Uid">Unique ID that identifies the return discount only within this order.  This field is read-only..</param>
@@ -119,7 +41,7 @@ namespace Square.Connect.Model
         /// <param name="AmountMoney">The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won&#39;t be set for a percentage-based discount..</param>
         /// <param name="AppliedMoney">The amount of discount actually applied to this line item. When an amount-based discount is at order-level, this value is different from &#x60;amount_money&#x60; because the discount is distributed across the line items..</param>
         /// <param name="Scope">Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.</param>
-        public OrderReturnDiscount(string Uid = default(string), string SourceDiscountUid = default(string), string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), ScopeEnum? Scope = default(ScopeEnum?))
+        public OrderReturnDiscount(string Uid = default(string), string SourceDiscountUid = default(string), string CatalogObjectId = default(string), string Name = default(string), string Type = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), string Scope = default(string))
         {
             this.Uid = Uid;
             this.SourceDiscountUid = SourceDiscountUid;
@@ -157,6 +79,12 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values
+        /// </summary>
+        /// <value>The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
+        /// <summary>
         /// The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  The percentage won&#39;t be set for an amount-based discount.
         /// </summary>
         /// <value>The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  The percentage won&#39;t be set for an amount-based discount.</value>
@@ -174,6 +102,12 @@ namespace Square.Connect.Model
         /// <value>The amount of discount actually applied to this line item. When an amount-based discount is at order-level, this value is different from &#x60;amount_money&#x60; because the discount is distributed across the line items.</value>
         [DataMember(Name="applied_money", EmitDefaultValue=false)]
         public Money AppliedMoney { get; set; }
+        /// <summary>
+        /// Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
+        /// </summary>
+        /// <value>Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values</value>
+        [DataMember(Name="scope", EmitDefaultValue=false)]
+        public string Scope { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

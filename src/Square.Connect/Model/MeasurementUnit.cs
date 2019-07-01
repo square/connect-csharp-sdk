@@ -30,291 +30,6 @@ namespace Square.Connect.Model
     public partial class MeasurementUnit :  IEquatable<MeasurementUnit>, IValidatableObject
     {
         /// <summary>
-        /// Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values
-        /// </summary>
-        /// <value>Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AreaUnitEnum
-        {
-            
-            /// <summary>
-            /// Enum IMPERIALACRE for "IMPERIAL_ACRE"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_ACRE")]
-            IMPERIALACRE,
-            
-            /// <summary>
-            /// Enum IMPERIALSQUAREINCH for "IMPERIAL_SQUARE_INCH"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_SQUARE_INCH")]
-            IMPERIALSQUAREINCH,
-            
-            /// <summary>
-            /// Enum IMPERIALSQUAREFOOT for "IMPERIAL_SQUARE_FOOT"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_SQUARE_FOOT")]
-            IMPERIALSQUAREFOOT,
-            
-            /// <summary>
-            /// Enum IMPERIALSQUAREYARD for "IMPERIAL_SQUARE_YARD"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_SQUARE_YARD")]
-            IMPERIALSQUAREYARD,
-            
-            /// <summary>
-            /// Enum IMPERIALSQUAREMILE for "IMPERIAL_SQUARE_MILE"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_SQUARE_MILE")]
-            IMPERIALSQUAREMILE,
-            
-            /// <summary>
-            /// Enum METRICSQUARECENTIMETER for "METRIC_SQUARE_CENTIMETER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_SQUARE_CENTIMETER")]
-            METRICSQUARECENTIMETER,
-            
-            /// <summary>
-            /// Enum METRICSQUAREMETER for "METRIC_SQUARE_METER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_SQUARE_METER")]
-            METRICSQUAREMETER,
-            
-            /// <summary>
-            /// Enum METRICSQUAREKILOMETER for "METRIC_SQUARE_KILOMETER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_SQUARE_KILOMETER")]
-            METRICSQUAREKILOMETER
-        }
-
-        /// <summary>
-        /// Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values
-        /// </summary>
-        /// <value>Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum LengthUnitEnum
-        {
-            
-            /// <summary>
-            /// Enum IMPERIALINCH for "IMPERIAL_INCH"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_INCH")]
-            IMPERIALINCH,
-            
-            /// <summary>
-            /// Enum IMPERIALFOOT for "IMPERIAL_FOOT"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_FOOT")]
-            IMPERIALFOOT,
-            
-            /// <summary>
-            /// Enum IMPERIALYARD for "IMPERIAL_YARD"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_YARD")]
-            IMPERIALYARD,
-            
-            /// <summary>
-            /// Enum IMPERIALMILE for "IMPERIAL_MILE"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_MILE")]
-            IMPERIALMILE,
-            
-            /// <summary>
-            /// Enum METRICMILLIMETER for "METRIC_MILLIMETER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_MILLIMETER")]
-            METRICMILLIMETER,
-            
-            /// <summary>
-            /// Enum METRICCENTIMETER for "METRIC_CENTIMETER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_CENTIMETER")]
-            METRICCENTIMETER,
-            
-            /// <summary>
-            /// Enum METRICMETER for "METRIC_METER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_METER")]
-            METRICMETER,
-            
-            /// <summary>
-            /// Enum METRICKILOMETER for "METRIC_KILOMETER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_KILOMETER")]
-            METRICKILOMETER
-        }
-
-        /// <summary>
-        /// Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values
-        /// </summary>
-        /// <value>Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum VolumeUnitEnum
-        {
-            
-            /// <summary>
-            /// Enum GENERICFLUIDOUNCE for "GENERIC_FLUID_OUNCE"
-            /// </summary>
-            [EnumMember(Value = "GENERIC_FLUID_OUNCE")]
-            GENERICFLUIDOUNCE,
-            
-            /// <summary>
-            /// Enum GENERICSHOT for "GENERIC_SHOT"
-            /// </summary>
-            [EnumMember(Value = "GENERIC_SHOT")]
-            GENERICSHOT,
-            
-            /// <summary>
-            /// Enum GENERICCUP for "GENERIC_CUP"
-            /// </summary>
-            [EnumMember(Value = "GENERIC_CUP")]
-            GENERICCUP,
-            
-            /// <summary>
-            /// Enum GENERICPINT for "GENERIC_PINT"
-            /// </summary>
-            [EnumMember(Value = "GENERIC_PINT")]
-            GENERICPINT,
-            
-            /// <summary>
-            /// Enum GENERICQUART for "GENERIC_QUART"
-            /// </summary>
-            [EnumMember(Value = "GENERIC_QUART")]
-            GENERICQUART,
-            
-            /// <summary>
-            /// Enum GENERICGALLON for "GENERIC_GALLON"
-            /// </summary>
-            [EnumMember(Value = "GENERIC_GALLON")]
-            GENERICGALLON,
-            
-            /// <summary>
-            /// Enum IMPERIALCUBICINCH for "IMPERIAL_CUBIC_INCH"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_CUBIC_INCH")]
-            IMPERIALCUBICINCH,
-            
-            /// <summary>
-            /// Enum IMPERIALCUBICFOOT for "IMPERIAL_CUBIC_FOOT"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_CUBIC_FOOT")]
-            IMPERIALCUBICFOOT,
-            
-            /// <summary>
-            /// Enum IMPERIALCUBICYARD for "IMPERIAL_CUBIC_YARD"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_CUBIC_YARD")]
-            IMPERIALCUBICYARD,
-            
-            /// <summary>
-            /// Enum METRICMILLILITER for "METRIC_MILLILITER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_MILLILITER")]
-            METRICMILLILITER,
-            
-            /// <summary>
-            /// Enum METRICLITER for "METRIC_LITER"
-            /// </summary>
-            [EnumMember(Value = "METRIC_LITER")]
-            METRICLITER
-        }
-
-        /// <summary>
-        /// Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values
-        /// </summary>
-        /// <value>Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum WeightUnitEnum
-        {
-            
-            /// <summary>
-            /// Enum IMPERIALWEIGHTOUNCE for "IMPERIAL_WEIGHT_OUNCE"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_WEIGHT_OUNCE")]
-            IMPERIALWEIGHTOUNCE,
-            
-            /// <summary>
-            /// Enum IMPERIALPOUND for "IMPERIAL_POUND"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_POUND")]
-            IMPERIALPOUND,
-            
-            /// <summary>
-            /// Enum IMPERIALSTONE for "IMPERIAL_STONE"
-            /// </summary>
-            [EnumMember(Value = "IMPERIAL_STONE")]
-            IMPERIALSTONE,
-            
-            /// <summary>
-            /// Enum METRICMILLIGRAM for "METRIC_MILLIGRAM"
-            /// </summary>
-            [EnumMember(Value = "METRIC_MILLIGRAM")]
-            METRICMILLIGRAM,
-            
-            /// <summary>
-            /// Enum METRICGRAM for "METRIC_GRAM"
-            /// </summary>
-            [EnumMember(Value = "METRIC_GRAM")]
-            METRICGRAM,
-            
-            /// <summary>
-            /// Enum METRICKILOGRAM for "METRIC_KILOGRAM"
-            /// </summary>
-            [EnumMember(Value = "METRIC_KILOGRAM")]
-            METRICKILOGRAM
-        }
-
-        /// <summary>
-        /// Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values
-        /// </summary>
-        /// <value>Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum GenericUnitEnum
-        {
-            
-            /// <summary>
-            /// Enum INVALIDGENERICUNIT for "INVALID_GENERIC_UNIT"
-            /// </summary>
-            [EnumMember(Value = "INVALID_GENERIC_UNIT")]
-            INVALIDGENERICUNIT,
-            
-            /// <summary>
-            /// Enum UNIT for "UNIT"
-            /// </summary>
-            [EnumMember(Value = "UNIT")]
-            UNIT
-        }
-
-        /// <summary>
-        /// Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values
-        /// </summary>
-        /// <value>Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values</value>
-        [DataMember(Name="area_unit", EmitDefaultValue=false)]
-        public AreaUnitEnum? AreaUnit { get; set; }
-        /// <summary>
-        /// Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values
-        /// </summary>
-        /// <value>Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values</value>
-        [DataMember(Name="length_unit", EmitDefaultValue=false)]
-        public LengthUnitEnum? LengthUnit { get; set; }
-        /// <summary>
-        /// Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values
-        /// </summary>
-        /// <value>Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values</value>
-        [DataMember(Name="volume_unit", EmitDefaultValue=false)]
-        public VolumeUnitEnum? VolumeUnit { get; set; }
-        /// <summary>
-        /// Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values
-        /// </summary>
-        /// <value>Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values</value>
-        [DataMember(Name="weight_unit", EmitDefaultValue=false)]
-        public WeightUnitEnum? WeightUnit { get; set; }
-        /// <summary>
-        /// Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values
-        /// </summary>
-        /// <value>Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values</value>
-        [DataMember(Name="generic_unit", EmitDefaultValue=false)]
-        public GenericUnitEnum? GenericUnit { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementUnit" /> class.
         /// </summary>
         /// <param name="CustomUnit">A custom unit of measurement defined by the seller using the Point of Sale app or ad-hoc as an order line item..</param>
@@ -323,7 +38,7 @@ namespace Square.Connect.Model
         /// <param name="VolumeUnit">Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values.</param>
         /// <param name="WeightUnit">Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values.</param>
         /// <param name="GenericUnit">Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values.</param>
-        public MeasurementUnit(MeasurementUnitCustom CustomUnit = default(MeasurementUnitCustom), AreaUnitEnum? AreaUnit = default(AreaUnitEnum?), LengthUnitEnum? LengthUnit = default(LengthUnitEnum?), VolumeUnitEnum? VolumeUnit = default(VolumeUnitEnum?), WeightUnitEnum? WeightUnit = default(WeightUnitEnum?), GenericUnitEnum? GenericUnit = default(GenericUnitEnum?))
+        public MeasurementUnit(MeasurementUnitCustom CustomUnit = default(MeasurementUnitCustom), string AreaUnit = default(string), string LengthUnit = default(string), string VolumeUnit = default(string), string WeightUnit = default(string), string GenericUnit = default(string))
         {
             this.CustomUnit = CustomUnit;
             this.AreaUnit = AreaUnit;
@@ -339,6 +54,36 @@ namespace Square.Connect.Model
         /// <value>A custom unit of measurement defined by the seller using the Point of Sale app or ad-hoc as an order line item.</value>
         [DataMember(Name="custom_unit", EmitDefaultValue=false)]
         public MeasurementUnitCustom CustomUnit { get; set; }
+        /// <summary>
+        /// Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values
+        /// </summary>
+        /// <value>Represents a standard area unit. See [MeasurementUnitArea](#type-measurementunitarea) for possible values</value>
+        [DataMember(Name="area_unit", EmitDefaultValue=false)]
+        public string AreaUnit { get; set; }
+        /// <summary>
+        /// Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values
+        /// </summary>
+        /// <value>Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values</value>
+        [DataMember(Name="length_unit", EmitDefaultValue=false)]
+        public string LengthUnit { get; set; }
+        /// <summary>
+        /// Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values
+        /// </summary>
+        /// <value>Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values</value>
+        [DataMember(Name="volume_unit", EmitDefaultValue=false)]
+        public string VolumeUnit { get; set; }
+        /// <summary>
+        /// Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values
+        /// </summary>
+        /// <value>Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values</value>
+        [DataMember(Name="weight_unit", EmitDefaultValue=false)]
+        public string WeightUnit { get; set; }
+        /// <summary>
+        /// Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values
+        /// </summary>
+        /// <value>Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values</value>
+        [DataMember(Name="generic_unit", EmitDefaultValue=false)]
+        public string GenericUnit { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -20,19 +20,8 @@ Name | Type | Description | Notes
 **ModifierListInfo** | [**List&lt;CatalogItemModifierListInfo&gt;**](CatalogItemModifierListInfo.md) | A set of [CatalogItemModifierListInfo](#type-catalogitemmodifierlistinfo) objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. [CatalogModifierList](#type-catalogmodifierlist)s may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;. | [optional] 
 **ImageUrl** | **string** | __Deprecated__. The URL of an image representing this item. Deprecated in favor of &#x60;image_id&#x60; in [&#x60;CatalogObject&#x60;](#type-catalogobject). | [optional] 
 **Variations** | [**List&lt;CatalogObject&gt;**](CatalogObject.md) | A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations | [optional] 
-**ProductType** | **ProductTypeEnum** | The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values | [optional] 
+**ProductType** | **string** | The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values | [optional] 
 **SkipModifierScreen** | **bool?** | If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors. | [optional] 
-
-
-## ProductTypeEnum
-
-Name | Value
------------- | -------------
-**REGULAR** | "REGULAR"
-**GIFTCARD** | "GIFT_CARD"
-**APPOINTMENTSSERVICE** | "APPOINTMENTS_SERVICE"
-**RETAILITEM** | "RETAIL_ITEM"
-**RESTAURANTITEM** | "RESTAURANT_ITEM"
 
 
 

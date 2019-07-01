@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class OrderReturnServiceCharge :  IEquatable<OrderReturnServiceCharge>, IValidatableObject
     {
         /// <summary>
-        /// The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
-        /// </summary>
-        /// <value>The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum CalculationPhaseEnum
-        {
-            
-            /// <summary>
-            /// Enum SUBTOTALPHASE for "SUBTOTAL_PHASE"
-            /// </summary>
-            [EnumMember(Value = "SUBTOTAL_PHASE")]
-            SUBTOTALPHASE,
-            
-            /// <summary>
-            /// Enum TOTALPHASE for "TOTAL_PHASE"
-            /// </summary>
-            [EnumMember(Value = "TOTAL_PHASE")]
-            TOTALPHASE
-        }
-
-        /// <summary>
-        /// The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
-        /// </summary>
-        /// <value>The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values</value>
-        [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
-        public CalculationPhaseEnum? CalculationPhase { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturnServiceCharge" /> class.
         /// </summary>
         /// <param name="Uid">Unique ID that identifies the return service charge only within this order.  This field is read-only..</param>
@@ -71,7 +44,7 @@ namespace Square.Connect.Model
         /// <param name="CalculationPhase">The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values.</param>
         /// <param name="Taxable">Indicates whether the surcharge can be taxed. Service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable..</param>
         /// <param name="ReturnTaxes">The taxes which apply to the service charge. Return-level taxes apply by default to service charge calculated in the &#x60;SUBTOTAL_PHASE&#x60; if the service charge is marked as taxable..</param>
-        public OrderReturnServiceCharge(string Uid = default(string), string SourceServiceChargeUid = default(string), string Name = default(string), string CatalogObjectId = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), bool? Taxable = default(bool?), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>))
+        public OrderReturnServiceCharge(string Uid = default(string), string SourceServiceChargeUid = default(string), string Name = default(string), string CatalogObjectId = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), string CalculationPhase = default(string), bool? Taxable = default(bool?), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>))
         {
             this.Uid = Uid;
             this.SourceServiceChargeUid = SourceServiceChargeUid;
@@ -141,6 +114,12 @@ namespace Square.Connect.Model
         /// <value>The total amount of tax money to collect for the service charge.  This field is read-only.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
+        /// <summary>
+        /// The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
+        /// </summary>
+        /// <value>The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values</value>
+        [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
+        public string CalculationPhase { get; set; }
         /// <summary>
         /// Indicates whether the surcharge can be taxed. Service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable.
         /// </summary>

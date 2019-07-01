@@ -27,20 +27,11 @@ Name | Type | Description | Notes
 **CreatedAt** | **string** | Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only. | [optional] 
 **UpdatedAt** | **string** | Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only. | [optional] 
 **ClosedAt** | **string** | Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only. | [optional] 
-**State** | **StateEnum** | The current state of the order. &#x60;OPEN&#x60;,&#x60;COMPLETED&#x60;,&#x60;CANCELED&#x60; See [OrderState](#type-orderstate) for possible values | [optional] 
+**State** | **string** | The current state of the order. &#x60;OPEN&#x60;,&#x60;COMPLETED&#x60;,&#x60;CANCELED&#x60; See [OrderState](#type-orderstate) for possible values | [optional] 
 **TotalMoney** | [**Money**](Money.md) | The total amount of money to collect for the order.  This field is read-only. | [optional] 
 **TotalTaxMoney** | [**Money**](Money.md) | The total tax amount of money to collect for the order.  This field is read-only. | [optional] 
 **TotalDiscountMoney** | [**Money**](Money.md) | The total discount amount of money to collect for the order.  This field is read-only. | [optional] 
 **TotalServiceChargeMoney** | [**Money**](Money.md) | The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only. | [optional] 
-
-
-## StateEnum
-
-Name | Value
------------- | -------------
-**OPEN** | "OPEN"
-**COMPLETED** | "COMPLETED"
-**CANCELED** | "CANCELED"
 
 
 

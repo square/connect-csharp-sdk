@@ -30,39 +30,6 @@ namespace Square.Connect.Model
     public partial class Order :  IEquatable<Order>, IValidatableObject
     {
         /// <summary>
-        /// The current state of the order. `OPEN`,`COMPLETED`,`CANCELED` See [OrderState](#type-orderstate) for possible values
-        /// </summary>
-        /// <value>The current state of the order. `OPEN`,`COMPLETED`,`CANCELED` See [OrderState](#type-orderstate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
-        {
-            
-            /// <summary>
-            /// Enum OPEN for "OPEN"
-            /// </summary>
-            [EnumMember(Value = "OPEN")]
-            OPEN,
-            
-            /// <summary>
-            /// Enum COMPLETED for "COMPLETED"
-            /// </summary>
-            [EnumMember(Value = "COMPLETED")]
-            COMPLETED,
-            
-            /// <summary>
-            /// Enum CANCELED for "CANCELED"
-            /// </summary>
-            [EnumMember(Value = "CANCELED")]
-            CANCELED
-        }
-
-        /// <summary>
-        /// The current state of the order. `OPEN`,`COMPLETED`,`CANCELED` See [OrderState](#type-orderstate) for possible values
-        /// </summary>
-        /// <value>The current state of the order. `OPEN`,`COMPLETED`,`CANCELED` See [OrderState](#type-orderstate) for possible values</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? State { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -94,7 +61,7 @@ namespace Square.Connect.Model
         /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order.  This field is read-only..</param>
         /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order.  This field is read-only..</param>
         /// <param name="TotalServiceChargeMoney">The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only..</param>
-        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), OrderSource Source = default(OrderSource), string CustomerId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderServiceCharge> ServiceCharges = default(List<OrderServiceCharge>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), List<OrderReturn> Returns = default(List<OrderReturn>), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts), OrderMoneyAmounts NetAmounts = default(OrderMoneyAmounts), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), List<Tender> Tenders = default(List<Tender>), List<Refund> Refunds = default(List<Refund>), string CreatedAt = default(string), string UpdatedAt = default(string), string ClosedAt = default(string), StateEnum? State = default(StateEnum?), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalServiceChargeMoney = default(Money))
+        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), OrderSource Source = default(OrderSource), string CustomerId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderServiceCharge> ServiceCharges = default(List<OrderServiceCharge>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), List<OrderReturn> Returns = default(List<OrderReturn>), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts), OrderMoneyAmounts NetAmounts = default(OrderMoneyAmounts), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), List<Tender> Tenders = default(List<Tender>), List<Refund> Refunds = default(List<Refund>), string CreatedAt = default(string), string UpdatedAt = default(string), string ClosedAt = default(string), string State = default(string), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalServiceChargeMoney = default(Money))
         {
             // to ensure "LocationId" is required (not null)
             if (LocationId == null)
@@ -244,6 +211,12 @@ namespace Square.Connect.Model
         /// <value>Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.</value>
         [DataMember(Name="closed_at", EmitDefaultValue=false)]
         public string ClosedAt { get; set; }
+        /// <summary>
+        /// The current state of the order. &#x60;OPEN&#x60;,&#x60;COMPLETED&#x60;,&#x60;CANCELED&#x60; See [OrderState](#type-orderstate) for possible values
+        /// </summary>
+        /// <value>The current state of the order. &#x60;OPEN&#x60;,&#x60;COMPLETED&#x60;,&#x60;CANCELED&#x60; See [OrderState](#type-orderstate) for possible values</value>
+        [DataMember(Name="state", EmitDefaultValue=false)]
+        public string State { get; set; }
         /// <summary>
         /// The total amount of money to collect for the order.  This field is read-only.
         /// </summary>

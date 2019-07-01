@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class V1CreateRefundRequest :  IEquatable<V1CreateRefundRequest>, IValidatableObject
     {
         /// <summary>
-        /// TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values
-        /// </summary>
-        /// <value>TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum FULL for "FULL"
-            /// </summary>
-            [EnumMember(Value = "FULL")]
-            FULL,
-            
-            /// <summary>
-            /// Enum PARTIAL for "PARTIAL"
-            /// </summary>
-            [EnumMember(Value = "PARTIAL")]
-            PARTIAL
-        }
-
-        /// <summary>
-        /// TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values
-        /// </summary>
-        /// <value>TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1CreateRefundRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -69,7 +42,7 @@ namespace Square.Connect.Model
         /// <param name="Reason">The reason for the refund. (required).</param>
         /// <param name="RefundedMoney">The amount of money to refund. Required only for PARTIAL refunds..</param>
         /// <param name="RequestIdempotenceKey">An optional key to ensure idempotence if you issue the same PARTIAL refund request more than once..</param>
-        public V1CreateRefundRequest(string PaymentId = default(string), TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), string RequestIdempotenceKey = default(string))
+        public V1CreateRefundRequest(string PaymentId = default(string), string Type = default(string), string Reason = default(string), V1Money RefundedMoney = default(V1Money), string RequestIdempotenceKey = default(string))
         {
             // to ensure "PaymentId" is required (not null)
             if (PaymentId == null)
@@ -108,6 +81,12 @@ namespace Square.Connect.Model
         /// <value>The ID of the payment to refund. If you are creating a &#x60;PARTIAL&#x60; refund for a split tender payment, instead provide the id of the particular tender you want to refund.</value>
         [DataMember(Name="payment_id", EmitDefaultValue=false)]
         public string PaymentId { get; set; }
+        /// <summary>
+        /// TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values
+        /// </summary>
+        /// <value>TThe type of refund (FULL or PARTIAL). See [V1CreateRefundRequestType](#type-v1createrefundrequesttype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
         /// <summary>
         /// The reason for the refund.
         /// </summary>

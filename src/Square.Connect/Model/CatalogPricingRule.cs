@@ -30,45 +30,6 @@ namespace Square.Connect.Model
     public partial class CatalogPricingRule :  IEquatable<CatalogPricingRule>, IValidatableObject
     {
         /// <summary>
-        /// Describes how the pricing rule can be combined with other pricing rules. See [Stackable](#type-stackable) for all possible values. See [AggregationStrategy](#type-aggregationstrategy) for possible values
-        /// </summary>
-        /// <value>Describes how the pricing rule can be combined with other pricing rules. See [Stackable](#type-stackable) for all possible values. See [AggregationStrategy](#type-aggregationstrategy) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StackableEnum
-        {
-            
-            /// <summary>
-            /// Enum UNKNOWN for "UNKNOWN"
-            /// </summary>
-            [EnumMember(Value = "UNKNOWN")]
-            UNKNOWN,
-            
-            /// <summary>
-            /// Enum BASE for "BASE"
-            /// </summary>
-            [EnumMember(Value = "BASE")]
-            BASE,
-            
-            /// <summary>
-            /// Enum STACKABLE for "STACKABLE"
-            /// </summary>
-            [EnumMember(Value = "STACKABLE")]
-            STACKABLE,
-            
-            /// <summary>
-            /// Enum EXCLUSIVE for "EXCLUSIVE"
-            /// </summary>
-            [EnumMember(Value = "EXCLUSIVE")]
-            EXCLUSIVE
-        }
-
-        /// <summary>
-        /// Describes how the pricing rule can be combined with other pricing rules. See [Stackable](#type-stackable) for all possible values. See [AggregationStrategy](#type-aggregationstrategy) for possible values
-        /// </summary>
-        /// <value>Describes how the pricing rule can be combined with other pricing rules. See [Stackable](#type-stackable) for all possible values. See [AggregationStrategy](#type-aggregationstrategy) for possible values</value>
-        [DataMember(Name="stackable", EmitDefaultValue=false)]
-        public StackableEnum? Stackable { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CatalogPricingRule" /> class.
         /// </summary>
         /// <param name="Name">User-defined name for the pricing rule. For example, \&quot;Buy one get one free\&quot; or \&quot;10% off\&quot;..</param>
@@ -84,7 +45,7 @@ namespace Square.Connect.Model
         /// <param name="ValidFromLocalTime">Represents the local time the pricing rule should be valid from. Time zone is determined by the device running the Point of Sale app.  Represented in RFC3339 partial-time format (HH:MM:SS). Partial seconds will be truncated..</param>
         /// <param name="ValidUntilDate">Represents the date the pricing rule will become inactive.  Represented in RFC3339 full-date format (YYYY-MM-DD)..</param>
         /// <param name="ValidUntilLocalTime">Represents the local time at which the pricing rule will become inactive. Time zone is determined by the device running the Point of Sale app.  Represented in RFC3339 partial-time format (HH:MM:SS). Partial seconds will be truncated..</param>
-        public CatalogPricingRule(string Name = default(string), List<string> TimePeriodIds = default(List<string>), Money TotalPriceMoney = default(Money), Money ItemPriceMoney = default(Money), string DiscountId = default(string), string MatchProductsId = default(string), string ApplyProductsId = default(string), StackableEnum? Stackable = default(StackableEnum?), string ExcludeProductsId = default(string), string ValidFromDate = default(string), string ValidFromLocalTime = default(string), string ValidUntilDate = default(string), string ValidUntilLocalTime = default(string))
+        public CatalogPricingRule(string Name = default(string), List<string> TimePeriodIds = default(List<string>), Money TotalPriceMoney = default(Money), Money ItemPriceMoney = default(Money), string DiscountId = default(string), string MatchProductsId = default(string), string ApplyProductsId = default(string), string Stackable = default(string), string ExcludeProductsId = default(string), string ValidFromDate = default(string), string ValidFromLocalTime = default(string), string ValidUntilDate = default(string), string ValidUntilLocalTime = default(string))
         {
             this.Name = Name;
             this.TimePeriodIds = TimePeriodIds;
@@ -143,6 +104,12 @@ namespace Square.Connect.Model
         /// <value>The [CatalogProductSet](#type-catalogproductset) to apply the pricing rule to within the set of matched products specified by &#x60;match_products_id&#x60;. An apply rule can only match once within the set of matched products. If left unset, the pricing rule will be applied to all products within the set of matched products.</value>
         [DataMember(Name="apply_products_id", EmitDefaultValue=false)]
         public string ApplyProductsId { get; set; }
+        /// <summary>
+        /// Describes how the pricing rule can be combined with other pricing rules. See [Stackable](#type-stackable) for all possible values. See [AggregationStrategy](#type-aggregationstrategy) for possible values
+        /// </summary>
+        /// <value>Describes how the pricing rule can be combined with other pricing rules. See [Stackable](#type-stackable) for all possible values. See [AggregationStrategy](#type-aggregationstrategy) for possible values</value>
+        [DataMember(Name="stackable", EmitDefaultValue=false)]
+        public string Stackable { get; set; }
         /// <summary>
         /// Identifies the [CatalogProductSet](#type-catalogproductset) to exclude from this pricing rule. An exclude rule matches within the subset of the cart that fits the match rules (the match set). An exclude rule can only match once in the match set. If not supplied, the pricing will be applied to all products in the match set. Other products retain their base price, or a price generated by other rules.
         /// </summary>

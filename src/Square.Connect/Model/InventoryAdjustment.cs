@@ -30,180 +30,6 @@ namespace Square.Connect.Model
     public partial class InventoryAdjustment :  IEquatable<InventoryAdjustment>, IValidatableObject
     {
         /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum FromStateEnum
-        {
-            
-            /// <summary>
-            /// Enum CUSTOM for "CUSTOM"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM")]
-            CUSTOM,
-            
-            /// <summary>
-            /// Enum INSTOCK for "IN_STOCK"
-            /// </summary>
-            [EnumMember(Value = "IN_STOCK")]
-            INSTOCK,
-            
-            /// <summary>
-            /// Enum SOLD for "SOLD"
-            /// </summary>
-            [EnumMember(Value = "SOLD")]
-            SOLD,
-            
-            /// <summary>
-            /// Enum RETURNEDBYCUSTOMER for "RETURNED_BY_CUSTOMER"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_BY_CUSTOMER")]
-            RETURNEDBYCUSTOMER,
-            
-            /// <summary>
-            /// Enum RESERVEDFORSALE for "RESERVED_FOR_SALE"
-            /// </summary>
-            [EnumMember(Value = "RESERVED_FOR_SALE")]
-            RESERVEDFORSALE,
-            
-            /// <summary>
-            /// Enum SOLDONLINE for "SOLD_ONLINE"
-            /// </summary>
-            [EnumMember(Value = "SOLD_ONLINE")]
-            SOLDONLINE,
-            
-            /// <summary>
-            /// Enum ORDEREDFROMVENDOR for "ORDERED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "ORDERED_FROM_VENDOR")]
-            ORDEREDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum RECEIVEDFROMVENDOR for "RECEIVED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "RECEIVED_FROM_VENDOR")]
-            RECEIVEDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum INTRANSITTO for "IN_TRANSIT_TO"
-            /// </summary>
-            [EnumMember(Value = "IN_TRANSIT_TO")]
-            INTRANSITTO,
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum WASTE for "WASTE"
-            /// </summary>
-            [EnumMember(Value = "WASTE")]
-            WASTE,
-            
-            /// <summary>
-            /// Enum UNLINKEDRETURN for "UNLINKED_RETURN"
-            /// </summary>
-            [EnumMember(Value = "UNLINKED_RETURN")]
-            UNLINKEDRETURN
-        }
-
-        /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ToStateEnum
-        {
-            
-            /// <summary>
-            /// Enum CUSTOM for "CUSTOM"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM")]
-            CUSTOM,
-            
-            /// <summary>
-            /// Enum INSTOCK for "IN_STOCK"
-            /// </summary>
-            [EnumMember(Value = "IN_STOCK")]
-            INSTOCK,
-            
-            /// <summary>
-            /// Enum SOLD for "SOLD"
-            /// </summary>
-            [EnumMember(Value = "SOLD")]
-            SOLD,
-            
-            /// <summary>
-            /// Enum RETURNEDBYCUSTOMER for "RETURNED_BY_CUSTOMER"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_BY_CUSTOMER")]
-            RETURNEDBYCUSTOMER,
-            
-            /// <summary>
-            /// Enum RESERVEDFORSALE for "RESERVED_FOR_SALE"
-            /// </summary>
-            [EnumMember(Value = "RESERVED_FOR_SALE")]
-            RESERVEDFORSALE,
-            
-            /// <summary>
-            /// Enum SOLDONLINE for "SOLD_ONLINE"
-            /// </summary>
-            [EnumMember(Value = "SOLD_ONLINE")]
-            SOLDONLINE,
-            
-            /// <summary>
-            /// Enum ORDEREDFROMVENDOR for "ORDERED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "ORDERED_FROM_VENDOR")]
-            ORDEREDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum RECEIVEDFROMVENDOR for "RECEIVED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "RECEIVED_FROM_VENDOR")]
-            RECEIVEDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum INTRANSITTO for "IN_TRANSIT_TO"
-            /// </summary>
-            [EnumMember(Value = "IN_TRANSIT_TO")]
-            INTRANSITTO,
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum WASTE for "WASTE"
-            /// </summary>
-            [EnumMember(Value = "WASTE")]
-            WASTE,
-            
-            /// <summary>
-            /// Enum UNLINKEDRETURN for "UNLINKED_RETURN"
-            /// </summary>
-            [EnumMember(Value = "UNLINKED_RETURN")]
-            UNLINKEDRETURN
-        }
-
-        /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [DataMember(Name="from_state", EmitDefaultValue=false)]
-        public FromStateEnum? FromState { get; set; }
-        /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [DataMember(Name="to_state", EmitDefaultValue=false)]
-        public ToStateEnum? ToState { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="InventoryAdjustment" /> class.
         /// </summary>
         /// <param name="Id">A unique ID generated by Square for the [InventoryAdjustment](#type-inventoryadjustment)..</param>
@@ -223,7 +49,7 @@ namespace Square.Connect.Model
         /// <param name="RefundId">The read-only Square ID of the [Refund][#type-refund] that caused the adjustment. Only relevant for refund-related state transitions..</param>
         /// <param name="PurchaseOrderId">The read-only Square ID of the purchase order that caused the adjustment. Only relevant for state transitions from the Square for Retail app..</param>
         /// <param name="GoodsReceiptId">The read-only Square ID of the Square goods receipt that caused the adjustment. Only relevant for state transitions from the Square for Retail app..</param>
-        public InventoryAdjustment(string Id = default(string), string ReferenceId = default(string), FromStateEnum? FromState = default(FromStateEnum?), ToStateEnum? ToState = default(ToStateEnum?), string LocationId = default(string), string CatalogObjectId = default(string), string CatalogObjectType = default(string), string Quantity = default(string), Money TotalPriceMoney = default(Money), string OccurredAt = default(string), string CreatedAt = default(string), SourceApplication Source = default(SourceApplication), string EmployeeId = default(string), string TransactionId = default(string), string RefundId = default(string), string PurchaseOrderId = default(string), string GoodsReceiptId = default(string))
+        public InventoryAdjustment(string Id = default(string), string ReferenceId = default(string), string FromState = default(string), string ToState = default(string), string LocationId = default(string), string CatalogObjectId = default(string), string CatalogObjectType = default(string), string Quantity = default(string), Money TotalPriceMoney = default(Money), string OccurredAt = default(string), string CreatedAt = default(string), SourceApplication Source = default(SourceApplication), string EmployeeId = default(string), string TransactionId = default(string), string RefundId = default(string), string PurchaseOrderId = default(string), string GoodsReceiptId = default(string))
         {
             this.Id = Id;
             this.ReferenceId = ReferenceId;
@@ -256,6 +82,18 @@ namespace Square.Connect.Model
         /// <value>An optional ID provided by the application to tie the [InventoryAdjustment](#type-inventoryadjustment) to an external system.</value>
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
+        /// <summary>
+        /// The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
+        /// </summary>
+        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
+        [DataMember(Name="from_state", EmitDefaultValue=false)]
+        public string FromState { get; set; }
+        /// <summary>
+        /// The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
+        /// </summary>
+        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
+        [DataMember(Name="to_state", EmitDefaultValue=false)]
+        public string ToState { get; set; }
         /// <summary>
         /// The Square ID of the [Location](#type-location) where the related quantity of items are being tracked.
         /// </summary>

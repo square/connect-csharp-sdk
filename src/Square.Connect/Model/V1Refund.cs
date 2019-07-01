@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Refund :  IEquatable<V1Refund>, IValidatableObject
     {
         /// <summary>
-        /// The type of refund See [V1RefundType](#type-v1refundtype) for possible values
-        /// </summary>
-        /// <value>The type of refund See [V1RefundType](#type-v1refundtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum FULL for "FULL"
-            /// </summary>
-            [EnumMember(Value = "FULL")]
-            FULL,
-            
-            /// <summary>
-            /// Enum PARTIAL for "PARTIAL"
-            /// </summary>
-            [EnumMember(Value = "PARTIAL")]
-            PARTIAL
-        }
-
-        /// <summary>
-        /// The type of refund See [V1RefundType](#type-v1refundtype) for possible values
-        /// </summary>
-        /// <value>The type of refund See [V1RefundType](#type-v1refundtype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Refund" /> class.
         /// </summary>
         /// <param name="Type">The type of refund See [V1RefundType](#type-v1refundtype) for possible values.</param>
@@ -77,7 +50,7 @@ namespace Square.Connect.Model
         /// <param name="PaymentId">A Square-issued ID associated with the refund. For single-tender refunds, payment_id is the ID of the original payment ID. For split-tender refunds, payment_id is the ID of the original tender. For exchange-based refunds (is_exchange &#x3D;&#x3D; true), payment_id is the ID of the original payment ID even if the payment includes other tenders..</param>
         /// <param name="MerchantId">.</param>
         /// <param name="IsExchange">Indicates whether or not the refund is associated with an exchange. If is_exchange is true, the refund reflects the value of goods returned in the exchange not the total money refunded..</param>
-        public V1Refund(TypeEnum? Type = default(TypeEnum?), string Reason = default(string), V1Money RefundedMoney = default(V1Money), V1Money RefundedProcessingFeeMoney = default(V1Money), V1Money RefundedTaxMoney = default(V1Money), V1Money RefundedAdditiveTaxMoney = default(V1Money), List<V1PaymentTax> RefundedAdditiveTax = default(List<V1PaymentTax>), V1Money RefundedInclusiveTaxMoney = default(V1Money), List<V1PaymentTax> RefundedInclusiveTax = default(List<V1PaymentTax>), V1Money RefundedTipMoney = default(V1Money), V1Money RefundedDiscountMoney = default(V1Money), V1Money RefundedSurchargeMoney = default(V1Money), List<V1PaymentSurcharge> RefundedSurcharges = default(List<V1PaymentSurcharge>), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string), bool? IsExchange = default(bool?))
+        public V1Refund(string Type = default(string), string Reason = default(string), V1Money RefundedMoney = default(V1Money), V1Money RefundedProcessingFeeMoney = default(V1Money), V1Money RefundedTaxMoney = default(V1Money), V1Money RefundedAdditiveTaxMoney = default(V1Money), List<V1PaymentTax> RefundedAdditiveTax = default(List<V1PaymentTax>), V1Money RefundedInclusiveTaxMoney = default(V1Money), List<V1PaymentTax> RefundedInclusiveTax = default(List<V1PaymentTax>), V1Money RefundedTipMoney = default(V1Money), V1Money RefundedDiscountMoney = default(V1Money), V1Money RefundedSurchargeMoney = default(V1Money), List<V1PaymentSurcharge> RefundedSurcharges = default(List<V1PaymentSurcharge>), string CreatedAt = default(string), string ProcessedAt = default(string), string PaymentId = default(string), string MerchantId = default(string), bool? IsExchange = default(bool?))
         {
             this.Type = Type;
             this.Reason = Reason;
@@ -99,6 +72,12 @@ namespace Square.Connect.Model
             this.IsExchange = IsExchange;
         }
         
+        /// <summary>
+        /// The type of refund See [V1RefundType](#type-v1refundtype) for possible values
+        /// </summary>
+        /// <value>The type of refund See [V1RefundType](#type-v1refundtype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
         /// <summary>
         /// The merchant-specified reason for the refund.
         /// </summary>

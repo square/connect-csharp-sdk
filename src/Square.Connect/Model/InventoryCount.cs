@@ -30,93 +30,6 @@ namespace Square.Connect.Model
     public partial class InventoryCount :  IEquatable<InventoryCount>, IValidatableObject
     {
         /// <summary>
-        /// The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
-        {
-            
-            /// <summary>
-            /// Enum CUSTOM for "CUSTOM"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM")]
-            CUSTOM,
-            
-            /// <summary>
-            /// Enum INSTOCK for "IN_STOCK"
-            /// </summary>
-            [EnumMember(Value = "IN_STOCK")]
-            INSTOCK,
-            
-            /// <summary>
-            /// Enum SOLD for "SOLD"
-            /// </summary>
-            [EnumMember(Value = "SOLD")]
-            SOLD,
-            
-            /// <summary>
-            /// Enum RETURNEDBYCUSTOMER for "RETURNED_BY_CUSTOMER"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_BY_CUSTOMER")]
-            RETURNEDBYCUSTOMER,
-            
-            /// <summary>
-            /// Enum RESERVEDFORSALE for "RESERVED_FOR_SALE"
-            /// </summary>
-            [EnumMember(Value = "RESERVED_FOR_SALE")]
-            RESERVEDFORSALE,
-            
-            /// <summary>
-            /// Enum SOLDONLINE for "SOLD_ONLINE"
-            /// </summary>
-            [EnumMember(Value = "SOLD_ONLINE")]
-            SOLDONLINE,
-            
-            /// <summary>
-            /// Enum ORDEREDFROMVENDOR for "ORDERED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "ORDERED_FROM_VENDOR")]
-            ORDEREDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum RECEIVEDFROMVENDOR for "RECEIVED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "RECEIVED_FROM_VENDOR")]
-            RECEIVEDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum INTRANSITTO for "IN_TRANSIT_TO"
-            /// </summary>
-            [EnumMember(Value = "IN_TRANSIT_TO")]
-            INTRANSITTO,
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum WASTE for "WASTE"
-            /// </summary>
-            [EnumMember(Value = "WASTE")]
-            WASTE,
-            
-            /// <summary>
-            /// Enum UNLINKEDRETURN for "UNLINKED_RETURN"
-            /// </summary>
-            [EnumMember(Value = "UNLINKED_RETURN")]
-            UNLINKEDRETURN
-        }
-
-        /// <summary>
-        /// The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? State { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="InventoryCount" /> class.
         /// </summary>
         /// <param name="CatalogObjectId">The Square generated ID of the [CatalogObject](#type-catalogobject) being tracked..</param>
@@ -125,7 +38,7 @@ namespace Square.Connect.Model
         /// <param name="LocationId">The Square ID of the [Location](#type-location) where the related quantity of items are being tracked..</param>
         /// <param name="Quantity">The number of items in the count as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;. Read [Decimal Quantities (BETA)](/more-apis/inventory/overview#decimal-quantities-beta) for more information..</param>
         /// <param name="CalculatedAt">A read-only timestamp in RFC 3339 format that indicates when Square received the most recent physical count or adjustment that had an affect on the estimated count..</param>
-        public InventoryCount(string CatalogObjectId = default(string), string CatalogObjectType = default(string), StateEnum? State = default(StateEnum?), string LocationId = default(string), string Quantity = default(string), string CalculatedAt = default(string))
+        public InventoryCount(string CatalogObjectId = default(string), string CatalogObjectType = default(string), string State = default(string), string LocationId = default(string), string Quantity = default(string), string CalculatedAt = default(string))
         {
             this.CatalogObjectId = CatalogObjectId;
             this.CatalogObjectType = CatalogObjectType;
@@ -147,6 +60,12 @@ namespace Square.Connect.Model
         /// <value>The [CatalogObjectType](#type-catalogobjecttype) of the [CatalogObject](#type-catalogobject) being tracked. Tracking is only supported for the &#x60;ITEM_VARIATION&#x60; type.</value>
         [DataMember(Name="catalog_object_type", EmitDefaultValue=false)]
         public string CatalogObjectType { get; set; }
+        /// <summary>
+        /// The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
+        /// </summary>
+        /// <value>The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values</value>
+        [DataMember(Name="state", EmitDefaultValue=false)]
+        public string State { get; set; }
         /// <summary>
         /// The Square ID of the [Location](#type-location) where the related quantity of items are being tracked.
         /// </summary>

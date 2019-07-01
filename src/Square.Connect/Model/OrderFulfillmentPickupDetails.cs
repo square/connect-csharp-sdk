@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class OrderFulfillmentPickupDetails :  IEquatable<OrderFulfillmentPickupDetails>, IValidatableObject
     {
         /// <summary>
-        /// The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values
-        /// </summary>
-        /// <value>The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ScheduleTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum SCHEDULED for "SCHEDULED"
-            /// </summary>
-            [EnumMember(Value = "SCHEDULED")]
-            SCHEDULED,
-            
-            /// <summary>
-            /// Enum ASAP for "ASAP"
-            /// </summary>
-            [EnumMember(Value = "ASAP")]
-            ASAP
-        }
-
-        /// <summary>
-        /// The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values
-        /// </summary>
-        /// <value>The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values</value>
-        [DataMember(Name="schedule_type", EmitDefaultValue=false)]
-        public ScheduleTypeEnum? ScheduleType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="OrderFulfillmentPickupDetails" /> class.
         /// </summary>
         /// <param name="Recipient">The recipient of this pickup fulfillment..</param>
@@ -75,7 +48,7 @@ namespace Square.Connect.Model
         /// <param name="PickedUpAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was picked up by the recipient..</param>
         /// <param name="CanceledAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled by the merchant or buyer..</param>
         /// <param name="CancelReason">A description of why the pickup was canceled. Max length is 100 characters..</param>
-        public OrderFulfillmentPickupDetails(OrderFulfillmentRecipient Recipient = default(OrderFulfillmentRecipient), string ExpiresAt = default(string), string AutoCompleteDuration = default(string), ScheduleTypeEnum? ScheduleType = default(ScheduleTypeEnum?), string PickupAt = default(string), string PickupWindowDuration = default(string), string PrepTimeDuration = default(string), string Note = default(string), string PlacedAt = default(string), string AcceptedAt = default(string), string RejectedAt = default(string), string ReadyAt = default(string), string ExpiredAt = default(string), string PickedUpAt = default(string), string CanceledAt = default(string), string CancelReason = default(string))
+        public OrderFulfillmentPickupDetails(OrderFulfillmentRecipient Recipient = default(OrderFulfillmentRecipient), string ExpiresAt = default(string), string AutoCompleteDuration = default(string), string ScheduleType = default(string), string PickupAt = default(string), string PickupWindowDuration = default(string), string PrepTimeDuration = default(string), string Note = default(string), string PlacedAt = default(string), string AcceptedAt = default(string), string RejectedAt = default(string), string ReadyAt = default(string), string ExpiredAt = default(string), string PickedUpAt = default(string), string CanceledAt = default(string), string CancelReason = default(string))
         {
             this.Recipient = Recipient;
             this.ExpiresAt = ExpiresAt;
@@ -113,6 +86,12 @@ namespace Square.Connect.Model
         /// <value>The auto completion duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. If set, an open and accepted pickup fulfillment will automatically move to the &#x60;COMPLETED&#x60; state after this period of time. If not set, this pickup fulfillment will remain accepted until it is canceled or completed.</value>
         [DataMember(Name="auto_complete_duration", EmitDefaultValue=false)]
         public string AutoCompleteDuration { get; set; }
+        /// <summary>
+        /// The schedule type of the pickup fulfillment. Defaults to &#x60;SCHEDULED&#x60;. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values
+        /// </summary>
+        /// <value>The schedule type of the pickup fulfillment. Defaults to &#x60;SCHEDULED&#x60;. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values</value>
+        [DataMember(Name="schedule_type", EmitDefaultValue=false)]
+        public string ScheduleType { get; set; }
         /// <summary>
         /// The pickup [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. For fulfillments with the schedule type &#x60;ASAP&#x60;, this is automatically set to the current time plus the expected duration to prepare the fulfillment. This represents the start of the pickup window.
         /// </summary>
