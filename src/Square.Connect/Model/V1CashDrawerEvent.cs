@@ -30,75 +30,6 @@ namespace Square.Connect.Model
     public partial class V1CashDrawerEvent :  IEquatable<V1CashDrawerEvent>, IValidatableObject
     {
         /// <summary>
-        /// The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values
-        /// </summary>
-        /// <value>The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EventTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum NOSALE for "NO_SALE"
-            /// </summary>
-            [EnumMember(Value = "NO_SALE")]
-            NOSALE,
-            
-            /// <summary>
-            /// Enum CASHTENDERPAYMENT for "CASH_TENDER_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "CASH_TENDER_PAYMENT")]
-            CASHTENDERPAYMENT,
-            
-            /// <summary>
-            /// Enum OTHERTENDERPAYMENT for "OTHER_TENDER_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "OTHER_TENDER_PAYMENT")]
-            OTHERTENDERPAYMENT,
-            
-            /// <summary>
-            /// Enum CASHTENDERCANCELEDPAYMENT for "CASH_TENDER_CANCELED_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "CASH_TENDER_CANCELED_PAYMENT")]
-            CASHTENDERCANCELEDPAYMENT,
-            
-            /// <summary>
-            /// Enum OTHERTENDERCANCELEDPAYMENT for "OTHER_TENDER_CANCELED_PAYMENT"
-            /// </summary>
-            [EnumMember(Value = "OTHER_TENDER_CANCELED_PAYMENT")]
-            OTHERTENDERCANCELEDPAYMENT,
-            
-            /// <summary>
-            /// Enum CASHTENDERREFUND for "CASH_TENDER_REFUND"
-            /// </summary>
-            [EnumMember(Value = "CASH_TENDER_REFUND")]
-            CASHTENDERREFUND,
-            
-            /// <summary>
-            /// Enum OTHERTENDERREFUND for "OTHER_TENDER_REFUND"
-            /// </summary>
-            [EnumMember(Value = "OTHER_TENDER_REFUND")]
-            OTHERTENDERREFUND,
-            
-            /// <summary>
-            /// Enum PAIDIN for "PAID_IN"
-            /// </summary>
-            [EnumMember(Value = "PAID_IN")]
-            PAIDIN,
-            
-            /// <summary>
-            /// Enum PAIDOUT for "PAID_OUT"
-            /// </summary>
-            [EnumMember(Value = "PAID_OUT")]
-            PAIDOUT
-        }
-
-        /// <summary>
-        /// The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values
-        /// </summary>
-        /// <value>The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values</value>
-        [DataMember(Name="event_type", EmitDefaultValue=false)]
-        public EventTypeEnum? EventType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1CashDrawerEvent" /> class.
         /// </summary>
         /// <param name="Id">The event&#39;s unique ID..</param>
@@ -107,7 +38,7 @@ namespace Square.Connect.Model
         /// <param name="EventMoney">The amount of money that was added to or removed from the cash drawer because of the event. This value can be positive (for added money) or negative (for removed money)..</param>
         /// <param name="CreatedAt">The time when the event occurred, in ISO 8601 format..</param>
         /// <param name="Description">An optional description of the event, entered by the employee that created it..</param>
-        public V1CashDrawerEvent(string Id = default(string), string EmployeeId = default(string), EventTypeEnum? EventType = default(EventTypeEnum?), V1Money EventMoney = default(V1Money), string CreatedAt = default(string), string Description = default(string))
+        public V1CashDrawerEvent(string Id = default(string), string EmployeeId = default(string), string EventType = default(string), V1Money EventMoney = default(V1Money), string CreatedAt = default(string), string Description = default(string))
         {
             this.Id = Id;
             this.EmployeeId = EmployeeId;
@@ -129,6 +60,12 @@ namespace Square.Connect.Model
         /// <value>The ID of the employee that created the event.</value>
         [DataMember(Name="employee_id", EmitDefaultValue=false)]
         public string EmployeeId { get; set; }
+        /// <summary>
+        /// The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values
+        /// </summary>
+        /// <value>The type of event that occurred. See [V1CashDrawerEventEventType](#type-v1cashdrawereventeventtype) for possible values</value>
+        [DataMember(Name="event_type", EmitDefaultValue=false)]
+        public string EventType { get; set; }
         /// <summary>
         /// The amount of money that was added to or removed from the cash drawer because of the event. This value can be positive (for added money) or negative (for removed money).
         /// </summary>

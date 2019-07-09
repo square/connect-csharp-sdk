@@ -30,51 +30,6 @@ namespace Square.Connect.Model
     public partial class CatalogItem :  IEquatable<CatalogItem>, IValidatableObject
     {
         /// <summary>
-        /// The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
-        /// </summary>
-        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ProductTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum REGULAR for "REGULAR"
-            /// </summary>
-            [EnumMember(Value = "REGULAR")]
-            REGULAR,
-            
-            /// <summary>
-            /// Enum GIFTCARD for "GIFT_CARD"
-            /// </summary>
-            [EnumMember(Value = "GIFT_CARD")]
-            GIFTCARD,
-            
-            /// <summary>
-            /// Enum APPOINTMENTSSERVICE for "APPOINTMENTS_SERVICE"
-            /// </summary>
-            [EnumMember(Value = "APPOINTMENTS_SERVICE")]
-            APPOINTMENTSSERVICE,
-            
-            /// <summary>
-            /// Enum RETAILITEM for "RETAIL_ITEM"
-            /// </summary>
-            [EnumMember(Value = "RETAIL_ITEM")]
-            RETAILITEM,
-            
-            /// <summary>
-            /// Enum RESTAURANTITEM for "RESTAURANT_ITEM"
-            /// </summary>
-            [EnumMember(Value = "RESTAURANT_ITEM")]
-            RESTAURANTITEM
-        }
-
-        /// <summary>
-        /// The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
-        /// </summary>
-        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
-        [DataMember(Name="product_type", EmitDefaultValue=false)]
-        public ProductTypeEnum? ProductType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CatalogItem" /> class.
         /// </summary>
         /// <param name="Name">The item&#39;s name. Searchable. This field must not be empty. This field has max length of 512 Unicode code points..</param>
@@ -87,11 +42,10 @@ namespace Square.Connect.Model
         /// <param name="CategoryId">The ID of the item&#39;s category, if any..</param>
         /// <param name="TaxIds">A set of IDs indicating the [CatalogTax](#type-catalogtax)es that are enabled for this item. When updating an item, any taxes listed here will be added to the item. [CatalogTax](#type-catalogtax)es may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;..</param>
         /// <param name="ModifierListInfo">A set of [CatalogItemModifierListInfo](#type-catalogitemmodifierlistinfo) objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. [CatalogModifierList](#type-catalogmodifierlist)s may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;..</param>
-        /// <param name="ImageUrl">__Deprecated__. The URL of an image representing this item. Deprecated in favor of &#x60;image_id&#x60; in [&#x60;CatalogObject&#x60;](#type-catalogobject)..</param>
         /// <param name="Variations">A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations.</param>
         /// <param name="ProductType">The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values.</param>
         /// <param name="SkipModifierScreen">If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors..</param>
-        public CatalogItem(string Name = default(string), string Description = default(string), string Abbreviation = default(string), string LabelColor = default(string), bool? AvailableOnline = default(bool?), bool? AvailableForPickup = default(bool?), bool? AvailableElectronically = default(bool?), string CategoryId = default(string), List<string> TaxIds = default(List<string>), List<CatalogItemModifierListInfo> ModifierListInfo = default(List<CatalogItemModifierListInfo>), string ImageUrl = default(string), List<CatalogObject> Variations = default(List<CatalogObject>), ProductTypeEnum? ProductType = default(ProductTypeEnum?), bool? SkipModifierScreen = default(bool?))
+        public CatalogItem(string Name = default(string), string Description = default(string), string Abbreviation = default(string), string LabelColor = default(string), bool? AvailableOnline = default(bool?), bool? AvailableForPickup = default(bool?), bool? AvailableElectronically = default(bool?), string CategoryId = default(string), List<string> TaxIds = default(List<string>), List<CatalogItemModifierListInfo> ModifierListInfo = default(List<CatalogItemModifierListInfo>), List<CatalogObject> Variations = default(List<CatalogObject>), string ProductType = default(string), bool? SkipModifierScreen = default(bool?))
         {
             this.Name = Name;
             this.Description = Description;
@@ -103,7 +57,6 @@ namespace Square.Connect.Model
             this.CategoryId = CategoryId;
             this.TaxIds = TaxIds;
             this.ModifierListInfo = ModifierListInfo;
-            this.ImageUrl = ImageUrl;
             this.Variations = Variations;
             this.ProductType = ProductType;
             this.SkipModifierScreen = SkipModifierScreen;
@@ -170,17 +123,17 @@ namespace Square.Connect.Model
         [DataMember(Name="modifier_list_info", EmitDefaultValue=false)]
         public List<CatalogItemModifierListInfo> ModifierListInfo { get; set; }
         /// <summary>
-        /// __Deprecated__. The URL of an image representing this item. Deprecated in favor of &#x60;image_id&#x60; in [&#x60;CatalogObject&#x60;](#type-catalogobject).
-        /// </summary>
-        /// <value>__Deprecated__. The URL of an image representing this item. Deprecated in favor of &#x60;image_id&#x60; in [&#x60;CatalogObject&#x60;](#type-catalogobject).</value>
-        [DataMember(Name="image_url", EmitDefaultValue=false)]
-        public string ImageUrl { get; set; }
-        /// <summary>
         /// A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations
         /// </summary>
         /// <value>A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations</value>
         [DataMember(Name="variations", EmitDefaultValue=false)]
         public List<CatalogObject> Variations { get; set; }
+        /// <summary>
+        /// The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
+        /// </summary>
+        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
+        [DataMember(Name="product_type", EmitDefaultValue=false)]
+        public string ProductType { get; set; }
         /// <summary>
         /// If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors.
         /// </summary>
@@ -205,7 +158,6 @@ namespace Square.Connect.Model
             sb.Append("  CategoryId: ").Append(CategoryId).Append("\n");
             sb.Append("  TaxIds: ").Append(TaxIds).Append("\n");
             sb.Append("  ModifierListInfo: ").Append(ModifierListInfo).Append("\n");
-            sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("  Variations: ").Append(Variations).Append("\n");
             sb.Append("  ProductType: ").Append(ProductType).Append("\n");
             sb.Append("  SkipModifierScreen: ").Append(SkipModifierScreen).Append("\n");
@@ -296,11 +248,6 @@ namespace Square.Connect.Model
                     this.ModifierListInfo.SequenceEqual(other.ModifierListInfo)
                 ) && 
                 (
-                    this.ImageUrl == other.ImageUrl ||
-                    this.ImageUrl != null &&
-                    this.ImageUrl.Equals(other.ImageUrl)
-                ) && 
-                (
                     this.Variations == other.Variations ||
                     this.Variations != null &&
                     this.Variations.SequenceEqual(other.Variations)
@@ -348,8 +295,6 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.TaxIds.GetHashCode();
                 if (this.ModifierListInfo != null)
                     hash = hash * 59 + this.ModifierListInfo.GetHashCode();
-                if (this.ImageUrl != null)
-                    hash = hash * 59 + this.ImageUrl.GetHashCode();
                 if (this.Variations != null)
                     hash = hash * 59 + this.Variations.GetHashCode();
                 if (this.ProductType != null)

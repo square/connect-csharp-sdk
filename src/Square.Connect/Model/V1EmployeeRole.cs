@@ -29,63 +29,6 @@ namespace Square.Connect.Model
     [DataContract]
     public partial class V1EmployeeRole :  IEquatable<V1EmployeeRole>, IValidatableObject
     {
-
-        /// <summary>
-        /// Gets or Sets Permissions
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PermissionsEnum
-        {
-            
-            /// <summary>
-            /// Enum ACCESSSALESHISTORY for "REGISTER_ACCESS_SALES_HISTORY"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_ACCESS_SALES_HISTORY")]
-            ACCESSSALESHISTORY,
-            
-            /// <summary>
-            /// Enum APPLYRESTRICTEDDISCOUNTS for "REGISTER_APPLY_RESTRICTED_DISCOUNTS"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_APPLY_RESTRICTED_DISCOUNTS")]
-            APPLYRESTRICTEDDISCOUNTS,
-            
-            /// <summary>
-            /// Enum CHANGESETTINGS for "REGISTER_CHANGE_SETTINGS"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_CHANGE_SETTINGS")]
-            CHANGESETTINGS,
-            
-            /// <summary>
-            /// Enum EDITITEM for "REGISTER_EDIT_ITEM"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_EDIT_ITEM")]
-            EDITITEM,
-            
-            /// <summary>
-            /// Enum ISSUEREFUNDS for "REGISTER_ISSUE_REFUNDS"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_ISSUE_REFUNDS")]
-            ISSUEREFUNDS,
-            
-            /// <summary>
-            /// Enum OPENCASHDRAWEROUTSIDESALE for "REGISTER_OPEN_CASH_DRAWER_OUTSIDE_SALE"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_OPEN_CASH_DRAWER_OUTSIDE_SALE")]
-            OPENCASHDRAWEROUTSIDESALE,
-            
-            /// <summary>
-            /// Enum VIEWSUMMARYREPORTS for "REGISTER_VIEW_SUMMARY_REPORTS"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_VIEW_SUMMARY_REPORTS")]
-            VIEWSUMMARYREPORTS
-        }
-
-        /// <summary>
-        /// The role's permissions. See [V1EmployeeRolePermissions](#type-v1employeerolepermissions) for possible values
-        /// </summary>
-        /// <value>The role's permissions. See [V1EmployeeRolePermissions](#type-v1employeerolepermissions) for possible values</value>
-        [DataMember(Name="permissions", EmitDefaultValue=false)]
-        public List<PermissionsEnum> Permissions { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="V1EmployeeRole" /> class.
         /// </summary>
@@ -100,7 +43,7 @@ namespace Square.Connect.Model
         /// <param name="IsOwner">If true, employees with this role have all permissions, regardless of the values indicated in permissions..</param>
         /// <param name="CreatedAt">The time when the employee entity was created, in ISO 8601 format. Is set by Square when the Role is created..</param>
         /// <param name="UpdatedAt">The time when the employee entity was most recently updated, in ISO 8601 format. Is set by Square when the Role updated..</param>
-        public V1EmployeeRole(string Id = default(string), string Name = default(string), List<PermissionsEnum> Permissions = default(List<PermissionsEnum>), bool? IsOwner = default(bool?), string CreatedAt = default(string), string UpdatedAt = default(string))
+        public V1EmployeeRole(string Id = default(string), string Name = default(string), List<string> Permissions = default(List<string>), bool? IsOwner = default(bool?), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -138,6 +81,12 @@ namespace Square.Connect.Model
         /// <value>The role&#39;s merchant-defined name.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// The role&#39;s permissions. See [V1EmployeeRolePermissions](#type-v1employeerolepermissions) for possible values
+        /// </summary>
+        /// <value>The role&#39;s permissions. See [V1EmployeeRolePermissions](#type-v1employeerolepermissions) for possible values</value>
+        [DataMember(Name="permissions", EmitDefaultValue=false)]
+        public List<string> Permissions { get; set; }
         /// <summary>
         /// If true, employees with this role have all permissions, regardless of the values indicated in permissions.
         /// </summary>

@@ -30,66 +30,6 @@ namespace Square.Connect.Model
     public partial class SearchOrdersSort :  IEquatable<SearchOrdersSort>, IValidatableObject
     {
         /// <summary>
-        /// The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the set time range field. If this field does not match the time range field in `DateTimeFilter`, SearchOrder will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
-        /// </summary>
-        /// <value>The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the set time range field. If this field does not match the time range field in `DateTimeFilter`, SearchOrder will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SortFieldEnum
-        {
-            
-            /// <summary>
-            /// Enum CREATEDAT for "CREATED_AT"
-            /// </summary>
-            [EnumMember(Value = "CREATED_AT")]
-            CREATEDAT,
-            
-            /// <summary>
-            /// Enum UPDATEDAT for "UPDATED_AT"
-            /// </summary>
-            [EnumMember(Value = "UPDATED_AT")]
-            UPDATEDAT,
-            
-            /// <summary>
-            /// Enum CLOSEDAT for "CLOSED_AT"
-            /// </summary>
-            [EnumMember(Value = "CLOSED_AT")]
-            CLOSEDAT
-        }
-
-        /// <summary>
-        /// The order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SortOrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the set time range field. If this field does not match the time range field in `DateTimeFilter`, SearchOrder will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
-        /// </summary>
-        /// <value>The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the set time range field. If this field does not match the time range field in `DateTimeFilter`, SearchOrder will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values</value>
-        [DataMember(Name="sort_field", EmitDefaultValue=false)]
-        public SortFieldEnum? SortField { get; set; }
-        /// <summary>
-        /// The order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="sort_order", EmitDefaultValue=false)]
-        public SortOrderEnum? SortOrder { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersSort" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -99,7 +39,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="SortField">The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the set time range field. If this field does not match the time range field in &#x60;DateTimeFilter&#x60;, SearchOrder will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values (required).</param>
         /// <param name="SortOrder">The order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values.</param>
-        public SearchOrdersSort(SortFieldEnum? SortField = default(SortFieldEnum?), SortOrderEnum? SortOrder = default(SortOrderEnum?))
+        public SearchOrdersSort(string SortField = default(string), string SortOrder = default(string))
         {
             // to ensure "SortField" is required (not null)
             if (SortField == null)
@@ -113,6 +53,18 @@ namespace Square.Connect.Model
             this.SortOrder = SortOrder;
         }
         
+        /// <summary>
+        /// The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the set time range field. If this field does not match the time range field in &#x60;DateTimeFilter&#x60;, SearchOrder will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
+        /// </summary>
+        /// <value>The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the set time range field. If this field does not match the time range field in &#x60;DateTimeFilter&#x60;, SearchOrder will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values</value>
+        [DataMember(Name="sort_field", EmitDefaultValue=false)]
+        public string SortField { get; set; }
+        /// <summary>
+        /// The order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="sort_order", EmitDefaultValue=false)]
+        public string SortOrder { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

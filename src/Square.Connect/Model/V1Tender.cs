@@ -30,195 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Tender :  IEquatable<V1Tender>, IValidatableObject
     {
         /// <summary>
-        /// The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
-        /// </summary>
-        /// <value>The type of tender. See [V1TenderType](#type-v1tendertype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum CREDITCARD for "CREDIT_CARD"
-            /// </summary>
-            [EnumMember(Value = "CREDIT_CARD")]
-            CREDITCARD,
-            
-            /// <summary>
-            /// Enum CASH for "CASH"
-            /// </summary>
-            [EnumMember(Value = "CASH")]
-            CASH,
-            
-            /// <summary>
-            /// Enum THIRDPARTYCARD for "THIRD_PARTY_CARD"
-            /// </summary>
-            [EnumMember(Value = "THIRD_PARTY_CARD")]
-            THIRDPARTYCARD,
-            
-            /// <summary>
-            /// Enum NOSALE for "NO_SALE"
-            /// </summary>
-            [EnumMember(Value = "NO_SALE")]
-            NOSALE,
-            
-            /// <summary>
-            /// Enum SQUAREWALLET for "SQUARE_WALLET"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_WALLET")]
-            SQUAREWALLET,
-            
-            /// <summary>
-            /// Enum SQUAREGIFTCARD for "SQUARE_GIFT_CARD"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_GIFT_CARD")]
-            SQUAREGIFTCARD,
-            
-            /// <summary>
-            /// Enum UNKNOWN for "UNKNOWN"
-            /// </summary>
-            [EnumMember(Value = "UNKNOWN")]
-            UNKNOWN,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
-        /// </summary>
-        /// <value>The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum CardBrandEnum
-        {
-            
-            /// <summary>
-            /// Enum OTHERBRAND for "OTHER_BRAND"
-            /// </summary>
-            [EnumMember(Value = "OTHER_BRAND")]
-            OTHERBRAND,
-            
-            /// <summary>
-            /// Enum VISA for "VISA"
-            /// </summary>
-            [EnumMember(Value = "VISA")]
-            VISA,
-            
-            /// <summary>
-            /// Enum MASTERCARD for "MASTER_CARD"
-            /// </summary>
-            [EnumMember(Value = "MASTER_CARD")]
-            MASTERCARD,
-            
-            /// <summary>
-            /// Enum AMERICANEXPRESS for "AMERICAN_EXPRESS"
-            /// </summary>
-            [EnumMember(Value = "AMERICAN_EXPRESS")]
-            AMERICANEXPRESS,
-            
-            /// <summary>
-            /// Enum DISCOVER for "DISCOVER"
-            /// </summary>
-            [EnumMember(Value = "DISCOVER")]
-            DISCOVER,
-            
-            /// <summary>
-            /// Enum DISCOVERDINERS for "DISCOVER_DINERS"
-            /// </summary>
-            [EnumMember(Value = "DISCOVER_DINERS")]
-            DISCOVERDINERS,
-            
-            /// <summary>
-            /// Enum JCB for "JCB"
-            /// </summary>
-            [EnumMember(Value = "JCB")]
-            JCB,
-            
-            /// <summary>
-            /// Enum CHINAUNIONPAY for "CHINA_UNIONPAY"
-            /// </summary>
-            [EnumMember(Value = "CHINA_UNIONPAY")]
-            CHINAUNIONPAY,
-            
-            /// <summary>
-            /// Enum SQUAREGIFTCARD for "SQUARE_GIFT_CARD"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_GIFT_CARD")]
-            SQUAREGIFTCARD
-        }
-
-        /// <summary>
-        /// The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
-        /// </summary>
-        /// <value>The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EntryMethodEnum
-        {
-            
-            /// <summary>
-            /// Enum MANUAL for "MANUAL"
-            /// </summary>
-            [EnumMember(Value = "MANUAL")]
-            MANUAL,
-            
-            /// <summary>
-            /// Enum SCANNED for "SCANNED"
-            /// </summary>
-            [EnumMember(Value = "SCANNED")]
-            SCANNED,
-            
-            /// <summary>
-            /// Enum SQUARECASH for "SQUARE_CASH"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_CASH")]
-            SQUARECASH,
-            
-            /// <summary>
-            /// Enum SQUAREWALLET for "SQUARE_WALLET"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_WALLET")]
-            SQUAREWALLET,
-            
-            /// <summary>
-            /// Enum SWIPED for "SWIPED"
-            /// </summary>
-            [EnumMember(Value = "SWIPED")]
-            SWIPED,
-            
-            /// <summary>
-            /// Enum WEBFORM for "WEB_FORM"
-            /// </summary>
-            [EnumMember(Value = "WEB_FORM")]
-            WEBFORM,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
-        /// </summary>
-        /// <value>The type of tender. See [V1TenderType](#type-v1tendertype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
-        /// The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
-        /// </summary>
-        /// <value>The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values</value>
-        [DataMember(Name="card_brand", EmitDefaultValue=false)]
-        public CardBrandEnum? CardBrand { get; set; }
-        /// <summary>
-        /// The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
-        /// </summary>
-        /// <value>The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values</value>
-        [DataMember(Name="entry_method", EmitDefaultValue=false)]
-        public EntryMethodEnum? EntryMethod { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Tender" /> class.
         /// </summary>
         /// <param name="Id">The tender&#39;s unique ID..</param>
@@ -237,7 +48,7 @@ namespace Square.Connect.Model
         /// <param name="ChangeBackMoney">The amount of total_money returned to the buyer as change..</param>
         /// <param name="RefundedMoney">The total of all refunds applied to this tender. This amount is always negative or zero..</param>
         /// <param name="IsExchange">Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange..</param>
-        public V1Tender(string Id = default(string), TypeEnum? Type = default(TypeEnum?), string Name = default(string), string EmployeeId = default(string), string ReceiptUrl = default(string), CardBrandEnum? CardBrand = default(CardBrandEnum?), string PanSuffix = default(string), EntryMethodEnum? EntryMethod = default(EntryMethodEnum?), string PaymentNote = default(string), V1Money TotalMoney = default(V1Money), V1Money TenderedMoney = default(V1Money), string TenderedAt = default(string), string SettledAt = default(string), V1Money ChangeBackMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), bool? IsExchange = default(bool?))
+        public V1Tender(string Id = default(string), string Type = default(string), string Name = default(string), string EmployeeId = default(string), string ReceiptUrl = default(string), string CardBrand = default(string), string PanSuffix = default(string), string EntryMethod = default(string), string PaymentNote = default(string), V1Money TotalMoney = default(V1Money), V1Money TenderedMoney = default(V1Money), string TenderedAt = default(string), string SettledAt = default(string), V1Money ChangeBackMoney = default(V1Money), V1Money RefundedMoney = default(V1Money), bool? IsExchange = default(bool?))
         {
             this.Id = Id;
             this.Type = Type;
@@ -264,6 +75,12 @@ namespace Square.Connect.Model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
+        /// The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
+        /// </summary>
+        /// <value>The type of tender. See [V1TenderType](#type-v1tendertype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
+        /// <summary>
         /// A human-readable description of the tender.
         /// </summary>
         /// <value>A human-readable description of the tender.</value>
@@ -282,11 +99,23 @@ namespace Square.Connect.Model
         [DataMember(Name="receipt_url", EmitDefaultValue=false)]
         public string ReceiptUrl { get; set; }
         /// <summary>
+        /// The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
+        /// </summary>
+        /// <value>The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values</value>
+        [DataMember(Name="card_brand", EmitDefaultValue=false)]
+        public string CardBrand { get; set; }
+        /// <summary>
         /// The last four digits of the provided credit card&#39;s account number.
         /// </summary>
         /// <value>The last four digits of the provided credit card&#39;s account number.</value>
         [DataMember(Name="pan_suffix", EmitDefaultValue=false)]
         public string PanSuffix { get; set; }
+        /// <summary>
+        /// The tender&#39;s unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
+        /// </summary>
+        /// <value>The tender&#39;s unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values</value>
+        [DataMember(Name="entry_method", EmitDefaultValue=false)]
+        public string EntryMethod { get; set; }
         /// <summary>
         /// Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER.
         /// </summary>

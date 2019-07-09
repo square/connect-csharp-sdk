@@ -30,73 +30,22 @@ namespace Square.Connect.Model
     public partial class V1OrderHistoryEntry :  IEquatable<V1OrderHistoryEntry>, IValidatableObject
     {
         /// <summary>
-        /// The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values
-        /// </summary>
-        /// <value>The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ActionEnum
-        {
-            
-            /// <summary>
-            /// Enum ORDERPLACED for "ORDER_PLACED"
-            /// </summary>
-            [EnumMember(Value = "ORDER_PLACED")]
-            ORDERPLACED,
-            
-            /// <summary>
-            /// Enum DECLINED for "DECLINED"
-            /// </summary>
-            [EnumMember(Value = "DECLINED")]
-            DECLINED,
-            
-            /// <summary>
-            /// Enum PAYMENTRECEIVED for "PAYMENT_RECEIVED"
-            /// </summary>
-            [EnumMember(Value = "PAYMENT_RECEIVED")]
-            PAYMENTRECEIVED,
-            
-            /// <summary>
-            /// Enum CANCELED for "CANCELED"
-            /// </summary>
-            [EnumMember(Value = "CANCELED")]
-            CANCELED,
-            
-            /// <summary>
-            /// Enum COMPLETED for "COMPLETED"
-            /// </summary>
-            [EnumMember(Value = "COMPLETED")]
-            COMPLETED,
-            
-            /// <summary>
-            /// Enum REFUNDED for "REFUNDED"
-            /// </summary>
-            [EnumMember(Value = "REFUNDED")]
-            REFUNDED,
-            
-            /// <summary>
-            /// Enum EXPIRED for "EXPIRED"
-            /// </summary>
-            [EnumMember(Value = "EXPIRED")]
-            EXPIRED
-        }
-
-        /// <summary>
-        /// The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values
-        /// </summary>
-        /// <value>The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values</value>
-        [DataMember(Name="action", EmitDefaultValue=false)]
-        public ActionEnum? Action { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1OrderHistoryEntry" /> class.
         /// </summary>
         /// <param name="Action">The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values.</param>
         /// <param name="CreatedAt">The time when the action was performed, in ISO 8601 format..</param>
-        public V1OrderHistoryEntry(ActionEnum? Action = default(ActionEnum?), string CreatedAt = default(string))
+        public V1OrderHistoryEntry(string Action = default(string), string CreatedAt = default(string))
         {
             this.Action = Action;
             this.CreatedAt = CreatedAt;
         }
         
+        /// <summary>
+        /// The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values
+        /// </summary>
+        /// <value>The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values</value>
+        [DataMember(Name="action", EmitDefaultValue=false)]
+        public string Action { get; set; }
         /// <summary>
         /// The time when the action was performed, in ISO 8601 format.
         /// </summary>

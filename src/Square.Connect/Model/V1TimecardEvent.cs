@@ -30,69 +30,6 @@ namespace Square.Connect.Model
     public partial class V1TimecardEvent :  IEquatable<V1TimecardEvent>, IValidatableObject
     {
         /// <summary>
-        /// The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values
-        /// </summary>
-        /// <value>The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EventTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum APICREATE for "API_CREATE"
-            /// </summary>
-            [EnumMember(Value = "API_CREATE")]
-            APICREATE,
-            
-            /// <summary>
-            /// Enum APIEDIT for "API_EDIT"
-            /// </summary>
-            [EnumMember(Value = "API_EDIT")]
-            APIEDIT,
-            
-            /// <summary>
-            /// Enum APIDELETE for "API_DELETE"
-            /// </summary>
-            [EnumMember(Value = "API_DELETE")]
-            APIDELETE,
-            
-            /// <summary>
-            /// Enum REGISTERCLOCKIN for "REGISTER_CLOCKIN"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_CLOCKIN")]
-            REGISTERCLOCKIN,
-            
-            /// <summary>
-            /// Enum REGISTERCLOCKOUT for "REGISTER_CLOCKOUT"
-            /// </summary>
-            [EnumMember(Value = "REGISTER_CLOCKOUT")]
-            REGISTERCLOCKOUT,
-            
-            /// <summary>
-            /// Enum DASHBOARDSUPERVISORCLOSE for "DASHBOARD_SUPERVISOR_CLOSE"
-            /// </summary>
-            [EnumMember(Value = "DASHBOARD_SUPERVISOR_CLOSE")]
-            DASHBOARDSUPERVISORCLOSE,
-            
-            /// <summary>
-            /// Enum DASHBOARDEDIT for "DASHBOARD_EDIT"
-            /// </summary>
-            [EnumMember(Value = "DASHBOARD_EDIT")]
-            DASHBOARDEDIT,
-            
-            /// <summary>
-            /// Enum DASHBOARDDELETE for "DASHBOARD_DELETE"
-            /// </summary>
-            [EnumMember(Value = "DASHBOARD_DELETE")]
-            DASHBOARDDELETE
-        }
-
-        /// <summary>
-        /// The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values
-        /// </summary>
-        /// <value>The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values</value>
-        [DataMember(Name="event_type", EmitDefaultValue=false)]
-        public EventTypeEnum? EventType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1TimecardEvent" /> class.
         /// </summary>
         /// <param name="Id">The event&#39;s unique ID..</param>
@@ -100,7 +37,7 @@ namespace Square.Connect.Model
         /// <param name="ClockinTime">The time the employee clocked in, in ISO 8601 format..</param>
         /// <param name="ClockoutTime">The time the employee clocked out, in ISO 8601 format..</param>
         /// <param name="CreatedAt">The time when the event was created, in ISO 8601 format..</param>
-        public V1TimecardEvent(string Id = default(string), EventTypeEnum? EventType = default(EventTypeEnum?), string ClockinTime = default(string), string ClockoutTime = default(string), string CreatedAt = default(string))
+        public V1TimecardEvent(string Id = default(string), string EventType = default(string), string ClockinTime = default(string), string ClockoutTime = default(string), string CreatedAt = default(string))
         {
             this.Id = Id;
             this.EventType = EventType;
@@ -115,6 +52,12 @@ namespace Square.Connect.Model
         /// <value>The event&#39;s unique ID.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
+        /// <summary>
+        /// The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values
+        /// </summary>
+        /// <value>The ID of the timecard to list events for. See [V1TimecardEventEventType](#type-v1timecardeventeventtype) for possible values</value>
+        [DataMember(Name="event_type", EmitDefaultValue=false)]
+        public string EventType { get; set; }
         /// <summary>
         /// The time the employee clocked in, in ISO 8601 format.
         /// </summary>

@@ -83,7 +83,7 @@ namespace Square.Connect.Test
                         new CreateOrderRequestLineItem(
                             Name: "Printed T Shirt",
                             Quantity: "2",
-                            BasePriceMoney: new Money(Amount: 1500, Currency: Money.CurrencyEnum.USD),
+                            BasePriceMoney: new Money(Amount: 1500, Currency: "USD"),
                             Discounts: new List<CreateOrderRequestDiscount>() {
                                 new CreateOrderRequestDiscount(
                                     Name: "7% off previous season item",
@@ -91,23 +91,23 @@ namespace Square.Connect.Test
                                 ),
                                 new CreateOrderRequestDiscount(
                                     Name: "$3 off Customer Discount",
-                                    AmountMoney: new Money(300, Money.CurrencyEnum.USD)
+                                    AmountMoney: new Money(300, "USD")
                                 )
                             }
                         ),
                         new CreateOrderRequestLineItem(
                             Name: "Slim Jeans",
                             Quantity: "1",
-                            BasePriceMoney: new Money(Amount: 2500, Currency: Money.CurrencyEnum.USD)
+                            BasePriceMoney: new Money(Amount: 2500, Currency: "USD")
                         ),
                         new CreateOrderRequestLineItem(
                             Name: "Woven Sweater",
                             Quantity: "3",
-                            BasePriceMoney: new Money(Amount: 3500, Currency: Money.CurrencyEnum.USD),
+                            BasePriceMoney: new Money(Amount: 3500, Currency: "USD"),
                             Discounts: new List<CreateOrderRequestDiscount>() {
                                 new CreateOrderRequestDiscount(
                                     Name: "$11 off Customer Discount",
-                                    AmountMoney: new Money(1100, Money.CurrencyEnum.USD)
+                                    AmountMoney: new Money(1100, "USD")
                                 )
                             },
                             Taxes: new List<CreateOrderRequestTax>() {
@@ -125,7 +125,7 @@ namespace Square.Connect.Test
                         ),
                         new CreateOrderRequestDiscount(
                             Name: "Global Sales $55 OFF",
-                            AmountMoney: new Money(5500, Money.CurrencyEnum.USD)
+                            AmountMoney: new Money(5500, "USD")
                         )
                     },
                     Taxes: new List<CreateOrderRequestTax>() {
@@ -144,7 +144,7 @@ namespace Square.Connect.Test
                     Locality: "San Francisco",
                     AdministrativeDistrictLevel1: "CA",
                     PostalCode: "94103",
-                    Country: Address.CountryEnum.US,
+                    Country: "US",
                     FirstName: "Jane",
                     LastName: "Doe"
                 ),

@@ -30,60 +30,6 @@ namespace Square.Connect.Model
     public partial class V1ListEmployeesRequest :  IEquatable<V1ListEmployeesRequest>, IValidatableObject
     {
         /// <summary>
-        /// The order in which employees are listed in the response, based on their created_at field.      Default value: ASC See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which employees are listed in the response, based on their created_at field.      Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). See [V1ListEmployeesRequestStatus](#type-v1listemployeesrequeststatus) for possible values
-        /// </summary>
-        /// <value>If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). See [V1ListEmployeesRequestStatus](#type-v1listemployeesrequeststatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum ACTIVE for "ACTIVE"
-            /// </summary>
-            [EnumMember(Value = "ACTIVE")]
-            ACTIVE,
-            
-            /// <summary>
-            /// Enum INACTIVE for "INACTIVE"
-            /// </summary>
-            [EnumMember(Value = "INACTIVE")]
-            INACTIVE
-        }
-
-        /// <summary>
-        /// The order in which employees are listed in the response, based on their created_at field.      Default value: ASC See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which employees are listed in the response, based on their created_at field.      Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
-        /// If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). See [V1ListEmployeesRequestStatus](#type-v1listemployeesrequeststatus) for possible values
-        /// </summary>
-        /// <value>If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). See [V1ListEmployeesRequestStatus](#type-v1listemployeesrequeststatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1ListEmployeesRequest" /> class.
         /// </summary>
         /// <param name="Order">The order in which employees are listed in the response, based on their created_at field.      Default value: ASC See [SortOrder](#type-sortorder) for possible values.</param>
@@ -95,7 +41,7 @@ namespace Square.Connect.Model
         /// <param name="ExternalId">If provided, the endpoint returns only employee entities with the specified external_id..</param>
         /// <param name="Limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200..</param>
         /// <param name="BatchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint..</param>
-        public V1ListEmployeesRequest(OrderEnum? Order = default(OrderEnum?), string BeginUpdatedAt = default(string), string EndUpdatedAt = default(string), string BeginCreatedAt = default(string), string EndCreatedAt = default(string), StatusEnum? Status = default(StatusEnum?), string ExternalId = default(string), int? Limit = default(int?), string BatchToken = default(string))
+        public V1ListEmployeesRequest(string Order = default(string), string BeginUpdatedAt = default(string), string EndUpdatedAt = default(string), string BeginCreatedAt = default(string), string EndCreatedAt = default(string), string Status = default(string), string ExternalId = default(string), int? Limit = default(int?), string BatchToken = default(string))
         {
             this.Order = Order;
             this.BeginUpdatedAt = BeginUpdatedAt;
@@ -108,6 +54,12 @@ namespace Square.Connect.Model
             this.BatchToken = BatchToken;
         }
         
+        /// <summary>
+        /// The order in which employees are listed in the response, based on their created_at field.      Default value: ASC See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The order in which employees are listed in the response, based on their created_at field.      Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format
         /// </summary>
@@ -132,6 +84,12 @@ namespace Square.Connect.Model
         /// <value>If filtering results by their created_at field, the end of the requested reporting period, in ISO 8601 format.</value>
         [DataMember(Name="end_created_at", EmitDefaultValue=false)]
         public string EndCreatedAt { get; set; }
+        /// <summary>
+        /// If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). See [V1ListEmployeesRequestStatus](#type-v1listemployeesrequeststatus) for possible values
+        /// </summary>
+        /// <value>If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). See [V1ListEmployeesRequestStatus](#type-v1listemployeesrequeststatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// If provided, the endpoint returns only employee entities with the specified external_id.
         /// </summary>

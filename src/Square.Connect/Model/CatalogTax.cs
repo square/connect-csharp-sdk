@@ -30,60 +30,6 @@ namespace Square.Connect.Model
     public partial class CatalogTax :  IEquatable<CatalogTax>, IValidatableObject
     {
         /// <summary>
-        /// Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values
-        /// </summary>
-        /// <value>Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum CalculationPhaseEnum
-        {
-            
-            /// <summary>
-            /// Enum SUBTOTALPHASE for "TAX_SUBTOTAL_PHASE"
-            /// </summary>
-            [EnumMember(Value = "TAX_SUBTOTAL_PHASE")]
-            SUBTOTALPHASE,
-            
-            /// <summary>
-            /// Enum TOTALPHASE for "TAX_TOTAL_PHASE"
-            /// </summary>
-            [EnumMember(Value = "TAX_TOTAL_PHASE")]
-            TOTALPHASE
-        }
-
-        /// <summary>
-        /// Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for possible values
-        /// </summary>
-        /// <value>Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum InclusionTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum ADDITIVE for "ADDITIVE"
-            /// </summary>
-            [EnumMember(Value = "ADDITIVE")]
-            ADDITIVE,
-            
-            /// <summary>
-            /// Enum INCLUSIVE for "INCLUSIVE"
-            /// </summary>
-            [EnumMember(Value = "INCLUSIVE")]
-            INCLUSIVE
-        }
-
-        /// <summary>
-        /// Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values
-        /// </summary>
-        /// <value>Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values</value>
-        [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
-        public CalculationPhaseEnum? CalculationPhase { get; set; }
-        /// <summary>
-        /// Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for possible values
-        /// </summary>
-        /// <value>Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for possible values</value>
-        [DataMember(Name="inclusion_type", EmitDefaultValue=false)]
-        public InclusionTypeEnum? InclusionType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CatalogTax" /> class.
         /// </summary>
         /// <param name="Name">The tax&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
@@ -92,7 +38,7 @@ namespace Square.Connect.Model
         /// <param name="Percentage">The percentage of the tax in decimal form, using a &#x60;&#39;.&#39;&#x60; as the decimal separator and without a &#x60;&#39;%&#39;&#x60; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%..</param>
         /// <param name="AppliesToCustomAmounts">If &#x60;true&#x60;, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular [CatalogItem](#type-catalogitem)..</param>
         /// <param name="Enabled">If &#x60;true&#x60;, the tax will be shown as enabled in the Square Point of Sale app..</param>
-        public CatalogTax(string Name = default(string), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), InclusionTypeEnum? InclusionType = default(InclusionTypeEnum?), string Percentage = default(string), bool? AppliesToCustomAmounts = default(bool?), bool? Enabled = default(bool?))
+        public CatalogTax(string Name = default(string), string CalculationPhase = default(string), string InclusionType = default(string), string Percentage = default(string), bool? AppliesToCustomAmounts = default(bool?), bool? Enabled = default(bool?))
         {
             this.Name = Name;
             this.CalculationPhase = CalculationPhase;
@@ -108,6 +54,18 @@ namespace Square.Connect.Model
         /// <value>The tax&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Whether the tax is calculated based on a payment&#39;s subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values
+        /// </summary>
+        /// <value>Whether the tax is calculated based on a payment&#39;s subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values</value>
+        [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
+        public string CalculationPhase { get; set; }
+        /// <summary>
+        /// Whether the tax is &#x60;ADDITIVE&#x60; or &#x60;INCLUSIVE&#x60;. See [TaxInclusionType](#type-taxinclusiontype) for possible values
+        /// </summary>
+        /// <value>Whether the tax is &#x60;ADDITIVE&#x60; or &#x60;INCLUSIVE&#x60;. See [TaxInclusionType](#type-taxinclusiontype) for possible values</value>
+        [DataMember(Name="inclusion_type", EmitDefaultValue=false)]
+        public string InclusionType { get; set; }
         /// <summary>
         /// The percentage of the tax in decimal form, using a &#x60;&#39;.&#39;&#x60; as the decimal separator and without a &#x60;&#39;%&#39;&#x60; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%.
         /// </summary>

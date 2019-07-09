@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The item&#39;s name. | [optional] 
 **Quantity** | **decimal?** | The quantity of the item purchased. This can be a decimal value. | [optional] 
-**ItemizationType** | **ItemizationTypeEnum** | The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values | [optional] 
+**ItemizationType** | **string** | The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values | [optional] 
 **ItemDetail** | [**V1PaymentItemDetail**](V1PaymentItemDetail.md) | Details of the item, including its unique identifier and the identifier of the item variation purchased. | [optional] 
 **Notes** | **string** | Notes entered by the merchant about the item at the time of payment, if any. | [optional] 
 **ItemVariationName** | **string** | The name of the item variation purchased, if any. | [optional] 
@@ -22,18 +22,6 @@ Name | Type | Description | Notes
 **Taxes** | [**List&lt;V1PaymentTax&gt;**](V1PaymentTax.md) | All taxes applied to this itemization. | [optional] 
 **Discounts** | [**List&lt;V1PaymentDiscount&gt;**](V1PaymentDiscount.md) | All discounts applied to this itemization. | [optional] 
 **Modifiers** | [**List&lt;V1PaymentModifier&gt;**](V1PaymentModifier.md) | All modifier options applied to this itemization. | [optional] 
-
-
-## ItemizationTypeEnum
-
-Name | Value
------------- | -------------
-**ITEM** | "ITEM"
-**CUSTOMAMOUNT** | "CUSTOM_AMOUNT"
-**GIFTCARDACTIVATION** | "GIFT_CARD_ACTIVATION"
-**GIFTCARDRELOAD** | "GIFT_CARD_RELOAD"
-**GIFTCARDUNKNOWN** | "GIFT_CARD_UNKNOWN"
-**OTHER** | "OTHER"
 
 
 

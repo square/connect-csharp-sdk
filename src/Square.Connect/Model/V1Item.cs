@@ -30,135 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Item :  IEquatable<V1Item>, IValidatableObject
     {
         /// <summary>
-        /// The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values
-        /// </summary>
-        /// <value>The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum NORMAL for "NORMAL"
-            /// </summary>
-            [EnumMember(Value = "NORMAL")]
-            NORMAL,
-            
-            /// <summary>
-            /// Enum GIFTCARD for "GIFT_CARD"
-            /// </summary>
-            [EnumMember(Value = "GIFT_CARD")]
-            GIFTCARD,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
-        /// </summary>
-        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ColorEnum
-        {
-            
-            /// <summary>
-            /// Enum _9da2a6 for "9da2a6"
-            /// </summary>
-            [EnumMember(Value = "9da2a6")]
-            _9da2a6,
-            
-            /// <summary>
-            /// Enum _4ab200 for "4ab200"
-            /// </summary>
-            [EnumMember(Value = "4ab200")]
-            _4ab200,
-            
-            /// <summary>
-            /// Enum _0b8000 for "0b8000"
-            /// </summary>
-            [EnumMember(Value = "0b8000")]
-            _0b8000,
-            
-            /// <summary>
-            /// Enum _2952cc for "2952cc"
-            /// </summary>
-            [EnumMember(Value = "2952cc")]
-            _2952cc,
-            
-            /// <summary>
-            /// Enum A82ee5 for "a82ee5"
-            /// </summary>
-            [EnumMember(Value = "a82ee5")]
-            A82ee5,
-            
-            /// <summary>
-            /// Enum E5457a for "e5457a"
-            /// </summary>
-            [EnumMember(Value = "e5457a")]
-            E5457a,
-            
-            /// <summary>
-            /// Enum B21212 for "b21212"
-            /// </summary>
-            [EnumMember(Value = "b21212")]
-            B21212,
-            
-            /// <summary>
-            /// Enum _593c00 for "593c00"
-            /// </summary>
-            [EnumMember(Value = "593c00")]
-            _593c00,
-            
-            /// <summary>
-            /// Enum E5BF00 for "e5BF00"
-            /// </summary>
-            [EnumMember(Value = "e5BF00")]
-            E5BF00
-        }
-
-        /// <summary>
-        /// Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum VisibilityEnum
-        {
-            
-            /// <summary>
-            /// Enum PUBLIC for "PUBLIC"
-            /// </summary>
-            [EnumMember(Value = "PUBLIC")]
-            PUBLIC,
-            
-            /// <summary>
-            /// Enum PRIVATE for "PRIVATE"
-            /// </summary>
-            [EnumMember(Value = "PRIVATE")]
-            PRIVATE
-        }
-
-        /// <summary>
-        /// The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values
-        /// </summary>
-        /// <value>The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
-        /// The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
-        /// </summary>
-        /// <value>The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values</value>
-        [DataMember(Name="color", EmitDefaultValue=false)]
-        public ColorEnum? Color { get; set; }
-        /// <summary>
-        /// Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values</value>
-        [DataMember(Name="visibility", EmitDefaultValue=false)]
-        public VisibilityEnum? Visibility { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Item" /> class.
         /// </summary>
         /// <param name="Id">The item&#39;s ID. Must be unique among all entity IDs ever provided on behalf of the merchant. You can never reuse an ID. This value can include alphanumeric characters, dashes (-), and underscores (_)..</param>
@@ -178,7 +49,7 @@ namespace Square.Connect.Model
         /// <param name="CategoryId">The ID of the item&#39;s category, if any..</param>
         /// <param name="AvailableForPickup">If true, the item can be added to pickup orders from the merchant&#39;s online store. Default value: false.</param>
         /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
-        public V1Item(string Id = default(string), string Name = default(string), string Description = default(string), TypeEnum? Type = default(TypeEnum?), ColorEnum? Color = default(ColorEnum?), string Abbreviation = default(string), VisibilityEnum? Visibility = default(VisibilityEnum?), bool? AvailableOnline = default(bool?), V1ItemImage MasterImage = default(V1ItemImage), V1Category Category = default(V1Category), List<V1Variation> Variations = default(List<V1Variation>), List<V1ModifierList> ModifierLists = default(List<V1ModifierList>), List<V1Fee> Fees = default(List<V1Fee>), bool? Taxable = default(bool?), string CategoryId = default(string), bool? AvailableForPickup = default(bool?), string V2Id = default(string))
+        public V1Item(string Id = default(string), string Name = default(string), string Description = default(string), string Type = default(string), string Color = default(string), string Abbreviation = default(string), string Visibility = default(string), bool? AvailableOnline = default(bool?), V1ItemImage MasterImage = default(V1ItemImage), V1Category Category = default(V1Category), List<V1Variation> Variations = default(List<V1Variation>), List<V1ModifierList> ModifierLists = default(List<V1ModifierList>), List<V1Fee> Fees = default(List<V1Fee>), bool? Taxable = default(bool?), string CategoryId = default(string), bool? AvailableForPickup = default(bool?), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -218,11 +89,29 @@ namespace Square.Connect.Model
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
+        /// The item&#39;s type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values
+        /// </summary>
+        /// <value>The item&#39;s type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
+        /// <summary>
+        /// The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
+        /// </summary>
+        /// <value>The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values</value>
+        [DataMember(Name="color", EmitDefaultValue=false)]
+        public string Color { get; set; }
+        /// <summary>
         /// The text of the item&#39;s display label in Square Register. Only up to the first five characters of the string are used.
         /// </summary>
         /// <value>The text of the item&#39;s display label in Square Register. Only up to the first five characters of the string are used.</value>
         [DataMember(Name="abbreviation", EmitDefaultValue=false)]
         public string Abbreviation { get; set; }
+        /// <summary>
+        /// Indicates whether the item is viewable from the merchant&#39;s online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values
+        /// </summary>
+        /// <value>Indicates whether the item is viewable from the merchant&#39;s online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values</value>
+        [DataMember(Name="visibility", EmitDefaultValue=false)]
+        public string Visibility { get; set; }
         /// <summary>
         /// If true, the item can be added to shipping orders from the merchant&#39;s online store.
         /// </summary>

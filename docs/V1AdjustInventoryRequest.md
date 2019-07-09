@@ -9,17 +9,8 @@ V1AdjustInventoryRequest
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **QuantityDelta** | **decimal?** | The number to adjust the variation&#39;s quantity by. | [optional] 
-**AdjustmentType** | **AdjustmentTypeEnum** | The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values | [optional] 
+**AdjustmentType** | **string** | The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values | [optional] 
 **Memo** | **string** | A note about the inventory adjustment. | [optional] 
-
-
-## AdjustmentTypeEnum
-
-Name | Value
------------- | -------------
-**SALE** | "SALE"
-**RECEIVESTOCK** | "RECEIVE_STOCK"
-**MANUALADJUST** | "MANUAL_ADJUST"
 
 
 

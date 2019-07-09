@@ -39,34 +39,34 @@ namespace Square.Connect.Test
         private const int CATALOG_PER_BATCH_NUMBER = 5;
 
         private static readonly CatalogObject beverages = new CatalogObject(
-            Type: TypeEnum.CATEGORY,
+            Type: "CATEGORY",
             Id: BEVERAGES_ID,
             CategoryData: new CatalogCategory(Name: "Beverages")
         );
 
         private static readonly CatalogObject milks = new CatalogObject(
-            Type: TypeEnum.MODIFIERLIST,
+            Type: "MODIFIER_LIST",
             Id: MILKS_ID,
             ModifierListData: new CatalogModifierList(
                 Name: "Milks",
                 Modifiers: new List<CatalogObject>()
                 {
                     new CatalogObject(
-                        Type: TypeEnum.MODIFIER,
+                        Type: "MODIFIER",
                         Id: "#WholeMilk",
                         ModifierData: new CatalogModifier(Name: "Whole Milk")
                     ),
                     new CatalogObject(
-                        Type: TypeEnum.MODIFIER,
+                        Type: "MODIFIER",
                         Id: "#SkimMilk",
                         ModifierData: new CatalogModifier(Name: "Skim Milk")
                     ),
                     new CatalogObject(
-                        Type: TypeEnum.MODIFIER,
+                        Type: "MODIFIER",
                         Id: "#SoyMilk",
                         ModifierData: new CatalogModifier(
                             Name: "Soy Milk",
-                            PriceMoney: new Money(Amount: 50L, Currency: Money.CurrencyEnum.USD)
+                            PriceMoney: new Money(Amount: 50L, Currency: "USD")
                         )
                     )
                 }
@@ -74,24 +74,24 @@ namespace Square.Connect.Test
         );
 
         private static readonly CatalogObject syrups = new CatalogObject(
-            Type: CatalogObject.TypeEnum.MODIFIERLIST,
+            Type: "MODIFIER_LIST",
             Id: SYRUPS_ID,
             ModifierListData: new CatalogModifierList(
                 Name: "Syrups",
                 Modifiers: new List<CatalogObject>()
                 {
                     new CatalogObject(
-                        Type: TypeEnum.MODIFIER,
+                        Type: "MODIFIER",
                         Id: "#Hazelnut",
                         ModifierData: new CatalogModifier(Name: "Hazelnut")
                     ),
                     new CatalogObject(
-                        Type: TypeEnum.MODIFIER,
+                        Type: "MODIFIER",
                         Id: "#Vanilla",
                         ModifierData: new CatalogModifier(Name: "Vanilla")
                     ),
                     new CatalogObject(
-                        Type: TypeEnum.MODIFIER,
+                        Type: "MODIFIER",
                         Id: "#Chocolate",
                         ModifierData: new CatalogModifier(Name: "Chocolate")
                     )
@@ -100,7 +100,7 @@ namespace Square.Connect.Test
         );
 
         private static readonly CatalogObject coffee = new CatalogObject(
-            Type: TypeEnum.ITEM,
+            Type: "ITEM",
             Id: COFFEE_ID,
             ItemData: new CatalogItem(
                 Name: "Coffee",
@@ -115,23 +115,23 @@ namespace Square.Connect.Test
                 Variations: new List<CatalogObject>()
                 {
                     new CatalogObject(
-                        Type: TypeEnum.ITEMVARIATION,
+                        Type: "ITEM_VARIATION",
                         Id: SMALL_COFFEE_ID,
                         ItemVariationData: new CatalogItemVariation(
 							Name: "Small",
 							ItemId: COFFEE_ID,
-                            PricingType: CatalogItemVariation.PricingTypeEnum.FIXEDPRICING,
-                            PriceMoney: new Money(Amount: 195L, Currency: Money.CurrencyEnum.USD)
+                            PricingType: "FIXED_PRICING",
+                            PriceMoney: new Money(Amount: 195L, Currency: "USD")
                         )
                     ),
                     new CatalogObject(
-                        Type: TypeEnum.ITEMVARIATION,
+                        Type: "ITEM_VARIATION",
                         Id: LARGE_COFFEE_ID,
                         ItemVariationData: new CatalogItemVariation(
                             Name: "Large",
                             ItemId: COFFEE_ID,
-                            PricingType: CatalogItemVariation.PricingTypeEnum.FIXEDPRICING,
-                            PriceMoney: new Money(Amount: 250L, Currency: Money.CurrencyEnum.USD)
+                            PricingType: "FIXED_PRICING",
+                            PriceMoney: new Money(Amount: 250L, Currency: "USD")
                         )
                     )
                 }
@@ -139,7 +139,7 @@ namespace Square.Connect.Test
         );
 
         private static readonly CatalogObject tea = new CatalogObject(
-            Type: TypeEnum.ITEM,
+            Type: "ITEM",
             Id: TEA_ID,
             ItemData: new CatalogItem(
                 Name: "Tea",
@@ -154,23 +154,23 @@ namespace Square.Connect.Test
                 Variations: new List<CatalogObject>()
                 {
                     new CatalogObject(
-                        Type: TypeEnum.ITEMVARIATION,
+                        Type: "ITEM_VARIATION",
                         Id: SMALL_TEA_ID,
                         ItemVariationData: new CatalogItemVariation(
                             Name: "Small",
                             ItemId: TEA_ID,
-                            PricingType: CatalogItemVariation.PricingTypeEnum.FIXEDPRICING,
-                            PriceMoney: new Money(Amount: 150L, Currency: Money.CurrencyEnum.USD)
+                            PricingType: "FIXED_PRICING",
+                            PriceMoney: new Money(Amount: 150L, Currency: "USD")
                         )
                     ),
                     new CatalogObject(
-                        Type: TypeEnum.ITEMVARIATION,
+                        Type: "ITEM_VARIATION",
                         Id: LARGE_TEA_ID,
                         ItemVariationData: new CatalogItemVariation(
                             Name: "Large",
                             ItemId: TEA_ID,
-                            PricingType: CatalogItemVariation.PricingTypeEnum.FIXEDPRICING,
-                            PriceMoney: new Money(Amount: 150L, Currency: Money.CurrencyEnum.USD)
+                            PricingType: "FIXED_PRICING",
+                            PriceMoney: new Money(Amount: 150L, Currency: "USD")
                         )
                     )
                 }
@@ -178,13 +178,13 @@ namespace Square.Connect.Test
         );
 
         private static readonly CatalogObject salesTax = new CatalogObject(
-            Type: TypeEnum.TAX,
+            Type: "TAX",
             Id: SALES_TAX_ID,
             TaxData: new CatalogTax(Name: "Sales Tax")
         );
 
         private static readonly CatalogObject anotherSalesTax = new CatalogObject(
-            Type: TypeEnum.TAX,
+            Type: "TAX",
             Id: ANOTHER_SALES_TAX_ID,
             TaxData: new CatalogTax(Name: "Another Sales Tax")
         );
@@ -294,11 +294,11 @@ namespace Square.Connect.Test
             Assert.AreEqual(2, response.Objects.Count);
 
             CatalogObject actualCoffee = response.Objects[0];
-            Assert.AreEqual(TypeEnum.ITEM, actualCoffee.Type);
+            Assert.AreEqual("ITEM", actualCoffee.Type);
             Assert.AreEqual(idMap[COFFEE_ID], actualCoffee.Id);
 
             CatalogObject actualTax = response.Objects[1];
-            Assert.AreEqual(TypeEnum.TAX, actualTax.Type);
+            Assert.AreEqual("TAX", actualTax.Type);
             Assert.AreEqual(idMap[SALES_TAX_ID], actualTax.Id);
         }
 
@@ -321,20 +321,20 @@ namespace Square.Connect.Test
                     var itemName = string.Format("Item Name {0}-{1}", batchNum, i);
                     var variationId = string.Format("#ItemVariation-{0}-{1}", batchNum, i);
                     objects.Add(new CatalogObject(
-                        Type: TypeEnum.ITEM,
+                        Type: "ITEM",
                         Id: itemId,
                         ItemData: new CatalogItem(
                             Name: itemName,
                             Variations: new List<CatalogObject>()
                             {
                                 new CatalogObject(
-                                    Type: TypeEnum.ITEMVARIATION,
+                                    Type: "ITEM_VARIATION",
                                     Id: variationId,
                                     ItemVariationData: new CatalogItemVariation(
                                         ItemId: itemId,
                                         Name: "Regular",
-                                        PricingType: CatalogItemVariation.PricingTypeEnum.FIXEDPRICING,
-                                        PriceMoney: new Money(Amount: 100L, Currency: Money.CurrencyEnum.USD)
+                                        PricingType: "FIXED_PRICING",
+                                        PriceMoney: new Money(Amount: 100L, Currency: "USD")
                                     )
                                 )
                             }
@@ -453,11 +453,11 @@ namespace Square.Connect.Test
 
             Assert.AreEqual(2, response.Objects.Count);
             var obj1 = response.Objects[0];
-            Assert.AreEqual(TypeEnum.ITEMVARIATION, obj1.Type);
+            Assert.AreEqual("ITEM_VARIATION", obj1.Type);
             Assert.AreEqual("Small", obj1.ItemVariationData.Name);
             Assert.IsFalse(obj1.IsDeleted.Value);
             var obj2 = response.Objects[1];
-            Assert.AreEqual(TypeEnum.ITEMVARIATION, obj2.Type);
+            Assert.AreEqual("ITEM_VARIATION", obj2.Type);
             Assert.AreEqual("Small", obj2.ItemVariationData.Name);
             Assert.IsFalse(obj2.IsDeleted.Value);
 

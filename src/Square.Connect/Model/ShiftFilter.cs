@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class ShiftFilter :  IEquatable<ShiftFilter>, IValidatableObject
     {
         /// <summary>
-        /// Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
-        /// </summary>
-        /// <value>Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum OPEN for "OPEN"
-            /// </summary>
-            [EnumMember(Value = "OPEN")]
-            OPEN,
-            
-            /// <summary>
-            /// Enum CLOSED for "CLOSED"
-            /// </summary>
-            [EnumMember(Value = "CLOSED")]
-            CLOSED
-        }
-
-        /// <summary>
-        /// Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
-        /// </summary>
-        /// <value>Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="ShiftFilter" /> class.
         /// </summary>
         /// <param name="LocationId">Fetch shifts for the specified location..</param>
@@ -65,7 +38,7 @@ namespace Square.Connect.Model
         /// <param name="Start">Fetch &#x60;Shift&#x60;s that start in the time range - Inclusive..</param>
         /// <param name="End">Fetch the &#x60;Shift&#x60;s that end in the time range - Inclusive..</param>
         /// <param name="Workday">Fetch the &#x60;Shift&#x60;s based on workday date range..</param>
-        public ShiftFilter(List<string> LocationId = default(List<string>), List<string> EmployeeId = default(List<string>), StatusEnum? Status = default(StatusEnum?), TimeRange Start = default(TimeRange), TimeRange End = default(TimeRange), ShiftWorkday Workday = default(ShiftWorkday))
+        public ShiftFilter(List<string> LocationId = default(List<string>), List<string> EmployeeId = default(List<string>), string Status = default(string), TimeRange Start = default(TimeRange), TimeRange End = default(TimeRange), ShiftWorkday Workday = default(ShiftWorkday))
         {
             this.LocationId = LocationId;
             this.EmployeeId = EmployeeId;
@@ -87,6 +60,12 @@ namespace Square.Connect.Model
         /// <value>Fetch shifts for the specified employee.</value>
         [DataMember(Name="employee_id", EmitDefaultValue=false)]
         public List<string> EmployeeId { get; set; }
+        /// <summary>
+        /// Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
+        /// </summary>
+        /// <value>Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// Fetch &#x60;Shift&#x60;s that start in the time range - Inclusive.
         /// </summary>

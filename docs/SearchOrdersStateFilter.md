@@ -8,16 +8,7 @@ Filter by current Order `state`.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**States** | **List<StatesEnum>** | States to filter for. See [OrderState](#type-orderstate) for possible values | 
-
-
-## List<StatesEnum>
-
-Name | Value
------------- | -------------
-**OPEN** | "OPEN"
-**COMPLETED** | "COMPLETED"
-**CANCELED** | "CANCELED"
+**States** | **List<string>** | States to filter for. See [OrderState](#type-orderstate) for possible values | 
 
 
 

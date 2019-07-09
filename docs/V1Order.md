@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **BuyerEmail** | **string** | The email address of the order&#39;s buyer. | [optional] 
 **RecipientName** | **string** | The name of the order&#39;s buyer. | [optional] 
 **RecipientPhoneNumber** | **string** | The phone number to use for the order&#39;s delivery. | [optional] 
-**State** | **StateEnum** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values | [optional] 
+**State** | **string** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values | [optional] 
 **ShippingAddress** | [**Address**](Address.md) | The address to ship the order to. | [optional] 
 **SubtotalMoney** | [**V1Money**](V1Money.md) | The amount of all items purchased in the order, before taxes and shipping. | [optional] 
 **TotalShippingMoney** | [**V1Money**](V1Money.md) | The shipping cost for the order. | [optional] 
@@ -33,18 +33,6 @@ Name | Type | Description | Notes
 **PromoCode** | **string** | The promo code provided by the buyer, if any. | [optional] 
 **BtcReceiveAddress** | **string** | For Bitcoin transactions, the address that the buyer sent Bitcoin to. | [optional] 
 **BtcPriceSatoshi** | **decimal?** | For Bitcoin transactions, the price of the buyer&#39;s order in satoshi (100 million satoshi equals 1 BTC). | [optional] 
-
-
-## StateEnum
-
-Name | Value
------------- | -------------
-**PENDING** | "PENDING"
-**OPEN** | "OPEN"
-**COMPLETED** | "COMPLETED"
-**CANCELED** | "CANCELED"
-**REFUNDED** | "REFUNDED"
-**REJECTED** | "REJECTED"
 
 
 

@@ -30,45 +30,24 @@ namespace Square.Connect.Model
     public partial class V1ListEmployeeRolesRequest :  IEquatable<V1ListEmployeeRolesRequest>, IValidatableObject
     {
         /// <summary>
-        /// The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1ListEmployeeRolesRequest" /> class.
         /// </summary>
         /// <param name="Order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values.</param>
         /// <param name="Limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200..</param>
         /// <param name="BatchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint..</param>
-        public V1ListEmployeeRolesRequest(OrderEnum? Order = default(OrderEnum?), int? Limit = default(int?), string BatchToken = default(string))
+        public V1ListEmployeeRolesRequest(string Order = default(string), int? Limit = default(int?), string BatchToken = default(string))
         {
             this.Order = Order;
             this.Limit = Limit;
             this.BatchToken = BatchToken;
         }
         
+        /// <summary>
+        /// The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
         /// </summary>

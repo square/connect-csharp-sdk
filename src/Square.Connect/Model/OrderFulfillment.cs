@@ -30,90 +30,30 @@ namespace Square.Connect.Model
     public partial class OrderFulfillment :  IEquatable<OrderFulfillment>, IValidatableObject
     {
         /// <summary>
-        /// The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
-        /// </summary>
-        /// <value>The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum PICKUP for "PICKUP"
-            /// </summary>
-            [EnumMember(Value = "PICKUP")]
-            PICKUP
-        }
-
-        /// <summary>
-        /// The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
-        /// </summary>
-        /// <value>The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
-        {
-            
-            /// <summary>
-            /// Enum PROPOSED for "PROPOSED"
-            /// </summary>
-            [EnumMember(Value = "PROPOSED")]
-            PROPOSED,
-            
-            /// <summary>
-            /// Enum RESERVED for "RESERVED"
-            /// </summary>
-            [EnumMember(Value = "RESERVED")]
-            RESERVED,
-            
-            /// <summary>
-            /// Enum PREPARED for "PREPARED"
-            /// </summary>
-            [EnumMember(Value = "PREPARED")]
-            PREPARED,
-            
-            /// <summary>
-            /// Enum COMPLETED for "COMPLETED"
-            /// </summary>
-            [EnumMember(Value = "COMPLETED")]
-            COMPLETED,
-            
-            /// <summary>
-            /// Enum CANCELED for "CANCELED"
-            /// </summary>
-            [EnumMember(Value = "CANCELED")]
-            CANCELED,
-            
-            /// <summary>
-            /// Enum FAILED for "FAILED"
-            /// </summary>
-            [EnumMember(Value = "FAILED")]
-            FAILED
-        }
-
-        /// <summary>
-        /// The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
-        /// </summary>
-        /// <value>The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
-        /// The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
-        /// </summary>
-        /// <value>The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? State { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="OrderFulfillment" /> class.
         /// </summary>
         /// <param name="Type">The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values.</param>
         /// <param name="State">The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values.</param>
         /// <param name="PickupDetails">Contains pickup-specific details. Required when fulfillment type is &#x60;PICKUP&#x60;..</param>
-        public OrderFulfillment(TypeEnum? Type = default(TypeEnum?), StateEnum? State = default(StateEnum?), OrderFulfillmentPickupDetails PickupDetails = default(OrderFulfillmentPickupDetails))
+        public OrderFulfillment(string Type = default(string), string State = default(string), OrderFulfillmentPickupDetails PickupDetails = default(OrderFulfillmentPickupDetails))
         {
             this.Type = Type;
             this.State = State;
             this.PickupDetails = PickupDetails;
         }
         
+        /// <summary>
+        /// The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
+        /// </summary>
+        /// <value>The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
+        /// <summary>
+        /// The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+        /// </summary>
+        /// <value>The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
+        [DataMember(Name="state", EmitDefaultValue=false)]
+        public string State { get; set; }
         /// <summary>
         /// Contains pickup-specific details. Required when fulfillment type is &#x60;PICKUP&#x60;.
         /// </summary>

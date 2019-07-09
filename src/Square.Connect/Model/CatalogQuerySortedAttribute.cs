@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class CatalogQuerySortedAttribute :  IEquatable<CatalogQuerySortedAttribute>, IValidatableObject
     {
         /// <summary>
-        /// The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SortOrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The desired [SortOrder](#type-sortorder), `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="sort_order", EmitDefaultValue=false)]
-        public SortOrderEnum? SortOrder { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CatalogQuerySortedAttribute" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -67,7 +40,7 @@ namespace Square.Connect.Model
         /// <param name="AttributeName">The attribute whose value should be used as the sort key. (required).</param>
         /// <param name="InitialAttributeValue">The first attribute value to be returned by the query. Ascending sorts will return only objects with this value or greater, while descending sorts will return only objects with this value or less. If unset, start at the beginning (for ascending sorts) or end (for descending sorts)..</param>
         /// <param name="SortOrder">The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending). See [SortOrder](#type-sortorder) for possible values.</param>
-        public CatalogQuerySortedAttribute(string AttributeName = default(string), string InitialAttributeValue = default(string), SortOrderEnum? SortOrder = default(SortOrderEnum?))
+        public CatalogQuerySortedAttribute(string AttributeName = default(string), string InitialAttributeValue = default(string), string SortOrder = default(string))
         {
             // to ensure "AttributeName" is required (not null)
             if (AttributeName == null)
@@ -94,6 +67,12 @@ namespace Square.Connect.Model
         /// <value>The first attribute value to be returned by the query. Ascending sorts will return only objects with this value or greater, while descending sorts will return only objects with this value or less. If unset, start at the beginning (for ascending sorts) or end (for descending sorts).</value>
         [DataMember(Name="initial_attribute_value", EmitDefaultValue=false)]
         public string InitialAttributeValue { get; set; }
+        /// <summary>
+        /// The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending). See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending). See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="sort_order", EmitDefaultValue=false)]
+        public string SortOrder { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

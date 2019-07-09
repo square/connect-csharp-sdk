@@ -30,38 +30,11 @@ namespace Square.Connect.Model
     public partial class V1UpdateModifierListRequest :  IEquatable<V1UpdateModifierListRequest>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values
-        /// </summary>
-        /// <value>Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SelectionTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum SINGLE for "SINGLE"
-            /// </summary>
-            [EnumMember(Value = "SINGLE")]
-            SINGLE,
-            
-            /// <summary>
-            /// Enum MULTIPLE for "MULTIPLE"
-            /// </summary>
-            [EnumMember(Value = "MULTIPLE")]
-            MULTIPLE
-        }
-
-        /// <summary>
-        /// Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values
-        /// </summary>
-        /// <value>Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values</value>
-        [DataMember(Name="selection_type", EmitDefaultValue=false)]
-        public SelectionTypeEnum? SelectionType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1UpdateModifierListRequest" /> class.
         /// </summary>
         /// <param name="Name">The modifier list&#39;s name..</param>
         /// <param name="SelectionType">Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values.</param>
-        public V1UpdateModifierListRequest(string Name = default(string), SelectionTypeEnum? SelectionType = default(SelectionTypeEnum?))
+        public V1UpdateModifierListRequest(string Name = default(string), string SelectionType = default(string))
         {
             this.Name = Name;
             this.SelectionType = SelectionType;
@@ -73,6 +46,12 @@ namespace Square.Connect.Model
         /// <value>The modifier list&#39;s name.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values
+        /// </summary>
+        /// <value>Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values</value>
+        [DataMember(Name="selection_type", EmitDefaultValue=false)]
+        public string SelectionType { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

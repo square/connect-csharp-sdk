@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class Employee :  IEquatable<Employee>, IValidatableObject
     {
         /// <summary>
-        /// Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
-        /// </summary>
-        /// <value>Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum ACTIVE for "ACTIVE"
-            /// </summary>
-            [EnumMember(Value = "ACTIVE")]
-            ACTIVE,
-            
-            /// <summary>
-            /// Enum INACTIVE for "INACTIVE"
-            /// </summary>
-            [EnumMember(Value = "INACTIVE")]
-            INACTIVE
-        }
-
-        /// <summary>
-        /// Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
-        /// </summary>
-        /// <value>Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="Employee" /> class.
         /// </summary>
         /// <param name="Id">UUID for this &#x60;Employee&#x60;..</param>
@@ -68,7 +41,7 @@ namespace Square.Connect.Model
         /// <param name="Status">Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values.</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format..</param>
         /// <param name="UpdatedAt">A read-only timestamp in RFC 3339 format..</param>
-        public Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), string Email = default(string), string PhoneNumber = default(string), List<string> LocationIds = default(List<string>), StatusEnum? Status = default(StatusEnum?), string CreatedAt = default(string), string UpdatedAt = default(string))
+        public Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), string Email = default(string), string PhoneNumber = default(string), List<string> LocationIds = default(List<string>), string Status = default(string), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             this.Id = Id;
             this.FirstName = FirstName;
@@ -117,6 +90,12 @@ namespace Square.Connect.Model
         /// <value>A list of location IDs where this employee has access.</value>
         [DataMember(Name="location_ids", EmitDefaultValue=false)]
         public List<string> LocationIds { get; set; }
+        /// <summary>
+        /// Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
+        /// </summary>
+        /// <value>Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// A read-only timestamp in RFC 3339 format.
         /// </summary>

@@ -29,126 +29,6 @@ namespace Square.Connect.Model
     [DataContract]
     public partial class BatchRetrieveInventoryChangesRequest :  IEquatable<BatchRetrieveInventoryChangesRequest>, IValidatableObject
     {
-
-        /// <summary>
-        /// Gets or Sets Types
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypesEnum
-        {
-            
-            /// <summary>
-            /// Enum PHYSICALCOUNT for "PHYSICAL_COUNT"
-            /// </summary>
-            [EnumMember(Value = "PHYSICAL_COUNT")]
-            PHYSICALCOUNT,
-            
-            /// <summary>
-            /// Enum ADJUSTMENT for "ADJUSTMENT"
-            /// </summary>
-            [EnumMember(Value = "ADJUSTMENT")]
-            ADJUSTMENT,
-            
-            /// <summary>
-            /// Enum TRANSFER for "TRANSFER"
-            /// </summary>
-            [EnumMember(Value = "TRANSFER")]
-            TRANSFER
-        }
-
-
-        /// <summary>
-        /// Gets or Sets States
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatesEnum
-        {
-            
-            /// <summary>
-            /// Enum CUSTOM for "CUSTOM"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM")]
-            CUSTOM,
-            
-            /// <summary>
-            /// Enum INSTOCK for "IN_STOCK"
-            /// </summary>
-            [EnumMember(Value = "IN_STOCK")]
-            INSTOCK,
-            
-            /// <summary>
-            /// Enum SOLD for "SOLD"
-            /// </summary>
-            [EnumMember(Value = "SOLD")]
-            SOLD,
-            
-            /// <summary>
-            /// Enum RETURNEDBYCUSTOMER for "RETURNED_BY_CUSTOMER"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_BY_CUSTOMER")]
-            RETURNEDBYCUSTOMER,
-            
-            /// <summary>
-            /// Enum RESERVEDFORSALE for "RESERVED_FOR_SALE"
-            /// </summary>
-            [EnumMember(Value = "RESERVED_FOR_SALE")]
-            RESERVEDFORSALE,
-            
-            /// <summary>
-            /// Enum SOLDONLINE for "SOLD_ONLINE"
-            /// </summary>
-            [EnumMember(Value = "SOLD_ONLINE")]
-            SOLDONLINE,
-            
-            /// <summary>
-            /// Enum ORDEREDFROMVENDOR for "ORDERED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "ORDERED_FROM_VENDOR")]
-            ORDEREDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum RECEIVEDFROMVENDOR for "RECEIVED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "RECEIVED_FROM_VENDOR")]
-            RECEIVEDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum INTRANSITTO for "IN_TRANSIT_TO"
-            /// </summary>
-            [EnumMember(Value = "IN_TRANSIT_TO")]
-            INTRANSITTO,
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum WASTE for "WASTE"
-            /// </summary>
-            [EnumMember(Value = "WASTE")]
-            WASTE,
-            
-            /// <summary>
-            /// Enum UNLINKEDRETURN for "UNLINKED_RETURN"
-            /// </summary>
-            [EnumMember(Value = "UNLINKED_RETURN")]
-            UNLINKEDRETURN
-        }
-
-        /// <summary>
-        /// Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [`PHYSICAL_COUNT`, `ADJUSTMENT`]. `TRANSFER` is not supported as a filter. See [InventoryChangeType](#type-inventorychangetype) for possible values
-        /// </summary>
-        /// <value>Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [`PHYSICAL_COUNT`, `ADJUSTMENT`]. `TRANSFER` is not supported as a filter. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
-        [DataMember(Name="types", EmitDefaultValue=false)]
-        public List<TypesEnum> Types { get; set; }
-        /// <summary>
-        /// Filters `ADJUSTMENT` query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>Filters `ADJUSTMENT` query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset. See [InventoryState](#type-inventorystate) for possible values</value>
-        [DataMember(Name="states", EmitDefaultValue=false)]
-        public List<StatesEnum> States { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRetrieveInventoryChangesRequest" /> class.
         /// </summary>
@@ -159,7 +39,7 @@ namespace Square.Connect.Model
         /// <param name="UpdatedAfter">Provided as an RFC 3339 timestamp. Returns results whose &#x60;created_at&#x60; or &#x60;calculated_at&#x60; value is after the given time. Default: UNIX epoch (&#x60;1970-01-01T00:00:00Z&#x60;)..</param>
         /// <param name="UpdatedBefore">Provided as an RFC 3339 timestamp. Returns results whose &#x60;created_at&#x60; or &#x60;calculated_at&#x60; value is strictly before the given time. Default: UNIX epoch (&#x60;1970-01-01T00:00:00Z&#x60;)..</param>
         /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information..</param>
-        public BatchRetrieveInventoryChangesRequest(List<string> CatalogObjectIds = default(List<string>), List<string> LocationIds = default(List<string>), List<TypesEnum> Types = default(List<TypesEnum>), List<StatesEnum> States = default(List<StatesEnum>), string UpdatedAfter = default(string), string UpdatedBefore = default(string), string Cursor = default(string))
+        public BatchRetrieveInventoryChangesRequest(List<string> CatalogObjectIds = default(List<string>), List<string> LocationIds = default(List<string>), List<string> Types = default(List<string>), List<string> States = default(List<string>), string UpdatedAfter = default(string), string UpdatedBefore = default(string), string Cursor = default(string))
         {
             this.CatalogObjectIds = CatalogObjectIds;
             this.LocationIds = LocationIds;
@@ -182,6 +62,18 @@ namespace Square.Connect.Model
         /// <value>Filters results by [Location](#type-location) ID. Only applied when set. Default: unset.</value>
         [DataMember(Name="location_ids", EmitDefaultValue=false)]
         public List<string> LocationIds { get; set; }
+        /// <summary>
+        /// Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [&#x60;PHYSICAL_COUNT&#x60;, &#x60;ADJUSTMENT&#x60;]. &#x60;TRANSFER&#x60; is not supported as a filter. See [InventoryChangeType](#type-inventorychangetype) for possible values
+        /// </summary>
+        /// <value>Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [&#x60;PHYSICAL_COUNT&#x60;, &#x60;ADJUSTMENT&#x60;]. &#x60;TRANSFER&#x60; is not supported as a filter. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
+        [DataMember(Name="types", EmitDefaultValue=false)]
+        public List<string> Types { get; set; }
+        /// <summary>
+        /// Filters &#x60;ADJUSTMENT&#x60; query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset. See [InventoryState](#type-inventorystate) for possible values
+        /// </summary>
+        /// <value>Filters &#x60;ADJUSTMENT&#x60; query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset. See [InventoryState](#type-inventorystate) for possible values</value>
+        [DataMember(Name="states", EmitDefaultValue=false)]
+        public List<string> States { get; set; }
         /// <summary>
         /// Provided as an RFC 3339 timestamp. Returns results whose &#x60;created_at&#x60; or &#x60;calculated_at&#x60; value is after the given time. Default: UNIX epoch (&#x60;1970-01-01T00:00:00Z&#x60;).
         /// </summary>

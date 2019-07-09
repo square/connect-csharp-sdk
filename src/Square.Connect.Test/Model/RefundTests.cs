@@ -46,8 +46,8 @@ namespace Square.Connect.Test
                 TransactionId: Guid.NewGuid().ToString(),
                 TenderId: Guid.NewGuid().ToString(),
                 Reason: "",
-                AmountMoney: new Money(1, Money.CurrencyEnum.USD),
-                Status: Refund.StatusEnum.APPROVED
+                AmountMoney: new Money(1, "USD"),
+                Status: "APPROVED"
             );// TODO uncomment below to create an instance of Refund
             //instance = new Refund();
         }
@@ -152,7 +152,7 @@ namespace Square.Connect.Test
                 new AdditionalRecipient(
                     "location",
                     "description",
-                    new Money(1, Money.CurrencyEnum.USD)
+                    new Money(1, "USD")
                 )
             });
         }

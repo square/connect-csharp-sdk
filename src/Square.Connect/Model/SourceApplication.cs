@@ -30,93 +30,24 @@ namespace Square.Connect.Model
     public partial class SourceApplication :  IEquatable<SourceApplication>, IValidatableObject
     {
         /// <summary>
-        /// Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values
-        /// </summary>
-        /// <value>Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ProductEnum
-        {
-            
-            /// <summary>
-            /// Enum SQUAREPOS for "SQUARE_POS"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_POS")]
-            SQUAREPOS,
-            
-            /// <summary>
-            /// Enum EXTERNALAPI for "EXTERNAL_API"
-            /// </summary>
-            [EnumMember(Value = "EXTERNAL_API")]
-            EXTERNALAPI,
-            
-            /// <summary>
-            /// Enum BILLING for "BILLING"
-            /// </summary>
-            [EnumMember(Value = "BILLING")]
-            BILLING,
-            
-            /// <summary>
-            /// Enum APPOINTMENTS for "APPOINTMENTS"
-            /// </summary>
-            [EnumMember(Value = "APPOINTMENTS")]
-            APPOINTMENTS,
-            
-            /// <summary>
-            /// Enum INVOICES for "INVOICES"
-            /// </summary>
-            [EnumMember(Value = "INVOICES")]
-            INVOICES,
-            
-            /// <summary>
-            /// Enum ONLINESTORE for "ONLINE_STORE"
-            /// </summary>
-            [EnumMember(Value = "ONLINE_STORE")]
-            ONLINESTORE,
-            
-            /// <summary>
-            /// Enum PAYROLL for "PAYROLL"
-            /// </summary>
-            [EnumMember(Value = "PAYROLL")]
-            PAYROLL,
-            
-            /// <summary>
-            /// Enum DASHBOARD for "DASHBOARD"
-            /// </summary>
-            [EnumMember(Value = "DASHBOARD")]
-            DASHBOARD,
-            
-            /// <summary>
-            /// Enum ITEMLIBRARYIMPORT for "ITEM_LIBRARY_IMPORT"
-            /// </summary>
-            [EnumMember(Value = "ITEM_LIBRARY_IMPORT")]
-            ITEMLIBRARYIMPORT,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values
-        /// </summary>
-        /// <value>Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values</value>
-        [DataMember(Name="product", EmitDefaultValue=false)]
-        public ProductEnum? Product { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="SourceApplication" /> class.
         /// </summary>
         /// <param name="Product">Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values.</param>
         /// <param name="ApplicationId">Read-only Square ID assigned to the application. Only used for [Product](#type-product) type &#x60;EXTERNAL_API&#x60;..</param>
         /// <param name="Name">Read-only display name assigned to the application (e.g. &#x60;\&quot;Custom Application\&quot;&#x60;, &#x60;\&quot;Square POS 4.74 for Android\&quot;&#x60;)..</param>
-        public SourceApplication(ProductEnum? Product = default(ProductEnum?), string ApplicationId = default(string), string Name = default(string))
+        public SourceApplication(string Product = default(string), string ApplicationId = default(string), string Name = default(string))
         {
             this.Product = Product;
             this.ApplicationId = ApplicationId;
             this.Name = Name;
         }
         
+        /// <summary>
+        /// Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values
+        /// </summary>
+        /// <value>Read-only [Product](#type-product) type for the application. See [Product](#type-product) for possible values</value>
+        [DataMember(Name="product", EmitDefaultValue=false)]
+        public string Product { get; set; }
         /// <summary>
         /// Read-only Square ID assigned to the application. Only used for [Product](#type-product) type &#x60;EXTERNAL_API&#x60;.
         /// </summary>

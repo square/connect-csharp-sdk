@@ -29,173 +29,29 @@ namespace Square.Connect.Model
     [DataContract]
     public partial class CustomerCreationSourceFilter :  IEquatable<CustomerCreationSourceFilter>, IValidatableObject
     {
-
-        /// <summary>
-        /// Gets or Sets Values
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ValuesEnum
-        {
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER,
-            
-            /// <summary>
-            /// Enum APPOINTMENTS for "APPOINTMENTS"
-            /// </summary>
-            [EnumMember(Value = "APPOINTMENTS")]
-            APPOINTMENTS,
-            
-            /// <summary>
-            /// Enum COUPON for "COUPON"
-            /// </summary>
-            [EnumMember(Value = "COUPON")]
-            COUPON,
-            
-            /// <summary>
-            /// Enum DELETIONRECOVERY for "DELETION_RECOVERY"
-            /// </summary>
-            [EnumMember(Value = "DELETION_RECOVERY")]
-            DELETIONRECOVERY,
-            
-            /// <summary>
-            /// Enum DIRECTORY for "DIRECTORY"
-            /// </summary>
-            [EnumMember(Value = "DIRECTORY")]
-            DIRECTORY,
-            
-            /// <summary>
-            /// Enum EGIFTING for "EGIFTING"
-            /// </summary>
-            [EnumMember(Value = "EGIFTING")]
-            EGIFTING,
-            
-            /// <summary>
-            /// Enum EMAILCOLLECTION for "EMAIL_COLLECTION"
-            /// </summary>
-            [EnumMember(Value = "EMAIL_COLLECTION")]
-            EMAILCOLLECTION,
-            
-            /// <summary>
-            /// Enum FEEDBACK for "FEEDBACK"
-            /// </summary>
-            [EnumMember(Value = "FEEDBACK")]
-            FEEDBACK,
-            
-            /// <summary>
-            /// Enum IMPORT for "IMPORT"
-            /// </summary>
-            [EnumMember(Value = "IMPORT")]
-            IMPORT,
-            
-            /// <summary>
-            /// Enum INVOICES for "INVOICES"
-            /// </summary>
-            [EnumMember(Value = "INVOICES")]
-            INVOICES,
-            
-            /// <summary>
-            /// Enum LOYALTY for "LOYALTY"
-            /// </summary>
-            [EnumMember(Value = "LOYALTY")]
-            LOYALTY,
-            
-            /// <summary>
-            /// Enum MARKETING for "MARKETING"
-            /// </summary>
-            [EnumMember(Value = "MARKETING")]
-            MARKETING,
-            
-            /// <summary>
-            /// Enum MERGE for "MERGE"
-            /// </summary>
-            [EnumMember(Value = "MERGE")]
-            MERGE,
-            
-            /// <summary>
-            /// Enum ONLINESTORE for "ONLINE_STORE"
-            /// </summary>
-            [EnumMember(Value = "ONLINE_STORE")]
-            ONLINESTORE,
-            
-            /// <summary>
-            /// Enum INSTANTPROFILE for "INSTANT_PROFILE"
-            /// </summary>
-            [EnumMember(Value = "INSTANT_PROFILE")]
-            INSTANTPROFILE,
-            
-            /// <summary>
-            /// Enum TERMINAL for "TERMINAL"
-            /// </summary>
-            [EnumMember(Value = "TERMINAL")]
-            TERMINAL,
-            
-            /// <summary>
-            /// Enum THIRDPARTY for "THIRD_PARTY"
-            /// </summary>
-            [EnumMember(Value = "THIRD_PARTY")]
-            THIRDPARTY,
-            
-            /// <summary>
-            /// Enum THIRDPARTYIMPORT for "THIRD_PARTY_IMPORT"
-            /// </summary>
-            [EnumMember(Value = "THIRD_PARTY_IMPORT")]
-            THIRDPARTYIMPORT,
-            
-            /// <summary>
-            /// Enum UNMERGERECOVERY for "UNMERGE_RECOVERY"
-            /// </summary>
-            [EnumMember(Value = "UNMERGE_RECOVERY")]
-            UNMERGERECOVERY
-        }
-
-        /// <summary>
-        /// Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: `INCLUDE`. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values
-        /// </summary>
-        /// <value>Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: `INCLUDE`. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum RuleEnum
-        {
-            
-            /// <summary>
-            /// Enum INCLUDE for "INCLUDE"
-            /// </summary>
-            [EnumMember(Value = "INCLUDE")]
-            INCLUDE,
-            
-            /// <summary>
-            /// Enum EXCLUDE for "EXCLUDE"
-            /// </summary>
-            [EnumMember(Value = "EXCLUDE")]
-            EXCLUDE
-        }
-
-        /// <summary>
-        /// The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values
-        /// </summary>
-        /// <value>The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values</value>
-        [DataMember(Name="values", EmitDefaultValue=false)]
-        public List<ValuesEnum> Values { get; set; }
-        /// <summary>
-        /// Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: `INCLUDE`. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values
-        /// </summary>
-        /// <value>Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: `INCLUDE`. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values</value>
-        [DataMember(Name="rule", EmitDefaultValue=false)]
-        public RuleEnum? Rule { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerCreationSourceFilter" /> class.
         /// </summary>
         /// <param name="Values">The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values.</param>
         /// <param name="Rule">Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values.</param>
-        public CustomerCreationSourceFilter(List<ValuesEnum> Values = default(List<ValuesEnum>), RuleEnum? Rule = default(RuleEnum?))
+        public CustomerCreationSourceFilter(List<string> Values = default(List<string>), string Rule = default(string))
         {
             this.Values = Values;
             this.Rule = Rule;
         }
         
+        /// <summary>
+        /// The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values
+        /// </summary>
+        /// <value>The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values</value>
+        [DataMember(Name="values", EmitDefaultValue=false)]
+        public List<string> Values { get; set; }
+        /// <summary>
+        /// Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values
+        /// </summary>
+        /// <value>Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values</value>
+        [DataMember(Name="rule", EmitDefaultValue=false)]
+        public string Rule { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

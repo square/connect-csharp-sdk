@@ -30,348 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Merchant :  IEquatable<V1Merchant>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AccountTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum LOCATION for "LOCATION"
-            /// </summary>
-            [EnumMember(Value = "LOCATION")]
-            LOCATION,
-            
-            /// <summary>
-            /// Enum BUSINESS for "BUSINESS"
-            /// </summary>
-            [EnumMember(Value = "BUSINESS")]
-            BUSINESS
-        }
-
-        /// <summary>
-        /// The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values
-        /// </summary>
-        /// <value>The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum BusinessTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum ACCOUNTING for "ACCOUNTING"
-            /// </summary>
-            [EnumMember(Value = "ACCOUNTING")]
-            ACCOUNTING,
-            
-            /// <summary>
-            /// Enum APPARELANDACCESSORYSHOPS for "APPAREL_AND_ACCESSORY_SHOPS"
-            /// </summary>
-            [EnumMember(Value = "APPAREL_AND_ACCESSORY_SHOPS")]
-            APPARELANDACCESSORYSHOPS,
-            
-            /// <summary>
-            /// Enum ARTDEALERSGALLERIES for "ART_DEALERS_GALLERIES"
-            /// </summary>
-            [EnumMember(Value = "ART_DEALERS_GALLERIES")]
-            ARTDEALERSGALLERIES,
-            
-            /// <summary>
-            /// Enum ARTDESIGNANDPHOTOGRAPHY for "ART_DESIGN_AND_PHOTOGRAPHY"
-            /// </summary>
-            [EnumMember(Value = "ART_DESIGN_AND_PHOTOGRAPHY")]
-            ARTDESIGNANDPHOTOGRAPHY,
-            
-            /// <summary>
-            /// Enum BARCLUBLOUNGE for "BAR_CLUB_LOUNGE"
-            /// </summary>
-            [EnumMember(Value = "BAR_CLUB_LOUNGE")]
-            BARCLUBLOUNGE,
-            
-            /// <summary>
-            /// Enum BEAUTYANDBARBERSHOPS for "BEAUTY_AND_BARBER_SHOPS"
-            /// </summary>
-            [EnumMember(Value = "BEAUTY_AND_BARBER_SHOPS")]
-            BEAUTYANDBARBERSHOPS,
-            
-            /// <summary>
-            /// Enum BOOKSTORES for "BOOK_STORES"
-            /// </summary>
-            [EnumMember(Value = "BOOK_STORES")]
-            BOOKSTORES,
-            
-            /// <summary>
-            /// Enum BUSINESSSERVICES for "BUSINESS_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "BUSINESS_SERVICES")]
-            BUSINESSSERVICES,
-            
-            /// <summary>
-            /// Enum CATERING for "CATERING"
-            /// </summary>
-            [EnumMember(Value = "CATERING")]
-            CATERING,
-            
-            /// <summary>
-            /// Enum CHARITABLESOCIALSERVICEORGANIZATIONS for "CHARITABLE_SOCIAL_SERVICE_ORGANIZATIONS"
-            /// </summary>
-            [EnumMember(Value = "CHARITABLE_SOCIAL_SERVICE_ORGANIZATIONS")]
-            CHARITABLESOCIALSERVICEORGANIZATIONS,
-            
-            /// <summary>
-            /// Enum CHARITIBLEORGS for "CHARITIBLE_ORGS"
-            /// </summary>
-            [EnumMember(Value = "CHARITIBLE_ORGS")]
-            CHARITIBLEORGS,
-            
-            /// <summary>
-            /// Enum CLEANINGSERVICES for "CLEANING_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "CLEANING_SERVICES")]
-            CLEANINGSERVICES,
-            
-            /// <summary>
-            /// Enum COMPUTEREQUIPMENTSOFTWAREMAINTENANCEREPAIRSERVICES for "COMPUTER_EQUIPMENT_SOFTWARE_MAINTENANCE_REPAIR_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "COMPUTER_EQUIPMENT_SOFTWARE_MAINTENANCE_REPAIR_SERVICES")]
-            COMPUTEREQUIPMENTSOFTWAREMAINTENANCEREPAIRSERVICES,
-            
-            /// <summary>
-            /// Enum CONSULTANT for "CONSULTANT"
-            /// </summary>
-            [EnumMember(Value = "CONSULTANT")]
-            CONSULTANT,
-            
-            /// <summary>
-            /// Enum CONTRACTORS for "CONTRACTORS"
-            /// </summary>
-            [EnumMember(Value = "CONTRACTORS")]
-            CONTRACTORS,
-            
-            /// <summary>
-            /// Enum DELIVERYSERVICES for "DELIVERY_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "DELIVERY_SERVICES")]
-            DELIVERYSERVICES,
-            
-            /// <summary>
-            /// Enum DENTISTRY for "DENTISTRY"
-            /// </summary>
-            [EnumMember(Value = "DENTISTRY")]
-            DENTISTRY,
-            
-            /// <summary>
-            /// Enum EDUCATION for "EDUCATION"
-            /// </summary>
-            [EnumMember(Value = "EDUCATION")]
-            EDUCATION,
-            
-            /// <summary>
-            /// Enum FOODSTORESCONVENIENCESTORESANDSPECIALTYMARKETS for "FOOD_STORES_CONVENIENCE_STORES_AND_SPECIALTY_MARKETS"
-            /// </summary>
-            [EnumMember(Value = "FOOD_STORES_CONVENIENCE_STORES_AND_SPECIALTY_MARKETS")]
-            FOODSTORESCONVENIENCESTORESANDSPECIALTYMARKETS,
-            
-            /// <summary>
-            /// Enum FOODTRUCKCART for "FOOD_TRUCK_CART"
-            /// </summary>
-            [EnumMember(Value = "FOOD_TRUCK_CART")]
-            FOODTRUCKCART,
-            
-            /// <summary>
-            /// Enum FURNITUREHOMEANDOFFICEEQUIPMENT for "FURNITURE_HOME_AND_OFFICE_EQUIPMENT"
-            /// </summary>
-            [EnumMember(Value = "FURNITURE_HOME_AND_OFFICE_EQUIPMENT")]
-            FURNITUREHOMEANDOFFICEEQUIPMENT,
-            
-            /// <summary>
-            /// Enum FURNITUREHOMEGOODS for "FURNITURE_HOME_GOODS"
-            /// </summary>
-            [EnumMember(Value = "FURNITURE_HOME_GOODS")]
-            FURNITUREHOMEGOODS,
-            
-            /// <summary>
-            /// Enum HOTELSANDLODGING for "HOTELS_AND_LODGING"
-            /// </summary>
-            [EnumMember(Value = "HOTELS_AND_LODGING")]
-            HOTELSANDLODGING,
-            
-            /// <summary>
-            /// Enum INDIVIDUALUSE for "INDIVIDUAL_USE"
-            /// </summary>
-            [EnumMember(Value = "INDIVIDUAL_USE")]
-            INDIVIDUALUSE,
-            
-            /// <summary>
-            /// Enum JEWELRYANDWATCHES for "JEWELRY_AND_WATCHES"
-            /// </summary>
-            [EnumMember(Value = "JEWELRY_AND_WATCHES")]
-            JEWELRYANDWATCHES,
-            
-            /// <summary>
-            /// Enum LANDSCAPINGANDHORTICULTURALSERVICES for "LANDSCAPING_AND_HORTICULTURAL_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "LANDSCAPING_AND_HORTICULTURAL_SERVICES")]
-            LANDSCAPINGANDHORTICULTURALSERVICES,
-            
-            /// <summary>
-            /// Enum LANGUAGESCHOOLS for "LANGUAGE_SCHOOLS"
-            /// </summary>
-            [EnumMember(Value = "LANGUAGE_SCHOOLS")]
-            LANGUAGESCHOOLS,
-            
-            /// <summary>
-            /// Enum LEGALSERVICES for "LEGAL_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "LEGAL_SERVICES")]
-            LEGALSERVICES,
-            
-            /// <summary>
-            /// Enum MEDICALPRACTITIONERS for "MEDICAL_PRACTITIONERS"
-            /// </summary>
-            [EnumMember(Value = "MEDICAL_PRACTITIONERS")]
-            MEDICALPRACTITIONERS,
-            
-            /// <summary>
-            /// Enum MEDICALSERVICESANDHEALTHPRACTITIONERS for "MEDICAL_SERVICES_AND_HEALTH_PRACTITIONERS"
-            /// </summary>
-            [EnumMember(Value = "MEDICAL_SERVICES_AND_HEALTH_PRACTITIONERS")]
-            MEDICALSERVICESANDHEALTHPRACTITIONERS,
-            
-            /// <summary>
-            /// Enum MEMBERSHIPORGANIZATIONS for "MEMBERSHIP_ORGANIZATIONS"
-            /// </summary>
-            [EnumMember(Value = "MEMBERSHIP_ORGANIZATIONS")]
-            MEMBERSHIPORGANIZATIONS,
-            
-            /// <summary>
-            /// Enum MUSICANDENTERTAINMENT for "MUSIC_AND_ENTERTAINMENT"
-            /// </summary>
-            [EnumMember(Value = "MUSIC_AND_ENTERTAINMENT")]
-            MUSICANDENTERTAINMENT,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER,
-            
-            /// <summary>
-            /// Enum OUTDOORMARKETS for "OUTDOOR_MARKETS"
-            /// </summary>
-            [EnumMember(Value = "OUTDOOR_MARKETS")]
-            OUTDOORMARKETS,
-            
-            /// <summary>
-            /// Enum PERSONALSERVICES for "PERSONAL_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "PERSONAL_SERVICES")]
-            PERSONALSERVICES,
-            
-            /// <summary>
-            /// Enum POLITICALORGANIZATIONS for "POLITICAL_ORGANIZATIONS"
-            /// </summary>
-            [EnumMember(Value = "POLITICAL_ORGANIZATIONS")]
-            POLITICALORGANIZATIONS,
-            
-            /// <summary>
-            /// Enum PROFESSIONALSERVICES for "PROFESSIONAL_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "PROFESSIONAL_SERVICES")]
-            PROFESSIONALSERVICES,
-            
-            /// <summary>
-            /// Enum REALESTATE for "REAL_ESTATE"
-            /// </summary>
-            [EnumMember(Value = "REAL_ESTATE")]
-            REALESTATE,
-            
-            /// <summary>
-            /// Enum RECREATIONSERVICES for "RECREATION_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "RECREATION_SERVICES")]
-            RECREATIONSERVICES,
-            
-            /// <summary>
-            /// Enum REPAIRSHOPSANDRELATEDSERVICES for "REPAIR_SHOPS_AND_RELATED_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "REPAIR_SHOPS_AND_RELATED_SERVICES")]
-            REPAIRSHOPSANDRELATEDSERVICES,
-            
-            /// <summary>
-            /// Enum RESTAURANTS for "RESTAURANTS"
-            /// </summary>
-            [EnumMember(Value = "RESTAURANTS")]
-            RESTAURANTS,
-            
-            /// <summary>
-            /// Enum RETAILSHOPS for "RETAIL_SHOPS"
-            /// </summary>
-            [EnumMember(Value = "RETAIL_SHOPS")]
-            RETAILSHOPS,
-            
-            /// <summary>
-            /// Enum SCHOOLSANDEDUCATIONALSERVICES for "SCHOOLS_AND_EDUCATIONAL_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "SCHOOLS_AND_EDUCATIONAL_SERVICES")]
-            SCHOOLSANDEDUCATIONALSERVICES,
-            
-            /// <summary>
-            /// Enum SPORTINGGOODS for "SPORTING_GOODS"
-            /// </summary>
-            [EnumMember(Value = "SPORTING_GOODS")]
-            SPORTINGGOODS,
-            
-            /// <summary>
-            /// Enum TAXICABSANDLIMOUSINES for "TAXICABS_AND_LIMOUSINES"
-            /// </summary>
-            [EnumMember(Value = "TAXICABS_AND_LIMOUSINES")]
-            TAXICABSANDLIMOUSINES,
-            
-            /// <summary>
-            /// Enum TICKETSALES for "TICKET_SALES"
-            /// </summary>
-            [EnumMember(Value = "TICKET_SALES")]
-            TICKETSALES,
-            
-            /// <summary>
-            /// Enum TOURISM for "TOURISM"
-            /// </summary>
-            [EnumMember(Value = "TOURISM")]
-            TOURISM,
-            
-            /// <summary>
-            /// Enum TRAVELTOURISM for "TRAVEL_TOURISM"
-            /// </summary>
-            [EnumMember(Value = "TRAVEL_TOURISM")]
-            TRAVELTOURISM,
-            
-            /// <summary>
-            /// Enum VETERINARYSERVICES for "VETERINARY_SERVICES"
-            /// </summary>
-            [EnumMember(Value = "VETERINARY_SERVICES")]
-            VETERINARYSERVICES,
-            
-            /// <summary>
-            /// Enum WEBDEVDESIGN for "WEB_DEV_DESIGN"
-            /// </summary>
-            [EnumMember(Value = "WEB_DEV_DESIGN")]
-            WEBDEVDESIGN
-        }
-
-        /// <summary>
-        /// Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values</value>
-        [DataMember(Name="account_type", EmitDefaultValue=false)]
-        public AccountTypeEnum? AccountType { get; set; }
-        /// <summary>
-        /// The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values
-        /// </summary>
-        /// <value>The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values</value>
-        [DataMember(Name="business_type", EmitDefaultValue=false)]
-        public BusinessTypeEnum? BusinessType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Merchant" /> class.
         /// </summary>
         /// <param name="Id">The merchant account&#39;s unique identifier..</param>
@@ -389,7 +47,7 @@ namespace Square.Connect.Model
         /// <param name="ShippingAddress">The merchant&#39;s shipping address..</param>
         /// <param name="LocationDetails">Additional information for a single-location account specified by its associated business account, if it has one..</param>
         /// <param name="MarketUrl">The URL of the merchant&#39;s online store..</param>
-        public V1Merchant(string Id = default(string), string Name = default(string), string Email = default(string), AccountTypeEnum? AccountType = default(AccountTypeEnum?), List<string> AccountCapabilities = default(List<string>), string CountryCode = default(string), string LanguageCode = default(string), string CurrencyCode = default(string), string BusinessName = default(string), Address BusinessAddress = default(Address), V1PhoneNumber BusinessPhone = default(V1PhoneNumber), BusinessTypeEnum? BusinessType = default(BusinessTypeEnum?), Address ShippingAddress = default(Address), V1MerchantLocationDetails LocationDetails = default(V1MerchantLocationDetails), string MarketUrl = default(string))
+        public V1Merchant(string Id = default(string), string Name = default(string), string Email = default(string), string AccountType = default(string), List<string> AccountCapabilities = default(List<string>), string CountryCode = default(string), string LanguageCode = default(string), string CurrencyCode = default(string), string BusinessName = default(string), Address BusinessAddress = default(Address), V1PhoneNumber BusinessPhone = default(V1PhoneNumber), string BusinessType = default(string), Address ShippingAddress = default(Address), V1MerchantLocationDetails LocationDetails = default(V1MerchantLocationDetails), string MarketUrl = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -426,6 +84,12 @@ namespace Square.Connect.Model
         /// <value>The email address associated with the merchant account.</value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
+        /// <summary>
+        /// Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values
+        /// </summary>
+        /// <value>Indicates whether the merchant account corresponds to a single-location account (LOCATION) or a business account (BUSINESS). This value is almost always LOCATION. See [V1MerchantAccountType](#type-v1merchantaccounttype) for possible values</value>
+        [DataMember(Name="account_type", EmitDefaultValue=false)]
+        public string AccountType { get; set; }
         /// <summary>
         /// Capabilities that are enabled for the merchant&#39;s Square account. Capabilities that are not listed in this array are not enabled for the account.
         /// </summary>
@@ -468,6 +132,12 @@ namespace Square.Connect.Model
         /// <value>The phone number of the merchant&#39;s business.</value>
         [DataMember(Name="business_phone", EmitDefaultValue=false)]
         public V1PhoneNumber BusinessPhone { get; set; }
+        /// <summary>
+        /// The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values
+        /// </summary>
+        /// <value>The type of business operated by the merchant. See [V1MerchantBusinessType](#type-v1merchantbusinesstype) for possible values</value>
+        [DataMember(Name="business_type", EmitDefaultValue=false)]
+        public string BusinessType { get; set; }
         /// <summary>
         /// The merchant&#39;s shipping address.
         /// </summary>

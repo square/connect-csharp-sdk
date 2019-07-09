@@ -30,60 +30,6 @@ namespace Square.Connect.Model
     public partial class CatalogItemVariation :  IEquatable<CatalogItemVariation>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PricingTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum FIXEDPRICING for "FIXED_PRICING"
-            /// </summary>
-            [EnumMember(Value = "FIXED_PRICING")]
-            FIXEDPRICING,
-            
-            /// <summary>
-            /// Enum VARIABLEPRICING for "VARIABLE_PRICING"
-            /// </summary>
-            [EnumMember(Value = "VARIABLE_PRICING")]
-            VARIABLEPRICING
-        }
-
-        /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum InventoryAlertTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum LOWQUANTITY for "LOW_QUANTITY"
-            /// </summary>
-            [EnumMember(Value = "LOW_QUANTITY")]
-            LOWQUANTITY
-        }
-
-        /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values</value>
-        [DataMember(Name="pricing_type", EmitDefaultValue=false)]
-        public PricingTypeEnum? PricingType { get; set; }
-        /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values</value>
-        [DataMember(Name="inventory_alert_type", EmitDefaultValue=false)]
-        public InventoryAlertTypeEnum? InventoryAlertType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CatalogItemVariation" /> class.
         /// </summary>
         /// <param name="ItemId">The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable..</param>
@@ -99,9 +45,8 @@ namespace Square.Connect.Model
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
         /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable..</param>
         /// <param name="ServiceDuration">If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
-        /// <param name="CatalogMeasurementUnitId">Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities..</param>
         /// <param name="MeasurementUnitId">ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities..</param>
-        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?), string CatalogMeasurementUnitId = default(string), string MeasurementUnitId = default(string))
+        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), string PricingType = default(string), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), string InventoryAlertType = default(string), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?), string MeasurementUnitId = default(string))
         {
             this.ItemId = ItemId;
             this.Name = Name;
@@ -116,7 +61,6 @@ namespace Square.Connect.Model
             this.InventoryAlertThreshold = InventoryAlertThreshold;
             this.UserData = UserData;
             this.ServiceDuration = ServiceDuration;
-            this.CatalogMeasurementUnitId = CatalogMeasurementUnitId;
             this.MeasurementUnitId = MeasurementUnitId;
         }
         
@@ -151,6 +95,12 @@ namespace Square.Connect.Model
         [DataMember(Name="ordinal", EmitDefaultValue=false)]
         public int? Ordinal { get; set; }
         /// <summary>
+        /// Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values
+        /// </summary>
+        /// <value>Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values</value>
+        [DataMember(Name="pricing_type", EmitDefaultValue=false)]
+        public string PricingType { get; set; }
+        /// <summary>
         /// The item variation&#39;s price, if fixed pricing is used.
         /// </summary>
         /// <value>The item variation&#39;s price, if fixed pricing is used.</value>
@@ -169,6 +119,12 @@ namespace Square.Connect.Model
         [DataMember(Name="track_inventory", EmitDefaultValue=false)]
         public bool? TrackInventory { get; set; }
         /// <summary>
+        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for possible values
+        /// </summary>
+        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for possible values</value>
+        [DataMember(Name="inventory_alert_type", EmitDefaultValue=false)]
+        public string InventoryAlertType { get; set; }
+        /// <summary>
         /// If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer.
         /// </summary>
         /// <value>If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer.</value>
@@ -186,12 +142,6 @@ namespace Square.Connect.Model
         /// <value>If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).</value>
         [DataMember(Name="service_duration", EmitDefaultValue=false)]
         public long? ServiceDuration { get; set; }
-        /// <summary>
-        /// Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.
-        /// </summary>
-        /// <value>Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.</value>
-        [DataMember(Name="catalog_measurement_unit_id", EmitDefaultValue=false)]
-        public string CatalogMeasurementUnitId { get; set; }
         /// <summary>
         /// ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
         /// </summary>
@@ -219,7 +169,6 @@ namespace Square.Connect.Model
             sb.Append("  InventoryAlertThreshold: ").Append(InventoryAlertThreshold).Append("\n");
             sb.Append("  UserData: ").Append(UserData).Append("\n");
             sb.Append("  ServiceDuration: ").Append(ServiceDuration).Append("\n");
-            sb.Append("  CatalogMeasurementUnitId: ").Append(CatalogMeasurementUnitId).Append("\n");
             sb.Append("  MeasurementUnitId: ").Append(MeasurementUnitId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -323,11 +272,6 @@ namespace Square.Connect.Model
                     this.ServiceDuration.Equals(other.ServiceDuration)
                 ) && 
                 (
-                    this.CatalogMeasurementUnitId == other.CatalogMeasurementUnitId ||
-                    this.CatalogMeasurementUnitId != null &&
-                    this.CatalogMeasurementUnitId.Equals(other.CatalogMeasurementUnitId)
-                ) && 
-                (
                     this.MeasurementUnitId == other.MeasurementUnitId ||
                     this.MeasurementUnitId != null &&
                     this.MeasurementUnitId.Equals(other.MeasurementUnitId)
@@ -371,8 +315,6 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.UserData.GetHashCode();
                 if (this.ServiceDuration != null)
                     hash = hash * 59 + this.ServiceDuration.GetHashCode();
-                if (this.CatalogMeasurementUnitId != null)
-                    hash = hash * 59 + this.CatalogMeasurementUnitId.GetHashCode();
                 if (this.MeasurementUnitId != null)
                     hash = hash * 59 + this.MeasurementUnitId.GetHashCode();
                 return hash;

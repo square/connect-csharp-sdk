@@ -30,84 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Variation :  IEquatable<V1Variation>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PricingTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum FIXEDPRICING for "FIXED_PRICING"
-            /// </summary>
-            [EnumMember(Value = "FIXED_PRICING")]
-            FIXEDPRICING,
-            
-            /// <summary>
-            /// Enum VARIABLEPRICING for "VARIABLE_PRICING"
-            /// </summary>
-            [EnumMember(Value = "VARIABLE_PRICING")]
-            VARIABLEPRICING
-        }
-
-        /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum InventoryAlertTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum LOWQUANTITY for "LOW_QUANTITY"
-            /// </summary>
-            [EnumMember(Value = "LOW_QUANTITY")]
-            LOWQUANTITY,
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum INVESTMENT for "INVESTMENT"
-            /// </summary>
-            [EnumMember(Value = "INVESTMENT")]
-            INVESTMENT,
-            
-            /// <summary>
-            /// Enum LOAN for "LOAN"
-            /// </summary>
-            [EnumMember(Value = "LOAN")]
-            LOAN,
-            
-            /// <summary>
-            /// Enum SAVINGS for "SAVINGS"
-            /// </summary>
-            [EnumMember(Value = "SAVINGS")]
-            SAVINGS,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values</value>
-        [DataMember(Name="pricing_type", EmitDefaultValue=false)]
-        public PricingTypeEnum? PricingType { get; set; }
-        /// <summary>
-        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values
-        /// </summary>
-        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values</value>
-        [DataMember(Name="inventory_alert_type", EmitDefaultValue=false)]
-        public InventoryAlertTypeEnum? InventoryAlertType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Variation" /> class.
         /// </summary>
         /// <param name="Id">The item variation&#39;s unique ID..</param>
@@ -122,7 +44,7 @@ namespace Square.Connect.Model
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard..</param>
         /// <param name="UserData">Arbitrary metadata associated with the variation. Cannot exceed 255 characters..</param>
         /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
-        public V1Variation(string Id = default(string), string Name = default(string), string ItemId = default(string), int? Ordinal = default(int?), PricingTypeEnum? PricingType = default(PricingTypeEnum?), V1Money PriceMoney = default(V1Money), string Sku = default(string), bool? TrackInventory = default(bool?), InventoryAlertTypeEnum? InventoryAlertType = default(InventoryAlertTypeEnum?), int? InventoryAlertThreshold = default(int?), string UserData = default(string), string V2Id = default(string))
+        public V1Variation(string Id = default(string), string Name = default(string), string ItemId = default(string), int? Ordinal = default(int?), string PricingType = default(string), V1Money PriceMoney = default(V1Money), string Sku = default(string), bool? TrackInventory = default(bool?), string InventoryAlertType = default(string), int? InventoryAlertThreshold = default(int?), string UserData = default(string), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -163,6 +85,12 @@ namespace Square.Connect.Model
         [DataMember(Name="ordinal", EmitDefaultValue=false)]
         public int? Ordinal { get; set; }
         /// <summary>
+        /// Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values
+        /// </summary>
+        /// <value>Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values</value>
+        [DataMember(Name="pricing_type", EmitDefaultValue=false)]
+        public string PricingType { get; set; }
+        /// <summary>
         /// The item variation&#39;s price, if any.
         /// </summary>
         /// <value>The item variation&#39;s price, if any.</value>
@@ -180,6 +108,12 @@ namespace Square.Connect.Model
         /// <value>If true, inventory tracking is active for the variation.</value>
         [DataMember(Name="track_inventory", EmitDefaultValue=false)]
         public bool? TrackInventory { get; set; }
+        /// <summary>
+        /// Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values
+        /// </summary>
+        /// <value>Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values</value>
+        [DataMember(Name="inventory_alert_type", EmitDefaultValue=false)]
+        public string InventoryAlertType { get; set; }
         /// <summary>
         /// If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard.
         /// </summary>

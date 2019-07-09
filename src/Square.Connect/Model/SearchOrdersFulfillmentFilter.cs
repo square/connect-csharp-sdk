@@ -29,78 +29,6 @@ namespace Square.Connect.Model
     [DataContract]
     public partial class SearchOrdersFulfillmentFilter :  IEquatable<SearchOrdersFulfillmentFilter>, IValidatableObject
     {
-
-        /// <summary>
-        /// Gets or Sets FulfillmentTypes
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum FulfillmentTypesEnum
-        {
-            
-            /// <summary>
-            /// Enum PICKUP for "PICKUP"
-            /// </summary>
-            [EnumMember(Value = "PICKUP")]
-            PICKUP
-        }
-
-
-        /// <summary>
-        /// Gets or Sets FulfillmentStates
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum FulfillmentStatesEnum
-        {
-            
-            /// <summary>
-            /// Enum PROPOSED for "PROPOSED"
-            /// </summary>
-            [EnumMember(Value = "PROPOSED")]
-            PROPOSED,
-            
-            /// <summary>
-            /// Enum RESERVED for "RESERVED"
-            /// </summary>
-            [EnumMember(Value = "RESERVED")]
-            RESERVED,
-            
-            /// <summary>
-            /// Enum PREPARED for "PREPARED"
-            /// </summary>
-            [EnumMember(Value = "PREPARED")]
-            PREPARED,
-            
-            /// <summary>
-            /// Enum COMPLETED for "COMPLETED"
-            /// </summary>
-            [EnumMember(Value = "COMPLETED")]
-            COMPLETED,
-            
-            /// <summary>
-            /// Enum CANCELED for "CANCELED"
-            /// </summary>
-            [EnumMember(Value = "CANCELED")]
-            CANCELED,
-            
-            /// <summary>
-            /// Enum FAILED for "FAILED"
-            /// </summary>
-            [EnumMember(Value = "FAILED")]
-            FAILED
-        }
-
-        /// <summary>
-        /// List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
-        /// </summary>
-        /// <value>List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
-        [DataMember(Name="fulfillment_types", EmitDefaultValue=false)]
-        public List<FulfillmentTypesEnum> FulfillmentTypes { get; set; }
-        /// <summary>
-        /// List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
-        /// </summary>
-        /// <value>List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
-        [DataMember(Name="fulfillment_states", EmitDefaultValue=false)]
-        public List<FulfillmentStatesEnum> FulfillmentStates { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersFulfillmentFilter" /> class.
         /// </summary>
@@ -111,7 +39,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="FulfillmentTypes">List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values (required).</param>
         /// <param name="FulfillmentStates">List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values.</param>
-        public SearchOrdersFulfillmentFilter(List<FulfillmentTypesEnum> FulfillmentTypes = default(List<FulfillmentTypesEnum>), List<FulfillmentStatesEnum> FulfillmentStates = default(List<FulfillmentStatesEnum>))
+        public SearchOrdersFulfillmentFilter(List<string> FulfillmentTypes = default(List<string>), List<string> FulfillmentStates = default(List<string>))
         {
             // to ensure "FulfillmentTypes" is required (not null)
             if (FulfillmentTypes == null)
@@ -125,6 +53,18 @@ namespace Square.Connect.Model
             this.FulfillmentStates = FulfillmentStates;
         }
         
+        /// <summary>
+        /// List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
+        /// </summary>
+        /// <value>List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
+        [DataMember(Name="fulfillment_types", EmitDefaultValue=false)]
+        public List<string> FulfillmentTypes { get; set; }
+        /// <summary>
+        /// List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+        /// </summary>
+        /// <value>List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
+        [DataMember(Name="fulfillment_states", EmitDefaultValue=false)]
+        public List<string> FulfillmentStates { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

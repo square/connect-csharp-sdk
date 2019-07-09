@@ -9,15 +9,7 @@ V1UpdateModifierListRequest
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The modifier list&#39;s name. | [optional] 
-**SelectionType** | **SelectionTypeEnum** | Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values | [optional] 
-
-
-## SelectionTypeEnum
-
-Name | Value
------------- | -------------
-**SINGLE** | "SINGLE"
-**MULTIPLE** | "MULTIPLE"
+**SelectionType** | **string** | Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values | [optional] 
 
 
 

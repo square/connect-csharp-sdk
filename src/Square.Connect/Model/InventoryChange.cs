@@ -30,46 +30,13 @@ namespace Square.Connect.Model
     public partial class InventoryChange :  IEquatable<InventoryChange>, IValidatableObject
     {
         /// <summary>
-        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values
-        /// </summary>
-        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum PHYSICALCOUNT for "PHYSICAL_COUNT"
-            /// </summary>
-            [EnumMember(Value = "PHYSICAL_COUNT")]
-            PHYSICALCOUNT,
-            
-            /// <summary>
-            /// Enum ADJUSTMENT for "ADJUSTMENT"
-            /// </summary>
-            [EnumMember(Value = "ADJUSTMENT")]
-            ADJUSTMENT,
-            
-            /// <summary>
-            /// Enum TRANSFER for "TRANSFER"
-            /// </summary>
-            [EnumMember(Value = "TRANSFER")]
-            TRANSFER
-        }
-
-        /// <summary>
-        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values
-        /// </summary>
-        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="InventoryChange" /> class.
         /// </summary>
         /// <param name="Type">Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values.</param>
         /// <param name="PhysicalCount">Contains details about the physical count when &#x60;type&#x60; is &#x60;PHYSICAL_COUNT&#x60; and unset for all other types..</param>
         /// <param name="Adjustment">Contains details about the inventory adjustment when &#x60;type&#x60; is &#x60;ADJUSTMENT&#x60; and unset for all other types..</param>
         /// <param name="Transfer">Contains details about the inventory transfer when &#x60;type&#x60; is &#x60;TRANSFER&#x60; and unset for all other types..</param>
-        public InventoryChange(TypeEnum? Type = default(TypeEnum?), InventoryPhysicalCount PhysicalCount = default(InventoryPhysicalCount), InventoryAdjustment Adjustment = default(InventoryAdjustment), InventoryTransfer Transfer = default(InventoryTransfer))
+        public InventoryChange(string Type = default(string), InventoryPhysicalCount PhysicalCount = default(InventoryPhysicalCount), InventoryAdjustment Adjustment = default(InventoryAdjustment), InventoryTransfer Transfer = default(InventoryTransfer))
         {
             this.Type = Type;
             this.PhysicalCount = PhysicalCount;
@@ -77,6 +44,12 @@ namespace Square.Connect.Model
             this.Transfer = Transfer;
         }
         
+        /// <summary>
+        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values
+        /// </summary>
+        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
         /// <summary>
         /// Contains details about the physical count when &#x60;type&#x60; is &#x60;PHYSICAL_COUNT&#x60; and unset for all other types.
         /// </summary>

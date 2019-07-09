@@ -14,17 +14,9 @@ Name | Type | Description | Notes
 **Email** | **string** | Email of the employee | [optional] 
 **PhoneNumber** | **string** | Phone number of the employee in E.164 format, i.e. \&quot;+12125554250\&quot; | [optional] 
 **LocationIds** | **List<string>** | A list of location IDs where this employee has access. | [optional] 
-**Status** | **StatusEnum** | Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values | [optional] 
+**Status** | **string** | Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values | [optional] 
 **CreatedAt** | **string** | A read-only timestamp in RFC 3339 format. | [optional] 
 **UpdatedAt** | **string** | A read-only timestamp in RFC 3339 format. | [optional] 
-
-
-## StatusEnum
-
-Name | Value
------------- | -------------
-**ACTIVE** | "ACTIVE"
-**INACTIVE** | "INACTIVE"
 
 
 

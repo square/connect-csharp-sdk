@@ -131,7 +131,7 @@ namespace Square.Connect.Test
                 new ChargeRequestAdditionalRecipient(
                     "location",
                     "description",
-                    new Money(1, Money.CurrencyEnum.USD)
+                    new Money(1, "USD")
                 )
             });
         }
