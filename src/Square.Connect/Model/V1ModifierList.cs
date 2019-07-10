@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class V1ModifierList :  IEquatable<V1ModifierList>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values
-        /// </summary>
-        /// <value>Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SelectionTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum SINGLE for "SINGLE"
-            /// </summary>
-            [EnumMember(Value = "SINGLE")]
-            SINGLE,
-            
-            /// <summary>
-            /// Enum MULTIPLE for "MULTIPLE"
-            /// </summary>
-            [EnumMember(Value = "MULTIPLE")]
-            MULTIPLE
-        }
-
-        /// <summary>
-        /// Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values
-        /// </summary>
-        /// <value>Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values</value>
-        [DataMember(Name="selection_type", EmitDefaultValue=false)]
-        public SelectionTypeEnum? SelectionType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1ModifierList" /> class.
         /// </summary>
         /// <param name="Id">The modifier list&#39;s unique ID..</param>
@@ -64,7 +37,7 @@ namespace Square.Connect.Model
         /// <param name="SelectionType">Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values.</param>
         /// <param name="ModifierOptions">The options included in the modifier list..</param>
         /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
-        public V1ModifierList(string Id = default(string), string Name = default(string), SelectionTypeEnum? SelectionType = default(SelectionTypeEnum?), List<V1ModifierOption> ModifierOptions = default(List<V1ModifierOption>), string V2Id = default(string))
+        public V1ModifierList(string Id = default(string), string Name = default(string), string SelectionType = default(string), List<V1ModifierOption> ModifierOptions = default(List<V1ModifierOption>), string V2Id = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -85,6 +58,12 @@ namespace Square.Connect.Model
         /// <value>The modifier list&#39;s name.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values
+        /// </summary>
+        /// <value>Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values</value>
+        [DataMember(Name="selection_type", EmitDefaultValue=false)]
+        public string SelectionType { get; set; }
         /// <summary>
         /// The options included in the modifier list.
         /// </summary>

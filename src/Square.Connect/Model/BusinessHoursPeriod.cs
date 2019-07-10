@@ -30,75 +30,24 @@ namespace Square.Connect.Model
     public partial class BusinessHoursPeriod :  IEquatable<BusinessHoursPeriod>, IValidatableObject
     {
         /// <summary>
-        /// The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values
-        /// </summary>
-        /// <value>The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DayOfWeekEnum
-        {
-            
-            /// <summary>
-            /// Enum SUN for "SUN"
-            /// </summary>
-            [EnumMember(Value = "SUN")]
-            SUN,
-            
-            /// <summary>
-            /// Enum MON for "MON"
-            /// </summary>
-            [EnumMember(Value = "MON")]
-            MON,
-            
-            /// <summary>
-            /// Enum TUE for "TUE"
-            /// </summary>
-            [EnumMember(Value = "TUE")]
-            TUE,
-            
-            /// <summary>
-            /// Enum WED for "WED"
-            /// </summary>
-            [EnumMember(Value = "WED")]
-            WED,
-            
-            /// <summary>
-            /// Enum THU for "THU"
-            /// </summary>
-            [EnumMember(Value = "THU")]
-            THU,
-            
-            /// <summary>
-            /// Enum FRI for "FRI"
-            /// </summary>
-            [EnumMember(Value = "FRI")]
-            FRI,
-            
-            /// <summary>
-            /// Enum SAT for "SAT"
-            /// </summary>
-            [EnumMember(Value = "SAT")]
-            SAT
-        }
-
-        /// <summary>
-        /// The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values
-        /// </summary>
-        /// <value>The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values</value>
-        [DataMember(Name="day_of_week", EmitDefaultValue=false)]
-        public DayOfWeekEnum? DayOfWeek { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="BusinessHoursPeriod" /> class.
         /// </summary>
         /// <param name="DayOfWeek">The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values.</param>
         /// <param name="StartLocalTime">The start time of a business hours period, specified in local time using partial-time RFC3339 format..</param>
         /// <param name="EndLocalTime">The end time of a business hours period, specified in local time using partial-time RFC3339 format..</param>
-        public BusinessHoursPeriod(DayOfWeekEnum? DayOfWeek = default(DayOfWeekEnum?), string StartLocalTime = default(string), string EndLocalTime = default(string))
+        public BusinessHoursPeriod(string DayOfWeek = default(string), string StartLocalTime = default(string), string EndLocalTime = default(string))
         {
             this.DayOfWeek = DayOfWeek;
             this.StartLocalTime = StartLocalTime;
             this.EndLocalTime = EndLocalTime;
         }
         
+        /// <summary>
+        /// The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values
+        /// </summary>
+        /// <value>The day of week for this time period. See [DayOfWeek](#type-dayofweek) for possible values</value>
+        [DataMember(Name="day_of_week", EmitDefaultValue=false)]
+        public string DayOfWeek { get; set; }
         /// <summary>
         /// The start time of a business hours period, specified in local time using partial-time RFC3339 format.
         /// </summary>

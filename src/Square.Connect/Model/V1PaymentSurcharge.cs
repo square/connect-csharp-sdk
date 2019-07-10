@@ -30,39 +30,6 @@ namespace Square.Connect.Model
     public partial class V1PaymentSurcharge :  IEquatable<V1PaymentSurcharge>, IValidatableObject
     {
         /// <summary>
-        /// Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values
-        /// </summary>
-        /// <value>Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum UNKNOWN for "UNKNOWN"
-            /// </summary>
-            [EnumMember(Value = "UNKNOWN")]
-            UNKNOWN,
-            
-            /// <summary>
-            /// Enum AUTOGRATUITY for "AUTO_GRATUITY"
-            /// </summary>
-            [EnumMember(Value = "AUTO_GRATUITY")]
-            AUTOGRATUITY,
-            
-            /// <summary>
-            /// Enum CUSTOM for "CUSTOM"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM")]
-            CUSTOM
-        }
-
-        /// <summary>
-        /// Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values
-        /// </summary>
-        /// <value>Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1PaymentSurcharge" /> class.
         /// </summary>
         /// <param name="Name">The name of the surcharge..</param>
@@ -73,7 +40,7 @@ namespace Square.Connect.Model
         /// <param name="Taxable">Indicates whether the surcharge is taxable..</param>
         /// <param name="Taxes">The list of taxes that should be applied to the surcharge..</param>
         /// <param name="SurchargeId">A Square-issued unique identifier associated with the surcharge..</param>
-        public V1PaymentSurcharge(string Name = default(string), V1Money AppliedMoney = default(V1Money), string Rate = default(string), V1Money AmountMoney = default(V1Money), TypeEnum? Type = default(TypeEnum?), bool? Taxable = default(bool?), List<V1PaymentTax> Taxes = default(List<V1PaymentTax>), string SurchargeId = default(string))
+        public V1PaymentSurcharge(string Name = default(string), V1Money AppliedMoney = default(V1Money), string Rate = default(string), V1Money AmountMoney = default(V1Money), string Type = default(string), bool? Taxable = default(bool?), List<V1PaymentTax> Taxes = default(List<V1PaymentTax>), string SurchargeId = default(string))
         {
             this.Name = Name;
             this.AppliedMoney = AppliedMoney;
@@ -109,6 +76,12 @@ namespace Square.Connect.Model
         /// <value>The amount of the surcharge as a Money object. Exactly one of rate or amount_money should be set.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public V1Money AmountMoney { get; set; }
+        /// <summary>
+        /// Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values
+        /// </summary>
+        /// <value>Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. See [V1PaymentSurchargeType](#type-v1paymentsurchargetype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
         /// <summary>
         /// Indicates whether the surcharge is taxable.
         /// </summary>

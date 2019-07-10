@@ -30,57 +30,6 @@ namespace Square.Connect.Model
     public partial class V1BankAccount :  IEquatable<V1BankAccount>, IValidatableObject
     {
         /// <summary>
-        /// The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values
-        /// </summary>
-        /// <value>The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum BUSINESSCHECKING for "BUSINESS_CHECKING"
-            /// </summary>
-            [EnumMember(Value = "BUSINESS_CHECKING")]
-            BUSINESSCHECKING,
-            
-            /// <summary>
-            /// Enum CHECKING for "CHECKING"
-            /// </summary>
-            [EnumMember(Value = "CHECKING")]
-            CHECKING,
-            
-            /// <summary>
-            /// Enum INVESTMENT for "INVESTMENT"
-            /// </summary>
-            [EnumMember(Value = "INVESTMENT")]
-            INVESTMENT,
-            
-            /// <summary>
-            /// Enum LOAN for "LOAN"
-            /// </summary>
-            [EnumMember(Value = "LOAN")]
-            LOAN,
-            
-            /// <summary>
-            /// Enum SAVINGS for "SAVINGS"
-            /// </summary>
-            [EnumMember(Value = "SAVINGS")]
-            SAVINGS,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values
-        /// </summary>
-        /// <value>The bank account's type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1BankAccount" /> class.
         /// </summary>
         /// <param name="Id">The bank account&#39;s Square-issued ID..</param>
@@ -91,7 +40,7 @@ namespace Square.Connect.Model
         /// <param name="AccountNumberSuffix">The last few digits of the bank account number..</param>
         /// <param name="CurrencyCode">The currency code of the currency associated with the bank account, in ISO 4217 format. For example, the currency code for US dollars is USD..</param>
         /// <param name="Type">The bank account&#39;s type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values.</param>
-        public V1BankAccount(string Id = default(string), string MerchantId = default(string), string BankName = default(string), string Name = default(string), string RoutingNumber = default(string), string AccountNumberSuffix = default(string), string CurrencyCode = default(string), TypeEnum? Type = default(TypeEnum?))
+        public V1BankAccount(string Id = default(string), string MerchantId = default(string), string BankName = default(string), string Name = default(string), string RoutingNumber = default(string), string AccountNumberSuffix = default(string), string CurrencyCode = default(string), string Type = default(string))
         {
             this.Id = Id;
             this.MerchantId = MerchantId;
@@ -145,6 +94,12 @@ namespace Square.Connect.Model
         /// <value>The currency code of the currency associated with the bank account, in ISO 4217 format. For example, the currency code for US dollars is USD.</value>
         [DataMember(Name="currency_code", EmitDefaultValue=false)]
         public string CurrencyCode { get; set; }
+        /// <summary>
+        /// The bank account&#39;s type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values
+        /// </summary>
+        /// <value>The bank account&#39;s type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

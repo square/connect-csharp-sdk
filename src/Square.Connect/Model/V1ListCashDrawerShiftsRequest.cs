@@ -30,45 +30,24 @@ namespace Square.Connect.Model
     public partial class V1ListCashDrawerShiftsRequest :  IEquatable<V1ListCashDrawerShiftsRequest>, IValidatableObject
     {
         /// <summary>
-        /// The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1ListCashDrawerShiftsRequest" /> class.
         /// </summary>
         /// <param name="Order">The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values.</param>
         /// <param name="BeginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days..</param>
         /// <param name="EndTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time..</param>
-        public V1ListCashDrawerShiftsRequest(OrderEnum? Order = default(OrderEnum?), string BeginTime = default(string), string EndTime = default(string))
+        public V1ListCashDrawerShiftsRequest(string Order = default(string), string BeginTime = default(string), string EndTime = default(string))
         {
             this.Order = Order;
             this.BeginTime = BeginTime;
             this.EndTime = EndTime;
         }
         
+        /// <summary>
+        /// The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days.
         /// </summary>

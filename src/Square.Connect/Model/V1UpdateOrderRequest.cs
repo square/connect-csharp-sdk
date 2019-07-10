@@ -30,39 +30,6 @@ namespace Square.Connect.Model
     public partial class V1UpdateOrderRequest :  IEquatable<V1UpdateOrderRequest>, IValidatableObject
     {
         /// <summary>
-        /// The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values
-        /// </summary>
-        /// <value>The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ActionEnum
-        {
-            
-            /// <summary>
-            /// Enum COMPLETE for "COMPLETE"
-            /// </summary>
-            [EnumMember(Value = "COMPLETE")]
-            COMPLETE,
-            
-            /// <summary>
-            /// Enum CANCEL for "CANCEL"
-            /// </summary>
-            [EnumMember(Value = "CANCEL")]
-            CANCEL,
-            
-            /// <summary>
-            /// Enum REFUND for "REFUND"
-            /// </summary>
-            [EnumMember(Value = "REFUND")]
-            REFUND
-        }
-
-        /// <summary>
-        /// The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values
-        /// </summary>
-        /// <value>The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values</value>
-        [DataMember(Name="action", EmitDefaultValue=false)]
-        public ActionEnum? Action { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1UpdateOrderRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -75,7 +42,7 @@ namespace Square.Connect.Model
         /// <param name="CompletedNote">A merchant-specified note about the completion of the order. Only valid if action is COMPLETE..</param>
         /// <param name="RefundedNote">A merchant-specified note about the refunding of the order. Only valid if action is REFUND..</param>
         /// <param name="CanceledNote">A merchant-specified note about the canceling of the order. Only valid if action is CANCEL..</param>
-        public V1UpdateOrderRequest(ActionEnum? Action = default(ActionEnum?), string ShippedTrackingNumber = default(string), string CompletedNote = default(string), string RefundedNote = default(string), string CanceledNote = default(string))
+        public V1UpdateOrderRequest(string Action = default(string), string ShippedTrackingNumber = default(string), string CompletedNote = default(string), string RefundedNote = default(string), string CanceledNote = default(string))
         {
             // to ensure "Action" is required (not null)
             if (Action == null)
@@ -92,6 +59,12 @@ namespace Square.Connect.Model
             this.CanceledNote = CanceledNote;
         }
         
+        /// <summary>
+        /// The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values
+        /// </summary>
+        /// <value>The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values</value>
+        [DataMember(Name="action", EmitDefaultValue=false)]
+        public string Action { get; set; }
         /// <summary>
         /// The tracking number of the shipment associated with the order. Only valid if action is COMPLETE.
         /// </summary>

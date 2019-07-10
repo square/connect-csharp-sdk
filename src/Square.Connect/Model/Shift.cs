@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class Shift :  IEquatable<Shift>, IValidatableObject
     {
         /// <summary>
-        /// Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values
-        /// </summary>
-        /// <value>Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum OPEN for "OPEN"
-            /// </summary>
-            [EnumMember(Value = "OPEN")]
-            OPEN,
-            
-            /// <summary>
-            /// Enum CLOSED for "CLOSED"
-            /// </summary>
-            [EnumMember(Value = "CLOSED")]
-            CLOSED
-        }
-
-        /// <summary>
-        /// Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values
-        /// </summary>
-        /// <value>Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="Shift" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -76,7 +49,7 @@ namespace Square.Connect.Model
         /// <param name="Version">Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If not provided, Square executes a blind write; potentially overwriting data from another write..</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format; presented in UTC..</param>
         /// <param name="UpdatedAt">A read-only timestamp in RFC 3339 format; presented in UTC..</param>
-        public Shift(string Id = default(string), string EmployeeId = default(string), string LocationId = default(string), string Timezone = default(string), string StartAt = default(string), string EndAt = default(string), ShiftWage Wage = default(ShiftWage), List<ModelBreak> Breaks = default(List<ModelBreak>), StatusEnum? Status = default(StatusEnum?), int? Version = default(int?), string CreatedAt = default(string), string UpdatedAt = default(string))
+        public Shift(string Id = default(string), string EmployeeId = default(string), string LocationId = default(string), string Timezone = default(string), string StartAt = default(string), string EndAt = default(string), ShiftWage Wage = default(ShiftWage), List<ModelBreak> Breaks = default(List<ModelBreak>), string Status = default(string), int? Version = default(int?), string CreatedAt = default(string), string UpdatedAt = default(string))
         {
             // to ensure "EmployeeId" is required (not null)
             if (EmployeeId == null)
@@ -156,6 +129,12 @@ namespace Square.Connect.Model
         /// <value>A list of any paid or unpaid breaks that were taken during this shift.</value>
         [DataMember(Name="breaks", EmitDefaultValue=false)]
         public List<ModelBreak> Breaks { get; set; }
+        /// <summary>
+        /// Describes working state of the current &#x60;Shift&#x60;. See [ShiftStatus](#type-shiftstatus) for possible values
+        /// </summary>
+        /// <value>Describes working state of the current &#x60;Shift&#x60;. See [ShiftStatus](#type-shiftstatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If not provided, Square executes a blind write; potentially overwriting data from another write.
         /// </summary>

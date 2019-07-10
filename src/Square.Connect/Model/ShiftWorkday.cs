@@ -30,45 +30,12 @@ namespace Square.Connect.Model
     public partial class ShiftWorkday :  IEquatable<ShiftWorkday>, IValidatableObject
     {
         /// <summary>
-        /// The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values
-        /// </summary>
-        /// <value>The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum MatchShiftsByEnum
-        {
-            
-            /// <summary>
-            /// Enum STARTAT for "START_AT"
-            /// </summary>
-            [EnumMember(Value = "START_AT")]
-            STARTAT,
-            
-            /// <summary>
-            /// Enum ENDAT for "END_AT"
-            /// </summary>
-            [EnumMember(Value = "END_AT")]
-            ENDAT,
-            
-            /// <summary>
-            /// Enum INTERSECTION for "INTERSECTION"
-            /// </summary>
-            [EnumMember(Value = "INTERSECTION")]
-            INTERSECTION
-        }
-
-        /// <summary>
-        /// The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values
-        /// </summary>
-        /// <value>The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values</value>
-        [DataMember(Name="match_shifts_by", EmitDefaultValue=false)]
-        public MatchShiftsByEnum? MatchShiftsBy { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="ShiftWorkday" /> class.
         /// </summary>
         /// <param name="DateRange">Dates for fetching the shifts.</param>
         /// <param name="MatchShiftsBy">The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values.</param>
         /// <param name="DefaultTimezone">Location-specific timezones convert workdays to datetime filters. Every location included in the query must have a timezone, or this field must be provided as a fallback. Format: the IANA timezone database identifier for the relevant timezone..</param>
-        public ShiftWorkday(DateRange DateRange = default(DateRange), MatchShiftsByEnum? MatchShiftsBy = default(MatchShiftsByEnum?), string DefaultTimezone = default(string))
+        public ShiftWorkday(DateRange DateRange = default(DateRange), string MatchShiftsBy = default(string), string DefaultTimezone = default(string))
         {
             this.DateRange = DateRange;
             this.MatchShiftsBy = MatchShiftsBy;
@@ -81,6 +48,12 @@ namespace Square.Connect.Model
         /// <value>Dates for fetching the shifts</value>
         [DataMember(Name="date_range", EmitDefaultValue=false)]
         public DateRange DateRange { get; set; }
+        /// <summary>
+        /// The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values
+        /// </summary>
+        /// <value>The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values</value>
+        [DataMember(Name="match_shifts_by", EmitDefaultValue=false)]
+        public string MatchShiftsBy { get; set; }
         /// <summary>
         /// Location-specific timezones convert workdays to datetime filters. Every location included in the query must have a timezone, or this field must be provided as a fallback. Format: the IANA timezone database identifier for the relevant timezone.
         /// </summary>

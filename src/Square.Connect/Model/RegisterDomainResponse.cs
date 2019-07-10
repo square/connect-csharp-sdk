@@ -30,38 +30,11 @@ namespace Square.Connect.Model
     public partial class RegisterDomainResponse :  IEquatable<RegisterDomainResponse>, IValidatableObject
     {
         /// <summary>
-        /// Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values
-        /// </summary>
-        /// <value>Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum PENDING for "PENDING"
-            /// </summary>
-            [EnumMember(Value = "PENDING")]
-            PENDING,
-            
-            /// <summary>
-            /// Enum VERIFIED for "VERIFIED"
-            /// </summary>
-            [EnumMember(Value = "VERIFIED")]
-            VERIFIED
-        }
-
-        /// <summary>
-        /// Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values
-        /// </summary>
-        /// <value>Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="RegisterDomainResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
         /// <param name="Status">Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.</param>
-        public RegisterDomainResponse(List<Error> Errors = default(List<Error>), StatusEnum? Status = default(StatusEnum?))
+        public RegisterDomainResponse(List<Error> Errors = default(List<Error>), string Status = default(string))
         {
             this.Errors = Errors;
             this.Status = Status;
@@ -73,6 +46,12 @@ namespace Square.Connect.Model
         /// <value>Any errors that occurred during the request.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
+        /// <summary>
+        /// Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values
+        /// </summary>
+        /// <value>Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

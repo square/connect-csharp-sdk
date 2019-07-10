@@ -30,39 +30,6 @@ namespace Square.Connect.Model
     public partial class V1CashDrawerShift :  IEquatable<V1CashDrawerShift>, IValidatableObject
     {
         /// <summary>
-        /// The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values
-        /// </summary>
-        /// <value>The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EventTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum OPEN for "OPEN"
-            /// </summary>
-            [EnumMember(Value = "OPEN")]
-            OPEN,
-            
-            /// <summary>
-            /// Enum ENDED for "ENDED"
-            /// </summary>
-            [EnumMember(Value = "ENDED")]
-            ENDED,
-            
-            /// <summary>
-            /// Enum CLOSED for "CLOSED"
-            /// </summary>
-            [EnumMember(Value = "CLOSED")]
-            CLOSED
-        }
-
-        /// <summary>
-        /// The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values
-        /// </summary>
-        /// <value>The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values</value>
-        [DataMember(Name="event_type", EmitDefaultValue=false)]
-        public EventTypeEnum? EventType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1CashDrawerShift" /> class.
         /// </summary>
         /// <param name="Id">The shift&#39;s unique ID..</param>
@@ -84,7 +51,7 @@ namespace Square.Connect.Model
         /// <param name="ClosedCashMoney">The amount of money found in the cash drawer at the end of the shift by an auditing employee..</param>
         /// <param name="Device">The device running Square Register that was connected to the cash drawer..</param>
         /// <param name="Events">All of the events (payments, refunds, and so on) that involved the cash drawer during the shift..</param>
-        public V1CashDrawerShift(string Id = default(string), EventTypeEnum? EventType = default(EventTypeEnum?), string OpenedAt = default(string), string EndedAt = default(string), string ClosedAt = default(string), List<string> EmployeeIds = default(List<string>), string OpeningEmployeeId = default(string), string EndingEmployeeId = default(string), string ClosingEmployeeId = default(string), string Description = default(string), V1Money StartingCashMoney = default(V1Money), V1Money CashPaymentMoney = default(V1Money), V1Money CashRefundsMoney = default(V1Money), V1Money CashPaidInMoney = default(V1Money), V1Money CashPaidOutMoney = default(V1Money), V1Money ExpectedCashMoney = default(V1Money), V1Money ClosedCashMoney = default(V1Money), Device Device = default(Device), List<V1CashDrawerEvent> Events = default(List<V1CashDrawerEvent>))
+        public V1CashDrawerShift(string Id = default(string), string EventType = default(string), string OpenedAt = default(string), string EndedAt = default(string), string ClosedAt = default(string), List<string> EmployeeIds = default(List<string>), string OpeningEmployeeId = default(string), string EndingEmployeeId = default(string), string ClosingEmployeeId = default(string), string Description = default(string), V1Money StartingCashMoney = default(V1Money), V1Money CashPaymentMoney = default(V1Money), V1Money CashRefundsMoney = default(V1Money), V1Money CashPaidInMoney = default(V1Money), V1Money CashPaidOutMoney = default(V1Money), V1Money ExpectedCashMoney = default(V1Money), V1Money ClosedCashMoney = default(V1Money), Device Device = default(Device), List<V1CashDrawerEvent> Events = default(List<V1CashDrawerEvent>))
         {
             this.Id = Id;
             this.EventType = EventType;
@@ -113,6 +80,12 @@ namespace Square.Connect.Model
         /// <value>The shift&#39;s unique ID.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
+        /// <summary>
+        /// The shift&#39;s current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values
+        /// </summary>
+        /// <value>The shift&#39;s current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values</value>
+        [DataMember(Name="event_type", EmitDefaultValue=false)]
+        public string EventType { get; set; }
         /// <summary>
         /// The time when the shift began, in ISO 8601 format.
         /// </summary>

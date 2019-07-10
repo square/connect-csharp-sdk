@@ -30,45 +30,24 @@ namespace Square.Connect.Model
     public partial class V1ListOrdersRequest :  IEquatable<V1ListOrdersRequest>, IValidatableObject
     {
         /// <summary>
-        /// TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1ListOrdersRequest" /> class.
         /// </summary>
         /// <param name="Order">TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values.</param>
         /// <param name="Limit">The maximum number of payments to return in a single response. This value cannot exceed 200..</param>
         /// <param name="BatchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint..</param>
-        public V1ListOrdersRequest(OrderEnum? Order = default(OrderEnum?), int? Limit = default(int?), string BatchToken = default(string))
+        public V1ListOrdersRequest(string Order = default(string), int? Limit = default(int?), string BatchToken = default(string))
         {
             this.Order = Order;
             this.Limit = Limit;
             this.BatchToken = BatchToken;
         }
         
+        /// <summary>
+        /// TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// The maximum number of payments to return in a single response. This value cannot exceed 200.
         /// </summary>

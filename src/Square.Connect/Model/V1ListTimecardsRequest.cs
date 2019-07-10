@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class V1ListTimecardsRequest :  IEquatable<V1ListTimecardsRequest>, IValidatableObject
     {
         /// <summary>
-        /// The order in which timecards are listed in the response, based on their created_at field. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which timecards are listed in the response, based on their created_at field. See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum OrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The order in which timecards are listed in the response, based on their created_at field. See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which timecards are listed in the response, based on their created_at field. See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public OrderEnum? Order { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1ListTimecardsRequest" /> class.
         /// </summary>
         /// <param name="Order">The order in which timecards are listed in the response, based on their created_at field. See [SortOrder](#type-sortorder) for possible values.</param>
@@ -70,7 +43,7 @@ namespace Square.Connect.Model
         /// <param name="Deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned..</param>
         /// <param name="Limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200..</param>
         /// <param name="BatchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint..</param>
-        public V1ListTimecardsRequest(OrderEnum? Order = default(OrderEnum?), string EmployeeId = default(string), string BeginClockinTime = default(string), string EndClockinTime = default(string), string BeginClockoutTime = default(string), string EndClockoutTime = default(string), string BeginUpdatedAt = default(string), string EndUpdatedAt = default(string), bool? Deleted = default(bool?), int? Limit = default(int?), string BatchToken = default(string))
+        public V1ListTimecardsRequest(string Order = default(string), string EmployeeId = default(string), string BeginClockinTime = default(string), string EndClockinTime = default(string), string BeginClockoutTime = default(string), string EndClockoutTime = default(string), string BeginUpdatedAt = default(string), string EndUpdatedAt = default(string), bool? Deleted = default(bool?), int? Limit = default(int?), string BatchToken = default(string))
         {
             this.Order = Order;
             this.EmployeeId = EmployeeId;
@@ -85,6 +58,12 @@ namespace Square.Connect.Model
             this.BatchToken = BatchToken;
         }
         
+        /// <summary>
+        /// The order in which timecards are listed in the response, based on their created_at field. See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The order in which timecards are listed in the response, based on their created_at field. See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// If provided, the endpoint returns only timecards for the employee with the specified ID.
         /// </summary>

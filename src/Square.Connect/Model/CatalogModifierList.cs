@@ -30,39 +30,12 @@ namespace Square.Connect.Model
     public partial class CatalogModifierList :  IEquatable<CatalogModifierList>, IValidatableObject
     {
         /// <summary>
-        /// Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
-        /// </summary>
-        /// <value>Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SelectionTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum SINGLE for "SINGLE"
-            /// </summary>
-            [EnumMember(Value = "SINGLE")]
-            SINGLE,
-            
-            /// <summary>
-            /// Enum MULTIPLE for "MULTIPLE"
-            /// </summary>
-            [EnumMember(Value = "MULTIPLE")]
-            MULTIPLE
-        }
-
-        /// <summary>
-        /// Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
-        /// </summary>
-        /// <value>Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values</value>
-        [DataMember(Name="selection_type", EmitDefaultValue=false)]
-        public SelectionTypeEnum? SelectionType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifierList" /> class.
         /// </summary>
         /// <param name="Name">The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
         /// <param name="SelectionType">Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values.</param>
         /// <param name="Modifiers">The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data..</param>
-        public CatalogModifierList(string Name = default(string), SelectionTypeEnum? SelectionType = default(SelectionTypeEnum?), List<CatalogObject> Modifiers = default(List<CatalogObject>))
+        public CatalogModifierList(string Name = default(string), string SelectionType = default(string), List<CatalogObject> Modifiers = default(List<CatalogObject>))
         {
             this.Name = Name;
             this.SelectionType = SelectionType;
@@ -75,6 +48,12 @@ namespace Square.Connect.Model
         /// <value>The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
+        /// </summary>
+        /// <value>Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values</value>
+        [DataMember(Name="selection_type", EmitDefaultValue=false)]
+        public string SelectionType { get; set; }
         /// <summary>
         /// The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data.
         /// </summary>

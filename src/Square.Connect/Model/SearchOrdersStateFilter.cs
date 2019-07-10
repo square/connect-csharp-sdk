@@ -29,39 +29,6 @@ namespace Square.Connect.Model
     [DataContract]
     public partial class SearchOrdersStateFilter :  IEquatable<SearchOrdersStateFilter>, IValidatableObject
     {
-
-        /// <summary>
-        /// Gets or Sets States
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatesEnum
-        {
-            
-            /// <summary>
-            /// Enum OPEN for "OPEN"
-            /// </summary>
-            [EnumMember(Value = "OPEN")]
-            OPEN,
-            
-            /// <summary>
-            /// Enum COMPLETED for "COMPLETED"
-            /// </summary>
-            [EnumMember(Value = "COMPLETED")]
-            COMPLETED,
-            
-            /// <summary>
-            /// Enum CANCELED for "CANCELED"
-            /// </summary>
-            [EnumMember(Value = "CANCELED")]
-            CANCELED
-        }
-
-        /// <summary>
-        /// States to filter for. See [OrderState](#type-orderstate) for possible values
-        /// </summary>
-        /// <value>States to filter for. See [OrderState](#type-orderstate) for possible values</value>
-        [DataMember(Name="states", EmitDefaultValue=false)]
-        public List<StatesEnum> States { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersStateFilter" /> class.
         /// </summary>
@@ -71,7 +38,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="SearchOrdersStateFilter" /> class.
         /// </summary>
         /// <param name="States">States to filter for. See [OrderState](#type-orderstate) for possible values (required).</param>
-        public SearchOrdersStateFilter(List<StatesEnum> States = default(List<StatesEnum>))
+        public SearchOrdersStateFilter(List<string> States = default(List<string>))
         {
             // to ensure "States" is required (not null)
             if (States == null)
@@ -84,6 +51,12 @@ namespace Square.Connect.Model
             }
         }
         
+        /// <summary>
+        /// States to filter for. See [OrderState](#type-orderstate) for possible values
+        /// </summary>
+        /// <value>States to filter for. See [OrderState](#type-orderstate) for possible values</value>
+        [DataMember(Name="states", EmitDefaultValue=false)]
+        public List<string> States { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

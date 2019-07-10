@@ -30,57 +30,6 @@ namespace Square.Connect.Model
     public partial class V1PaymentItemization :  IEquatable<V1PaymentItemization>, IValidatableObject
     {
         /// <summary>
-        /// The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values
-        /// </summary>
-        /// <value>The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ItemizationTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum ITEM for "ITEM"
-            /// </summary>
-            [EnumMember(Value = "ITEM")]
-            ITEM,
-            
-            /// <summary>
-            /// Enum CUSTOMAMOUNT for "CUSTOM_AMOUNT"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM_AMOUNT")]
-            CUSTOMAMOUNT,
-            
-            /// <summary>
-            /// Enum GIFTCARDACTIVATION for "GIFT_CARD_ACTIVATION"
-            /// </summary>
-            [EnumMember(Value = "GIFT_CARD_ACTIVATION")]
-            GIFTCARDACTIVATION,
-            
-            /// <summary>
-            /// Enum GIFTCARDRELOAD for "GIFT_CARD_RELOAD"
-            /// </summary>
-            [EnumMember(Value = "GIFT_CARD_RELOAD")]
-            GIFTCARDRELOAD,
-            
-            /// <summary>
-            /// Enum GIFTCARDUNKNOWN for "GIFT_CARD_UNKNOWN"
-            /// </summary>
-            [EnumMember(Value = "GIFT_CARD_UNKNOWN")]
-            GIFTCARDUNKNOWN,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values
-        /// </summary>
-        /// <value>The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values</value>
-        [DataMember(Name="itemization_type", EmitDefaultValue=false)]
-        public ItemizationTypeEnum? ItemizationType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1PaymentItemization" /> class.
         /// </summary>
         /// <param name="Name">The item&#39;s name..</param>
@@ -97,7 +46,7 @@ namespace Square.Connect.Model
         /// <param name="Taxes">All taxes applied to this itemization..</param>
         /// <param name="Discounts">All discounts applied to this itemization..</param>
         /// <param name="Modifiers">All modifier options applied to this itemization..</param>
-        public V1PaymentItemization(string Name = default(string), decimal? Quantity = default(decimal?), ItemizationTypeEnum? ItemizationType = default(ItemizationTypeEnum?), V1PaymentItemDetail ItemDetail = default(V1PaymentItemDetail), string Notes = default(string), string ItemVariationName = default(string), V1Money TotalMoney = default(V1Money), V1Money SingleQuantityMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> Taxes = default(List<V1PaymentTax>), List<V1PaymentDiscount> Discounts = default(List<V1PaymentDiscount>), List<V1PaymentModifier> Modifiers = default(List<V1PaymentModifier>))
+        public V1PaymentItemization(string Name = default(string), decimal? Quantity = default(decimal?), string ItemizationType = default(string), V1PaymentItemDetail ItemDetail = default(V1PaymentItemDetail), string Notes = default(string), string ItemVariationName = default(string), V1Money TotalMoney = default(V1Money), V1Money SingleQuantityMoney = default(V1Money), V1Money GrossSalesMoney = default(V1Money), V1Money DiscountMoney = default(V1Money), V1Money NetSalesMoney = default(V1Money), List<V1PaymentTax> Taxes = default(List<V1PaymentTax>), List<V1PaymentDiscount> Discounts = default(List<V1PaymentDiscount>), List<V1PaymentModifier> Modifiers = default(List<V1PaymentModifier>))
         {
             this.Name = Name;
             this.Quantity = Quantity;
@@ -127,6 +76,12 @@ namespace Square.Connect.Model
         /// <value>The quantity of the item purchased. This can be a decimal value.</value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public decimal? Quantity { get; set; }
+        /// <summary>
+        /// The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values
+        /// </summary>
+        /// <value>The type of purchase that the itemization represents, such as an ITEM or CUSTOM_AMOUNT See [V1PaymentItemizationItemizationType](#type-v1paymentitemizationitemizationtype) for possible values</value>
+        [DataMember(Name="itemization_type", EmitDefaultValue=false)]
+        public string ItemizationType { get; set; }
         /// <summary>
         /// Details of the item, including its unique identifier and the identifier of the item variation purchased.
         /// </summary>

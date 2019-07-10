@@ -30,180 +30,6 @@ namespace Square.Connect.Model
     public partial class InventoryAdjustment :  IEquatable<InventoryAdjustment>, IValidatableObject
     {
         /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum FromStateEnum
-        {
-            
-            /// <summary>
-            /// Enum CUSTOM for "CUSTOM"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM")]
-            CUSTOM,
-            
-            /// <summary>
-            /// Enum INSTOCK for "IN_STOCK"
-            /// </summary>
-            [EnumMember(Value = "IN_STOCK")]
-            INSTOCK,
-            
-            /// <summary>
-            /// Enum SOLD for "SOLD"
-            /// </summary>
-            [EnumMember(Value = "SOLD")]
-            SOLD,
-            
-            /// <summary>
-            /// Enum RETURNEDBYCUSTOMER for "RETURNED_BY_CUSTOMER"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_BY_CUSTOMER")]
-            RETURNEDBYCUSTOMER,
-            
-            /// <summary>
-            /// Enum RESERVEDFORSALE for "RESERVED_FOR_SALE"
-            /// </summary>
-            [EnumMember(Value = "RESERVED_FOR_SALE")]
-            RESERVEDFORSALE,
-            
-            /// <summary>
-            /// Enum SOLDONLINE for "SOLD_ONLINE"
-            /// </summary>
-            [EnumMember(Value = "SOLD_ONLINE")]
-            SOLDONLINE,
-            
-            /// <summary>
-            /// Enum ORDEREDFROMVENDOR for "ORDERED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "ORDERED_FROM_VENDOR")]
-            ORDEREDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum RECEIVEDFROMVENDOR for "RECEIVED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "RECEIVED_FROM_VENDOR")]
-            RECEIVEDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum INTRANSITTO for "IN_TRANSIT_TO"
-            /// </summary>
-            [EnumMember(Value = "IN_TRANSIT_TO")]
-            INTRANSITTO,
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum WASTE for "WASTE"
-            /// </summary>
-            [EnumMember(Value = "WASTE")]
-            WASTE,
-            
-            /// <summary>
-            /// Enum UNLINKEDRETURN for "UNLINKED_RETURN"
-            /// </summary>
-            [EnumMember(Value = "UNLINKED_RETURN")]
-            UNLINKEDRETURN
-        }
-
-        /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ToStateEnum
-        {
-            
-            /// <summary>
-            /// Enum CUSTOM for "CUSTOM"
-            /// </summary>
-            [EnumMember(Value = "CUSTOM")]
-            CUSTOM,
-            
-            /// <summary>
-            /// Enum INSTOCK for "IN_STOCK"
-            /// </summary>
-            [EnumMember(Value = "IN_STOCK")]
-            INSTOCK,
-            
-            /// <summary>
-            /// Enum SOLD for "SOLD"
-            /// </summary>
-            [EnumMember(Value = "SOLD")]
-            SOLD,
-            
-            /// <summary>
-            /// Enum RETURNEDBYCUSTOMER for "RETURNED_BY_CUSTOMER"
-            /// </summary>
-            [EnumMember(Value = "RETURNED_BY_CUSTOMER")]
-            RETURNEDBYCUSTOMER,
-            
-            /// <summary>
-            /// Enum RESERVEDFORSALE for "RESERVED_FOR_SALE"
-            /// </summary>
-            [EnumMember(Value = "RESERVED_FOR_SALE")]
-            RESERVEDFORSALE,
-            
-            /// <summary>
-            /// Enum SOLDONLINE for "SOLD_ONLINE"
-            /// </summary>
-            [EnumMember(Value = "SOLD_ONLINE")]
-            SOLDONLINE,
-            
-            /// <summary>
-            /// Enum ORDEREDFROMVENDOR for "ORDERED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "ORDERED_FROM_VENDOR")]
-            ORDEREDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum RECEIVEDFROMVENDOR for "RECEIVED_FROM_VENDOR"
-            /// </summary>
-            [EnumMember(Value = "RECEIVED_FROM_VENDOR")]
-            RECEIVEDFROMVENDOR,
-            
-            /// <summary>
-            /// Enum INTRANSITTO for "IN_TRANSIT_TO"
-            /// </summary>
-            [EnumMember(Value = "IN_TRANSIT_TO")]
-            INTRANSITTO,
-            
-            /// <summary>
-            /// Enum NONE for "NONE"
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE,
-            
-            /// <summary>
-            /// Enum WASTE for "WASTE"
-            /// </summary>
-            [EnumMember(Value = "WASTE")]
-            WASTE,
-            
-            /// <summary>
-            /// Enum UNLINKEDRETURN for "UNLINKED_RETURN"
-            /// </summary>
-            [EnumMember(Value = "UNLINKED_RETURN")]
-            UNLINKEDRETURN
-        }
-
-        /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [DataMember(Name="from_state", EmitDefaultValue=false)]
-        public FromStateEnum? FromState { get; set; }
-        /// <summary>
-        /// The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
-        /// </summary>
-        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
-        [DataMember(Name="to_state", EmitDefaultValue=false)]
-        public ToStateEnum? ToState { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="InventoryAdjustment" /> class.
         /// </summary>
         /// <param name="Id">A unique ID generated by Square for the [InventoryAdjustment](#type-inventoryadjustment)..</param>
@@ -213,7 +39,7 @@ namespace Square.Connect.Model
         /// <param name="LocationId">The Square ID of the [Location](#type-location) where the related quantity of items are being tracked..</param>
         /// <param name="CatalogObjectId">The Square generated ID of the [CatalogObject](#type-catalogobject) being tracked..</param>
         /// <param name="CatalogObjectType">The [CatalogObjectType](#type-catalogobjecttype) of the [CatalogObject](#type-catalogobject) being tracked. Tracking is only supported for the &#x60;ITEM_VARIATION&#x60; type..</param>
-        /// <param name="Quantity">The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;. Read [Decimal Quantities (BETA)](/more-apis/inventory/overview#decimal-quantities-beta) for more information..</param>
+        /// <param name="Quantity">The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;.  Read [Decimal Quantities (BETA)](/orders-api/what-it-does#decimal-quantities) for more information..</param>
         /// <param name="TotalPriceMoney">The read-only total price paid for goods associated with the adjustment. Present if and only if &#x60;to_state&#x60; is &#x60;SOLD&#x60;. Always non-negative..</param>
         /// <param name="OccurredAt">A client-generated timestamp in RFC 3339 format that indicates when the adjustment took place. For write actions, the &#x60;occurred_at&#x60; timestamp cannot be older than 24 hours or in the future relative to the time of the request..</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format that indicates when Square received the adjustment..</param>
@@ -223,7 +49,7 @@ namespace Square.Connect.Model
         /// <param name="RefundId">The read-only Square ID of the [Refund][#type-refund] that caused the adjustment. Only relevant for refund-related state transitions..</param>
         /// <param name="PurchaseOrderId">The read-only Square ID of the purchase order that caused the adjustment. Only relevant for state transitions from the Square for Retail app..</param>
         /// <param name="GoodsReceiptId">The read-only Square ID of the Square goods receipt that caused the adjustment. Only relevant for state transitions from the Square for Retail app..</param>
-        public InventoryAdjustment(string Id = default(string), string ReferenceId = default(string), FromStateEnum? FromState = default(FromStateEnum?), ToStateEnum? ToState = default(ToStateEnum?), string LocationId = default(string), string CatalogObjectId = default(string), string CatalogObjectType = default(string), string Quantity = default(string), Money TotalPriceMoney = default(Money), string OccurredAt = default(string), string CreatedAt = default(string), SourceApplication Source = default(SourceApplication), string EmployeeId = default(string), string TransactionId = default(string), string RefundId = default(string), string PurchaseOrderId = default(string), string GoodsReceiptId = default(string))
+        public InventoryAdjustment(string Id = default(string), string ReferenceId = default(string), string FromState = default(string), string ToState = default(string), string LocationId = default(string), string CatalogObjectId = default(string), string CatalogObjectType = default(string), string Quantity = default(string), Money TotalPriceMoney = default(Money), string OccurredAt = default(string), string CreatedAt = default(string), SourceApplication Source = default(SourceApplication), string EmployeeId = default(string), string TransactionId = default(string), string RefundId = default(string), string PurchaseOrderId = default(string), string GoodsReceiptId = default(string))
         {
             this.Id = Id;
             this.ReferenceId = ReferenceId;
@@ -257,6 +83,18 @@ namespace Square.Connect.Model
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
         /// <summary>
+        /// The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
+        /// </summary>
+        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
+        [DataMember(Name="from_state", EmitDefaultValue=false)]
+        public string FromState { get; set; }
+        /// <summary>
+        /// The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
+        /// </summary>
+        /// <value>The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values</value>
+        [DataMember(Name="to_state", EmitDefaultValue=false)]
+        public string ToState { get; set; }
+        /// <summary>
         /// The Square ID of the [Location](#type-location) where the related quantity of items are being tracked.
         /// </summary>
         /// <value>The Square ID of the [Location](#type-location) where the related quantity of items are being tracked.</value>
@@ -275,9 +113,9 @@ namespace Square.Connect.Model
         [DataMember(Name="catalog_object_type", EmitDefaultValue=false)]
         public string CatalogObjectType { get; set; }
         /// <summary>
-        /// The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;. Read [Decimal Quantities (BETA)](/more-apis/inventory/overview#decimal-quantities-beta) for more information.
+        /// The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;.  Read [Decimal Quantities (BETA)](/orders-api/what-it-does#decimal-quantities) for more information.
         /// </summary>
-        /// <value>The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;. Read [Decimal Quantities (BETA)](/more-apis/inventory/overview#decimal-quantities-beta) for more information.</value>
+        /// <value>The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.  _Important_: The Point of Sale app and Dashboard do not currently support decimal quantities. If a Point of Sale app or Dashboard attempts to read a decimal quantity on inventory counts or adjustments, the quantity will be rounded down to the nearest integer. For example, &#x60;2.5&#x60; will become &#x60;2&#x60;, and &#x60;-2.5&#x60; will become &#x60;-3&#x60;.  Read [Decimal Quantities (BETA)](/orders-api/what-it-does#decimal-quantities) for more information.</value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
         /// <summary>

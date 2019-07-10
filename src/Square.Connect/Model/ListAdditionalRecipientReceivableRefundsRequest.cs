@@ -30,40 +30,13 @@ namespace Square.Connect.Model
     public partial class ListAdditionalRecipientReceivableRefundsRequest :  IEquatable<ListAdditionalRecipientReceivableRefundsRequest>, IValidatableObject
     {
         /// <summary>
-        /// The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC` See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC` See [SortOrder](#type-sortorder) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SortOrderEnum
-        {
-            
-            /// <summary>
-            /// Enum DESC for "DESC"
-            /// </summary>
-            [EnumMember(Value = "DESC")]
-            DESC,
-            
-            /// <summary>
-            /// Enum ASC for "ASC"
-            /// </summary>
-            [EnumMember(Value = "ASC")]
-            ASC
-        }
-
-        /// <summary>
-        /// The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC` See [SortOrder](#type-sortorder) for possible values
-        /// </summary>
-        /// <value>The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC` See [SortOrder](#type-sortorder) for possible values</value>
-        [DataMember(Name="sort_order", EmitDefaultValue=false)]
-        public SortOrderEnum? SortOrder { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="ListAdditionalRecipientReceivableRefundsRequest" /> class.
         /// </summary>
         /// <param name="BeginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year..</param>
         /// <param name="EndTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time..</param>
         /// <param name="SortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; See [SortOrder](#type-sortorder) for possible values.</param>
         /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information..</param>
-        public ListAdditionalRecipientReceivableRefundsRequest(string BeginTime = default(string), string EndTime = default(string), SortOrderEnum? SortOrder = default(SortOrderEnum?), string Cursor = default(string))
+        public ListAdditionalRecipientReceivableRefundsRequest(string BeginTime = default(string), string EndTime = default(string), string SortOrder = default(string), string Cursor = default(string))
         {
             this.BeginTime = BeginTime;
             this.EndTime = EndTime;
@@ -83,6 +56,12 @@ namespace Square.Connect.Model
         /// <value>The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.</value>
         [DataMember(Name="end_time", EmitDefaultValue=false)]
         public string EndTime { get; set; }
+        /// <summary>
+        /// The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; See [SortOrder](#type-sortorder) for possible values
+        /// </summary>
+        /// <value>The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; See [SortOrder](#type-sortorder) for possible values</value>
+        [DataMember(Name="sort_order", EmitDefaultValue=false)]
+        public string SortOrder { get; set; }
         /// <summary>
         /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information.
         /// </summary>

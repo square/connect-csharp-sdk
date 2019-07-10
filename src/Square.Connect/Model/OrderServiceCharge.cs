@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class OrderServiceCharge :  IEquatable<OrderServiceCharge>, IValidatableObject
     {
         /// <summary>
-        /// The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
-        /// </summary>
-        /// <value>The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum CalculationPhaseEnum
-        {
-            
-            /// <summary>
-            /// Enum SUBTOTALPHASE for "SUBTOTAL_PHASE"
-            /// </summary>
-            [EnumMember(Value = "SUBTOTAL_PHASE")]
-            SUBTOTALPHASE,
-            
-            /// <summary>
-            /// Enum TOTALPHASE for "TOTAL_PHASE"
-            /// </summary>
-            [EnumMember(Value = "TOTAL_PHASE")]
-            TOTALPHASE
-        }
-
-        /// <summary>
-        /// The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
-        /// </summary>
-        /// <value>The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values</value>
-        [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
-        public CalculationPhaseEnum? CalculationPhase { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="OrderServiceCharge" /> class.
         /// </summary>
         /// <param name="Uid">Unique ID that identifies the service charge only within this order.  This field is read-only..</param>
@@ -70,7 +43,7 @@ namespace Square.Connect.Model
         /// <param name="CalculationPhase">The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values.</param>
         /// <param name="Taxable">Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, any order-level taxes will automatically apply to this service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable..</param>
         /// <param name="Taxes">Taxes applied to the service charge. By default, order-level taxes apply to service charges calculated in the &#x60;SUBTOTAL_PHASE&#x60; if &#x60;taxable&#x60; is set to &#x60;true&#x60;..</param>
-        public OrderServiceCharge(string Uid = default(string), string Name = default(string), string CatalogObjectId = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), CalculationPhaseEnum? CalculationPhase = default(CalculationPhaseEnum?), bool? Taxable = default(bool?), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>))
+        public OrderServiceCharge(string Uid = default(string), string Name = default(string), string CatalogObjectId = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), string CalculationPhase = default(string), bool? Taxable = default(bool?), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>))
         {
             this.Uid = Uid;
             this.Name = Name;
@@ -133,6 +106,12 @@ namespace Square.Connect.Model
         /// <value>The total amount of tax money to collect for the service charge.  This field is read-only.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
+        /// <summary>
+        /// The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
+        /// </summary>
+        /// <value>The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values</value>
+        [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
+        public string CalculationPhase { get; set; }
         /// <summary>
         /// Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, any order-level taxes will automatically apply to this service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable.
         /// </summary>

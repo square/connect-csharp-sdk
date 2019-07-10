@@ -30,135 +30,6 @@ namespace Square.Connect.Model
     public partial class Customer :  IEquatable<Customer>, IValidatableObject
     {
         /// <summary>
-        /// A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values
-        /// </summary>
-        /// <value>A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum CreationSourceEnum
-        {
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER,
-            
-            /// <summary>
-            /// Enum APPOINTMENTS for "APPOINTMENTS"
-            /// </summary>
-            [EnumMember(Value = "APPOINTMENTS")]
-            APPOINTMENTS,
-            
-            /// <summary>
-            /// Enum COUPON for "COUPON"
-            /// </summary>
-            [EnumMember(Value = "COUPON")]
-            COUPON,
-            
-            /// <summary>
-            /// Enum DELETIONRECOVERY for "DELETION_RECOVERY"
-            /// </summary>
-            [EnumMember(Value = "DELETION_RECOVERY")]
-            DELETIONRECOVERY,
-            
-            /// <summary>
-            /// Enum DIRECTORY for "DIRECTORY"
-            /// </summary>
-            [EnumMember(Value = "DIRECTORY")]
-            DIRECTORY,
-            
-            /// <summary>
-            /// Enum EGIFTING for "EGIFTING"
-            /// </summary>
-            [EnumMember(Value = "EGIFTING")]
-            EGIFTING,
-            
-            /// <summary>
-            /// Enum EMAILCOLLECTION for "EMAIL_COLLECTION"
-            /// </summary>
-            [EnumMember(Value = "EMAIL_COLLECTION")]
-            EMAILCOLLECTION,
-            
-            /// <summary>
-            /// Enum FEEDBACK for "FEEDBACK"
-            /// </summary>
-            [EnumMember(Value = "FEEDBACK")]
-            FEEDBACK,
-            
-            /// <summary>
-            /// Enum IMPORT for "IMPORT"
-            /// </summary>
-            [EnumMember(Value = "IMPORT")]
-            IMPORT,
-            
-            /// <summary>
-            /// Enum INVOICES for "INVOICES"
-            /// </summary>
-            [EnumMember(Value = "INVOICES")]
-            INVOICES,
-            
-            /// <summary>
-            /// Enum LOYALTY for "LOYALTY"
-            /// </summary>
-            [EnumMember(Value = "LOYALTY")]
-            LOYALTY,
-            
-            /// <summary>
-            /// Enum MARKETING for "MARKETING"
-            /// </summary>
-            [EnumMember(Value = "MARKETING")]
-            MARKETING,
-            
-            /// <summary>
-            /// Enum MERGE for "MERGE"
-            /// </summary>
-            [EnumMember(Value = "MERGE")]
-            MERGE,
-            
-            /// <summary>
-            /// Enum ONLINESTORE for "ONLINE_STORE"
-            /// </summary>
-            [EnumMember(Value = "ONLINE_STORE")]
-            ONLINESTORE,
-            
-            /// <summary>
-            /// Enum INSTANTPROFILE for "INSTANT_PROFILE"
-            /// </summary>
-            [EnumMember(Value = "INSTANT_PROFILE")]
-            INSTANTPROFILE,
-            
-            /// <summary>
-            /// Enum TERMINAL for "TERMINAL"
-            /// </summary>
-            [EnumMember(Value = "TERMINAL")]
-            TERMINAL,
-            
-            /// <summary>
-            /// Enum THIRDPARTY for "THIRD_PARTY"
-            /// </summary>
-            [EnumMember(Value = "THIRD_PARTY")]
-            THIRDPARTY,
-            
-            /// <summary>
-            /// Enum THIRDPARTYIMPORT for "THIRD_PARTY_IMPORT"
-            /// </summary>
-            [EnumMember(Value = "THIRD_PARTY_IMPORT")]
-            THIRDPARTYIMPORT,
-            
-            /// <summary>
-            /// Enum UNMERGERECOVERY for "UNMERGE_RECOVERY"
-            /// </summary>
-            [EnumMember(Value = "UNMERGE_RECOVERY")]
-            UNMERGERECOVERY
-        }
-
-        /// <summary>
-        /// A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values
-        /// </summary>
-        /// <value>A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values</value>
-        [DataMember(Name="creation_source", EmitDefaultValue=false)]
-        public CreationSourceEnum? CreationSource { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="Customer" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -183,7 +54,7 @@ namespace Square.Connect.Model
         /// <param name="Preferences">The customer&#39;s preferences..</param>
         /// <param name="Groups">The groups the customer belongs to..</param>
         /// <param name="CreationSource">A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values.</param>
-        public Customer(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), List<Card> Cards = default(List<Card>), string GivenName = default(string), string FamilyName = default(string), string Nickname = default(string), string CompanyName = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string Birthday = default(string), string ReferenceId = default(string), string Note = default(string), CustomerPreferences Preferences = default(CustomerPreferences), List<CustomerGroupInfo> Groups = default(List<CustomerGroupInfo>), CreationSourceEnum? CreationSource = default(CreationSourceEnum?))
+        public Customer(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), List<Card> Cards = default(List<Card>), string GivenName = default(string), string FamilyName = default(string), string Nickname = default(string), string CompanyName = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string Birthday = default(string), string ReferenceId = default(string), string Note = default(string), CustomerPreferences Preferences = default(CustomerPreferences), List<CustomerGroupInfo> Groups = default(List<CustomerGroupInfo>), string CreationSource = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -324,6 +195,12 @@ namespace Square.Connect.Model
         /// <value>The groups the customer belongs to.</value>
         [DataMember(Name="groups", EmitDefaultValue=false)]
         public List<CustomerGroupInfo> Groups { get; set; }
+        /// <summary>
+        /// A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values
+        /// </summary>
+        /// <value>A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values</value>
+        [DataMember(Name="creation_source", EmitDefaultValue=false)]
+        public string CreationSource { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

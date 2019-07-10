@@ -30,57 +30,6 @@ namespace Square.Connect.Model
     public partial class Tender :  IEquatable<Tender>, IValidatableObject
     {
         /// <summary>
-        /// The type of tender, such as `CARD` or `CASH`. See [TenderType](#type-tendertype) for possible values
-        /// </summary>
-        /// <value>The type of tender, such as `CARD` or `CASH`. See [TenderType](#type-tendertype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum CARD for "CARD"
-            /// </summary>
-            [EnumMember(Value = "CARD")]
-            CARD,
-            
-            /// <summary>
-            /// Enum CASH for "CASH"
-            /// </summary>
-            [EnumMember(Value = "CASH")]
-            CASH,
-            
-            /// <summary>
-            /// Enum THIRDPARTYCARD for "THIRD_PARTY_CARD"
-            /// </summary>
-            [EnumMember(Value = "THIRD_PARTY_CARD")]
-            THIRDPARTYCARD,
-            
-            /// <summary>
-            /// Enum SQUAREGIFTCARD for "SQUARE_GIFT_CARD"
-            /// </summary>
-            [EnumMember(Value = "SQUARE_GIFT_CARD")]
-            SQUAREGIFTCARD,
-            
-            /// <summary>
-            /// Enum NOSALE for "NO_SALE"
-            /// </summary>
-            [EnumMember(Value = "NO_SALE")]
-            NOSALE,
-            
-            /// <summary>
-            /// Enum OTHER for "OTHER"
-            /// </summary>
-            [EnumMember(Value = "OTHER")]
-            OTHER
-        }
-
-        /// <summary>
-        /// The type of tender, such as `CARD` or `CASH`. See [TenderType](#type-tendertype) for possible values
-        /// </summary>
-        /// <value>The type of tender, such as `CARD` or `CASH`. See [TenderType](#type-tendertype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="Tender" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -101,7 +50,7 @@ namespace Square.Connect.Model
         /// <param name="CardDetails">The details of the card tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CARD&#x60;..</param>
         /// <param name="CashDetails">The details of the cash tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CASH&#x60;..</param>
         /// <param name="AdditionalRecipients">Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration..</param>
-        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money TipMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), TypeEnum? Type = default(TypeEnum?), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
+        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money TipMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), string Type = default(string), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -180,6 +129,12 @@ namespace Square.Connect.Model
         /// <value>If the tender is associated with a customer or represents a customer&#39;s card on file, this is the ID of the associated customer.</value>
         [DataMember(Name="customer_id", EmitDefaultValue=false)]
         public string CustomerId { get; set; }
+        /// <summary>
+        /// The type of tender, such as &#x60;CARD&#x60; or &#x60;CASH&#x60;. See [TenderType](#type-tendertype) for possible values
+        /// </summary>
+        /// <value>The type of tender, such as &#x60;CARD&#x60; or &#x60;CASH&#x60;. See [TenderType](#type-tendertype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
         /// <summary>
         /// The details of the card tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CARD&#x60;.
         /// </summary>

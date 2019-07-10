@@ -30,72 +30,6 @@ namespace Square.Connect.Model
     public partial class OrderReturnTax :  IEquatable<OrderReturnTax>, IValidatableObject
     {
         /// <summary>
-        /// Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
-        /// </summary>
-        /// <value>Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum UNKNOWNTAX for "UNKNOWN_TAX"
-            /// </summary>
-            [EnumMember(Value = "UNKNOWN_TAX")]
-            UNKNOWNTAX,
-            
-            /// <summary>
-            /// Enum ADDITIVE for "ADDITIVE"
-            /// </summary>
-            [EnumMember(Value = "ADDITIVE")]
-            ADDITIVE,
-            
-            /// <summary>
-            /// Enum INCLUSIVE for "INCLUSIVE"
-            /// </summary>
-            [EnumMember(Value = "INCLUSIVE")]
-            INCLUSIVE
-        }
-
-        /// <summary>
-        /// Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
-        /// </summary>
-        /// <value>Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ScopeEnum
-        {
-            
-            /// <summary>
-            /// Enum OTHERTAXSCOPE for "OTHER_TAX_SCOPE"
-            /// </summary>
-            [EnumMember(Value = "OTHER_TAX_SCOPE")]
-            OTHERTAXSCOPE,
-            
-            /// <summary>
-            /// Enum LINEITEM for "LINE_ITEM"
-            /// </summary>
-            [EnumMember(Value = "LINE_ITEM")]
-            LINEITEM,
-            
-            /// <summary>
-            /// Enum ORDER for "ORDER"
-            /// </summary>
-            [EnumMember(Value = "ORDER")]
-            ORDER
-        }
-
-        /// <summary>
-        /// Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
-        /// </summary>
-        /// <value>Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
-        /// Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
-        /// </summary>
-        /// <value>Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values</value>
-        [DataMember(Name="scope", EmitDefaultValue=false)]
-        public ScopeEnum? Scope { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturnTax" /> class.
         /// </summary>
         /// <param name="Uid">Unique ID that identifies the return tax only within this order.  This field is read-only..</param>
@@ -106,7 +40,7 @@ namespace Square.Connect.Model
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%..</param>
         /// <param name="AppliedMoney">The amount of the money applied by the tax in an order..</param>
         /// <param name="Scope">Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.</param>
-        public OrderReturnTax(string Uid = default(string), string SourceTaxUid = default(string), string CatalogObjectId = default(string), string Name = default(string), TypeEnum? Type = default(TypeEnum?), string Percentage = default(string), Money AppliedMoney = default(Money), ScopeEnum? Scope = default(ScopeEnum?))
+        public OrderReturnTax(string Uid = default(string), string SourceTaxUid = default(string), string CatalogObjectId = default(string), string Name = default(string), string Type = default(string), string Percentage = default(string), Money AppliedMoney = default(Money), string Scope = default(string))
         {
             this.Uid = Uid;
             this.SourceTaxUid = SourceTaxUid;
@@ -143,6 +77,12 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
+        /// </summary>
+        /// <value>Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
+        /// <summary>
         /// The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.
         /// </summary>
         /// <value>The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.</value>
@@ -154,6 +94,12 @@ namespace Square.Connect.Model
         /// <value>The amount of the money applied by the tax in an order.</value>
         [DataMember(Name="applied_money", EmitDefaultValue=false)]
         public Money AppliedMoney { get; set; }
+        /// <summary>
+        /// Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
+        /// </summary>
+        /// <value>Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values</value>
+        [DataMember(Name="scope", EmitDefaultValue=false)]
+        public string Scope { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

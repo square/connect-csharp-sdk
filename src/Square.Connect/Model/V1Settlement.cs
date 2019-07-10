@@ -30,33 +30,6 @@ namespace Square.Connect.Model
     public partial class V1Settlement :  IEquatable<V1Settlement>, IValidatableObject
     {
         /// <summary>
-        /// The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values
-        /// </summary>
-        /// <value>The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            
-            /// <summary>
-            /// Enum FAILED for "FAILED"
-            /// </summary>
-            [EnumMember(Value = "FAILED")]
-            FAILED,
-            
-            /// <summary>
-            /// Enum SENT for "SENT"
-            /// </summary>
-            [EnumMember(Value = "SENT")]
-            SENT
-        }
-
-        /// <summary>
-        /// The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values
-        /// </summary>
-        /// <value>The settlement's current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="V1Settlement" /> class.
         /// </summary>
         /// <param name="Id">The settlement&#39;s unique identifier..</param>
@@ -65,7 +38,7 @@ namespace Square.Connect.Model
         /// <param name="InitiatedAt">The time when the settlement was submitted for deposit or withdrawal, in ISO 8601 format..</param>
         /// <param name="BankAccountId">The Square-issued unique identifier for the bank account associated with the settlement..</param>
         /// <param name="Entries">The entries included in this settlement..</param>
-        public V1Settlement(string Id = default(string), StatusEnum? Status = default(StatusEnum?), V1Money TotalMoney = default(V1Money), string InitiatedAt = default(string), string BankAccountId = default(string), List<V1SettlementEntry> Entries = default(List<V1SettlementEntry>))
+        public V1Settlement(string Id = default(string), string Status = default(string), V1Money TotalMoney = default(V1Money), string InitiatedAt = default(string), string BankAccountId = default(string), List<V1SettlementEntry> Entries = default(List<V1SettlementEntry>))
         {
             this.Id = Id;
             this.Status = Status;
@@ -81,6 +54,12 @@ namespace Square.Connect.Model
         /// <value>The settlement&#39;s unique identifier.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
+        /// <summary>
+        /// The settlement&#39;s current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values
+        /// </summary>
+        /// <value>The settlement&#39;s current status. See [V1SettlementStatus](#type-v1settlementstatus) for possible values</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
         /// <summary>
         /// The amount of money involved in the settlement. A positive amount indicates a deposit, and a negative amount indicates a withdrawal. This amount is never zero.
         /// </summary>

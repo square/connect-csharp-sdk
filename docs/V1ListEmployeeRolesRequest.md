@@ -8,17 +8,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Order** | **OrderEnum** | The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values | [optional] 
+**Order** | **string** | The order in which employees are listed in the response, based on their created_at field.Default value: ASC See [SortOrder](#type-sortorder) for possible values | [optional] 
 **Limit** | **int?** | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional] 
 **BatchToken** | **string** | A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional] 
-
-
-## OrderEnum
-
-Name | Value
------------- | -------------
-**DESC** | "DESC"
-**ASC** | "ASC"
 
 
 

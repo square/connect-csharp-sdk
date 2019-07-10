@@ -83,7 +83,7 @@ namespace Square.Connect.Test
 						new CreateOrderRequestLineItem(
 							Name: "Printed T Shirt",
 							Quantity: "2",
-							BasePriceMoney: new Money(Amount: 1500, Currency: Money.CurrencyEnum.USD),
+							BasePriceMoney: new Money(Amount: 1500, Currency: "USD"),
 							Discounts: new List<CreateOrderRequestDiscount>() {
 								new CreateOrderRequestDiscount(
 									Name: "7% off previous season item",
@@ -91,23 +91,23 @@ namespace Square.Connect.Test
 								),
 								new CreateOrderRequestDiscount(
 									Name: "$3 off Customer Discount",
-									AmountMoney: new Money(300, Money.CurrencyEnum.USD)
+									AmountMoney: new Money(300, "USD")
 								)
 							}
 						),
 						new CreateOrderRequestLineItem(
 							Name: "Slim Jeans",
 							Quantity: "1",
-							BasePriceMoney: new Money(Amount: 2500, Currency: Money.CurrencyEnum.USD)
+							BasePriceMoney: new Money(Amount: 2500, Currency: "USD")
 						),
 						new CreateOrderRequestLineItem(
 							Name: "Woven Sweater",
 							Quantity: "3",
-							BasePriceMoney: new Money(Amount: 3500, Currency: Money.CurrencyEnum.USD),
+							BasePriceMoney: new Money(Amount: 3500, Currency: "USD"),
 							Discounts: new List<CreateOrderRequestDiscount>() {
 								new CreateOrderRequestDiscount(
 									Name: "$11 off Customer Discount",
-									AmountMoney: new Money(1100, Money.CurrencyEnum.USD)
+									AmountMoney: new Money(1100, "USD")
 								)
 							},
 							Taxes: new List<CreateOrderRequestTax>() {
@@ -125,7 +125,7 @@ namespace Square.Connect.Test
 					),
 					new CreateOrderRequestDiscount(
 						Name: "Global Sales $55 OFF",
-						AmountMoney: new Money(5500, Money.CurrencyEnum.USD)
+						AmountMoney: new Money(5500, "USD")
 					)
 				},
 				Taxes: new List<CreateOrderRequestTax>() {
@@ -145,11 +145,11 @@ namespace Square.Connect.Test
 			Assert.AreEqual(locationId, actual.LocationId);
 			Assert.AreEqual(3, actual.LineItems.Count);
 			Assert.AreEqual(7818, actual.TotalMoney.Amount);
-			Assert.AreEqual(Money.CurrencyEnum.USD, actual.TotalMoney.Currency);
+			Assert.AreEqual("USD", actual.TotalMoney.Currency);
 			Assert.AreEqual(823, actual.TotalTaxMoney.Amount);
-			Assert.AreEqual(Money.CurrencyEnum.USD, actual.TotalTaxMoney.Currency);
+			Assert.AreEqual("USD", actual.TotalTaxMoney.Currency);
 			Assert.AreEqual(9005, actual.TotalDiscountMoney.Amount);
-			Assert.AreEqual(Money.CurrencyEnum.USD, actual.TotalDiscountMoney.Currency);
+			Assert.AreEqual("USD", actual.TotalDiscountMoney.Currency);
 		}
 	}
 }
