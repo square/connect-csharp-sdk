@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **PricingRuleData** | [**CatalogPricingRule**](CatalogPricingRule.md) | Structured data for a [CatalogPricingRule](#type-catalogpricingrule), set for CatalogObjects of type &#x60;PRICING_RULE&#x60;. | [optional] 
 **ImageData** | [**CatalogImage**](CatalogImage.md) | Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;. | [optional] 
 **MeasurementUnitData** | [**CatalogMeasurementUnit**](CatalogMeasurementUnit.md) | Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;. | [optional] 
+**ItemOptionData** | [**CatalogItemOption**](CatalogItemOption.md) | Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;. | [optional] 
+**ItemOptionValueData** | [**CatalogItemOptionValue**](CatalogItemOptionValue.md) | Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;. | [optional] 
 
 
 

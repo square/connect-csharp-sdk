@@ -39,7 +39,9 @@ namespace Square.Connect.Model
         /// <param name="TextQuery">A query that returns only objects whose searchable attributes contain all of the given keywords as prefixes. For example, if a [CatalogItem](#type-catalogitem) contains attributes &#x60;{\&quot;name\&quot;: \&quot;t-shirt\&quot;}&#x60; and &#x60;{\&quot;description\&quot;: \&quot;Small, Purple\&quot;}&#x60;, it will be matched by the query &#x60;{\&quot;keywords\&quot;: [\&quot;shirt\&quot;, \&quot;sma\&quot;, \&quot;purp\&quot;]}&#x60;..</param>
         /// <param name="ItemsForTaxQuery">A query that returns all [CatalogItem](#type-catalogitem)s that have any of the given [CatalogTax](#type-catalogtax)es enabled..</param>
         /// <param name="ItemsForModifierListQuery">A query that returns all [CatalogItem](#type-catalogitem)s that have any of the given [CatalogModifierList](#type-catalogmodifierlist)s enabled..</param>
-        public CatalogQuery(CatalogQuerySortedAttribute SortedAttributeQuery = default(CatalogQuerySortedAttribute), CatalogQueryExact ExactQuery = default(CatalogQueryExact), CatalogQueryPrefix PrefixQuery = default(CatalogQueryPrefix), CatalogQueryRange RangeQuery = default(CatalogQueryRange), CatalogQueryText TextQuery = default(CatalogQueryText), CatalogQueryItemsForTax ItemsForTaxQuery = default(CatalogQueryItemsForTax), CatalogQueryItemsForModifierList ItemsForModifierListQuery = default(CatalogQueryItemsForModifierList))
+        /// <param name="ItemsForItemOptionsQuery">A query that returns all [CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption](#type-catalogitemoption)s..</param>
+        /// <param name="ItemVariationsForItemOptionValuesQuery">A query that returns all [CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption](#type-catalogitemoption) values..</param>
+        public CatalogQuery(CatalogQuerySortedAttribute SortedAttributeQuery = default(CatalogQuerySortedAttribute), CatalogQueryExact ExactQuery = default(CatalogQueryExact), CatalogQueryPrefix PrefixQuery = default(CatalogQueryPrefix), CatalogQueryRange RangeQuery = default(CatalogQueryRange), CatalogQueryText TextQuery = default(CatalogQueryText), CatalogQueryItemsForTax ItemsForTaxQuery = default(CatalogQueryItemsForTax), CatalogQueryItemsForModifierList ItemsForModifierListQuery = default(CatalogQueryItemsForModifierList), CatalogQueryItemsForItemOptions ItemsForItemOptionsQuery = default(CatalogQueryItemsForItemOptions), CatalogQueryItemVariationsForItemOptionValues ItemVariationsForItemOptionValuesQuery = default(CatalogQueryItemVariationsForItemOptionValues))
         {
             this.SortedAttributeQuery = SortedAttributeQuery;
             this.ExactQuery = ExactQuery;
@@ -48,6 +50,8 @@ namespace Square.Connect.Model
             this.TextQuery = TextQuery;
             this.ItemsForTaxQuery = ItemsForTaxQuery;
             this.ItemsForModifierListQuery = ItemsForModifierListQuery;
+            this.ItemsForItemOptionsQuery = ItemsForItemOptionsQuery;
+            this.ItemVariationsForItemOptionValuesQuery = ItemVariationsForItemOptionValuesQuery;
         }
         
         /// <summary>
@@ -93,6 +97,18 @@ namespace Square.Connect.Model
         [DataMember(Name="items_for_modifier_list_query", EmitDefaultValue=false)]
         public CatalogQueryItemsForModifierList ItemsForModifierListQuery { get; set; }
         /// <summary>
+        /// A query that returns all [CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption](#type-catalogitemoption)s.
+        /// </summary>
+        /// <value>A query that returns all [CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption](#type-catalogitemoption)s.</value>
+        [DataMember(Name="items_for_item_options_query", EmitDefaultValue=false)]
+        public CatalogQueryItemsForItemOptions ItemsForItemOptionsQuery { get; set; }
+        /// <summary>
+        /// A query that returns all [CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption](#type-catalogitemoption) values.
+        /// </summary>
+        /// <value>A query that returns all [CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption](#type-catalogitemoption) values.</value>
+        [DataMember(Name="item_variations_for_item_option_values_query", EmitDefaultValue=false)]
+        public CatalogQueryItemVariationsForItemOptionValues ItemVariationsForItemOptionValuesQuery { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,6 +123,8 @@ namespace Square.Connect.Model
             sb.Append("  TextQuery: ").Append(TextQuery).Append("\n");
             sb.Append("  ItemsForTaxQuery: ").Append(ItemsForTaxQuery).Append("\n");
             sb.Append("  ItemsForModifierListQuery: ").Append(ItemsForModifierListQuery).Append("\n");
+            sb.Append("  ItemsForItemOptionsQuery: ").Append(ItemsForItemOptionsQuery).Append("\n");
+            sb.Append("  ItemVariationsForItemOptionValuesQuery: ").Append(ItemVariationsForItemOptionValuesQuery).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,6 +195,16 @@ namespace Square.Connect.Model
                     this.ItemsForModifierListQuery == other.ItemsForModifierListQuery ||
                     this.ItemsForModifierListQuery != null &&
                     this.ItemsForModifierListQuery.Equals(other.ItemsForModifierListQuery)
+                ) && 
+                (
+                    this.ItemsForItemOptionsQuery == other.ItemsForItemOptionsQuery ||
+                    this.ItemsForItemOptionsQuery != null &&
+                    this.ItemsForItemOptionsQuery.Equals(other.ItemsForItemOptionsQuery)
+                ) && 
+                (
+                    this.ItemVariationsForItemOptionValuesQuery == other.ItemVariationsForItemOptionValuesQuery ||
+                    this.ItemVariationsForItemOptionValuesQuery != null &&
+                    this.ItemVariationsForItemOptionValuesQuery.Equals(other.ItemVariationsForItemOptionValuesQuery)
                 );
         }
 
@@ -205,6 +233,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ItemsForTaxQuery.GetHashCode();
                 if (this.ItemsForModifierListQuery != null)
                     hash = hash * 59 + this.ItemsForModifierListQuery.GetHashCode();
+                if (this.ItemsForItemOptionsQuery != null)
+                    hash = hash * 59 + this.ItemsForItemOptionsQuery.GetHashCode();
+                if (this.ItemVariationsForItemOptionValuesQuery != null)
+                    hash = hash * 59 + this.ItemVariationsForItemOptionValuesQuery.GetHashCode();
                 return hash;
             }
         }

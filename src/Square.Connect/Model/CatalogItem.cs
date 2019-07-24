@@ -43,9 +43,10 @@ namespace Square.Connect.Model
         /// <param name="TaxIds">A set of IDs indicating the [CatalogTax](#type-catalogtax)es that are enabled for this item. When updating an item, any taxes listed here will be added to the item. [CatalogTax](#type-catalogtax)es may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;..</param>
         /// <param name="ModifierListInfo">A set of [CatalogItemModifierListInfo](#type-catalogitemmodifierlistinfo) objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. [CatalogModifierList](#type-catalogmodifierlist)s may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;..</param>
         /// <param name="Variations">A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations.</param>
-        /// <param name="ProductType">The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values.</param>
+        /// <param name="ProductType">The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; or &#x60;APPOINTMENTS_SERVICE&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values.</param>
         /// <param name="SkipModifierScreen">If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors..</param>
-        public CatalogItem(string Name = default(string), string Description = default(string), string Abbreviation = default(string), string LabelColor = default(string), bool? AvailableOnline = default(bool?), bool? AvailableForPickup = default(bool?), bool? AvailableElectronically = default(bool?), string CategoryId = default(string), List<string> TaxIds = default(List<string>), List<CatalogItemModifierListInfo> ModifierListInfo = default(List<CatalogItemModifierListInfo>), List<CatalogObject> Variations = default(List<CatalogObject>), string ProductType = default(string), bool? SkipModifierScreen = default(bool?))
+        /// <param name="ItemOptions">List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options..</param>
+        public CatalogItem(string Name = default(string), string Description = default(string), string Abbreviation = default(string), string LabelColor = default(string), bool? AvailableOnline = default(bool?), bool? AvailableForPickup = default(bool?), bool? AvailableElectronically = default(bool?), string CategoryId = default(string), List<string> TaxIds = default(List<string>), List<CatalogItemModifierListInfo> ModifierListInfo = default(List<CatalogItemModifierListInfo>), List<CatalogObject> Variations = default(List<CatalogObject>), string ProductType = default(string), bool? SkipModifierScreen = default(bool?), List<CatalogItemOptionForItem> ItemOptions = default(List<CatalogItemOptionForItem>))
         {
             this.Name = Name;
             this.Description = Description;
@@ -60,6 +61,7 @@ namespace Square.Connect.Model
             this.Variations = Variations;
             this.ProductType = ProductType;
             this.SkipModifierScreen = SkipModifierScreen;
+            this.ItemOptions = ItemOptions;
         }
         
         /// <summary>
@@ -129,9 +131,9 @@ namespace Square.Connect.Model
         [DataMember(Name="variations", EmitDefaultValue=false)]
         public List<CatalogObject> Variations { get; set; }
         /// <summary>
-        /// The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
+        /// The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; or &#x60;APPOINTMENTS_SERVICE&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
         /// </summary>
-        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
+        /// <value>The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; or &#x60;APPOINTMENTS_SERVICE&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values</value>
         [DataMember(Name="product_type", EmitDefaultValue=false)]
         public string ProductType { get; set; }
         /// <summary>
@@ -140,6 +142,12 @@ namespace Square.Connect.Model
         /// <value>If &#x60;false&#x60;, the Square Point of Sale app will present the [CatalogItem](#type-catalogitem)&#39;s details screen immediately, allowing the merchant to choose [CatalogModifier](#type-catalogmodifier)s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors.</value>
         [DataMember(Name="skip_modifier_screen", EmitDefaultValue=false)]
         public bool? SkipModifierScreen { get; set; }
+        /// <summary>
+        /// List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options.
+        /// </summary>
+        /// <value>List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options.</value>
+        [DataMember(Name="item_options", EmitDefaultValue=false)]
+        public List<CatalogItemOptionForItem> ItemOptions { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -161,6 +169,7 @@ namespace Square.Connect.Model
             sb.Append("  Variations: ").Append(Variations).Append("\n");
             sb.Append("  ProductType: ").Append(ProductType).Append("\n");
             sb.Append("  SkipModifierScreen: ").Append(SkipModifierScreen).Append("\n");
+            sb.Append("  ItemOptions: ").Append(ItemOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -261,6 +270,11 @@ namespace Square.Connect.Model
                     this.SkipModifierScreen == other.SkipModifierScreen ||
                     this.SkipModifierScreen != null &&
                     this.SkipModifierScreen.Equals(other.SkipModifierScreen)
+                ) && 
+                (
+                    this.ItemOptions == other.ItemOptions ||
+                    this.ItemOptions != null &&
+                    this.ItemOptions.SequenceEqual(other.ItemOptions)
                 );
         }
 
@@ -301,6 +315,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ProductType.GetHashCode();
                 if (this.SkipModifierScreen != null)
                     hash = hash * 59 + this.SkipModifierScreen.GetHashCode();
+                if (this.ItemOptions != null)
+                    hash = hash * 59 + this.ItemOptions.GetHashCode();
                 return hash;
             }
         }

@@ -59,7 +59,9 @@ namespace Square.Connect.Model
         /// <param name="PricingRuleData">Structured data for a [CatalogPricingRule](#type-catalogpricingrule), set for CatalogObjects of type &#x60;PRICING_RULE&#x60;..</param>
         /// <param name="ImageData">Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;..</param>
         /// <param name="MeasurementUnitData">Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;..</param>
-        public CatalogObject(string Type = default(string), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), string ImageId = default(string), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogTimePeriod TimePeriodData = default(CatalogTimePeriod), CatalogProductSet ProductSetData = default(CatalogProductSet), CatalogPricingRule PricingRuleData = default(CatalogPricingRule), CatalogImage ImageData = default(CatalogImage), CatalogMeasurementUnit MeasurementUnitData = default(CatalogMeasurementUnit))
+        /// <param name="ItemOptionData">Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;..</param>
+        /// <param name="ItemOptionValueData">Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;..</param>
+        public CatalogObject(string Type = default(string), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), string ImageId = default(string), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogTimePeriod TimePeriodData = default(CatalogTimePeriod), CatalogProductSet ProductSetData = default(CatalogProductSet), CatalogPricingRule PricingRuleData = default(CatalogPricingRule), CatalogImage ImageData = default(CatalogImage), CatalogMeasurementUnit MeasurementUnitData = default(CatalogMeasurementUnit), CatalogItemOption ItemOptionData = default(CatalogItemOption), CatalogItemOptionValue ItemOptionValueData = default(CatalogItemOptionValue))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -99,6 +101,8 @@ namespace Square.Connect.Model
             this.PricingRuleData = PricingRuleData;
             this.ImageData = ImageData;
             this.MeasurementUnitData = MeasurementUnitData;
+            this.ItemOptionData = ItemOptionData;
+            this.ItemOptionValueData = ItemOptionValueData;
         }
         
         /// <summary>
@@ -234,6 +238,18 @@ namespace Square.Connect.Model
         [DataMember(Name="measurement_unit_data", EmitDefaultValue=false)]
         public CatalogMeasurementUnit MeasurementUnitData { get; set; }
         /// <summary>
+        /// Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;.
+        /// </summary>
+        /// <value>Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;.</value>
+        [DataMember(Name="item_option_data", EmitDefaultValue=false)]
+        public CatalogItemOption ItemOptionData { get; set; }
+        /// <summary>
+        /// Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;.
+        /// </summary>
+        /// <value>Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;.</value>
+        [DataMember(Name="item_option_value_data", EmitDefaultValue=false)]
+        public CatalogItemOptionValue ItemOptionValueData { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -263,6 +279,8 @@ namespace Square.Connect.Model
             sb.Append("  PricingRuleData: ").Append(PricingRuleData).Append("\n");
             sb.Append("  ImageData: ").Append(ImageData).Append("\n");
             sb.Append("  MeasurementUnitData: ").Append(MeasurementUnitData).Append("\n");
+            sb.Append("  ItemOptionData: ").Append(ItemOptionData).Append("\n");
+            sb.Append("  ItemOptionValueData: ").Append(ItemOptionValueData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -408,6 +426,16 @@ namespace Square.Connect.Model
                     this.MeasurementUnitData == other.MeasurementUnitData ||
                     this.MeasurementUnitData != null &&
                     this.MeasurementUnitData.Equals(other.MeasurementUnitData)
+                ) && 
+                (
+                    this.ItemOptionData == other.ItemOptionData ||
+                    this.ItemOptionData != null &&
+                    this.ItemOptionData.Equals(other.ItemOptionData)
+                ) && 
+                (
+                    this.ItemOptionValueData == other.ItemOptionValueData ||
+                    this.ItemOptionValueData != null &&
+                    this.ItemOptionValueData.Equals(other.ItemOptionValueData)
                 );
         }
 
@@ -466,6 +494,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ImageData.GetHashCode();
                 if (this.MeasurementUnitData != null)
                     hash = hash * 59 + this.MeasurementUnitData.GetHashCode();
+                if (this.ItemOptionData != null)
+                    hash = hash * 59 + this.ItemOptionData.GetHashCode();
+                if (this.ItemOptionValueData != null)
+                    hash = hash * 59 + this.ItemOptionValueData.GetHashCode();
                 return hash;
             }
         }
