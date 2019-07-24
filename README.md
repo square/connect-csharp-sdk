@@ -85,15 +85,17 @@ namespace Example
 {
     public class Example
     {
+        readonly Configuration configuration;
         public Example()
         {
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-        }
-
+            this.configuration = new Configuration(new ApiClient("https://connect.squareup.com"));
+            this.configuration.AccessToken = "YOUR_ACCESS_TOKEN";
+        }        
+        
         // Retrieving your location IDs
         public void RetrieveLocations()
         {
-            LocationsApi _locationsApi = new LocationsApi();
+            LocationsApi _locationsApi = new LocationsApi(this.configuration);
             var response = _locationsApi.ListLocations();
         }
 
@@ -115,7 +117,7 @@ namespace Example
             string nonce = "YOUR_NONCE";
             string locationId = "YOUR_LOCATION_ID";
             ChargeRequest body = new ChargeRequest(AmountMoney: money, IdempotencyKey: idempotencyKey, CardNonce: nonce);
-            TransactionsApi transactionsApi = new TransactionsApi();
+            TransactionsApi transactionsApi = new TransactionsApi(this.configuration);
             var response = transactionsApi.Charge(locationId, body);
         }
     }
@@ -296,6 +298,10 @@ Class | Method | HTTP request
  - [Model.CatalogInfoResponseLimits](docs/CatalogInfoResponseLimits.md)
  - [Model.CatalogItem](docs/CatalogItem.md)
  - [Model.CatalogItemModifierListInfo](docs/CatalogItemModifierListInfo.md)
+ - [Model.CatalogItemOption](docs/CatalogItemOption.md)
+ - [Model.CatalogItemOptionForItem](docs/CatalogItemOptionForItem.md)
+ - [Model.CatalogItemOptionValue](docs/CatalogItemOptionValue.md)
+ - [Model.CatalogItemOptionValueForItemVariation](docs/CatalogItemOptionValueForItemVariation.md)
  - [Model.CatalogItemVariation](docs/CatalogItemVariation.md)
  - [Model.CatalogMeasurementUnit](docs/CatalogMeasurementUnit.md)
  - [Model.CatalogModifier](docs/CatalogModifier.md)
@@ -307,6 +313,8 @@ Class | Method | HTTP request
  - [Model.CatalogProductSet](docs/CatalogProductSet.md)
  - [Model.CatalogQuery](docs/CatalogQuery.md)
  - [Model.CatalogQueryExact](docs/CatalogQueryExact.md)
+ - [Model.CatalogQueryItemVariationsForItemOptionValues](docs/CatalogQueryItemVariationsForItemOptionValues.md)
+ - [Model.CatalogQueryItemsForItemOptions](docs/CatalogQueryItemsForItemOptions.md)
  - [Model.CatalogQueryItemsForModifierList](docs/CatalogQueryItemsForModifierList.md)
  - [Model.CatalogQueryItemsForTax](docs/CatalogQueryItemsForTax.md)
  - [Model.CatalogQueryPrefix](docs/CatalogQueryPrefix.md)
@@ -634,7 +642,7 @@ Class | Method | HTTP request
   - EMPLOYEES_WRITE: __HTTP Method__: &#x60;POST&#x60;, &#x60;PUT&#x60;, &#x60;DELETE&#x60;  Grants write access to employee profile information. For example, to create and modify employee profiles.
   - INVENTORY_READ: __HTTP Method__: &#x60;GET&#x60;  Grants read access to inventory information. For example, to call the RetrieveInventoryCount endpoint.
   - INVENTORY_WRITE: __HTTP Method__:  &#x60;POST&#x60;, &#x60;PUT&#x60;, &#x60;DELETE&#x60;  Grants write access to inventory information. For example, to call the BatchChangeInventory endpoint.
-  - ITEMS_READ: __HTTP Method__: &#x60;GET&#x60;  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
+  - ITEMS_READ: __HTTP Method__: &#x60;GET&#x60;  Grants read access to product catalog information. For example, to get an  item or a list of items.
   - ITEMS_WRITE: __HTTP Method__: &#x60;POST&#x60;, &#x60;PUT&#x60;, &#x60;DELETE&#x60;  Grants write access to product catalog information. For example, to modify or add to a product catalog.
   - MERCHANT_PROFILE_READ: __HTTP Method__: &#x60;GET&#x60;  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
   - ORDERS_READ: __HTTP Method__: &#x60;GET&#x60;  Grants read access to order information. For example, to call the BatchRetrieveOrders endpoint.

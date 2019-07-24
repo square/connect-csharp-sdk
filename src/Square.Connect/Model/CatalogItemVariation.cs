@@ -45,8 +45,9 @@ namespace Square.Connect.Model
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
         /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable..</param>
         /// <param name="ServiceDuration">If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
+        /// <param name="ItemOptionValues">List of item option values associated with this item variation. Listed in the same order as the item options of the parent item..</param>
         /// <param name="MeasurementUnitId">ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities..</param>
-        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), string PricingType = default(string), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), string InventoryAlertType = default(string), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?), string MeasurementUnitId = default(string))
+        public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), string PricingType = default(string), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), string InventoryAlertType = default(string), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?), List<CatalogItemOptionValueForItemVariation> ItemOptionValues = default(List<CatalogItemOptionValueForItemVariation>), string MeasurementUnitId = default(string))
         {
             this.ItemId = ItemId;
             this.Name = Name;
@@ -61,6 +62,7 @@ namespace Square.Connect.Model
             this.InventoryAlertThreshold = InventoryAlertThreshold;
             this.UserData = UserData;
             this.ServiceDuration = ServiceDuration;
+            this.ItemOptionValues = ItemOptionValues;
             this.MeasurementUnitId = MeasurementUnitId;
         }
         
@@ -143,6 +145,12 @@ namespace Square.Connect.Model
         [DataMember(Name="service_duration", EmitDefaultValue=false)]
         public long? ServiceDuration { get; set; }
         /// <summary>
+        /// List of item option values associated with this item variation. Listed in the same order as the item options of the parent item.
+        /// </summary>
+        /// <value>List of item option values associated with this item variation. Listed in the same order as the item options of the parent item.</value>
+        [DataMember(Name="item_option_values", EmitDefaultValue=false)]
+        public List<CatalogItemOptionValueForItemVariation> ItemOptionValues { get; set; }
+        /// <summary>
         /// ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
         /// </summary>
         /// <value>ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.</value>
@@ -169,6 +177,7 @@ namespace Square.Connect.Model
             sb.Append("  InventoryAlertThreshold: ").Append(InventoryAlertThreshold).Append("\n");
             sb.Append("  UserData: ").Append(UserData).Append("\n");
             sb.Append("  ServiceDuration: ").Append(ServiceDuration).Append("\n");
+            sb.Append("  ItemOptionValues: ").Append(ItemOptionValues).Append("\n");
             sb.Append("  MeasurementUnitId: ").Append(MeasurementUnitId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -272,6 +281,11 @@ namespace Square.Connect.Model
                     this.ServiceDuration.Equals(other.ServiceDuration)
                 ) && 
                 (
+                    this.ItemOptionValues == other.ItemOptionValues ||
+                    this.ItemOptionValues != null &&
+                    this.ItemOptionValues.SequenceEqual(other.ItemOptionValues)
+                ) && 
+                (
                     this.MeasurementUnitId == other.MeasurementUnitId ||
                     this.MeasurementUnitId != null &&
                     this.MeasurementUnitId.Equals(other.MeasurementUnitId)
@@ -315,6 +329,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.UserData.GetHashCode();
                 if (this.ServiceDuration != null)
                     hash = hash * 59 + this.ServiceDuration.GetHashCode();
+                if (this.ItemOptionValues != null)
+                    hash = hash * 59 + this.ItemOptionValues.GetHashCode();
                 if (this.MeasurementUnitId != null)
                     hash = hash * 59 + this.MeasurementUnitId.GetHashCode();
                 return hash;
