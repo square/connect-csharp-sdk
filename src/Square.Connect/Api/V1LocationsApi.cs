@@ -31,8 +31,7 @@ namespace Square.Connect.Api
         /// Provides details for a business&#39;s locations, including their IDs.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;V1Merchant&gt;</returns>
-        List<V1Merchant> ListLocations ();
+        /// <returns>List&lt;V1Merchant&gt;</returns>        List<V1Merchant> ListLocations ();
 
         /// <summary>
         /// ListLocations
@@ -50,8 +49,7 @@ namespace Square.Connect.Api
         /// Get a business&#39;s information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>V1Merchant</returns>
-        V1Merchant RetrieveBusiness ();
+        /// <returns>V1Merchant</returns>        V1Merchant RetrieveBusiness ();
 
         /// <summary>
         /// RetrieveBusiness
@@ -254,7 +252,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
 
             // authentication (oauth2) required
             // oauth required
@@ -391,7 +389,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
 
             // authentication (oauth2) required
             // oauth required

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Filter options to use for a query. Multiple filters will be ANDed together.
+    /// Filtering criteria to use for a SearchOrders request. Multiple filters will be ANDed together.
     /// </summary>
     [DataContract]
     public partial class SearchOrdersFilter :  IEquatable<SearchOrdersFilter>, IValidatableObject
@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="SearchOrdersFilter" /> class.
         /// </summary>
         /// <param name="StateFilter">Filter by [&#x60;OrderState&#x60;](#type-orderstate)..</param>
-        /// <param name="DateTimeFilter">Filter for results within a time range..</param>
+        /// <param name="DateTimeFilter">Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range).</param>
         /// <param name="FulfillmentFilter">Filter by fulfillment type or state..</param>
         /// <param name="SourceFilter">Filter by source of order..</param>
         /// <param name="CustomerFilter">Filter by customers associated with the order..</param>
@@ -53,9 +53,9 @@ namespace Square.Connect.Model
         [DataMember(Name="state_filter", EmitDefaultValue=false)]
         public SearchOrdersStateFilter StateFilter { get; set; }
         /// <summary>
-        /// Filter for results within a time range.
+        /// Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
         /// </summary>
-        /// <value>Filter for results within a time range.</value>
+        /// <value>Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)</value>
         [DataMember(Name="date_time_filter", EmitDefaultValue=false)]
         public SearchOrdersDateTimeFilter DateTimeFilter { get; set; }
         /// <summary>

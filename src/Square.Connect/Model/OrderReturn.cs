@@ -32,12 +32,12 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturn" /> class.
         /// </summary>
-        /// <param name="Uid">Unique ID that identifies the return only within this order.  This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the return only within this order..</param>
         /// <param name="SourceOrderId">Order which contains the original sale of these returned line items. This will be unset for unlinked returns..</param>
         /// <param name="ReturnLineItems">Collection of line items which are being returned..</param>
-        /// <param name="ReturnServiceCharges">Collection of service charges which are being returned.  This field is read-only..</param>
-        /// <param name="ReturnTaxes">Collection of taxes which are being returned..</param>
-        /// <param name="ReturnDiscounts">Collection of discounts which are being returned..</param>
+        /// <param name="ReturnServiceCharges">Collection of service charges which are being returned..</param>
+        /// <param name="ReturnTaxes">Collection of references to taxes being returned for an order, including the total applied tax amount to be returned. The taxes must reference a top-level tax ID from the source order..</param>
+        /// <param name="ReturnDiscounts">Collection of references to discounts being returned for an order, including the total applied discount amount to be returned. The discounts must reference a top-level discount ID from the source order..</param>
         /// <param name="RoundingAdjustment">A positive or negative rounding adjustment to the total value being returned. Commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency..</param>
         /// <param name="ReturnAmounts">Aggregate monetary value being returned by this Return entry..</param>
         public OrderReturn(string Uid = default(string), string SourceOrderId = default(string), List<OrderReturnLineItem> ReturnLineItems = default(List<OrderReturnLineItem>), List<OrderReturnServiceCharge> ReturnServiceCharges = default(List<OrderReturnServiceCharge>), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>), List<OrderReturnDiscount> ReturnDiscounts = default(List<OrderReturnDiscount>), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts))
@@ -53,9 +53,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Unique ID that identifies the return only within this order.  This field is read-only.
+        /// Unique ID that identifies the return only within this order.
         /// </summary>
-        /// <value>Unique ID that identifies the return only within this order.  This field is read-only.</value>
+        /// <value>Unique ID that identifies the return only within this order.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -71,21 +71,21 @@ namespace Square.Connect.Model
         [DataMember(Name="return_line_items", EmitDefaultValue=false)]
         public List<OrderReturnLineItem> ReturnLineItems { get; set; }
         /// <summary>
-        /// Collection of service charges which are being returned.  This field is read-only.
+        /// Collection of service charges which are being returned.
         /// </summary>
-        /// <value>Collection of service charges which are being returned.  This field is read-only.</value>
+        /// <value>Collection of service charges which are being returned.</value>
         [DataMember(Name="return_service_charges", EmitDefaultValue=false)]
         public List<OrderReturnServiceCharge> ReturnServiceCharges { get; set; }
         /// <summary>
-        /// Collection of taxes which are being returned.
+        /// Collection of references to taxes being returned for an order, including the total applied tax amount to be returned. The taxes must reference a top-level tax ID from the source order.
         /// </summary>
-        /// <value>Collection of taxes which are being returned.</value>
+        /// <value>Collection of references to taxes being returned for an order, including the total applied tax amount to be returned. The taxes must reference a top-level tax ID from the source order.</value>
         [DataMember(Name="return_taxes", EmitDefaultValue=false)]
         public List<OrderReturnTax> ReturnTaxes { get; set; }
         /// <summary>
-        /// Collection of discounts which are being returned.
+        /// Collection of references to discounts being returned for an order, including the total applied discount amount to be returned. The discounts must reference a top-level discount ID from the source order.
         /// </summary>
-        /// <value>Collection of discounts which are being returned.</value>
+        /// <value>Collection of references to discounts being returned for an order, including the total applied discount amount to be returned. The discounts must reference a top-level discount ID from the source order.</value>
         [DataMember(Name="return_discounts", EmitDefaultValue=false)]
         public List<OrderReturnDiscount> ReturnDiscounts { get; set; }
         /// <summary>

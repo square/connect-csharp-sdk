@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the query parameters that can be included in a request to the ListRefunds endpoint.
+    /// Defines the query parameters that can be included in a request to the [ListRefunds](#endpoint-listrefunds) endpoint.  Deprecated - recommend using [SearchOrders](#endpoint-orders-searchorders)
     /// </summary>
     [DataContract]
     public partial class ListRefundsRequest :  IEquatable<ListRefundsRequest>, IValidatableObject

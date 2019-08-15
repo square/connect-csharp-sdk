@@ -33,8 +33,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the original payment&#39;s associated location.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Refund</returns>
-        V1Refund CreateRefund (string locationId, V1CreateRefundRequest body);
+        /// <returns>V1Refund</returns>        V1Refund CreateRefund (string locationId, V1CreateRefundRequest body);
 
         /// <summary>
         /// CreateRefund
@@ -55,8 +54,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list bank accounts for.</param>
-        /// <returns>List&lt;V1BankAccount&gt;</returns>
-        List<V1BankAccount> ListBankAccounts (string locationId);
+        /// <returns>List&lt;V1BankAccount&gt;</returns>        List<V1BankAccount> ListBankAccounts (string locationId);
 
         /// <summary>
         /// ListBankAccounts
@@ -79,8 +77,7 @@ namespace Square.Connect.Api
         /// <param name="order">TThe order in which payments are listed in the response. (optional)</param>
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1Order&gt;</returns>
-        List<V1Order> ListOrders (string locationId, string order = null, int? limit = null, string batchToken = null);
+        /// <returns>List&lt;V1Order&gt;</returns>        List<V1Order> ListOrders (string locationId, string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// ListOrders
@@ -109,8 +106,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
         /// <param name="includePartial">Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)</param>
-        /// <returns>List&lt;V1Payment&gt;</returns>
-        List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
+        /// <returns>List&lt;V1Payment&gt;</returns>        List<V1Payment> ListPayments (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null, bool? includePartial = null);
 
         /// <summary>
         /// ListPayments
@@ -141,8 +137,7 @@ namespace Square.Connect.Api
         /// <param name="endTime">The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)</param>
         /// <param name="limit">The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1Refund&gt;</returns>
-        List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
+        /// <returns>List&lt;V1Refund&gt;</returns>        List<V1Refund> ListRefunds (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// ListRefunds
@@ -173,8 +168,7 @@ namespace Square.Connect.Api
         /// <param name="limit">The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)</param>
         /// <param name="status">Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1Settlement&gt;</returns>
-        List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
+        /// <returns>List&lt;V1Settlement&gt;</returns>        List<V1Settlement> ListSettlements (string locationId, string order = null, string beginTime = null, string endTime = null, int? limit = null, string status = null, string batchToken = null);
 
         /// <summary>
         /// ListSettlements
@@ -201,8 +195,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the bank account&#39;s associated location.</param>
         /// <param name="bankAccountId">The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned.</param>
-        /// <returns>V1BankAccount</returns>
-        V1BankAccount RetrieveBankAccount (string locationId, string bankAccountId);
+        /// <returns>V1BankAccount</returns>        V1BankAccount RetrieveBankAccount (string locationId, string bankAccountId);
 
         /// <summary>
         /// RetrieveBankAccount
@@ -224,8 +217,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
         /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
-        /// <returns>V1Order</returns>
-        V1Order RetrieveOrder (string locationId, string orderId);
+        /// <returns>V1Order</returns>        V1Order RetrieveOrder (string locationId, string orderId);
 
         /// <summary>
         /// RetrieveOrder
@@ -247,8 +239,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the payment&#39;s associated location.</param>
         /// <param name="paymentId">The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.</param>
-        /// <returns>V1Payment</returns>
-        V1Payment RetrievePayment (string locationId, string paymentId);
+        /// <returns>V1Payment</returns>        V1Payment RetrievePayment (string locationId, string paymentId);
 
         /// <summary>
         /// RetrievePayment
@@ -270,8 +261,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the settlements&#39;s associated location.</param>
         /// <param name="settlementId">The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.</param>
-        /// <returns>V1Settlement</returns>
-        V1Settlement RetrieveSettlement (string locationId, string settlementId);
+        /// <returns>V1Settlement</returns>        V1Settlement RetrieveSettlement (string locationId, string settlementId);
 
         /// <summary>
         /// RetrieveSettlement
@@ -294,8 +284,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the order&#39;s associated location.</param>
         /// <param name="orderId">The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Order</returns>
-        V1Order UpdateOrder (string locationId, string orderId, V1UpdateOrderRequest body);
+        /// <returns>V1Order</returns>        V1Order UpdateOrder (string locationId, string orderId, V1UpdateOrderRequest body);
 
         /// <summary>
         /// UpdateOrder
@@ -758,7 +747,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -928,7 +917,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -1083,7 +1072,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
@@ -1256,7 +1245,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1439,7 +1428,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1620,7 +1609,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1798,7 +1787,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (bankAccountId != null) localVarPathParams.Add("bank_account_id", Configuration.ApiClient.ParameterToString(bankAccountId)); // path parameter
 
@@ -1959,7 +1948,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
 
@@ -2120,7 +2109,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
@@ -2281,7 +2270,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (settlementId != null) localVarPathParams.Add("settlement_id", Configuration.ApiClient.ParameterToString(settlementId)); // path parameter
 
@@ -2447,7 +2436,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))

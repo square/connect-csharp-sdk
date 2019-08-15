@@ -42,7 +42,7 @@ namespace Square.Connect.Model
         /// <param name="TransactionId">The ID of the tender&#39;s associated transaction..</param>
         /// <param name="CreatedAt">The time when the tender was created, in RFC 3339 format..</param>
         /// <param name="Note">An optional note associated with the tender at the time of payment..</param>
-        /// <param name="AmountMoney">The amount of the tender..</param>
+        /// <param name="AmountMoney">The total amount of the tender, including &#x60;tip_money&#x60;. If the tender has a &#x60;payment_id&#x60;, the &#x60;total_money&#x60; of the corresponding [Payment](#type-payment) will be equal to the &#x60;amount_money&#x60; of the tender..</param>
         /// <param name="TipMoney">The tip&#39;s amount of the tender..</param>
         /// <param name="ProcessingFeeMoney">The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds..</param>
         /// <param name="CustomerId">If the tender is associated with a customer or represents a customer&#39;s card on file, this is the ID of the associated customer..</param>
@@ -50,7 +50,8 @@ namespace Square.Connect.Model
         /// <param name="CardDetails">The details of the card tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CARD&#x60;..</param>
         /// <param name="CashDetails">The details of the cash tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CASH&#x60;..</param>
         /// <param name="AdditionalRecipients">Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration..</param>
-        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money TipMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), string Type = default(string), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>))
+        /// <param name="PaymentId">The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API..</param>
+        public Tender(string Id = default(string), string LocationId = default(string), string TransactionId = default(string), string CreatedAt = default(string), string Note = default(string), Money AmountMoney = default(Money), Money TipMoney = default(Money), Money ProcessingFeeMoney = default(Money), string CustomerId = default(string), string Type = default(string), TenderCardDetails CardDetails = default(TenderCardDetails), TenderCashDetails CashDetails = default(TenderCashDetails), List<AdditionalRecipient> AdditionalRecipients = default(List<AdditionalRecipient>), string PaymentId = default(string))
         {
             // to ensure "Type" is required (not null)
             if (Type == null)
@@ -73,6 +74,7 @@ namespace Square.Connect.Model
             this.CardDetails = CardDetails;
             this.CashDetails = CashDetails;
             this.AdditionalRecipients = AdditionalRecipients;
+            this.PaymentId = PaymentId;
         }
         
         /// <summary>
@@ -106,9 +108,9 @@ namespace Square.Connect.Model
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// The amount of the tender.
+        /// The total amount of the tender, including &#x60;tip_money&#x60;. If the tender has a &#x60;payment_id&#x60;, the &#x60;total_money&#x60; of the corresponding [Payment](#type-payment) will be equal to the &#x60;amount_money&#x60; of the tender.
         /// </summary>
-        /// <value>The amount of the tender.</value>
+        /// <value>The total amount of the tender, including &#x60;tip_money&#x60;. If the tender has a &#x60;payment_id&#x60;, the &#x60;total_money&#x60; of the corresponding [Payment](#type-payment) will be equal to the &#x60;amount_money&#x60; of the tender.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
@@ -154,6 +156,12 @@ namespace Square.Connect.Model
         [DataMember(Name="additional_recipients", EmitDefaultValue=false)]
         public List<AdditionalRecipient> AdditionalRecipients { get; set; }
         /// <summary>
+        /// The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
+        /// </summary>
+        /// <value>The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.</value>
+        [DataMember(Name="payment_id", EmitDefaultValue=false)]
+        public string PaymentId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -174,6 +182,7 @@ namespace Square.Connect.Model
             sb.Append("  CardDetails: ").Append(CardDetails).Append("\n");
             sb.Append("  CashDetails: ").Append(CashDetails).Append("\n");
             sb.Append("  AdditionalRecipients: ").Append(AdditionalRecipients).Append("\n");
+            sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -274,6 +283,11 @@ namespace Square.Connect.Model
                     this.AdditionalRecipients == other.AdditionalRecipients ||
                     this.AdditionalRecipients != null &&
                     this.AdditionalRecipients.SequenceEqual(other.AdditionalRecipients)
+                ) && 
+                (
+                    this.PaymentId == other.PaymentId ||
+                    this.PaymentId != null &&
+                    this.PaymentId.Equals(other.PaymentId)
                 );
         }
 
@@ -314,6 +328,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.CashDetails.GetHashCode();
                 if (this.AdditionalRecipients != null)
                     hash = hash * 59 + this.AdditionalRecipients.GetHashCode();
+                if (this.PaymentId != null)
+                    hash = hash * 59 + this.PaymentId.GetHashCode();
                 return hash;
             }
         }

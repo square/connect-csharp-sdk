@@ -32,11 +32,11 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersRequest" /> class.
         /// </summary>
-        /// <param name="LocationIds">The location IDs for the orders to query. The caller must have access to all provided locations.  Min: 1 &#x60;location_ids&#x60;. Max: 10 &#x60;location_ids&#x60;..</param>
+        /// <param name="LocationIds">The location IDs for the orders to query. All locations must belong to the same merchant.  Min: 1 location IDs.  Max: 10 location IDs..</param>
         /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](/basics/api101/pagination) for more information..</param>
-        /// <param name="Query">Query conditions used to filter or sort the results. Note that when fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results..</param>
-        /// <param name="Limit">Number of results to be returned in a single page. SearchOrders may use a smaller limit than specified depending on server load. If the response includes a &#x60;cursor&#x60; field, you can use it to retrieve the next set of results. Default: &#x60;500&#x60;.</param>
-        /// <param name="ReturnEntries"> If set to &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects instead of &#x60;Order&#x60; objects. &#x60;OrderEntry&#x60; objects are lightweight descriptions of orders that include &#x60;order_id&#x60;s.  Default: &#x60;false&#x60;..</param>
+        /// <param name="Query">Query conditions used to filter or sort the results. Note that when fetching additional pages using a cursor, the query must be equal to the query used to fetch the first page of results..</param>
+        /// <param name="Limit">Maximum number of results to be returned in a single page. It is possible to receive fewer results than the specified limit on a given page.  Default: &#x60;500&#x60;.</param>
+        /// <param name="ReturnEntries">Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;..</param>
         public SearchOrdersRequest(List<string> LocationIds = default(List<string>), string Cursor = default(string), SearchOrdersQuery Query = default(SearchOrdersQuery), int? Limit = default(int?), bool? ReturnEntries = default(bool?))
         {
             this.LocationIds = LocationIds;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The location IDs for the orders to query. The caller must have access to all provided locations.  Min: 1 &#x60;location_ids&#x60;. Max: 10 &#x60;location_ids&#x60;.
+        /// The location IDs for the orders to query. All locations must belong to the same merchant.  Min: 1 location IDs.  Max: 10 location IDs.
         /// </summary>
-        /// <value>The location IDs for the orders to query. The caller must have access to all provided locations.  Min: 1 &#x60;location_ids&#x60;. Max: 10 &#x60;location_ids&#x60;.</value>
+        /// <value>The location IDs for the orders to query. All locations must belong to the same merchant.  Min: 1 location IDs.  Max: 10 location IDs.</value>
         [DataMember(Name="location_ids", EmitDefaultValue=false)]
         public List<string> LocationIds { get; set; }
         /// <summary>
@@ -59,21 +59,21 @@ namespace Square.Connect.Model
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>
-        /// Query conditions used to filter or sort the results. Note that when fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.
+        /// Query conditions used to filter or sort the results. Note that when fetching additional pages using a cursor, the query must be equal to the query used to fetch the first page of results.
         /// </summary>
-        /// <value>Query conditions used to filter or sort the results. Note that when fetching additional pages using a &#x60;cursor&#x60;, the &#x60;query&#x60; must be equal to the &#x60;query&#x60; used to fetch the first page of results.</value>
+        /// <value>Query conditions used to filter or sort the results. Note that when fetching additional pages using a cursor, the query must be equal to the query used to fetch the first page of results.</value>
         [DataMember(Name="query", EmitDefaultValue=false)]
         public SearchOrdersQuery Query { get; set; }
         /// <summary>
-        /// Number of results to be returned in a single page. SearchOrders may use a smaller limit than specified depending on server load. If the response includes a &#x60;cursor&#x60; field, you can use it to retrieve the next set of results. Default: &#x60;500&#x60;
+        /// Maximum number of results to be returned in a single page. It is possible to receive fewer results than the specified limit on a given page.  Default: &#x60;500&#x60;
         /// </summary>
-        /// <value>Number of results to be returned in a single page. SearchOrders may use a smaller limit than specified depending on server load. If the response includes a &#x60;cursor&#x60; field, you can use it to retrieve the next set of results. Default: &#x60;500&#x60;</value>
+        /// <value>Maximum number of results to be returned in a single page. It is possible to receive fewer results than the specified limit on a given page.  Default: &#x60;500&#x60;</value>
         [DataMember(Name="limit", EmitDefaultValue=false)]
         public int? Limit { get; set; }
         /// <summary>
-        ///  If set to &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects instead of &#x60;Order&#x60; objects. &#x60;OrderEntry&#x60; objects are lightweight descriptions of orders that include &#x60;order_id&#x60;s.  Default: &#x60;false&#x60;.
+        /// Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;.
         /// </summary>
-        /// <value> If set to &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects instead of &#x60;Order&#x60; objects. &#x60;OrderEntry&#x60; objects are lightweight descriptions of orders that include &#x60;order_id&#x60;s.  Default: &#x60;false&#x60;.</value>
+        /// <value>Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;.</value>
         [DataMember(Name="return_entries", EmitDefaultValue=false)]
         public bool? ReturnEntries { get; set; }
         /// <summary>

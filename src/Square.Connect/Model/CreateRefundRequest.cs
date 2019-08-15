@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the body parameters that can be included in a request to the CreateRefund endpoint.
+    /// Defines the body parameters that can be included in a request to the [CreateRefund](#endpoint-createrefund) endpoint.  Deprecated - recommend using [RefundPayment](#endpoint-refunds-refundpayment)
     /// </summary>
     [DataContract]
     public partial class CreateRefundRequest :  IEquatable<CreateRefundRequest>, IValidatableObject

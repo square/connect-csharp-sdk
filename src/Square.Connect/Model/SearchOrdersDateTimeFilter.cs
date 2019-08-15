@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Filter for &#x60;Order&#x60; objects based on whether their &#x60;CREATED_AT&#x60;, &#x60;CLOSED_AT&#x60; or &#x60;UPDATED_AT&#x60; timestamps fall within a specified time range. You can specify the time range and which timestamp to filter for. You can filter for only one time range at a time.  For each time range, the start time and end time are inclusive. If the end time is absent, it defaults to the time of the first request for the cursor.  __Important:__ If you use the DateTimeFilter to filter for &#x60;CLOSED_AT&#x60; or &#x60;UPDATED_AT&#x60;, you must also set the [OrdersSort](#type-searchorderordersort). The TimeRange used in DateTimeFilter must correspond to the &#x60;sort_field&#x60; in the [OrdersSort](#type-searchorderordersort) object.
+    /// Filter for &#x60;Order&#x60; objects based on whether their &#x60;CREATED_AT&#x60;, &#x60;CLOSED_AT&#x60; or &#x60;UPDATED_AT&#x60; timestamps fall within a specified time range. You can specify the time range and which timestamp to filter for. You can filter for only one time range at a time.  For each time range, the start time and end time are inclusive. If the end time is absent, it defaults to the time of the first request for the cursor.  __Important:__ If you use the DateTimeFilter in a SearchOrders query, you must also set the &#x60;sort_field&#x60; in [OrdersSort](#type-searchorderordersort) to the same field you filter for. For example, if you set the &#x60;CLOSED_AT&#x60; field in DateTimeFilter, you must also set the &#x60;sort_field&#x60; in SearchOrdersSort to &#x60;CLOSED_AT&#x60;. Otherwise, SearchOrders will throw an error. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range).
     /// </summary>
     [DataContract]
     public partial class SearchOrdersDateTimeFilter :  IEquatable<SearchOrdersDateTimeFilter>, IValidatableObject
@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersDateTimeFilter" /> class.
         /// </summary>
-        /// <param name="CreatedAt">Time range for filtering on the &#x60;created_at&#x60; timestamp..</param>
-        /// <param name="UpdatedAt">Time range for filtering on the &#x60;updated_at&#x60; timestamp..</param>
-        /// <param name="ClosedAt">Time range for filtering on the &#x60;closed_at&#x60; timestamp..</param>
+        /// <param name="CreatedAt">Time range for filtering on the &#x60;created_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;CREATED_AT&#x60;..</param>
+        /// <param name="UpdatedAt">Time range for filtering on the &#x60;updated_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;UPDATED_AT&#x60;..</param>
+        /// <param name="ClosedAt">Time range for filtering on the &#x60;closed_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;CLOSED_AT&#x60;..</param>
         public SearchOrdersDateTimeFilter(TimeRange CreatedAt = default(TimeRange), TimeRange UpdatedAt = default(TimeRange), TimeRange ClosedAt = default(TimeRange))
         {
             this.CreatedAt = CreatedAt;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Time range for filtering on the &#x60;created_at&#x60; timestamp.
+        /// Time range for filtering on the &#x60;created_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;CREATED_AT&#x60;.
         /// </summary>
-        /// <value>Time range for filtering on the &#x60;created_at&#x60; timestamp.</value>
+        /// <value>Time range for filtering on the &#x60;created_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;CREATED_AT&#x60;.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         public TimeRange CreatedAt { get; set; }
         /// <summary>
-        /// Time range for filtering on the &#x60;updated_at&#x60; timestamp.
+        /// Time range for filtering on the &#x60;updated_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;UPDATED_AT&#x60;.
         /// </summary>
-        /// <value>Time range for filtering on the &#x60;updated_at&#x60; timestamp.</value>
+        /// <value>Time range for filtering on the &#x60;updated_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;UPDATED_AT&#x60;.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public TimeRange UpdatedAt { get; set; }
         /// <summary>
-        /// Time range for filtering on the &#x60;closed_at&#x60; timestamp.
+        /// Time range for filtering on the &#x60;closed_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;CLOSED_AT&#x60;.
         /// </summary>
-        /// <value>Time range for filtering on the &#x60;closed_at&#x60; timestamp.</value>
+        /// <value>Time range for filtering on the &#x60;closed_at&#x60; timestamp. If you use this value, you must also set the &#x60;sort_field&#x60; in the OrdersSearchSort object to &#x60;CLOSED_AT&#x60;.</value>
         [DataMember(Name="closed_at", EmitDefaultValue=false)]
         public TimeRange ClosedAt { get; set; }
         /// <summary>

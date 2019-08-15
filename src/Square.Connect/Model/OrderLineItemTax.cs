@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a tax that applies to one or more line items in an order.
+    /// Represents a tax that applies to one or more line item in the order.  Fixed-amount, order-scoped taxes are distributed across all non-zero line item totals. The amount distributed to each line item is relative to the amount the item contributes to the order subtotal.
     /// </summary>
     [DataContract]
     public partial class OrderLineItemTax :  IEquatable<OrderLineItemTax>, IValidatableObject
@@ -32,13 +32,13 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemTax" /> class.
         /// </summary>
-        /// <param name="Uid">Unique ID that identifies the tax only within this order.  This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the tax only within this order..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogTax](#type-catalogtax)..</param>
         /// <param name="Name">The tax&#39;s name..</param>
         /// <param name="Type">Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</param>
-        /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%..</param>
-        /// <param name="AppliedMoney">The amount of the money applied by the tax in an order..</param>
-        /// <param name="Scope">Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.</param>
+        /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number. For example, a value of &#x60;\&quot;7.25\&quot;&#x60; corresponds to a percentage of 7.25%..</param>
+        /// <param name="AppliedMoney">The amount of the money applied by the tax in the order..</param>
+        /// <param name="Scope">Indicates the level at which the tax applies. For &#x60;ORDER&#x60; scoped taxes, Square generates references in &#x60;applied_taxes&#x60; on all order line items that do not have them. For &#x60;LINE_ITEM&#x60; scoped taxes, the tax will only apply to line items with references in their &#x60;applied_taxes&#x60; field.  This field is immutable. To change the scope, you must delete the tax and re-add it as a new tax. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.</param>
         public OrderLineItemTax(string Uid = default(string), string CatalogObjectId = default(string), string Name = default(string), string Type = default(string), string Percentage = default(string), Money AppliedMoney = default(Money), string Scope = default(string))
         {
             this.Uid = Uid;
@@ -51,9 +51,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Unique ID that identifies the tax only within this order.  This field is read-only.
+        /// Unique ID that identifies the tax only within this order.
         /// </summary>
-        /// <value>Unique ID that identifies the tax only within this order.  This field is read-only.</value>
+        /// <value>Unique ID that identifies the tax only within this order.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -75,21 +75,21 @@ namespace Square.Connect.Model
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.
+        /// The percentage of the tax, as a string representation of a decimal number. For example, a value of &#x60;\&quot;7.25\&quot;&#x60; corresponds to a percentage of 7.25%.
         /// </summary>
-        /// <value>The percentage of the tax, as a string representation of a decimal number.  A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.</value>
+        /// <value>The percentage of the tax, as a string representation of a decimal number. For example, a value of &#x60;\&quot;7.25\&quot;&#x60; corresponds to a percentage of 7.25%.</value>
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
-        /// The amount of the money applied by the tax in an order.
+        /// The amount of the money applied by the tax in the order.
         /// </summary>
-        /// <value>The amount of the money applied by the tax in an order.</value>
+        /// <value>The amount of the money applied by the tax in the order.</value>
         [DataMember(Name="applied_money", EmitDefaultValue=false)]
         public Money AppliedMoney { get; set; }
         /// <summary>
-        /// Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
+        /// Indicates the level at which the tax applies. For &#x60;ORDER&#x60; scoped taxes, Square generates references in &#x60;applied_taxes&#x60; on all order line items that do not have them. For &#x60;LINE_ITEM&#x60; scoped taxes, the tax will only apply to line items with references in their &#x60;applied_taxes&#x60; field.  This field is immutable. To change the scope, you must delete the tax and re-add it as a new tax. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
         /// </summary>
-        /// <value>Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values</value>
+        /// <value>Indicates the level at which the tax applies. For &#x60;ORDER&#x60; scoped taxes, Square generates references in &#x60;applied_taxes&#x60; on all order line items that do not have them. For &#x60;LINE_ITEM&#x60; scoped taxes, the tax will only apply to line items with references in their &#x60;applied_taxes&#x60; field.  This field is immutable. To change the scope, you must delete the tax and re-add it as a new tax. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values</value>
         [DataMember(Name="scope", EmitDefaultValue=false)]
         public string Scope { get; set; }
         /// <summary>

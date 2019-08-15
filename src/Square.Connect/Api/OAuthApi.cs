@@ -32,8 +32,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>ObtainTokenResponse</returns>
-        ObtainTokenResponse ObtainToken (ObtainTokenRequest body);
+        /// <returns>ObtainTokenResponse</returns>        ObtainTokenResponse ObtainToken (ObtainTokenRequest body);
 
         /// <summary>
         /// ObtainToken
@@ -55,6 +54,7 @@ namespace Square.Connect.Api
         /// <param name="clientId">Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps).</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>RenewTokenResponse</returns>
+        [Obsolete]
         RenewTokenResponse RenewToken (string clientId, RenewTokenRequest body);
 
         /// <summary>
@@ -76,8 +76,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>RevokeTokenResponse</returns>
-        RevokeTokenResponse RevokeToken (RevokeTokenRequest body);
+        /// <returns>RevokeTokenResponse</returns>        RevokeTokenResponse RevokeToken (RevokeTokenRequest body);
 
         /// <summary>
         /// RevokeToken
@@ -313,7 +312,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -469,7 +468,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (clientId != null) localVarPathParams.Add("client_id", Configuration.ApiClient.ParameterToString(clientId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -638,7 +637,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter

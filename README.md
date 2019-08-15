@@ -1,4 +1,12 @@
-Square Connect C# SDK [![Build Status](https://travis-ci.org/square/connect-csharp-sdk.svg?branch=master)](https://travis-ci.org/square/connect-csharp-sdk)[![NuGet version](https://badge.fury.io/nu/Square.Connect.svg)](https://badge.fury.io/nu/Square.Connect)
+![Square logo]
+
+# Square Connect .NET SDK
+
+---
+
+[![Build Status](https://travis-ci.org/square/connect-csharp-sdk.svg?branch=master)](https://travis-ci.org/square/connect-csharp-sdk)
+[![NuGet version](https://badge.fury.io/nu/Square.Connect.svg)](https://badge.fury.io/nu/Square.Connect)
+[![Apache-2 license](https://img.shields.io/badge/license-Apache2-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 ==================
 
 **If you have feedback about the new SDKs, or just want to talk to other Square Developers, request an invite to the new [slack community for Square Developers](https://squ.re/2GUW1SQ)**
@@ -125,6 +133,29 @@ namespace Example
 ```
 More examples are available at [connect-api-examples](https://github.com/square/connect-api-examples)
 
+### How to configure sandbox environment
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class Example
+    {
+        readonly Configuration configuration;
+        public Example()
+        {
+            this.configuration = new Configuration(new ApiClient("https://connect.squareupsandbox.com"));
+            this.configuration.AccessToken = "YOUR_SANDBOX_ACCESS_TOKEN";
+            LocationsApi locationsApi = new LocationsApi(this.configuration);
+        }        
+    }
+}
+```
+
 ## Documentation for API Endpoints
 
 All URIs are relative to [Square Connect Documentation](https://docs.connect.squareup.com/)
@@ -182,7 +213,18 @@ Class | Method | HTTP request
 *OAuthApi* | [**RevokeToken**](docs/OAuthApi.md#revoketoken) | **POST** /oauth2/revoke
 *OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders
+*OrdersApi* | [**PayOrder**](docs/OrdersApi.md#payorder) | **POST** /v2/orders/{order_id}/pay
 *OrdersApi* | [**SearchOrders**](docs/OrdersApi.md#searchorders) | **POST** /v2/orders/search
+*OrdersApi* | [**UpdateOrder**](docs/OrdersApi.md#updateorder) | **PUT** /v2/locations/{location_id}/orders/{order_id}
+*PaymentsApi* | [**CancelPayment**](docs/PaymentsApi.md#cancelpayment) | **POST** /v2/payments/{payment_id}/cancel
+*PaymentsApi* | [**CancelPaymentByIdempotencyKey**](docs/PaymentsApi.md#cancelpaymentbyidempotencykey) | **POST** /v2/payments/cancel
+*PaymentsApi* | [**CompletePayment**](docs/PaymentsApi.md#completepayment) | **POST** /v2/payments/{payment_id}/complete
+*PaymentsApi* | [**CreatePayment**](docs/PaymentsApi.md#createpayment) | **POST** /v2/payments
+*PaymentsApi* | [**GetPayment**](docs/PaymentsApi.md#getpayment) | **GET** /v2/payments/{payment_id}
+*PaymentsApi* | [**ListPayments**](docs/PaymentsApi.md#listpayments) | **GET** /v2/payments
+*RefundsApi* | [**GetPaymentRefund**](docs/RefundsApi.md#getpaymentrefund) | **GET** /v2/refunds/{refund_id}
+*RefundsApi* | [**ListPaymentRefunds**](docs/RefundsApi.md#listpaymentrefunds) | **GET** /v2/refunds
+*RefundsApi* | [**RefundPayment**](docs/RefundsApi.md#refundpayment) | **POST** /v2/refunds
 *ReportingApi* | [**ListAdditionalRecipientReceivableRefunds**](docs/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds
 *ReportingApi* | [**ListAdditionalRecipientReceivables**](docs/ReportingApi.md#listadditionalrecipientreceivables) | **GET** /v2/locations/{location_id}/additional-recipient-receivables
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture
@@ -269,6 +311,7 @@ Class | Method | HTTP request
  - [Model.AdditionalRecipientReceivable](docs/AdditionalRecipientReceivable.md)
  - [Model.AdditionalRecipientReceivableRefund](docs/AdditionalRecipientReceivableRefund.md)
  - [Model.Address](docs/Address.md)
+ - [Model.BalancePaymentDetails](docs/BalancePaymentDetails.md)
  - [Model.BatchChangeInventoryRequest](docs/BatchChangeInventoryRequest.md)
  - [Model.BatchChangeInventoryResponse](docs/BatchChangeInventoryResponse.md)
  - [Model.BatchDeleteCatalogObjectsRequest](docs/BatchDeleteCatalogObjectsRequest.md)
@@ -286,9 +329,14 @@ Class | Method | HTTP request
  - [Model.BreakType](docs/BreakType.md)
  - [Model.BusinessHours](docs/BusinessHours.md)
  - [Model.BusinessHoursPeriod](docs/BusinessHoursPeriod.md)
+ - [Model.CancelPaymentByIdempotencyKeyRequest](docs/CancelPaymentByIdempotencyKeyRequest.md)
+ - [Model.CancelPaymentByIdempotencyKeyResponse](docs/CancelPaymentByIdempotencyKeyResponse.md)
+ - [Model.CancelPaymentRequest](docs/CancelPaymentRequest.md)
+ - [Model.CancelPaymentResponse](docs/CancelPaymentResponse.md)
  - [Model.CaptureTransactionRequest](docs/CaptureTransactionRequest.md)
  - [Model.CaptureTransactionResponse](docs/CaptureTransactionResponse.md)
  - [Model.Card](docs/Card.md)
+ - [Model.CardPaymentDetails](docs/CardPaymentDetails.md)
  - [Model.CatalogCategory](docs/CatalogCategory.md)
  - [Model.CatalogDiscount](docs/CatalogDiscount.md)
  - [Model.CatalogIdMapping](docs/CatalogIdMapping.md)
@@ -328,6 +376,8 @@ Class | Method | HTTP request
  - [Model.ChargeRequestAdditionalRecipient](docs/ChargeRequestAdditionalRecipient.md)
  - [Model.ChargeResponse](docs/ChargeResponse.md)
  - [Model.Checkout](docs/Checkout.md)
+ - [Model.CompletePaymentRequest](docs/CompletePaymentRequest.md)
+ - [Model.CompletePaymentResponse](docs/CompletePaymentResponse.md)
  - [Model.Coordinates](docs/Coordinates.md)
  - [Model.CreateBreakTypeRequest](docs/CreateBreakTypeRequest.md)
  - [Model.CreateBreakTypeResponse](docs/CreateBreakTypeResponse.md)
@@ -345,6 +395,8 @@ Class | Method | HTTP request
  - [Model.CreateOrderRequestModifier](docs/CreateOrderRequestModifier.md)
  - [Model.CreateOrderRequestTax](docs/CreateOrderRequestTax.md)
  - [Model.CreateOrderResponse](docs/CreateOrderResponse.md)
+ - [Model.CreatePaymentRequest](docs/CreatePaymentRequest.md)
+ - [Model.CreatePaymentResponse](docs/CreatePaymentResponse.md)
  - [Model.CreateRefundRequest](docs/CreateRefundRequest.md)
  - [Model.CreateRefundResponse](docs/CreateRefundResponse.md)
  - [Model.CreateShiftRequest](docs/CreateShiftRequest.md)
@@ -375,6 +427,10 @@ Class | Method | HTTP request
  - [Model.GetBreakTypeResponse](docs/GetBreakTypeResponse.md)
  - [Model.GetEmployeeWageRequest](docs/GetEmployeeWageRequest.md)
  - [Model.GetEmployeeWageResponse](docs/GetEmployeeWageResponse.md)
+ - [Model.GetPaymentRefundRequest](docs/GetPaymentRefundRequest.md)
+ - [Model.GetPaymentRefundResponse](docs/GetPaymentRefundResponse.md)
+ - [Model.GetPaymentRequest](docs/GetPaymentRequest.md)
+ - [Model.GetPaymentResponse](docs/GetPaymentResponse.md)
  - [Model.GetShiftRequest](docs/GetShiftRequest.md)
  - [Model.GetShiftResponse](docs/GetShiftResponse.md)
  - [Model.InventoryAdjustment](docs/InventoryAdjustment.md)
@@ -399,6 +455,10 @@ Class | Method | HTTP request
  - [Model.ListEmployeesResponse](docs/ListEmployeesResponse.md)
  - [Model.ListLocationsRequest](docs/ListLocationsRequest.md)
  - [Model.ListLocationsResponse](docs/ListLocationsResponse.md)
+ - [Model.ListPaymentRefundsRequest](docs/ListPaymentRefundsRequest.md)
+ - [Model.ListPaymentRefundsResponse](docs/ListPaymentRefundsResponse.md)
+ - [Model.ListPaymentsRequest](docs/ListPaymentsRequest.md)
+ - [Model.ListPaymentsResponse](docs/ListPaymentsResponse.md)
  - [Model.ListRefundsRequest](docs/ListRefundsRequest.md)
  - [Model.ListRefundsResponse](docs/ListRefundsResponse.md)
  - [Model.ListTransactionsRequest](docs/ListTransactionsRequest.md)
@@ -417,7 +477,10 @@ Class | Method | HTTP request
  - [Model.OrderFulfillment](docs/OrderFulfillment.md)
  - [Model.OrderFulfillmentPickupDetails](docs/OrderFulfillmentPickupDetails.md)
  - [Model.OrderFulfillmentRecipient](docs/OrderFulfillmentRecipient.md)
+ - [Model.OrderFulfillmentShipmentDetails](docs/OrderFulfillmentShipmentDetails.md)
  - [Model.OrderLineItem](docs/OrderLineItem.md)
+ - [Model.OrderLineItemAppliedDiscount](docs/OrderLineItemAppliedDiscount.md)
+ - [Model.OrderLineItemAppliedTax](docs/OrderLineItemAppliedTax.md)
  - [Model.OrderLineItemDiscount](docs/OrderLineItemDiscount.md)
  - [Model.OrderLineItemModifier](docs/OrderLineItemModifier.md)
  - [Model.OrderLineItemTax](docs/OrderLineItemTax.md)
@@ -432,7 +495,14 @@ Class | Method | HTTP request
  - [Model.OrderRoundingAdjustment](docs/OrderRoundingAdjustment.md)
  - [Model.OrderServiceCharge](docs/OrderServiceCharge.md)
  - [Model.OrderSource](docs/OrderSource.md)
+ - [Model.PayOrderRequest](docs/PayOrderRequest.md)
+ - [Model.PayOrderResponse](docs/PayOrderResponse.md)
+ - [Model.Payment](docs/Payment.md)
+ - [Model.PaymentRefund](docs/PaymentRefund.md)
+ - [Model.ProcessingFee](docs/ProcessingFee.md)
  - [Model.Refund](docs/Refund.md)
+ - [Model.RefundPaymentRequest](docs/RefundPaymentRequest.md)
+ - [Model.RefundPaymentResponse](docs/RefundPaymentResponse.md)
  - [Model.RegisterDomainRequest](docs/RegisterDomainRequest.md)
  - [Model.RegisterDomainResponse](docs/RegisterDomainResponse.md)
  - [Model.RenewTokenRequest](docs/RenewTokenRequest.md)
@@ -451,6 +521,8 @@ Class | Method | HTTP request
  - [Model.RetrieveInventoryCountResponse](docs/RetrieveInventoryCountResponse.md)
  - [Model.RetrieveInventoryPhysicalCountRequest](docs/RetrieveInventoryPhysicalCountRequest.md)
  - [Model.RetrieveInventoryPhysicalCountResponse](docs/RetrieveInventoryPhysicalCountResponse.md)
+ - [Model.RetrieveLocationRequest](docs/RetrieveLocationRequest.md)
+ - [Model.RetrieveLocationResponse](docs/RetrieveLocationResponse.md)
  - [Model.RetrieveTransactionRequest](docs/RetrieveTransactionRequest.md)
  - [Model.RetrieveTransactionResponse](docs/RetrieveTransactionResponse.md)
  - [Model.RevokeTokenRequest](docs/RevokeTokenRequest.md)
@@ -493,6 +565,8 @@ Class | Method | HTTP request
  - [Model.UpdateItemModifierListsResponse](docs/UpdateItemModifierListsResponse.md)
  - [Model.UpdateItemTaxesRequest](docs/UpdateItemTaxesRequest.md)
  - [Model.UpdateItemTaxesResponse](docs/UpdateItemTaxesResponse.md)
+ - [Model.UpdateOrderRequest](docs/UpdateOrderRequest.md)
+ - [Model.UpdateOrderResponse](docs/UpdateOrderResponse.md)
  - [Model.UpdateShiftRequest](docs/UpdateShiftRequest.md)
  - [Model.UpdateShiftResponse](docs/UpdateShiftResponse.md)
  - [Model.UpdateWorkweekConfigRequest](docs/UpdateWorkweekConfigRequest.md)
@@ -743,3 +817,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
+[//]: # "Link anchor definitions"
+[Square Logo]: https://docs.connect.squareup.com/images/github/github-square-logo.svg

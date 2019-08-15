@@ -32,8 +32,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Employee</returns>
-        V1Employee CreateEmployee (V1Employee body);
+        /// <returns>V1Employee</returns>        V1Employee CreateEmployee (V1Employee body);
 
         /// <summary>
         /// CreateEmployee
@@ -53,8 +52,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeRole">An EmployeeRole object with a name and permissions, and an optional owner flag.</param>
-        /// <returns>V1EmployeeRole</returns>
-        V1EmployeeRole CreateEmployeeRole (V1EmployeeRole employeeRole);
+        /// <returns>V1EmployeeRole</returns>        V1EmployeeRole CreateEmployeeRole (V1EmployeeRole employeeRole);
 
         /// <summary>
         /// CreateEmployeeRole
@@ -74,8 +72,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Timecard</returns>
-        V1Timecard CreateTimecard (V1Timecard body);
+        /// <returns>V1Timecard</returns>        V1Timecard CreateTimecard (V1Timecard body);
 
         /// <summary>
         /// CreateTimecard
@@ -95,8 +92,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to delete.</param>
-        /// <returns>Object</returns>
-        Object DeleteTimecard (string timecardId);
+        /// <returns>Object</returns>        Object DeleteTimecard (string timecardId);
 
         /// <summary>
         /// DeleteTimecard
@@ -119,8 +115,7 @@ namespace Square.Connect.Api
         /// <param name="order">The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC (optional)</param>
         /// <param name="beginTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days. (optional)</param>
         /// <param name="endTime">The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time. (optional)</param>
-        /// <returns>List&lt;V1CashDrawerShift&gt;</returns>
-        List<V1CashDrawerShift> ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null);
+        /// <returns>List&lt;V1CashDrawerShift&gt;</returns>        List<V1CashDrawerShift> ListCashDrawerShifts (string locationId, string order = null, string beginTime = null, string endTime = null);
 
         /// <summary>
         /// ListCashDrawerShifts
@@ -145,8 +140,7 @@ namespace Square.Connect.Api
         /// <param name="order">The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1EmployeeRole&gt;</returns>
-        List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string batchToken = null);
+        /// <returns>List&lt;V1EmployeeRole&gt;</returns>        List<V1EmployeeRole> ListEmployeeRoles (string order = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// ListEmployeeRoles
@@ -176,8 +170,7 @@ namespace Square.Connect.Api
         /// <param name="externalId">If provided, the endpoint returns only employee entities with the specified external_id. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1Employee&gt;</returns>
-        List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null);
+        /// <returns>List&lt;V1Employee&gt;</returns>        List<V1Employee> ListEmployees (string order = null, string beginUpdatedAt = null, string endUpdatedAt = null, string beginCreatedAt = null, string endCreatedAt = null, string status = null, string externalId = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// ListEmployees
@@ -205,8 +198,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The ID of the timecard to list events for.</param>
-        /// <returns>List&lt;V1TimecardEvent&gt;</returns>
-        List<V1TimecardEvent> ListTimecardEvents (string timecardId);
+        /// <returns>List&lt;V1TimecardEvent&gt;</returns>        List<V1TimecardEvent> ListTimecardEvents (string timecardId);
 
         /// <summary>
         /// ListTimecardEvents
@@ -236,8 +228,7 @@ namespace Square.Connect.Api
         /// <param name="deleted">If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. (optional)</param>
         /// <param name="limit">The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1Timecard&gt;</returns>
-        List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
+        /// <returns>List&lt;V1Timecard&gt;</returns>        List<V1Timecard> ListTimecards (string order = null, string employeeId = null, string beginClockinTime = null, string endClockinTime = null, string beginClockoutTime = null, string endClockoutTime = null, string beginUpdatedAt = null, string endUpdatedAt = null, bool? deleted = null, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// ListTimecards
@@ -268,8 +259,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list cash drawer shifts for.</param>
         /// <param name="shiftId">The shift&#39;s ID.</param>
-        /// <returns>V1CashDrawerShift</returns>
-        V1CashDrawerShift RetrieveCashDrawerShift (string locationId, string shiftId);
+        /// <returns>V1CashDrawerShift</returns>        V1CashDrawerShift RetrieveCashDrawerShift (string locationId, string shiftId);
 
         /// <summary>
         /// RetrieveCashDrawerShift
@@ -290,8 +280,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The employee&#39;s ID.</param>
-        /// <returns>V1Employee</returns>
-        V1Employee RetrieveEmployee (string employeeId);
+        /// <returns>V1Employee</returns>        V1Employee RetrieveEmployee (string employeeId);
 
         /// <summary>
         /// RetrieveEmployee
@@ -311,8 +300,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The role&#39;s ID.</param>
-        /// <returns>V1EmployeeRole</returns>
-        V1EmployeeRole RetrieveEmployeeRole (string roleId);
+        /// <returns>V1EmployeeRole</returns>        V1EmployeeRole RetrieveEmployeeRole (string roleId);
 
         /// <summary>
         /// RetrieveEmployeeRole
@@ -332,8 +320,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">The timecard&#39;s ID.</param>
-        /// <returns>V1Timecard</returns>
-        V1Timecard RetrieveTimecard (string timecardId);
+        /// <returns>V1Timecard</returns>        V1Timecard RetrieveTimecard (string timecardId);
 
         /// <summary>
         /// RetrieveTimecard
@@ -354,8 +341,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employeeId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Employee</returns>
-        V1Employee UpdateEmployee (string employeeId, V1Employee body);
+        /// <returns>V1Employee</returns>        V1Employee UpdateEmployee (string employeeId, V1Employee body);
 
         /// <summary>
         /// UpdateEmployee
@@ -377,8 +363,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="roleId">The ID of the role to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1EmployeeRole</returns>
-        V1EmployeeRole UpdateEmployeeRole (string roleId, V1EmployeeRole body);
+        /// <returns>V1EmployeeRole</returns>        V1EmployeeRole UpdateEmployeeRole (string roleId, V1EmployeeRole body);
 
         /// <summary>
         /// UpdateEmployeeRole
@@ -400,8 +385,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="timecardId">TThe ID of the timecard to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request. See the corresponding object definition for field details.</param>
-        /// <returns>V1Timecard</returns>
-        V1Timecard UpdateTimecard (string timecardId, V1Timecard body);
+        /// <returns>V1Timecard</returns>        V1Timecard UpdateTimecard (string timecardId, V1Timecard body);
 
         /// <summary>
         /// UpdateTimecard
@@ -963,7 +947,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1126,7 +1110,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (employeeRole != null && employeeRole.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(employeeRole); // http body (model) parameter
@@ -1289,7 +1273,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1452,7 +1436,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
 
             // authentication (oauth2) required
@@ -1607,7 +1591,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
@@ -1769,7 +1753,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
@@ -1936,7 +1920,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (beginUpdatedAt != null) localVarQueryParams.Add("begin_updated_at", Configuration.ApiClient.ParameterToString(beginUpdatedAt)); // query parameter
             if (endUpdatedAt != null) localVarQueryParams.Add("end_updated_at", Configuration.ApiClient.ParameterToString(endUpdatedAt)); // query parameter
@@ -2114,7 +2098,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
 
             // authentication (oauth2) required
@@ -2280,7 +2264,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(order)); // query parameter
             if (employeeId != null) localVarQueryParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // query parameter
             if (beginClockinTime != null) localVarQueryParams.Add("begin_clockin_time", Configuration.ApiClient.ParameterToString(beginClockinTime)); // query parameter
@@ -2471,7 +2455,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (shiftId != null) localVarPathParams.Add("shift_id", Configuration.ApiClient.ParameterToString(shiftId)); // path parameter
 
@@ -2627,7 +2611,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (employeeId != null) localVarPathParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // path parameter
 
             // authentication (oauth2) required
@@ -2776,7 +2760,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (roleId != null) localVarPathParams.Add("role_id", Configuration.ApiClient.ParameterToString(roleId)); // path parameter
 
             // authentication (oauth2) required
@@ -2925,7 +2909,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
 
             // authentication (oauth2) required
@@ -3079,7 +3063,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (employeeId != null) localVarPathParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3254,7 +3238,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (roleId != null) localVarPathParams.Add("role_id", Configuration.ApiClient.ParameterToString(roleId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3429,7 +3413,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (timecardId != null) localVarPathParams.Add("timecard_id", Configuration.ApiClient.ParameterToString(timecardId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {

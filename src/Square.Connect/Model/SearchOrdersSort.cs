@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Sorting options for a query. Returned Orders will always be sorted on a timestamp.
+    /// Sorting criteria for a SearchOrders request. Results can only be sorted by a timestamp field.
     /// </summary>
     [DataContract]
     public partial class SearchOrdersSort :  IEquatable<SearchOrdersSort>, IValidatableObject
@@ -37,8 +37,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersSort" /> class.
         /// </summary>
-        /// <param name="SortField">The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the set time range field. If this field does not match the time range field in &#x60;DateTimeFilter&#x60;, SearchOrder will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values (required).</param>
-        /// <param name="SortOrder">The order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values.</param>
+        /// <param name="SortField">The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the timestamp field that the DateTimeFilter uses to filter. For example, If you set your &#x60;sort_field&#x60; to &#x60;CLOSED_AT&#x60; and you use a DateTimeFilter, your DateTimeFilter must filter for orders by their &#x60;CLOSED_AT&#x60; date. If this field does not match the timestamp field in &#x60;DateTimeFilter&#x60;, SearchOrders will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values (required).</param>
+        /// <param name="SortOrder">The chronological order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values.</param>
         public SearchOrdersSort(string SortField = default(string), string SortOrder = default(string))
         {
             // to ensure "SortField" is required (not null)
@@ -54,15 +54,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the set time range field. If this field does not match the time range field in &#x60;DateTimeFilter&#x60;, SearchOrder will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
+        /// The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the timestamp field that the DateTimeFilter uses to filter. For example, If you set your &#x60;sort_field&#x60; to &#x60;CLOSED_AT&#x60; and you use a DateTimeFilter, your DateTimeFilter must filter for orders by their &#x60;CLOSED_AT&#x60; date. If this field does not match the timestamp field in &#x60;DateTimeFilter&#x60;, SearchOrders will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
         /// </summary>
-        /// <value>The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the set time range field. If this field does not match the time range field in &#x60;DateTimeFilter&#x60;, SearchOrder will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values</value>
+        /// <value>The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), &#x60;sort_field&#x60; must match the timestamp field that the DateTimeFilter uses to filter. For example, If you set your &#x60;sort_field&#x60; to &#x60;CLOSED_AT&#x60; and you use a DateTimeFilter, your DateTimeFilter must filter for orders by their &#x60;CLOSED_AT&#x60; date. If this field does not match the timestamp field in &#x60;DateTimeFilter&#x60;, SearchOrders will return an error.  Default: &#x60;CREATED_AT&#x60;. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values</value>
         [DataMember(Name="sort_field", EmitDefaultValue=false)]
         public string SortField { get; set; }
         /// <summary>
-        /// The order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values
+        /// The chronological order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values
         /// </summary>
-        /// <value>The order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values</value>
+        /// <value>The chronological order in which results are returned. Defaults to &#x60;DESC&#x60;. See [SortOrder](#type-sortorder) for possible values</value>
         [DataMember(Name="sort_order", EmitDefaultValue=false)]
         public string SortOrder { get; set; }
         /// <summary>

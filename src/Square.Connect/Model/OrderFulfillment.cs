@@ -32,16 +32,26 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderFulfillment" /> class.
         /// </summary>
+        /// <param name="Uid">Unique ID that identifies the fulfillment only within this order..</param>
         /// <param name="Type">The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values.</param>
         /// <param name="State">The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values.</param>
-        /// <param name="PickupDetails">Contains pickup-specific details. Required when fulfillment type is &#x60;PICKUP&#x60;..</param>
-        public OrderFulfillment(string Type = default(string), string State = default(string), OrderFulfillmentPickupDetails PickupDetails = default(OrderFulfillmentPickupDetails))
+        /// <param name="PickupDetails">Contains details for a pickup fulfillment. Required when fulfillment type is &#x60;PICKUP&#x60;..</param>
+        /// <param name="ShipmentDetails">Contains details for a shipment fulfillment. Required when fulfillment type is &#x60;SHIPMENT&#x60;.  A shipment fulfillment&#39;s relationship to fulfillment &#x60;state&#x60;: &#x60;PROPOSED&#x60;: A shipment is requested. &#x60;RESERVED&#x60;: Fulfillment accepted. Shipment processing. &#x60;PREPARED&#x60;: Shipment packaged. Shipping label created. &#x60;COMPLETED&#x60;: Package has been shipped. &#x60;CANCELED&#x60;: Shipment has been canceled. &#x60;FAILED&#x60;: Shipment has failed..</param>
+        public OrderFulfillment(string Uid = default(string), string Type = default(string), string State = default(string), OrderFulfillmentPickupDetails PickupDetails = default(OrderFulfillmentPickupDetails), OrderFulfillmentShipmentDetails ShipmentDetails = default(OrderFulfillmentShipmentDetails))
         {
+            this.Uid = Uid;
             this.Type = Type;
             this.State = State;
             this.PickupDetails = PickupDetails;
+            this.ShipmentDetails = ShipmentDetails;
         }
         
+        /// <summary>
+        /// Unique ID that identifies the fulfillment only within this order.
+        /// </summary>
+        /// <value>Unique ID that identifies the fulfillment only within this order.</value>
+        [DataMember(Name="uid", EmitDefaultValue=false)]
+        public string Uid { get; set; }
         /// <summary>
         /// The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
         /// </summary>
@@ -55,11 +65,17 @@ namespace Square.Connect.Model
         [DataMember(Name="state", EmitDefaultValue=false)]
         public string State { get; set; }
         /// <summary>
-        /// Contains pickup-specific details. Required when fulfillment type is &#x60;PICKUP&#x60;.
+        /// Contains details for a pickup fulfillment. Required when fulfillment type is &#x60;PICKUP&#x60;.
         /// </summary>
-        /// <value>Contains pickup-specific details. Required when fulfillment type is &#x60;PICKUP&#x60;.</value>
+        /// <value>Contains details for a pickup fulfillment. Required when fulfillment type is &#x60;PICKUP&#x60;.</value>
         [DataMember(Name="pickup_details", EmitDefaultValue=false)]
         public OrderFulfillmentPickupDetails PickupDetails { get; set; }
+        /// <summary>
+        /// Contains details for a shipment fulfillment. Required when fulfillment type is &#x60;SHIPMENT&#x60;.  A shipment fulfillment&#39;s relationship to fulfillment &#x60;state&#x60;: &#x60;PROPOSED&#x60;: A shipment is requested. &#x60;RESERVED&#x60;: Fulfillment accepted. Shipment processing. &#x60;PREPARED&#x60;: Shipment packaged. Shipping label created. &#x60;COMPLETED&#x60;: Package has been shipped. &#x60;CANCELED&#x60;: Shipment has been canceled. &#x60;FAILED&#x60;: Shipment has failed.
+        /// </summary>
+        /// <value>Contains details for a shipment fulfillment. Required when fulfillment type is &#x60;SHIPMENT&#x60;.  A shipment fulfillment&#39;s relationship to fulfillment &#x60;state&#x60;: &#x60;PROPOSED&#x60;: A shipment is requested. &#x60;RESERVED&#x60;: Fulfillment accepted. Shipment processing. &#x60;PREPARED&#x60;: Shipment packaged. Shipping label created. &#x60;COMPLETED&#x60;: Package has been shipped. &#x60;CANCELED&#x60;: Shipment has been canceled. &#x60;FAILED&#x60;: Shipment has failed.</value>
+        [DataMember(Name="shipment_details", EmitDefaultValue=false)]
+        public OrderFulfillmentShipmentDetails ShipmentDetails { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -68,9 +84,11 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OrderFulfillment {\n");
+            sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  PickupDetails: ").Append(PickupDetails).Append("\n");
+            sb.Append("  ShipmentDetails: ").Append(ShipmentDetails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,6 +126,11 @@ namespace Square.Connect.Model
 
             return 
                 (
+                    this.Uid == other.Uid ||
+                    this.Uid != null &&
+                    this.Uid.Equals(other.Uid)
+                ) && 
+                (
                     this.Type == other.Type ||
                     this.Type != null &&
                     this.Type.Equals(other.Type)
@@ -121,6 +144,11 @@ namespace Square.Connect.Model
                     this.PickupDetails == other.PickupDetails ||
                     this.PickupDetails != null &&
                     this.PickupDetails.Equals(other.PickupDetails)
+                ) && 
+                (
+                    this.ShipmentDetails == other.ShipmentDetails ||
+                    this.ShipmentDetails != null &&
+                    this.ShipmentDetails.Equals(other.ShipmentDetails)
                 );
         }
 
@@ -135,18 +163,28 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Uid != null)
+                    hash = hash * 59 + this.Uid.GetHashCode();
                 if (this.Type != null)
                     hash = hash * 59 + this.Type.GetHashCode();
                 if (this.State != null)
                     hash = hash * 59 + this.State.GetHashCode();
                 if (this.PickupDetails != null)
                     hash = hash * 59 + this.PickupDetails.GetHashCode();
+                if (this.ShipmentDetails != null)
+                    hash = hash * 59 + this.ShipmentDetails.GetHashCode();
                 return hash;
             }
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // Uid (string) maxLength
+            if(this.Uid != null && this.Uid.Length > 60)
+            {
+                yield return new ValidationResult("Invalid value for Uid, length must be less than 60.", new [] { "Uid" });
+            }
+
             yield break;
         }
     }

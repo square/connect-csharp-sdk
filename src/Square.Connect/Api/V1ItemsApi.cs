@@ -34,8 +34,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1InventoryEntry</returns>
-        V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body);
+        /// <returns>V1InventoryEntry</returns>        V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body);
 
         /// <summary>
         /// AdjustInventory
@@ -59,8 +58,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
-        /// <returns>V1Item</returns>
-        V1Item ApplyFee (string locationId, string itemId, string feeId);
+        /// <returns>V1Item</returns>        V1Item ApplyFee (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// ApplyFee
@@ -84,8 +82,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
-        /// <returns>V1Item</returns>
-        V1Item ApplyModifierList (string locationId, string modifierListId, string itemId);
+        /// <returns>V1Item</returns>        V1Item ApplyModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// ApplyModifierList
@@ -108,8 +105,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Category</returns>
-        V1Category CreateCategory (string locationId, V1Category body);
+        /// <returns>V1Category</returns>        V1Category CreateCategory (string locationId, V1Category body);
 
         /// <summary>
         /// CreateCategory
@@ -131,8 +127,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Discount</returns>
-        V1Discount CreateDiscount (string locationId, V1Discount body);
+        /// <returns>V1Discount</returns>        V1Discount CreateDiscount (string locationId, V1Discount body);
 
         /// <summary>
         /// CreateDiscount
@@ -154,8 +149,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Fee</returns>
-        V1Fee CreateFee (string locationId, V1Fee body);
+        /// <returns>V1Fee</returns>        V1Fee CreateFee (string locationId, V1Fee body);
 
         /// <summary>
         /// CreateFee
@@ -177,8 +171,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Item</returns>
-        V1Item CreateItem (string locationId, V1Item body);
+        /// <returns>V1Item</returns>        V1Item CreateItem (string locationId, V1Item body);
 
         /// <summary>
         /// CreateItem
@@ -200,8 +193,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierList</returns>
-        V1ModifierList CreateModifierList (string locationId, V1ModifierList body);
+        /// <returns>V1ModifierList</returns>        V1ModifierList CreateModifierList (string locationId, V1ModifierList body);
 
         /// <summary>
         /// CreateModifierList
@@ -224,8 +216,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierOption</returns>
-        V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body);
+        /// <returns>V1ModifierOption</returns>        V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body);
 
         /// <summary>
         /// CreateModifierOption
@@ -248,8 +239,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Page</returns>
-        V1Page CreatePage (string locationId, V1Page body);
+        /// <returns>V1Page</returns>        V1Page CreatePage (string locationId, V1Page body);
 
         /// <summary>
         /// CreatePage
@@ -272,8 +262,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Variation</returns>
-        V1Variation CreateVariation (string locationId, string itemId, V1Variation body);
+        /// <returns>V1Variation</returns>        V1Variation CreateVariation (string locationId, string itemId, V1Variation body);
 
         /// <summary>
         /// CreateVariation
@@ -296,8 +285,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
-        /// <returns>V1Category</returns>
-        V1Category DeleteCategory (string locationId, string categoryId);
+        /// <returns>V1Category</returns>        V1Category DeleteCategory (string locationId, string categoryId);
 
         /// <summary>
         /// DeleteCategory
@@ -319,8 +307,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
-        /// <returns>V1Discount</returns>
-        V1Discount DeleteDiscount (string locationId, string discountId);
+        /// <returns>V1Discount</returns>        V1Discount DeleteDiscount (string locationId, string discountId);
 
         /// <summary>
         /// DeleteDiscount
@@ -342,8 +329,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
-        /// <returns>V1Fee</returns>
-        V1Fee DeleteFee (string locationId, string feeId);
+        /// <returns>V1Fee</returns>        V1Fee DeleteFee (string locationId, string feeId);
 
         /// <summary>
         /// DeleteFee
@@ -365,8 +351,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
-        /// <returns>V1Item</returns>
-        V1Item DeleteItem (string locationId, string itemId);
+        /// <returns>V1Item</returns>        V1Item DeleteItem (string locationId, string itemId);
 
         /// <summary>
         /// DeleteItem
@@ -388,8 +373,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
-        /// <returns>V1ModifierList</returns>
-        V1ModifierList DeleteModifierList (string locationId, string modifierListId);
+        /// <returns>V1ModifierList</returns>        V1ModifierList DeleteModifierList (string locationId, string modifierListId);
 
         /// <summary>
         /// DeleteModifierList
@@ -412,8 +396,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
-        /// <returns>V1ModifierOption</returns>
-        V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId);
+        /// <returns>V1ModifierOption</returns>        V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId);
 
         /// <summary>
         /// DeleteModifierOption
@@ -436,8 +419,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
-        /// <returns>V1Page</returns>
-        V1Page DeletePage (string locationId, string pageId);
+        /// <returns>V1Page</returns>        V1Page DeletePage (string locationId, string pageId);
 
         /// <summary>
         /// DeletePage
@@ -461,8 +443,7 @@ namespace Square.Connect.Api
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
-        /// <returns>V1Page</returns>
-        V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null);
+        /// <returns>V1Page</returns>        V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null);
 
         /// <summary>
         /// DeletePageCell
@@ -487,8 +468,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
-        /// <returns>V1Variation</returns>
-        V1Variation DeleteVariation (string locationId, string itemId, string variationId);
+        /// <returns>V1Variation</returns>        V1Variation DeleteVariation (string locationId, string itemId, string variationId);
 
         /// <summary>
         /// DeleteVariation
@@ -510,8 +490,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
-        /// <returns>List&lt;V1Category&gt;</returns>
-        List<V1Category> ListCategories (string locationId);
+        /// <returns>List&lt;V1Category&gt;</returns>        List<V1Category> ListCategories (string locationId);
 
         /// <summary>
         /// ListCategories
@@ -531,8 +510,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
-        /// <returns>List&lt;V1Discount&gt;</returns>
-        List<V1Discount> ListDiscounts (string locationId);
+        /// <returns>List&lt;V1Discount&gt;</returns>        List<V1Discount> ListDiscounts (string locationId);
 
         /// <summary>
         /// ListDiscounts
@@ -552,8 +530,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
-        /// <returns>List&lt;V1Fee&gt;</returns>
-        List<V1Fee> ListFees (string locationId);
+        /// <returns>List&lt;V1Fee&gt;</returns>        List<V1Fee> ListFees (string locationId);
 
         /// <summary>
         /// ListFees
@@ -575,8 +552,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1InventoryEntry&gt;</returns>
-        List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null);
+        /// <returns>List&lt;V1InventoryEntry&gt;</returns>        List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// ListInventory
@@ -599,8 +575,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1Item&gt;</returns>
-        List<V1Item> ListItems (string locationId, string batchToken = null);
+        /// <returns>List&lt;V1Item&gt;</returns>        List<V1Item> ListItems (string locationId, string batchToken = null);
 
         /// <summary>
         /// ListItems
@@ -621,8 +596,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
-        /// <returns>List&lt;V1ModifierList&gt;</returns>
-        List<V1ModifierList> ListModifierLists (string locationId);
+        /// <returns>List&lt;V1ModifierList&gt;</returns>        List<V1ModifierList> ListModifierLists (string locationId);
 
         /// <summary>
         /// ListModifierLists
@@ -642,8 +616,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
-        /// <returns>List&lt;V1Page&gt;</returns>
-        List<V1Page> ListPages (string locationId);
+        /// <returns>List&lt;V1Page&gt;</returns>        List<V1Page> ListPages (string locationId);
 
         /// <summary>
         /// ListPages
@@ -665,8 +638,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
-        /// <returns>V1Item</returns>
-        V1Item RemoveFee (string locationId, string itemId, string feeId);
+        /// <returns>V1Item</returns>        V1Item RemoveFee (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// RemoveFee
@@ -690,8 +662,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
-        /// <returns>V1Item</returns>
-        V1Item RemoveModifierList (string locationId, string modifierListId, string itemId);
+        /// <returns>V1Item</returns>        V1Item RemoveModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// RemoveModifierList
@@ -714,8 +685,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
-        /// <returns>V1Item</returns>
-        V1Item RetrieveItem (string locationId, string itemId);
+        /// <returns>V1Item</returns>        V1Item RetrieveItem (string locationId, string itemId);
 
         /// <summary>
         /// RetrieveItem
@@ -737,8 +707,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
-        /// <returns>V1ModifierList</returns>
-        V1ModifierList RetrieveModifierList (string locationId, string modifierListId);
+        /// <returns>V1ModifierList</returns>        V1ModifierList RetrieveModifierList (string locationId, string modifierListId);
 
         /// <summary>
         /// RetrieveModifierList
@@ -761,8 +730,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Category</returns>
-        V1Category UpdateCategory (string locationId, string categoryId, V1Category body);
+        /// <returns>V1Category</returns>        V1Category UpdateCategory (string locationId, string categoryId, V1Category body);
 
         /// <summary>
         /// UpdateCategory
@@ -786,8 +754,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Discount</returns>
-        V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body);
+        /// <returns>V1Discount</returns>        V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body);
 
         /// <summary>
         /// UpdateDiscount
@@ -811,8 +778,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Fee</returns>
-        V1Fee UpdateFee (string locationId, string feeId, V1Fee body);
+        /// <returns>V1Fee</returns>        V1Fee UpdateFee (string locationId, string feeId, V1Fee body);
 
         /// <summary>
         /// UpdateFee
@@ -836,8 +802,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Item</returns>
-        V1Item UpdateItem (string locationId, string itemId, V1Item body);
+        /// <returns>V1Item</returns>        V1Item UpdateItem (string locationId, string itemId, V1Item body);
 
         /// <summary>
         /// UpdateItem
@@ -861,8 +826,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierList</returns>
-        V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body);
+        /// <returns>V1ModifierList</returns>        V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body);
 
         /// <summary>
         /// UpdateModifierList
@@ -887,8 +851,7 @@ namespace Square.Connect.Api
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierOption</returns>
-        V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
+        /// <returns>V1ModifierOption</returns>        V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
 
         /// <summary>
         /// UpdateModifierOption
@@ -913,8 +876,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Page</returns>
-        V1Page UpdatePage (string locationId, string pageId, V1Page body);
+        /// <returns>V1Page</returns>        V1Page UpdatePage (string locationId, string pageId, V1Page body);
 
         /// <summary>
         /// UpdatePage
@@ -938,8 +900,7 @@ namespace Square.Connect.Api
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Page</returns>
-        V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body);
+        /// <returns>V1Page</returns>        V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body);
 
         /// <summary>
         /// UpdatePageCell
@@ -964,8 +925,7 @@ namespace Square.Connect.Api
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Variation</returns>
-        V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body);
+        /// <returns>V1Variation</returns>        V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body);
 
         /// <summary>
         /// UpdateVariation
@@ -2105,7 +2065,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -2292,7 +2252,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -2465,7 +2425,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -2633,7 +2593,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2808,7 +2768,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2983,7 +2943,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3158,7 +3118,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3333,7 +3293,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3513,7 +3473,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3695,7 +3655,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3875,7 +3835,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -4057,7 +4017,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
 
@@ -4218,7 +4178,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
 
@@ -4379,7 +4339,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
 
@@ -4540,7 +4500,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -4701,7 +4661,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -4867,7 +4827,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -5035,7 +4995,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
 
@@ -5200,7 +5160,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (row != null) localVarQueryParams.Add("row", Configuration.ApiClient.ParameterToString(row)); // query parameter
@@ -5374,7 +5334,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
@@ -5537,7 +5497,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5686,7 +5646,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5835,7 +5795,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5988,7 +5948,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
@@ -6147,7 +6107,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
@@ -6300,7 +6260,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6449,7 +6409,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6608,7 +6568,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -6781,7 +6741,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -6949,7 +6909,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -7110,7 +7070,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -7276,7 +7236,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7463,7 +7423,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7650,7 +7610,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7837,7 +7797,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8024,7 +7984,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8216,7 +8176,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -8410,7 +8370,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8597,7 +8557,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8789,7 +8749,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter

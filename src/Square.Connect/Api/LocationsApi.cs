@@ -31,8 +31,7 @@ namespace Square.Connect.Api
         /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ListLocationsResponse</returns>
-        ListLocationsResponse ListLocations ();
+        /// <returns>ListLocationsResponse</returns>        ListLocationsResponse ListLocations ();
 
         /// <summary>
         /// ListLocations
@@ -216,7 +215,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
 
             // authentication (oauth2) required
             // oauth required

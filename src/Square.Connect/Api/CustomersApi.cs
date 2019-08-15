@@ -32,8 +32,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>CreateCustomerResponse</returns>
-        CreateCustomerResponse CreateCustomer (CreateCustomerRequest body);
+        /// <returns>CreateCustomerResponse</returns>        CreateCustomerResponse CreateCustomer (CreateCustomerRequest body);
 
         /// <summary>
         /// CreateCustomer
@@ -54,8 +53,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The Square ID of the customer profile the card is linked to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>CreateCustomerCardResponse</returns>
-        CreateCustomerCardResponse CreateCustomerCard (string customerId, CreateCustomerCardRequest body);
+        /// <returns>CreateCustomerCardResponse</returns>        CreateCustomerCardResponse CreateCustomerCard (string customerId, CreateCustomerCardRequest body);
 
         /// <summary>
         /// CreateCustomerCard
@@ -76,8 +74,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to delete.</param>
-        /// <returns>DeleteCustomerResponse</returns>
-        DeleteCustomerResponse DeleteCustomer (string customerId);
+        /// <returns>DeleteCustomerResponse</returns>        DeleteCustomerResponse DeleteCustomer (string customerId);
 
         /// <summary>
         /// DeleteCustomer
@@ -98,8 +95,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer that the card on file belongs to.</param>
         /// <param name="cardId">The ID of the card on file to delete.</param>
-        /// <returns>DeleteCustomerCardResponse</returns>
-        DeleteCustomerCardResponse DeleteCustomerCard (string customerId, string cardId);
+        /// <returns>DeleteCustomerCardResponse</returns>        DeleteCustomerCardResponse DeleteCustomerCard (string customerId, string cardId);
 
         /// <summary>
         /// DeleteCustomerCard
@@ -122,8 +118,7 @@ namespace Square.Connect.Api
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="sortField">Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)</param>
         /// <param name="sortOrder">Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)</param>
-        /// <returns>ListCustomersResponse</returns>
-        ListCustomersResponse ListCustomers (string cursor = null, string sortField = null, string sortOrder = null);
+        /// <returns>ListCustomersResponse</returns>        ListCustomersResponse ListCustomers (string cursor = null, string sortField = null, string sortOrder = null);
 
         /// <summary>
         /// ListCustomers
@@ -145,8 +140,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to retrieve.</param>
-        /// <returns>RetrieveCustomerResponse</returns>
-        RetrieveCustomerResponse RetrieveCustomer (string customerId);
+        /// <returns>RetrieveCustomerResponse</returns>        RetrieveCustomerResponse RetrieveCustomer (string customerId);
 
         /// <summary>
         /// RetrieveCustomer
@@ -166,8 +160,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>SearchCustomersResponse</returns>
-        SearchCustomersResponse SearchCustomers (SearchCustomersRequest body);
+        /// <returns>SearchCustomersResponse</returns>        SearchCustomersResponse SearchCustomers (SearchCustomersRequest body);
 
         /// <summary>
         /// SearchCustomers
@@ -188,8 +181,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId">The ID of the customer to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>UpdateCustomerResponse</returns>
-        UpdateCustomerResponse UpdateCustomer (string customerId, UpdateCustomerRequest body);
+        /// <returns>UpdateCustomerResponse</returns>        UpdateCustomerResponse UpdateCustomer (string customerId, UpdateCustomerRequest body);
 
         /// <summary>
         /// UpdateCustomer
@@ -539,7 +531,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -707,7 +699,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -877,7 +869,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
 
             // authentication (oauth2) required
@@ -1031,7 +1023,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (cardId != null) localVarPathParams.Add("card_id", Configuration.ApiClient.ParameterToString(cardId)); // path parameter
 
@@ -1188,7 +1180,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
             if (sortField != null) localVarQueryParams.Add("sort_field", Configuration.ApiClient.ParameterToString(sortField)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -1342,7 +1334,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
 
             // authentication (oauth2) required
@@ -1491,7 +1483,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1659,7 +1651,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (customerId != null) localVarPathParams.Add("customer_id", Configuration.ApiClient.ParameterToString(customerId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {

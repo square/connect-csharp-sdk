@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersCustomerFilter" /> class.
         /// </summary>
-        /// <param name="CustomerIds">Filter by orders with any of the listed &#x60;customer_id&#x60;s.  Max: 10 &#x60;customer_id&#x60;s..</param>
+        /// <param name="CustomerIds">List of customer IDs to filter by.  Max: 10 customer IDs..</param>
         public SearchOrdersCustomerFilter(List<string> CustomerIds = default(List<string>))
         {
             this.CustomerIds = CustomerIds;
         }
         
         /// <summary>
-        /// Filter by orders with any of the listed &#x60;customer_id&#x60;s.  Max: 10 &#x60;customer_id&#x60;s.
+        /// List of customer IDs to filter by.  Max: 10 customer IDs.
         /// </summary>
-        /// <value>Filter by orders with any of the listed &#x60;customer_id&#x60;s.  Max: 10 &#x60;customer_id&#x60;s.</value>
+        /// <value>List of customer IDs to filter by.  Max: 10 customer IDs.</value>
         [DataMember(Name="customer_ids", EmitDefaultValue=false)]
         public List<string> CustomerIds { get; set; }
         /// <summary>

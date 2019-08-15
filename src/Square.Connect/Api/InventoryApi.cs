@@ -32,8 +32,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>BatchChangeInventoryResponse</returns>
-        BatchChangeInventoryResponse BatchChangeInventory (BatchChangeInventoryRequest body);
+        /// <returns>BatchChangeInventoryResponse</returns>        BatchChangeInventoryResponse BatchChangeInventory (BatchChangeInventoryRequest body);
 
         /// <summary>
         /// BatchChangeInventory
@@ -53,8 +52,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>BatchRetrieveInventoryChangesResponse</returns>
-        BatchRetrieveInventoryChangesResponse BatchRetrieveInventoryChanges (BatchRetrieveInventoryChangesRequest body);
+        /// <returns>BatchRetrieveInventoryChangesResponse</returns>        BatchRetrieveInventoryChangesResponse BatchRetrieveInventoryChanges (BatchRetrieveInventoryChangesRequest body);
 
         /// <summary>
         /// BatchRetrieveInventoryChanges
@@ -74,8 +72,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>BatchRetrieveInventoryCountsResponse</returns>
-        BatchRetrieveInventoryCountsResponse BatchRetrieveInventoryCounts (BatchRetrieveInventoryCountsRequest body);
+        /// <returns>BatchRetrieveInventoryCountsResponse</returns>        BatchRetrieveInventoryCountsResponse BatchRetrieveInventoryCounts (BatchRetrieveInventoryCountsRequest body);
 
         /// <summary>
         /// BatchRetrieveInventoryCounts
@@ -95,8 +92,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
-        /// <returns>RetrieveInventoryAdjustmentResponse</returns>
-        RetrieveInventoryAdjustmentResponse RetrieveInventoryAdjustment (string adjustmentId);
+        /// <returns>RetrieveInventoryAdjustmentResponse</returns>        RetrieveInventoryAdjustmentResponse RetrieveInventoryAdjustment (string adjustmentId);
 
         /// <summary>
         /// RetrieveInventoryAdjustment
@@ -118,8 +114,7 @@ namespace Square.Connect.Api
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <returns>RetrieveInventoryChangesResponse</returns>
-        RetrieveInventoryChangesResponse RetrieveInventoryChanges (string catalogObjectId, string locationIds = null, string cursor = null);
+        /// <returns>RetrieveInventoryChangesResponse</returns>        RetrieveInventoryChangesResponse RetrieveInventoryChanges (string catalogObjectId, string locationIds = null, string cursor = null);
 
         /// <summary>
         /// RetrieveInventoryChanges
@@ -143,8 +138,7 @@ namespace Square.Connect.Api
         /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
         /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <returns>RetrieveInventoryCountResponse</returns>
-        RetrieveInventoryCountResponse RetrieveInventoryCount (string catalogObjectId, string locationIds = null, string cursor = null);
+        /// <returns>RetrieveInventoryCountResponse</returns>        RetrieveInventoryCountResponse RetrieveInventoryCount (string catalogObjectId, string locationIds = null, string cursor = null);
 
         /// <summary>
         /// RetrieveInventoryCount
@@ -166,8 +160,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
-        /// <returns>RetrieveInventoryPhysicalCountResponse</returns>
-        RetrieveInventoryPhysicalCountResponse RetrieveInventoryPhysicalCount (string physicalCountId);
+        /// <returns>RetrieveInventoryPhysicalCountResponse</returns>        RetrieveInventoryPhysicalCountResponse RetrieveInventoryPhysicalCount (string physicalCountId);
 
         /// <summary>
         /// RetrieveInventoryPhysicalCount
@@ -493,7 +486,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -656,7 +649,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -819,7 +812,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -982,7 +975,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (adjustmentId != null) localVarPathParams.Add("adjustment_id", Configuration.ApiClient.ParameterToString(adjustmentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1135,7 +1128,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1296,7 +1289,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1453,7 +1446,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (physicalCountId != null) localVarPathParams.Add("physical_count_id", Configuration.ApiClient.ParameterToString(physicalCountId)); // path parameter
 
             // authentication (oauth2) required

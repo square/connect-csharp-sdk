@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// The recipient of a fulfillment.
+    /// Contains information on the recipient of a fulfillment.
     /// </summary>
     [DataContract]
     public partial class OrderFulfillmentRecipient :  IEquatable<OrderFulfillmentRecipient>, IValidatableObject
@@ -32,42 +32,50 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderFulfillmentRecipient" /> class.
         /// </summary>
-        /// <param name="CustomerId">The Customer ID of the customer associated with the fulfillment.  If customer_id is provided, the corresponding recipient information fields (&#x60;display_name&#x60;, &#x60;email_address&#x60;, and &#x60;phone_number&#x60;) are automatically populated from the relevant customer profile. If the targeted profile information does not contain the necessary required information, the request will result in an error..</param>
-        /// <param name="DisplayName">The display name of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id..</param>
-        /// <param name="EmailAddress">The email address of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id..</param>
-        /// <param name="PhoneNumber">The phone number of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id..</param>
-        public OrderFulfillmentRecipient(string CustomerId = default(string), string DisplayName = default(string), string EmailAddress = default(string), string PhoneNumber = default(string))
+        /// <param name="CustomerId">The Customer ID of the customer associated with the fulfillment.  If &#x60;customer_id&#x60; is provided, the fulfillment recipient&#39;s &#x60;display_name&#x60;, &#x60;email_address&#x60;, and &#x60;phone_number&#x60; are automatically populated from the targeted customer profile. If these fields are set in the request, the request values will override the information from the customer profile. If the targeted customer profile does not contain the necessary information and these fields are left unset, the request will result in an error..</param>
+        /// <param name="DisplayName">The display name of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;..</param>
+        /// <param name="EmailAddress">The email address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;..</param>
+        /// <param name="PhoneNumber">The phone number of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;..</param>
+        /// <param name="Address">The address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;..</param>
+        public OrderFulfillmentRecipient(string CustomerId = default(string), string DisplayName = default(string), string EmailAddress = default(string), string PhoneNumber = default(string), Address Address = default(Address))
         {
             this.CustomerId = CustomerId;
             this.DisplayName = DisplayName;
             this.EmailAddress = EmailAddress;
             this.PhoneNumber = PhoneNumber;
+            this.Address = Address;
         }
         
         /// <summary>
-        /// The Customer ID of the customer associated with the fulfillment.  If customer_id is provided, the corresponding recipient information fields (&#x60;display_name&#x60;, &#x60;email_address&#x60;, and &#x60;phone_number&#x60;) are automatically populated from the relevant customer profile. If the targeted profile information does not contain the necessary required information, the request will result in an error.
+        /// The Customer ID of the customer associated with the fulfillment.  If &#x60;customer_id&#x60; is provided, the fulfillment recipient&#39;s &#x60;display_name&#x60;, &#x60;email_address&#x60;, and &#x60;phone_number&#x60; are automatically populated from the targeted customer profile. If these fields are set in the request, the request values will override the information from the customer profile. If the targeted customer profile does not contain the necessary information and these fields are left unset, the request will result in an error.
         /// </summary>
-        /// <value>The Customer ID of the customer associated with the fulfillment.  If customer_id is provided, the corresponding recipient information fields (&#x60;display_name&#x60;, &#x60;email_address&#x60;, and &#x60;phone_number&#x60;) are automatically populated from the relevant customer profile. If the targeted profile information does not contain the necessary required information, the request will result in an error.</value>
+        /// <value>The Customer ID of the customer associated with the fulfillment.  If &#x60;customer_id&#x60; is provided, the fulfillment recipient&#39;s &#x60;display_name&#x60;, &#x60;email_address&#x60;, and &#x60;phone_number&#x60; are automatically populated from the targeted customer profile. If these fields are set in the request, the request values will override the information from the customer profile. If the targeted customer profile does not contain the necessary information and these fields are left unset, the request will result in an error.</value>
         [DataMember(Name="customer_id", EmitDefaultValue=false)]
         public string CustomerId { get; set; }
         /// <summary>
-        /// The display name of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+        /// The display name of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.
         /// </summary>
-        /// <value>The display name of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.</value>
+        /// <value>The display name of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.</value>
         [DataMember(Name="display_name", EmitDefaultValue=false)]
         public string DisplayName { get; set; }
         /// <summary>
-        /// The email address of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+        /// The email address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.
         /// </summary>
-        /// <value>The email address of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.</value>
+        /// <value>The email address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.</value>
         [DataMember(Name="email_address", EmitDefaultValue=false)]
         public string EmailAddress { get; set; }
         /// <summary>
-        /// The phone number of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+        /// The phone number of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.
         /// </summary>
-        /// <value>The phone number of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.</value>
+        /// <value>The phone number of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.</value>
         [DataMember(Name="phone_number", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
+        /// <summary>
+        /// The address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.
+        /// </summary>
+        /// <value>The address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by &#x60;customer_id&#x60;.</value>
+        [DataMember(Name="address", EmitDefaultValue=false)]
+        public Address Address { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -80,6 +88,7 @@ namespace Square.Connect.Model
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  EmailAddress: ").Append(EmailAddress).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,6 +144,11 @@ namespace Square.Connect.Model
                     this.PhoneNumber == other.PhoneNumber ||
                     this.PhoneNumber != null &&
                     this.PhoneNumber.Equals(other.PhoneNumber)
+                ) && 
+                (
+                    this.Address == other.Address ||
+                    this.Address != null &&
+                    this.Address.Equals(other.Address)
                 );
         }
 
@@ -157,6 +171,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.EmailAddress.GetHashCode();
                 if (this.PhoneNumber != null)
                     hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                if (this.Address != null)
+                    hash = hash * 59 + this.Address.GetHashCode();
                 return hash;
             }
         }

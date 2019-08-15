@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Filter based on Order &#x60;source&#x60; information.
+    /// Filter based on order &#x60;source&#x60; information.
     /// </summary>
     [DataContract]
     public partial class SearchOrdersSourceFilter :  IEquatable<SearchOrdersSourceFilter>, IValidatableObject
@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersSourceFilter" /> class.
         /// </summary>
-        /// <param name="SourceNames">Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with &#x60;source.name&#x60;s that match any of the listed source names.  Max: 10 &#x60;source_names&#x60;..</param>
+        /// <param name="SourceNames">Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names..</param>
         public SearchOrdersSourceFilter(List<string> SourceNames = default(List<string>))
         {
             this.SourceNames = SourceNames;
         }
         
         /// <summary>
-        /// Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with &#x60;source.name&#x60;s that match any of the listed source names.  Max: 10 &#x60;source_names&#x60;.
+        /// Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names.
         /// </summary>
-        /// <value>Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with &#x60;source.name&#x60;s that match any of the listed source names.  Max: 10 &#x60;source_names&#x60;.</value>
+        /// <value>Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names.</value>
         [DataMember(Name="source_names", EmitDefaultValue=false)]
         public List<string> SourceNames { get; set; }
         /// <summary>

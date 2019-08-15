@@ -54,7 +54,9 @@ namespace Square.Connect.Model
         /// <param name="InstagramUsername">The Instagram username of the location without the &#39;.</param>
         /// <param name="FacebookUrl">The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;..</param>
         /// <param name="Coordinates">The physical coordinates (latitude and longitude) of the location..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<string> Capabilities = default(List<string>), string Status = default(string), string CreatedAt = default(string), string MerchantId = default(string), string Country = default(string), string LanguageCode = default(string), string Currency = default(string), string PhoneNumber = default(string), string BusinessName = default(string), string Type = default(string), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours), string BusinessEmail = default(string), string Description = default(string), string TwitterUsername = default(string), string InstagramUsername = default(string), string FacebookUrl = default(string), Coordinates Coordinates = default(Coordinates))
+        /// <param name="LogoUrl">The logo image URL of the location..</param>
+        /// <param name="PosBackgroundUrl">The Point of Sale background image URL of the location..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<string> Capabilities = default(List<string>), string Status = default(string), string CreatedAt = default(string), string MerchantId = default(string), string Country = default(string), string LanguageCode = default(string), string Currency = default(string), string PhoneNumber = default(string), string BusinessName = default(string), string Type = default(string), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours), string BusinessEmail = default(string), string Description = default(string), string TwitterUsername = default(string), string InstagramUsername = default(string), string FacebookUrl = default(string), Coordinates Coordinates = default(Coordinates), string LogoUrl = default(string), string PosBackgroundUrl = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -78,6 +80,8 @@ namespace Square.Connect.Model
             this.InstagramUsername = InstagramUsername;
             this.FacebookUrl = FacebookUrl;
             this.Coordinates = Coordinates;
+            this.LogoUrl = LogoUrl;
+            this.PosBackgroundUrl = PosBackgroundUrl;
         }
         
         /// <summary>
@@ -213,6 +217,18 @@ namespace Square.Connect.Model
         [DataMember(Name="coordinates", EmitDefaultValue=false)]
         public Coordinates Coordinates { get; set; }
         /// <summary>
+        /// The logo image URL of the location.
+        /// </summary>
+        /// <value>The logo image URL of the location.</value>
+        [DataMember(Name="logo_url", EmitDefaultValue=false)]
+        public string LogoUrl { get; set; }
+        /// <summary>
+        /// The Point of Sale background image URL of the location.
+        /// </summary>
+        /// <value>The Point of Sale background image URL of the location.</value>
+        [DataMember(Name="pos_background_url", EmitDefaultValue=false)]
+        public string PosBackgroundUrl { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -242,6 +258,8 @@ namespace Square.Connect.Model
             sb.Append("  InstagramUsername: ").Append(InstagramUsername).Append("\n");
             sb.Append("  FacebookUrl: ").Append(FacebookUrl).Append("\n");
             sb.Append("  Coordinates: ").Append(Coordinates).Append("\n");
+            sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
+            sb.Append("  PosBackgroundUrl: ").Append(PosBackgroundUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -387,6 +405,16 @@ namespace Square.Connect.Model
                     this.Coordinates == other.Coordinates ||
                     this.Coordinates != null &&
                     this.Coordinates.Equals(other.Coordinates)
+                ) && 
+                (
+                    this.LogoUrl == other.LogoUrl ||
+                    this.LogoUrl != null &&
+                    this.LogoUrl.Equals(other.LogoUrl)
+                ) && 
+                (
+                    this.PosBackgroundUrl == other.PosBackgroundUrl ||
+                    this.PosBackgroundUrl != null &&
+                    this.PosBackgroundUrl.Equals(other.PosBackgroundUrl)
                 );
         }
 
@@ -445,6 +473,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.FacebookUrl.GetHashCode();
                 if (this.Coordinates != null)
                     hash = hash * 59 + this.Coordinates.GetHashCode();
+                if (this.LogoUrl != null)
+                    hash = hash * 59 + this.LogoUrl.GetHashCode();
+                if (this.PosBackgroundUrl != null)
+                    hash = hash * 59 + this.PosBackgroundUrl.GetHashCode();
                 return hash;
             }
         }

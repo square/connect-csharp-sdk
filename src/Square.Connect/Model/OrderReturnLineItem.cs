@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderReturnLineItem" /> class.
         /// </summary>
-        /// <param name="Uid">Unique identifier for this return line item entry. This is a read-only field..</param>
+        /// <param name="Uid">Unique identifier for this return line item entry..</param>
         /// <param name="SourceLineItemUid">&#x60;uid&#x60; of the LineItem in the original sale Order..</param>
         /// <param name="Name">The name of the line item..</param>
         /// <param name="Quantity">The quantity returned, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;. (required).</param>
@@ -46,15 +46,17 @@ namespace Square.Connect.Model
         /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this returned line item..</param>
         /// <param name="VariationName">The name of the variation applied to this returned line item..</param>
         /// <param name="ReturnModifiers">The [CatalogModifier](#type-catalogmodifier)s applied to this line item..</param>
-        /// <param name="ReturnTaxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item..</param>
-        /// <param name="ReturnDiscounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item..</param>
+        /// <param name="ReturnTaxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;..</param>
+        /// <param name="ReturnDiscounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;..</param>
+        /// <param name="AppliedTaxes">The list of references to &#x60;OrderReturnTax&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnTax&#x60; applied to the returned line item. On reads, the amount applied is populated..</param>
+        /// <param name="AppliedDiscounts">The list of references to &#x60;OrderReturnDiscount&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedDiscount&#x60; has a &#x60;discount_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnDiscount&#x60; applied to the returned line item. On reads, the amount applied is populated..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>
         /// <param name="VariationTotalPriceMoney">The total price of all item variations returned in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers..</param>
-        /// <param name="GrossReturnMoney">The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only..</param>
-        /// <param name="TotalTaxMoney">The total tax amount of money to return for the line item.  This field is read-only..</param>
-        /// <param name="TotalDiscountMoney">The total discount amount of money to return for the line item.  This field is read-only..</param>
-        /// <param name="TotalMoney">The total amount of money to return for this line item.  This field is read-only..</param>
-        public OrderReturnLineItem(string Uid = default(string), string SourceLineItemUid = default(string), string Name = default(string), string Quantity = default(string), OrderQuantityUnit QuantityUnit = default(OrderQuantityUnit), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderReturnLineItemModifier> ReturnModifiers = default(List<OrderReturnLineItemModifier>), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>), List<OrderReturnDiscount> ReturnDiscounts = default(List<OrderReturnDiscount>), Money BasePriceMoney = default(Money), Money VariationTotalPriceMoney = default(Money), Money GrossReturnMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
+        /// <param name="GrossReturnMoney">The gross return amount of money calculated as (item base price + modifiers price) * quantity..</param>
+        /// <param name="TotalTaxMoney">The total tax amount of money to return for the line item..</param>
+        /// <param name="TotalDiscountMoney">The total discount amount of money to return for the line item..</param>
+        /// <param name="TotalMoney">The total amount of money to return for this line item..</param>
+        public OrderReturnLineItem(string Uid = default(string), string SourceLineItemUid = default(string), string Name = default(string), string Quantity = default(string), OrderQuantityUnit QuantityUnit = default(OrderQuantityUnit), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderReturnLineItemModifier> ReturnModifiers = default(List<OrderReturnLineItemModifier>), List<OrderReturnTax> ReturnTaxes = default(List<OrderReturnTax>), List<OrderReturnDiscount> ReturnDiscounts = default(List<OrderReturnDiscount>), List<OrderLineItemAppliedTax> AppliedTaxes = default(List<OrderLineItemAppliedTax>), List<OrderLineItemAppliedDiscount> AppliedDiscounts = default(List<OrderLineItemAppliedDiscount>), Money BasePriceMoney = default(Money), Money VariationTotalPriceMoney = default(Money), Money GrossReturnMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
             // to ensure "Quantity" is required (not null)
             if (Quantity == null)
@@ -75,6 +77,8 @@ namespace Square.Connect.Model
             this.ReturnModifiers = ReturnModifiers;
             this.ReturnTaxes = ReturnTaxes;
             this.ReturnDiscounts = ReturnDiscounts;
+            this.AppliedTaxes = AppliedTaxes;
+            this.AppliedDiscounts = AppliedDiscounts;
             this.BasePriceMoney = BasePriceMoney;
             this.VariationTotalPriceMoney = VariationTotalPriceMoney;
             this.GrossReturnMoney = GrossReturnMoney;
@@ -84,9 +88,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Unique identifier for this return line item entry. This is a read-only field.
+        /// Unique identifier for this return line item entry.
         /// </summary>
-        /// <value>Unique identifier for this return line item entry. This is a read-only field.</value>
+        /// <value>Unique identifier for this return line item entry.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -138,17 +142,29 @@ namespace Square.Connect.Model
         [DataMember(Name="return_modifiers", EmitDefaultValue=false)]
         public List<OrderReturnLineItemModifier> ReturnModifiers { get; set; }
         /// <summary>
-        /// A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.
+        /// A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;.
         /// </summary>
-        /// <value>A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.</value>
+        /// <value>A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;.</value>
         [DataMember(Name="return_taxes", EmitDefaultValue=false)]
         public List<OrderReturnTax> ReturnTaxes { get; set; }
         /// <summary>
-        /// A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.
+        /// A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;.
         /// </summary>
-        /// <value>A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.</value>
+        /// <value>A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;.</value>
         [DataMember(Name="return_discounts", EmitDefaultValue=false)]
         public List<OrderReturnDiscount> ReturnDiscounts { get; set; }
+        /// <summary>
+        /// The list of references to &#x60;OrderReturnTax&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnTax&#x60; applied to the returned line item. On reads, the amount applied is populated.
+        /// </summary>
+        /// <value>The list of references to &#x60;OrderReturnTax&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnTax&#x60; applied to the returned line item. On reads, the amount applied is populated.</value>
+        [DataMember(Name="applied_taxes", EmitDefaultValue=false)]
+        public List<OrderLineItemAppliedTax> AppliedTaxes { get; set; }
+        /// <summary>
+        /// The list of references to &#x60;OrderReturnDiscount&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedDiscount&#x60; has a &#x60;discount_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnDiscount&#x60; applied to the returned line item. On reads, the amount applied is populated.
+        /// </summary>
+        /// <value>The list of references to &#x60;OrderReturnDiscount&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedDiscount&#x60; has a &#x60;discount_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnDiscount&#x60; applied to the returned line item. On reads, the amount applied is populated.</value>
+        [DataMember(Name="applied_discounts", EmitDefaultValue=false)]
+        public List<OrderLineItemAppliedDiscount> AppliedDiscounts { get; set; }
         /// <summary>
         /// The base price for a single unit of the line item.
         /// </summary>
@@ -162,27 +178,27 @@ namespace Square.Connect.Model
         [DataMember(Name="variation_total_price_money", EmitDefaultValue=false)]
         public Money VariationTotalPriceMoney { get; set; }
         /// <summary>
-        /// The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only.
+        /// The gross return amount of money calculated as (item base price + modifiers price) * quantity.
         /// </summary>
-        /// <value>The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only.</value>
+        /// <value>The gross return amount of money calculated as (item base price + modifiers price) * quantity.</value>
         [DataMember(Name="gross_return_money", EmitDefaultValue=false)]
         public Money GrossReturnMoney { get; set; }
         /// <summary>
-        /// The total tax amount of money to return for the line item.  This field is read-only.
+        /// The total tax amount of money to return for the line item.
         /// </summary>
-        /// <value>The total tax amount of money to return for the line item.  This field is read-only.</value>
+        /// <value>The total tax amount of money to return for the line item.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
         /// <summary>
-        /// The total discount amount of money to return for the line item.  This field is read-only.
+        /// The total discount amount of money to return for the line item.
         /// </summary>
-        /// <value>The total discount amount of money to return for the line item.  This field is read-only.</value>
+        /// <value>The total discount amount of money to return for the line item.</value>
         [DataMember(Name="total_discount_money", EmitDefaultValue=false)]
         public Money TotalDiscountMoney { get; set; }
         /// <summary>
-        /// The total amount of money to return for this line item.  This field is read-only.
+        /// The total amount of money to return for this line item.
         /// </summary>
-        /// <value>The total amount of money to return for this line item.  This field is read-only.</value>
+        /// <value>The total amount of money to return for this line item.</value>
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>
@@ -204,6 +220,8 @@ namespace Square.Connect.Model
             sb.Append("  ReturnModifiers: ").Append(ReturnModifiers).Append("\n");
             sb.Append("  ReturnTaxes: ").Append(ReturnTaxes).Append("\n");
             sb.Append("  ReturnDiscounts: ").Append(ReturnDiscounts).Append("\n");
+            sb.Append("  AppliedTaxes: ").Append(AppliedTaxes).Append("\n");
+            sb.Append("  AppliedDiscounts: ").Append(AppliedDiscounts).Append("\n");
             sb.Append("  BasePriceMoney: ").Append(BasePriceMoney).Append("\n");
             sb.Append("  VariationTotalPriceMoney: ").Append(VariationTotalPriceMoney).Append("\n");
             sb.Append("  GrossReturnMoney: ").Append(GrossReturnMoney).Append("\n");
@@ -302,6 +320,16 @@ namespace Square.Connect.Model
                     this.ReturnDiscounts.SequenceEqual(other.ReturnDiscounts)
                 ) && 
                 (
+                    this.AppliedTaxes == other.AppliedTaxes ||
+                    this.AppliedTaxes != null &&
+                    this.AppliedTaxes.SequenceEqual(other.AppliedTaxes)
+                ) && 
+                (
+                    this.AppliedDiscounts == other.AppliedDiscounts ||
+                    this.AppliedDiscounts != null &&
+                    this.AppliedDiscounts.SequenceEqual(other.AppliedDiscounts)
+                ) && 
+                (
                     this.BasePriceMoney == other.BasePriceMoney ||
                     this.BasePriceMoney != null &&
                     this.BasePriceMoney.Equals(other.BasePriceMoney)
@@ -366,6 +394,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ReturnTaxes.GetHashCode();
                 if (this.ReturnDiscounts != null)
                     hash = hash * 59 + this.ReturnDiscounts.GetHashCode();
+                if (this.AppliedTaxes != null)
+                    hash = hash * 59 + this.AppliedTaxes.GetHashCode();
+                if (this.AppliedDiscounts != null)
+                    hash = hash * 59 + this.AppliedDiscounts.GetHashCode();
                 if (this.BasePriceMoney != null)
                     hash = hash * 59 + this.BasePriceMoney.GetHashCode();
                 if (this.VariationTotalPriceMoney != null)

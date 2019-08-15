@@ -33,10 +33,12 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="OrderEntry" /> class.
         /// </summary>
         /// <param name="OrderId">The id of the Order.</param>
+        /// <param name="Version">Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders)..</param>
         /// <param name="LocationId">The location id the Order belongs to..</param>
-        public OrderEntry(string OrderId = default(string), string LocationId = default(string))
+        public OrderEntry(string OrderId = default(string), int? Version = default(int?), string LocationId = default(string))
         {
             this.OrderId = OrderId;
+            this.Version = Version;
             this.LocationId = LocationId;
         }
         
@@ -46,6 +48,12 @@ namespace Square.Connect.Model
         /// <value>The id of the Order</value>
         [DataMember(Name="order_id", EmitDefaultValue=false)]
         public string OrderId { get; set; }
+        /// <summary>
+        /// Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders).
+        /// </summary>
+        /// <value>Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders).</value>
+        [DataMember(Name="version", EmitDefaultValue=false)]
+        public int? Version { get; set; }
         /// <summary>
         /// The location id the Order belongs to.
         /// </summary>
@@ -61,6 +69,7 @@ namespace Square.Connect.Model
             var sb = new StringBuilder();
             sb.Append("class OrderEntry {\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -104,6 +113,11 @@ namespace Square.Connect.Model
                     this.OrderId.Equals(other.OrderId)
                 ) && 
                 (
+                    this.Version == other.Version ||
+                    this.Version != null &&
+                    this.Version.Equals(other.Version)
+                ) && 
+                (
                     this.LocationId == other.LocationId ||
                     this.LocationId != null &&
                     this.LocationId.Equals(other.LocationId)
@@ -123,6 +137,8 @@ namespace Square.Connect.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.OrderId != null)
                     hash = hash * 59 + this.OrderId.GetHashCode();
+                if (this.Version != null)
+                    hash = hash * 59 + this.Version.GetHashCode();
                 if (this.LocationId != null)
                     hash = hash * 59 + this.LocationId.GetHashCode();
                 return hash;

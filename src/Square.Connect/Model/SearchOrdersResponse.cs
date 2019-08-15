@@ -32,30 +32,28 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersResponse" /> class.
         /// </summary>
-        /// <param name="OrderEntries">List of [OrderEntries](#type-orderentry) that fit the query conditions.  Populated only if &#x60;order_entries&#x60; was set to &#x60;true&#x60; in the request..</param>
-        /// <param name="Orders">List of [Orders](#type-order) that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;..</param>
+        /// <param name="OrderEntries">List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request..</param>
+        /// <param name="Orders">List of [Order](#type-order) objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;..</param>
         /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information..</param>
         /// <param name="Errors">[Errors](#type-error) encountered during the search..</param>
-        /// <param name="UnconvertibleTransactionIds">List of transaction IDs identifying transactions that could not be converted to an &#x60;Order&#x60;. Empty if &#x60;return_entries&#x60; is true, however, attempts to retrieve those orders may encounter subsequent &#x60;unconvertible_transcation_ids&#x60; Note that this field will not be present after SearchOrders moves from BETA to GA..</param>
-        public SearchOrdersResponse(List<OrderEntry> OrderEntries = default(List<OrderEntry>), List<Order> Orders = default(List<Order>), string Cursor = default(string), List<Error> Errors = default(List<Error>), List<string> UnconvertibleTransactionIds = default(List<string>))
+        public SearchOrdersResponse(List<OrderEntry> OrderEntries = default(List<OrderEntry>), List<Order> Orders = default(List<Order>), string Cursor = default(string), List<Error> Errors = default(List<Error>))
         {
             this.OrderEntries = OrderEntries;
             this.Orders = Orders;
             this.Cursor = Cursor;
             this.Errors = Errors;
-            this.UnconvertibleTransactionIds = UnconvertibleTransactionIds;
         }
         
         /// <summary>
-        /// List of [OrderEntries](#type-orderentry) that fit the query conditions.  Populated only if &#x60;order_entries&#x60; was set to &#x60;true&#x60; in the request.
+        /// List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request.
         /// </summary>
-        /// <value>List of [OrderEntries](#type-orderentry) that fit the query conditions.  Populated only if &#x60;order_entries&#x60; was set to &#x60;true&#x60; in the request.</value>
+        /// <value>List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request.</value>
         [DataMember(Name="order_entries", EmitDefaultValue=false)]
         public List<OrderEntry> OrderEntries { get; set; }
         /// <summary>
-        /// List of [Orders](#type-order) that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.
+        /// List of [Order](#type-order) objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.
         /// </summary>
-        /// <value>List of [Orders](#type-order) that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.</value>
+        /// <value>List of [Order](#type-order) objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.</value>
         [DataMember(Name="orders", EmitDefaultValue=false)]
         public List<Order> Orders { get; set; }
         /// <summary>
@@ -71,12 +69,6 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// List of transaction IDs identifying transactions that could not be converted to an &#x60;Order&#x60;. Empty if &#x60;return_entries&#x60; is true, however, attempts to retrieve those orders may encounter subsequent &#x60;unconvertible_transcation_ids&#x60; Note that this field will not be present after SearchOrders moves from BETA to GA.
-        /// </summary>
-        /// <value>List of transaction IDs identifying transactions that could not be converted to an &#x60;Order&#x60;. Empty if &#x60;return_entries&#x60; is true, however, attempts to retrieve those orders may encounter subsequent &#x60;unconvertible_transcation_ids&#x60; Note that this field will not be present after SearchOrders moves from BETA to GA.</value>
-        [DataMember(Name="unconvertible_transaction_ids", EmitDefaultValue=false)]
-        public List<string> UnconvertibleTransactionIds { get; set; }
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -88,7 +80,6 @@ namespace Square.Connect.Model
             sb.Append("  Orders: ").Append(Orders).Append("\n");
             sb.Append("  Cursor: ").Append(Cursor).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
-            sb.Append("  UnconvertibleTransactionIds: ").Append(UnconvertibleTransactionIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -144,11 +135,6 @@ namespace Square.Connect.Model
                     this.Errors == other.Errors ||
                     this.Errors != null &&
                     this.Errors.SequenceEqual(other.Errors)
-                ) && 
-                (
-                    this.UnconvertibleTransactionIds == other.UnconvertibleTransactionIds ||
-                    this.UnconvertibleTransactionIds != null &&
-                    this.UnconvertibleTransactionIds.SequenceEqual(other.UnconvertibleTransactionIds)
                 );
         }
 
@@ -171,8 +157,6 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Cursor.GetHashCode();
                 if (this.Errors != null)
                     hash = hash * 59 + this.Errors.GetHashCode();
-                if (this.UnconvertibleTransactionIds != null)
-                    hash = hash * 59 + this.UnconvertibleTransactionIds.GetHashCode();
                 return hash;
             }
         }

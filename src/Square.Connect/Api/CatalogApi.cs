@@ -32,8 +32,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>BatchDeleteCatalogObjectsResponse</returns>
-        BatchDeleteCatalogObjectsResponse BatchDeleteCatalogObjects (BatchDeleteCatalogObjectsRequest body);
+        /// <returns>BatchDeleteCatalogObjectsResponse</returns>        BatchDeleteCatalogObjectsResponse BatchDeleteCatalogObjects (BatchDeleteCatalogObjectsRequest body);
 
         /// <summary>
         /// BatchDeleteCatalogObjects
@@ -53,8 +52,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>BatchRetrieveCatalogObjectsResponse</returns>
-        BatchRetrieveCatalogObjectsResponse BatchRetrieveCatalogObjects (BatchRetrieveCatalogObjectsRequest body);
+        /// <returns>BatchRetrieveCatalogObjectsResponse</returns>        BatchRetrieveCatalogObjectsResponse BatchRetrieveCatalogObjects (BatchRetrieveCatalogObjectsRequest body);
 
         /// <summary>
         /// BatchRetrieveCatalogObjects
@@ -74,8 +72,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>BatchUpsertCatalogObjectsResponse</returns>
-        BatchUpsertCatalogObjectsResponse BatchUpsertCatalogObjects (BatchUpsertCatalogObjectsRequest body);
+        /// <returns>BatchUpsertCatalogObjectsResponse</returns>        BatchUpsertCatalogObjectsResponse BatchUpsertCatalogObjects (BatchUpsertCatalogObjectsRequest body);
 
         /// <summary>
         /// BatchUpsertCatalogObjects
@@ -94,8 +91,7 @@ namespace Square.Connect.Api
         /// Returns information about the Square Catalog API, such as batch size limits for &#x60;BatchUpsertCatalogObjects&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>CatalogInfoResponse</returns>
-        CatalogInfoResponse CatalogInfo ();
+        /// <returns>CatalogInfoResponse</returns>        CatalogInfoResponse CatalogInfo ();
 
         /// <summary>
         /// CatalogInfo
@@ -114,8 +110,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
-        /// <returns>DeleteCatalogObjectResponse</returns>
-        DeleteCatalogObjectResponse DeleteCatalogObject (string objectId);
+        /// <returns>DeleteCatalogObjectResponse</returns>        DeleteCatalogObjectResponse DeleteCatalogObject (string objectId);
 
         /// <summary>
         /// DeleteCatalogObject
@@ -136,8 +131,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
-        /// <returns>ListCatalogResponse</returns>
-        ListCatalogResponse ListCatalog (string cursor = null, string types = null);
+        /// <returns>ListCatalogResponse</returns>        ListCatalogResponse ListCatalog (string cursor = null, string types = null);
 
         /// <summary>
         /// ListCatalog
@@ -159,8 +153,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
         /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
-        /// <returns>RetrieveCatalogObjectResponse</returns>
-        RetrieveCatalogObjectResponse RetrieveCatalogObject (string objectId, bool? includeRelatedObjects = null);
+        /// <returns>RetrieveCatalogObjectResponse</returns>        RetrieveCatalogObjectResponse RetrieveCatalogObject (string objectId, bool? includeRelatedObjects = null);
 
         /// <summary>
         /// RetrieveCatalogObject
@@ -181,8 +174,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>SearchCatalogObjectsResponse</returns>
-        SearchCatalogObjectsResponse SearchCatalogObjects (SearchCatalogObjectsRequest body);
+        /// <returns>SearchCatalogObjectsResponse</returns>        SearchCatalogObjectsResponse SearchCatalogObjects (SearchCatalogObjectsRequest body);
 
         /// <summary>
         /// SearchCatalogObjects
@@ -202,8 +194,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>UpdateItemModifierListsResponse</returns>
-        UpdateItemModifierListsResponse UpdateItemModifierLists (UpdateItemModifierListsRequest body);
+        /// <returns>UpdateItemModifierListsResponse</returns>        UpdateItemModifierListsResponse UpdateItemModifierLists (UpdateItemModifierListsRequest body);
 
         /// <summary>
         /// UpdateItemModifierLists
@@ -223,8 +214,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>UpdateItemTaxesResponse</returns>
-        UpdateItemTaxesResponse UpdateItemTaxes (UpdateItemTaxesRequest body);
+        /// <returns>UpdateItemTaxesResponse</returns>        UpdateItemTaxesResponse UpdateItemTaxes (UpdateItemTaxesRequest body);
 
         /// <summary>
         /// UpdateItemTaxes
@@ -244,8 +234,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>UpsertCatalogObjectResponse</returns>
-        UpsertCatalogObjectResponse UpsertCatalogObject (UpsertCatalogObjectRequest body);
+        /// <returns>UpsertCatalogObjectResponse</returns>        UpsertCatalogObjectResponse UpsertCatalogObject (UpsertCatalogObjectRequest body);
 
         /// <summary>
         /// UpsertCatalogObject
@@ -649,7 +638,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -812,7 +801,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -975,7 +964,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1133,7 +1122,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
 
             // authentication (oauth2) required
             // oauth required
@@ -1275,7 +1264,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (objectId != null) localVarPathParams.Add("object_id", Configuration.ApiClient.ParameterToString(objectId)); // path parameter
 
             // authentication (oauth2) required
@@ -1423,7 +1412,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
             if (types != null) localVarQueryParams.Add("types", Configuration.ApiClient.ParameterToString(types)); // query parameter
 
@@ -1575,7 +1564,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (objectId != null) localVarPathParams.Add("object_id", Configuration.ApiClient.ParameterToString(objectId)); // path parameter
             if (includeRelatedObjects != null) localVarQueryParams.Add("include_related_objects", Configuration.ApiClient.ParameterToString(includeRelatedObjects)); // query parameter
 
@@ -1728,7 +1717,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1891,7 +1880,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2054,7 +2043,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2217,7 +2206,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter

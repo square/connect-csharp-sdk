@@ -33,8 +33,7 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the business location to associate the checkout with.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>CreateCheckoutResponse</returns>
-        CreateCheckoutResponse CreateCheckout (string locationId, CreateCheckoutRequest body);
+        /// <returns>CreateCheckoutResponse</returns>        CreateCheckoutResponse CreateCheckout (string locationId, CreateCheckoutRequest body);
 
         /// <summary>
         /// CreateCheckout
@@ -234,7 +233,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {

@@ -8,7 +8,7 @@ Filter based on Order `customer_id` and any Tender `customer_id` associated with
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerIds** | **List<string>** | Filter by orders with any of the listed &#x60;customer_id&#x60;s.  Max: 10 &#x60;customer_id&#x60;s. | [optional] 
+**CustomerIds** | **List<string>** | List of customer IDs to filter by.  Max: 10 customer IDs. | [optional] 
 
 
 

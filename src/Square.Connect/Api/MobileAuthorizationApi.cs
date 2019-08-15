@@ -32,8 +32,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>CreateMobileAuthorizationCodeResponse</returns>
-        CreateMobileAuthorizationCodeResponse CreateMobileAuthorizationCode (CreateMobileAuthorizationCodeRequest body);
+        /// <returns>CreateMobileAuthorizationCodeResponse</returns>        CreateMobileAuthorizationCodeResponse CreateMobileAuthorizationCode (CreateMobileAuthorizationCodeRequest body);
 
         /// <summary>
         /// CreateMobileAuthorizationCode
@@ -225,7 +224,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter

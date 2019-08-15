@@ -32,18 +32,19 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderServiceCharge" /> class.
         /// </summary>
-        /// <param name="Uid">Unique ID that identifies the service charge only within this order.  This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the service charge only within this order..</param>
         /// <param name="Name">The name of the service charge..</param>
         /// <param name="CatalogObjectId">The catalog object ID referencing the service charge [CatalogObject](#type-catalogobject)..</param>
-        /// <param name="Percentage">The service charge percentage, as a string representation of a decimal number.  For example, &#x60;7.25&#x60; indicates 7.25%  Exactly one of &#x60;percentage&#x60; or &#x60;amount_money&#x60; should be set..</param>
+        /// <param name="Percentage">The service charge percentage as a string representation of a decimal number. For example, &#x60;\&quot;7.25\&quot;&#x60; indicates a service charge of 7.25%.  Exactly 1 of &#x60;percentage&#x60; or &#x60;amount_money&#x60; should be set..</param>
         /// <param name="AmountMoney">The amount of a non-percentage based service charge.  Exactly one of &#x60;percentage&#x60; or &#x60;amount_money&#x60; should be set..</param>
-        /// <param name="AppliedMoney">The amount of money applied to the order by the service charge, as calculated by the server.  For fixed-amount service charges, &#x60;applied_money&#x60; is equal to &#x60;amount_money&#x60;.  For percentage-based service charges, &#x60;applied_money&#x60; is the money calculated using the percentage. The &#x60;applied_money&#x60; field will include any inclusive tax amounts as well.  This field is read-only..</param>
-        /// <param name="TotalMoney">The total amount of money to collect for the service charge.  Note that &#x60;total_money&#x60; does not equal &#x60;applied_money&#x60; plus &#x60;total_tax_money&#x60; if an inclusive tax is applied to the service charge since the inclusive tax amount will be included in both &#x60;applied_money&#x60; and &#x60;total_tax_money&#x60;.  This field is read-only..</param>
-        /// <param name="TotalTaxMoney">The total amount of tax money to collect for the service charge.  This field is read-only..</param>
+        /// <param name="AppliedMoney">The amount of money applied to the order by the service charge, including any inclusive tax amounts, as calculated by Square.  - For fixed-amount service charges, &#x60;applied_money&#x60; is equal to &#x60;amount_money&#x60;. - For percentage-based service charges, &#x60;applied_money&#x60; is the money calculated using the percentage..</param>
+        /// <param name="TotalMoney">The total amount of money to collect for the service charge.  __Note__: if an inclusive tax is applied to the service charge, &#x60;total_money&#x60; __does not__ equal &#x60;applied_money&#x60; plus &#x60;total_tax_money&#x60; since the inclusive tax amount will already be included in both &#x60;applied_money&#x60; and &#x60;total_tax_money&#x60;..</param>
+        /// <param name="TotalTaxMoney">The total amount of tax money to collect for the service charge..</param>
         /// <param name="CalculationPhase">The calculation phase at which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values.</param>
-        /// <param name="Taxable">Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, any order-level taxes will automatically apply to this service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable..</param>
-        /// <param name="Taxes">Taxes applied to the service charge. By default, order-level taxes apply to service charges calculated in the &#x60;SUBTOTAL_PHASE&#x60; if &#x60;taxable&#x60; is set to &#x60;true&#x60;..</param>
-        public OrderServiceCharge(string Uid = default(string), string Name = default(string), string CatalogObjectId = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), string CalculationPhase = default(string), bool? Taxable = default(bool?), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>))
+        /// <param name="Taxable">Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, order-level taxes automatically apply to the service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable..</param>
+        /// <param name="Taxes">A list of taxes applied to this service charge. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this service charge. When creating an Order, set your service charge-level taxes in this list. By default, order-level taxes apply to service charges calculated in the &#x60;SUBTOTAL_PHASE&#x60; if &#x60;taxable&#x60; is set to &#x60;true&#x60;.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;. Usage of both this field and &#x60;applied_taxes&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error..</param>
+        /// <param name="AppliedTaxes">The list of references to taxes applied to this service charge. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemTax&#x60; that is being applied to this service charge. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedTax&#x60; will be automatically created on every taxable service charge for all &#x60;ORDER&#x60; scoped taxes that are added to the order. &#x60;OrderLineItemAppliedTax&#x60; records for &#x60;LINE_ITEM&#x60; scoped taxes must be added in requests for the tax to apply to any taxable service charge.  Taxable service charges have the &#x60;taxable&#x60; field set to true and calculated in the &#x60;SUBTOTAL_PHASE&#x60;.  To change the amount of a tax, modify the referenced top-level tax..</param>
+        public OrderServiceCharge(string Uid = default(string), string Name = default(string), string CatalogObjectId = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), string CalculationPhase = default(string), bool? Taxable = default(bool?), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemAppliedTax> AppliedTaxes = default(List<OrderLineItemAppliedTax>))
         {
             this.Uid = Uid;
             this.Name = Name;
@@ -56,12 +57,13 @@ namespace Square.Connect.Model
             this.CalculationPhase = CalculationPhase;
             this.Taxable = Taxable;
             this.Taxes = Taxes;
+            this.AppliedTaxes = AppliedTaxes;
         }
         
         /// <summary>
-        /// Unique ID that identifies the service charge only within this order.  This field is read-only.
+        /// Unique ID that identifies the service charge only within this order.
         /// </summary>
-        /// <value>Unique ID that identifies the service charge only within this order.  This field is read-only.</value>
+        /// <value>Unique ID that identifies the service charge only within this order.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -77,9 +79,9 @@ namespace Square.Connect.Model
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>
-        /// The service charge percentage, as a string representation of a decimal number.  For example, &#x60;7.25&#x60; indicates 7.25%  Exactly one of &#x60;percentage&#x60; or &#x60;amount_money&#x60; should be set.
+        /// The service charge percentage as a string representation of a decimal number. For example, &#x60;\&quot;7.25\&quot;&#x60; indicates a service charge of 7.25%.  Exactly 1 of &#x60;percentage&#x60; or &#x60;amount_money&#x60; should be set.
         /// </summary>
-        /// <value>The service charge percentage, as a string representation of a decimal number.  For example, &#x60;7.25&#x60; indicates 7.25%  Exactly one of &#x60;percentage&#x60; or &#x60;amount_money&#x60; should be set.</value>
+        /// <value>The service charge percentage as a string representation of a decimal number. For example, &#x60;\&quot;7.25\&quot;&#x60; indicates a service charge of 7.25%.  Exactly 1 of &#x60;percentage&#x60; or &#x60;amount_money&#x60; should be set.</value>
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
@@ -89,21 +91,21 @@ namespace Square.Connect.Model
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
-        /// The amount of money applied to the order by the service charge, as calculated by the server.  For fixed-amount service charges, &#x60;applied_money&#x60; is equal to &#x60;amount_money&#x60;.  For percentage-based service charges, &#x60;applied_money&#x60; is the money calculated using the percentage. The &#x60;applied_money&#x60; field will include any inclusive tax amounts as well.  This field is read-only.
+        /// The amount of money applied to the order by the service charge, including any inclusive tax amounts, as calculated by Square.  - For fixed-amount service charges, &#x60;applied_money&#x60; is equal to &#x60;amount_money&#x60;. - For percentage-based service charges, &#x60;applied_money&#x60; is the money calculated using the percentage.
         /// </summary>
-        /// <value>The amount of money applied to the order by the service charge, as calculated by the server.  For fixed-amount service charges, &#x60;applied_money&#x60; is equal to &#x60;amount_money&#x60;.  For percentage-based service charges, &#x60;applied_money&#x60; is the money calculated using the percentage. The &#x60;applied_money&#x60; field will include any inclusive tax amounts as well.  This field is read-only.</value>
+        /// <value>The amount of money applied to the order by the service charge, including any inclusive tax amounts, as calculated by Square.  - For fixed-amount service charges, &#x60;applied_money&#x60; is equal to &#x60;amount_money&#x60;. - For percentage-based service charges, &#x60;applied_money&#x60; is the money calculated using the percentage.</value>
         [DataMember(Name="applied_money", EmitDefaultValue=false)]
         public Money AppliedMoney { get; set; }
         /// <summary>
-        /// The total amount of money to collect for the service charge.  Note that &#x60;total_money&#x60; does not equal &#x60;applied_money&#x60; plus &#x60;total_tax_money&#x60; if an inclusive tax is applied to the service charge since the inclusive tax amount will be included in both &#x60;applied_money&#x60; and &#x60;total_tax_money&#x60;.  This field is read-only.
+        /// The total amount of money to collect for the service charge.  __Note__: if an inclusive tax is applied to the service charge, &#x60;total_money&#x60; __does not__ equal &#x60;applied_money&#x60; plus &#x60;total_tax_money&#x60; since the inclusive tax amount will already be included in both &#x60;applied_money&#x60; and &#x60;total_tax_money&#x60;.
         /// </summary>
-        /// <value>The total amount of money to collect for the service charge.  Note that &#x60;total_money&#x60; does not equal &#x60;applied_money&#x60; plus &#x60;total_tax_money&#x60; if an inclusive tax is applied to the service charge since the inclusive tax amount will be included in both &#x60;applied_money&#x60; and &#x60;total_tax_money&#x60;.  This field is read-only.</value>
+        /// <value>The total amount of money to collect for the service charge.  __Note__: if an inclusive tax is applied to the service charge, &#x60;total_money&#x60; __does not__ equal &#x60;applied_money&#x60; plus &#x60;total_tax_money&#x60; since the inclusive tax amount will already be included in both &#x60;applied_money&#x60; and &#x60;total_tax_money&#x60;.</value>
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>
-        /// The total amount of tax money to collect for the service charge.  This field is read-only.
+        /// The total amount of tax money to collect for the service charge.
         /// </summary>
-        /// <value>The total amount of tax money to collect for the service charge.  This field is read-only.</value>
+        /// <value>The total amount of tax money to collect for the service charge.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
         /// <summary>
@@ -113,17 +115,23 @@ namespace Square.Connect.Model
         [DataMember(Name="calculation_phase", EmitDefaultValue=false)]
         public string CalculationPhase { get; set; }
         /// <summary>
-        /// Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, any order-level taxes will automatically apply to this service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable.
+        /// Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, order-level taxes automatically apply to the service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable.
         /// </summary>
-        /// <value>Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, any order-level taxes will automatically apply to this service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable.</value>
+        /// <value>Indicates whether the service charge can be taxed. If set to &#x60;true&#x60;, order-level taxes automatically apply to the service charge. Note that service charges calculated in the &#x60;TOTAL_PHASE&#x60; cannot be marked as taxable.</value>
         [DataMember(Name="taxable", EmitDefaultValue=false)]
         public bool? Taxable { get; set; }
         /// <summary>
-        /// Taxes applied to the service charge. By default, order-level taxes apply to service charges calculated in the &#x60;SUBTOTAL_PHASE&#x60; if &#x60;taxable&#x60; is set to &#x60;true&#x60;.
+        /// A list of taxes applied to this service charge. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this service charge. When creating an Order, set your service charge-level taxes in this list. By default, order-level taxes apply to service charges calculated in the &#x60;SUBTOTAL_PHASE&#x60; if &#x60;taxable&#x60; is set to &#x60;true&#x60;.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;. Usage of both this field and &#x60;applied_taxes&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
         /// </summary>
-        /// <value>Taxes applied to the service charge. By default, order-level taxes apply to service charges calculated in the &#x60;SUBTOTAL_PHASE&#x60; if &#x60;taxable&#x60; is set to &#x60;true&#x60;.</value>
+        /// <value>A list of taxes applied to this service charge. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this service charge. When creating an Order, set your service charge-level taxes in this list. By default, order-level taxes apply to service charges calculated in the &#x60;SUBTOTAL_PHASE&#x60; if &#x60;taxable&#x60; is set to &#x60;true&#x60;.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;. Usage of both this field and &#x60;applied_taxes&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.</value>
         [DataMember(Name="taxes", EmitDefaultValue=false)]
         public List<OrderLineItemTax> Taxes { get; set; }
+        /// <summary>
+        /// The list of references to taxes applied to this service charge. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemTax&#x60; that is being applied to this service charge. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedTax&#x60; will be automatically created on every taxable service charge for all &#x60;ORDER&#x60; scoped taxes that are added to the order. &#x60;OrderLineItemAppliedTax&#x60; records for &#x60;LINE_ITEM&#x60; scoped taxes must be added in requests for the tax to apply to any taxable service charge.  Taxable service charges have the &#x60;taxable&#x60; field set to true and calculated in the &#x60;SUBTOTAL_PHASE&#x60;.  To change the amount of a tax, modify the referenced top-level tax.
+        /// </summary>
+        /// <value>The list of references to taxes applied to this service charge. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemTax&#x60; that is being applied to this service charge. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedTax&#x60; will be automatically created on every taxable service charge for all &#x60;ORDER&#x60; scoped taxes that are added to the order. &#x60;OrderLineItemAppliedTax&#x60; records for &#x60;LINE_ITEM&#x60; scoped taxes must be added in requests for the tax to apply to any taxable service charge.  Taxable service charges have the &#x60;taxable&#x60; field set to true and calculated in the &#x60;SUBTOTAL_PHASE&#x60;.  To change the amount of a tax, modify the referenced top-level tax.</value>
+        [DataMember(Name="applied_taxes", EmitDefaultValue=false)]
+        public List<OrderLineItemAppliedTax> AppliedTaxes { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -143,6 +151,7 @@ namespace Square.Connect.Model
             sb.Append("  CalculationPhase: ").Append(CalculationPhase).Append("\n");
             sb.Append("  Taxable: ").Append(Taxable).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
+            sb.Append("  AppliedTaxes: ").Append(AppliedTaxes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -233,6 +242,11 @@ namespace Square.Connect.Model
                     this.Taxes == other.Taxes ||
                     this.Taxes != null &&
                     this.Taxes.SequenceEqual(other.Taxes)
+                ) && 
+                (
+                    this.AppliedTaxes == other.AppliedTaxes ||
+                    this.AppliedTaxes != null &&
+                    this.AppliedTaxes.SequenceEqual(other.AppliedTaxes)
                 );
         }
 
@@ -269,6 +283,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Taxable.GetHashCode();
                 if (this.Taxes != null)
                     hash = hash * 59 + this.Taxes.GetHashCode();
+                if (this.AppliedTaxes != null)
+                    hash = hash * 59 + this.AppliedTaxes.GetHashCode();
                 return hash;
             }
         }

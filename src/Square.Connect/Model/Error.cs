@@ -37,10 +37,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        /// <param name="Category">The error&#39;s high-level category. See [ErrorCategory](#type-errorcategory) for possible values (required).</param>
-        /// <param name="Code">The error&#39;s specific code. See [ErrorCode](#type-errorcode) for possible values (required).</param>
+        /// <param name="Category">The high-level category for the error. See [ErrorCategory](#type-errorcategory) See [ErrorCategory](#type-errorcategory) for possible values (required).</param>
+        /// <param name="Code">The specific code of the error. See [ErrorCode](#type-errorcode) for possible See [ErrorCode](#type-errorcode) for possible values (required).</param>
         /// <param name="Detail">A human-readable description of the error for debugging purposes..</param>
-        /// <param name="Field">The name of the field provided in the original request that the error pertains to, if any..</param>
+        /// <param name="Field">The name of the field provided in the original request (if any) that the error pertains to..</param>
         public Error(string Category = default(string), string Code = default(string), string Detail = default(string), string Field = default(string))
         {
             // to ensure "Category" is required (not null)
@@ -66,15 +66,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The error&#39;s high-level category. See [ErrorCategory](#type-errorcategory) for possible values
+        /// The high-level category for the error. See [ErrorCategory](#type-errorcategory) See [ErrorCategory](#type-errorcategory) for possible values
         /// </summary>
-        /// <value>The error&#39;s high-level category. See [ErrorCategory](#type-errorcategory) for possible values</value>
+        /// <value>The high-level category for the error. See [ErrorCategory](#type-errorcategory) See [ErrorCategory](#type-errorcategory) for possible values</value>
         [DataMember(Name="category", EmitDefaultValue=false)]
         public string Category { get; set; }
         /// <summary>
-        /// The error&#39;s specific code. See [ErrorCode](#type-errorcode) for possible values
+        /// The specific code of the error. See [ErrorCode](#type-errorcode) for possible See [ErrorCode](#type-errorcode) for possible values
         /// </summary>
-        /// <value>The error&#39;s specific code. See [ErrorCode](#type-errorcode) for possible values</value>
+        /// <value>The specific code of the error. See [ErrorCode](#type-errorcode) for possible See [ErrorCode](#type-errorcode) for possible values</value>
         [DataMember(Name="code", EmitDefaultValue=false)]
         public string Code { get; set; }
         /// <summary>
@@ -84,9 +84,9 @@ namespace Square.Connect.Model
         [DataMember(Name="detail", EmitDefaultValue=false)]
         public string Detail { get; set; }
         /// <summary>
-        /// The name of the field provided in the original request that the error pertains to, if any.
+        /// The name of the field provided in the original request (if any) that the error pertains to.
         /// </summary>
-        /// <value>The name of the field provided in the original request that the error pertains to, if any.</value>
+        /// <value>The name of the field provided in the original request (if any) that the error pertains to.</value>
         [DataMember(Name="field", EmitDefaultValue=false)]
         public string Field { get; set; }
         /// <summary>

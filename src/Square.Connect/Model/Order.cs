@@ -37,31 +37,32 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
-        /// <param name="Id">The order&#39;s unique ID.  This field is read-only..</param>
+        /// <param name="Id">The order&#39;s unique ID..</param>
         /// <param name="LocationId">The ID of the merchant location this order is associated with. (required).</param>
         /// <param name="ReferenceId">A client specified identifier to associate an entity in another system with this order..</param>
         /// <param name="Source">The origination details of the order..</param>
         /// <param name="CustomerId">The [Customer](#type-customer) ID of the customer associated with the order..</param>
         /// <param name="LineItems">The line items included in the order..</param>
-        /// <param name="Taxes">A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list..</param>
-        /// <param name="Discounts">A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list..</param>
+        /// <param name="Taxes">The list of all taxes associated with the order.  Taxes can be scoped to either &#x60;ORDER&#x60; or &#x60;LINE_ITEM&#x60;. For taxes with &#x60;LINE_ITEM&#x60; scope, an &#x60;OrderLineItemAppliedTax&#x60; must be added to each line item that the tax applies to. For taxes with &#x60;ORDER&#x60; scope, the server will generate an &#x60;OrderLineItemAppliedTax&#x60; for every line item.  On reads, each tax in the list will include the total amount of that tax applied to the order.  __IMPORTANT__: If &#x60;LINE_ITEM&#x60; scope is set on any taxes in this field, usage of the deprecated &#x60;line_items.taxes&#x60; field will result in an error. Please use &#x60;line_items.applied_taxes&#x60; instead..</param>
+        /// <param name="Discounts">The list of all discounts associated with the order.  Discounts can be scoped to either &#x60;ORDER&#x60; or &#x60;LINE_ITEM&#x60;. For discounts scoped to &#x60;LINE_ITEM&#x60;, an &#x60;OrderLineItemAppliedDiscount&#x60; must be added to each line item that the discount applies to. For discounts with &#x60;ORDER&#x60; scope, the server will generate an &#x60;OrderLineItemAppliedDiscount&#x60; for every line item.  __IMPORTANT__: If &#x60;LINE_ITEM&#x60; scope is set on any discounts in this field, usage of the deprecated &#x60;line_items.discounts&#x60; field will result in an error. Please use &#x60;line_items.applied_discounts&#x60; instead..</param>
         /// <param name="ServiceCharges">A list of service charges applied to the order..</param>
         /// <param name="Fulfillments">Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments..</param>
-        /// <param name="Returns">Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.  This field is read-only..</param>
-        /// <param name="ReturnAmounts">Rollup of returned money amounts.  This field is read-only..</param>
-        /// <param name="NetAmounts">Net money amounts (sale money - return money).  This field is read-only..</param>
-        /// <param name="RoundingAdjustment">A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only..</param>
-        /// <param name="Tenders">The Tenders which were used to pay for the Order. This field is read-only..</param>
-        /// <param name="Refunds">The Refunds that are part of this Order. This field is read-only..</param>
-        /// <param name="CreatedAt">Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only..</param>
-        /// <param name="UpdatedAt">Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only..</param>
-        /// <param name="ClosedAt">Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only..</param>
+        /// <param name="Returns">Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced..</param>
+        /// <param name="ReturnAmounts">Rollup of returned money amounts..</param>
+        /// <param name="NetAmounts">Net money amounts (sale money - return money)..</param>
+        /// <param name="RoundingAdjustment">A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency..</param>
+        /// <param name="Tenders">The Tenders which were used to pay for the Order..</param>
+        /// <param name="Refunds">The Refunds that are part of this Order..</param>
+        /// <param name="CreatedAt">Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="UpdatedAt">Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="ClosedAt">Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
         /// <param name="State">The current state of the order. &#x60;OPEN&#x60;,&#x60;COMPLETED&#x60;,&#x60;CANCELED&#x60; See [OrderState](#type-orderstate) for possible values.</param>
-        /// <param name="TotalMoney">The total amount of money to collect for the order.  This field is read-only..</param>
-        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order.  This field is read-only..</param>
-        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order.  This field is read-only..</param>
-        /// <param name="TotalServiceChargeMoney">The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only..</param>
-        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), OrderSource Source = default(OrderSource), string CustomerId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderServiceCharge> ServiceCharges = default(List<OrderServiceCharge>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), List<OrderReturn> Returns = default(List<OrderReturn>), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts), OrderMoneyAmounts NetAmounts = default(OrderMoneyAmounts), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), List<Tender> Tenders = default(List<Tender>), List<Refund> Refunds = default(List<Refund>), string CreatedAt = default(string), string UpdatedAt = default(string), string ClosedAt = default(string), string State = default(string), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalServiceChargeMoney = default(Money))
+        /// <param name="Version">Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders)..</param>
+        /// <param name="TotalMoney">The total amount of money to collect for the order..</param>
+        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the order..</param>
+        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the order..</param>
+        /// <param name="TotalServiceChargeMoney">The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts..</param>
+        public Order(string Id = default(string), string LocationId = default(string), string ReferenceId = default(string), OrderSource Source = default(OrderSource), string CustomerId = default(string), List<OrderLineItem> LineItems = default(List<OrderLineItem>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderServiceCharge> ServiceCharges = default(List<OrderServiceCharge>), List<OrderFulfillment> Fulfillments = default(List<OrderFulfillment>), List<OrderReturn> Returns = default(List<OrderReturn>), OrderMoneyAmounts ReturnAmounts = default(OrderMoneyAmounts), OrderMoneyAmounts NetAmounts = default(OrderMoneyAmounts), OrderRoundingAdjustment RoundingAdjustment = default(OrderRoundingAdjustment), List<Tender> Tenders = default(List<Tender>), List<Refund> Refunds = default(List<Refund>), string CreatedAt = default(string), string UpdatedAt = default(string), string ClosedAt = default(string), string State = default(string), int? Version = default(int?), Money TotalMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalServiceChargeMoney = default(Money))
         {
             // to ensure "LocationId" is required (not null)
             if (LocationId == null)
@@ -91,6 +92,7 @@ namespace Square.Connect.Model
             this.UpdatedAt = UpdatedAt;
             this.ClosedAt = ClosedAt;
             this.State = State;
+            this.Version = Version;
             this.TotalMoney = TotalMoney;
             this.TotalTaxMoney = TotalTaxMoney;
             this.TotalDiscountMoney = TotalDiscountMoney;
@@ -98,9 +100,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The order&#39;s unique ID.  This field is read-only.
+        /// The order&#39;s unique ID.
         /// </summary>
-        /// <value>The order&#39;s unique ID.  This field is read-only.</value>
+        /// <value>The order&#39;s unique ID.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
@@ -134,15 +136,15 @@ namespace Square.Connect.Model
         [DataMember(Name="line_items", EmitDefaultValue=false)]
         public List<OrderLineItem> LineItems { get; set; }
         /// <summary>
-        /// A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list.
+        /// The list of all taxes associated with the order.  Taxes can be scoped to either &#x60;ORDER&#x60; or &#x60;LINE_ITEM&#x60;. For taxes with &#x60;LINE_ITEM&#x60; scope, an &#x60;OrderLineItemAppliedTax&#x60; must be added to each line item that the tax applies to. For taxes with &#x60;ORDER&#x60; scope, the server will generate an &#x60;OrderLineItemAppliedTax&#x60; for every line item.  On reads, each tax in the list will include the total amount of that tax applied to the order.  __IMPORTANT__: If &#x60;LINE_ITEM&#x60; scope is set on any taxes in this field, usage of the deprecated &#x60;line_items.taxes&#x60; field will result in an error. Please use &#x60;line_items.applied_taxes&#x60; instead.
         /// </summary>
-        /// <value>A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list.</value>
+        /// <value>The list of all taxes associated with the order.  Taxes can be scoped to either &#x60;ORDER&#x60; or &#x60;LINE_ITEM&#x60;. For taxes with &#x60;LINE_ITEM&#x60; scope, an &#x60;OrderLineItemAppliedTax&#x60; must be added to each line item that the tax applies to. For taxes with &#x60;ORDER&#x60; scope, the server will generate an &#x60;OrderLineItemAppliedTax&#x60; for every line item.  On reads, each tax in the list will include the total amount of that tax applied to the order.  __IMPORTANT__: If &#x60;LINE_ITEM&#x60; scope is set on any taxes in this field, usage of the deprecated &#x60;line_items.taxes&#x60; field will result in an error. Please use &#x60;line_items.applied_taxes&#x60; instead.</value>
         [DataMember(Name="taxes", EmitDefaultValue=false)]
         public List<OrderLineItemTax> Taxes { get; set; }
         /// <summary>
-        /// A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list.
+        /// The list of all discounts associated with the order.  Discounts can be scoped to either &#x60;ORDER&#x60; or &#x60;LINE_ITEM&#x60;. For discounts scoped to &#x60;LINE_ITEM&#x60;, an &#x60;OrderLineItemAppliedDiscount&#x60; must be added to each line item that the discount applies to. For discounts with &#x60;ORDER&#x60; scope, the server will generate an &#x60;OrderLineItemAppliedDiscount&#x60; for every line item.  __IMPORTANT__: If &#x60;LINE_ITEM&#x60; scope is set on any discounts in this field, usage of the deprecated &#x60;line_items.discounts&#x60; field will result in an error. Please use &#x60;line_items.applied_discounts&#x60; instead.
         /// </summary>
-        /// <value>A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list.</value>
+        /// <value>The list of all discounts associated with the order.  Discounts can be scoped to either &#x60;ORDER&#x60; or &#x60;LINE_ITEM&#x60;. For discounts scoped to &#x60;LINE_ITEM&#x60;, an &#x60;OrderLineItemAppliedDiscount&#x60; must be added to each line item that the discount applies to. For discounts with &#x60;ORDER&#x60; scope, the server will generate an &#x60;OrderLineItemAppliedDiscount&#x60; for every line item.  __IMPORTANT__: If &#x60;LINE_ITEM&#x60; scope is set on any discounts in this field, usage of the deprecated &#x60;line_items.discounts&#x60; field will result in an error. Please use &#x60;line_items.applied_discounts&#x60; instead.</value>
         [DataMember(Name="discounts", EmitDefaultValue=false)]
         public List<OrderLineItemDiscount> Discounts { get; set; }
         /// <summary>
@@ -158,57 +160,57 @@ namespace Square.Connect.Model
         [DataMember(Name="fulfillments", EmitDefaultValue=false)]
         public List<OrderFulfillment> Fulfillments { get; set; }
         /// <summary>
-        /// Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.  This field is read-only.
+        /// Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.
         /// </summary>
-        /// <value>Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.  This field is read-only.</value>
+        /// <value>Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one &#x60;Return&#x60; object per sale Order being referenced.</value>
         [DataMember(Name="returns", EmitDefaultValue=false)]
         public List<OrderReturn> Returns { get; set; }
         /// <summary>
-        /// Rollup of returned money amounts.  This field is read-only.
+        /// Rollup of returned money amounts.
         /// </summary>
-        /// <value>Rollup of returned money amounts.  This field is read-only.</value>
+        /// <value>Rollup of returned money amounts.</value>
         [DataMember(Name="return_amounts", EmitDefaultValue=false)]
         public OrderMoneyAmounts ReturnAmounts { get; set; }
         /// <summary>
-        /// Net money amounts (sale money - return money).  This field is read-only.
+        /// Net money amounts (sale money - return money).
         /// </summary>
-        /// <value>Net money amounts (sale money - return money).  This field is read-only.</value>
+        /// <value>Net money amounts (sale money - return money).</value>
         [DataMember(Name="net_amounts", EmitDefaultValue=false)]
         public OrderMoneyAmounts NetAmounts { get; set; }
         /// <summary>
-        /// A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only.
+        /// A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.
         /// </summary>
-        /// <value>A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only.</value>
+        /// <value>A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.</value>
         [DataMember(Name="rounding_adjustment", EmitDefaultValue=false)]
         public OrderRoundingAdjustment RoundingAdjustment { get; set; }
         /// <summary>
-        /// The Tenders which were used to pay for the Order. This field is read-only.
+        /// The Tenders which were used to pay for the Order.
         /// </summary>
-        /// <value>The Tenders which were used to pay for the Order. This field is read-only.</value>
+        /// <value>The Tenders which were used to pay for the Order.</value>
         [DataMember(Name="tenders", EmitDefaultValue=false)]
         public List<Tender> Tenders { get; set; }
         /// <summary>
-        /// The Refunds that are part of this Order. This field is read-only.
+        /// The Refunds that are part of this Order.
         /// </summary>
-        /// <value>The Refunds that are part of this Order. This field is read-only.</value>
+        /// <value>The Refunds that are part of this Order.</value>
         [DataMember(Name="refunds", EmitDefaultValue=false)]
         public List<Refund> Refunds { get; set; }
         /// <summary>
-        /// Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.
+        /// Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.</value>
+        /// <value>Timestamp for when the order was created. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         public string CreatedAt { get; set; }
         /// <summary>
-        /// Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.
+        /// Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.</value>
+        /// <value>Timestamp for when the order was last updated. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>
-        /// Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.
+        /// Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.  This field is read-only.</value>
+        /// <value>Timestamp for when the order was closed. In RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="closed_at", EmitDefaultValue=false)]
         public string ClosedAt { get; set; }
         /// <summary>
@@ -218,27 +220,33 @@ namespace Square.Connect.Model
         [DataMember(Name="state", EmitDefaultValue=false)]
         public string State { get; set; }
         /// <summary>
-        /// The total amount of money to collect for the order.  This field is read-only.
+        /// Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders).
         /// </summary>
-        /// <value>The total amount of money to collect for the order.  This field is read-only.</value>
+        /// <value>Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders).</value>
+        [DataMember(Name="version", EmitDefaultValue=false)]
+        public int? Version { get; set; }
+        /// <summary>
+        /// The total amount of money to collect for the order.
+        /// </summary>
+        /// <value>The total amount of money to collect for the order.</value>
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>
-        /// The total tax amount of money to collect for the order.  This field is read-only.
+        /// The total tax amount of money to collect for the order.
         /// </summary>
-        /// <value>The total tax amount of money to collect for the order.  This field is read-only.</value>
+        /// <value>The total tax amount of money to collect for the order.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
         /// <summary>
-        /// The total discount amount of money to collect for the order.  This field is read-only.
+        /// The total discount amount of money to collect for the order.
         /// </summary>
-        /// <value>The total discount amount of money to collect for the order.  This field is read-only.</value>
+        /// <value>The total discount amount of money to collect for the order.</value>
         [DataMember(Name="total_discount_money", EmitDefaultValue=false)]
         public Money TotalDiscountMoney { get; set; }
         /// <summary>
-        /// The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only.
+        /// The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.
         /// </summary>
-        /// <value>The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.  This field is read-only.</value>
+        /// <value>The total amount of money collected in service charges for the order.  Note: &#x60;total_service_charge_money&#x60; is the sum of &#x60;applied_money&#x60; fields for each individual service charge. Therefore, &#x60;total_service_charge_money&#x60; will only include inclusive tax amounts, not additive tax amounts.</value>
         [DataMember(Name="total_service_charge_money", EmitDefaultValue=false)]
         public Money TotalServiceChargeMoney { get; set; }
         /// <summary>
@@ -269,6 +277,7 @@ namespace Square.Connect.Model
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  ClosedAt: ").Append(ClosedAt).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("  TotalMoney: ").Append(TotalMoney).Append("\n");
             sb.Append("  TotalTaxMoney: ").Append(TotalTaxMoney).Append("\n");
             sb.Append("  TotalDiscountMoney: ").Append(TotalDiscountMoney).Append("\n");
@@ -410,6 +419,11 @@ namespace Square.Connect.Model
                     this.State.Equals(other.State)
                 ) && 
                 (
+                    this.Version == other.Version ||
+                    this.Version != null &&
+                    this.Version.Equals(other.Version)
+                ) && 
+                (
                     this.TotalMoney == other.TotalMoney ||
                     this.TotalMoney != null &&
                     this.TotalMoney.Equals(other.TotalMoney)
@@ -482,6 +496,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ClosedAt.GetHashCode();
                 if (this.State != null)
                     hash = hash * 59 + this.State.GetHashCode();
+                if (this.Version != null)
+                    hash = hash * 59 + this.Version.GetHashCode();
                 if (this.TotalMoney != null)
                     hash = hash * 59 + this.TotalMoney.GetHashCode();
                 if (this.TotalTaxMoney != null)

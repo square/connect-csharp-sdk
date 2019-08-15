@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItem" /> class.
         /// </summary>
-        /// <param name="Uid">Unique ID that identifies the line item only within this order.  This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the line item only within this order..</param>
         /// <param name="Name">The name of the line item..</param>
         /// <param name="Quantity">The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;. (required).</param>
         /// <param name="QuantityUnit">The unit and precision that this line item&#39;s quantity is measured in..</param>
@@ -45,15 +45,17 @@ namespace Square.Connect.Model
         /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item..</param>
         /// <param name="VariationName">The name of the variation applied to this line item..</param>
         /// <param name="Modifiers">The [CatalogModifier](#type-catalogmodifier)s applied to this line item..</param>
-        /// <param name="Taxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list..</param>
-        /// <param name="Discounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list..</param>
+        /// <param name="Taxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;. Usage of both this field and &#x60;applied_taxes&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error..</param>
+        /// <param name="Discounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;. Usage of both this field and &#x60;applied_discounts&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error..</param>
+        /// <param name="AppliedTaxes">The list of references to taxes applied to this line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemTax&#x60; applied to the line item. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedTax&#x60; will be automatically created on every line item for all &#x60;ORDER&#x60; scoped taxes added to the order. &#x60;OrderLineItemAppliedTax&#x60; records for &#x60;LINE_ITEM&#x60; scoped taxes must be added in requests for the tax to apply to any line items.  To change the amount of a tax, modify the referenced top-level tax..</param>
+        /// <param name="AppliedDiscounts">The list of references to discounts applied to this line item. Each &#x60;OrderLineItemAppliedDiscount&#x60; has a &#x60;discount_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemDiscounts&#x60; applied to the line item. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedDiscount&#x60; will be automatically created on every line item for all &#x60;ORDER&#x60; scoped discounts that are added to the order. &#x60;OrderLineItemAppliedDiscount&#x60; records for &#x60;LINE_ITEM&#x60; scoped discounts must be added in requests for the discount to apply to any line items.  To change the amount of a discount, modify the referenced top-level discount..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>
         /// <param name="VariationTotalPriceMoney">The total price of all item variations sold in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers..</param>
-        /// <param name="GrossSalesMoney">The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.  This field is read-only..</param>
-        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item.  This field is read-only..</param>
-        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the line item.  This field is read-only..</param>
-        /// <param name="TotalMoney">The total amount of money to collect for this line item.  This field is read-only..</param>
-        public OrderLineItem(string Uid = default(string), string Name = default(string), string Quantity = default(string), OrderQuantityUnit QuantityUnit = default(OrderQuantityUnit), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderLineItemModifier> Modifiers = default(List<OrderLineItemModifier>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), Money BasePriceMoney = default(Money), Money VariationTotalPriceMoney = default(Money), Money GrossSalesMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
+        /// <param name="GrossSalesMoney">The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price..</param>
+        /// <param name="TotalTaxMoney">The total tax amount of money to collect for the line item..</param>
+        /// <param name="TotalDiscountMoney">The total discount amount of money to collect for the line item..</param>
+        /// <param name="TotalMoney">The total amount of money to collect for this line item..</param>
+        public OrderLineItem(string Uid = default(string), string Name = default(string), string Quantity = default(string), OrderQuantityUnit QuantityUnit = default(OrderQuantityUnit), string Note = default(string), string CatalogObjectId = default(string), string VariationName = default(string), List<OrderLineItemModifier> Modifiers = default(List<OrderLineItemModifier>), List<OrderLineItemTax> Taxes = default(List<OrderLineItemTax>), List<OrderLineItemDiscount> Discounts = default(List<OrderLineItemDiscount>), List<OrderLineItemAppliedTax> AppliedTaxes = default(List<OrderLineItemAppliedTax>), List<OrderLineItemAppliedDiscount> AppliedDiscounts = default(List<OrderLineItemAppliedDiscount>), Money BasePriceMoney = default(Money), Money VariationTotalPriceMoney = default(Money), Money GrossSalesMoney = default(Money), Money TotalTaxMoney = default(Money), Money TotalDiscountMoney = default(Money), Money TotalMoney = default(Money))
         {
             // to ensure "Quantity" is required (not null)
             if (Quantity == null)
@@ -73,6 +75,8 @@ namespace Square.Connect.Model
             this.Modifiers = Modifiers;
             this.Taxes = Taxes;
             this.Discounts = Discounts;
+            this.AppliedTaxes = AppliedTaxes;
+            this.AppliedDiscounts = AppliedDiscounts;
             this.BasePriceMoney = BasePriceMoney;
             this.VariationTotalPriceMoney = VariationTotalPriceMoney;
             this.GrossSalesMoney = GrossSalesMoney;
@@ -82,9 +86,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Unique ID that identifies the line item only within this order.  This field is read-only.
+        /// Unique ID that identifies the line item only within this order.
         /// </summary>
-        /// <value>Unique ID that identifies the line item only within this order.  This field is read-only.</value>
+        /// <value>Unique ID that identifies the line item only within this order.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -130,17 +134,29 @@ namespace Square.Connect.Model
         [DataMember(Name="modifiers", EmitDefaultValue=false)]
         public List<OrderLineItemModifier> Modifiers { get; set; }
         /// <summary>
-        /// A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.
+        /// A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;. Usage of both this field and &#x60;applied_taxes&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
         /// </summary>
-        /// <value>A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.</value>
+        /// <value>A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;. Usage of both this field and &#x60;applied_taxes&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.</value>
         [DataMember(Name="taxes", EmitDefaultValue=false)]
         public List<OrderLineItemTax> Taxes { get; set; }
         /// <summary>
-        /// A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.
+        /// A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;. Usage of both this field and &#x60;applied_discounts&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
         /// </summary>
-        /// <value>A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.</value>
+        /// <value>A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;. Usage of both this field and &#x60;applied_discounts&#x60; when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.</value>
         [DataMember(Name="discounts", EmitDefaultValue=false)]
         public List<OrderLineItemDiscount> Discounts { get; set; }
+        /// <summary>
+        /// The list of references to taxes applied to this line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemTax&#x60; applied to the line item. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedTax&#x60; will be automatically created on every line item for all &#x60;ORDER&#x60; scoped taxes added to the order. &#x60;OrderLineItemAppliedTax&#x60; records for &#x60;LINE_ITEM&#x60; scoped taxes must be added in requests for the tax to apply to any line items.  To change the amount of a tax, modify the referenced top-level tax.
+        /// </summary>
+        /// <value>The list of references to taxes applied to this line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemTax&#x60; applied to the line item. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedTax&#x60; will be automatically created on every line item for all &#x60;ORDER&#x60; scoped taxes added to the order. &#x60;OrderLineItemAppliedTax&#x60; records for &#x60;LINE_ITEM&#x60; scoped taxes must be added in requests for the tax to apply to any line items.  To change the amount of a tax, modify the referenced top-level tax.</value>
+        [DataMember(Name="applied_taxes", EmitDefaultValue=false)]
+        public List<OrderLineItemAppliedTax> AppliedTaxes { get; set; }
+        /// <summary>
+        /// The list of references to discounts applied to this line item. Each &#x60;OrderLineItemAppliedDiscount&#x60; has a &#x60;discount_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemDiscounts&#x60; applied to the line item. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedDiscount&#x60; will be automatically created on every line item for all &#x60;ORDER&#x60; scoped discounts that are added to the order. &#x60;OrderLineItemAppliedDiscount&#x60; records for &#x60;LINE_ITEM&#x60; scoped discounts must be added in requests for the discount to apply to any line items.  To change the amount of a discount, modify the referenced top-level discount.
+        /// </summary>
+        /// <value>The list of references to discounts applied to this line item. Each &#x60;OrderLineItemAppliedDiscount&#x60; has a &#x60;discount_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderLineItemDiscounts&#x60; applied to the line item. On reads, the amount applied is populated.  An &#x60;OrderLineItemAppliedDiscount&#x60; will be automatically created on every line item for all &#x60;ORDER&#x60; scoped discounts that are added to the order. &#x60;OrderLineItemAppliedDiscount&#x60; records for &#x60;LINE_ITEM&#x60; scoped discounts must be added in requests for the discount to apply to any line items.  To change the amount of a discount, modify the referenced top-level discount.</value>
+        [DataMember(Name="applied_discounts", EmitDefaultValue=false)]
+        public List<OrderLineItemAppliedDiscount> AppliedDiscounts { get; set; }
         /// <summary>
         /// The base price for a single unit of the line item.
         /// </summary>
@@ -154,27 +170,27 @@ namespace Square.Connect.Model
         [DataMember(Name="variation_total_price_money", EmitDefaultValue=false)]
         public Money VariationTotalPriceMoney { get; set; }
         /// <summary>
-        /// The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.  This field is read-only.
+        /// The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.
         /// </summary>
-        /// <value>The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.  This field is read-only.</value>
+        /// <value>The amount of money made in gross sales for this line item. Calculated as the sum of the variation&#39;s total price and each modifier&#39;s total price.</value>
         [DataMember(Name="gross_sales_money", EmitDefaultValue=false)]
         public Money GrossSalesMoney { get; set; }
         /// <summary>
-        /// The total tax amount of money to collect for the line item.  This field is read-only.
+        /// The total tax amount of money to collect for the line item.
         /// </summary>
-        /// <value>The total tax amount of money to collect for the line item.  This field is read-only.</value>
+        /// <value>The total tax amount of money to collect for the line item.</value>
         [DataMember(Name="total_tax_money", EmitDefaultValue=false)]
         public Money TotalTaxMoney { get; set; }
         /// <summary>
-        /// The total discount amount of money to collect for the line item.  This field is read-only.
+        /// The total discount amount of money to collect for the line item.
         /// </summary>
-        /// <value>The total discount amount of money to collect for the line item.  This field is read-only.</value>
+        /// <value>The total discount amount of money to collect for the line item.</value>
         [DataMember(Name="total_discount_money", EmitDefaultValue=false)]
         public Money TotalDiscountMoney { get; set; }
         /// <summary>
-        /// The total amount of money to collect for this line item.  This field is read-only.
+        /// The total amount of money to collect for this line item.
         /// </summary>
-        /// <value>The total amount of money to collect for this line item.  This field is read-only.</value>
+        /// <value>The total amount of money to collect for this line item.</value>
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>
@@ -195,6 +211,8 @@ namespace Square.Connect.Model
             sb.Append("  Modifiers: ").Append(Modifiers).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  Discounts: ").Append(Discounts).Append("\n");
+            sb.Append("  AppliedTaxes: ").Append(AppliedTaxes).Append("\n");
+            sb.Append("  AppliedDiscounts: ").Append(AppliedDiscounts).Append("\n");
             sb.Append("  BasePriceMoney: ").Append(BasePriceMoney).Append("\n");
             sb.Append("  VariationTotalPriceMoney: ").Append(VariationTotalPriceMoney).Append("\n");
             sb.Append("  GrossSalesMoney: ").Append(GrossSalesMoney).Append("\n");
@@ -288,6 +306,16 @@ namespace Square.Connect.Model
                     this.Discounts.SequenceEqual(other.Discounts)
                 ) && 
                 (
+                    this.AppliedTaxes == other.AppliedTaxes ||
+                    this.AppliedTaxes != null &&
+                    this.AppliedTaxes.SequenceEqual(other.AppliedTaxes)
+                ) && 
+                (
+                    this.AppliedDiscounts == other.AppliedDiscounts ||
+                    this.AppliedDiscounts != null &&
+                    this.AppliedDiscounts.SequenceEqual(other.AppliedDiscounts)
+                ) && 
+                (
                     this.BasePriceMoney == other.BasePriceMoney ||
                     this.BasePriceMoney != null &&
                     this.BasePriceMoney.Equals(other.BasePriceMoney)
@@ -350,6 +378,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Taxes.GetHashCode();
                 if (this.Discounts != null)
                     hash = hash * 59 + this.Discounts.GetHashCode();
+                if (this.AppliedTaxes != null)
+                    hash = hash * 59 + this.AppliedTaxes.GetHashCode();
+                if (this.AppliedDiscounts != null)
+                    hash = hash * 59 + this.AppliedDiscounts.GetHashCode();
                 if (this.BasePriceMoney != null)
                     hash = hash * 59 + this.BasePriceMoney.GetHashCode();
                 if (this.VariationTotalPriceMoney != null)

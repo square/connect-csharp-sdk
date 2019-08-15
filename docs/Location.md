@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **InstagramUsername** | **string** | The Instagram username of the location without the &#39; | [optional] 
 **FacebookUrl** | **string** | The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;. | [optional] 
 **Coordinates** | [**Coordinates**](Coordinates.md) | The physical coordinates (latitude and longitude) of the location. | [optional] 
+**LogoUrl** | **string** | The logo image URL of the location. | [optional] 
+**PosBackgroundUrl** | **string** | The Point of Sale background image URL of the location. | [optional] 
 
 
 

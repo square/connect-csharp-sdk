@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a discount that applies to one or more line items in an order.  Fixed-amount, order-level discounts are distributed across all non-zero line item totals. The amount distributed to each line item is relative to that item’s contribution to the order subtotal.
+    /// Represents a discount that applies to one or more line items in an order.  Fixed-amount, order-scoped discounts are distributed across all non-zero line item totals. The amount distributed to each line item is relative to the amount contributed by the item to the order subtotal.
     /// </summary>
     [DataContract]
     public partial class OrderLineItemDiscount :  IEquatable<OrderLineItemDiscount>, IValidatableObject
@@ -32,14 +32,14 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemDiscount" /> class.
         /// </summary>
-        /// <param name="Uid">Unique ID that identifies the discount only within this order.  This field is read-only..</param>
+        /// <param name="Uid">Unique ID that identifies the discount only within this order..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing [CatalogDiscount](#type-catalogdiscount)..</param>
         /// <param name="Name">The discount&#39;s name..</param>
         /// <param name="Type">The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values.</param>
         /// <param name="Percentage">The percentage of the discount, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  The percentage won&#39;t be set for an amount-based discount..</param>
-        /// <param name="AmountMoney">The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won&#39;t be set for a percentage-based discount..</param>
-        /// <param name="AppliedMoney">The amount of discount actually applied to this line item.  Represents the amount of money applied to a line item as a discount When an amount-based discount is at order-level, this value is different from &#x60;amount_money&#x60; because the discount is distributed across the line items..</param>
-        /// <param name="Scope">Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.</param>
+        /// <param name="AmountMoney">The total declared monetary amount of the discount.  &#x60;amount_money&#x60; is not set for percentage-based discounts..</param>
+        /// <param name="AppliedMoney">The amount of discount actually applied to the line item.  Represents the amount of money applied as a line item-scoped discount. When an amount-based discount is scoped to the entire order, the value of &#x60;applied_money&#x60; is different from &#x60;amount_money&#x60; because the total amount of the discount is distributed across all line items..</param>
+        /// <param name="Scope">Indicates the level at which the discount applies. For &#x60;ORDER&#x60; scoped discounts, Square generates references in &#x60;applied_discounts&#x60; on all order line items that do not have them. For &#x60;LINE_ITEM&#x60; scoped discounts, the discount only applies to line items with a discount reference in their &#x60;applied_discounts&#x60; field.  This field is immutable. To change the scope of a discount you must delete the discount and re-add it as a new discount. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.</param>
         public OrderLineItemDiscount(string Uid = default(string), string CatalogObjectId = default(string), string Name = default(string), string Type = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), string Scope = default(string))
         {
             this.Uid = Uid;
@@ -53,9 +53,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Unique ID that identifies the discount only within this order.  This field is read-only.
+        /// Unique ID that identifies the discount only within this order.
         /// </summary>
-        /// <value>Unique ID that identifies the discount only within this order.  This field is read-only.</value>
+        /// <value>Unique ID that identifies the discount only within this order.</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
         public string Uid { get; set; }
         /// <summary>
@@ -83,21 +83,21 @@ namespace Square.Connect.Model
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
-        /// The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won&#39;t be set for a percentage-based discount.
+        /// The total declared monetary amount of the discount.  &#x60;amount_money&#x60; is not set for percentage-based discounts.
         /// </summary>
-        /// <value>The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won&#39;t be set for a percentage-based discount.</value>
+        /// <value>The total declared monetary amount of the discount.  &#x60;amount_money&#x60; is not set for percentage-based discounts.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
-        /// The amount of discount actually applied to this line item.  Represents the amount of money applied to a line item as a discount When an amount-based discount is at order-level, this value is different from &#x60;amount_money&#x60; because the discount is distributed across the line items.
+        /// The amount of discount actually applied to the line item.  Represents the amount of money applied as a line item-scoped discount. When an amount-based discount is scoped to the entire order, the value of &#x60;applied_money&#x60; is different from &#x60;amount_money&#x60; because the total amount of the discount is distributed across all line items.
         /// </summary>
-        /// <value>The amount of discount actually applied to this line item.  Represents the amount of money applied to a line item as a discount When an amount-based discount is at order-level, this value is different from &#x60;amount_money&#x60; because the discount is distributed across the line items.</value>
+        /// <value>The amount of discount actually applied to the line item.  Represents the amount of money applied as a line item-scoped discount. When an amount-based discount is scoped to the entire order, the value of &#x60;applied_money&#x60; is different from &#x60;amount_money&#x60; because the total amount of the discount is distributed across all line items.</value>
         [DataMember(Name="applied_money", EmitDefaultValue=false)]
         public Money AppliedMoney { get; set; }
         /// <summary>
-        /// Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
+        /// Indicates the level at which the discount applies. For &#x60;ORDER&#x60; scoped discounts, Square generates references in &#x60;applied_discounts&#x60; on all order line items that do not have them. For &#x60;LINE_ITEM&#x60; scoped discounts, the discount only applies to line items with a discount reference in their &#x60;applied_discounts&#x60; field.  This field is immutable. To change the scope of a discount you must delete the discount and re-add it as a new discount. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
         /// </summary>
-        /// <value>Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values</value>
+        /// <value>Indicates the level at which the discount applies. For &#x60;ORDER&#x60; scoped discounts, Square generates references in &#x60;applied_discounts&#x60; on all order line items that do not have them. For &#x60;LINE_ITEM&#x60; scoped discounts, the discount only applies to line items with a discount reference in their &#x60;applied_discounts&#x60; field.  This field is immutable. To change the scope of a discount you must delete the discount and re-add it as a new discount. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values</value>
         [DataMember(Name="scope", EmitDefaultValue=false)]
         public string Scope { get; set; }
         /// <summary>

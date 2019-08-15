@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the parameters that can be included in the body of a request to the Charge endpoint.
+    /// Defines the parameters that can be included in the body of a request to the [Charge](#endpoint-charge) endpoint.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)
     /// </summary>
     [DataContract]
     public partial class ChargeRequest :  IEquatable<ChargeRequest>, IValidatableObject

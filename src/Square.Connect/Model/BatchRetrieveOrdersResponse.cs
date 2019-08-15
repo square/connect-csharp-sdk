@@ -34,12 +34,10 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Orders">The requested orders. This will omit any requested orders that do not exist or are not charged..</param>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="UnconvertibleTransactionIds">List of transaction ids within the requested set of ids that encountered transformation issues when being converted to an Order..</param>
-        public BatchRetrieveOrdersResponse(List<Order> Orders = default(List<Order>), List<Error> Errors = default(List<Error>), List<string> UnconvertibleTransactionIds = default(List<string>))
+        public BatchRetrieveOrdersResponse(List<Order> Orders = default(List<Order>), List<Error> Errors = default(List<Error>))
         {
             this.Orders = Orders;
             this.Errors = Errors;
-            this.UnconvertibleTransactionIds = UnconvertibleTransactionIds;
         }
         
         /// <summary>
@@ -55,12 +53,6 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// List of transaction ids within the requested set of ids that encountered transformation issues when being converted to an Order.
-        /// </summary>
-        /// <value>List of transaction ids within the requested set of ids that encountered transformation issues when being converted to an Order.</value>
-        [DataMember(Name="unconvertible_transaction_ids", EmitDefaultValue=false)]
-        public List<string> UnconvertibleTransactionIds { get; set; }
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -70,7 +62,6 @@ namespace Square.Connect.Model
             sb.Append("class BatchRetrieveOrdersResponse {\n");
             sb.Append("  Orders: ").Append(Orders).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
-            sb.Append("  UnconvertibleTransactionIds: ").Append(UnconvertibleTransactionIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,11 +107,6 @@ namespace Square.Connect.Model
                     this.Errors == other.Errors ||
                     this.Errors != null &&
                     this.Errors.SequenceEqual(other.Errors)
-                ) && 
-                (
-                    this.UnconvertibleTransactionIds == other.UnconvertibleTransactionIds ||
-                    this.UnconvertibleTransactionIds != null &&
-                    this.UnconvertibleTransactionIds.SequenceEqual(other.UnconvertibleTransactionIds)
                 );
         }
 
@@ -139,8 +125,6 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Orders.GetHashCode();
                 if (this.Errors != null)
                     hash = hash * 59 + this.Errors.GetHashCode();
-                if (this.UnconvertibleTransactionIds != null)
-                    hash = hash * 59 + this.UnconvertibleTransactionIds.GetHashCode();
                 return hash;
             }
         }

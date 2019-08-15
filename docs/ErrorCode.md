@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates specific errors that can occur during a request to the Connect API.
+Indicates the specific error that occurred during a request to a Square API.
 
 ## Properties
 

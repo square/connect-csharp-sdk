@@ -32,22 +32,22 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderFulfillmentPickupDetails" /> class.
         /// </summary>
-        /// <param name="Recipient">The recipient of this pickup fulfillment..</param>
-        /// <param name="ExpiresAt">The expiry [timestamp](#workingwithdates) in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. This timestamp indicates when the pickup fulfillment will expire if it is not accepted by the merchant. Expiration time can only be set up to 7 days in the future. If not set, this pickup fulfillment will be automatically accepted when placed..</param>
-        /// <param name="AutoCompleteDuration">The auto completion duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. If set, an open and accepted pickup fulfillment will automatically move to the &#x60;COMPLETED&#x60; state after this period of time. If not set, this pickup fulfillment will remain accepted until it is canceled or completed..</param>
+        /// <param name="Recipient">Information on the person meant to pick up this fulfillment from a physical location..</param>
+        /// <param name="ExpiresAt">The [timestamp](#workingwithdates) indicating when this fulfillment will expire if it is not accepted. Must be in RFC 3339 format e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. Expiration time can only be set up to 7 days in the future. If &#x60;expires_at&#x60; is not set, this pickup fulfillment will be automatically accepted when placed..</param>
+        /// <param name="AutoCompleteDuration">The duration of time after which an open and accepted pickup fulfillment will automatically move to the &#x60;COMPLETED&#x60; state. Must be in RFC3339 duration format e.g., \&quot;P1W3D\&quot;.  If not set, this pickup fulfillment will remain accepted until it is canceled or completed..</param>
         /// <param name="ScheduleType">The schedule type of the pickup fulfillment. Defaults to &#x60;SCHEDULED&#x60;. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values.</param>
-        /// <param name="PickupAt">The pickup [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. For fulfillments with the schedule type &#x60;ASAP&#x60;, this is automatically set to the current time plus the expected duration to prepare the fulfillment. This represents the start of the pickup window..</param>
-        /// <param name="PickupWindowDuration">The pickup window duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. This duration represents the window of time for which the order should be picked up after the &#x60;pickup_at&#x60; time. Can be used as an informational guideline for merchants..</param>
-        /// <param name="PrepTimeDuration">The preparation time duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. This duration indicates how long it takes the merchant to prepare this fulfillment..</param>
-        /// <param name="Note">A general note about the pickup fulfillment.  Notes are useful for providing additional instructions and are displayed in Square apps..</param>
-        /// <param name="PlacedAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was placed..</param>
-        /// <param name="AcceptedAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was accepted by the merchant..</param>
-        /// <param name="RejectedAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was rejected..</param>
-        /// <param name="ReadyAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the merchant set the fulfillment as ready for pickup..</param>
-        /// <param name="ExpiredAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment expired..</param>
-        /// <param name="PickedUpAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was picked up by the recipient..</param>
-        /// <param name="CanceledAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled by the merchant or buyer..</param>
-        /// <param name="CancelReason">A description of why the pickup was canceled. Max length is 100 characters..</param>
+        /// <param name="PickupAt">The [timestamp](#workingwithdates) that represents the start of the pickup window. Must be in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. For fulfillments with the schedule type &#x60;ASAP&#x60;, this is automatically set to the current time plus the expected duration to prepare the fulfillment..</param>
+        /// <param name="PickupWindowDuration">The window of time in which the order should be picked up after the &#x60;pickup_at&#x60; timestamp. Must be in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. Can be used as an informational guideline for merchants..</param>
+        /// <param name="PrepTimeDuration">The duration of time it takes to prepare this fulfillment. Must be in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;..</param>
+        /// <param name="Note">A note meant to provide additional instructions about the pickup fulfillment displayed in the Square Point of Sale and set by the API..</param>
+        /// <param name="PlacedAt">The [timestamp](#workingwithdates) indicating when the fulfillment was placed. Must be in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="AcceptedAt">The [timestamp](#workingwithdates) indicating when the fulfillment was accepted. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="RejectedAt">The [timestamp](#workingwithdates) indicating when the fulfillment was rejected. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="ReadyAt">The [timestamp](#workingwithdates) indicating when the fulfillment is marked as ready for pickup. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="ExpiredAt">The [timestamp](#workingwithdates) indicating when the fulfillment expired. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="PickedUpAt">The [timestamp](#workingwithdates) indicating when the fulfillment was picked up by the recipient. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="CanceledAt">The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled..</param>
+        /// <param name="CancelReason">A description of why the pickup was canceled. Max length: 100 characters..</param>
         public OrderFulfillmentPickupDetails(OrderFulfillmentRecipient Recipient = default(OrderFulfillmentRecipient), string ExpiresAt = default(string), string AutoCompleteDuration = default(string), string ScheduleType = default(string), string PickupAt = default(string), string PickupWindowDuration = default(string), string PrepTimeDuration = default(string), string Note = default(string), string PlacedAt = default(string), string AcceptedAt = default(string), string RejectedAt = default(string), string ReadyAt = default(string), string ExpiredAt = default(string), string PickedUpAt = default(string), string CanceledAt = default(string), string CancelReason = default(string))
         {
             this.Recipient = Recipient;
@@ -69,21 +69,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The recipient of this pickup fulfillment.
+        /// Information on the person meant to pick up this fulfillment from a physical location.
         /// </summary>
-        /// <value>The recipient of this pickup fulfillment.</value>
+        /// <value>Information on the person meant to pick up this fulfillment from a physical location.</value>
         [DataMember(Name="recipient", EmitDefaultValue=false)]
         public OrderFulfillmentRecipient Recipient { get; set; }
         /// <summary>
-        /// The expiry [timestamp](#workingwithdates) in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. This timestamp indicates when the pickup fulfillment will expire if it is not accepted by the merchant. Expiration time can only be set up to 7 days in the future. If not set, this pickup fulfillment will be automatically accepted when placed.
+        /// The [timestamp](#workingwithdates) indicating when this fulfillment will expire if it is not accepted. Must be in RFC 3339 format e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. Expiration time can only be set up to 7 days in the future. If &#x60;expires_at&#x60; is not set, this pickup fulfillment will be automatically accepted when placed.
         /// </summary>
-        /// <value>The expiry [timestamp](#workingwithdates) in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. This timestamp indicates when the pickup fulfillment will expire if it is not accepted by the merchant. Expiration time can only be set up to 7 days in the future. If not set, this pickup fulfillment will be automatically accepted when placed.</value>
+        /// <value>The [timestamp](#workingwithdates) indicating when this fulfillment will expire if it is not accepted. Must be in RFC 3339 format e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. Expiration time can only be set up to 7 days in the future. If &#x60;expires_at&#x60; is not set, this pickup fulfillment will be automatically accepted when placed.</value>
         [DataMember(Name="expires_at", EmitDefaultValue=false)]
         public string ExpiresAt { get; set; }
         /// <summary>
-        /// The auto completion duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. If set, an open and accepted pickup fulfillment will automatically move to the &#x60;COMPLETED&#x60; state after this period of time. If not set, this pickup fulfillment will remain accepted until it is canceled or completed.
+        /// The duration of time after which an open and accepted pickup fulfillment will automatically move to the &#x60;COMPLETED&#x60; state. Must be in RFC3339 duration format e.g., \&quot;P1W3D\&quot;.  If not set, this pickup fulfillment will remain accepted until it is canceled or completed.
         /// </summary>
-        /// <value>The auto completion duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. If set, an open and accepted pickup fulfillment will automatically move to the &#x60;COMPLETED&#x60; state after this period of time. If not set, this pickup fulfillment will remain accepted until it is canceled or completed.</value>
+        /// <value>The duration of time after which an open and accepted pickup fulfillment will automatically move to the &#x60;COMPLETED&#x60; state. Must be in RFC3339 duration format e.g., \&quot;P1W3D\&quot;.  If not set, this pickup fulfillment will remain accepted until it is canceled or completed.</value>
         [DataMember(Name="auto_complete_duration", EmitDefaultValue=false)]
         public string AutoCompleteDuration { get; set; }
         /// <summary>
@@ -93,75 +93,75 @@ namespace Square.Connect.Model
         [DataMember(Name="schedule_type", EmitDefaultValue=false)]
         public string ScheduleType { get; set; }
         /// <summary>
-        /// The pickup [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. For fulfillments with the schedule type &#x60;ASAP&#x60;, this is automatically set to the current time plus the expected duration to prepare the fulfillment. This represents the start of the pickup window.
+        /// The [timestamp](#workingwithdates) that represents the start of the pickup window. Must be in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. For fulfillments with the schedule type &#x60;ASAP&#x60;, this is automatically set to the current time plus the expected duration to prepare the fulfillment.
         /// </summary>
-        /// <value>The pickup [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. For fulfillments with the schedule type &#x60;ASAP&#x60;, this is automatically set to the current time plus the expected duration to prepare the fulfillment. This represents the start of the pickup window.</value>
+        /// <value>The [timestamp](#workingwithdates) that represents the start of the pickup window. Must be in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. For fulfillments with the schedule type &#x60;ASAP&#x60;, this is automatically set to the current time plus the expected duration to prepare the fulfillment.</value>
         [DataMember(Name="pickup_at", EmitDefaultValue=false)]
         public string PickupAt { get; set; }
         /// <summary>
-        /// The pickup window duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. This duration represents the window of time for which the order should be picked up after the &#x60;pickup_at&#x60; time. Can be used as an informational guideline for merchants.
+        /// The window of time in which the order should be picked up after the &#x60;pickup_at&#x60; timestamp. Must be in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. Can be used as an informational guideline for merchants.
         /// </summary>
-        /// <value>The pickup window duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. This duration represents the window of time for which the order should be picked up after the &#x60;pickup_at&#x60; time. Can be used as an informational guideline for merchants.</value>
+        /// <value>The window of time in which the order should be picked up after the &#x60;pickup_at&#x60; timestamp. Must be in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. Can be used as an informational guideline for merchants.</value>
         [DataMember(Name="pickup_window_duration", EmitDefaultValue=false)]
         public string PickupWindowDuration { get; set; }
         /// <summary>
-        /// The preparation time duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. This duration indicates how long it takes the merchant to prepare this fulfillment.
+        /// The duration of time it takes to prepare this fulfillment. Must be in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;.
         /// </summary>
-        /// <value>The preparation time duration in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;. This duration indicates how long it takes the merchant to prepare this fulfillment.</value>
+        /// <value>The duration of time it takes to prepare this fulfillment. Must be in RFC3339 duration format, e.g., \&quot;P1W3D\&quot;.</value>
         [DataMember(Name="prep_time_duration", EmitDefaultValue=false)]
         public string PrepTimeDuration { get; set; }
         /// <summary>
-        /// A general note about the pickup fulfillment.  Notes are useful for providing additional instructions and are displayed in Square apps.
+        /// A note meant to provide additional instructions about the pickup fulfillment displayed in the Square Point of Sale and set by the API.
         /// </summary>
-        /// <value>A general note about the pickup fulfillment.  Notes are useful for providing additional instructions and are displayed in Square apps.</value>
+        /// <value>A note meant to provide additional instructions about the pickup fulfillment displayed in the Square Point of Sale and set by the API.</value>
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was placed.
+        /// The [timestamp](#workingwithdates) indicating when the fulfillment was placed. Must be in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was placed.</value>
+        /// <value>The [timestamp](#workingwithdates) indicating when the fulfillment was placed. Must be in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="placed_at", EmitDefaultValue=false)]
         public string PlacedAt { get; set; }
         /// <summary>
-        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was accepted by the merchant.
+        /// The [timestamp](#workingwithdates) indicating when the fulfillment was accepted. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was accepted by the merchant.</value>
+        /// <value>The [timestamp](#workingwithdates) indicating when the fulfillment was accepted. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="accepted_at", EmitDefaultValue=false)]
         public string AcceptedAt { get; set; }
         /// <summary>
-        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was rejected.
+        /// The [timestamp](#workingwithdates) indicating when the fulfillment was rejected. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was rejected.</value>
+        /// <value>The [timestamp](#workingwithdates) indicating when the fulfillment was rejected. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="rejected_at", EmitDefaultValue=false)]
         public string RejectedAt { get; set; }
         /// <summary>
-        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the merchant set the fulfillment as ready for pickup.
+        /// The [timestamp](#workingwithdates) indicating when the fulfillment is marked as ready for pickup. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the merchant set the fulfillment as ready for pickup.</value>
+        /// <value>The [timestamp](#workingwithdates) indicating when the fulfillment is marked as ready for pickup. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="ready_at", EmitDefaultValue=false)]
         public string ReadyAt { get; set; }
         /// <summary>
-        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment expired.
+        /// The [timestamp](#workingwithdates) indicating when the fulfillment expired. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment expired.</value>
+        /// <value>The [timestamp](#workingwithdates) indicating when the fulfillment expired. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="expired_at", EmitDefaultValue=false)]
         public string ExpiredAt { get; set; }
         /// <summary>
-        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was picked up by the recipient.
+        /// The [timestamp](#workingwithdates) indicating when the fulfillment was picked up by the recipient. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was picked up by the recipient.</value>
+        /// <value>The [timestamp](#workingwithdates) indicating when the fulfillment was picked up by the recipient. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="picked_up_at", EmitDefaultValue=false)]
         public string PickedUpAt { get; set; }
         /// <summary>
-        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled by the merchant or buyer.
+        /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled.
         /// </summary>
-        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled by the merchant or buyer.</value>
+        /// <value>The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled.</value>
         [DataMember(Name="canceled_at", EmitDefaultValue=false)]
         public string CanceledAt { get; set; }
         /// <summary>
-        /// A description of why the pickup was canceled. Max length is 100 characters.
+        /// A description of why the pickup was canceled. Max length: 100 characters.
         /// </summary>
-        /// <value>A description of why the pickup was canceled. Max length is 100 characters.</value>
+        /// <value>A description of why the pickup was canceled. Max length: 100 characters.</value>
         [DataMember(Name="cancel_reason", EmitDefaultValue=false)]
         public string CancelReason { get; set; }
         /// <summary>

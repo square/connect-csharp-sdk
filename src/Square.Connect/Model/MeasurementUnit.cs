@@ -38,7 +38,9 @@ namespace Square.Connect.Model
         /// <param name="VolumeUnit">Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values.</param>
         /// <param name="WeightUnit">Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values.</param>
         /// <param name="GenericUnit">Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values.</param>
-        public MeasurementUnit(MeasurementUnitCustom CustomUnit = default(MeasurementUnitCustom), string AreaUnit = default(string), string LengthUnit = default(string), string VolumeUnit = default(string), string WeightUnit = default(string), string GenericUnit = default(string))
+        /// <param name="TimeUnit">Represents a standard unit of time. See [MeasurementUnitTime](#type-measurementunittime) for possible values.</param>
+        /// <param name="Type">Represents the type of the measurement unit. See [MeasurementUnitUnitType](#type-measurementunitunittype) for possible values.</param>
+        public MeasurementUnit(MeasurementUnitCustom CustomUnit = default(MeasurementUnitCustom), string AreaUnit = default(string), string LengthUnit = default(string), string VolumeUnit = default(string), string WeightUnit = default(string), string GenericUnit = default(string), string TimeUnit = default(string), string Type = default(string))
         {
             this.CustomUnit = CustomUnit;
             this.AreaUnit = AreaUnit;
@@ -46,6 +48,8 @@ namespace Square.Connect.Model
             this.VolumeUnit = VolumeUnit;
             this.WeightUnit = WeightUnit;
             this.GenericUnit = GenericUnit;
+            this.TimeUnit = TimeUnit;
+            this.Type = Type;
         }
         
         /// <summary>
@@ -85,6 +89,18 @@ namespace Square.Connect.Model
         [DataMember(Name="generic_unit", EmitDefaultValue=false)]
         public string GenericUnit { get; set; }
         /// <summary>
+        /// Represents a standard unit of time. See [MeasurementUnitTime](#type-measurementunittime) for possible values
+        /// </summary>
+        /// <value>Represents a standard unit of time. See [MeasurementUnitTime](#type-measurementunittime) for possible values</value>
+        [DataMember(Name="time_unit", EmitDefaultValue=false)]
+        public string TimeUnit { get; set; }
+        /// <summary>
+        /// Represents the type of the measurement unit. See [MeasurementUnitUnitType](#type-measurementunitunittype) for possible values
+        /// </summary>
+        /// <value>Represents the type of the measurement unit. See [MeasurementUnitUnitType](#type-measurementunitunittype) for possible values</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -98,6 +114,8 @@ namespace Square.Connect.Model
             sb.Append("  VolumeUnit: ").Append(VolumeUnit).Append("\n");
             sb.Append("  WeightUnit: ").Append(WeightUnit).Append("\n");
             sb.Append("  GenericUnit: ").Append(GenericUnit).Append("\n");
+            sb.Append("  TimeUnit: ").Append(TimeUnit).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +181,16 @@ namespace Square.Connect.Model
                     this.GenericUnit == other.GenericUnit ||
                     this.GenericUnit != null &&
                     this.GenericUnit.Equals(other.GenericUnit)
+                ) && 
+                (
+                    this.TimeUnit == other.TimeUnit ||
+                    this.TimeUnit != null &&
+                    this.TimeUnit.Equals(other.TimeUnit)
+                ) && 
+                (
+                    this.Type == other.Type ||
+                    this.Type != null &&
+                    this.Type.Equals(other.Type)
                 );
         }
 
@@ -189,6 +217,10 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.WeightUnit.GetHashCode();
                 if (this.GenericUnit != null)
                     hash = hash * 59 + this.GenericUnit.GetHashCode();
+                if (this.TimeUnit != null)
+                    hash = hash * 59 + this.TimeUnit.GetHashCode();
+                if (this.Type != null)
+                    hash = hash * 59 + this.Type.GetHashCode();
                 return hash;
             }
         }

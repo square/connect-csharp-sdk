@@ -35,8 +35,7 @@ namespace Square.Connect.Api
         /// <param name="status">Specifies the EmployeeStatus to filter the employee by. (optional)</param>
         /// <param name="limit">The number of employees to be returned on each page. (optional)</param>
         /// <param name="cursor">The token required to retrieve the specified page of results. (optional)</param>
-        /// <returns>ListEmployeesResponse</returns>
-        ListEmployeesResponse ListEmployees (string locationId = null, string status = null, int? limit = null, string cursor = null);
+        /// <returns>ListEmployeesResponse</returns>        ListEmployeesResponse ListEmployees (string locationId = null, string status = null, int? limit = null, string cursor = null);
 
         /// <summary>
         /// ListEmployees
@@ -59,8 +58,7 @@ namespace Square.Connect.Api
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
-        /// <returns>RetrieveEmployeeResponse</returns>
-        RetrieveEmployeeResponse RetrieveEmployee (string id);
+        /// <returns>RetrieveEmployeeResponse</returns>        RetrieveEmployeeResponse RetrieveEmployee (string id);
 
         /// <summary>
         /// RetrieveEmployee
@@ -282,7 +280,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (locationId != null) localVarQueryParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // query parameter
             if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
@@ -440,7 +438,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-06-12");
+            localVarHeaderParams.Add("Square-Version", "2019-08-14");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
