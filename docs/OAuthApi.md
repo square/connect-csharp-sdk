@@ -73,6 +73,7 @@ No authorization required
 
 <a name="renewtoken"></a>
 # **RenewToken**
+**Note: This endpoint is deprecated.**
 > RenewTokenResponse RenewToken (string clientId, RenewTokenRequest body)
 
 RenewToken

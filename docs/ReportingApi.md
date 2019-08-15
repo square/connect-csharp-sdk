@@ -10,6 +10,7 @@ Method | HTTP request | Description
 
 <a name="listadditionalrecipientreceivablerefunds"></a>
 # **ListAdditionalRecipientReceivableRefunds**
+**Note: This endpoint is deprecated.**
 > ListAdditionalRecipientReceivableRefundsResponse ListAdditionalRecipientReceivableRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
 ListAdditionalRecipientReceivableRefunds
@@ -83,6 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="listadditionalrecipientreceivables"></a>
 # **ListAdditionalRecipientReceivables**
+**Note: This endpoint is deprecated.**
 > ListAdditionalRecipientReceivablesResponse ListAdditionalRecipientReceivables (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
 ListAdditionalRecipientReceivables
