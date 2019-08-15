@@ -15,6 +15,7 @@ Method | HTTP request | Description
 
 <a name="capturetransaction"></a>
 # **CaptureTransaction**
+**Note: This endpoint is deprecated.**
 > CaptureTransactionResponse CaptureTransaction (string locationId, string transactionId)
 
 CaptureTransaction
@@ -82,6 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="charge"></a>
 # **Charge**
+**Note: This endpoint is deprecated.**
 > ChargeResponse Charge (string locationId, ChargeRequest body)
 
 Charge
@@ -149,6 +151,7 @@ Name | Type | Description  | Notes
 
 <a name="createrefund"></a>
 # **CreateRefund**
+**Note: This endpoint is deprecated.**
 > CreateRefundResponse CreateRefund (string locationId, string transactionId, CreateRefundRequest body)
 
 CreateRefund
@@ -218,6 +221,7 @@ Name | Type | Description  | Notes
 
 <a name="listrefunds"></a>
 # **ListRefunds**
+**Note: This endpoint is deprecated.**
 > ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
 ListRefunds
@@ -291,6 +295,7 @@ Name | Type | Description  | Notes
 
 <a name="listtransactions"></a>
 # **ListTransactions**
+**Note: This endpoint is deprecated.**
 > ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
 
 ListTransactions
@@ -364,6 +369,7 @@ Name | Type | Description  | Notes
 
 <a name="retrievetransaction"></a>
 # **RetrieveTransaction**
+**Note: This endpoint is deprecated.**
 > RetrieveTransactionResponse RetrieveTransaction (string locationId, string transactionId)
 
 RetrieveTransaction
@@ -431,6 +437,7 @@ Name | Type | Description  | Notes
 
 <a name="voidtransaction"></a>
 # **VoidTransaction**
+**Note: This endpoint is deprecated.**
 > VoidTransactionResponse VoidTransaction (string locationId, string transactionId)
 
 VoidTransaction

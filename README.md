@@ -15,35 +15,6 @@ This repository contains the released C# client SDK. Check out our [API
 specification repository](https://github.com/square/connect-api-specification)
 for the specification and template files we used to generate this.
 
-## ENUM to String Migration
-The .NET SDK no longer treats enums as explicit types. Instead, all enums are handled as static strings. Previously, you would use an enum constant to represent the related string value. For example:
-```csharp
-CatalogObject beverages = new CatalogObject(
-    Type: TypeEnum.CATEGORY,
-    Id: BeverageIdStr,
-    CategoryData: new CatalogCategory(Name: BeveragesStr)
-);
-```
-
-As of version 2.20.0, you would work with the static string value directly. For example:
-```csharp
-CatalogObject beverages = new CatalogObject(
-    Type: "CATEGORY",
-    Id: BeverageIdStr,
-    CategoryData: new CatalogCategory(Name: BeveragesStr)
-);
-```
-
-But, as a best practice, we recommend representing enum strings as constants for easier reuse. For example:
-```csharp
-const string CatalogCategoryType ="CATEGORY";
-
-CatalogObject beverages = new CatalogObject(
-    Type: CatalogCategoryType,
-    Id: BeverageIdStr,
-    CategoryData: new CatalogCategory(Name: BeveragesStr)
-);
-```
 
 ## Frameworks supported
 - .NET Standard 2.0
@@ -98,8 +69,8 @@ namespace Example
         {
             this.configuration = new Configuration(new ApiClient("https://connect.squareup.com"));
             this.configuration.AccessToken = "YOUR_ACCESS_TOKEN";
-        }        
-        
+        }
+
         // Retrieving your location IDs
         public void RetrieveLocations()
         {
@@ -124,9 +95,9 @@ namespace Example
 
             string nonce = "YOUR_NONCE";
             string locationId = "YOUR_LOCATION_ID";
-            ChargeRequest body = new ChargeRequest(AmountMoney: money, IdempotencyKey: idempotencyKey, CardNonce: nonce);
-            TransactionsApi transactionsApi = new TransactionsApi(this.configuration);
-            var response = transactionsApi.Charge(locationId, body);
+            CreatePaymentRequest body = new CreatePaymentRequest(SourceId: nonce, IdempotencyKey: idempotencyKey, AmountMoney: money, LocationId: locationId);
+            PaymentsApi paymentsApi = new PaymentsApi(this.configuration);
+            var response = paymentsApi.CreatePayment(body);
         }
     }
 }
@@ -151,7 +122,7 @@ namespace Example
             this.configuration = new Configuration(new ApiClient("https://connect.squareupsandbox.com"));
             this.configuration.AccessToken = "YOUR_SANDBOX_ACCESS_TOKEN";
             LocationsApi locationsApi = new LocationsApi(this.configuration);
-        }        
+        }
     }
 }
 ```
