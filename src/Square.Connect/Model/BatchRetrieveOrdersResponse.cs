@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRetrieveOrdersResponse" /> class.
         /// </summary>
-        /// <param name="Orders">The requested orders. This will omit any requested orders that do not exist or are not charged..</param>
+        /// <param name="Orders">The requested orders. This will omit any requested orders that do not exist..</param>
         /// <param name="Errors">Any errors that occurred during the request..</param>
         public BatchRetrieveOrdersResponse(List<Order> Orders = default(List<Order>), List<Error> Errors = default(List<Error>))
         {
@@ -41,9 +41,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The requested orders. This will omit any requested orders that do not exist or are not charged.
+        /// The requested orders. This will omit any requested orders that do not exist.
         /// </summary>
-        /// <value>The requested orders. This will omit any requested orders that do not exist or are not charged.</value>
+        /// <value>The requested orders. This will omit any requested orders that do not exist.</value>
         [DataMember(Name="orders", EmitDefaultValue=false)]
         public List<Order> Orders { get; set; }
         /// <summary>
