@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 <a name="updateorder"></a>
 # **UpdateOrder**
-> UpdateOrderResponse UpdateOrder (UpdateOrderRequest body)
+> UpdateOrderResponse UpdateOrder (string locationId, string orderId, UpdateOrderRequest body)
 
 UpdateOrder
 
@@ -304,12 +304,14 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrdersApi();
+            var locationId = locationId_example;  // string | The ID of the order's associated location.
+            var orderId = orderId_example;  // string | The ID of the order to update.
             var body = new UpdateOrderRequest(); // UpdateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
             try
             {
                 // UpdateOrder
-                UpdateOrderResponse result = apiInstance.UpdateOrder(body);
+                UpdateOrderResponse result = apiInstance.UpdateOrder(locationId, orderId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -325,6 +327,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **locationId** | **string**| The ID of the order&#39;s associated location. | 
+ **orderId** | **string**| The ID of the order to update. | 
  **body** | [**UpdateOrderRequest**](UpdateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
 
 ### Return type

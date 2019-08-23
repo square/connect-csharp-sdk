@@ -117,8 +117,10 @@ namespace Square.Connect.Api
         /// Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>UpdateOrderResponse</returns>        UpdateOrderResponse UpdateOrder (UpdateOrderRequest body);
+        /// <returns>UpdateOrderResponse</returns>        UpdateOrderResponse UpdateOrder (string locationId, string orderId, UpdateOrderRequest body);
 
         /// <summary>
         /// UpdateOrder
@@ -127,9 +129,11 @@ namespace Square.Connect.Api
         /// Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of UpdateOrderResponse</returns>
-        ApiResponse<UpdateOrderResponse> UpdateOrderWithHttpInfo (UpdateOrderRequest body);
+        ApiResponse<UpdateOrderResponse> UpdateOrderWithHttpInfo (string locationId, string orderId, UpdateOrderRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -229,9 +233,11 @@ namespace Square.Connect.Api
         /// Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of UpdateOrderResponse</returns>
-        System.Threading.Tasks.Task<UpdateOrderResponse> UpdateOrderAsync (UpdateOrderRequest body);
+        System.Threading.Tasks.Task<UpdateOrderResponse> UpdateOrderAsync (string locationId, string orderId, UpdateOrderRequest body);
 
         /// <summary>
         /// UpdateOrder
@@ -240,9 +246,11 @@ namespace Square.Connect.Api
         /// Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (UpdateOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateOrderResponse>> UpdateOrderAsyncWithHttpInfo (UpdateOrderRequest body);
+        System.Threading.Tasks.Task<ApiResponse<UpdateOrderResponse>> UpdateOrderAsyncWithHttpInfo (string locationId, string orderId, UpdateOrderRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -1047,11 +1055,13 @@ namespace Square.Connect.Api
         /// UpdateOrder Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>UpdateOrderResponse</returns>
-        public UpdateOrderResponse UpdateOrder (UpdateOrderRequest body)
+        public UpdateOrderResponse UpdateOrder (string locationId, string orderId, UpdateOrderRequest body)
         {
-             ApiResponse<UpdateOrderResponse> localVarResponse = UpdateOrderWithHttpInfo(body);
+             ApiResponse<UpdateOrderResponse> localVarResponse = UpdateOrderWithHttpInfo(locationId, orderId, body);
              return localVarResponse.Data;
         }
 
@@ -1059,10 +1069,18 @@ namespace Square.Connect.Api
         /// UpdateOrder Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>ApiResponse of UpdateOrderResponse</returns>
-        public ApiResponse< UpdateOrderResponse > UpdateOrderWithHttpInfo (UpdateOrderRequest body)
+        public ApiResponse< UpdateOrderResponse > UpdateOrderWithHttpInfo (string locationId, string orderId, UpdateOrderRequest body)
         {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrdersApi->UpdateOrder");
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->UpdateOrder");
             // verify the required parameter 'body' is set
             if (body == null)
                 throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->UpdateOrder");
@@ -1089,6 +1107,8 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1128,11 +1148,13 @@ namespace Square.Connect.Api
         /// UpdateOrder Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of UpdateOrderResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateOrderResponse> UpdateOrderAsync (UpdateOrderRequest body)
+        public async System.Threading.Tasks.Task<UpdateOrderResponse> UpdateOrderAsync (string locationId, string orderId, UpdateOrderRequest body)
         {
-             ApiResponse<UpdateOrderResponse> localVarResponse = await UpdateOrderAsyncWithHttpInfo(body);
+             ApiResponse<UpdateOrderResponse> localVarResponse = await UpdateOrderAsyncWithHttpInfo(locationId, orderId, body);
              return localVarResponse.Data;
 
         }
@@ -1141,10 +1163,18 @@ namespace Square.Connect.Api
         /// UpdateOrder Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a &#x60;COMPLETED&#x60; or &#x60;CANCELED&#x60; state cannot be updated.  An UpdateOrder request requires the following:  - The &#x60;order_id&#x60; in the endpoint path, identifying the order to update. - The latest &#x60;version&#x60; of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  To learn more about the Orders API, see the [Orders API Overview](/orders-api/what-it-does).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the order&#39;s associated location.</param>
+        /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
         /// <returns>Task of ApiResponse (UpdateOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UpdateOrderResponse>> UpdateOrderAsyncWithHttpInfo (UpdateOrderRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateOrderResponse>> UpdateOrderAsyncWithHttpInfo (string locationId, string orderId, UpdateOrderRequest body)
         {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling OrdersApi->UpdateOrder");
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->UpdateOrder");
             // verify the required parameter 'body' is set
             if (body == null)
                 throw new ApiException(400, "Missing required parameter 'body' when calling OrdersApi->UpdateOrder");
@@ -1171,6 +1201,8 @@ namespace Square.Connect.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (orderId != null) localVarPathParams.Add("order_id", Configuration.ApiClient.ParameterToString(orderId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
