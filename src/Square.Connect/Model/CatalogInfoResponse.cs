@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogInfoResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of [Error](#type-error)s encountered..</param>
+        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
         /// <param name="Limits">.</param>
         /// <param name="StandardUnitDescriptionGroup">Names and abbreviations for standard units..</param>
         public CatalogInfoResponse(List<Error> Errors = default(List<Error>), CatalogInfoResponseLimits Limits = default(CatalogInfoResponseLimits), StandardUnitDescriptionGroup StandardUnitDescriptionGroup = default(StandardUnitDescriptionGroup))
@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of [Error](#type-error)s encountered.
+        /// The set of &#x60;Error&#x60;s encountered.
         /// </summary>
-        /// <value>The set of [Error](#type-error)s encountered.</value>
+        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>

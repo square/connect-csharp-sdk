@@ -37,11 +37,11 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogItemModifierListInfo" /> class.
         /// </summary>
-        /// <param name="ModifierListId">The ID of the [CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo](#type-catalogmodifierlistinfo). (required).</param>
-        /// <param name="ModifierOverrides">A set of [CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier](#type-catalogmodifier) is enabled by default..</param>
-        /// <param name="MinSelectedModifiers">If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist)..</param>
-        /// <param name="MaxSelectedModifiers">If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist)..</param>
-        /// <param name="Enabled">If &#x60;true&#x60;, enable this [CatalogModifierList](#type-catalogmodifierlist)..</param>
+        /// <param name="ModifierListId">The ID of the &#x60;CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo&#x60;. (required).</param>
+        /// <param name="ModifierOverrides">A set of &#x60;CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier&#x60; is enabled by default..</param>
+        /// <param name="MinSelectedModifiers">If zero or larger, the smallest number of &#x60;CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList&#x60;..</param>
+        /// <param name="MaxSelectedModifiers">If zero or larger, the largest number of &#x60;CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList&#x60;..</param>
+        /// <param name="Enabled">If &#x60;true&#x60;, enable this &#x60;CatalogModifierList&#x60;..</param>
         public CatalogItemModifierListInfo(string ModifierListId = default(string), List<CatalogModifierOverride> ModifierOverrides = default(List<CatalogModifierOverride>), int? MinSelectedModifiers = default(int?), int? MaxSelectedModifiers = default(int?), bool? Enabled = default(bool?))
         {
             // to ensure "ModifierListId" is required (not null)
@@ -60,33 +60,33 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The ID of the [CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo](#type-catalogmodifierlistinfo).
+        /// The ID of the &#x60;CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo&#x60;.
         /// </summary>
-        /// <value>The ID of the [CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo](#type-catalogmodifierlistinfo).</value>
+        /// <value>The ID of the &#x60;CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo&#x60;.</value>
         [DataMember(Name="modifier_list_id", EmitDefaultValue=false)]
         public string ModifierListId { get; set; }
         /// <summary>
-        /// A set of [CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier](#type-catalogmodifier) is enabled by default.
+        /// A set of &#x60;CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier&#x60; is enabled by default.
         /// </summary>
-        /// <value>A set of [CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier](#type-catalogmodifier) is enabled by default.</value>
+        /// <value>A set of &#x60;CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier&#x60; is enabled by default.</value>
         [DataMember(Name="modifier_overrides", EmitDefaultValue=false)]
         public List<CatalogModifierOverride> ModifierOverrides { get; set; }
         /// <summary>
-        /// If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist).
+        /// If zero or larger, the smallest number of &#x60;CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList&#x60;.
         /// </summary>
-        /// <value>If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist).</value>
+        /// <value>If zero or larger, the smallest number of &#x60;CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList&#x60;.</value>
         [DataMember(Name="min_selected_modifiers", EmitDefaultValue=false)]
         public int? MinSelectedModifiers { get; set; }
         /// <summary>
-        /// If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist).
+        /// If zero or larger, the largest number of &#x60;CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList&#x60;.
         /// </summary>
-        /// <value>If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist).</value>
+        /// <value>If zero or larger, the largest number of &#x60;CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList&#x60;.</value>
         [DataMember(Name="max_selected_modifiers", EmitDefaultValue=false)]
         public int? MaxSelectedModifiers { get; set; }
         /// <summary>
-        /// If &#x60;true&#x60;, enable this [CatalogModifierList](#type-catalogmodifierlist).
+        /// If &#x60;true&#x60;, enable this &#x60;CatalogModifierList&#x60;.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, enable this [CatalogModifierList](#type-catalogmodifierlist).</value>
+        /// <value>If &#x60;true&#x60;, enable this &#x60;CatalogModifierList&#x60;.</value>
         [DataMember(Name="enabled", EmitDefaultValue=false)]
         public bool? Enabled { get; set; }
         /// <summary>

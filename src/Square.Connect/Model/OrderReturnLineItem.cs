@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         /// <param name="Quantity">The quantity returned, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;. (required).</param>
         /// <param name="QuantityUnit">The unit and precision that this return line item&#39;s quantity is measured in..</param>
         /// <param name="Note">The note of the returned line item..</param>
-        /// <param name="CatalogObjectId">The [CatalogItemVariation](#type-catalogitemvariation) id applied to this returned line item..</param>
+        /// <param name="CatalogObjectId">The &#x60;CatalogItemVariation&#x60; id applied to this returned line item..</param>
         /// <param name="VariationName">The name of the variation applied to this returned line item..</param>
-        /// <param name="ReturnModifiers">The [CatalogModifier](#type-catalogmodifier)s applied to this line item..</param>
+        /// <param name="ReturnModifiers">The &#x60;CatalogModifier&#x60;s applied to this line item..</param>
         /// <param name="ReturnTaxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;..</param>
         /// <param name="ReturnDiscounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;..</param>
         /// <param name="AppliedTaxes">The list of references to &#x60;OrderReturnTax&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnTax&#x60; applied to the returned line item. On reads, the amount applied is populated..</param>
@@ -124,9 +124,9 @@ namespace Square.Connect.Model
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// The [CatalogItemVariation](#type-catalogitemvariation) id applied to this returned line item.
+        /// The &#x60;CatalogItemVariation&#x60; id applied to this returned line item.
         /// </summary>
-        /// <value>The [CatalogItemVariation](#type-catalogitemvariation) id applied to this returned line item.</value>
+        /// <value>The &#x60;CatalogItemVariation&#x60; id applied to this returned line item.</value>
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>
@@ -136,9 +136,9 @@ namespace Square.Connect.Model
         [DataMember(Name="variation_name", EmitDefaultValue=false)]
         public string VariationName { get; set; }
         /// <summary>
-        /// The [CatalogModifier](#type-catalogmodifier)s applied to this line item.
+        /// The &#x60;CatalogModifier&#x60;s applied to this line item.
         /// </summary>
-        /// <value>The [CatalogModifier](#type-catalogmodifier)s applied to this line item.</value>
+        /// <value>The &#x60;CatalogModifier&#x60;s applied to this line item.</value>
         [DataMember(Name="return_modifiers", EmitDefaultValue=false)]
         public List<OrderReturnLineItemModifier> ReturnModifiers { get; set; }
         /// <summary>

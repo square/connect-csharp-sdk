@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the [RetrieveLocation](#endpoint-retrievelocation) endpoint.  One of &#x60;errors&#x60; or &#x60;location&#x60; is present in a given response (never both).
+    /// Defines the fields that the  [RetrieveLocation](#endpoint-retrievelocation) endpoint returns  in a response.
     /// </summary>
     [DataContract]
     public partial class RetrieveLocationResponse :  IEquatable<RetrieveLocationResponse>, IValidatableObject
@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrieveLocationResponse" /> class.
         /// </summary>
-        /// <param name="Errors">Any errors that occurred during the request..</param>
+        /// <param name="Errors">Information on errors encountered during the request..</param>
         /// <param name="Location">The requested location..</param>
         public RetrieveLocationResponse(List<Error> Errors = default(List<Error>), Location Location = default(Location))
         {
@@ -41,9 +41,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Any errors that occurred during the request.
+        /// Information on errors encountered during the request.
         /// </summary>
-        /// <value>Any errors that occurred during the request.</value>
+        /// <value>Information on errors encountered during the request.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>

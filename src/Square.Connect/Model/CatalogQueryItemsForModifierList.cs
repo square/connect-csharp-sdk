@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogQueryItemsForModifierList" /> class.
         /// </summary>
-        /// <param name="ModifierListIds">A set of [CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem](#type-catalogitem)s. (required).</param>
+        /// <param name="ModifierListIds">A set of &#x60;CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem&#x60;s. (required).</param>
         public CatalogQueryItemsForModifierList(List<string> ModifierListIds = default(List<string>))
         {
             // to ensure "ModifierListIds" is required (not null)
@@ -52,9 +52,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A set of [CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem](#type-catalogitem)s.
+        /// A set of &#x60;CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem&#x60;s.
         /// </summary>
-        /// <value>A set of [CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem](#type-catalogitem)s.</value>
+        /// <value>A set of &#x60;CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem&#x60;s.</value>
         [DataMember(Name="modifier_list_ids", EmitDefaultValue=false)]
         public List<string> ModifierListIds { get; set; }
         /// <summary>

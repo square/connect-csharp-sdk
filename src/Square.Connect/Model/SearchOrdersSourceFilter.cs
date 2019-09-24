@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersSourceFilter" /> class.
         /// </summary>
-        /// <param name="SourceNames">Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names..</param>
+        /// <param name="SourceNames">Filters by &#x60;Source&#x60; &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names..</param>
         public SearchOrdersSourceFilter(List<string> SourceNames = default(List<string>))
         {
             this.SourceNames = SourceNames;
         }
         
         /// <summary>
-        /// Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names.
+        /// Filters by &#x60;Source&#x60; &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names.
         /// </summary>
-        /// <value>Filters by [Source](#type-ordersource) &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names.</value>
+        /// <value>Filters by &#x60;Source&#x60; &#x60;name&#x60;. Will return any orders with with a &#x60;source.name&#x60; that matches any of the listed source names.  Max: 10 source names.</value>
         [DataMember(Name="source_names", EmitDefaultValue=false)]
         public List<string> SourceNames { get; set; }
         /// <summary>

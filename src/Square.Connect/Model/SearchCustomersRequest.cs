@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchCustomersRequest" /> class.
         /// </summary>
-        /// <param name="Cursor">Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](/basics/api101/pagination) for more information..</param>
+        /// <param name="Cursor">Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         /// <param name="Limit">A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 1,000, it will be ignored..</param>
         /// <param name="Query">Query customers based on the given conditions and sort order. Calling SearchCustomers without an explicit query parameter will return all customers ordered alphabetically based on &#x60;given_name&#x60; and &#x60;family_name&#x60;..</param>
         public SearchCustomersRequest(string Cursor = default(string), long? Limit = default(long?), CustomerQuery Query = default(CustomerQuery))
@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](/basics/api101/pagination) for more information.
+        /// Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

@@ -32,14 +32,14 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ObtainTokenResponse" /> class.
         /// </summary>
-        /// <param name="AccessToken">A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information..</param>
+        /// <param name="AccessToken">A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](https://developer.squareup.com/docs/authz/oauth/build-with-the-api) guide for more information..</param>
         /// <param name="TokenType">This value is always _bearer_..</param>
         /// <param name="ExpiresAt">The date when access_token expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format..</param>
         /// <param name="MerchantId">The ID of the authorizing merchant&#39;s business..</param>
         /// <param name="SubscriptionId">__LEGACY FIELD__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
         /// <param name="PlanId">__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
         /// <param name="IdToken">Then OpenID token belonging to this this person. Only present if the OPENID scope is included in the authorize request..</param>
-        /// <param name="RefreshToken">A refresh token. For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management)..</param>
+        /// <param name="RefreshToken">A refresh token. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management)..</param>
         public ObtainTokenResponse(string AccessToken = default(string), string TokenType = default(string), string ExpiresAt = default(string), string MerchantId = default(string), string SubscriptionId = default(string), string PlanId = default(string), string IdToken = default(string), string RefreshToken = default(string))
         {
             this.AccessToken = AccessToken;
@@ -53,9 +53,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
+        /// A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](https://developer.squareup.com/docs/authz/oauth/build-with-the-api) guide for more information.
         /// </summary>
-        /// <value>A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.</value>
+        /// <value>A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](https://developer.squareup.com/docs/authz/oauth/build-with-the-api) guide for more information.</value>
         [DataMember(Name="access_token", EmitDefaultValue=false)]
         public string AccessToken { get; set; }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Square.Connect.Model
         [DataMember(Name="id_token", EmitDefaultValue=false)]
         public string IdToken { get; set; }
         /// <summary>
-        /// A refresh token. For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).
+        /// A refresh token. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management).
         /// </summary>
-        /// <value>A refresh token. For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).</value>
+        /// <value>A refresh token. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management).</value>
         [DataMember(Name="refresh_token", EmitDefaultValue=false)]
         public string RefreshToken { get; set; }
         /// <summary>

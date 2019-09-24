@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="RetrieveInventoryPhysicalCountResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Count">The requested [InventoryPhysicalCount](#type-inventoryphysicalcount)..</param>
+        /// <param name="Count">The requested &#x60;InventoryPhysicalCount&#x60;..</param>
         public RetrieveInventoryPhysicalCountResponse(List<Error> Errors = default(List<Error>), InventoryPhysicalCount Count = default(InventoryPhysicalCount))
         {
             this.Errors = Errors;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The requested [InventoryPhysicalCount](#type-inventoryphysicalcount).
+        /// The requested &#x60;InventoryPhysicalCount&#x60;.
         /// </summary>
-        /// <value>The requested [InventoryPhysicalCount](#type-inventoryphysicalcount).</value>
+        /// <value>The requested &#x60;InventoryPhysicalCount&#x60;.</value>
         [DataMember(Name="count", EmitDefaultValue=false)]
         public InventoryPhysicalCount Count { get; set; }
         /// <summary>

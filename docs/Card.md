@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **CardholderName** | **string** | The name of the cardholder. | [optional] 
 **BillingAddress** | [**Address**](Address.md) | The billing address for this card. | [optional] 
 **Fingerprint** | **string** | A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account. | [optional] 
+**Bin** | **string** | The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field. | [optional] 
 
 
 

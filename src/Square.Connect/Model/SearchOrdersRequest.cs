@@ -33,10 +33,10 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="SearchOrdersRequest" /> class.
         /// </summary>
         /// <param name="LocationIds">The location IDs for the orders to query. All locations must belong to the same merchant.  Min: 1 location IDs.  Max: 10 location IDs..</param>
-        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](/basics/api101/pagination) for more information..</param>
+        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         /// <param name="Query">Query conditions used to filter or sort the results. Note that when fetching additional pages using a cursor, the query must be equal to the query used to fetch the first page of results..</param>
         /// <param name="Limit">Maximum number of results to be returned in a single page. It is possible to receive fewer results than the specified limit on a given page.  Default: &#x60;500&#x60;.</param>
-        /// <param name="ReturnEntries">Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;..</param>
+        /// <param name="ReturnEntries">Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return &#x60;&#x60;OrderEntry&#x60;&#x60; objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;..</param>
         public SearchOrdersRequest(List<string> LocationIds = default(List<string>), string Cursor = default(string), SearchOrdersQuery Query = default(SearchOrdersQuery), int? Limit = default(int?), bool? ReturnEntries = default(bool?))
         {
             this.LocationIds = LocationIds;
@@ -53,9 +53,9 @@ namespace Square.Connect.Model
         [DataMember(Name="location_ids", EmitDefaultValue=false)]
         public List<string> LocationIds { get; set; }
         /// <summary>
-        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](/basics/api101/pagination) for more information.
+        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>
@@ -71,9 +71,9 @@ namespace Square.Connect.Model
         [DataMember(Name="limit", EmitDefaultValue=false)]
         public int? Limit { get; set; }
         /// <summary>
-        /// Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;.
+        /// Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return &#x60;&#x60;OrderEntry&#x60;&#x60; objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;.
         /// </summary>
-        /// <value>Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return [&#x60;OrderEntry&#x60;](#type-orderentry) objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;.</value>
+        /// <value>Boolean that controls the format of the search results. If &#x60;true&#x60;, SearchOrders will return &#x60;&#x60;OrderEntry&#x60;&#x60; objects. If &#x60;false&#x60;, SearchOrders will return complete Order objects.  Default: &#x60;false&#x60;.</value>
         [DataMember(Name="return_entries", EmitDefaultValue=false)]
         public bool? ReturnEntries { get; set; }
         /// <summary>

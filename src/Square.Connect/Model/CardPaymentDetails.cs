@@ -35,14 +35,17 @@ namespace Square.Connect.Model
         /// <param name="Status">The card payment&#39;s current state. It can be one of: &#x60;AUTHORIZED&#x60;, &#x60;CAPTURED&#x60;, &#x60;VOIDED&#x60;, &#x60;FAILED&#x60;..</param>
         /// <param name="Card">The credit card&#39;s non-confidential details..</param>
         /// <param name="EntryMethod">The method used to enter the card&#39;s details for the payment.  Can be &#x60;KEYED&#x60;, &#x60;SWIPED&#x60;, &#x60;EMV&#x60;, &#x60;ON_FILE&#x60;, or &#x60;CONTACTLESS&#x60;..</param>
-        /// <param name="CvvStatus">Status code returned from the Card Verification Value (CVV) check..</param>
-        /// <param name="AvsStatus">Status code returned from the Address Verification System (AVS) check..</param>
+        /// <param name="CvvStatus">Status code returned from the Card Verification Value (CVV) check. Can be &#x60;CVV_ACCEPTED&#x60;, &#x60;CVV_REJECTED&#x60;, &#x60;CVV_NOT_CHECKED&#x60;..</param>
+        /// <param name="AvsStatus">Status code returned from the Address Verification System (AVS) check. Can be &#x60;AVS_ACCEPTED&#x60;, &#x60;AVS_REJECTED&#x60;, &#x60;AVS_NOT_CHECKED&#x60;..</param>
         /// <param name="AuthResultCode">Status code returned by the card issuer that describes the payment&#39;s authorization status..</param>
-        /// <param name="ApplicationIdentifier">For EMV payments, identifies the EMV application used for the payment.</param>
+        /// <param name="ApplicationIdentifier">For EMV payments, identifies the EMV application used for the payment..</param>
         /// <param name="ApplicationName">For EMV payments, the human-readable name of the EMV application used for the payment..</param>
         /// <param name="ApplicationCryptogram">For EMV payments, the cryptogram generated for the payment..</param>
+        /// <param name="VerificationMethod">For EMV payments, method used to verify the cardholder&#39;s identity.  Can be one of &#x60;PIN&#x60;, &#x60;SIGNATURE&#x60;, &#x60;PIN_AND_SIGNATURE&#x60;, &#x60;ON_DEVICE&#x60;, or &#x60;NONE&#x60;..</param>
+        /// <param name="VerificationResults">For EMV payments, the results of the cardholder verification.  Can be one of &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;, or &#x60;UNKNOWN&#x60;..</param>
+        /// <param name="StatementDescription">The statement description sent to the card networks.  Note: The actual statement description will vary and is likely to be truncated and appended with additional information on a per issuer basis..</param>
         /// <param name="Errors">Information on errors encountered during the request..</param>
-        public CardPaymentDetails(string Status = default(string), Card Card = default(Card), string EntryMethod = default(string), string CvvStatus = default(string), string AvsStatus = default(string), string AuthResultCode = default(string), string ApplicationIdentifier = default(string), string ApplicationName = default(string), string ApplicationCryptogram = default(string), List<Error> Errors = default(List<Error>))
+        public CardPaymentDetails(string Status = default(string), Card Card = default(Card), string EntryMethod = default(string), string CvvStatus = default(string), string AvsStatus = default(string), string AuthResultCode = default(string), string ApplicationIdentifier = default(string), string ApplicationName = default(string), string ApplicationCryptogram = default(string), string VerificationMethod = default(string), string VerificationResults = default(string), string StatementDescription = default(string), List<Error> Errors = default(List<Error>))
         {
             this.Status = Status;
             this.Card = Card;
@@ -53,6 +56,9 @@ namespace Square.Connect.Model
             this.ApplicationIdentifier = ApplicationIdentifier;
             this.ApplicationName = ApplicationName;
             this.ApplicationCryptogram = ApplicationCryptogram;
+            this.VerificationMethod = VerificationMethod;
+            this.VerificationResults = VerificationResults;
+            this.StatementDescription = StatementDescription;
             this.Errors = Errors;
         }
         
@@ -75,15 +81,15 @@ namespace Square.Connect.Model
         [DataMember(Name="entry_method", EmitDefaultValue=false)]
         public string EntryMethod { get; set; }
         /// <summary>
-        /// Status code returned from the Card Verification Value (CVV) check.
+        /// Status code returned from the Card Verification Value (CVV) check. Can be &#x60;CVV_ACCEPTED&#x60;, &#x60;CVV_REJECTED&#x60;, &#x60;CVV_NOT_CHECKED&#x60;.
         /// </summary>
-        /// <value>Status code returned from the Card Verification Value (CVV) check.</value>
+        /// <value>Status code returned from the Card Verification Value (CVV) check. Can be &#x60;CVV_ACCEPTED&#x60;, &#x60;CVV_REJECTED&#x60;, &#x60;CVV_NOT_CHECKED&#x60;.</value>
         [DataMember(Name="cvv_status", EmitDefaultValue=false)]
         public string CvvStatus { get; set; }
         /// <summary>
-        /// Status code returned from the Address Verification System (AVS) check.
+        /// Status code returned from the Address Verification System (AVS) check. Can be &#x60;AVS_ACCEPTED&#x60;, &#x60;AVS_REJECTED&#x60;, &#x60;AVS_NOT_CHECKED&#x60;.
         /// </summary>
-        /// <value>Status code returned from the Address Verification System (AVS) check.</value>
+        /// <value>Status code returned from the Address Verification System (AVS) check. Can be &#x60;AVS_ACCEPTED&#x60;, &#x60;AVS_REJECTED&#x60;, &#x60;AVS_NOT_CHECKED&#x60;.</value>
         [DataMember(Name="avs_status", EmitDefaultValue=false)]
         public string AvsStatus { get; set; }
         /// <summary>
@@ -93,9 +99,9 @@ namespace Square.Connect.Model
         [DataMember(Name="auth_result_code", EmitDefaultValue=false)]
         public string AuthResultCode { get; set; }
         /// <summary>
-        /// For EMV payments, identifies the EMV application used for the payment
+        /// For EMV payments, identifies the EMV application used for the payment.
         /// </summary>
-        /// <value>For EMV payments, identifies the EMV application used for the payment</value>
+        /// <value>For EMV payments, identifies the EMV application used for the payment.</value>
         [DataMember(Name="application_identifier", EmitDefaultValue=false)]
         public string ApplicationIdentifier { get; set; }
         /// <summary>
@@ -110,6 +116,24 @@ namespace Square.Connect.Model
         /// <value>For EMV payments, the cryptogram generated for the payment.</value>
         [DataMember(Name="application_cryptogram", EmitDefaultValue=false)]
         public string ApplicationCryptogram { get; set; }
+        /// <summary>
+        /// For EMV payments, method used to verify the cardholder&#39;s identity.  Can be one of &#x60;PIN&#x60;, &#x60;SIGNATURE&#x60;, &#x60;PIN_AND_SIGNATURE&#x60;, &#x60;ON_DEVICE&#x60;, or &#x60;NONE&#x60;.
+        /// </summary>
+        /// <value>For EMV payments, method used to verify the cardholder&#39;s identity.  Can be one of &#x60;PIN&#x60;, &#x60;SIGNATURE&#x60;, &#x60;PIN_AND_SIGNATURE&#x60;, &#x60;ON_DEVICE&#x60;, or &#x60;NONE&#x60;.</value>
+        [DataMember(Name="verification_method", EmitDefaultValue=false)]
+        public string VerificationMethod { get; set; }
+        /// <summary>
+        /// For EMV payments, the results of the cardholder verification.  Can be one of &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;, or &#x60;UNKNOWN&#x60;.
+        /// </summary>
+        /// <value>For EMV payments, the results of the cardholder verification.  Can be one of &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;, or &#x60;UNKNOWN&#x60;.</value>
+        [DataMember(Name="verification_results", EmitDefaultValue=false)]
+        public string VerificationResults { get; set; }
+        /// <summary>
+        /// The statement description sent to the card networks.  Note: The actual statement description will vary and is likely to be truncated and appended with additional information on a per issuer basis.
+        /// </summary>
+        /// <value>The statement description sent to the card networks.  Note: The actual statement description will vary and is likely to be truncated and appended with additional information on a per issuer basis.</value>
+        [DataMember(Name="statement_description", EmitDefaultValue=false)]
+        public string StatementDescription { get; set; }
         /// <summary>
         /// Information on errors encountered during the request.
         /// </summary>
@@ -133,6 +157,9 @@ namespace Square.Connect.Model
             sb.Append("  ApplicationIdentifier: ").Append(ApplicationIdentifier).Append("\n");
             sb.Append("  ApplicationName: ").Append(ApplicationName).Append("\n");
             sb.Append("  ApplicationCryptogram: ").Append(ApplicationCryptogram).Append("\n");
+            sb.Append("  VerificationMethod: ").Append(VerificationMethod).Append("\n");
+            sb.Append("  VerificationResults: ").Append(VerificationResults).Append("\n");
+            sb.Append("  StatementDescription: ").Append(StatementDescription).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -216,6 +243,21 @@ namespace Square.Connect.Model
                     this.ApplicationCryptogram.Equals(other.ApplicationCryptogram)
                 ) && 
                 (
+                    this.VerificationMethod == other.VerificationMethod ||
+                    this.VerificationMethod != null &&
+                    this.VerificationMethod.Equals(other.VerificationMethod)
+                ) && 
+                (
+                    this.VerificationResults == other.VerificationResults ||
+                    this.VerificationResults != null &&
+                    this.VerificationResults.Equals(other.VerificationResults)
+                ) && 
+                (
+                    this.StatementDescription == other.StatementDescription ||
+                    this.StatementDescription != null &&
+                    this.StatementDescription.Equals(other.StatementDescription)
+                ) && 
+                (
                     this.Errors == other.Errors ||
                     this.Errors != null &&
                     this.Errors.SequenceEqual(other.Errors)
@@ -251,6 +293,12 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ApplicationName.GetHashCode();
                 if (this.ApplicationCryptogram != null)
                     hash = hash * 59 + this.ApplicationCryptogram.GetHashCode();
+                if (this.VerificationMethod != null)
+                    hash = hash * 59 + this.VerificationMethod.GetHashCode();
+                if (this.VerificationResults != null)
+                    hash = hash * 59 + this.VerificationResults.GetHashCode();
+                if (this.StatementDescription != null)
+                    hash = hash * 59 + this.StatementDescription.GetHashCode();
                 if (this.Errors != null)
                     hash = hash * 59 + this.Errors.GetHashCode();
                 return hash;

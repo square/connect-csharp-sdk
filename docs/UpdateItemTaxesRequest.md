@@ -8,9 +8,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ItemIds** | **List<string>** | The [CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax](#type-catalogtax)es are being updated. | 
-**TaxesToEnable** | **List<string>** | The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem](#type-catalogitem). | [optional] 
-**TaxesToDisable** | **List<string>** | The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem](#type-catalogitem). | [optional] 
+**ItemIds** | **List<string>** | The &#x60;CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax&#x60;es are being updated. | 
+**TaxesToEnable** | **List<string>** | The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem&#x60;. | [optional] 
+**TaxesToDisable** | **List<string>** | The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem&#x60;. | [optional] 
 
 
 

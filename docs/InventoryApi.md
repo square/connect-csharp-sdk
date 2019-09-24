@@ -235,7 +235,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InventoryApi();
-            var adjustmentId = adjustmentId_example;  // string | ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.
+            var adjustmentId = adjustmentId_example;  // string | ID of the `InventoryAdjustment` to retrieve.
 
             try
             {
@@ -256,7 +256,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adjustmentId** | **string**| ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve. | 
+ **adjustmentId** | **string**| ID of the &#x60;InventoryAdjustment&#x60; to retrieve. | 
 
 ### Return type
 
@@ -300,9 +300,9 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InventoryApi();
-            var catalogObjectId = catalogObjectId_example;  // string | ID of the [CatalogObject](#type-catalogobject) to retrieve.
-            var locationIds = locationIds_example;  // string | The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional) 
-            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional) 
+            var catalogObjectId = catalogObjectId_example;  // string | ID of the `CatalogObject` to retrieve.
+            var locationIds = locationIds_example;  // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations. (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional) 
 
             try
             {
@@ -323,9 +323,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **catalogObjectId** | **string**| ID of the [CatalogObject](#type-catalogobject) to retrieve. | 
- **locationIds** | **string**| The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. | [optional] 
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. | [optional] 
+ **catalogObjectId** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. | 
+ **locationIds** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
 
 ### Return type
 
@@ -369,9 +369,9 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InventoryApi();
-            var catalogObjectId = catalogObjectId_example;  // string | ID of the [CatalogObject](#type-catalogobject) to retrieve.
-            var locationIds = locationIds_example;  // string | The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional) 
-            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional) 
+            var catalogObjectId = catalogObjectId_example;  // string | ID of the `CatalogObject` to retrieve.
+            var locationIds = locationIds_example;  // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations. (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional) 
 
             try
             {
@@ -392,9 +392,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **catalogObjectId** | **string**| ID of the [CatalogObject](#type-catalogobject) to retrieve. | 
- **locationIds** | **string**| The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. | [optional] 
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. | [optional] 
+ **catalogObjectId** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. | 
+ **locationIds** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
 
 ### Return type
 
@@ -438,7 +438,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InventoryApi();
-            var physicalCountId = physicalCountId_example;  // string | ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.
+            var physicalCountId = physicalCountId_example;  // string | ID of the `InventoryPhysicalCount` to retrieve.
 
             try
             {
@@ -459,7 +459,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **physicalCountId** | **string**| ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve. | 
+ **physicalCountId** | **string**| ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve. | 
 
 ### Return type
 

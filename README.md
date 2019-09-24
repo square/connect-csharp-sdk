@@ -178,6 +178,9 @@ Class | Method | HTTP request
 *LaborApi* | [**UpdateShift**](docs/LaborApi.md#updateshift) | **PUT** /v2/labor/shifts/{id}
 *LaborApi* | [**UpdateWorkweekConfig**](docs/LaborApi.md#updateworkweekconfig) | **PUT** /v2/labor/workweek-configs/{id}
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
+*LocationsApi* | [**RetrieveLocation**](docs/LocationsApi.md#retrievelocation) | **GET** /v2/locations/{location_id}
+*LocationsApi* | [**UpdateLocation**](docs/LocationsApi.md#updatelocation) | **PUT** /v2/locations/{location_id}
+*MerchantsApi* | [**RetrieveMerchant**](docs/MerchantsApi.md#retrievemerchant) | **GET** /v2/merchants/{merchant_id}
 *MobileAuthorizationApi* | [**CreateMobileAuthorizationCode**](docs/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code
 *OAuthApi* | [**ObtainToken**](docs/OAuthApi.md#obtaintoken) | **POST** /oauth2/token
 *OAuthApi* | [**RenewToken**](docs/OAuthApi.md#renewtoken) | **POST** /oauth2/clients/{client_id}/access-token/renew
@@ -439,6 +442,7 @@ Class | Method | HTTP request
  - [Model.Location](docs/Location.md)
  - [Model.MeasurementUnit](docs/MeasurementUnit.md)
  - [Model.MeasurementUnitCustom](docs/MeasurementUnitCustom.md)
+ - [Model.Merchant](docs/Merchant.md)
  - [Model.ModelBreak](docs/ModelBreak.md)
  - [Model.Money](docs/Money.md)
  - [Model.ObtainTokenRequest](docs/ObtainTokenRequest.md)
@@ -494,6 +498,8 @@ Class | Method | HTTP request
  - [Model.RetrieveInventoryPhysicalCountResponse](docs/RetrieveInventoryPhysicalCountResponse.md)
  - [Model.RetrieveLocationRequest](docs/RetrieveLocationRequest.md)
  - [Model.RetrieveLocationResponse](docs/RetrieveLocationResponse.md)
+ - [Model.RetrieveMerchantRequest](docs/RetrieveMerchantRequest.md)
+ - [Model.RetrieveMerchantResponse](docs/RetrieveMerchantResponse.md)
  - [Model.RetrieveTransactionRequest](docs/RetrieveTransactionRequest.md)
  - [Model.RetrieveTransactionResponse](docs/RetrieveTransactionResponse.md)
  - [Model.RevokeTokenRequest](docs/RevokeTokenRequest.md)
@@ -536,6 +542,8 @@ Class | Method | HTTP request
  - [Model.UpdateItemModifierListsResponse](docs/UpdateItemModifierListsResponse.md)
  - [Model.UpdateItemTaxesRequest](docs/UpdateItemTaxesRequest.md)
  - [Model.UpdateItemTaxesResponse](docs/UpdateItemTaxesResponse.md)
+ - [Model.UpdateLocationRequest](docs/UpdateLocationRequest.md)
+ - [Model.UpdateLocationResponse](docs/UpdateLocationResponse.md)
  - [Model.UpdateOrderRequest](docs/UpdateOrderRequest.md)
  - [Model.UpdateOrderResponse](docs/UpdateOrderResponse.md)
  - [Model.UpdateShiftRequest](docs/UpdateShiftRequest.md)

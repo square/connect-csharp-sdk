@@ -37,8 +37,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpsertCatalogObjectRequest" /> class.
         /// </summary>
-        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this request among all your requests. A common way to create a valid idempotency key is to use a Universally unique identifier (UUID).  If you&#39;re unsure whether a particular request was successful, you can reattempt it with the same idempotency key without worrying about creating duplicate objects.  See [Idempotency](/basics/api101/idempotency) for more information. (required).</param>
-        /// <param name="_Object">A [CatalogObject](#type-catalogobject) to be created or updated. - For updates, the object must be active (the &#x60;is_deleted&#x60; field is not &#x60;true&#x60;). - For creates, the object ID must start with &#x60;#&#x60;. The provided ID is replaced with a server-generated ID. (required).</param>
+        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this request among all your requests. A common way to create a valid idempotency key is to use a Universally unique identifier (UUID).  If you&#39;re unsure whether a particular request was successful, you can reattempt it with the same idempotency key without worrying about creating duplicate objects.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information. (required).</param>
+        /// <param name="_Object">A &#x60;CatalogObject&#x60; to be created or updated. - For updates, the object must be active (the &#x60;is_deleted&#x60; field is not &#x60;true&#x60;). - For creates, the object ID must start with &#x60;#&#x60;. The provided ID is replaced with a server-generated ID. (required).</param>
         public UpsertCatalogObjectRequest(string IdempotencyKey = default(string), CatalogObject _Object = default(CatalogObject))
         {
             // to ensure "IdempotencyKey" is required (not null)
@@ -62,15 +62,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A value you specify that uniquely identifies this request among all your requests. A common way to create a valid idempotency key is to use a Universally unique identifier (UUID).  If you&#39;re unsure whether a particular request was successful, you can reattempt it with the same idempotency key without worrying about creating duplicate objects.  See [Idempotency](/basics/api101/idempotency) for more information.
+        /// A value you specify that uniquely identifies this request among all your requests. A common way to create a valid idempotency key is to use a Universally unique identifier (UUID).  If you&#39;re unsure whether a particular request was successful, you can reattempt it with the same idempotency key without worrying about creating duplicate objects.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
         /// </summary>
-        /// <value>A value you specify that uniquely identifies this request among all your requests. A common way to create a valid idempotency key is to use a Universally unique identifier (UUID).  If you&#39;re unsure whether a particular request was successful, you can reattempt it with the same idempotency key without worrying about creating duplicate objects.  See [Idempotency](/basics/api101/idempotency) for more information.</value>
+        /// <value>A value you specify that uniquely identifies this request among all your requests. A common way to create a valid idempotency key is to use a Universally unique identifier (UUID).  If you&#39;re unsure whether a particular request was successful, you can reattempt it with the same idempotency key without worrying about creating duplicate objects.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.</value>
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>
-        /// A [CatalogObject](#type-catalogobject) to be created or updated. - For updates, the object must be active (the &#x60;is_deleted&#x60; field is not &#x60;true&#x60;). - For creates, the object ID must start with &#x60;#&#x60;. The provided ID is replaced with a server-generated ID.
+        /// A &#x60;CatalogObject&#x60; to be created or updated. - For updates, the object must be active (the &#x60;is_deleted&#x60; field is not &#x60;true&#x60;). - For creates, the object ID must start with &#x60;#&#x60;. The provided ID is replaced with a server-generated ID.
         /// </summary>
-        /// <value>A [CatalogObject](#type-catalogobject) to be created or updated. - For updates, the object must be active (the &#x60;is_deleted&#x60; field is not &#x60;true&#x60;). - For creates, the object ID must start with &#x60;#&#x60;. The provided ID is replaced with a server-generated ID.</value>
+        /// <value>A &#x60;CatalogObject&#x60; to be created or updated. - For updates, the object must be active (the &#x60;is_deleted&#x60; field is not &#x60;true&#x60;). - For creates, the object ID must start with &#x60;#&#x60;. The provided ID is replaced with a server-generated ID.</value>
         [DataMember(Name="object", EmitDefaultValue=false)]
         public CatalogObject _Object { get; set; }
         /// <summary>

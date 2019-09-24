@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **BeginTime** | **string** | Timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year. | [optional] 
 **EndTime** | **string** | Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time. | [optional] 
 **SortOrder** | **string** | The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). | [optional] 
-**Cursor** | **string** | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. | [optional] 
+**Cursor** | **string** | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
 **LocationId** | **string** | ID of location associated with payment | [optional] 
 **Total** | **long?** | The exact amount in the total_money for a &#x60;Payment&#x60;. | [optional] 
 **Last4** | **string** | The last 4 digits of &#x60;Payment&#x60; card. | [optional] 

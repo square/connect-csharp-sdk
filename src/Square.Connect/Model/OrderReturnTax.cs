@@ -34,7 +34,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Uid">Unique ID that identifies the return tax only within this order..</param>
         /// <param name="SourceTaxUid">&#x60;uid&#x60; of the Tax from the Order which contains the original charge of this tax..</param>
-        /// <param name="CatalogObjectId">The catalog object id referencing [CatalogTax](#type-catalogtax)..</param>
+        /// <param name="CatalogObjectId">The catalog object id referencing &#x60;CatalogTax&#x60;..</param>
         /// <param name="Name">The tax&#39;s name..</param>
         /// <param name="Type">Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.</param>
         /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number. For example, a value of &#x60;\&quot;7.25\&quot;&#x60; corresponds to a percentage of 7.25%..</param>
@@ -65,9 +65,9 @@ namespace Square.Connect.Model
         [DataMember(Name="source_tax_uid", EmitDefaultValue=false)]
         public string SourceTaxUid { get; set; }
         /// <summary>
-        /// The catalog object id referencing [CatalogTax](#type-catalogtax).
+        /// The catalog object id referencing &#x60;CatalogTax&#x60;.
         /// </summary>
-        /// <value>The catalog object id referencing [CatalogTax](#type-catalogtax).</value>
+        /// <value>The catalog object id referencing &#x60;CatalogTax&#x60;.</value>
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>

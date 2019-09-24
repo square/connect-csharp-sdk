@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 CancelPayment
 
-Cancels a payment. If you set `autocomplete` to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+Cancels (voids) a payment. If you set `autocomplete` to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
 
 ### Example
 ```csharp
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 CancelPaymentByIdempotencyKey
 
-Cancels a payment identified by the idenpotency key that is specified the request.  Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don't get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don't get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
 
 ### Example
 ```csharp
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 CompletePayment
 
-Completes a payment.  By default, payments are set to complete immediately after they are created.  If you set autocomplete to false when creating a payment,  you can complete the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+Completes (captures) a payment.  By default, payments are set to complete immediately after they are created.  If you set autocomplete to false when creating a payment, you can complete (capture)  the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
 
 ### Example
 ```csharp
@@ -367,7 +367,7 @@ namespace Example
             var beginTime = beginTime_example;  // string | Timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year. (optional) 
             var endTime = endTime_example;  // string | Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time. (optional) 
             var sortOrder = sortOrder_example;  // string | The order in which results are listed. - `ASC` - oldest to newest - `DESC` - newest to oldest (default). (optional) 
-            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional) 
             var locationId = locationId_example;  // string | ID of location associated with payment (optional) 
             var total = 789;  // long? | The exact amount in the total_money for a `Payment`. (optional) 
             var last4 = last4_example;  // string | The last 4 digits of `Payment` card. (optional) 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
  **beginTime** | **string**| Timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year. | [optional] 
  **endTime** | **string**| Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time. | [optional] 
  **sortOrder** | **string**| The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). | [optional] 
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
  **locationId** | **string**| ID of location associated with payment | [optional] 
  **total** | **long?**| The exact amount in the total_money for a &#x60;Payment&#x60;. | [optional] 
  **last4** | **string**| The last 4 digits of &#x60;Payment&#x60; card. | [optional] 

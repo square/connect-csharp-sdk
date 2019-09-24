@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Status** | **string** | The refund&#39;s status: - &#x60;PENDING&#x60; - awaiting approval - &#x60;COMPLETED&#x60; - successfully completed - &#x60;REJECTED&#x60; - the refund was rejected - &#x60;FAILED&#x60; - an error occurred | [optional] 
 **LocationId** | **string** | Location ID associated with the payment this refund is attached to. | [optional] 
 **AmountMoney** | [**Money**](Money.md) | The amount of money refunded, specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. | 
-**AppFeeMoney** | [**Money**](Money.md) | Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details. | [optional] 
+**AppFeeMoney** | [**Money**](Money.md) | Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details. | [optional] 
 **ProcessingFee** | [**List&lt;ProcessingFee&gt;**](ProcessingFee.md) | Processing fees and fee adjustments assessed by Square on this refund. | [optional] 
 **PaymentId** | **string** | The ID of the payment assocated with this refund. | [optional] 
 **OrderId** | **string** | The ID of the order associated with the refund. | [optional] 

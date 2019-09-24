@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderQuantityUnit" /> class.
         /// </summary>
-        /// <param name="MeasurementUnit">A [MeasurementUnit](#type-measurementunit) that represents the unit of measure for the quantity..</param>
+        /// <param name="MeasurementUnit">A &#x60;MeasurementUnit&#x60; that represents the unit of measure for the quantity..</param>
         /// <param name="Precision">For non-integer quantities, represents the number of digits after the decimal point that are recorded for this quantity.  For example, a precision of 1 allows quantities like &#x60;\&quot;1.0\&quot;&#x60; and &#x60;\&quot;1.1\&quot;&#x60;, but not &#x60;\&quot;1.01\&quot;&#x60;.  Min: 0. Max: 5..</param>
         public OrderQuantityUnit(MeasurementUnit MeasurementUnit = default(MeasurementUnit), int? Precision = default(int?))
         {
@@ -41,9 +41,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A [MeasurementUnit](#type-measurementunit) that represents the unit of measure for the quantity.
+        /// A &#x60;MeasurementUnit&#x60; that represents the unit of measure for the quantity.
         /// </summary>
-        /// <value>A [MeasurementUnit](#type-measurementunit) that represents the unit of measure for the quantity.</value>
+        /// <value>A &#x60;MeasurementUnit&#x60; that represents the unit of measure for the quantity.</value>
         [DataMember(Name="measurement_unit", EmitDefaultValue=false)]
         public MeasurementUnit MeasurementUnit { get; set; }
         /// <summary>

@@ -34,9 +34,9 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Uid">Unique ID that identifies the return modifier only within this order..</param>
         /// <param name="SourceModifierUid">&#x60;uid&#x60; of the Modifier from the LineItem from the Order which contains the original sale of this line item modifier..</param>
-        /// <param name="CatalogObjectId">The catalog object id referencing [CatalogModifier](#type-catalogmodifier)..</param>
+        /// <param name="CatalogObjectId">The catalog object id referencing &#x60;CatalogModifier&#x60;..</param>
         /// <param name="Name">The name of the item modifier..</param>
-        /// <param name="BasePriceMoney">The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined [CatalogModifier](#type-catalogmodifier) price..</param>
+        /// <param name="BasePriceMoney">The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined &#x60;CatalogModifier&#x60; price..</param>
         /// <param name="TotalPriceMoney">The total price of the item modifier for its line item. This is the modifier&#39;s &#x60;base_price_money&#x60; multiplied by the line item&#39;s quantity..</param>
         public OrderReturnLineItemModifier(string Uid = default(string), string SourceModifierUid = default(string), string CatalogObjectId = default(string), string Name = default(string), Money BasePriceMoney = default(Money), Money TotalPriceMoney = default(Money))
         {
@@ -61,9 +61,9 @@ namespace Square.Connect.Model
         [DataMember(Name="source_modifier_uid", EmitDefaultValue=false)]
         public string SourceModifierUid { get; set; }
         /// <summary>
-        /// The catalog object id referencing [CatalogModifier](#type-catalogmodifier).
+        /// The catalog object id referencing &#x60;CatalogModifier&#x60;.
         /// </summary>
-        /// <value>The catalog object id referencing [CatalogModifier](#type-catalogmodifier).</value>
+        /// <value>The catalog object id referencing &#x60;CatalogModifier&#x60;.</value>
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>
@@ -73,9 +73,9 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined [CatalogModifier](#type-catalogmodifier) price.
+        /// The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined &#x60;CatalogModifier&#x60; price.
         /// </summary>
-        /// <value>The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined [CatalogModifier](#type-catalogmodifier) price.</value>
+        /// <value>The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined &#x60;CatalogModifier&#x60; price.</value>
         [DataMember(Name="base_price_money", EmitDefaultValue=false)]
         public Money BasePriceMoney { get; set; }
         /// <summary>

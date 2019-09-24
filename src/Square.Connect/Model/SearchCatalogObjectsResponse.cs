@@ -32,42 +32,50 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchCatalogObjectsResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of [Error](#type-error)s encountered..</param>
-        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information..</param>
-        /// <param name="Objects">The [CatalogObject](#type-catalogobject)s returned..</param>
-        /// <param name="RelatedObjects">A list of [CatalogObject](#type-catalogobject)s referenced by the objects in the &#x60;objects&#x60; field..</param>
-        public SearchCatalogObjectsResponse(List<Error> Errors = default(List<Error>), string Cursor = default(string), List<CatalogObject> Objects = default(List<CatalogObject>), List<CatalogObject> RelatedObjects = default(List<CatalogObject>))
+        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
+        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
+        /// <param name="Objects">The &#x60;CatalogObject&#x60;s returned..</param>
+        /// <param name="RelatedObjects">A list of &#x60;CatalogObject&#x60;s referenced by the objects in the &#x60;objects&#x60; field..</param>
+        /// <param name="LatestTime"> When this merchant&#39;s catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request..</param>
+        public SearchCatalogObjectsResponse(List<Error> Errors = default(List<Error>), string Cursor = default(string), List<CatalogObject> Objects = default(List<CatalogObject>), List<CatalogObject> RelatedObjects = default(List<CatalogObject>), string LatestTime = default(string))
         {
             this.Errors = Errors;
             this.Cursor = Cursor;
             this.Objects = Objects;
             this.RelatedObjects = RelatedObjects;
+            this.LatestTime = LatestTime;
         }
         
         /// <summary>
-        /// The set of [Error](#type-error)s encountered.
+        /// The set of &#x60;Error&#x60;s encountered.
         /// </summary>
-        /// <value>The set of [Error](#type-error)s encountered.</value>
+        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
+        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>
-        /// The [CatalogObject](#type-catalogobject)s returned.
+        /// The &#x60;CatalogObject&#x60;s returned.
         /// </summary>
-        /// <value>The [CatalogObject](#type-catalogobject)s returned.</value>
+        /// <value>The &#x60;CatalogObject&#x60;s returned.</value>
         [DataMember(Name="objects", EmitDefaultValue=false)]
         public List<CatalogObject> Objects { get; set; }
         /// <summary>
-        /// A list of [CatalogObject](#type-catalogobject)s referenced by the objects in the &#x60;objects&#x60; field.
+        /// A list of &#x60;CatalogObject&#x60;s referenced by the objects in the &#x60;objects&#x60; field.
         /// </summary>
-        /// <value>A list of [CatalogObject](#type-catalogobject)s referenced by the objects in the &#x60;objects&#x60; field.</value>
+        /// <value>A list of &#x60;CatalogObject&#x60;s referenced by the objects in the &#x60;objects&#x60; field.</value>
         [DataMember(Name="related_objects", EmitDefaultValue=false)]
         public List<CatalogObject> RelatedObjects { get; set; }
+        /// <summary>
+        ///  When this merchant&#39;s catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request.
+        /// </summary>
+        /// <value> When this merchant&#39;s catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request.</value>
+        [DataMember(Name="latest_time", EmitDefaultValue=false)]
+        public string LatestTime { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -80,6 +88,7 @@ namespace Square.Connect.Model
             sb.Append("  Cursor: ").Append(Cursor).Append("\n");
             sb.Append("  Objects: ").Append(Objects).Append("\n");
             sb.Append("  RelatedObjects: ").Append(RelatedObjects).Append("\n");
+            sb.Append("  LatestTime: ").Append(LatestTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,6 +144,11 @@ namespace Square.Connect.Model
                     this.RelatedObjects == other.RelatedObjects ||
                     this.RelatedObjects != null &&
                     this.RelatedObjects.SequenceEqual(other.RelatedObjects)
+                ) && 
+                (
+                    this.LatestTime == other.LatestTime ||
+                    this.LatestTime != null &&
+                    this.LatestTime.Equals(other.LatestTime)
                 );
         }
 
@@ -157,6 +171,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.Objects.GetHashCode();
                 if (this.RelatedObjects != null)
                     hash = hash * 59 + this.RelatedObjects.GetHashCode();
+                if (this.LatestTime != null)
+                    hash = hash * 59 + this.LatestTime.GetHashCode();
                 return hash;
             }
         }

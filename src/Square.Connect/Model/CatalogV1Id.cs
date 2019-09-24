@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="CatalogV1Id" /> class.
         /// </summary>
         /// <param name="_CatalogV1Id">The ID for an object in Connect V1, if different from its Connect V2 ID..</param>
-        /// <param name="LocationId">The ID of the [location](#type-location) this Connect V1 ID is associated with..</param>
+        /// <param name="LocationId">The ID of the &#x60;location&#x60; this Connect V1 ID is associated with..</param>
         public CatalogV1Id(string _CatalogV1Id = default(string), string LocationId = default(string))
         {
             this._CatalogV1Id = _CatalogV1Id;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="catalog_v1_id", EmitDefaultValue=false)]
         public string _CatalogV1Id { get; set; }
         /// <summary>
-        /// The ID of the [location](#type-location) this Connect V1 ID is associated with.
+        /// The ID of the &#x60;location&#x60; this Connect V1 ID is associated with.
         /// </summary>
-        /// <value>The ID of the [location](#type-location) this Connect V1 ID is associated with.</value>
+        /// <value>The ID of the &#x60;location&#x60; this Connect V1 ID is associated with.</value>
         [DataMember(Name="location_id", EmitDefaultValue=false)]
         public string LocationId { get; set; }
         /// <summary>

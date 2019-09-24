@@ -8,7 +8,7 @@ Defines the body parameters that can be provided in a request to the CreateCusto
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IdempotencyKey** | **string** | The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information. | [optional] 
+**IdempotencyKey** | **string** | The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information. | [optional] 
 **GivenName** | **string** | The customer&#39;s given (i.e., first) name. | [optional] 
 **FamilyName** | **string** | The customer&#39;s family (i.e., last) name. | [optional] 
 **CompanyName** | **string** | The name of the customer&#39;s company. | [optional] 

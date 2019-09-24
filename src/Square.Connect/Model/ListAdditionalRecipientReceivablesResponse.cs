@@ -34,7 +34,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
         /// <param name="Receivables">An array of AdditionalRecipientReceivables that match your query..</param>
-        /// <param name="Cursor">A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](/basics/api101/pagination) for more information..</param>
+        /// <param name="Cursor">A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         public ListAdditionalRecipientReceivablesResponse(List<Error> Errors = default(List<Error>), List<AdditionalRecipientReceivable> Receivables = default(List<AdditionalRecipientReceivable>), string Cursor = default(string))
         {
             this.Errors = Errors;
@@ -55,9 +55,9 @@ namespace Square.Connect.Model
         [DataMember(Name="receivables", EmitDefaultValue=false)]
         public List<AdditionalRecipientReceivable> Receivables { get; set; }
         /// <summary>
-        /// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](/basics/api101/pagination) for more information.
+        /// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

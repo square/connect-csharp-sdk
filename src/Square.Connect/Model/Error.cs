@@ -37,8 +37,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        /// <param name="Category">The high-level category for the error. See [ErrorCategory](#type-errorcategory) See [ErrorCategory](#type-errorcategory) for possible values (required).</param>
-        /// <param name="Code">The specific code of the error. See [ErrorCode](#type-errorcode) for possible See [ErrorCode](#type-errorcode) for possible values (required).</param>
+        /// <param name="Category">The high-level category for the error. See [ErrorCategory](#type-errorcategory) for possible values (required).</param>
+        /// <param name="Code">The specific code of the error. See [ErrorCode](#type-errorcode) for possible values (required).</param>
         /// <param name="Detail">A human-readable description of the error for debugging purposes..</param>
         /// <param name="Field">The name of the field provided in the original request (if any) that the error pertains to..</param>
         public Error(string Category = default(string), string Code = default(string), string Detail = default(string), string Field = default(string))
@@ -66,15 +66,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The high-level category for the error. See [ErrorCategory](#type-errorcategory) See [ErrorCategory](#type-errorcategory) for possible values
+        /// The high-level category for the error. See [ErrorCategory](#type-errorcategory) for possible values
         /// </summary>
-        /// <value>The high-level category for the error. See [ErrorCategory](#type-errorcategory) See [ErrorCategory](#type-errorcategory) for possible values</value>
+        /// <value>The high-level category for the error. See [ErrorCategory](#type-errorcategory) for possible values</value>
         [DataMember(Name="category", EmitDefaultValue=false)]
         public string Category { get; set; }
         /// <summary>
-        /// The specific code of the error. See [ErrorCode](#type-errorcode) for possible See [ErrorCode](#type-errorcode) for possible values
+        /// The specific code of the error. See [ErrorCode](#type-errorcode) for possible values
         /// </summary>
-        /// <value>The specific code of the error. See [ErrorCode](#type-errorcode) for possible See [ErrorCode](#type-errorcode) for possible values</value>
+        /// <value>The specific code of the error. See [ErrorCode](#type-errorcode) for possible values</value>
         [DataMember(Name="code", EmitDefaultValue=false)]
         public string Code { get; set; }
         /// <summary>

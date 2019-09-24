@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifierList" /> class.
         /// </summary>
-        /// <param name="Name">The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
-        /// <param name="SelectionType">Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values.</param>
-        /// <param name="Modifiers">The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data..</param>
+        /// <param name="Name">The &#x60;CatalogModifierList&#x60;&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
+        /// <param name="SelectionType">Indicates whether multiple options from the &#x60;CatalogModifierList&#x60; can be applied to a single &#x60;CatalogItem&#x60;. See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values.</param>
+        /// <param name="Modifiers">The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each &#x60;CatalogObject&#x60; must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data..</param>
         public CatalogModifierList(string Name = default(string), string SelectionType = default(string), List<CatalogObject> Modifiers = default(List<CatalogObject>))
         {
             this.Name = Name;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points.
+        /// The &#x60;CatalogModifierList&#x60;&#39;s name. Searchable. This field has max length of 255 Unicode code points.
         /// </summary>
-        /// <value>The [CatalogModifierList](#type-catalogmodifierlist)&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
+        /// <value>The &#x60;CatalogModifierList&#x60;&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
+        /// Indicates whether multiple options from the &#x60;CatalogModifierList&#x60; can be applied to a single &#x60;CatalogItem&#x60;. See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
         /// </summary>
-        /// <value>Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values</value>
+        /// <value>Indicates whether multiple options from the &#x60;CatalogModifierList&#x60; can be applied to a single &#x60;CatalogItem&#x60;. See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values</value>
         [DataMember(Name="selection_type", EmitDefaultValue=false)]
         public string SelectionType { get; set; }
         /// <summary>
-        /// The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data.
+        /// The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each &#x60;CatalogObject&#x60; must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data.
         /// </summary>
-        /// <value>The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type &#x60;MODIFIER&#x60; and contain [CatalogModifier](#type-catalogmodifier) data.</value>
+        /// <value>The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each &#x60;CatalogObject&#x60; must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data.</value>
         [DataMember(Name="modifiers", EmitDefaultValue=false)]
         public List<CatalogObject> Modifiers { get; set; }
         /// <summary>

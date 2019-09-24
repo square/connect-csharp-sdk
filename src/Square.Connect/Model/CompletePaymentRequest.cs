@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Completes a payment.  By default, payments are set to autocomplete immediately after they are created. To complete payments manually, set &#x60;autocomplete&#x60; to false.
+    /// Completes (captures) a payment.  By default, payments are set to autocomplete immediately after they are created. To complete payments manually, set &#x60;autocomplete&#x60; to false.
     /// </summary>
     [DataContract]
     public partial class CompletePaymentRequest :  IEquatable<CompletePaymentRequest>, IValidatableObject

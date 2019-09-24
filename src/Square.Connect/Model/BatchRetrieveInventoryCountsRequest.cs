@@ -32,10 +32,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRetrieveInventoryCountsRequest" /> class.
         /// </summary>
-        /// <param name="CatalogObjectIds">Filters results by [CatalogObject](#type-catalogobject) ID. Only applied when set. Default: unset..</param>
-        /// <param name="LocationIds">Filters results by [Location](#type-location) ID. Only applied when set. Default: unset..</param>
+        /// <param name="CatalogObjectIds">Filters results by &#x60;CatalogObject&#x60; ID. Only applied when set. Default: unset..</param>
+        /// <param name="LocationIds">Filters results by &#x60;Location&#x60; ID. Only applied when set. Default: unset..</param>
         /// <param name="UpdatedAfter">Provided as an RFC 3339 timestamp. Returns results whose &#x60;calculated_at&#x60; value is after the given time. Default: UNIX epoch (&#x60;1970-01-01T00:00:00Z&#x60;)..</param>
-        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information..</param>
+        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         public BatchRetrieveInventoryCountsRequest(List<string> CatalogObjectIds = default(List<string>), List<string> LocationIds = default(List<string>), string UpdatedAfter = default(string), string Cursor = default(string))
         {
             this.CatalogObjectIds = CatalogObjectIds;
@@ -45,15 +45,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Filters results by [CatalogObject](#type-catalogobject) ID. Only applied when set. Default: unset.
+        /// Filters results by &#x60;CatalogObject&#x60; ID. Only applied when set. Default: unset.
         /// </summary>
-        /// <value>Filters results by [CatalogObject](#type-catalogobject) ID. Only applied when set. Default: unset.</value>
+        /// <value>Filters results by &#x60;CatalogObject&#x60; ID. Only applied when set. Default: unset.</value>
         [DataMember(Name="catalog_object_ids", EmitDefaultValue=false)]
         public List<string> CatalogObjectIds { get; set; }
         /// <summary>
-        /// Filters results by [Location](#type-location) ID. Only applied when set. Default: unset.
+        /// Filters results by &#x60;Location&#x60; ID. Only applied when set. Default: unset.
         /// </summary>
-        /// <value>Filters results by [Location](#type-location) ID. Only applied when set. Default: unset.</value>
+        /// <value>Filters results by &#x60;Location&#x60; ID. Only applied when set. Default: unset.</value>
         [DataMember(Name="location_ids", EmitDefaultValue=false)]
         public List<string> LocationIds { get; set; }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Square.Connect.Model
         [DataMember(Name="updated_after", EmitDefaultValue=false)]
         public string UpdatedAfter { get; set; }
         /// <summary>
-        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
+        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

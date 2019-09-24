@@ -42,6 +42,48 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListLocationsResponse</returns>
         ApiResponse<ListLocationsResponse> ListLocationsWithHttpInfo ();
+        /// <summary>
+        /// RetrieveLocation
+        /// </summary>
+        /// <remarks>
+        /// Retrieves details of a location.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>RetrieveLocationResponse</returns>        RetrieveLocationResponse RetrieveLocation (string locationId);
+
+        /// <summary>
+        /// RetrieveLocation
+        /// </summary>
+        /// <remarks>
+        /// Retrieves details of a location.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>ApiResponse of RetrieveLocationResponse</returns>
+        ApiResponse<RetrieveLocationResponse> RetrieveLocationWithHttpInfo (string locationId);
+        /// <summary>
+        /// UpdateLocation
+        /// </summary>
+        /// <remarks>
+        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>UpdateLocationResponse</returns>        UpdateLocationResponse UpdateLocation (string locationId, UpdateLocationRequest body);
+
+        /// <summary>
+        /// UpdateLocation
+        /// </summary>
+        /// <remarks>
+        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of UpdateLocationResponse</returns>
+        ApiResponse<UpdateLocationResponse> UpdateLocationWithHttpInfo (string locationId, UpdateLocationRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -63,6 +105,50 @@ namespace Square.Connect.Api
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListLocationsResponse>> ListLocationsAsyncWithHttpInfo ();
+        /// <summary>
+        /// RetrieveLocation
+        /// </summary>
+        /// <remarks>
+        /// Retrieves details of a location.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>Task of RetrieveLocationResponse</returns>
+        System.Threading.Tasks.Task<RetrieveLocationResponse> RetrieveLocationAsync (string locationId);
+
+        /// <summary>
+        /// RetrieveLocation
+        /// </summary>
+        /// <remarks>
+        /// Retrieves details of a location.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>Task of ApiResponse (RetrieveLocationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RetrieveLocationResponse>> RetrieveLocationAsyncWithHttpInfo (string locationId);
+        /// <summary>
+        /// UpdateLocation
+        /// </summary>
+        /// <remarks>
+        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of UpdateLocationResponse</returns>
+        System.Threading.Tasks.Task<UpdateLocationResponse> UpdateLocationAsync (string locationId, UpdateLocationRequest body);
+
+        /// <summary>
+        /// UpdateLocation
+        /// </summary>
+        /// <remarks>
+        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (UpdateLocationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateLocationResponse>> UpdateLocationAsyncWithHttpInfo (string locationId, UpdateLocationRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -215,7 +301,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
 
             // authentication (oauth2) required
             // oauth required
@@ -309,6 +395,330 @@ namespace Square.Connect.Api
             return new ApiResponse<ListLocationsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ListLocationsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListLocationsResponse)));
+            
+        }
+
+        /// <summary>
+        /// RetrieveLocation Retrieves details of a location.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>RetrieveLocationResponse</returns>
+        public RetrieveLocationResponse RetrieveLocation (string locationId)
+        {
+             ApiResponse<RetrieveLocationResponse> localVarResponse = RetrieveLocationWithHttpInfo(locationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// RetrieveLocation Retrieves details of a location.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>ApiResponse of RetrieveLocationResponse</returns>
+        public ApiResponse< RetrieveLocationResponse > RetrieveLocationWithHttpInfo (string locationId)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling LocationsApi->RetrieveLocation");
+
+            var localVarPath = "/v2/locations/{location_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RetrieveLocation", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RetrieveLocationResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (RetrieveLocationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveLocationResponse)));
+            
+        }
+
+        /// <summary>
+        /// RetrieveLocation Retrieves details of a location.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>Task of RetrieveLocationResponse</returns>
+        public async System.Threading.Tasks.Task<RetrieveLocationResponse> RetrieveLocationAsync (string locationId)
+        {
+             ApiResponse<RetrieveLocationResponse> localVarResponse = await RetrieveLocationAsyncWithHttpInfo(locationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// RetrieveLocation Retrieves details of a location.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to retrieve.</param>
+        /// <returns>Task of ApiResponse (RetrieveLocationResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<RetrieveLocationResponse>> RetrieveLocationAsyncWithHttpInfo (string locationId)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling LocationsApi->RetrieveLocation");
+
+            var localVarPath = "/v2/locations/{location_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RetrieveLocation", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RetrieveLocationResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (RetrieveLocationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveLocationResponse)));
+            
+        }
+
+        /// <summary>
+        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>UpdateLocationResponse</returns>
+        public UpdateLocationResponse UpdateLocation (string locationId, UpdateLocationRequest body)
+        {
+             ApiResponse<UpdateLocationResponse> localVarResponse = UpdateLocationWithHttpInfo(locationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of UpdateLocationResponse</returns>
+        public ApiResponse< UpdateLocationResponse > UpdateLocationWithHttpInfo (string locationId, UpdateLocationRequest body)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling LocationsApi->UpdateLocation");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling LocationsApi->UpdateLocation");
+
+            var localVarPath = "/v2/locations/{location_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateLocation", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UpdateLocationResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UpdateLocationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateLocationResponse)));
+            
+        }
+
+        /// <summary>
+        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of UpdateLocationResponse</returns>
+        public async System.Threading.Tasks.Task<UpdateLocationResponse> UpdateLocationAsync (string locationId, UpdateLocationRequest body)
+        {
+             ApiResponse<UpdateLocationResponse> localVarResponse = await UpdateLocationAsyncWithHttpInfo(locationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="locationId">The ID of the location to update.</param>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (UpdateLocationResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateLocationResponse>> UpdateLocationAsyncWithHttpInfo (string locationId, UpdateLocationRequest body)
+        {
+            // verify the required parameter 'locationId' is set
+            if (locationId == null)
+                throw new ApiException(400, "Missing required parameter 'locationId' when calling LocationsApi->UpdateLocation");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling LocationsApi->UpdateLocation");
+
+            var localVarPath = "/v2/locations/{location_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateLocation", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UpdateLocationResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UpdateLocationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateLocationResponse)));
             
         }
 

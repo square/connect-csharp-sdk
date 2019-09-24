@@ -35,7 +35,7 @@ namespace Square.Connect.Model
         /// <param name="BeginTime">Timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year..</param>
         /// <param name="EndTime">Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time..</param>
         /// <param name="SortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default)..</param>
-        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information..</param>
+        /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         /// <param name="LocationId">ID of location associated with payment.</param>
         /// <param name="Total">The exact amount in the total_money for a &#x60;Payment&#x60;..</param>
         /// <param name="Last4">The last 4 digits of &#x60;Payment&#x60; card..</param>
@@ -71,9 +71,9 @@ namespace Square.Connect.Model
         [DataMember(Name="sort_order", EmitDefaultValue=false)]
         public string SortOrder { get; set; }
         /// <summary>
-        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
+        /// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

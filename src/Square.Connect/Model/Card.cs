@@ -40,7 +40,8 @@ namespace Square.Connect.Model
         /// <param name="CardholderName">The name of the cardholder..</param>
         /// <param name="BillingAddress">The billing address for this card..</param>
         /// <param name="Fingerprint">A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account..</param>
-        public Card(string Id = default(string), string CardBrand = default(string), string Last4 = default(string), long? ExpMonth = default(long?), long? ExpYear = default(long?), string CardholderName = default(string), Address BillingAddress = default(Address), string Fingerprint = default(string))
+        /// <param name="Bin">The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field..</param>
+        public Card(string Id = default(string), string CardBrand = default(string), string Last4 = default(string), long? ExpMonth = default(long?), long? ExpYear = default(long?), string CardholderName = default(string), Address BillingAddress = default(Address), string Fingerprint = default(string), string Bin = default(string))
         {
             this.Id = Id;
             this.CardBrand = CardBrand;
@@ -50,6 +51,7 @@ namespace Square.Connect.Model
             this.CardholderName = CardholderName;
             this.BillingAddress = BillingAddress;
             this.Fingerprint = Fingerprint;
+            this.Bin = Bin;
         }
         
         /// <summary>
@@ -101,6 +103,12 @@ namespace Square.Connect.Model
         [DataMember(Name="fingerprint", EmitDefaultValue=false)]
         public string Fingerprint { get; set; }
         /// <summary>
+        /// The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field.
+        /// </summary>
+        /// <value>The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field.</value>
+        [DataMember(Name="bin", EmitDefaultValue=false)]
+        public string Bin { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -116,6 +124,7 @@ namespace Square.Connect.Model
             sb.Append("  CardholderName: ").Append(CardholderName).Append("\n");
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
             sb.Append("  Fingerprint: ").Append(Fingerprint).Append("\n");
+            sb.Append("  Bin: ").Append(Bin).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +200,11 @@ namespace Square.Connect.Model
                     this.Fingerprint == other.Fingerprint ||
                     this.Fingerprint != null &&
                     this.Fingerprint.Equals(other.Fingerprint)
+                ) && 
+                (
+                    this.Bin == other.Bin ||
+                    this.Bin != null &&
+                    this.Bin.Equals(other.Bin)
                 );
         }
 
@@ -221,6 +235,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.BillingAddress.GetHashCode();
                 if (this.Fingerprint != null)
                     hash = hash * 59 + this.Fingerprint.GetHashCode();
+                if (this.Bin != null)
+                    hash = hash * 59 + this.Bin.GetHashCode();
                 return hash;
             }
         }

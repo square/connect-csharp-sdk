@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCustomerRequest" /> class.
         /// </summary>
-        /// <param name="IdempotencyKey">The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information..</param>
+        /// <param name="IdempotencyKey">The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information..</param>
         /// <param name="GivenName">The customer&#39;s given (i.e., first) name..</param>
         /// <param name="FamilyName">The customer&#39;s family (i.e., last) name..</param>
         /// <param name="CompanyName">The name of the customer&#39;s company..</param>
@@ -59,9 +59,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information.
+        /// The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.
         /// </summary>
-        /// <value>The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information.</value>
+        /// <value>The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.</value>
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>

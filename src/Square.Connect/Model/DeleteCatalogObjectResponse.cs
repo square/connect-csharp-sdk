@@ -32,8 +32,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteCatalogObjectResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of [Error](#type-error)s encountered..</param>
-        /// <param name="DeletedObjectIds">The IDs of all [CatalogObject](#type-catalogobject)s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a [CatalogItemVariation](#type-catalogitemvariation) will be deleted (and its ID included in this field) when its parent [CatalogItem](#type-catalogitem) is deleted..</param>
+        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
+        /// <param name="DeletedObjectIds">The IDs of all &#x60;CatalogObject&#x60;s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a &#x60;CatalogItemVariation&#x60; when its parent &#x60;CatalogItem&#x60; is deleted..</param>
         /// <param name="DeletedAt">The database [timestamp](#workingwithdates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
         public DeleteCatalogObjectResponse(List<Error> Errors = default(List<Error>), List<string> DeletedObjectIds = default(List<string>), string DeletedAt = default(string))
         {
@@ -43,15 +43,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of [Error](#type-error)s encountered.
+        /// The set of &#x60;Error&#x60;s encountered.
         /// </summary>
-        /// <value>The set of [Error](#type-error)s encountered.</value>
+        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The IDs of all [CatalogObject](#type-catalogobject)s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a [CatalogItemVariation](#type-catalogitemvariation) will be deleted (and its ID included in this field) when its parent [CatalogItem](#type-catalogitem) is deleted.
+        /// The IDs of all &#x60;CatalogObject&#x60;s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a &#x60;CatalogItemVariation&#x60; when its parent &#x60;CatalogItem&#x60; is deleted.
         /// </summary>
-        /// <value>The IDs of all [CatalogObject](#type-catalogobject)s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a [CatalogItemVariation](#type-catalogitemvariation) will be deleted (and its ID included in this field) when its parent [CatalogItem](#type-catalogitem) is deleted.</value>
+        /// <value>The IDs of all &#x60;CatalogObject&#x60;s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a &#x60;CatalogItemVariation&#x60; when its parent &#x60;CatalogItem&#x60; is deleted.</value>
         [DataMember(Name="deleted_object_ids", EmitDefaultValue=false)]
         public List<string> DeletedObjectIds { get; set; }
         /// <summary>

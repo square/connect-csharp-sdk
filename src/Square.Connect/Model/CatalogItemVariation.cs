@@ -32,19 +32,19 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogItemVariation" /> class.
         /// </summary>
-        /// <param name="ItemId">The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable..</param>
+        /// <param name="ItemId">The ID of the &#x60;CatalogItem&#x60; associated with this item variation. Searchable..</param>
         /// <param name="Name">The item variation&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
         /// <param name="Sku">The item variation&#39;s SKU, if any. Searchable..</param>
         /// <param name="Upc">The item variation&#39;s UPC, if any. Searchable in the Connect API. This field is only exposed in the Connect API. It is not exposed in Square&#39;s Dashboard, Square Point of Sale app or Retail Point of Sale app..</param>
-        /// <param name="Ordinal">The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique..</param>
+        /// <param name="Ordinal">The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent &#x60;CatalogItem&#x60; is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique..</param>
         /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for possible values.</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if fixed pricing is used..</param>
-        /// <param name="LocationOverrides">Per-[location](#type-location) price and inventory overrides..</param>
+        /// <param name="LocationOverrides">Per-&#x60;location&#x60; price and inventory overrides..</param>
         /// <param name="TrackInventory">If &#x60;true&#x60;, inventory tracking is active for the variation..</param>
         /// <param name="InventoryAlertType">Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for possible values.</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
         /// <param name="UserData">Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable..</param>
-        /// <param name="ServiceDuration">If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
+        /// <param name="ServiceDuration">If the &#x60;CatalogItem&#x60; that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second)..</param>
         /// <param name="ItemOptionValues">List of item option values associated with this item variation. Listed in the same order as the item options of the parent item..</param>
         /// <param name="MeasurementUnitId">ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities..</param>
         public CatalogItemVariation(string ItemId = default(string), string Name = default(string), string Sku = default(string), string Upc = default(string), int? Ordinal = default(int?), string PricingType = default(string), Money PriceMoney = default(Money), List<ItemVariationLocationOverrides> LocationOverrides = default(List<ItemVariationLocationOverrides>), bool? TrackInventory = default(bool?), string InventoryAlertType = default(string), long? InventoryAlertThreshold = default(long?), string UserData = default(string), long? ServiceDuration = default(long?), List<CatalogItemOptionValueForItemVariation> ItemOptionValues = default(List<CatalogItemOptionValueForItemVariation>), string MeasurementUnitId = default(string))
@@ -67,9 +67,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable.
+        /// The ID of the &#x60;CatalogItem&#x60; associated with this item variation. Searchable.
         /// </summary>
-        /// <value>The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable.</value>
+        /// <value>The ID of the &#x60;CatalogItem&#x60; associated with this item variation. Searchable.</value>
         [DataMember(Name="item_id", EmitDefaultValue=false)]
         public string ItemId { get; set; }
         /// <summary>
@@ -91,9 +91,9 @@ namespace Square.Connect.Model
         [DataMember(Name="upc", EmitDefaultValue=false)]
         public string Upc { get; set; }
         /// <summary>
-        /// The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique.
+        /// The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent &#x60;CatalogItem&#x60; is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique.
         /// </summary>
-        /// <value>The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique.</value>
+        /// <value>The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent &#x60;CatalogItem&#x60; is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique.</value>
         [DataMember(Name="ordinal", EmitDefaultValue=false)]
         public int? Ordinal { get; set; }
         /// <summary>
@@ -109,9 +109,9 @@ namespace Square.Connect.Model
         [DataMember(Name="price_money", EmitDefaultValue=false)]
         public Money PriceMoney { get; set; }
         /// <summary>
-        /// Per-[location](#type-location) price and inventory overrides.
+        /// Per-&#x60;location&#x60; price and inventory overrides.
         /// </summary>
-        /// <value>Per-[location](#type-location) price and inventory overrides.</value>
+        /// <value>Per-&#x60;location&#x60; price and inventory overrides.</value>
         [DataMember(Name="location_overrides", EmitDefaultValue=false)]
         public List<ItemVariationLocationOverrides> LocationOverrides { get; set; }
         /// <summary>
@@ -139,9 +139,9 @@ namespace Square.Connect.Model
         [DataMember(Name="user_data", EmitDefaultValue=false)]
         public string UserData { get; set; }
         /// <summary>
-        /// If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
+        /// If the &#x60;CatalogItem&#x60; that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
         /// </summary>
-        /// <value>If the [CatalogItem](#type-catalogitem) that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).</value>
+        /// <value>If the &#x60;CatalogItem&#x60; that owns this item variation is of type &#x60;APPOINTMENTS_SERVICE&#x60;, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value &#x60;1800000&#x60;, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).</value>
         [DataMember(Name="service_duration", EmitDefaultValue=false)]
         public long? ServiceDuration { get; set; }
         /// <summary>
