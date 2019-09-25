@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Uid** | **string** | Unique ID that identifies the return tax only within this order. | [optional] 
 **SourceTaxUid** | **string** | &#x60;uid&#x60; of the Tax from the Order which contains the original charge of this tax. | [optional] 
-**CatalogObjectId** | **string** | The catalog object id referencing [CatalogTax](#type-catalogtax). | [optional] 
+**CatalogObjectId** | **string** | The catalog object id referencing &#x60;CatalogTax&#x60;. | [optional] 
 **Name** | **string** | The tax&#39;s name. | [optional] 
 **Type** | **string** | Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values | [optional] 
 **Percentage** | **string** | The percentage of the tax, as a string representation of a decimal number. For example, a value of &#x60;\&quot;7.25\&quot;&#x60; corresponds to a percentage of 7.25%. | [optional] 

@@ -32,10 +32,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersResponse" /> class.
         /// </summary>
-        /// <param name="OrderEntries">List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request..</param>
-        /// <param name="Orders">List of [Order](#type-order) objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;..</param>
-        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information..</param>
-        /// <param name="Errors">[Errors](#type-error) encountered during the search..</param>
+        /// <param name="OrderEntries">List of &#x60;OrderEntries&#x60; that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request..</param>
+        /// <param name="Orders">List of &#x60;Order&#x60; objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;..</param>
+        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
+        /// <param name="Errors">&#x60;Errors&#x60; encountered during the search..</param>
         public SearchOrdersResponse(List<OrderEntry> OrderEntries = default(List<OrderEntry>), List<Order> Orders = default(List<Order>), string Cursor = default(string), List<Error> Errors = default(List<Error>))
         {
             this.OrderEntries = OrderEntries;
@@ -45,27 +45,27 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request.
+        /// List of &#x60;OrderEntries&#x60; that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request.
         /// </summary>
-        /// <value>List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request.</value>
+        /// <value>List of &#x60;OrderEntries&#x60; that fit the query conditions. Populated only if &#x60;return_entries&#x60; was set to &#x60;true&#x60; in the request.</value>
         [DataMember(Name="order_entries", EmitDefaultValue=false)]
         public List<OrderEntry> OrderEntries { get; set; }
         /// <summary>
-        /// List of [Order](#type-order) objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.
+        /// List of &#x60;Order&#x60; objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.
         /// </summary>
-        /// <value>List of [Order](#type-order) objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.</value>
+        /// <value>List of &#x60;Order&#x60; objects that match query conditions. Populated only if &#x60;return_entries&#x60; in the request is set to &#x60;false&#x60;.</value>
         [DataMember(Name="orders", EmitDefaultValue=false)]
         public List<Order> Orders { get; set; }
         /// <summary>
-        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
+        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>
-        /// [Errors](#type-error) encountered during the search.
+        /// &#x60;Errors&#x60; encountered during the search.
         /// </summary>
-        /// <value>[Errors](#type-error) encountered during the search.</value>
+        /// <value>&#x60;Errors&#x60; encountered during the search.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>

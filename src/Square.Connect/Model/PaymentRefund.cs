@@ -41,7 +41,7 @@ namespace Square.Connect.Model
         /// <param name="Status">The refund&#39;s status: - &#x60;PENDING&#x60; - awaiting approval - &#x60;COMPLETED&#x60; - successfully completed - &#x60;REJECTED&#x60; - the refund was rejected - &#x60;FAILED&#x60; - an error occurred.</param>
         /// <param name="LocationId">Location ID associated with the payment this refund is attached to..</param>
         /// <param name="AmountMoney">The amount of money refunded, specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. (required).</param>
-        /// <param name="AppFeeMoney">Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details..</param>
+        /// <param name="AppFeeMoney">Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details..</param>
         /// <param name="ProcessingFee">Processing fees and fee adjustments assessed by Square on this refund..</param>
         /// <param name="PaymentId">The ID of the payment assocated with this refund..</param>
         /// <param name="OrderId">The ID of the order associated with the refund..</param>
@@ -104,9 +104,9 @@ namespace Square.Connect.Model
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
-        /// Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details.
+        /// Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.
         /// </summary>
-        /// <value>Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details.</value>
+        /// <value>Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.</value>
         [DataMember(Name="app_fee_money", EmitDefaultValue=false)]
         public Money AppFeeMoney { get; set; }
         /// <summary>

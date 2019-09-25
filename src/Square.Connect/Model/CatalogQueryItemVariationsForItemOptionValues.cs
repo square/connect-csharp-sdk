@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogQueryItemVariationsForItemOptionValues" /> class.
         /// </summary>
-        /// <param name="ItemOptionValueIds">A set of [CatalogItemOptionValue](#type-catalogitemoptionvalue) IDs to be used to find associated [CatalogItemVariation](#type-catalogitemvariation)s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned..</param>
+        /// <param name="ItemOptionValueIds">A set of &#x60;CatalogItemOptionValue&#x60; IDs to be used to find associated &#x60;CatalogItemVariation&#x60;s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned..</param>
         public CatalogQueryItemVariationsForItemOptionValues(List<string> ItemOptionValueIds = default(List<string>))
         {
             this.ItemOptionValueIds = ItemOptionValueIds;
         }
         
         /// <summary>
-        /// A set of [CatalogItemOptionValue](#type-catalogitemoptionvalue) IDs to be used to find associated [CatalogItemVariation](#type-catalogitemvariation)s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.
+        /// A set of &#x60;CatalogItemOptionValue&#x60; IDs to be used to find associated &#x60;CatalogItemVariation&#x60;s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.
         /// </summary>
-        /// <value>A set of [CatalogItemOptionValue](#type-catalogitemoptionvalue) IDs to be used to find associated [CatalogItemVariation](#type-catalogitemvariation)s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.</value>
+        /// <value>A set of &#x60;CatalogItemOptionValue&#x60; IDs to be used to find associated &#x60;CatalogItemVariation&#x60;s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.</value>
         [DataMember(Name="item_option_value_ids", EmitDefaultValue=false)]
         public List<string> ItemOptionValueIds { get; set; }
         /// <summary>

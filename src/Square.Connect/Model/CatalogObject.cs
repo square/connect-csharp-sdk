@@ -42,25 +42,25 @@ namespace Square.Connect.Model
         /// <param name="UpdatedAt">Last modification [timestamp](#workingwithdates) in RFC 3339 format, e.g., &#x60;\&quot;2016-08-15T23:59:33.123Z\&quot;&#x60; would indicate the UTC time (denoted by &#x60;Z&#x60;) of August 15, 2016 at 23:59:33 and 123 milliseconds..</param>
         /// <param name="Version">The version of the object. When updating an object, the version supplied must match the version in the database, otherwise the write will be rejected as conflicting..</param>
         /// <param name="IsDeleted">If &#x60;true&#x60;, the object has been deleted from the database. Must be &#x60;false&#x60; for new objects being inserted. When deleted, the &#x60;updated_at&#x60; field will equal the deletion time..</param>
-        /// <param name="CatalogV1Ids">The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs..</param>
+        /// <param name="CatalogV1Ids">The Connect V1 IDs for this object at each &#x60;location&#x60; where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs..</param>
         /// <param name="PresentAtAllLocations">If &#x60;true&#x60;, this object is present at all locations (including future locations), except where specified in the &#x60;absent_at_location_ids&#x60; field. If &#x60;false&#x60;, this object is not present at any locations (including future locations), except where specified in the &#x60;present_at_location_ids&#x60; field. If not specified, defaults to &#x60;true&#x60;..</param>
         /// <param name="PresentAtLocationIds">A list of locations where the object is present, even if &#x60;present_at_all_locations&#x60; is &#x60;false&#x60;..</param>
         /// <param name="AbsentAtLocationIds">A list of locations where the object is not present, even if &#x60;present_at_all_locations&#x60; is &#x60;true&#x60;..</param>
         /// <param name="ImageId">Identifies the &#x60;CatalogImage&#x60; attached to this &#x60;CatalogObject&#x60;..</param>
-        /// <param name="ItemData">Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type &#x60;ITEM&#x60;..</param>
-        /// <param name="CategoryData">Structured data for a [CatalogCategory](#type-catalogcategory), set for CatalogObjects of type &#x60;CATEGORY&#x60;..</param>
-        /// <param name="ItemVariationData">Structured data for a [CatalogItemVariation](#type-catalogitemvariation), set for CatalogObjects of type &#x60;ITEM_VARIATION&#x60;..</param>
-        /// <param name="TaxData">Structured data for a [CatalogTax](#type-catalogtax), set for CatalogObjects of type &#x60;TAX&#x60;..</param>
-        /// <param name="DiscountData">Structured data for a [CatalogDiscount](#type-catalogdiscount), set for CatalogObjects of type &#x60;DISCOUNT&#x60;..</param>
-        /// <param name="ModifierListData">Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;..</param>
-        /// <param name="ModifierData">Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;..</param>
-        /// <param name="TimePeriodData">Structured data for a [CatalogTimePeriod](#type-catalogtimeperiod), set for CatalogObjects of type &#x60;TIME_PERIOD&#x60;..</param>
-        /// <param name="ProductSetData">Structured data for a [CatalogProductSet](#type-catalogproductset), set for CatalogObjects of type &#x60;PRODUCT_SET&#x60;..</param>
-        /// <param name="PricingRuleData">Structured data for a [CatalogPricingRule](#type-catalogpricingrule), set for CatalogObjects of type &#x60;PRICING_RULE&#x60;..</param>
-        /// <param name="ImageData">Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;..</param>
-        /// <param name="MeasurementUnitData">Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;..</param>
-        /// <param name="ItemOptionData">Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;..</param>
-        /// <param name="ItemOptionValueData">Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;..</param>
+        /// <param name="ItemData">Structured data for a &#x60;CatalogItem&#x60;, set for CatalogObjects of type &#x60;ITEM&#x60;..</param>
+        /// <param name="CategoryData">Structured data for a &#x60;CatalogCategory&#x60;, set for CatalogObjects of type &#x60;CATEGORY&#x60;..</param>
+        /// <param name="ItemVariationData">Structured data for a &#x60;CatalogItemVariation&#x60;, set for CatalogObjects of type &#x60;ITEM_VARIATION&#x60;..</param>
+        /// <param name="TaxData">Structured data for a &#x60;CatalogTax&#x60;, set for CatalogObjects of type &#x60;TAX&#x60;..</param>
+        /// <param name="DiscountData">Structured data for a &#x60;CatalogDiscount&#x60;, set for CatalogObjects of type &#x60;DISCOUNT&#x60;..</param>
+        /// <param name="ModifierListData">Structured data for a &#x60;CatalogModifierList&#x60;, set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;..</param>
+        /// <param name="ModifierData">Structured data for a &#x60;CatalogModifier&#x60;, set for CatalogObjects of type &#x60;MODIFIER&#x60;..</param>
+        /// <param name="TimePeriodData">Structured data for a &#x60;CatalogTimePeriod&#x60;, set for CatalogObjects of type &#x60;TIME_PERIOD&#x60;..</param>
+        /// <param name="ProductSetData">Structured data for a &#x60;CatalogProductSet&#x60;, set for CatalogObjects of type &#x60;PRODUCT_SET&#x60;..</param>
+        /// <param name="PricingRuleData">Structured data for a &#x60;CatalogPricingRule&#x60;, set for CatalogObjects of type &#x60;PRICING_RULE&#x60;..</param>
+        /// <param name="ImageData">Structured data for a &#x60;CatalogImage&#x60;, set for CatalogObjects of type &#x60;IMAGE&#x60;..</param>
+        /// <param name="MeasurementUnitData">Structured data for a &#x60;CatalogMeasurementUnit&#x60;, set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;..</param>
+        /// <param name="ItemOptionData">Structured data for a &#x60;CatalogItemOption&#x60;, set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;..</param>
+        /// <param name="ItemOptionValueData">Structured data for a &#x60;CatalogItemOptionValue&#x60;, set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;..</param>
         public CatalogObject(string Type = default(string), string Id = default(string), string UpdatedAt = default(string), long? Version = default(long?), bool? IsDeleted = default(bool?), List<CatalogV1Id> CatalogV1Ids = default(List<CatalogV1Id>), bool? PresentAtAllLocations = default(bool?), List<string> PresentAtLocationIds = default(List<string>), List<string> AbsentAtLocationIds = default(List<string>), string ImageId = default(string), CatalogItem ItemData = default(CatalogItem), CatalogCategory CategoryData = default(CatalogCategory), CatalogItemVariation ItemVariationData = default(CatalogItemVariation), CatalogTax TaxData = default(CatalogTax), CatalogDiscount DiscountData = default(CatalogDiscount), CatalogModifierList ModifierListData = default(CatalogModifierList), CatalogModifier ModifierData = default(CatalogModifier), CatalogTimePeriod TimePeriodData = default(CatalogTimePeriod), CatalogProductSet ProductSetData = default(CatalogProductSet), CatalogPricingRule PricingRuleData = default(CatalogPricingRule), CatalogImage ImageData = default(CatalogImage), CatalogMeasurementUnit MeasurementUnitData = default(CatalogMeasurementUnit), CatalogItemOption ItemOptionData = default(CatalogItemOption), CatalogItemOptionValue ItemOptionValueData = default(CatalogItemOptionValue))
         {
             // to ensure "Type" is required (not null)
@@ -136,9 +136,9 @@ namespace Square.Connect.Model
         [DataMember(Name="is_deleted", EmitDefaultValue=false)]
         public bool? IsDeleted { get; set; }
         /// <summary>
-        /// The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+        /// The Connect V1 IDs for this object at each &#x60;location&#x60; where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
         /// </summary>
-        /// <value>The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.</value>
+        /// <value>The Connect V1 IDs for this object at each &#x60;location&#x60; where it is present, where they differ from the object&#39;s Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.</value>
         [DataMember(Name="catalog_v1_ids", EmitDefaultValue=false)]
         public List<CatalogV1Id> CatalogV1Ids { get; set; }
         /// <summary>
@@ -166,87 +166,87 @@ namespace Square.Connect.Model
         [DataMember(Name="image_id", EmitDefaultValue=false)]
         public string ImageId { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type &#x60;ITEM&#x60;.
+        /// Structured data for a &#x60;CatalogItem&#x60;, set for CatalogObjects of type &#x60;ITEM&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type &#x60;ITEM&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogItem&#x60;, set for CatalogObjects of type &#x60;ITEM&#x60;.</value>
         [DataMember(Name="item_data", EmitDefaultValue=false)]
         public CatalogItem ItemData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogCategory](#type-catalogcategory), set for CatalogObjects of type &#x60;CATEGORY&#x60;.
+        /// Structured data for a &#x60;CatalogCategory&#x60;, set for CatalogObjects of type &#x60;CATEGORY&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogCategory](#type-catalogcategory), set for CatalogObjects of type &#x60;CATEGORY&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogCategory&#x60;, set for CatalogObjects of type &#x60;CATEGORY&#x60;.</value>
         [DataMember(Name="category_data", EmitDefaultValue=false)]
         public CatalogCategory CategoryData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogItemVariation](#type-catalogitemvariation), set for CatalogObjects of type &#x60;ITEM_VARIATION&#x60;.
+        /// Structured data for a &#x60;CatalogItemVariation&#x60;, set for CatalogObjects of type &#x60;ITEM_VARIATION&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogItemVariation](#type-catalogitemvariation), set for CatalogObjects of type &#x60;ITEM_VARIATION&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogItemVariation&#x60;, set for CatalogObjects of type &#x60;ITEM_VARIATION&#x60;.</value>
         [DataMember(Name="item_variation_data", EmitDefaultValue=false)]
         public CatalogItemVariation ItemVariationData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogTax](#type-catalogtax), set for CatalogObjects of type &#x60;TAX&#x60;.
+        /// Structured data for a &#x60;CatalogTax&#x60;, set for CatalogObjects of type &#x60;TAX&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogTax](#type-catalogtax), set for CatalogObjects of type &#x60;TAX&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogTax&#x60;, set for CatalogObjects of type &#x60;TAX&#x60;.</value>
         [DataMember(Name="tax_data", EmitDefaultValue=false)]
         public CatalogTax TaxData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogDiscount](#type-catalogdiscount), set for CatalogObjects of type &#x60;DISCOUNT&#x60;.
+        /// Structured data for a &#x60;CatalogDiscount&#x60;, set for CatalogObjects of type &#x60;DISCOUNT&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogDiscount](#type-catalogdiscount), set for CatalogObjects of type &#x60;DISCOUNT&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogDiscount&#x60;, set for CatalogObjects of type &#x60;DISCOUNT&#x60;.</value>
         [DataMember(Name="discount_data", EmitDefaultValue=false)]
         public CatalogDiscount DiscountData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;.
+        /// Structured data for a &#x60;CatalogModifierList&#x60;, set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogModifierList&#x60;, set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;.</value>
         [DataMember(Name="modifier_list_data", EmitDefaultValue=false)]
         public CatalogModifierList ModifierListData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;.
+        /// Structured data for a &#x60;CatalogModifier&#x60;, set for CatalogObjects of type &#x60;MODIFIER&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogModifier&#x60;, set for CatalogObjects of type &#x60;MODIFIER&#x60;.</value>
         [DataMember(Name="modifier_data", EmitDefaultValue=false)]
         public CatalogModifier ModifierData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogTimePeriod](#type-catalogtimeperiod), set for CatalogObjects of type &#x60;TIME_PERIOD&#x60;.
+        /// Structured data for a &#x60;CatalogTimePeriod&#x60;, set for CatalogObjects of type &#x60;TIME_PERIOD&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogTimePeriod](#type-catalogtimeperiod), set for CatalogObjects of type &#x60;TIME_PERIOD&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogTimePeriod&#x60;, set for CatalogObjects of type &#x60;TIME_PERIOD&#x60;.</value>
         [DataMember(Name="time_period_data", EmitDefaultValue=false)]
         public CatalogTimePeriod TimePeriodData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogProductSet](#type-catalogproductset), set for CatalogObjects of type &#x60;PRODUCT_SET&#x60;.
+        /// Structured data for a &#x60;CatalogProductSet&#x60;, set for CatalogObjects of type &#x60;PRODUCT_SET&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogProductSet](#type-catalogproductset), set for CatalogObjects of type &#x60;PRODUCT_SET&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogProductSet&#x60;, set for CatalogObjects of type &#x60;PRODUCT_SET&#x60;.</value>
         [DataMember(Name="product_set_data", EmitDefaultValue=false)]
         public CatalogProductSet ProductSetData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogPricingRule](#type-catalogpricingrule), set for CatalogObjects of type &#x60;PRICING_RULE&#x60;.
+        /// Structured data for a &#x60;CatalogPricingRule&#x60;, set for CatalogObjects of type &#x60;PRICING_RULE&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogPricingRule](#type-catalogpricingrule), set for CatalogObjects of type &#x60;PRICING_RULE&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogPricingRule&#x60;, set for CatalogObjects of type &#x60;PRICING_RULE&#x60;.</value>
         [DataMember(Name="pricing_rule_data", EmitDefaultValue=false)]
         public CatalogPricingRule PricingRuleData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;.
+        /// Structured data for a &#x60;CatalogImage&#x60;, set for CatalogObjects of type &#x60;IMAGE&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogImage&#x60;, set for CatalogObjects of type &#x60;IMAGE&#x60;.</value>
         [DataMember(Name="image_data", EmitDefaultValue=false)]
         public CatalogImage ImageData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;.
+        /// Structured data for a &#x60;CatalogMeasurementUnit&#x60;, set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogMeasurementUnit&#x60;, set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;.</value>
         [DataMember(Name="measurement_unit_data", EmitDefaultValue=false)]
         public CatalogMeasurementUnit MeasurementUnitData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;.
+        /// Structured data for a &#x60;CatalogItemOption&#x60;, set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogItemOption&#x60;, set for CatalogObjects of type &#x60;ITEM_OPTION&#x60;.</value>
         [DataMember(Name="item_option_data", EmitDefaultValue=false)]
         public CatalogItemOption ItemOptionData { get; set; }
         /// <summary>
-        /// Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;.
+        /// Structured data for a &#x60;CatalogItemOptionValue&#x60;, set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;.
         /// </summary>
-        /// <value>Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;.</value>
+        /// <value>Structured data for a &#x60;CatalogItemOptionValue&#x60;, set for CatalogObjects of type &#x60;ITEM_OPTION_VAL&#x60;.</value>
         [DataMember(Name="item_option_value_data", EmitDefaultValue=false)]
         public CatalogItemOptionValue ItemOptionValueData { get; set; }
         /// <summary>

@@ -8,7 +8,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ModifierListIds** | **List<string>** | A set of [CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem](#type-catalogitem)s. | 
+**ModifierListIds** | **List<string>** | A set of &#x60;CatalogModifierList](#type-catalogmodifierlist) IDs to be used to find associated [CatalogItem&#x60;s. | 
 
 
 

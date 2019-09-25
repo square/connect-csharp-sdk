@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogObjectBatch" /> class.
         /// </summary>
-        /// <param name="Objects">A list of [CatalogObject](#type-catalogobject)s belonging to this batch..</param>
+        /// <param name="Objects">A list of &#x60;CatalogObject&#x60;s belonging to this batch..</param>
         public CatalogObjectBatch(List<CatalogObject> Objects = default(List<CatalogObject>))
         {
             this.Objects = Objects;
         }
         
         /// <summary>
-        /// A list of [CatalogObject](#type-catalogobject)s belonging to this batch.
+        /// A list of &#x60;CatalogObject&#x60;s belonging to this batch.
         /// </summary>
-        /// <value>A list of [CatalogObject](#type-catalogobject)s belonging to this batch.</value>
+        /// <value>A list of &#x60;CatalogObject&#x60;s belonging to this batch.</value>
         [DataMember(Name="objects", EmitDefaultValue=false)]
         public List<CatalogObject> Objects { get; set; }
         /// <summary>

@@ -32,8 +32,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpsertCatalogObjectResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of [Error](#type-error)s encountered..</param>
-        /// <param name="CatalogObject">The created [CatalogObject](#type-catalogobject)..</param>
+        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
+        /// <param name="CatalogObject">The created &#x60;CatalogObject&#x60;..</param>
         /// <param name="IdMappings">The mapping between client and server IDs for this Upsert..</param>
         public UpsertCatalogObjectResponse(List<Error> Errors = default(List<Error>), CatalogObject CatalogObject = default(CatalogObject), List<CatalogIdMapping> IdMappings = default(List<CatalogIdMapping>))
         {
@@ -43,15 +43,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of [Error](#type-error)s encountered.
+        /// The set of &#x60;Error&#x60;s encountered.
         /// </summary>
-        /// <value>The set of [Error](#type-error)s encountered.</value>
+        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The created [CatalogObject](#type-catalogobject).
+        /// The created &#x60;CatalogObject&#x60;.
         /// </summary>
-        /// <value>The created [CatalogObject](#type-catalogobject).</value>
+        /// <value>The created &#x60;CatalogObject&#x60;.</value>
         [DataMember(Name="catalog_object", EmitDefaultValue=false)]
         public CatalogObject CatalogObject { get; set; }
         /// <summary>

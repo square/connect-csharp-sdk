@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PayOrderRequest" /> class.
         /// </summary>
-        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this request among requests you&#39;ve sent. If you&#39;re unsure whether a particular payment request was completed successfully, you can reattempt it with the same idempotency key without worrying about duplicate payments.  See [Idempotency](/working-with-apis/idempotency) for more information. (required).</param>
+        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this request among requests you&#39;ve sent. If you&#39;re unsure whether a particular payment request was completed successfully, you can reattempt it with the same idempotency key without worrying about duplicate payments.  See [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency) for more information. (required).</param>
         /// <param name="OrderVersion">The version of the order being paid. If not supplied, the latest version will be paid..</param>
         /// <param name="PaymentIds">.</param>
         public PayOrderRequest(string IdempotencyKey = default(string), int? OrderVersion = default(int?), List<string> PaymentIds = default(List<string>))
@@ -56,9 +56,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A value you specify that uniquely identifies this request among requests you&#39;ve sent. If you&#39;re unsure whether a particular payment request was completed successfully, you can reattempt it with the same idempotency key without worrying about duplicate payments.  See [Idempotency](/working-with-apis/idempotency) for more information.
+        /// A value you specify that uniquely identifies this request among requests you&#39;ve sent. If you&#39;re unsure whether a particular payment request was completed successfully, you can reattempt it with the same idempotency key without worrying about duplicate payments.  See [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency) for more information.
         /// </summary>
-        /// <value>A value you specify that uniquely identifies this request among requests you&#39;ve sent. If you&#39;re unsure whether a particular payment request was completed successfully, you can reattempt it with the same idempotency key without worrying about duplicate payments.  See [Idempotency](/working-with-apis/idempotency) for more information.</value>
+        /// <value>A value you specify that uniquely identifies this request among requests you&#39;ve sent. If you&#39;re unsure whether a particular payment request was completed successfully, you can reattempt it with the same idempotency key without worrying about duplicate payments.  See [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency) for more information.</value>
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>

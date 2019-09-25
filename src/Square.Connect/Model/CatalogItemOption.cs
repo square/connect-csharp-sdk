@@ -36,8 +36,8 @@ namespace Square.Connect.Model
         /// <param name="DisplayName">The item option&#39;s display name for the customer. Searchable..</param>
         /// <param name="Description">The item option&#39;s human-readable description. Displays for in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer..</param>
         /// <param name="ShowColors">If true, display colors for entries in &#x60;values&#x60; when present..</param>
-        /// <param name="Values">A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemOptionValue](#type-catalogitemoptionvalue)s for this item..</param>
-        /// <param name="ItemCount">The number of [CatalogItem](#type-catalogitem)s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;..</param>
+        /// <param name="Values">A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemOptionValue&#x60;s for this item..</param>
+        /// <param name="ItemCount">The number of &#x60;CatalogItem&#x60;s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;..</param>
         public CatalogItemOption(string Name = default(string), string DisplayName = default(string), string Description = default(string), bool? ShowColors = default(bool?), List<CatalogObject> Values = default(List<CatalogObject>), long? ItemCount = default(long?))
         {
             this.Name = Name;
@@ -73,15 +73,15 @@ namespace Square.Connect.Model
         [DataMember(Name="show_colors", EmitDefaultValue=false)]
         public bool? ShowColors { get; set; }
         /// <summary>
-        /// A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemOptionValue](#type-catalogitemoptionvalue)s for this item.
+        /// A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemOptionValue&#x60;s for this item.
         /// </summary>
-        /// <value>A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemOptionValue](#type-catalogitemoptionvalue)s for this item.</value>
+        /// <value>A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemOptionValue&#x60;s for this item.</value>
         [DataMember(Name="values", EmitDefaultValue=false)]
         public List<CatalogObject> Values { get; set; }
         /// <summary>
-        /// The number of [CatalogItem](#type-catalogitem)s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;.
+        /// The number of &#x60;CatalogItem&#x60;s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;.
         /// </summary>
-        /// <value>The number of [CatalogItem](#type-catalogitem)s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;.</value>
+        /// <value>The number of &#x60;CatalogItem&#x60;s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;.</value>
         [DataMember(Name="item_count", EmitDefaultValue=false)]
         public long? ItemCount { get; set; }
         /// <summary>

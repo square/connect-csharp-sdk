@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogQueryItemsForItemOptions" /> class.
         /// </summary>
-        /// <param name="ItemOptionIds">A set of [CatalogItemOption](#type-catalogitemoption) IDs to be used to find associated [CatalogItem](#type-catalogitem)s. All Items that contain all of the given Item Options (in any order) will be returned..</param>
+        /// <param name="ItemOptionIds">A set of &#x60;CatalogItemOption&#x60; IDs to be used to find associated &#x60;CatalogItem&#x60; will be returned..</param>
         public CatalogQueryItemsForItemOptions(List<string> ItemOptionIds = default(List<string>))
         {
             this.ItemOptionIds = ItemOptionIds;
         }
         
         /// <summary>
-        /// A set of [CatalogItemOption](#type-catalogitemoption) IDs to be used to find associated [CatalogItem](#type-catalogitem)s. All Items that contain all of the given Item Options (in any order) will be returned.
+        /// A set of &#x60;CatalogItemOption&#x60; IDs to be used to find associated &#x60;CatalogItem&#x60; will be returned.
         /// </summary>
-        /// <value>A set of [CatalogItemOption](#type-catalogitemoption) IDs to be used to find associated [CatalogItem](#type-catalogitem)s. All Items that contain all of the given Item Options (in any order) will be returned.</value>
+        /// <value>A set of &#x60;CatalogItemOption&#x60; IDs to be used to find associated &#x60;CatalogItem&#x60; will be returned.</value>
         [DataMember(Name="item_option_ids", EmitDefaultValue=false)]
         public List<string> ItemOptionIds { get; set; }
         /// <summary>

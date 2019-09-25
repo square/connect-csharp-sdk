@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ListCatalogResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of [Error](#type-error)s encountered..</param>
-        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information..</param>
-        /// <param name="Objects">The [CatalogObject](#type-catalogobject)s returned..</param>
+        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
+        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
+        /// <param name="Objects">The &#x60;CatalogObject&#x60;s returned..</param>
         public ListCatalogResponse(List<Error> Errors = default(List<Error>), string Cursor = default(string), List<CatalogObject> Objects = default(List<CatalogObject>))
         {
             this.Errors = Errors;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of [Error](#type-error)s encountered.
+        /// The set of &#x60;Error&#x60;s encountered.
         /// </summary>
-        /// <value>The set of [Error](#type-error)s encountered.</value>
+        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
+        /// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>
-        /// The [CatalogObject](#type-catalogobject)s returned.
+        /// The &#x60;CatalogObject&#x60;s returned.
         /// </summary>
-        /// <value>The [CatalogObject](#type-catalogobject)s returned.</value>
+        /// <value>The &#x60;CatalogObject&#x60;s returned.</value>
         [DataMember(Name="objects", EmitDefaultValue=false)]
         public List<CatalogObject> Objects { get; set; }
         /// <summary>

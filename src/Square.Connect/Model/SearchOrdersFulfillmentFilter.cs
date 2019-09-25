@@ -37,8 +37,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersFulfillmentFilter" /> class.
         /// </summary>
-        /// <param name="FulfillmentTypes">List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values (required).</param>
-        /// <param name="FulfillmentStates">List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values.</param>
+        /// <param name="FulfillmentTypes">List of &#x60;fulfillment types&#x60; to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values (required).</param>
+        /// <param name="FulfillmentStates">List of &#x60;fulfillment states&#x60; to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values.</param>
         public SearchOrdersFulfillmentFilter(List<string> FulfillmentTypes = default(List<string>), List<string> FulfillmentStates = default(List<string>))
         {
             // to ensure "FulfillmentTypes" is required (not null)
@@ -54,15 +54,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
+        /// List of &#x60;fulfillment types&#x60; to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
         /// </summary>
-        /// <value>List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
+        /// <value>List of &#x60;fulfillment types&#x60; to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values</value>
         [DataMember(Name="fulfillment_types", EmitDefaultValue=false)]
         public List<string> FulfillmentTypes { get; set; }
         /// <summary>
-        /// List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+        /// List of &#x60;fulfillment states&#x60; to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
         /// </summary>
-        /// <value>List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
+        /// <value>List of &#x60;fulfillment states&#x60; to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values</value>
         [DataMember(Name="fulfillment_states", EmitDefaultValue=false)]
         public List<string> FulfillmentStates { get; set; }
         /// <summary>

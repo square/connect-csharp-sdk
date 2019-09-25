@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="RetrieveInventoryAdjustmentResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Adjustment">The requested [InventoryAdjustment](#type-inventoryadjustment)..</param>
+        /// <param name="Adjustment">The requested &#x60;InventoryAdjustment&#x60;..</param>
         public RetrieveInventoryAdjustmentResponse(List<Error> Errors = default(List<Error>), InventoryAdjustment Adjustment = default(InventoryAdjustment))
         {
             this.Errors = Errors;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The requested [InventoryAdjustment](#type-inventoryadjustment).
+        /// The requested &#x60;InventoryAdjustment&#x60;.
         /// </summary>
-        /// <value>The requested [InventoryAdjustment](#type-inventoryadjustment).</value>
+        /// <value>The requested &#x60;InventoryAdjustment&#x60;.</value>
         [DataMember(Name="adjustment", EmitDefaultValue=false)]
         public InventoryAdjustment Adjustment { get; set; }
         /// <summary>

@@ -9,7 +9,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Errors** | [**List&lt;Error&gt;**](Error.md) | Any errors that occurred during the request. | [optional] 
-**Adjustment** | [**InventoryAdjustment**](InventoryAdjustment.md) | The requested [InventoryAdjustment](#type-inventoryadjustment). | [optional] 
+**Adjustment** | [**InventoryAdjustment**](InventoryAdjustment.md) | The requested &#x60;InventoryAdjustment&#x60;. | [optional] 
 
 
 

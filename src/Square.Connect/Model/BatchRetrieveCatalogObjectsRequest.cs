@@ -37,8 +37,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRetrieveCatalogObjectsRequest" /> class.
         /// </summary>
-        /// <param name="ObjectIds">The IDs of the [CatalogObject](#type-catalogobject)s to be retrieved. (required).</param>
-        /// <param name="IncludeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested objects, as follows:  If the &#x60;objects&#x60; field of the response contains a [CatalogItem](#type-catalogitem),  its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;objects&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response..</param>
+        /// <param name="ObjectIds">The IDs of the &#x60;CatalogObject&#x60;s to be retrieved. (required).</param>
+        /// <param name="IncludeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested objects, as follows:  If the &#x60;objects&#x60; field of the response contains a &#x60;CatalogItem&#x60;,  its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;objects&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of the response..</param>
         public BatchRetrieveCatalogObjectsRequest(List<string> ObjectIds = default(List<string>), bool? IncludeRelatedObjects = default(bool?))
         {
             // to ensure "ObjectIds" is required (not null)
@@ -54,15 +54,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The IDs of the [CatalogObject](#type-catalogobject)s to be retrieved.
+        /// The IDs of the &#x60;CatalogObject&#x60;s to be retrieved.
         /// </summary>
-        /// <value>The IDs of the [CatalogObject](#type-catalogobject)s to be retrieved.</value>
+        /// <value>The IDs of the &#x60;CatalogObject&#x60;s to be retrieved.</value>
         [DataMember(Name="object_ids", EmitDefaultValue=false)]
         public List<string> ObjectIds { get; set; }
         /// <summary>
-        /// If &#x60;true&#x60;, the response will include additional objects that are related to the requested objects, as follows:  If the &#x60;objects&#x60; field of the response contains a [CatalogItem](#type-catalogitem),  its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;objects&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response.
+        /// If &#x60;true&#x60;, the response will include additional objects that are related to the requested objects, as follows:  If the &#x60;objects&#x60; field of the response contains a &#x60;CatalogItem&#x60;,  its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;objects&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of the response.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, the response will include additional objects that are related to the requested objects, as follows:  If the &#x60;objects&#x60; field of the response contains a [CatalogItem](#type-catalogitem),  its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;objects&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response.</value>
+        /// <value>If &#x60;true&#x60;, the response will include additional objects that are related to the requested objects, as follows:  If the &#x60;objects&#x60; field of the response contains a &#x60;CatalogItem&#x60;,  its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;objects&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of the response.</value>
         [DataMember(Name="include_related_objects", EmitDefaultValue=false)]
         public bool? IncludeRelatedObjects { get; set; }
         /// <summary>

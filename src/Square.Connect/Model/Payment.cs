@@ -32,54 +32,34 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Payment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected Payment() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Payment" /> class.
-        /// </summary>
-        /// <param name="Id">Unique ID for the payment. (required).</param>
+        /// <param name="Id">Unique ID for the payment..</param>
         /// <param name="CreatedAt">Timestamp of when the payment was created, in RFC 3339 format..</param>
         /// <param name="UpdatedAt">Timestamp of when the payment was last updated, in RFC 3339 format..</param>
-        /// <param name="AmountMoney">The amount of money processed for this payment, not including &#x60;tip_money&#x60;. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](/build-basics/working-with-monetary-amounts). (required).</param>
+        /// <param name="AmountMoney">The amount of money processed for this payment, not including &#x60;tip_money&#x60;. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts)..</param>
         /// <param name="TipMoney">The amount designated as a tip. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents..</param>
         /// <param name="TotalMoney">The total money for the payment, including &#x60;amount_money&#x60; and &#x60;tip_money&#x60;. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents..</param>
-        /// <param name="AppFeeMoney">The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the &#x60;total_money&#x60; value..</param>
+        /// <param name="AppFeeMoney">The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the &#x60;total_money&#x60; value..</param>
         /// <param name="ProcessingFee">Processing fees and fee adjustments assessed by Square on this payment..</param>
         /// <param name="RefundedMoney">Total amount of the payment refunded to-date. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents..</param>
         /// <param name="Status">Indicates whether the payment is &#x60;APPROVED&#x60;, &#x60;COMPLETED&#x60;, &#x60;CANCELED&#x60;, or &#x60;FAILED&#x60;..</param>
-        /// <param name="SourceType">The source type for this payment.</param>
+        /// <param name="SourceType">The source type for this payment  Current values include: &#x60;CARD&#x60;.</param>
         /// <param name="CardDetails">Non-confidential details about the source. Only populated if the &#x60;source_type&#x60; is &#x60;CARD&#x60;..</param>
         /// <param name="LocationId">ID of the location associated with the payment..</param>
         /// <param name="OrderId">ID of the order associated with this payment..</param>
         /// <param name="ReferenceId">An optional ID that associates this payment with an entity in another system..</param>
         /// <param name="CustomerId">An optional customer_id to be entered by the developer when creating a payment..</param>
+        /// <param name="EmployeeId">An optional ID of the employee associated with taking this payment..</param>
         /// <param name="RefundIds">List of &#x60;refund_id&#x60;s identifying refunds for this payment..</param>
         /// <param name="BuyerEmailAddress">The buyer&#39;s e-mail address.</param>
         /// <param name="BillingAddress">The buyer&#39;s billing address.</param>
         /// <param name="ShippingAddress">The buyer&#39;s shipping address.</param>
         /// <param name="Note">An optional note to include when creating a payment.</param>
-        public Payment(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), Money AmountMoney = default(Money), Money TipMoney = default(Money), Money TotalMoney = default(Money), Money AppFeeMoney = default(Money), List<ProcessingFee> ProcessingFee = default(List<ProcessingFee>), Money RefundedMoney = default(Money), string Status = default(string), string SourceType = default(string), CardPaymentDetails CardDetails = default(CardPaymentDetails), string LocationId = default(string), string OrderId = default(string), string ReferenceId = default(string), string CustomerId = default(string), List<string> RefundIds = default(List<string>), string BuyerEmailAddress = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string Note = default(string))
+        public Payment(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), Money AmountMoney = default(Money), Money TipMoney = default(Money), Money TotalMoney = default(Money), Money AppFeeMoney = default(Money), List<ProcessingFee> ProcessingFee = default(List<ProcessingFee>), Money RefundedMoney = default(Money), string Status = default(string), string SourceType = default(string), CardPaymentDetails CardDetails = default(CardPaymentDetails), string LocationId = default(string), string OrderId = default(string), string ReferenceId = default(string), string CustomerId = default(string), string EmployeeId = default(string), List<string> RefundIds = default(List<string>), string BuyerEmailAddress = default(string), Address BillingAddress = default(Address), Address ShippingAddress = default(Address), string Note = default(string))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
-            {
-                throw new InvalidDataException("Id is a required property for Payment and cannot be null");
-            }
-            else
-            {
-                this.Id = Id;
-            }
-            // to ensure "AmountMoney" is required (not null)
-            if (AmountMoney == null)
-            {
-                throw new InvalidDataException("AmountMoney is a required property for Payment and cannot be null");
-            }
-            else
-            {
-                this.AmountMoney = AmountMoney;
-            }
+            this.Id = Id;
             this.CreatedAt = CreatedAt;
             this.UpdatedAt = UpdatedAt;
+            this.AmountMoney = AmountMoney;
             this.TipMoney = TipMoney;
             this.TotalMoney = TotalMoney;
             this.AppFeeMoney = AppFeeMoney;
@@ -92,6 +72,7 @@ namespace Square.Connect.Model
             this.OrderId = OrderId;
             this.ReferenceId = ReferenceId;
             this.CustomerId = CustomerId;
+            this.EmployeeId = EmployeeId;
             this.RefundIds = RefundIds;
             this.BuyerEmailAddress = BuyerEmailAddress;
             this.BillingAddress = BillingAddress;
@@ -118,9 +99,9 @@ namespace Square.Connect.Model
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>
-        /// The amount of money processed for this payment, not including &#x60;tip_money&#x60;. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](/build-basics/working-with-monetary-amounts).
+        /// The amount of money processed for this payment, not including &#x60;tip_money&#x60;. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
         /// </summary>
-        /// <value>The amount of money processed for this payment, not including &#x60;tip_money&#x60;. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](/build-basics/working-with-monetary-amounts).</value>
+        /// <value>The amount of money processed for this payment, not including &#x60;tip_money&#x60;. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
@@ -136,9 +117,9 @@ namespace Square.Connect.Model
         [DataMember(Name="total_money", EmitDefaultValue=false)]
         public Money TotalMoney { get; set; }
         /// <summary>
-        /// The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the &#x60;total_money&#x60; value.
+        /// The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the &#x60;total_money&#x60; value.
         /// </summary>
-        /// <value>The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the &#x60;total_money&#x60; value.</value>
+        /// <value>The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the &#x60;total_money&#x60; value.</value>
         [DataMember(Name="app_fee_money", EmitDefaultValue=false)]
         public Money AppFeeMoney { get; set; }
         /// <summary>
@@ -160,9 +141,9 @@ namespace Square.Connect.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// The source type for this payment
+        /// The source type for this payment  Current values include: &#x60;CARD&#x60;
         /// </summary>
-        /// <value>The source type for this payment</value>
+        /// <value>The source type for this payment  Current values include: &#x60;CARD&#x60;</value>
         [DataMember(Name="source_type", EmitDefaultValue=false)]
         public string SourceType { get; set; }
         /// <summary>
@@ -195,6 +176,12 @@ namespace Square.Connect.Model
         /// <value>An optional customer_id to be entered by the developer when creating a payment.</value>
         [DataMember(Name="customer_id", EmitDefaultValue=false)]
         public string CustomerId { get; set; }
+        /// <summary>
+        /// An optional ID of the employee associated with taking this payment.
+        /// </summary>
+        /// <value>An optional ID of the employee associated with taking this payment.</value>
+        [DataMember(Name="employee_id", EmitDefaultValue=false)]
+        public string EmployeeId { get; set; }
         /// <summary>
         /// List of &#x60;refund_id&#x60;s identifying refunds for this payment.
         /// </summary>
@@ -249,6 +236,7 @@ namespace Square.Connect.Model
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  EmployeeId: ").Append(EmployeeId).Append("\n");
             sb.Append("  RefundIds: ").Append(RefundIds).Append("\n");
             sb.Append("  BuyerEmailAddress: ").Append(BuyerEmailAddress).Append("\n");
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
@@ -371,6 +359,11 @@ namespace Square.Connect.Model
                     this.CustomerId.Equals(other.CustomerId)
                 ) && 
                 (
+                    this.EmployeeId == other.EmployeeId ||
+                    this.EmployeeId != null &&
+                    this.EmployeeId.Equals(other.EmployeeId)
+                ) && 
+                (
                     this.RefundIds == other.RefundIds ||
                     this.RefundIds != null &&
                     this.RefundIds.SequenceEqual(other.RefundIds)
@@ -440,6 +433,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
                 if (this.CustomerId != null)
                     hash = hash * 59 + this.CustomerId.GetHashCode();
+                if (this.EmployeeId != null)
+                    hash = hash * 59 + this.EmployeeId.GetHashCode();
                 if (this.RefundIds != null)
                     hash = hash * 59 + this.RefundIds.GetHashCode();
                 if (this.BuyerEmailAddress != null)
@@ -460,12 +455,6 @@ namespace Square.Connect.Model
             if(this.Id != null && this.Id.Length > 192)
             {
                 yield return new ValidationResult("Invalid value for Id, length must be less than 192.", new [] { "Id" });
-            }
-
-            // Id (string) minLength
-            if(this.Id != null && this.Id.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
             }
 
             yield break;

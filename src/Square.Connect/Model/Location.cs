@@ -50,13 +50,14 @@ namespace Square.Connect.Model
         /// <param name="BusinessHours">  The hours of operation for a business location.  Default: none; only exists if explicitly set..</param>
         /// <param name="BusinessEmail">The email of the location..</param>
         /// <param name="Description">The business description of the location..</param>
-        /// <param name="TwitterUsername">The Twitter username of the location without the &#39;.</param>
-        /// <param name="InstagramUsername">The Instagram username of the location without the &#39;.</param>
+        /// <param name="TwitterUsername">The Twitter username of the location without the &#39;&amp;#64;&#39; symbol..</param>
+        /// <param name="InstagramUsername">The Instagram username of the location without the &#39;&amp;#64;&#39; symbol..</param>
         /// <param name="FacebookUrl">The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;..</param>
         /// <param name="Coordinates">The physical coordinates (latitude and longitude) of the location..</param>
         /// <param name="LogoUrl">The logo image URL of the location..</param>
         /// <param name="PosBackgroundUrl">The Point of Sale background image URL of the location..</param>
-        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<string> Capabilities = default(List<string>), string Status = default(string), string CreatedAt = default(string), string MerchantId = default(string), string Country = default(string), string LanguageCode = default(string), string Currency = default(string), string PhoneNumber = default(string), string BusinessName = default(string), string Type = default(string), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours), string BusinessEmail = default(string), string Description = default(string), string TwitterUsername = default(string), string InstagramUsername = default(string), string FacebookUrl = default(string), Coordinates Coordinates = default(Coordinates), string LogoUrl = default(string), string PosBackgroundUrl = default(string))
+        /// <param name="Mcc">The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location..</param>
+        public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<string> Capabilities = default(List<string>), string Status = default(string), string CreatedAt = default(string), string MerchantId = default(string), string Country = default(string), string LanguageCode = default(string), string Currency = default(string), string PhoneNumber = default(string), string BusinessName = default(string), string Type = default(string), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours), string BusinessEmail = default(string), string Description = default(string), string TwitterUsername = default(string), string InstagramUsername = default(string), string FacebookUrl = default(string), Coordinates Coordinates = default(Coordinates), string LogoUrl = default(string), string PosBackgroundUrl = default(string), string Mcc = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -82,6 +83,7 @@ namespace Square.Connect.Model
             this.Coordinates = Coordinates;
             this.LogoUrl = LogoUrl;
             this.PosBackgroundUrl = PosBackgroundUrl;
+            this.Mcc = Mcc;
         }
         
         /// <summary>
@@ -193,15 +195,15 @@ namespace Square.Connect.Model
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// The Twitter username of the location without the &#39;
+        /// The Twitter username of the location without the &#39;&amp;#64;&#39; symbol.
         /// </summary>
-        /// <value>The Twitter username of the location without the &#39;</value>
+        /// <value>The Twitter username of the location without the &#39;&amp;#64;&#39; symbol.</value>
         [DataMember(Name="twitter_username", EmitDefaultValue=false)]
         public string TwitterUsername { get; set; }
         /// <summary>
-        /// The Instagram username of the location without the &#39;
+        /// The Instagram username of the location without the &#39;&amp;#64;&#39; symbol.
         /// </summary>
-        /// <value>The Instagram username of the location without the &#39;</value>
+        /// <value>The Instagram username of the location without the &#39;&amp;#64;&#39; symbol.</value>
         [DataMember(Name="instagram_username", EmitDefaultValue=false)]
         public string InstagramUsername { get; set; }
         /// <summary>
@@ -228,6 +230,12 @@ namespace Square.Connect.Model
         /// <value>The Point of Sale background image URL of the location.</value>
         [DataMember(Name="pos_background_url", EmitDefaultValue=false)]
         public string PosBackgroundUrl { get; set; }
+        /// <summary>
+        /// The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location.
+        /// </summary>
+        /// <value>The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location.</value>
+        [DataMember(Name="mcc", EmitDefaultValue=false)]
+        public string Mcc { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -260,6 +268,7 @@ namespace Square.Connect.Model
             sb.Append("  Coordinates: ").Append(Coordinates).Append("\n");
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
             sb.Append("  PosBackgroundUrl: ").Append(PosBackgroundUrl).Append("\n");
+            sb.Append("  Mcc: ").Append(Mcc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -415,6 +424,11 @@ namespace Square.Connect.Model
                     this.PosBackgroundUrl == other.PosBackgroundUrl ||
                     this.PosBackgroundUrl != null &&
                     this.PosBackgroundUrl.Equals(other.PosBackgroundUrl)
+                ) && 
+                (
+                    this.Mcc == other.Mcc ||
+                    this.Mcc != null &&
+                    this.Mcc.Equals(other.Mcc)
                 );
         }
 
@@ -477,6 +491,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.LogoUrl.GetHashCode();
                 if (this.PosBackgroundUrl != null)
                     hash = hash * 59 + this.PosBackgroundUrl.GetHashCode();
+                if (this.Mcc != null)
+                    hash = hash * 59 + this.Mcc.GetHashCode();
                 return hash;
             }
         }

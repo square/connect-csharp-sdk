@@ -8,9 +8,9 @@ __Deprecated__: Please use the [OrderLineItemModifier](#type-orderlineitemmodifi
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CatalogObjectId** | **string** | The catalog object ID of a [CatalogModifier](#type-catalogmodifier). | [optional] 
+**CatalogObjectId** | **string** | The catalog object ID of a &#x60;CatalogModifier&#x60;. | [optional] 
 **Name** | **string** | Only used for ad hoc modifiers. The name of the modifier. &#x60;name&#x60; cannot exceed 255 characters.  Do not provide a value for &#x60;name&#x60; if you provide a value for &#x60;catalog_object_id&#x60;. | [optional] 
-**BasePriceMoney** | [**Money**](Money.md) | The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined [CatalogModifier](#type-catalogmodifier) price. | [optional] 
+**BasePriceMoney** | [**Money**](Money.md) | The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined &#x60;CatalogModifier&#x60; price. | [optional] 
 
 
 

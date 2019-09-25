@@ -305,7 +305,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CustomersApi();
-            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional) 
             var sortField = sortField_example;  // string | Indicates how Customers should be sorted. Default: `DEFAULT`. (optional) 
             var sortOrder = sortOrder_example;  // string | Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`. (optional) 
 
@@ -328,7 +328,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information. | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
  **sortField** | **string**| Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. | [optional] 
  **sortOrder** | **string**| Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. | [optional] 
 

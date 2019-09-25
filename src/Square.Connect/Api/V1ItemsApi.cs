@@ -2065,7 +2065,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -2252,7 +2252,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -2425,7 +2425,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -2593,7 +2593,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2768,7 +2768,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2943,7 +2943,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3118,7 +3118,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3293,7 +3293,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3473,7 +3473,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3655,7 +3655,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3835,7 +3835,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -4017,7 +4017,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
 
@@ -4178,7 +4178,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
 
@@ -4339,7 +4339,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
 
@@ -4500,7 +4500,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -4661,7 +4661,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -4827,7 +4827,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -4995,7 +4995,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
 
@@ -5160,7 +5160,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (row != null) localVarQueryParams.Add("row", Configuration.ApiClient.ParameterToString(row)); // query parameter
@@ -5334,7 +5334,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
@@ -5497,7 +5497,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5646,7 +5646,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5795,7 +5795,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5948,7 +5948,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
@@ -6107,7 +6107,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
@@ -6260,7 +6260,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6409,7 +6409,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6568,7 +6568,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -6741,7 +6741,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -6909,7 +6909,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -7070,7 +7070,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -7236,7 +7236,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7423,7 +7423,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7610,7 +7610,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7797,7 +7797,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7984,7 +7984,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8176,7 +8176,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -8370,7 +8370,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8557,7 +8557,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8749,7 +8749,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter

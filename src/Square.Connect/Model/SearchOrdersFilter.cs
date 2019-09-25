@@ -32,8 +32,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchOrdersFilter" /> class.
         /// </summary>
-        /// <param name="StateFilter">Filter by [&#x60;OrderState&#x60;](#type-orderstate)..</param>
-        /// <param name="DateTimeFilter">Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range).</param>
+        /// <param name="StateFilter">Filter by &#x60;&#x60;OrderState&#x60;&#x60;..</param>
+        /// <param name="DateTimeFilter">Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](https://developer.squareup.com/docs/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range).</param>
         /// <param name="FulfillmentFilter">Filter by fulfillment type or state..</param>
         /// <param name="SourceFilter">Filter by source of order..</param>
         /// <param name="CustomerFilter">Filter by customers associated with the order..</param>
@@ -47,15 +47,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Filter by [&#x60;OrderState&#x60;](#type-orderstate).
+        /// Filter by &#x60;&#x60;OrderState&#x60;&#x60;.
         /// </summary>
-        /// <value>Filter by [&#x60;OrderState&#x60;](#type-orderstate).</value>
+        /// <value>Filter by &#x60;&#x60;OrderState&#x60;&#x60;.</value>
         [DataMember(Name="state_filter", EmitDefaultValue=false)]
         public SearchOrdersStateFilter StateFilter { get; set; }
         /// <summary>
-        /// Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
+        /// Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](https://developer.squareup.com/docs/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
         /// </summary>
-        /// <value>Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)</value>
+        /// <value>Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](https://developer.squareup.com/docs/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)</value>
         [DataMember(Name="date_time_filter", EmitDefaultValue=false)]
         public SearchOrdersDateTimeFilter DateTimeFilter { get; set; }
         /// <summary>

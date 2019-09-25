@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **LocationId** | **string** | The location ID for a recipient (other than the merchant) receiving a portion of this tender. | 
 **Description** | **string** | The description of the additional recipient. | 
 **AmountMoney** | [**Money**](Money.md) | The amount of money distributed to the recipient. | 
-**ReceivableId** | **string** | The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server. | [optional] 
+**ReceivableId** | **string** | The unique ID for this &#x60;AdditionalRecipientReceivable&#x60;, assigned by the server. | [optional] 
 
 
 

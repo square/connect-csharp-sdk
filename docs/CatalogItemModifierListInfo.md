@@ -8,11 +8,11 @@ Controls the properties of a [CatalogModifierList](#type-catalogmodifierlist) as
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ModifierListId** | **string** | The ID of the [CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo](#type-catalogmodifierlistinfo). | 
-**ModifierOverrides** | [**List&lt;CatalogModifierOverride&gt;**](CatalogModifierOverride.md) | A set of [CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier](#type-catalogmodifier) is enabled by default. | [optional] 
-**MinSelectedModifiers** | **int?** | If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist). | [optional] 
-**MaxSelectedModifiers** | **int?** | If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist). | [optional] 
-**Enabled** | **bool?** | If &#x60;true&#x60;, enable this [CatalogModifierList](#type-catalogmodifierlist). | [optional] 
+**ModifierListId** | **string** | The ID of the &#x60;CatalogModifierList](#type-catalogmodifierlist) controlled by this [CatalogModifierListInfo&#x60;. | 
+**ModifierOverrides** | [**List&lt;CatalogModifierOverride&gt;**](CatalogModifierOverride.md) | A set of &#x60;CatalogModifierOverride](#type-catalogmodifieroverride) objects that override whether a given [CatalogModifier&#x60; is enabled by default. | [optional] 
+**MinSelectedModifiers** | **int?** | If zero or larger, the smallest number of &#x60;CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList&#x60;. | [optional] 
+**MaxSelectedModifiers** | **int?** | If zero or larger, the largest number of &#x60;CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList&#x60;. | [optional] 
+**Enabled** | **bool?** | If &#x60;true&#x60;, enable this &#x60;CatalogModifierList&#x60;. | [optional] 
 
 
 

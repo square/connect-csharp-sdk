@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="PayOrderResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Order">The paid, updated [order](#type-order)..</param>
+        /// <param name="Order">The paid, updated &#x60;order&#x60;..</param>
         public PayOrderResponse(List<Error> Errors = default(List<Error>), Order Order = default(Order))
         {
             this.Errors = Errors;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The paid, updated [order](#type-order).
+        /// The paid, updated &#x60;order&#x60;.
         /// </summary>
-        /// <value>The paid, updated [order](#type-order).</value>
+        /// <value>The paid, updated &#x60;order&#x60;.</value>
         [DataMember(Name="order", EmitDefaultValue=false)]
         public Order Order { get; set; }
         /// <summary>

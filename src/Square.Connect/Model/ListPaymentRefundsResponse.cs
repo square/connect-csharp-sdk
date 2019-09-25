@@ -34,7 +34,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Errors">Information on errors encountered during the request..</param>
         /// <param name="Refunds">The list of requested refunds..</param>
-        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If empty, this is the final response.  See [Pagination](/basics/api101/pagination) for more information..</param>
+        /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If empty, this is the final response.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         public ListPaymentRefundsResponse(List<Error> Errors = default(List<Error>), List<PaymentRefund> Refunds = default(List<PaymentRefund>), string Cursor = default(string))
         {
             this.Errors = Errors;
@@ -55,9 +55,9 @@ namespace Square.Connect.Model
         [DataMember(Name="refunds", EmitDefaultValue=false)]
         public List<PaymentRefund> Refunds { get; set; }
         /// <summary>
-        /// The pagination cursor to be used in a subsequent request. If empty, this is the final response.  See [Pagination](/basics/api101/pagination) for more information.
+        /// The pagination cursor to be used in a subsequent request. If empty, this is the final response.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
         /// </summary>
-        /// <value>The pagination cursor to be used in a subsequent request. If empty, this is the final response.  See [Pagination](/basics/api101/pagination) for more information.</value>
+        /// <value>The pagination cursor to be used in a subsequent request. If empty, this is the final response.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

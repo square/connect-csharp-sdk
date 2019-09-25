@@ -37,9 +37,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateItemTaxesRequest" /> class.
         /// </summary>
-        /// <param name="ItemIds">The [CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax](#type-catalogtax)es are being updated. (required).</param>
-        /// <param name="TaxesToEnable">The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem](#type-catalogitem)..</param>
-        /// <param name="TaxesToDisable">The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem](#type-catalogitem)..</param>
+        /// <param name="ItemIds">The &#x60;CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax&#x60;es are being updated. (required).</param>
+        /// <param name="TaxesToEnable">The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem&#x60;..</param>
+        /// <param name="TaxesToDisable">The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem&#x60;..</param>
         public UpdateItemTaxesRequest(List<string> ItemIds = default(List<string>), List<string> TaxesToEnable = default(List<string>), List<string> TaxesToDisable = default(List<string>))
         {
             // to ensure "ItemIds" is required (not null)
@@ -56,21 +56,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The [CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax](#type-catalogtax)es are being updated.
+        /// The &#x60;CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax&#x60;es are being updated.
         /// </summary>
-        /// <value>The [CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax](#type-catalogtax)es are being updated.</value>
+        /// <value>The &#x60;CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax&#x60;es are being updated.</value>
         [DataMember(Name="item_ids", EmitDefaultValue=false)]
         public List<string> ItemIds { get; set; }
         /// <summary>
-        /// The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem](#type-catalogitem).
+        /// The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem&#x60;.
         /// </summary>
-        /// <value>The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem](#type-catalogitem).</value>
+        /// <value>The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem&#x60;.</value>
         [DataMember(Name="taxes_to_enable", EmitDefaultValue=false)]
         public List<string> TaxesToEnable { get; set; }
         /// <summary>
-        /// The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem](#type-catalogitem).
+        /// The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem&#x60;.
         /// </summary>
-        /// <value>The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem](#type-catalogitem).</value>
+        /// <value>The set of &#x60;CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem&#x60;.</value>
         [DataMember(Name="taxes_to_disable", EmitDefaultValue=false)]
         public List<string> TaxesToDisable { get; set; }
         /// <summary>

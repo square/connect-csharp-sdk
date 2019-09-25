@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Cancels a payment before it has been completed. Note: only payments created with &#x60;autocomplete&#x60; set to false can be canceled.
+    /// Cancels (voids) a payment before it has been completed. Note: only payments created with &#x60;autocomplete&#x60; set to false can be canceled.
     /// </summary>
     [DataContract]
     public partial class CancelPaymentRequest :  IEquatable<CancelPaymentRequest>, IValidatableObject

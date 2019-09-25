@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateOrderRequest" /> class.
         /// </summary>
-        /// <param name="Order">The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to..</param>
-        /// <param name="FieldsToClear">The [dot notation paths](/orders-api/manage-orders#on-dot-notation) fields to clear. For example, &#x60;line_items[uid].note&#x60; [Read more about Deleting fields](/orders-api/manage-orders#delete-fields)..</param>
-        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this update request  If you&#39;re unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](/basics/api101/idempotency) for more information..</param>
+        /// <param name="Order">The [sparse order](https://developer.squareup.com/docs/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to..</param>
+        /// <param name="FieldsToClear">The [dot notation paths](https://developer.squareup.com/docs/orders-api/manage-orders#on-dot-notation) fields to clear. For example, &#x60;line_items[uid].note&#x60; [Read more about Deleting fields](https://developer.squareup.com/docs/orders-api/manage-orders#delete-fields)..</param>
+        /// <param name="IdempotencyKey">A value you specify that uniquely identifies this update request  If you&#39;re unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information..</param>
         public UpdateOrderRequest(Order Order = default(Order), List<string> FieldsToClear = default(List<string>), string IdempotencyKey = default(string))
         {
             this.Order = Order;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.
+        /// The [sparse order](https://developer.squareup.com/docs/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.
         /// </summary>
-        /// <value>The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.</value>
+        /// <value>The [sparse order](https://developer.squareup.com/docs/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.</value>
         [DataMember(Name="order", EmitDefaultValue=false)]
         public Order Order { get; set; }
         /// <summary>
-        /// The [dot notation paths](/orders-api/manage-orders#on-dot-notation) fields to clear. For example, &#x60;line_items[uid].note&#x60; [Read more about Deleting fields](/orders-api/manage-orders#delete-fields).
+        /// The [dot notation paths](https://developer.squareup.com/docs/orders-api/manage-orders#on-dot-notation) fields to clear. For example, &#x60;line_items[uid].note&#x60; [Read more about Deleting fields](https://developer.squareup.com/docs/orders-api/manage-orders#delete-fields).
         /// </summary>
-        /// <value>The [dot notation paths](/orders-api/manage-orders#on-dot-notation) fields to clear. For example, &#x60;line_items[uid].note&#x60; [Read more about Deleting fields](/orders-api/manage-orders#delete-fields).</value>
+        /// <value>The [dot notation paths](https://developer.squareup.com/docs/orders-api/manage-orders#on-dot-notation) fields to clear. For example, &#x60;line_items[uid].note&#x60; [Read more about Deleting fields](https://developer.squareup.com/docs/orders-api/manage-orders#delete-fields).</value>
         [DataMember(Name="fields_to_clear", EmitDefaultValue=false)]
         public List<string> FieldsToClear { get; set; }
         /// <summary>
-        /// A value you specify that uniquely identifies this update request  If you&#39;re unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](/basics/api101/idempotency) for more information.
+        /// A value you specify that uniquely identifies this update request  If you&#39;re unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
         /// </summary>
-        /// <value>A value you specify that uniquely identifies this update request  If you&#39;re unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](/basics/api101/idempotency) for more information.</value>
+        /// <value>A value you specify that uniquely identifies this update request  If you&#39;re unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.</value>
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>

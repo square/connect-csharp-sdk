@@ -91,7 +91,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>RetrieveInventoryAdjustmentResponse</returns>        RetrieveInventoryAdjustmentResponse RetrieveInventoryAdjustment (string adjustmentId);
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>ApiResponse of RetrieveInventoryAdjustmentResponse</returns>
         ApiResponse<RetrieveInventoryAdjustmentResponse> RetrieveInventoryAdjustmentWithHttpInfo (string adjustmentId);
         /// <summary>
@@ -111,9 +111,9 @@ namespace Square.Connect.Api
         /// Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryChangesResponse</returns>        RetrieveInventoryChangesResponse RetrieveInventoryChanges (string catalogObjectId, string locationIds = null, string cursor = null);
 
         /// <summary>
@@ -123,9 +123,9 @@ namespace Square.Connect.Api
         /// Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryChangesResponse</returns>
         ApiResponse<RetrieveInventoryChangesResponse> RetrieveInventoryChangesWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -135,9 +135,9 @@ namespace Square.Connect.Api
         /// Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryCountResponse</returns>        RetrieveInventoryCountResponse RetrieveInventoryCount (string catalogObjectId, string locationIds = null, string cursor = null);
 
         /// <summary>
@@ -147,9 +147,9 @@ namespace Square.Connect.Api
         /// Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryCountResponse</returns>
         ApiResponse<RetrieveInventoryCountResponse> RetrieveInventoryCountWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -159,7 +159,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>RetrieveInventoryPhysicalCountResponse</returns>        RetrieveInventoryPhysicalCountResponse RetrieveInventoryPhysicalCount (string physicalCountId);
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>ApiResponse of RetrieveInventoryPhysicalCountResponse</returns>
         ApiResponse<RetrieveInventoryPhysicalCountResponse> RetrieveInventoryPhysicalCountWithHttpInfo (string physicalCountId);
         #endregion Synchronous Operations
@@ -244,7 +244,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>Task of RetrieveInventoryAdjustmentResponse</returns>
         System.Threading.Tasks.Task<RetrieveInventoryAdjustmentResponse> RetrieveInventoryAdjustmentAsync (string adjustmentId);
 
@@ -255,7 +255,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryAdjustmentResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryAdjustmentResponse>> RetrieveInventoryAdjustmentAsyncWithHttpInfo (string adjustmentId);
         /// <summary>
@@ -265,9 +265,9 @@ namespace Square.Connect.Api
         /// Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryChangesResponse</returns>
         System.Threading.Tasks.Task<RetrieveInventoryChangesResponse> RetrieveInventoryChangesAsync (string catalogObjectId, string locationIds = null, string cursor = null);
 
@@ -278,9 +278,9 @@ namespace Square.Connect.Api
         /// Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryChangesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryChangesResponse>> RetrieveInventoryChangesAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -290,9 +290,9 @@ namespace Square.Connect.Api
         /// Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryCountResponse</returns>
         System.Threading.Tasks.Task<RetrieveInventoryCountResponse> RetrieveInventoryCountAsync (string catalogObjectId, string locationIds = null, string cursor = null);
 
@@ -303,9 +303,9 @@ namespace Square.Connect.Api
         /// Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryCountResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryCountResponse>> RetrieveInventoryCountAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null);
         /// <summary>
@@ -315,7 +315,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>Task of RetrieveInventoryPhysicalCountResponse</returns>
         System.Threading.Tasks.Task<RetrieveInventoryPhysicalCountResponse> RetrieveInventoryPhysicalCountAsync (string physicalCountId);
 
@@ -326,7 +326,7 @@ namespace Square.Connect.Api
         /// Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryPhysicalCountResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryPhysicalCountResponse>> RetrieveInventoryPhysicalCountAsyncWithHttpInfo (string physicalCountId);
         #endregion Asynchronous Operations
@@ -486,7 +486,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -649,7 +649,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -812,7 +812,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -934,7 +934,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryAdjustment Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>RetrieveInventoryAdjustmentResponse</returns>
         public RetrieveInventoryAdjustmentResponse RetrieveInventoryAdjustment (string adjustmentId)
         {
@@ -946,7 +946,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryAdjustment Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>ApiResponse of RetrieveInventoryAdjustmentResponse</returns>
         public ApiResponse< RetrieveInventoryAdjustmentResponse > RetrieveInventoryAdjustmentWithHttpInfo (string adjustmentId)
         {
@@ -975,7 +975,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (adjustmentId != null) localVarPathParams.Add("adjustment_id", Configuration.ApiClient.ParameterToString(adjustmentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1008,7 +1008,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryAdjustment Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>Task of RetrieveInventoryAdjustmentResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveInventoryAdjustmentResponse> RetrieveInventoryAdjustmentAsync (string adjustmentId)
         {
@@ -1021,7 +1021,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryAdjustment Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="adjustmentId">ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.</param>
+        /// <param name="adjustmentId">ID of the &#x60;InventoryAdjustment&#x60; to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryAdjustmentResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryAdjustmentResponse>> RetrieveInventoryAdjustmentAsyncWithHttpInfo (string adjustmentId)
         {
@@ -1083,9 +1083,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryChanges Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryChangesResponse</returns>
         public RetrieveInventoryChangesResponse RetrieveInventoryChanges (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1097,9 +1097,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryChanges Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryChangesResponse</returns>
         public ApiResponse< RetrieveInventoryChangesResponse > RetrieveInventoryChangesWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1128,7 +1128,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1163,9 +1163,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryChanges Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryChangesResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveInventoryChangesResponse> RetrieveInventoryChangesAsync (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1178,9 +1178,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryChanges Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint is useful when displaying recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryChangesResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryChangesResponse>> RetrieveInventoryChangesAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1244,9 +1244,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryCount Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>RetrieveInventoryCountResponse</returns>
         public RetrieveInventoryCountResponse RetrieveInventoryCount (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1258,9 +1258,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryCount Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>ApiResponse of RetrieveInventoryCountResponse</returns>
         public ApiResponse< RetrieveInventoryCountResponse > RetrieveInventoryCountWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1289,7 +1289,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1324,9 +1324,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryCount Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of RetrieveInventoryCountResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveInventoryCountResponse> RetrieveInventoryCountAsync (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1339,9 +1339,9 @@ namespace Square.Connect.Api
         /// RetrieveInventoryCount Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="catalogObjectId">ID of the [CatalogObject](#type-catalogobject) to retrieve.</param>
-        /// <param name="locationIds">The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="catalogObjectId">ID of the &#x60;CatalogObject&#x60; to retrieve.</param>
+        /// <param name="locationIds">The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryCountResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryCountResponse>> RetrieveInventoryCountAsyncWithHttpInfo (string catalogObjectId, string locationIds = null, string cursor = null)
         {
@@ -1405,7 +1405,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryPhysicalCount Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>RetrieveInventoryPhysicalCountResponse</returns>
         public RetrieveInventoryPhysicalCountResponse RetrieveInventoryPhysicalCount (string physicalCountId)
         {
@@ -1417,7 +1417,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryPhysicalCount Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>ApiResponse of RetrieveInventoryPhysicalCountResponse</returns>
         public ApiResponse< RetrieveInventoryPhysicalCountResponse > RetrieveInventoryPhysicalCountWithHttpInfo (string physicalCountId)
         {
@@ -1446,7 +1446,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (physicalCountId != null) localVarPathParams.Add("physical_count_id", Configuration.ApiClient.ParameterToString(physicalCountId)); // path parameter
 
             // authentication (oauth2) required
@@ -1479,7 +1479,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryPhysicalCount Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>Task of RetrieveInventoryPhysicalCountResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveInventoryPhysicalCountResponse> RetrieveInventoryPhysicalCountAsync (string physicalCountId)
         {
@@ -1492,7 +1492,7 @@ namespace Square.Connect.Api
         /// RetrieveInventoryPhysicalCount Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="physicalCountId">ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.</param>
+        /// <param name="physicalCountId">ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveInventoryPhysicalCountResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveInventoryPhysicalCountResponse>> RetrieveInventoryPhysicalCountAsyncWithHttpInfo (string physicalCountId)
         {

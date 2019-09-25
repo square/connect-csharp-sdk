@@ -8,9 +8,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Errors** | [**List&lt;Error&gt;**](Error.md) | The set of [Error](#type-error)s encountered. | [optional] 
-**Objects** | [**List&lt;CatalogObject&gt;**](CatalogObject.md) | A list of [CatalogObject](#type-catalogobject)s returned. | [optional] 
-**RelatedObjects** | [**List&lt;CatalogObject&gt;**](CatalogObject.md) | A list of [CatalogObject](#type-catalogobject)s referenced by the object in the &#x60;objects&#x60; field. | [optional] 
+**Errors** | [**List&lt;Error&gt;**](Error.md) | The set of &#x60;Error&#x60;s encountered. | [optional] 
+**Objects** | [**List&lt;CatalogObject&gt;**](CatalogObject.md) | A list of &#x60;CatalogObject&#x60;s returned. | [optional] 
+**RelatedObjects** | [**List&lt;CatalogObject&gt;**](CatalogObject.md) | A list of &#x60;CatalogObject&#x60;s referenced by the object in the &#x60;objects&#x60; field. | [optional] 
 
 
 

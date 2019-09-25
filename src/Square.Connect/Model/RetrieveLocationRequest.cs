@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Defines the fields that are included in the request body for  the [RetrieveLocation](#endpoint-locations-retrievelocation) endpoint.
     /// </summary>
     [DataContract]
     public partial class RetrieveLocationRequest :  IEquatable<RetrieveLocationRequest>, IValidatableObject

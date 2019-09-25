@@ -37,8 +37,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifierOverride" /> class.
         /// </summary>
-        /// <param name="ModifierId">The ID of the [CatalogModifier](#type-catalogmodifier) whose default behavior is being overridden. (required).</param>
-        /// <param name="OnByDefault">If &#x60;true&#x60;, this [CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem](#type-catalogitem)..</param>
+        /// <param name="ModifierId">The ID of the &#x60;CatalogModifier&#x60; whose default behavior is being overridden. (required).</param>
+        /// <param name="OnByDefault">If &#x60;true&#x60;, this &#x60;CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem&#x60;..</param>
         public CatalogModifierOverride(string ModifierId = default(string), bool? OnByDefault = default(bool?))
         {
             // to ensure "ModifierId" is required (not null)
@@ -54,15 +54,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The ID of the [CatalogModifier](#type-catalogmodifier) whose default behavior is being overridden.
+        /// The ID of the &#x60;CatalogModifier&#x60; whose default behavior is being overridden.
         /// </summary>
-        /// <value>The ID of the [CatalogModifier](#type-catalogmodifier) whose default behavior is being overridden.</value>
+        /// <value>The ID of the &#x60;CatalogModifier&#x60; whose default behavior is being overridden.</value>
         [DataMember(Name="modifier_id", EmitDefaultValue=false)]
         public string ModifierId { get; set; }
         /// <summary>
-        /// If &#x60;true&#x60;, this [CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem](#type-catalogitem).
+        /// If &#x60;true&#x60;, this &#x60;CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem&#x60;.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, this [CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem](#type-catalogitem).</value>
+        /// <value>If &#x60;true&#x60;, this &#x60;CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem&#x60;.</value>
         [DataMember(Name="on_by_default", EmitDefaultValue=false)]
         public bool? OnByDefault { get; set; }
         /// <summary>

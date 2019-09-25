@@ -34,11 +34,11 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Uid">Unique ID that identifies the return discount only within this order..</param>
         /// <param name="SourceDiscountUid">&#x60;uid&#x60; of the Discount from the Order which contains the original application of this discount..</param>
-        /// <param name="CatalogObjectId">The catalog object id referencing [CatalogDiscount](#type-catalogdiscount)..</param>
+        /// <param name="CatalogObjectId">The catalog object id referencing &#x60;CatalogDiscount&#x60;..</param>
         /// <param name="Name">The discount&#39;s name..</param>
-        /// <param name="Type">The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values.</param>
-        /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  The percentage won&#39;t be set for an amount-based discount..</param>
-        /// <param name="AmountMoney">The total declared monetary amount of the discount. The amount_money won&#39;t be set for a percentage-based discount..</param>
+        /// <param name="Type">The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  Discounts that don&#39;t reference a catalog object ID must have a type of &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values.</param>
+        /// <param name="Percentage">The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  &#x60;percentage&#x60; is not set for amount-based discounts..</param>
+        /// <param name="AmountMoney">The total declared monetary amount of the discount.  &#x60;amount_money&#x60; is not set for percentage-based discounts..</param>
         /// <param name="AppliedMoney">The amount of discount actually applied to this line item. When an amount-based discount is at order-level, this value is different from &#x60;amount_money&#x60; because the discount is distributed across the line items..</param>
         /// <param name="Scope">Indicates the level at which the &#x60;OrderReturnDiscount&#x60; applies. For &#x60;ORDER&#x60; scoped discounts, the server will generate references in &#x60;applied_discounts&#x60; on all &#x60;OrderReturnLineItem&#x60;s. For &#x60;LINE_ITEM&#x60; scoped discounts, the discount will only apply to &#x60;OrderReturnLineItem&#x60;s with references in their &#x60;applied_discounts&#x60; field. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.</param>
         public OrderReturnDiscount(string Uid = default(string), string SourceDiscountUid = default(string), string CatalogObjectId = default(string), string Name = default(string), string Type = default(string), string Percentage = default(string), Money AmountMoney = default(Money), Money AppliedMoney = default(Money), string Scope = default(string))
@@ -67,9 +67,9 @@ namespace Square.Connect.Model
         [DataMember(Name="source_discount_uid", EmitDefaultValue=false)]
         public string SourceDiscountUid { get; set; }
         /// <summary>
-        /// The catalog object id referencing [CatalogDiscount](#type-catalogdiscount).
+        /// The catalog object id referencing &#x60;CatalogDiscount&#x60;.
         /// </summary>
-        /// <value>The catalog object id referencing [CatalogDiscount](#type-catalogdiscount).</value>
+        /// <value>The catalog object id referencing &#x60;CatalogDiscount&#x60;.</value>
         [DataMember(Name="catalog_object_id", EmitDefaultValue=false)]
         public string CatalogObjectId { get; set; }
         /// <summary>
@@ -79,21 +79,21 @@ namespace Square.Connect.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values
+        /// The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  Discounts that don&#39;t reference a catalog object ID must have a type of &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values
         /// </summary>
-        /// <value>The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values</value>
+        /// <value>The type of the discount. If it is created by API, it would be either &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;.  Discounts that don&#39;t reference a catalog object ID must have a type of &#x60;FIXED_PERCENTAGE&#x60; or &#x60;FIXED_AMOUNT&#x60;. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  The percentage won&#39;t be set for an amount-based discount.
+        /// The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  &#x60;percentage&#x60; is not set for amount-based discounts.
         /// </summary>
-        /// <value>The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  The percentage won&#39;t be set for an amount-based discount.</value>
+        /// <value>The percentage of the tax, as a string representation of a decimal number. A value of &#x60;7.25&#x60; corresponds to a percentage of 7.25%.  &#x60;percentage&#x60; is not set for amount-based discounts.</value>
         [DataMember(Name="percentage", EmitDefaultValue=false)]
         public string Percentage { get; set; }
         /// <summary>
-        /// The total declared monetary amount of the discount. The amount_money won&#39;t be set for a percentage-based discount.
+        /// The total declared monetary amount of the discount.  &#x60;amount_money&#x60; is not set for percentage-based discounts.
         /// </summary>
-        /// <value>The total declared monetary amount of the discount. The amount_money won&#39;t be set for a percentage-based discount.</value>
+        /// <value>The total declared monetary amount of the discount.  &#x60;amount_money&#x60; is not set for percentage-based discounts.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>

@@ -109,7 +109,7 @@ namespace Square.Connect.Api
         /// Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>DeleteCatalogObjectResponse</returns>        DeleteCatalogObjectResponse DeleteCatalogObject (string objectId);
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Square.Connect.Api
         /// Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>ApiResponse of DeleteCatalogObjectResponse</returns>
         ApiResponse<DeleteCatalogObjectResponse> DeleteCatalogObjectWithHttpInfo (string objectId);
         /// <summary>
@@ -129,8 +129,8 @@ namespace Square.Connect.Api
         /// Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>ListCatalogResponse</returns>        ListCatalogResponse ListCatalog (string cursor = null, string types = null);
 
         /// <summary>
@@ -140,8 +140,8 @@ namespace Square.Connect.Api
         /// Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>ApiResponse of ListCatalogResponse</returns>
         ApiResponse<ListCatalogResponse> ListCatalogWithHttpInfo (string cursor = null, string types = null);
         /// <summary>
@@ -151,8 +151,8 @@ namespace Square.Connect.Api
         /// Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>RetrieveCatalogObjectResponse</returns>        RetrieveCatalogObjectResponse RetrieveCatalogObject (string objectId, bool? includeRelatedObjects = null);
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace Square.Connect.Api
         /// Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>ApiResponse of RetrieveCatalogObjectResponse</returns>
         ApiResponse<RetrieveCatalogObjectResponse> RetrieveCatalogObjectWithHttpInfo (string objectId, bool? includeRelatedObjects = null);
         /// <summary>
@@ -337,7 +337,7 @@ namespace Square.Connect.Api
         /// Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>Task of DeleteCatalogObjectResponse</returns>
         System.Threading.Tasks.Task<DeleteCatalogObjectResponse> DeleteCatalogObjectAsync (string objectId);
 
@@ -348,7 +348,7 @@ namespace Square.Connect.Api
         /// Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>Task of ApiResponse (DeleteCatalogObjectResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteCatalogObjectResponse>> DeleteCatalogObjectAsyncWithHttpInfo (string objectId);
         /// <summary>
@@ -358,8 +358,8 @@ namespace Square.Connect.Api
         /// Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>Task of ListCatalogResponse</returns>
         System.Threading.Tasks.Task<ListCatalogResponse> ListCatalogAsync (string cursor = null, string types = null);
 
@@ -370,8 +370,8 @@ namespace Square.Connect.Api
         /// Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ListCatalogResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListCatalogResponse>> ListCatalogAsyncWithHttpInfo (string cursor = null, string types = null);
         /// <summary>
@@ -381,8 +381,8 @@ namespace Square.Connect.Api
         /// Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>Task of RetrieveCatalogObjectResponse</returns>
         System.Threading.Tasks.Task<RetrieveCatalogObjectResponse> RetrieveCatalogObjectAsync (string objectId, bool? includeRelatedObjects = null);
 
@@ -393,8 +393,8 @@ namespace Square.Connect.Api
         /// Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveCatalogObjectResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveCatalogObjectResponse>> RetrieveCatalogObjectAsyncWithHttpInfo (string objectId, bool? includeRelatedObjects = null);
         /// <summary>
@@ -638,7 +638,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -801,7 +801,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -964,7 +964,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1122,7 +1122,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
 
             // authentication (oauth2) required
             // oauth required
@@ -1223,7 +1223,7 @@ namespace Square.Connect.Api
         /// DeleteCatalogObject Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>DeleteCatalogObjectResponse</returns>
         public DeleteCatalogObjectResponse DeleteCatalogObject (string objectId)
         {
@@ -1235,7 +1235,7 @@ namespace Square.Connect.Api
         /// DeleteCatalogObject Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>ApiResponse of DeleteCatalogObjectResponse</returns>
         public ApiResponse< DeleteCatalogObjectResponse > DeleteCatalogObjectWithHttpInfo (string objectId)
         {
@@ -1264,7 +1264,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (objectId != null) localVarPathParams.Add("object_id", Configuration.ApiClient.ParameterToString(objectId)); // path parameter
 
             // authentication (oauth2) required
@@ -1297,7 +1297,7 @@ namespace Square.Connect.Api
         /// DeleteCatalogObject Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>Task of DeleteCatalogObjectResponse</returns>
         public async System.Threading.Tasks.Task<DeleteCatalogObjectResponse> DeleteCatalogObjectAsync (string objectId)
         {
@@ -1310,7 +1310,7 @@ namespace Square.Connect.Api
         /// DeleteCatalogObject Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).</param>
+        /// <param name="objectId">The ID of the &#x60;CatalogObject&#x60; to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</param>
         /// <returns>Task of ApiResponse (DeleteCatalogObjectResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<DeleteCatalogObjectResponse>> DeleteCatalogObjectAsyncWithHttpInfo (string objectId)
         {
@@ -1372,8 +1372,8 @@ namespace Square.Connect.Api
         /// ListCatalog Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>ListCatalogResponse</returns>
         public ListCatalogResponse ListCatalog (string cursor = null, string types = null)
         {
@@ -1385,8 +1385,8 @@ namespace Square.Connect.Api
         /// ListCatalog Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>ApiResponse of ListCatalogResponse</returns>
         public ApiResponse< ListCatalogResponse > ListCatalogWithHttpInfo (string cursor = null, string types = null)
         {
@@ -1412,7 +1412,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
             if (types != null) localVarQueryParams.Add("types", Configuration.ApiClient.ParameterToString(types)); // query parameter
 
@@ -1446,8 +1446,8 @@ namespace Square.Connect.Api
         /// ListCatalog Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>Task of ListCatalogResponse</returns>
         public async System.Threading.Tasks.Task<ListCatalogResponse> ListCatalogAsync (string cursor = null, string types = null)
         {
@@ -1460,8 +1460,8 @@ namespace Square.Connect.Api
         /// ListCatalog Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use SearchCatalogObjects and set &#x60;include_deleted_objects&#x60; to &#x60;true&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information. (optional)</param>
-        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
+        /// <param name="cursor">The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="types">An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the &#x60;CatalogObjectType&#x60; enumeration, namely &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ListCatalogResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ListCatalogResponse>> ListCatalogAsyncWithHttpInfo (string cursor = null, string types = null)
         {
@@ -1521,8 +1521,8 @@ namespace Square.Connect.Api
         /// RetrieveCatalogObject Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>RetrieveCatalogObjectResponse</returns>
         public RetrieveCatalogObjectResponse RetrieveCatalogObject (string objectId, bool? includeRelatedObjects = null)
         {
@@ -1534,8 +1534,8 @@ namespace Square.Connect.Api
         /// RetrieveCatalogObject Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>ApiResponse of RetrieveCatalogObjectResponse</returns>
         public ApiResponse< RetrieveCatalogObjectResponse > RetrieveCatalogObjectWithHttpInfo (string objectId, bool? includeRelatedObjects = null)
         {
@@ -1564,7 +1564,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (objectId != null) localVarPathParams.Add("object_id", Configuration.ApiClient.ParameterToString(objectId)); // path parameter
             if (includeRelatedObjects != null) localVarQueryParams.Add("include_related_objects", Configuration.ApiClient.ParameterToString(includeRelatedObjects)); // query parameter
 
@@ -1598,8 +1598,8 @@ namespace Square.Connect.Api
         /// RetrieveCatalogObject Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>Task of RetrieveCatalogObjectResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveCatalogObjectResponse> RetrieveCatalogObjectAsync (string objectId, bool? includeRelatedObjects = null)
         {
@@ -1612,8 +1612,8 @@ namespace Square.Connect.Api
         /// RetrieveCatalogObject Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="objectId">The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.</param>
-        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
+        /// <param name="objectId">The object ID of any type of &#x60;CatalogObject&#x60;s to be retrieved.</param>
+        /// <param name="includeRelatedObjects">If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory](#type-catalogcategory), [CatalogTax&#x60;es, &#x60;CatalogImage](#type-catalogimage)s and [CatalogModifierList&#x60;s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (RetrieveCatalogObjectResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveCatalogObjectResponse>> RetrieveCatalogObjectAsyncWithHttpInfo (string objectId, bool? includeRelatedObjects = null)
         {
@@ -1717,7 +1717,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1880,7 +1880,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2043,7 +2043,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2206,7 +2206,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-08-14");
+            localVarHeaderParams.Add("Square-Version", "2019-09-25");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter

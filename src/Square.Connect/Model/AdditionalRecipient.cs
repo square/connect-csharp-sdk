@@ -40,7 +40,7 @@ namespace Square.Connect.Model
         /// <param name="LocationId">The location ID for a recipient (other than the merchant) receiving a portion of this tender. (required).</param>
         /// <param name="Description">The description of the additional recipient. (required).</param>
         /// <param name="AmountMoney">The amount of money distributed to the recipient. (required).</param>
-        /// <param name="ReceivableId">The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server..</param>
+        /// <param name="ReceivableId">The unique ID for this &#x60;AdditionalRecipientReceivable&#x60;, assigned by the server..</param>
         public AdditionalRecipient(string LocationId = default(string), string Description = default(string), Money AmountMoney = default(Money), string ReceivableId = default(string))
         {
             // to ensure "LocationId" is required (not null)
@@ -92,9 +92,9 @@ namespace Square.Connect.Model
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
-        /// The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server.
+        /// The unique ID for this &#x60;AdditionalRecipientReceivable&#x60;, assigned by the server.
         /// </summary>
-        /// <value>The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server.</value>
+        /// <value>The unique ID for this &#x60;AdditionalRecipientReceivable&#x60;, assigned by the server.</value>
         [DataMember(Name="receivable_id", EmitDefaultValue=false)]
         public string ReceivableId { get; set; }
         /// <summary>

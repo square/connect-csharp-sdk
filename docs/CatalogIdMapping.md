@@ -8,8 +8,8 @@ A mapping between a client-supplied temporary ID and a permanent server ID.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientObjectId** | **string** | The client-supplied, temporary &#x60;#&#x60;-prefixed ID for a new [CatalogObject](#type-catalogobject). | [optional] 
-**ObjectId** | **string** | The permanent ID for the [CatalogObject](#type-catalogobject) created by the server. | [optional] 
+**ClientObjectId** | **string** | The client-supplied, temporary &#x60;#&#x60;-prefixed ID for a new &#x60;CatalogObject&#x60;. | [optional] 
+**ObjectId** | **string** | The permanent ID for the &#x60;CatalogObject&#x60; created by the server. | [optional] 
 
 
 

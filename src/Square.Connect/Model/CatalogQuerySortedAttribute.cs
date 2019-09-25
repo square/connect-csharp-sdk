@@ -39,7 +39,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="AttributeName">The attribute whose value should be used as the sort key. (required).</param>
         /// <param name="InitialAttributeValue">The first attribute value to be returned by the query. Ascending sorts will return only objects with this value or greater, while descending sorts will return only objects with this value or less. If unset, start at the beginning (for ascending sorts) or end (for descending sorts)..</param>
-        /// <param name="SortOrder">The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending). See [SortOrder](#type-sortorder) for possible values.</param>
+        /// <param name="SortOrder">The desired &#x60;SortOrder&#x60;. See [SortOrder](#type-sortorder) for possible values.</param>
         public CatalogQuerySortedAttribute(string AttributeName = default(string), string InitialAttributeValue = default(string), string SortOrder = default(string))
         {
             // to ensure "AttributeName" is required (not null)
@@ -68,9 +68,9 @@ namespace Square.Connect.Model
         [DataMember(Name="initial_attribute_value", EmitDefaultValue=false)]
         public string InitialAttributeValue { get; set; }
         /// <summary>
-        /// The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending). See [SortOrder](#type-sortorder) for possible values
+        /// The desired &#x60;SortOrder&#x60;. See [SortOrder](#type-sortorder) for possible values
         /// </summary>
-        /// <value>The desired [SortOrder](#type-sortorder), &#x60;\&quot;ASC\&quot;&#x60; (ascending) or &#x60;\&quot;DESC\&quot;&#x60; (descending). See [SortOrder](#type-sortorder) for possible values</value>
+        /// <value>The desired &#x60;SortOrder&#x60;. See [SortOrder](#type-sortorder) for possible values</value>
         [DataMember(Name="sort_order", EmitDefaultValue=false)]
         public string SortOrder { get; set; }
         /// <summary>

@@ -8,7 +8,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaxIds** | **List<string>** | A set of [CatalogTax](#type-catalogtax) IDs to be used to find associated [CatalogItem](#type-catalogitem)s. | 
+**TaxIds** | **List<string>** | A set of &#x60;CatalogTax](#type-catalogtax) IDs to be used to find associated [CatalogItem&#x60;s. | 
 
 
 
