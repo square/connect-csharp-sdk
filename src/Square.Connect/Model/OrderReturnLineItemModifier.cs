@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// A line item modifier being returned.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class OrderReturnLineItemModifier :  IEquatable<OrderReturnLineItemModifier>, IValidatableObject

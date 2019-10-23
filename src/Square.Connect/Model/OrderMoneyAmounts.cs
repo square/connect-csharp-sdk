@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// A collection of various money amounts.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class OrderMoneyAmounts :  IEquatable<OrderMoneyAmounts>, IValidatableObject

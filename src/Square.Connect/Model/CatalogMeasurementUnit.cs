@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class CatalogMeasurementUnit :  IEquatable<CatalogMeasurementUnit>, IValidatableObject

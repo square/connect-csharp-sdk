@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     ///  A list of item option values that can be assigned to item variations. For example, a t-shirt item may offer a color option or a size option.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class CatalogItemOptionForItem :  IEquatable<CatalogItemOptionForItem>, IValidatableObject

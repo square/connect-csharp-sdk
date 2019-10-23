@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the parameters that can be included in the body of a request to the [Charge](#endpoint-charge) endpoint.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class ChargeRequest :  IEquatable<ChargeRequest>, IValidatableObject
     {
         /// <summary>
@@ -38,7 +39,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="ChargeRequest" /> class.
         /// </summary>
         /// <param name="IdempotencyKey">A value you specify that uniquely identifies this transaction among transactions you&#39;ve created.  If you&#39;re unsure whether a particular transaction succeeded, you can reattempt it with the same idempotency key without worrying about double-charging the buyer.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information. (required).</param>
-        /// <param name="AmountMoney">The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  The value of &#x60;currency&#x60; must match the currency associated with the business that is charging the card. (required).</param>
+        /// <param name="AmountMoney">The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The value of &#x60;currency&#x60; must match the currency associated with the business that is charging the card. (required).</param>
         /// <param name="CardNonce">A nonce generated from the &#x60;SqPaymentForm&#x60; that represents the card to charge.  The application that provides a nonce to this endpoint must be the _same application_ that generated the nonce with the &#x60;SqPaymentForm&#x60;. Otherwise, the nonce is invalid.  Do not provide a value for this field if you provide a value for &#x60;customer_card_id&#x60;..</param>
         /// <param name="CustomerCardId">The ID of the customer card on file to charge. Do not provide a value for this field if you provide a value for &#x60;card_nonce&#x60;.  If you provide this value, you _must_ also provide a value for &#x60;customer_id&#x60;..</param>
         /// <param name="DelayCapture">If &#x60;true&#x60;, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the &#x60;CaptureTransaction&#x60; or a Void (with the &#x60;VoidTransaction&#x60;.  Default value: &#x60;false&#x60;.</param>
@@ -92,9 +93,9 @@ namespace Square.Connect.Model
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>
-        /// The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  The value of &#x60;currency&#x60; must match the currency associated with the business that is charging the card.
+        /// The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The value of &#x60;currency&#x60; must match the currency associated with the business that is charging the card.
         /// </summary>
-        /// <value>The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  The value of &#x60;currency&#x60; must match the currency associated with the business that is charging the card.</value>
+        /// <value>The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The value of &#x60;currency&#x60; must match the currency associated with the business that is charging the card.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>

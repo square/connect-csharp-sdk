@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// An enumerated value that can link a [CatalogItemVariation(#type-catalogitemvariation) to an item option as one of its item option values.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class CatalogItemOptionValue :  IEquatable<CatalogItemOptionValue>, IValidatableObject
@@ -35,7 +36,7 @@ namespace Square.Connect.Model
         /// <param name="ItemOptionId">Unique ID of the associated item option..</param>
         /// <param name="Name">Name of this item option value. Searchable..</param>
         /// <param name="Description">The option value&#39;s human-readable description..</param>
-        /// <param name="Color">The HTML color for this value in the format #FFRRGGBB or #RRGGBB (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if parent Item Option&#39;s &#x60;show_colors&#x60; flag is enabled. value..</param>
+        /// <param name="Color">The HTML-supported hex color for the item option (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;. When left unset, &#x60;color&#x60; defaults to white (\&quot;#ffffff\&quot;) when &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;..</param>
         /// <param name="Ordinal">Determines where this option value appears in a list of option values..</param>
         /// <param name="ItemVariationCount">The number of [CatalogItemVariation(#type-catalogitemvariation)s that currently make use of this Item Option value. Present only if &#x60;retrieve_counts&#x60; was specified on the request used to retrieve the parent Item Option of this value.  Maximum: 100 counts..</param>
         public CatalogItemOptionValue(string ItemOptionId = default(string), string Name = default(string), string Description = default(string), string Color = default(string), int? Ordinal = default(int?), long? ItemVariationCount = default(long?))
@@ -67,9 +68,9 @@ namespace Square.Connect.Model
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// The HTML color for this value in the format #FFRRGGBB or #RRGGBB (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if parent Item Option&#39;s &#x60;show_colors&#x60; flag is enabled. value.
+        /// The HTML-supported hex color for the item option (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;. When left unset, &#x60;color&#x60; defaults to white (\&quot;#ffffff\&quot;) when &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;.
         /// </summary>
-        /// <value>The HTML color for this value in the format #FFRRGGBB or #RRGGBB (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if parent Item Option&#39;s &#x60;show_colors&#x60; flag is enabled. value.</value>
+        /// <value>The HTML-supported hex color for the item option (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;. When left unset, &#x60;color&#x60; defaults to white (\&quot;#ffffff\&quot;) when &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;.</value>
         [DataMember(Name="color", EmitDefaultValue=false)]
         public string Color { get; set; }
         /// <summary>

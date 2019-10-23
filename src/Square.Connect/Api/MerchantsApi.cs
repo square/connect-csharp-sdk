@@ -25,13 +25,31 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// ListMerchants
+        /// </summary>
+        /// <remarks>
+        /// Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ListMerchantsResponse</returns>        ListMerchantsResponse ListMerchants ();
+
+        /// <summary>
+        /// ListMerchants
+        /// </summary>
+        /// <remarks>
+        /// Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ListMerchantsResponse</returns>
+        ApiResponse<ListMerchantsResponse> ListMerchantsWithHttpInfo ();
+        /// <summary>
         /// RetrieveMerchant
         /// </summary>
         /// <remarks>
         /// Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>RetrieveMerchantResponse</returns>        RetrieveMerchantResponse RetrieveMerchant (string merchantId);
 
         /// <summary>
@@ -41,11 +59,30 @@ namespace Square.Connect.Api
         /// Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>ApiResponse of RetrieveMerchantResponse</returns>
         ApiResponse<RetrieveMerchantResponse> RetrieveMerchantWithHttpInfo (string merchantId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// ListMerchants
+        /// </summary>
+        /// <remarks>
+        /// Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ListMerchantsResponse</returns>
+        System.Threading.Tasks.Task<ListMerchantsResponse> ListMerchantsAsync ();
+
+        /// <summary>
+        /// ListMerchants
+        /// </summary>
+        /// <remarks>
+        /// Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ListMerchantsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListMerchantsResponse>> ListMerchantsAsyncWithHttpInfo ();
         /// <summary>
         /// RetrieveMerchant
         /// </summary>
@@ -53,7 +90,7 @@ namespace Square.Connect.Api
         /// Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>Task of RetrieveMerchantResponse</returns>
         System.Threading.Tasks.Task<RetrieveMerchantResponse> RetrieveMerchantAsync (string merchantId);
 
@@ -64,7 +101,7 @@ namespace Square.Connect.Api
         /// Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveMerchantResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<RetrieveMerchantResponse>> RetrieveMerchantAsyncWithHttpInfo (string merchantId);
         #endregion Asynchronous Operations
@@ -180,10 +217,147 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
+        /// ListMerchants Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ListMerchantsResponse</returns>
+        public ListMerchantsResponse ListMerchants ()
+        {
+             ApiResponse<ListMerchantsResponse> localVarResponse = ListMerchantsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// ListMerchants Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ListMerchantsResponse</returns>
+        public ApiResponse< ListMerchantsResponse > ListMerchantsWithHttpInfo ()
+        {
+
+            var localVarPath = "/v2/merchants";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListMerchants", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ListMerchantsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
+                (ListMerchantsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListMerchantsResponse)));
+            
+        }
+
+        /// <summary>
+        /// ListMerchants Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ListMerchantsResponse</returns>
+        public async System.Threading.Tasks.Task<ListMerchantsResponse> ListMerchantsAsync ()
+        {
+             ApiResponse<ListMerchantsResponse> localVarResponse = await ListMerchantsAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// ListMerchants Returns &#x60;Merchant&#x60; information for a given access token.  If you don&#39;t know a &#x60;Merchant&#x60; ID, you can use this endpoint to retrieve the merchant ID for an access token. You can specify your personal access token to get your own merchant information or specify an OAuth token to get the information for the  merchant that granted you access.  If you know the merchant ID, you can also use the [RetrieveMerchant](#endpoint-merchants-retrievemerchant)  endpoint to get the merchant information.
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ListMerchantsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ListMerchantsResponse>> ListMerchantsAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/v2/merchants";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListMerchants", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ListMerchantsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
+                (ListMerchantsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListMerchantsResponse)));
+            
+        }
+
+        /// <summary>
         /// RetrieveMerchant Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>RetrieveMerchantResponse</returns>
         public RetrieveMerchantResponse RetrieveMerchant (string merchantId)
         {
@@ -195,7 +369,7 @@ namespace Square.Connect.Api
         /// RetrieveMerchant Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>ApiResponse of RetrieveMerchantResponse</returns>
         public ApiResponse< RetrieveMerchantResponse > RetrieveMerchantWithHttpInfo (string merchantId)
         {
@@ -224,7 +398,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (merchantId != null) localVarPathParams.Add("merchant_id", Configuration.ApiClient.ParameterToString(merchantId)); // path parameter
 
             // authentication (oauth2) required
@@ -248,7 +422,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveMerchantResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveMerchantResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveMerchantResponse)));
             
         }
@@ -257,7 +431,7 @@ namespace Square.Connect.Api
         /// RetrieveMerchant Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>Task of RetrieveMerchantResponse</returns>
         public async System.Threading.Tasks.Task<RetrieveMerchantResponse> RetrieveMerchantAsync (string merchantId)
         {
@@ -270,7 +444,7 @@ namespace Square.Connect.Api
         /// RetrieveMerchant Retrieve a &#x60;Merchant&#x60; object for the given &#x60;merchant_id&#x60;.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="merchantId">The ID of the merchant to retrieve</param>
+        /// <param name="merchantId">The ID of the merchant to retrieve.</param>
         /// <returns>Task of ApiResponse (RetrieveMerchantResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<RetrieveMerchantResponse>> RetrieveMerchantAsyncWithHttpInfo (string merchantId)
         {
@@ -299,7 +473,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (merchantId != null) localVarPathParams.Add("merchant_id", Configuration.ApiClient.ParameterToString(merchantId)); // path parameter
 
             // authentication (oauth2) required
@@ -323,7 +497,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveMerchantResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveMerchantResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveMerchantResponse)));
             
         }

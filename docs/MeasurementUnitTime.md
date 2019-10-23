@@ -3,6 +3,7 @@
 ### Description
 
 Unit of time used to measure a quantity (a duration).
+**Note: This model is in beta.**
 
 ## Properties
 

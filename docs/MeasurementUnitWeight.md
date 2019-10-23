@@ -3,6 +3,7 @@
 ### Description
 
 Unit of weight used to measure a quantity.
+**Note: This model is in beta.**
 
 ## Properties
 

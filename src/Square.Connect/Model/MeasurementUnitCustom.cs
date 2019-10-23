@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// The information needed to define a custom unit, provided by the seller.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class MeasurementUnitCustom :  IEquatable<MeasurementUnitCustom>, IValidatableObject

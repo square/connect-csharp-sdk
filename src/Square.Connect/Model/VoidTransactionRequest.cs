@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the request body for calls to the VoidTransaction endpoint.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class VoidTransactionRequest :  IEquatable<VoidTransactionRequest>, IValidatableObject
     {
         /// <summary>

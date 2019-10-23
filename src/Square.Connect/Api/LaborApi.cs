@@ -789,7 +789,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -820,7 +820,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CreateBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CreateBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateBreakTypeResponse)));
             
         }
@@ -871,7 +871,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -902,7 +902,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CreateBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CreateBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateBreakTypeResponse)));
             
         }
@@ -952,7 +952,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -983,7 +983,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CreateShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CreateShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShiftResponse)));
             
         }
@@ -1034,7 +1034,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1065,7 +1065,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CreateShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CreateShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShiftResponse)));
             
         }
@@ -1115,7 +1115,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1139,7 +1139,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<DeleteBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (DeleteBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteBreakTypeResponse)));
             
         }
@@ -1190,7 +1190,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1214,7 +1214,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<DeleteBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (DeleteBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteBreakTypeResponse)));
             
         }
@@ -1264,7 +1264,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1288,7 +1288,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<DeleteShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (DeleteShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteShiftResponse)));
             
         }
@@ -1339,7 +1339,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1363,7 +1363,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<DeleteShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (DeleteShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteShiftResponse)));
             
         }
@@ -1413,7 +1413,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1437,7 +1437,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetBreakTypeResponse)));
             
         }
@@ -1488,7 +1488,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1512,7 +1512,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetBreakTypeResponse)));
             
         }
@@ -1562,7 +1562,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1586,7 +1586,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetEmployeeWageResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetEmployeeWageResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetEmployeeWageResponse)));
             
         }
@@ -1637,7 +1637,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1661,7 +1661,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetEmployeeWageResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetEmployeeWageResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetEmployeeWageResponse)));
             
         }
@@ -1711,7 +1711,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1735,7 +1735,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShiftResponse)));
             
         }
@@ -1786,7 +1786,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -1810,7 +1810,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShiftResponse)));
             
         }
@@ -1861,7 +1861,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (locationId != null) localVarQueryParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1887,7 +1887,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListBreakTypesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListBreakTypesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListBreakTypesResponse)));
             
         }
@@ -1939,7 +1939,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (locationId != null) localVarQueryParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1965,7 +1965,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListBreakTypesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListBreakTypesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListBreakTypesResponse)));
             
         }
@@ -2016,7 +2016,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (employeeId != null) localVarQueryParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -2042,7 +2042,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListEmployeeWagesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListEmployeeWagesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListEmployeeWagesResponse)));
             
         }
@@ -2094,7 +2094,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (employeeId != null) localVarQueryParams.Add("employee_id", Configuration.ApiClient.ParameterToString(employeeId)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -2120,7 +2120,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListEmployeeWagesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListEmployeeWagesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListEmployeeWagesResponse)));
             
         }
@@ -2169,7 +2169,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
 
@@ -2194,7 +2194,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListWorkweekConfigsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListWorkweekConfigsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListWorkweekConfigsResponse)));
             
         }
@@ -2244,7 +2244,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
 
@@ -2269,7 +2269,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListWorkweekConfigsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListWorkweekConfigsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListWorkweekConfigsResponse)));
             
         }
@@ -2319,7 +2319,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2350,7 +2350,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<SearchShiftsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (SearchShiftsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SearchShiftsResponse)));
             
         }
@@ -2401,7 +2401,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2432,7 +2432,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<SearchShiftsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (SearchShiftsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SearchShiftsResponse)));
             
         }
@@ -2487,7 +2487,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2519,7 +2519,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<UpdateBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (UpdateBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateBreakTypeResponse)));
             
         }
@@ -2575,7 +2575,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2607,7 +2607,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<UpdateBreakTypeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (UpdateBreakTypeResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateBreakTypeResponse)));
             
         }
@@ -2662,7 +2662,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2694,7 +2694,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<UpdateShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (UpdateShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateShiftResponse)));
             
         }
@@ -2750,7 +2750,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2782,7 +2782,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<UpdateShiftResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (UpdateShiftResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateShiftResponse)));
             
         }
@@ -2837,7 +2837,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2869,7 +2869,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<UpdateWorkweekConfigResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (UpdateWorkweekConfigResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateWorkweekConfigResponse)));
             
         }
@@ -2925,7 +2925,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2957,7 +2957,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<UpdateWorkweekConfigResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (UpdateWorkweekConfigResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateWorkweekConfigResponse)));
             
         }

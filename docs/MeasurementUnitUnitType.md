@@ -3,6 +3,7 @@
 ### Description
 
 Describes the type of this unit and indicates which field contains the unit information. This is an ‘open’ enum.
+**Note: This model is in beta.**
 
 ## Properties
 

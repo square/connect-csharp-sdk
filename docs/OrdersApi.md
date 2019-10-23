@@ -147,6 +147,7 @@ Name | Type | Description  | Notes
 
 <a name="payorder"></a>
 # **PayOrder**
+**Note: This endpoint is in beta.**
 > PayOrderResponse PayOrder (string orderId, PayOrderRequest body)
 
 PayOrder
@@ -279,6 +280,7 @@ Name | Type | Description  | Notes
 
 <a name="updateorder"></a>
 # **UpdateOrder**
+**Note: This endpoint is in beta.**
 > UpdateOrderResponse UpdateOrder (string locationId, string orderId, UpdateOrderRequest body)
 
 UpdateOrder

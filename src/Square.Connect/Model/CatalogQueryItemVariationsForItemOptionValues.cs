@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// 
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class CatalogQueryItemVariationsForItemOptionValues :  IEquatable<CatalogQueryItemVariationsForItemOptionValues>, IValidatableObject

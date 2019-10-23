@@ -36,7 +36,7 @@ namespace Square.Connect.Model
         /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         /// <param name="Objects">The &#x60;CatalogObject&#x60;s returned..</param>
         /// <param name="RelatedObjects">A list of &#x60;CatalogObject&#x60;s referenced by the objects in the &#x60;objects&#x60; field..</param>
-        /// <param name="LatestTime"> When this merchant&#39;s catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request..</param>
+        /// <param name="LatestTime">[beta]  When the associated product catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request..</param>
         public SearchCatalogObjectsResponse(List<Error> Errors = default(List<Error>), string Cursor = default(string), List<CatalogObject> Objects = default(List<CatalogObject>), List<CatalogObject> RelatedObjects = default(List<CatalogObject>), string LatestTime = default(string))
         {
             this.Errors = Errors;
@@ -71,9 +71,9 @@ namespace Square.Connect.Model
         [DataMember(Name="related_objects", EmitDefaultValue=false)]
         public List<CatalogObject> RelatedObjects { get; set; }
         /// <summary>
-        ///  When this merchant&#39;s catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request.
+        ///  When the associated product catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request.
         /// </summary>
-        /// <value> When this merchant&#39;s catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request.</value>
+        /// <value> When the associated product catalog was last updated. Will match the value for &#x60;end_time&#x60; or &#x60;cursor&#x60; if either field is included in the &#x60;SearchCatalog&#x60; request.</value>
         [DataMember(Name="latest_time", EmitDefaultValue=false)]
         public string LatestTime { get; set; }
         /// <summary>

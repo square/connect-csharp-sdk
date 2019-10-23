@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the body parameters that can be included in a request to the [CreateRefund](#endpoint-createrefund) endpoint.  Deprecated - recommend using [RefundPayment](#endpoint-refunds-refundpayment)
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class CreateRefundRequest :  IEquatable<CreateRefundRequest>, IValidatableObject
     {
         /// <summary>
@@ -40,7 +41,7 @@ namespace Square.Connect.Model
         /// <param name="IdempotencyKey">A value you specify that uniquely identifies this refund among refunds you&#39;ve created for the tender.  If you&#39;re unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information. (required).</param>
         /// <param name="TenderId">The ID of the tender to refund.  A &#x60;&#x60;Transaction&#x60;&#x60; has one or more &#x60;tenders&#x60; (i.e., methods of payment) associated with it, and you refund each tender separately with the Connect API. (required).</param>
         /// <param name="Reason">A description of the reason for the refund.  Default value: &#x60;Refund via API&#x60;.</param>
-        /// <param name="AmountMoney">The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to &#x60;tender_id&#x60;. (required).</param>
+        /// <param name="AmountMoney">The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to &#x60;tender_id&#x60;. (required).</param>
         public CreateRefundRequest(string IdempotencyKey = default(string), string TenderId = default(string), string Reason = default(string), Money AmountMoney = default(Money))
         {
             // to ensure "IdempotencyKey" is required (not null)
@@ -92,9 +93,9 @@ namespace Square.Connect.Model
         [DataMember(Name="reason", EmitDefaultValue=false)]
         public string Reason { get; set; }
         /// <summary>
-        /// The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to &#x60;tender_id&#x60;.
+        /// The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to &#x60;tender_id&#x60;.
         /// </summary>
-        /// <value>The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to &#x60;tender_id&#x60;.</value>
+        /// <value>The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to &#x60;tender_id&#x60;.</value>
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>

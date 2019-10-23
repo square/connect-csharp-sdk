@@ -8,7 +8,7 @@ A [CatalogModifier](#type-catalogmodifier).
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Uid** | **string** | Unique ID that identifies the modifier only within this order. | [optional] 
+**Uid** | **string** | Unique ID that identifies the modifier only within this order. | [optional] [beta]
 **CatalogObjectId** | **string** | The catalog object id referencing &#x60;CatalogModifier&#x60;. | [optional] 
 **Name** | **string** | The name of the item modifier. | [optional] 
 **BasePriceMoney** | [**Money**](Money.md) | The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined &#x60;CatalogModifier&#x60; price. | [optional] 

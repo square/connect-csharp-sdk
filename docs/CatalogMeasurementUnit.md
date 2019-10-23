@@ -3,6 +3,7 @@
 ### Description
 
 Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.
+**Note: This model is in beta.**
 
 ## Properties
 

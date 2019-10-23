@@ -312,7 +312,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -337,7 +337,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ObtainTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ObtainTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ObtainTokenResponse)));
             
         }
@@ -388,7 +388,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -413,7 +413,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ObtainTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ObtainTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ObtainTokenResponse)));
             
         }
@@ -468,7 +468,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (clientId != null) localVarPathParams.Add("client_id", Configuration.ApiClient.ParameterToString(clientId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -500,7 +500,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RenewTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RenewTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RenewTokenResponse)));
             
         }
@@ -556,7 +556,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (clientId != null) localVarPathParams.Add("client_id", Configuration.ApiClient.ParameterToString(clientId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -587,7 +587,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RenewTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RenewTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RenewTokenResponse)));
             
         }
@@ -637,7 +637,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -668,7 +668,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RevokeTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RevokeTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RevokeTokenResponse)));
             
         }
@@ -719,7 +719,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -749,7 +749,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RevokeTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RevokeTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RevokeTokenResponse)));
             
         }

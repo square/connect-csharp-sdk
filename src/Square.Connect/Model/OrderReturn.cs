@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// The set of line items, service charges, taxes, discounts, tips, etc. being returned in an Order.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class OrderReturn :  IEquatable<OrderReturn>, IValidatableObject

@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Represents a monetary distribution of part of a [Transaction](#type-transaction)&#39;s amount for Transactions which included additional recipients. The location of this receivable is that same as the one specified in the [AdditionalRecipient](#type-additionalrecipient).
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class AdditionalRecipientReceivable :  IEquatable<AdditionalRecipientReceivable>, IValidatableObject
     {
         /// <summary>

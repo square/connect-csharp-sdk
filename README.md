@@ -180,6 +180,7 @@ Class | Method | HTTP request
 *LocationsApi* | [**ListLocations**](docs/LocationsApi.md#listlocations) | **GET** /v2/locations
 *LocationsApi* | [**RetrieveLocation**](docs/LocationsApi.md#retrievelocation) | **GET** /v2/locations/{location_id}
 *LocationsApi* | [**UpdateLocation**](docs/LocationsApi.md#updatelocation) | **PUT** /v2/locations/{location_id}
+*MerchantsApi* | [**ListMerchants**](docs/MerchantsApi.md#listmerchants) | **GET** /v2/merchants
 *MerchantsApi* | [**RetrieveMerchant**](docs/MerchantsApi.md#retrievemerchant) | **GET** /v2/merchants/{merchant_id}
 *MobileAuthorizationApi* | [**CreateMobileAuthorizationCode**](docs/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code
 *OAuthApi* | [**ObtainToken**](docs/OAuthApi.md#obtaintoken) | **POST** /oauth2/token

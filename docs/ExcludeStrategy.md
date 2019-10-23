@@ -1,9 +1,9 @@
-# Square.Connect.Model.CaptureTransactionRequest
+# Square.Connect.Model.ExcludeStrategy
 
 ### Description
 
-Defines the query parameters for calls to the CaptureTransaction endpoint.
-**Note: This model is deprecated.**
+Indicates which products matched by a `CatalogPricingRule` will be excluded if the pricing rule uses an exclude set.
+**Note: This model is in beta.**
 
 ## Properties
 

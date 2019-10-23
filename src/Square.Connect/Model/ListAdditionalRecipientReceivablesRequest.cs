@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the query parameters that can be included in a request to the ListAdditionalRecipientReceivables endpoint.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class ListAdditionalRecipientReceivablesRequest :  IEquatable<ListAdditionalRecipientReceivablesRequest>, IValidatableObject
     {
         /// <summary>

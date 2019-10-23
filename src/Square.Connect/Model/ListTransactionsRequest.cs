@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the query parameters that can be included in a request to the [ListTransactions](#endpoint-listtransactions) endpoint.  Deprecated - recommend using [SearchOrders](#endpoint-orders-searchorders)
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class ListTransactionsRequest :  IEquatable<ListTransactionsRequest>, IValidatableObject
     {
         /// <summary>

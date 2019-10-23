@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Represents a collection of catalog objects for the purpose of applying a [PricingRule](#type-pricingrule). Including a catalog object will include all of its subtypes. For example, including a category in a product set will include all of its items and associated item variations in the product set. Including an item in a product set will also include its item variations.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class CatalogProductSet :  IEquatable<CatalogProductSet>, IValidatableObject

@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the query parameters for calls to the CaptureTransaction endpoint.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class CaptureTransactionRequest :  IEquatable<CaptureTransactionRequest>, IValidatableObject
     {
         /// <summary>

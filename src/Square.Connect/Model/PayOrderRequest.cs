@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Defines the fields that are included in requests to the [PayOrder](#endpoint-payorder) endpoint.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class PayOrderRequest :  IEquatable<PayOrderRequest>, IValidatableObject

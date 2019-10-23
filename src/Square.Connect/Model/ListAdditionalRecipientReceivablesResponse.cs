@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the fields that are included in the response body of a request to the ListAdditionalRecipientReceivables endpoint.  One of &#x60;errors&#x60; or &#x60;additional_recipient_receivables&#x60; is present in a given response (never both).
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class ListAdditionalRecipientReceivablesResponse :  IEquatable<ListAdditionalRecipientReceivablesResponse>, IValidatableObject
     {
         /// <summary>

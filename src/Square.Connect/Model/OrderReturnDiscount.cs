@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Represents a discount being returned that applies to one or more return line items in an order.  Fixed-amount, order-scoped discounts are distributed across all non-zero return line item totals. The amount distributed to each return line item is relative to that item’s contribution to the order subtotal.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class OrderReturnDiscount :  IEquatable<OrderReturnDiscount>, IValidatableObject

@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Represents a transaction processed with Square, either with the Connect API or with Square Point of Sale.  The &#x60;tenders&#x60; field of this object lists all methods of payment used to pay in the transaction.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class Transaction :  IEquatable<Transaction>, IValidatableObject
     {
         /// <summary>

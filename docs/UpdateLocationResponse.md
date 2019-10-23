@@ -3,6 +3,7 @@
 ### Description
 
 Response object returned by the [UpdateLocation](#endpoint-updatelocation) endpoint.
+**Note: This model is in beta.**
 
 ## Properties
 
