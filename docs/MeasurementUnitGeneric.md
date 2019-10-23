@@ -3,6 +3,7 @@
 ### Description
 
 A custom unit of measurement defined by the user.
+**Note: This model is in beta.**
 
 ## Properties
 

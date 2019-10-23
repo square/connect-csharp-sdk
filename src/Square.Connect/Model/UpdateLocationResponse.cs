@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Response object returned by the [UpdateLocation](#endpoint-updatelocation) endpoint.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class UpdateLocationResponse :  IEquatable<UpdateLocationResponse>, IValidatableObject

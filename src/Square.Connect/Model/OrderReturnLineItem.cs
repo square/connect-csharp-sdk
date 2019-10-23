@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// The line item being returned in an Order.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class OrderReturnLineItem :  IEquatable<OrderReturnLineItem>, IValidatableObject
@@ -46,8 +47,8 @@ namespace Square.Connect.Model
         /// <param name="CatalogObjectId">The &#x60;CatalogItemVariation&#x60; id applied to this returned line item..</param>
         /// <param name="VariationName">The name of the variation applied to this returned line item..</param>
         /// <param name="ReturnModifiers">The &#x60;CatalogModifier&#x60;s applied to this line item..</param>
-        /// <param name="ReturnTaxes">A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;..</param>
-        /// <param name="ReturnDiscounts">A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;..</param>
+        /// <param name="ReturnTaxes">[deprecated] A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of &#x60;applied_taxes&#x60;..</param>
+        /// <param name="ReturnDiscounts">[deprecated] A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item.  This field has been deprecated in favour of &#x60;applied_discounts&#x60;..</param>
         /// <param name="AppliedTaxes">The list of references to &#x60;OrderReturnTax&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedTax&#x60; has a &#x60;tax_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnTax&#x60; applied to the returned line item. On reads, the amount applied is populated..</param>
         /// <param name="AppliedDiscounts">The list of references to &#x60;OrderReturnDiscount&#x60; entities applied to the returned line item. Each &#x60;OrderLineItemAppliedDiscount&#x60; has a &#x60;discount_uid&#x60; that references the &#x60;uid&#x60; of a top-level &#x60;OrderReturnDiscount&#x60; applied to the returned line item. On reads, the amount applied is populated..</param>
         /// <param name="BasePriceMoney">The base price for a single unit of the line item..</param>

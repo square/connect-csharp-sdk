@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Represents a time period - either a single period or a repeating period.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class CatalogTimePeriod :  IEquatable<CatalogTimePeriod>, IValidatableObject

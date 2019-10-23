@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// __Deprecated__: Please use the [OrderLineItemModifier](#type-orderlineitemmodifier) type instead.  Represents a modifier applied to a single line item.  Modifiers can reference existing objects in a merchant catalog or be constructed ad hoc at the time of purchase by providing a name and price.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class CreateOrderRequestModifier :  IEquatable<CreateOrderRequestModifier>, IValidatableObject
     {
         /// <summary>

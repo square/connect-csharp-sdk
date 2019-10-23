@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Contains details necessary to fulfill a shipment order.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class OrderFulfillmentShipmentDetails :  IEquatable<OrderFulfillmentShipmentDetails>, IValidatableObject

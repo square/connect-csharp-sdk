@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Represents a unit of measurement to use with a quantity, such as ounces or inches. Exactly one of the following fields are required: &#x60;custom_unit&#x60;, &#x60;area_unit&#x60;, &#x60;length_unit&#x60;, &#x60;volume_unit&#x60;, and &#x60;weight_unit&#x60;.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class MeasurementUnit :  IEquatable<MeasurementUnit>, IValidatableObject

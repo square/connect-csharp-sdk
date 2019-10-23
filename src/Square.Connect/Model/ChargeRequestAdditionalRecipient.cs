@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Represents an additional recipient (other than the merchant) entitled to a portion of the tender. Support is currently limited to USD, CAD and GBP currencies
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class ChargeRequestAdditionalRecipient :  IEquatable<ChargeRequestAdditionalRecipient>, IValidatableObject
     {
         /// <summary>

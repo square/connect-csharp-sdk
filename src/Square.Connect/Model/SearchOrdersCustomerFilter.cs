@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Filter based on Order &#x60;customer_id&#x60; and any Tender &#x60;customer_id&#x60; associated with the Order. Does not filter based on the [FulfillmentRecipient](#type-orderfulfillmentrecipient) &#x60;customer_id&#x60;.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class SearchOrdersCustomerFilter :  IEquatable<SearchOrdersCustomerFilter>, IValidatableObject

@@ -3,6 +3,7 @@
 ### Description
 
 A group of variations for a [CatalogItem](#type-catalogitem)'s.
+**Note: This model is in beta.**
 
 ## Properties
 

@@ -457,7 +457,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -481,7 +481,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CancelPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CancelPaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelPaymentResponse)));
             
         }
@@ -532,7 +532,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -556,7 +556,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CancelPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CancelPaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelPaymentResponse)));
             
         }
@@ -606,7 +606,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -637,7 +637,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CancelPaymentByIdempotencyKeyResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CancelPaymentByIdempotencyKeyResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelPaymentByIdempotencyKeyResponse)));
             
         }
@@ -688,7 +688,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -719,7 +719,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CancelPaymentByIdempotencyKeyResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CancelPaymentByIdempotencyKeyResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelPaymentByIdempotencyKeyResponse)));
             
         }
@@ -769,7 +769,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -793,7 +793,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CompletePaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CompletePaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompletePaymentResponse)));
             
         }
@@ -844,7 +844,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -868,7 +868,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CompletePaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CompletePaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompletePaymentResponse)));
             
         }
@@ -918,7 +918,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -949,7 +949,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CreatePaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CreatePaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreatePaymentResponse)));
             
         }
@@ -1000,7 +1000,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1031,7 +1031,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<CreatePaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (CreatePaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreatePaymentResponse)));
             
         }
@@ -1081,7 +1081,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1105,7 +1105,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetPaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPaymentResponse)));
             
         }
@@ -1156,7 +1156,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1180,7 +1180,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<GetPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (GetPaymentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPaymentResponse)));
             
         }
@@ -1241,7 +1241,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -1272,7 +1272,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListPaymentsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListPaymentsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListPaymentsResponse)));
             
         }
@@ -1334,7 +1334,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -1365,7 +1365,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<ListPaymentsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (ListPaymentsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListPaymentsResponse)));
             
         }

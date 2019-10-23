@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// __Deprecated__: Please use the [OrderLineItemTax](#type-orderlineitemtax) type in the order field of [CreateOrderRequest](#type-createorderrequest) instead.  Represents a tax that can apply to either a single line item or an entire order.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class CreateOrderRequestTax :  IEquatable<CreateOrderRequestTax>, IValidatableObject
     {
         /// <summary>

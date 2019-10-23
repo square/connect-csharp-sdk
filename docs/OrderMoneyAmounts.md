@@ -3,6 +3,7 @@
 ### Description
 
 A collection of various money amounts.
+**Note: This model is in beta.**
 
 ## Properties
 

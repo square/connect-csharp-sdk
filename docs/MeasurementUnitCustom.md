@@ -3,6 +3,7 @@
 ### Description
 
 The information needed to define a custom unit, provided by the seller.
+**Note: This model is in beta.**
 
 ## Properties
 

@@ -486,7 +486,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -517,7 +517,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<BatchChangeInventoryResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (BatchChangeInventoryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchChangeInventoryResponse)));
             
         }
@@ -568,7 +568,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -599,7 +599,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<BatchChangeInventoryResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (BatchChangeInventoryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchChangeInventoryResponse)));
             
         }
@@ -649,7 +649,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -680,7 +680,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<BatchRetrieveInventoryChangesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (BatchRetrieveInventoryChangesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchRetrieveInventoryChangesResponse)));
             
         }
@@ -731,7 +731,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -762,7 +762,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<BatchRetrieveInventoryChangesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (BatchRetrieveInventoryChangesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchRetrieveInventoryChangesResponse)));
             
         }
@@ -812,7 +812,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -843,7 +843,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<BatchRetrieveInventoryCountsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (BatchRetrieveInventoryCountsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchRetrieveInventoryCountsResponse)));
             
         }
@@ -894,7 +894,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -925,7 +925,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<BatchRetrieveInventoryCountsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (BatchRetrieveInventoryCountsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchRetrieveInventoryCountsResponse)));
             
         }
@@ -975,7 +975,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (adjustmentId != null) localVarPathParams.Add("adjustment_id", Configuration.ApiClient.ParameterToString(adjustmentId)); // path parameter
 
             // authentication (oauth2) required
@@ -999,7 +999,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryAdjustmentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryAdjustmentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryAdjustmentResponse)));
             
         }
@@ -1050,7 +1050,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (adjustmentId != null) localVarPathParams.Add("adjustment_id", Configuration.ApiClient.ParameterToString(adjustmentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1074,7 +1074,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryAdjustmentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryAdjustmentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryAdjustmentResponse)));
             
         }
@@ -1128,7 +1128,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1154,7 +1154,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryChangesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryChangesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryChangesResponse)));
             
         }
@@ -1209,7 +1209,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1235,7 +1235,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryChangesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryChangesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryChangesResponse)));
             
         }
@@ -1289,7 +1289,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1315,7 +1315,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryCountResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryCountResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryCountResponse)));
             
         }
@@ -1370,7 +1370,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (catalogObjectId != null) localVarPathParams.Add("catalog_object_id", Configuration.ApiClient.ParameterToString(catalogObjectId)); // path parameter
             if (locationIds != null) localVarQueryParams.Add("location_ids", Configuration.ApiClient.ParameterToString(locationIds)); // query parameter
             if (cursor != null) localVarQueryParams.Add("cursor", Configuration.ApiClient.ParameterToString(cursor)); // query parameter
@@ -1396,7 +1396,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryCountResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryCountResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryCountResponse)));
             
         }
@@ -1446,7 +1446,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-09-25");
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (physicalCountId != null) localVarPathParams.Add("physical_count_id", Configuration.ApiClient.ParameterToString(physicalCountId)); // path parameter
 
             // authentication (oauth2) required
@@ -1470,7 +1470,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryPhysicalCountResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryPhysicalCountResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryPhysicalCountResponse)));
             
         }
@@ -1521,7 +1521,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+            localVarHeaderParams.Add("Square-Version", "2019-10-23");
             if (physicalCountId != null) localVarPathParams.Add("physical_count_id", Configuration.ApiClient.ParameterToString(physicalCountId)); // path parameter
 
             // authentication (oauth2) required
@@ -1545,7 +1545,7 @@ namespace Square.Connect.Api
             }
 
             return new ApiResponse<RetrieveInventoryPhysicalCountResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
                 (RetrieveInventoryPhysicalCountResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveInventoryPhysicalCountResponse)));
             
         }

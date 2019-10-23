@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Indicates the field to use for sorting customer profiles. For example, by total money spent with the merchant or the date of their first purchase.
+    /// Indicates the field to use for sorting customer profiles.
     /// </summary>
     [DataContract]
     public partial class CustomerSort :  IEquatable<CustomerSort>, IValidatableObject
@@ -32,8 +32,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerSort" /> class.
         /// </summary>
-        /// <param name="Field">The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values.</param>
-        /// <param name="Order">Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values.</param>
+        /// <param name="Field">Indicates the information used to sort the results. For example, by creation date.  Default value: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values.</param>
+        /// <param name="Order">Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings.  Default value: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values.</param>
         public CustomerSort(string Field = default(string), string Order = default(string))
         {
             this.Field = Field;
@@ -41,15 +41,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values
+        /// Indicates the information used to sort the results. For example, by creation date.  Default value: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values
         /// </summary>
-        /// <value>The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values</value>
+        /// <value>Indicates the information used to sort the results. For example, by creation date.  Default value: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values</value>
         [DataMember(Name="field", EmitDefaultValue=false)]
         public string Field { get; set; }
         /// <summary>
-        /// Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values
+        /// Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings.  Default value: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values
         /// </summary>
-        /// <value>Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values</value>
+        /// <value>Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings.  Default value: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values</value>
         [DataMember(Name="order", EmitDefaultValue=false)]
         public string Order { get; set; }
         /// <summary>

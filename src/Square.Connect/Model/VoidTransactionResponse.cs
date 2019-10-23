@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the fields that are included in the response body of a request to the [VoidTransaction](#endpoint-voidtransaction) endpoint.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class VoidTransactionResponse :  IEquatable<VoidTransactionResponse>, IValidatableObject
     {
         /// <summary>

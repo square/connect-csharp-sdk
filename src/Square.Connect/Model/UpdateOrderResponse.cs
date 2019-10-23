@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// Defines the fields that are included in the response body of a request to the [UpdateOrder](#endpoint-orders-updateorder) endpoint.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class UpdateOrderResponse :  IEquatable<UpdateOrderResponse>, IValidatableObject

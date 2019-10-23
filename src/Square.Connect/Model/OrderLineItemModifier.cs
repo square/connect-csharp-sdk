@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLineItemModifier" /> class.
         /// </summary>
-        /// <param name="Uid">Unique ID that identifies the modifier only within this order..</param>
+        /// <param name="Uid">[beta] Unique ID that identifies the modifier only within this order..</param>
         /// <param name="CatalogObjectId">The catalog object id referencing &#x60;CatalogModifier&#x60;..</param>
         /// <param name="Name">The name of the item modifier..</param>
         /// <param name="BasePriceMoney">The base price for the modifier.  &#x60;base_price_money&#x60; is required for ad hoc modifiers. If both &#x60;catalog_object_id&#x60; and &#x60;base_price_money&#x60; are set, &#x60;base_price_money&#x60; will override the predefined &#x60;CatalogModifier&#x60; price..</param>

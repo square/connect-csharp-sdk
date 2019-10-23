@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// A rounding adjustment of the money being returned. Commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class OrderRoundingAdjustment :  IEquatable<OrderRoundingAdjustment>, IValidatableObject

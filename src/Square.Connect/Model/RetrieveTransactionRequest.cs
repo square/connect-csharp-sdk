@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Defines the request body fields for calls to the RetrieveTransaction endpoint.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class RetrieveTransactionRequest :  IEquatable<RetrieveTransactionRequest>, IValidatableObject
     {
         /// <summary>

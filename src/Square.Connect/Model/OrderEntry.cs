@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="OrderEntry" /> class.
         /// </summary>
         /// <param name="OrderId">The id of the Order.</param>
-        /// <param name="Version">Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](https://developer.squareup.com/docs/orders-api/manage-orders#update-orders)..</param>
+        /// <param name="Version">[beta] Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](https://developer.squareup.com/docs/orders-api/manage-orders#update-orders)..</param>
         /// <param name="LocationId">The location id the Order belongs to..</param>
         public OrderEntry(string OrderId = default(string), int? Version = default(int?), string LocationId = default(string))
         {

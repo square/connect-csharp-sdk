@@ -25,6 +25,7 @@ namespace Square.Connect.Model
 {
     /// <summary>
     /// A group of variations for a [CatalogItem](#type-catalogitem)&#39;s.
+    /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
     public partial class CatalogItemOption :  IEquatable<CatalogItemOption>, IValidatableObject
