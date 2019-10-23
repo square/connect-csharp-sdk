@@ -430,6 +430,8 @@ Class | Method | HTTP request
  - [Model.ListEmployeesResponse](docs/ListEmployeesResponse.md)
  - [Model.ListLocationsRequest](docs/ListLocationsRequest.md)
  - [Model.ListLocationsResponse](docs/ListLocationsResponse.md)
+ - [Model.ListMerchantsRequest](docs/ListMerchantsRequest.md)
+ - [Model.ListMerchantsResponse](docs/ListMerchantsResponse.md)
  - [Model.ListPaymentRefundsRequest](docs/ListPaymentRefundsRequest.md)
  - [Model.ListPaymentRefundsResponse](docs/ListPaymentRefundsResponse.md)
  - [Model.ListPaymentsRequest](docs/ListPaymentsRequest.md)
