@@ -37,8 +37,8 @@ namespace Square.Connect.Model
         /// <param name="SortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default)..</param>
         /// <param name="Cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
         /// <param name="LocationId">ID of location associated with payment..</param>
-        /// <param name="Status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status..</param>
-        /// <param name="SourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type..</param>
+        /// <param name="Status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status..</param>
+        /// <param name="SourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type..</param>
         public ListPaymentRefundsRequest(string BeginTime = default(string), string EndTime = default(string), string SortOrder = default(string), string Cursor = default(string), string LocationId = default(string), string Status = default(string), string SourceType = default(string))
         {
             this.BeginTime = BeginTime;
@@ -81,15 +81,15 @@ namespace Square.Connect.Model
         [DataMember(Name="location_id", EmitDefaultValue=false)]
         public string LocationId { get; set; }
         /// <summary>
-        /// If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status.
+        /// If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status.
         /// </summary>
-        /// <value>If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status.</value>
+        /// <value>If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status.</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type.
+        /// If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type.
         /// </summary>
-        /// <value>If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type.</value>
+        /// <value>If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type.</value>
         [DataMember(Name="source_type", EmitDefaultValue=false)]
         public string SourceType { get; set; }
         /// <summary>

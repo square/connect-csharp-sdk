@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1Variation
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1Variation :  IEquatable<V1Variation>, IValidatableObject
     {
         /// <summary>
@@ -35,7 +36,7 @@ namespace Square.Connect.Model
         /// <param name="Id">The item variation&#39;s unique ID..</param>
         /// <param name="Name">The item variation&#39;s name..</param>
         /// <param name="ItemId">The ID of the variation&#39;s associated item..</param>
-        /// <param name="Ordinal">Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order.</param>
+        /// <param name="Ordinal">Indicates the variation&#39;s list position when displayed in Square Point of Sale and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order.</param>
         /// <param name="PricingType">Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values.</param>
         /// <param name="PriceMoney">The item variation&#39;s price, if any..</param>
         /// <param name="Sku">The item variation&#39;s SKU, if any..</param>
@@ -79,9 +80,9 @@ namespace Square.Connect.Model
         [DataMember(Name="item_id", EmitDefaultValue=false)]
         public string ItemId { get; set; }
         /// <summary>
-        /// Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
+        /// Indicates the variation&#39;s list position when displayed in Square Point of Sale and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
         /// </summary>
-        /// <value>Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order</value>
+        /// <value>Indicates the variation&#39;s list position when displayed in Square Point of Sale and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order</value>
         [DataMember(Name="ordinal", EmitDefaultValue=false)]
         public int? Ordinal { get; set; }
         /// <summary>

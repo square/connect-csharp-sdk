@@ -8,8 +8,8 @@ Latitude and longitude coordinates.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Latitude** | **decimal?** | The coordinate&#39;s latitude expressed in degrees. | [optional] 
-**Longitude** | **decimal?** | The coordinate&#39;s longitude expressed in degrees. | [optional] 
+**Latitude** | **decimal?** | The latitude of the coordinate expressed in degrees. | [optional] 
+**Longitude** | **decimal?** | The longitude of the coordinate expressed in degrees. | [optional] 
 
 
 

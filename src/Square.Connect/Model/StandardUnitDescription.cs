@@ -33,8 +33,8 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="StandardUnitDescription" /> class.
         /// </summary>
         /// <param name="Unit">Identifies the measurement unit being described..</param>
-        /// <param name="Name">Display name of the measurement unit. For example, &#39;Pound&#39;..</param>
-        /// <param name="Abbreviation">Abbreviation for the measurement unit. For example, &#39;lb&#39;..</param>
+        /// <param name="Name">UI display name of the measurement unit. For example, &#39;Pound&#39;..</param>
+        /// <param name="Abbreviation">UI display abbreviation for the measurement unit. For example, &#39;lb&#39;..</param>
         public StandardUnitDescription(MeasurementUnit Unit = default(MeasurementUnit), string Name = default(string), string Abbreviation = default(string))
         {
             this.Unit = Unit;
@@ -49,15 +49,15 @@ namespace Square.Connect.Model
         [DataMember(Name="unit", EmitDefaultValue=false)]
         public MeasurementUnit Unit { get; set; }
         /// <summary>
-        /// Display name of the measurement unit. For example, &#39;Pound&#39;.
+        /// UI display name of the measurement unit. For example, &#39;Pound&#39;.
         /// </summary>
-        /// <value>Display name of the measurement unit. For example, &#39;Pound&#39;.</value>
+        /// <value>UI display name of the measurement unit. For example, &#39;Pound&#39;.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Abbreviation for the measurement unit. For example, &#39;lb&#39;.
+        /// UI display abbreviation for the measurement unit. For example, &#39;lb&#39;.
         /// </summary>
-        /// <value>Abbreviation for the measurement unit. For example, &#39;lb&#39;.</value>
+        /// <value>UI display abbreviation for the measurement unit. For example, &#39;lb&#39;.</value>
         [DataMember(Name="abbreviation", EmitDefaultValue=false)]
         public string Abbreviation { get; set; }
         /// <summary>

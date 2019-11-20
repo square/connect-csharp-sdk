@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in requests to the ListLocations endpoint.
+    /// Defines the fields that are included in requests to the __ListLocations__ endpoint.
     /// </summary>
     [DataContract]
     public partial class ListLocationsRequest :  IEquatable<ListLocationsRequest>, IValidatableObject

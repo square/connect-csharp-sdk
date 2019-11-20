@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// The response obeject returned by the [RetrieveMerchant](#endpoint-retrieveMerchant) endpoint.
+    /// The response object returned by the [RetrieveMerchant](#endpoint-retrieveMerchant) endpoint.
     /// </summary>
     [DataContract]
     public partial class RetrieveMerchantResponse :  IEquatable<RetrieveMerchantResponse>, IValidatableObject

@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1AdjustInventoryRequest
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1AdjustInventoryRequest :  IEquatable<V1AdjustInventoryRequest>, IValidatableObject
     {
         /// <summary>

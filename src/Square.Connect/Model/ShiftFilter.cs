@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ShiftFilter" /> class.
         /// </summary>
-        /// <param name="LocationId">Fetch shifts for the specified location..</param>
-        /// <param name="EmployeeId">Fetch shifts for the specified employee..</param>
+        /// <param name="LocationIds">Fetch shifts for the specified location..</param>
+        /// <param name="EmployeeIds">Fetch shifts for the specified employee..</param>
         /// <param name="Status">Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values.</param>
         /// <param name="Start">Fetch &#x60;Shift&#x60;s that start in the time range - Inclusive..</param>
         /// <param name="End">Fetch the &#x60;Shift&#x60;s that end in the time range - Inclusive..</param>
         /// <param name="Workday">Fetch the &#x60;Shift&#x60;s based on workday date range..</param>
-        public ShiftFilter(List<string> LocationId = default(List<string>), List<string> EmployeeId = default(List<string>), string Status = default(string), TimeRange Start = default(TimeRange), TimeRange End = default(TimeRange), ShiftWorkday Workday = default(ShiftWorkday))
+        public ShiftFilter(List<string> LocationIds = default(List<string>), List<string> EmployeeIds = default(List<string>), string Status = default(string), TimeRange Start = default(TimeRange), TimeRange End = default(TimeRange), ShiftWorkday Workday = default(ShiftWorkday))
         {
-            this.LocationId = LocationId;
-            this.EmployeeId = EmployeeId;
+            this.LocationIds = LocationIds;
+            this.EmployeeIds = EmployeeIds;
             this.Status = Status;
             this.Start = Start;
             this.End = End;
@@ -52,14 +52,14 @@ namespace Square.Connect.Model
         /// Fetch shifts for the specified location.
         /// </summary>
         /// <value>Fetch shifts for the specified location.</value>
-        [DataMember(Name="location_id", EmitDefaultValue=false)]
-        public List<string> LocationId { get; set; }
+        [DataMember(Name="location_ids", EmitDefaultValue=false)]
+        public List<string> LocationIds { get; set; }
         /// <summary>
         /// Fetch shifts for the specified employee.
         /// </summary>
         /// <value>Fetch shifts for the specified employee.</value>
-        [DataMember(Name="employee_id", EmitDefaultValue=false)]
-        public List<string> EmployeeId { get; set; }
+        [DataMember(Name="employee_ids", EmitDefaultValue=false)]
+        public List<string> EmployeeIds { get; set; }
         /// <summary>
         /// Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
         /// </summary>
@@ -92,8 +92,8 @@ namespace Square.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShiftFilter {\n");
-            sb.Append("  LocationId: ").Append(LocationId).Append("\n");
-            sb.Append("  EmployeeId: ").Append(EmployeeId).Append("\n");
+            sb.Append("  LocationIds: ").Append(LocationIds).Append("\n");
+            sb.Append("  EmployeeIds: ").Append(EmployeeIds).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Start: ").Append(Start).Append("\n");
             sb.Append("  End: ").Append(End).Append("\n");
@@ -135,14 +135,14 @@ namespace Square.Connect.Model
 
             return 
                 (
-                    this.LocationId == other.LocationId ||
-                    this.LocationId != null &&
-                    this.LocationId.SequenceEqual(other.LocationId)
+                    this.LocationIds == other.LocationIds ||
+                    this.LocationIds != null &&
+                    this.LocationIds.SequenceEqual(other.LocationIds)
                 ) && 
                 (
-                    this.EmployeeId == other.EmployeeId ||
-                    this.EmployeeId != null &&
-                    this.EmployeeId.SequenceEqual(other.EmployeeId)
+                    this.EmployeeIds == other.EmployeeIds ||
+                    this.EmployeeIds != null &&
+                    this.EmployeeIds.SequenceEqual(other.EmployeeIds)
                 ) && 
                 (
                     this.Status == other.Status ||
@@ -177,10 +177,10 @@ namespace Square.Connect.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.LocationId != null)
-                    hash = hash * 59 + this.LocationId.GetHashCode();
-                if (this.EmployeeId != null)
-                    hash = hash * 59 + this.EmployeeId.GetHashCode();
+                if (this.LocationIds != null)
+                    hash = hash * 59 + this.LocationIds.GetHashCode();
+                if (this.EmployeeIds != null)
+                    hash = hash * 59 + this.EmployeeIds.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.Start != null)

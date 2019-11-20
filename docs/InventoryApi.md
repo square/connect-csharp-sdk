@@ -302,7 +302,7 @@ namespace Example
             var apiInstance = new InventoryApi();
             var catalogObjectId = catalogObjectId_example;  // string | ID of the `CatalogObject` to retrieve.
             var locationIds = locationIds_example;  // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations. (optional) 
-            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information. (optional) 
 
             try
             {
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **catalogObjectId** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. | 
  **locationIds** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional] 
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information. | [optional] 
 
 ### Return type
 
@@ -371,7 +371,7 @@ namespace Example
             var apiInstance = new InventoryApi();
             var catalogObjectId = catalogObjectId_example;  // string | ID of the `CatalogObject` to retrieve.
             var locationIds = locationIds_example;  // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations. (optional) 
-            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional) 
+            var cursor = cursor_example;  // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information. (optional) 
 
             try
             {
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **catalogObjectId** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. | 
  **locationIds** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional] 
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information. | [optional] 
 
 ### Return type
 

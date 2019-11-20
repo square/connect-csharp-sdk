@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1UpdateModifierListRequest
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1UpdateModifierListRequest :  IEquatable<V1UpdateModifierListRequest>, IValidatableObject
     {
         /// <summary>

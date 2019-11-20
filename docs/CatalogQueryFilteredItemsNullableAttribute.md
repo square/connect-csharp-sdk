@@ -1,8 +1,8 @@
-# Square.Connect.Model.WebhookEvents
+# Square.Connect.Model.CatalogQueryFilteredItemsNullableAttribute
 
 ### Description
 
-The type of an event that triggers a webhook notification to an application.
+
 
 ## Properties
 

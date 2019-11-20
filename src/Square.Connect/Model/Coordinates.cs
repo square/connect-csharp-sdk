@@ -32,8 +32,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Coordinates" /> class.
         /// </summary>
-        /// <param name="Latitude">The coordinate&#39;s latitude expressed in degrees..</param>
-        /// <param name="Longitude">The coordinate&#39;s longitude expressed in degrees..</param>
+        /// <param name="Latitude">The latitude of the coordinate expressed in degrees..</param>
+        /// <param name="Longitude">The longitude of the coordinate expressed in degrees..</param>
         public Coordinates(decimal? Latitude = default(decimal?), decimal? Longitude = default(decimal?))
         {
             this.Latitude = Latitude;
@@ -41,15 +41,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The coordinate&#39;s latitude expressed in degrees.
+        /// The latitude of the coordinate expressed in degrees.
         /// </summary>
-        /// <value>The coordinate&#39;s latitude expressed in degrees.</value>
+        /// <value>The latitude of the coordinate expressed in degrees.</value>
         [DataMember(Name="latitude", EmitDefaultValue=false)]
         public decimal? Latitude { get; set; }
         /// <summary>
-        /// The coordinate&#39;s longitude expressed in degrees.
+        /// The longitude of the coordinate expressed in degrees.
         /// </summary>
-        /// <value>The coordinate&#39;s longitude expressed in degrees.</value>
+        /// <value>The longitude of the coordinate expressed in degrees.</value>
         [DataMember(Name="longitude", EmitDefaultValue=false)]
         public decimal? Longitude { get; set; }
         /// <summary>

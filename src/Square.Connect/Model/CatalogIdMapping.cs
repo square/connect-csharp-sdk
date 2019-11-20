@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="CatalogIdMapping" /> class.
         /// </summary>
         /// <param name="ClientObjectId">The client-supplied, temporary &#x60;#&#x60;-prefixed ID for a new &#x60;CatalogObject&#x60;..</param>
-        /// <param name="ObjectId">The permanent ID for the &#x60;CatalogObject&#x60; created by the server..</param>
+        /// <param name="ObjectId">The permanent ID for the CatalogObject created by the server..</param>
         public CatalogIdMapping(string ClientObjectId = default(string), string ObjectId = default(string))
         {
             this.ClientObjectId = ClientObjectId;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="client_object_id", EmitDefaultValue=false)]
         public string ClientObjectId { get; set; }
         /// <summary>
-        /// The permanent ID for the &#x60;CatalogObject&#x60; created by the server.
+        /// The permanent ID for the CatalogObject created by the server.
         /// </summary>
-        /// <value>The permanent ID for the &#x60;CatalogObject&#x60; created by the server.</value>
+        /// <value>The permanent ID for the CatalogObject created by the server.</value>
         [DataMember(Name="object_id", EmitDefaultValue=false)]
         public string ObjectId { get; set; }
         /// <summary>

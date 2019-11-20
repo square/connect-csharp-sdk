@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <param name="ExpiresAt">The date when access_token expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format..</param>
         /// <param name="MerchantId">The ID of the authorizing merchant&#39;s business..</param>
         /// <param name="SubscriptionId">__LEGACY FIELD__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
-        /// <param name="PlanId">__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
+        /// <param name="PlanId">T__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization..</param>
         /// <param name="IdToken">Then OpenID token belonging to this this person. Only present if the OPENID scope is included in the authorize request..</param>
         /// <param name="RefreshToken">A refresh token. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management)..</param>
         public ObtainTokenResponse(string AccessToken = default(string), string TokenType = default(string), string ExpiresAt = default(string), string MerchantId = default(string), string SubscriptionId = default(string), string PlanId = default(string), string IdToken = default(string), string RefreshToken = default(string))
@@ -83,9 +83,9 @@ namespace Square.Connect.Model
         [DataMember(Name="subscription_id", EmitDefaultValue=false)]
         public string SubscriptionId { get; set; }
         /// <summary>
-        /// __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+        /// T__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
         /// </summary>
-        /// <value>__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.</value>
+        /// <value>T__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.</value>
         [DataMember(Name="plan_id", EmitDefaultValue=false)]
         public string PlanId { get; set; }
         /// <summary>

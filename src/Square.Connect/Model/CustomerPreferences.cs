@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a particular customer&#39;s preferences.
+    /// Represents communication preferences for the customer profile.
     /// </summary>
     [DataContract]
     public partial class CustomerPreferences :  IEquatable<CustomerPreferences>, IValidatableObject

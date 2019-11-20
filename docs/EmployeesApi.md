@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ListEmployees
 
-Gets a list of `Employee` objects for a business.
+
 
 ### Example
 ```csharp
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 RetrieveEmployee
 
-Gets an `Employee` by Square-assigned employee `ID` (UUID)
+
 
 ### Example
 ```csharp

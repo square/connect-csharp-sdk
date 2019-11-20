@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// A query to be applied to a [SearchCatalogObjectsRequest](#type-searchcatalogobjectsrequest). Only one query field may be present.  Where an attribute name is required, it should be specified as the name of any field marked \&quot;searchable\&quot; from the structured data types for the desired result object type(s) ([CatalogItem](#type-catalogitem), [CatalogItemVariation](#type-catalogitemvariation), [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax), [CatalogDiscount](#type-catalogdiscount), [CatalogModifierList](#type-catalogmodifierlist), [CatalogModifier](#type-catalogmodifier)).  For example, a query that should return Items may specify attribute names from any of the searchable fields of the [CatalogItem](#type-catalogitem) data type, namely &#x60;\&quot;name\&quot;&#x60;, &#x60;\&quot;description\&quot;&#x60;, and &#x60;\&quot;abbreviation\&quot;&#x60;.
+    /// A query to be applied to a &#x60;SearchCatalogObjectsRequest&#x60;. Only one query field may be present.  Where an attribute name is required, it should be specified as the name of any field marked \&quot;searchable\&quot; from the structured data types for the desired result object type(s) (&#x60;CatalogItem&#x60;, &#x60;CatalogItemVariation&#x60;, &#x60;CatalogCategory&#x60;, &#x60;CatalogTax&#x60;, &#x60;CatalogDiscount&#x60;, &#x60;CatalogModifierList&#x60;, &#x60;CatalogModifier&#x60;).  For example, a query that should return Items may specify attribute names from any of the searchable fields of the &#x60;CatalogItem&#x60; data type, namely &#x60;\&quot;name\&quot;&#x60;, &#x60;\&quot;description\&quot;&#x60;, and &#x60;\&quot;abbreviation\&quot;&#x60;.
     /// </summary>
     [DataContract]
     public partial class CatalogQuery :  IEquatable<CatalogQuery>, IValidatableObject
@@ -37,10 +37,10 @@ namespace Square.Connect.Model
         /// <param name="PrefixQuery">A query that returns only objects for which the given (string-valued) attribute has the given case-insensitive prefix..</param>
         /// <param name="RangeQuery">A query that returns only objects for which the given (integer-valued) attribute lies in the given range..</param>
         /// <param name="TextQuery">A query that returns only objects whose searchable attributes contain all of the given keywords as prefixes. For example, if a &#x60;CatalogItem&#x60; contains attributes &#x60;{\&quot;name\&quot;: \&quot;t-shirt\&quot;}&#x60; and &#x60;{\&quot;description\&quot;: \&quot;Small, Purple\&quot;}&#x60;, it will be matched by the query &#x60;{\&quot;keywords\&quot;: [\&quot;shirt\&quot;, \&quot;sma\&quot;, \&quot;purp\&quot;]}&#x60;..</param>
-        /// <param name="ItemsForTaxQuery">A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have any of the given [CatalogTax&#x60;es enabled..</param>
-        /// <param name="ItemsForModifierListQuery">A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have any of the given [CatalogModifierList&#x60;s enabled..</param>
-        /// <param name="ItemsForItemOptionsQuery">A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption&#x60;s..</param>
-        /// <param name="ItemVariationsForItemOptionValuesQuery">A query that returns all &#x60;CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption&#x60; values..</param>
+        /// <param name="ItemsForTaxQuery">A query that returns all &#x60;CatalogItem&#x60;s that have any of the given &#x60;CatalogTax&#x60;es enabled..</param>
+        /// <param name="ItemsForModifierListQuery">A query that returns all &#x60;CatalogItem&#x60;s that have any of the given &#x60;CatalogModifierList&#x60;s enabled..</param>
+        /// <param name="ItemsForItemOptionsQuery">A query that returns all &#x60;CatalogItem&#x60;s that have all of the given &#x60;CatalogItemOption&#x60;s..</param>
+        /// <param name="ItemVariationsForItemOptionValuesQuery">A query that returns all &#x60;CatalogItemVariation&#x60;s that have all of the given &#x60;CatalogItemOption&#x60; values..</param>
         public CatalogQuery(CatalogQuerySortedAttribute SortedAttributeQuery = default(CatalogQuerySortedAttribute), CatalogQueryExact ExactQuery = default(CatalogQueryExact), CatalogQueryPrefix PrefixQuery = default(CatalogQueryPrefix), CatalogQueryRange RangeQuery = default(CatalogQueryRange), CatalogQueryText TextQuery = default(CatalogQueryText), CatalogQueryItemsForTax ItemsForTaxQuery = default(CatalogQueryItemsForTax), CatalogQueryItemsForModifierList ItemsForModifierListQuery = default(CatalogQueryItemsForModifierList), CatalogQueryItemsForItemOptions ItemsForItemOptionsQuery = default(CatalogQueryItemsForItemOptions), CatalogQueryItemVariationsForItemOptionValues ItemVariationsForItemOptionValuesQuery = default(CatalogQueryItemVariationsForItemOptionValues))
         {
             this.SortedAttributeQuery = SortedAttributeQuery;
@@ -85,27 +85,27 @@ namespace Square.Connect.Model
         [DataMember(Name="text_query", EmitDefaultValue=false)]
         public CatalogQueryText TextQuery { get; set; }
         /// <summary>
-        /// A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have any of the given [CatalogTax&#x60;es enabled.
+        /// A query that returns all &#x60;CatalogItem&#x60;s that have any of the given &#x60;CatalogTax&#x60;es enabled.
         /// </summary>
-        /// <value>A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have any of the given [CatalogTax&#x60;es enabled.</value>
+        /// <value>A query that returns all &#x60;CatalogItem&#x60;s that have any of the given &#x60;CatalogTax&#x60;es enabled.</value>
         [DataMember(Name="items_for_tax_query", EmitDefaultValue=false)]
         public CatalogQueryItemsForTax ItemsForTaxQuery { get; set; }
         /// <summary>
-        /// A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have any of the given [CatalogModifierList&#x60;s enabled.
+        /// A query that returns all &#x60;CatalogItem&#x60;s that have any of the given &#x60;CatalogModifierList&#x60;s enabled.
         /// </summary>
-        /// <value>A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have any of the given [CatalogModifierList&#x60;s enabled.</value>
+        /// <value>A query that returns all &#x60;CatalogItem&#x60;s that have any of the given &#x60;CatalogModifierList&#x60;s enabled.</value>
         [DataMember(Name="items_for_modifier_list_query", EmitDefaultValue=false)]
         public CatalogQueryItemsForModifierList ItemsForModifierListQuery { get; set; }
         /// <summary>
-        /// A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption&#x60;s.
+        /// A query that returns all &#x60;CatalogItem&#x60;s that have all of the given &#x60;CatalogItemOption&#x60;s.
         /// </summary>
-        /// <value>A query that returns all &#x60;CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption&#x60;s.</value>
+        /// <value>A query that returns all &#x60;CatalogItem&#x60;s that have all of the given &#x60;CatalogItemOption&#x60;s.</value>
         [DataMember(Name="items_for_item_options_query", EmitDefaultValue=false)]
         public CatalogQueryItemsForItemOptions ItemsForItemOptionsQuery { get; set; }
         /// <summary>
-        /// A query that returns all &#x60;CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption&#x60; values.
+        /// A query that returns all &#x60;CatalogItemVariation&#x60;s that have all of the given &#x60;CatalogItemOption&#x60; values.
         /// </summary>
-        /// <value>A query that returns all &#x60;CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption&#x60; values.</value>
+        /// <value>A query that returns all &#x60;CatalogItemVariation&#x60;s that have all of the given &#x60;CatalogItemOption&#x60; values.</value>
         [DataMember(Name="item_variations_for_item_option_values_query", EmitDefaultValue=false)]
         public CatalogQueryItemVariationsForItemOptionValues ItemVariationsForItemOptionValuesQuery { get; set; }
         /// <summary>

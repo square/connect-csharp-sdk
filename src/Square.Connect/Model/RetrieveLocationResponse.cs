@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that the  [RetrieveLocation](#endpoint-retrievelocation) endpoint returns  in a response.
+    /// Defines the fields that the [RetrieveLocation](#endpoint-retrievelocation) endpoint returns in a response.
     /// </summary>
     [DataContract]
     public partial class RetrieveLocationResponse :  IEquatable<RetrieveLocationResponse>, IValidatableObject

@@ -40,9 +40,9 @@ namespace Square.Connect.Model
         /// <param name="AvailableForPickup">If &#x60;true&#x60;, the item can be added to pickup orders from the merchant&#39;s online store..</param>
         /// <param name="AvailableElectronically">If &#x60;true&#x60;, the item can be added to electronically fulfilled orders from the merchant&#39;s online store..</param>
         /// <param name="CategoryId">The ID of the item&#39;s category, if any..</param>
-        /// <param name="TaxIds">A set of IDs indicating the &#x60;CatalogTax&#x60;es that are enabled for this item. When updating an item, any taxes listed here will be added to the item. &#x60;CatalogTax&#x60;es may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;..</param>
-        /// <param name="ModifierListInfo">A set of &#x60;CatalogItemModifierListInfo&#x60; objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. &#x60;CatalogModifierList&#x60;s may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;..</param>
-        /// <param name="Variations">A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemVariation&#x60;s for this item.  Maximum: 250 item variations.</param>
+        /// <param name="TaxIds">A set of IDs indicating the taxes enabled for this item. When updating an item, any taxes listed here will be added to the item. Taxes may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;..</param>
+        /// <param name="ModifierListInfo">A set of &#x60;CatalogItemModifierListInfo&#x60; objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. Modifier lists may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;..</param>
+        /// <param name="Variations">A list of CatalogObjects containing the &#x60;CatalogItemVariation&#x60;s for this item..</param>
         /// <param name="ProductType">The product type of the item. May not be changed once an item has been created.  Only items of product type &#x60;REGULAR&#x60; or &#x60;APPOINTMENTS_SERVICE&#x60; may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values.</param>
         /// <param name="SkipModifierScreen">If &#x60;false&#x60;, the Square Point of Sale app will present the &#x60;CatalogItem&#x60;&#39;s details screen immediately, allowing the merchant to choose &#x60;CatalogModifier&#x60;s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#39;s details.  Third-party clients are encouraged to implement similar behaviors..</param>
         /// <param name="ItemOptions">[beta] List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options..</param>
@@ -113,21 +113,21 @@ namespace Square.Connect.Model
         [DataMember(Name="category_id", EmitDefaultValue=false)]
         public string CategoryId { get; set; }
         /// <summary>
-        /// A set of IDs indicating the &#x60;CatalogTax&#x60;es that are enabled for this item. When updating an item, any taxes listed here will be added to the item. &#x60;CatalogTax&#x60;es may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;.
+        /// A set of IDs indicating the taxes enabled for this item. When updating an item, any taxes listed here will be added to the item. Taxes may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;.
         /// </summary>
-        /// <value>A set of IDs indicating the &#x60;CatalogTax&#x60;es that are enabled for this item. When updating an item, any taxes listed here will be added to the item. &#x60;CatalogTax&#x60;es may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;.</value>
+        /// <value>A set of IDs indicating the taxes enabled for this item. When updating an item, any taxes listed here will be added to the item. Taxes may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;.</value>
         [DataMember(Name="tax_ids", EmitDefaultValue=false)]
         public List<string> TaxIds { get; set; }
         /// <summary>
-        /// A set of &#x60;CatalogItemModifierListInfo&#x60; objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. &#x60;CatalogModifierList&#x60;s may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;.
+        /// A set of &#x60;CatalogItemModifierListInfo&#x60; objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. Modifier lists may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;.
         /// </summary>
-        /// <value>A set of &#x60;CatalogItemModifierListInfo&#x60; objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. &#x60;CatalogModifierList&#x60;s may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;.</value>
+        /// <value>A set of &#x60;CatalogItemModifierListInfo&#x60; objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. Modifier lists may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;.</value>
         [DataMember(Name="modifier_list_info", EmitDefaultValue=false)]
         public List<CatalogItemModifierListInfo> ModifierListInfo { get; set; }
         /// <summary>
-        /// A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemVariation&#x60;s for this item.  Maximum: 250 item variations
+        /// A list of CatalogObjects containing the &#x60;CatalogItemVariation&#x60;s for this item.
         /// </summary>
-        /// <value>A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemVariation&#x60;s for this item.  Maximum: 250 item variations</value>
+        /// <value>A list of CatalogObjects containing the &#x60;CatalogItemVariation&#x60;s for this item.</value>
         [DataMember(Name="variations", EmitDefaultValue=false)]
         public List<CatalogObject> Variations { get; set; }
         /// <summary>

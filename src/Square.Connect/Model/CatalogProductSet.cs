@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a collection of catalog objects for the purpose of applying a [PricingRule](#type-pricingrule). Including a catalog object will include all of its subtypes. For example, including a category in a product set will include all of its items and associated item variations in the product set. Including an item in a product set will also include its item variations.
+    /// Represents a collection of catalog objects for the purpose of applying a &#x60;PricingRule&#x60;. Including a catalog object will include all of its subtypes. For example, including a category in a product set will include all of its items and associated item variations in the product set. Including an item in a product set will also include its item variations.
     /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
@@ -33,9 +33,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogProductSet" /> class.
         /// </summary>
-        /// <param name="Name"> User-defined name for the product set. For example, \&quot;Clearance Items\&quot; or \&quot;Winter Sale Items\&quot;..</param>
-        /// <param name="ProductIdsAny">Unique IDs for any &#x60;CatalogObjects&#x60;s to include in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with &#x60;product_ids_all&#x60; in a parent &#x60;CatalogProductSet&#x60; to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs..</param>
-        /// <param name="ProductIdsAll">Unique IDs for &#x60;CatalogObjects&#x60; to include in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs..</param>
+        /// <param name="Name">User-defined name for the product set. For example, \&quot;Clearance Items\&quot; or \&quot;Winter Sale Items\&quot;..</param>
+        /// <param name="ProductIdsAny"> Unique IDs for any &#x60;CatalogObject&#x60; included in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with &#x60;product_ids_all&#x60; in a parent &#x60;CatalogProductSet&#x60; to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs..</param>
+        /// <param name="ProductIdsAll">Unique IDs for any &#x60;CatalogObject&#x60; included in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs..</param>
         /// <param name="QuantityExact">If set, there must be exactly this many items from &#x60;products_any&#x60; or &#x60;products_all&#x60; in the cart for the discount to apply.  Cannot be combined with either &#x60;quantity_min&#x60; or &#x60;quantity_max&#x60;..</param>
         /// <param name="QuantityMin">If set, there must be at least this many items from &#x60;products_any&#x60; or &#x60;products_all&#x60; in a cart for the discount to apply. See &#x60;quantity_exact&#x60;. Defaults to 0 if &#x60;quantity_exact&#x60;, &#x60;quantity_min&#x60; and &#x60;quantity_max&#x60; are all unspecified..</param>
         /// <param name="QuantityMax">If set, the pricing rule will apply to a maximum of this many items from &#x60;products_any&#x60; or &#x60;products_all&#x60;..</param>
@@ -52,21 +52,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        ///  User-defined name for the product set. For example, \&quot;Clearance Items\&quot; or \&quot;Winter Sale Items\&quot;.
+        /// User-defined name for the product set. For example, \&quot;Clearance Items\&quot; or \&quot;Winter Sale Items\&quot;.
         /// </summary>
-        /// <value> User-defined name for the product set. For example, \&quot;Clearance Items\&quot; or \&quot;Winter Sale Items\&quot;.</value>
+        /// <value>User-defined name for the product set. For example, \&quot;Clearance Items\&quot; or \&quot;Winter Sale Items\&quot;.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Unique IDs for any &#x60;CatalogObjects&#x60;s to include in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with &#x60;product_ids_all&#x60; in a parent &#x60;CatalogProductSet&#x60; to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.
+        ///  Unique IDs for any &#x60;CatalogObject&#x60; included in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with &#x60;product_ids_all&#x60; in a parent &#x60;CatalogProductSet&#x60; to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.
         /// </summary>
-        /// <value>Unique IDs for any &#x60;CatalogObjects&#x60;s to include in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with &#x60;product_ids_all&#x60; in a parent &#x60;CatalogProductSet&#x60; to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.</value>
+        /// <value> Unique IDs for any &#x60;CatalogObject&#x60; included in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with &#x60;product_ids_all&#x60; in a parent &#x60;CatalogProductSet&#x60; to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.</value>
         [DataMember(Name="product_ids_any", EmitDefaultValue=false)]
         public List<string> ProductIdsAny { get; set; }
         /// <summary>
-        /// Unique IDs for &#x60;CatalogObjects&#x60; to include in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.
+        /// Unique IDs for any &#x60;CatalogObject&#x60; included in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.
         /// </summary>
-        /// <value>Unique IDs for &#x60;CatalogObjects&#x60; to include in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.</value>
+        /// <value>Unique IDs for any &#x60;CatalogObject&#x60; included in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of &#x60;product_ids_all&#x60;, &#x60;product_ids_any&#x60;, or &#x60;all_products&#x60; can be set.  Max: 500 catalog object IDs.</value>
         [DataMember(Name="product_ids_all", EmitDefaultValue=false)]
         public List<string> ProductIdsAll { get; set; }
         /// <summary>

@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// 
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class Device :  IEquatable<Device>, IValidatableObject
     {
         /// <summary>

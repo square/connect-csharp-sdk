@@ -8,7 +8,7 @@ A request to update a `BreakType`
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BreakType** | [**BreakType**](BreakType.md) | The updated &#x60;BreakType&#x60;. | [optional] 
+**BreakType** | [**BreakType**](BreakType.md) | The updated &#x60;BreakType&#x60;. | 
 
 
 

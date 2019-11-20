@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Retrieve an employee by &#x60;Employee.id&#x60;
+    /// 
     /// </summary>
     [DataContract]
     public partial class RetrieveEmployeeRequest :  IEquatable<RetrieveEmployeeRequest>, IValidatableObject

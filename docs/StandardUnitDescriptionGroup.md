@@ -8,7 +8,7 @@ Group of standard measurement units.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StandardUnitDescriptions** | [**List&lt;StandardUnitDescription&gt;**](StandardUnitDescription.md) | List of measurement units in this description group. | [optional] 
+**StandardUnitDescriptions** | [**List&lt;StandardUnitDescription&gt;**](StandardUnitDescription.md) | List of standard (non-custom) measurement units in this description group. | [optional] 
 **LanguageCode** | **string** | IETF language tag. | [optional] 
 
 

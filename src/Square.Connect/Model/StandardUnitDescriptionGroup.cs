@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardUnitDescriptionGroup" /> class.
         /// </summary>
-        /// <param name="StandardUnitDescriptions">List of measurement units in this description group..</param>
+        /// <param name="StandardUnitDescriptions">List of standard (non-custom) measurement units in this description group..</param>
         /// <param name="LanguageCode">IETF language tag..</param>
         public StandardUnitDescriptionGroup(List<StandardUnitDescription> StandardUnitDescriptions = default(List<StandardUnitDescription>), string LanguageCode = default(string))
         {
@@ -41,9 +41,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// List of measurement units in this description group.
+        /// List of standard (non-custom) measurement units in this description group.
         /// </summary>
-        /// <value>List of measurement units in this description group.</value>
+        /// <value>List of standard (non-custom) measurement units in this description group.</value>
         [DataMember(Name="standard_unit_descriptions", EmitDefaultValue=false)]
         public List<StandardUnitDescription> StandardUnitDescriptions { get; set; }
         /// <summary>

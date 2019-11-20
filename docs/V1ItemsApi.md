@@ -48,11 +48,12 @@ Method | HTTP request | Description
 
 <a name="adjustinventory"></a>
 # **AdjustInventory**
+**Note: This endpoint is deprecated.**
 > V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body)
 
 AdjustInventory
 
-Adjusts an item variation's current available inventory.
+Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -117,11 +118,12 @@ Name | Type | Description  | Notes
 
 <a name="applyfee"></a>
 # **ApplyFee**
+**Note: This endpoint is deprecated.**
 > V1Item ApplyFee (string locationId, string itemId, string feeId)
 
 ApplyFee
 
-Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -186,11 +188,12 @@ Name | Type | Description  | Notes
 
 <a name="applymodifierlist"></a>
 # **ApplyModifierList**
+**Note: This endpoint is deprecated.**
 > V1Item ApplyModifierList (string locationId, string modifierListId, string itemId)
 
 ApplyModifierList
 
-Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -255,11 +258,12 @@ Name | Type | Description  | Notes
 
 <a name="createcategory"></a>
 # **CreateCategory**
+**Note: This endpoint is deprecated.**
 > V1Category CreateCategory (string locationId, V1Category body)
 
 CreateCategory
 
-Creates an item category.
+Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -322,11 +326,12 @@ Name | Type | Description  | Notes
 
 <a name="creatediscount"></a>
 # **CreateDiscount**
+**Note: This endpoint is deprecated.**
 > V1Discount CreateDiscount (string locationId, V1Discount body)
 
 CreateDiscount
 
-Creates a discount.
+Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -389,11 +394,12 @@ Name | Type | Description  | Notes
 
 <a name="createfee"></a>
 # **CreateFee**
+**Note: This endpoint is deprecated.**
 > V1Fee CreateFee (string locationId, V1Fee body)
 
 CreateFee
 
-Creates a fee (tax).
+Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -456,11 +462,12 @@ Name | Type | Description  | Notes
 
 <a name="createitem"></a>
 # **CreateItem**
+**Note: This endpoint is deprecated.**
 > V1Item CreateItem (string locationId, V1Item body)
 
 CreateItem
 
-Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its `id`. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a `user_data` string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify `id`. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a `user_data` string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
 
 ### Example
 ```csharp
@@ -523,11 +530,12 @@ Name | Type | Description  | Notes
 
 <a name="createmodifierlist"></a>
 # **CreateModifierList**
+**Note: This endpoint is deprecated.**
 > V1ModifierList CreateModifierList (string locationId, V1ModifierList body)
 
 CreateModifierList
 
-Creates an item modifier list and at least one modifier option for it.
+Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -590,11 +598,12 @@ Name | Type | Description  | Notes
 
 <a name="createmodifieroption"></a>
 # **CreateModifierOption**
+**Note: This endpoint is deprecated.**
 > V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body)
 
 CreateModifierOption
 
-Creates an item modifier option and adds it to a modifier list.
+Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -659,11 +668,12 @@ Name | Type | Description  | Notes
 
 <a name="createpage"></a>
 # **CreatePage**
+**Note: This endpoint is deprecated.**
 > V1Page CreatePage (string locationId, V1Page body)
 
 CreatePage
 
-Creates a Favorites page in Square Register.
+Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -726,11 +736,12 @@ Name | Type | Description  | Notes
 
 <a name="createvariation"></a>
 # **CreateVariation**
+**Note: This endpoint is deprecated.**
 > V1Variation CreateVariation (string locationId, string itemId, V1Variation body)
 
 CreateVariation
 
-Creates an item variation for an existing item.
+Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -795,11 +806,12 @@ Name | Type | Description  | Notes
 
 <a name="deletecategory"></a>
 # **DeleteCategory**
+**Note: This endpoint is deprecated.**
 > V1Category DeleteCategory (string locationId, string categoryId)
 
 DeleteCategory
 
-Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteCategoryRequest` object as documented below.
+Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteCategoryRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -862,11 +874,12 @@ Name | Type | Description  | Notes
 
 <a name="deletediscount"></a>
 # **DeleteDiscount**
+**Note: This endpoint is deprecated.**
 > V1Discount DeleteDiscount (string locationId, string discountId)
 
 DeleteDiscount
 
-Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteDiscountRequest` object as documented below.
+Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteDiscountRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -929,11 +942,12 @@ Name | Type | Description  | Notes
 
 <a name="deletefee"></a>
 # **DeleteFee**
+**Note: This endpoint is deprecated.**
 > V1Fee DeleteFee (string locationId, string feeId)
 
 DeleteFee
 
-Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteFeeRequest` object as documented below.
+Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteFeeRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -996,11 +1010,12 @@ Name | Type | Description  | Notes
 
 <a name="deleteitem"></a>
 # **DeleteItem**
+**Note: This endpoint is deprecated.**
 > V1Item DeleteItem (string locationId, string itemId)
 
 DeleteItem
 
-Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteItemRequest` object as documented below.
+Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteItemRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1063,11 +1078,12 @@ Name | Type | Description  | Notes
 
 <a name="deletemodifierlist"></a>
 # **DeleteModifierList**
+**Note: This endpoint is deprecated.**
 > V1ModifierList DeleteModifierList (string locationId, string modifierListId)
 
 DeleteModifierList
 
-Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierListRequest` object as documented below.
+Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierListRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1130,11 +1146,12 @@ Name | Type | Description  | Notes
 
 <a name="deletemodifieroption"></a>
 # **DeleteModifierOption**
+**Note: This endpoint is deprecated.**
 > V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId)
 
 DeleteModifierOption
 
-Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierOptionRequest` object as documented below.
+Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierOptionRequest` object.
 
 ### Example
 ```csharp
@@ -1199,11 +1216,12 @@ Name | Type | Description  | Notes
 
 <a name="deletepage"></a>
 # **DeletePage**
+**Note: This endpoint is deprecated.**
 > V1Page DeletePage (string locationId, string pageId)
 
 DeletePage
 
-Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageRequest` object as documented below.
+Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageRequest` object.
 
 ### Example
 ```csharp
@@ -1266,11 +1284,12 @@ Name | Type | Description  | Notes
 
 <a name="deletepagecell"></a>
 # **DeletePageCell**
+**Note: This endpoint is deprecated.**
 > V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null)
 
 DeletePageCell
 
-Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageCellRequest` object as documented below.
+Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageCellRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1337,11 +1356,12 @@ Name | Type | Description  | Notes
 
 <a name="deletevariation"></a>
 # **DeleteVariation**
+**Note: This endpoint is deprecated.**
 > V1Variation DeleteVariation (string locationId, string itemId, string variationId)
 
 DeleteVariation
 
-Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteVariationRequest` object as documented below.
+Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteVariationRequest` object as documented below.
 
 ### Example
 ```csharp
@@ -1406,11 +1426,12 @@ Name | Type | Description  | Notes
 
 <a name="listcategories"></a>
 # **ListCategories**
+**Note: This endpoint is deprecated.**
 > List<V1Category> ListCategories (string locationId)
 
 ListCategories
 
-Lists all of a location's item categories.
+Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1471,11 +1492,12 @@ Name | Type | Description  | Notes
 
 <a name="listdiscounts"></a>
 # **ListDiscounts**
+**Note: This endpoint is deprecated.**
 > List<V1Discount> ListDiscounts (string locationId)
 
 ListDiscounts
 
-Lists all of a location's discounts.
+Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1536,11 +1558,12 @@ Name | Type | Description  | Notes
 
 <a name="listfees"></a>
 # **ListFees**
+**Note: This endpoint is deprecated.**
 > List<V1Fee> ListFees (string locationId)
 
 ListFees
 
-Lists all of a location's fees (taxes).
+Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1601,11 +1624,12 @@ Name | Type | Description  | Notes
 
 <a name="listinventory"></a>
 # **ListInventory**
+**Note: This endpoint is deprecated.**
 > List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null)
 
 ListInventory
 
-Provides inventory information for all of a merchant's inventory-enabled item variations.
+Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1670,11 +1694,12 @@ Name | Type | Description  | Notes
 
 <a name="listitems"></a>
 # **ListItems**
+**Note: This endpoint is deprecated.**
 > List<V1Item> ListItems (string locationId, string batchToken = null)
 
 ListItems
 
-Provides summary information for all of a location's items.
+Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1737,11 +1762,12 @@ Name | Type | Description  | Notes
 
 <a name="listmodifierlists"></a>
 # **ListModifierLists**
+**Note: This endpoint is deprecated.**
 > List<V1ModifierList> ListModifierLists (string locationId)
 
 ListModifierLists
 
-Lists all of a location's modifier lists.
+Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1802,11 +1828,12 @@ Name | Type | Description  | Notes
 
 <a name="listpages"></a>
 # **ListPages**
+**Note: This endpoint is deprecated.**
 > List<V1Page> ListPages (string locationId)
 
 ListPages
 
-Lists all of a location's Favorites pages in Square Register.
+Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1867,11 +1894,12 @@ Name | Type | Description  | Notes
 
 <a name="removefee"></a>
 # **RemoveFee**
+**Note: This endpoint is deprecated.**
 > V1Item RemoveFee (string locationId, string itemId, string feeId)
 
 RemoveFee
 
-Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -1936,11 +1964,12 @@ Name | Type | Description  | Notes
 
 <a name="removemodifierlist"></a>
 # **RemoveModifierList**
+**Note: This endpoint is deprecated.**
 > V1Item RemoveModifierList (string locationId, string modifierListId, string itemId)
 
 RemoveModifierList
 
-Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2005,11 +2034,12 @@ Name | Type | Description  | Notes
 
 <a name="retrieveitem"></a>
 # **RetrieveItem**
+**Note: This endpoint is deprecated.**
 > V1Item RetrieveItem (string locationId, string itemId)
 
 RetrieveItem
 
-Provides the details for a single item, including associated modifier lists and fees.
+Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2072,11 +2102,12 @@ Name | Type | Description  | Notes
 
 <a name="retrievemodifierlist"></a>
 # **RetrieveModifierList**
+**Note: This endpoint is deprecated.**
 > V1ModifierList RetrieveModifierList (string locationId, string modifierListId)
 
 RetrieveModifierList
 
-Provides the details for a single modifier list.
+Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2139,11 +2170,12 @@ Name | Type | Description  | Notes
 
 <a name="updatecategory"></a>
 # **UpdateCategory**
+**Note: This endpoint is deprecated.**
 > V1Category UpdateCategory (string locationId, string categoryId, V1Category body)
 
 UpdateCategory
 
-Modifies the details of an existing item category.
+Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2208,11 +2240,12 @@ Name | Type | Description  | Notes
 
 <a name="updatediscount"></a>
 # **UpdateDiscount**
+**Note: This endpoint is deprecated.**
 > V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body)
 
 UpdateDiscount
 
-Modifies the details of an existing discount.
+Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2277,11 +2310,12 @@ Name | Type | Description  | Notes
 
 <a name="updatefee"></a>
 # **UpdateFee**
+**Note: This endpoint is deprecated.**
 > V1Fee UpdateFee (string locationId, string feeId, V1Fee body)
 
 UpdateFee
 
-Modifies the details of an existing fee (tax).
+Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2346,11 +2380,12 @@ Name | Type | Description  | Notes
 
 <a name="updateitem"></a>
 # **UpdateItem**
+**Note: This endpoint is deprecated.**
 > V1Item UpdateItem (string locationId, string itemId, V1Item body)
 
 UpdateItem
 
-Modifies the core details of an existing item.
+Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2415,11 +2450,12 @@ Name | Type | Description  | Notes
 
 <a name="updatemodifierlist"></a>
 # **UpdateModifierList**
+**Note: This endpoint is deprecated.**
 > V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body)
 
 UpdateModifierList
 
-Modifies the details of an existing item modifier list.
+Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2484,11 +2520,12 @@ Name | Type | Description  | Notes
 
 <a name="updatemodifieroption"></a>
 # **UpdateModifierOption**
+**Note: This endpoint is deprecated.**
 > V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body)
 
 UpdateModifierOption
 
-Modifies the details of an existing item modifier option.
+Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2555,11 +2592,12 @@ Name | Type | Description  | Notes
 
 <a name="updatepage"></a>
 # **UpdatePage**
+**Note: This endpoint is deprecated.**
 > V1Page UpdatePage (string locationId, string pageId, V1Page body)
 
 UpdatePage
 
-Modifies the details of a Favorites page in Square Register.
+Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2624,11 +2662,12 @@ Name | Type | Description  | Notes
 
 <a name="updatepagecell"></a>
 # **UpdatePageCell**
+**Note: This endpoint is deprecated.**
 > V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body)
 
 UpdatePageCell
 
-Modifies a cell of a Favorites page in Square Register.
+Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp
@@ -2693,11 +2732,12 @@ Name | Type | Description  | Notes
 
 <a name="updatevariation"></a>
 # **UpdateVariation**
+**Note: This endpoint is deprecated.**
 > V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body)
 
 UpdateVariation
 
-Modifies the details of an existing item variation.
+Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
 
 ### Example
 ```csharp

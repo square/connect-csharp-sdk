@@ -25,10 +25,31 @@ namespace Square.Connect.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// CreateLocation
+        /// </summary>
+        /// <remarks>
+        /// Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// Note: This endpoint is in beta.
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>CreateLocationResponse</returns>        CreateLocationResponse CreateLocation (CreateLocationRequest body);
+
+        /// <summary>
+        /// CreateLocation
+        /// </summary>
+        /// <remarks>
+        /// Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of CreateLocationResponse</returns>
+        ApiResponse<CreateLocationResponse> CreateLocationWithHttpInfo (CreateLocationRequest body);
+        /// <summary>
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListLocationsResponse</returns>        ListLocationsResponse ListLocations ();
@@ -37,7 +58,7 @@ namespace Square.Connect.Api
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListLocationsResponse</returns>
@@ -47,7 +68,6 @@ namespace Square.Connect.Api
         /// </summary>
         /// <remarks>
         /// Retrieves details of a location.
-        /// Note: This endpoint is in beta.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to retrieve.</param>
@@ -67,7 +87,7 @@ namespace Square.Connect.Api
         /// UpdateLocation
         /// </summary>
         /// <remarks>
-        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// Updates a location.
         /// Note: This endpoint is in beta.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
@@ -79,7 +99,7 @@ namespace Square.Connect.Api
         /// UpdateLocation
         /// </summary>
         /// <remarks>
-        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// Updates a location.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to update.</param>
@@ -89,10 +109,31 @@ namespace Square.Connect.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
+        /// CreateLocation
+        /// </summary>
+        /// <remarks>
+        /// Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of CreateLocationResponse</returns>
+        System.Threading.Tasks.Task<CreateLocationResponse> CreateLocationAsync (CreateLocationRequest body);
+
+        /// <summary>
+        /// CreateLocation
+        /// </summary>
+        /// <remarks>
+        /// Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// </remarks>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (CreateLocationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateLocationResponse>> CreateLocationAsyncWithHttpInfo (CreateLocationRequest body);
+        /// <summary>
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ListLocationsResponse</returns>
@@ -102,7 +143,7 @@ namespace Square.Connect.Api
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
@@ -132,7 +173,7 @@ namespace Square.Connect.Api
         /// UpdateLocation
         /// </summary>
         /// <remarks>
-        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// Updates a location.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to update.</param>
@@ -144,7 +185,7 @@ namespace Square.Connect.Api
         /// UpdateLocation
         /// </summary>
         /// <remarks>
-        /// Updates the &#x60;Location&#x60; specified by the given ID.
+        /// Updates a location.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to update.</param>
@@ -264,7 +305,170 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// CreateLocation Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>CreateLocationResponse</returns>
+        public CreateLocationResponse CreateLocation (CreateLocationRequest body)
+        {
+             ApiResponse<CreateLocationResponse> localVarResponse = CreateLocationWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// CreateLocation Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>ApiResponse of CreateLocationResponse</returns>
+        public ApiResponse< CreateLocationResponse > CreateLocationWithHttpInfo (CreateLocationRequest body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling LocationsApi->CreateLocation");
+
+            var localVarPath = "/v2/locations";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateLocation", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CreateLocationResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
+                (CreateLocationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateLocationResponse)));
+            
+        }
+
+        /// <summary>
+        /// CreateLocation Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of CreateLocationResponse</returns>
+        public async System.Threading.Tasks.Task<CreateLocationResponse> CreateLocationAsync (CreateLocationRequest body)
+        {
+             ApiResponse<CreateLocationResponse> localVarResponse = await CreateLocationAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// CreateLocation Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+        /// </summary>
+        /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
+        /// <returns>Task of ApiResponse (CreateLocationResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CreateLocationResponse>> CreateLocationAsyncWithHttpInfo (CreateLocationRequest body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling LocationsApi->CreateLocation");
+
+            var localVarPath = "/v2/locations";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateLocation", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CreateLocationResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString(), StringComparer.OrdinalIgnoreCase),
+                (CreateLocationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateLocationResponse)));
+            
+        }
+
+        /// <summary>
+        /// ListLocations Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListLocationsResponse</returns>
@@ -275,7 +479,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// ListLocations Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListLocationsResponse</returns>
@@ -303,7 +507,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
 
             // authentication (oauth2) required
             // oauth required
@@ -332,7 +536,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// ListLocations Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ListLocationsResponse</returns>
@@ -344,7 +548,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides the details for all of a business&#39;s locations.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+        /// ListLocations Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ListLocationsResponse)</returns>
@@ -372,7 +576,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
 
             // authentication (oauth2) required
             // oauth required
@@ -445,7 +649,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -520,7 +724,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -550,7 +754,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// UpdateLocation Updates a location.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to update.</param>
@@ -563,7 +767,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// UpdateLocation Updates a location.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to update.</param>
@@ -599,7 +803,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -637,7 +841,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// UpdateLocation Updates a location.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to update.</param>
@@ -651,7 +855,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateLocation Updates the &#x60;Location&#x60; specified by the given ID.
+        /// UpdateLocation Updates a location.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to update.</param>
@@ -687,7 +891,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {

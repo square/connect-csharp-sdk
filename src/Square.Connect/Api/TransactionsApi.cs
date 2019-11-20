@@ -28,7 +28,7 @@ namespace Square.Connect.Api
         /// CaptureTransaction
         /// </summary>
         /// <remarks>
-        /// Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -41,7 +41,7 @@ namespace Square.Connect.Api
         /// CaptureTransaction
         /// </summary>
         /// <remarks>
-        /// Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -52,7 +52,7 @@ namespace Square.Connect.Api
         /// Charge
         /// </summary>
         /// <remarks>
-        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -65,7 +65,7 @@ namespace Square.Connect.Api
         /// Charge
         /// </summary>
         /// <remarks>
-        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -109,7 +109,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListRefundsResponse</returns>
         [Obsolete]
         ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
@@ -125,7 +125,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListRefundsResponse</returns>
         ApiResponse<ListRefundsResponse> ListRefundsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
@@ -139,7 +139,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListTransactionsResponse</returns>
         [Obsolete]
         ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
@@ -155,7 +155,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListTransactionsResponse</returns>
         ApiResponse<ListTransactionsResponse> ListTransactionsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
@@ -186,7 +186,7 @@ namespace Square.Connect.Api
         /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -199,7 +199,7 @@ namespace Square.Connect.Api
         /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -212,7 +212,7 @@ namespace Square.Connect.Api
         /// CaptureTransaction
         /// </summary>
         /// <remarks>
-        /// Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -224,7 +224,7 @@ namespace Square.Connect.Api
         /// CaptureTransaction
         /// </summary>
         /// <remarks>
-        /// Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -235,7 +235,7 @@ namespace Square.Connect.Api
         /// Charge
         /// </summary>
         /// <remarks>
-        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -247,7 +247,7 @@ namespace Square.Connect.Api
         /// Charge
         /// </summary>
         /// <remarks>
-        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -290,7 +290,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListRefundsResponse</returns>
         System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
@@ -305,7 +305,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListRefundsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
@@ -319,7 +319,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListTransactionsResponse</returns>
         System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
 
@@ -334,7 +334,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListTransactionsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null);
         /// <summary>
@@ -364,7 +364,7 @@ namespace Square.Connect.Api
         /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -376,7 +376,7 @@ namespace Square.Connect.Api
         /// VoidTransaction
         /// </summary>
         /// <remarks>
-        /// Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -496,7 +496,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -509,7 +509,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -545,7 +545,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
 
@@ -576,7 +576,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -590,7 +590,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// CaptureTransaction Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -626,7 +626,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
 
@@ -657,7 +657,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -670,7 +670,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -706,7 +706,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -744,7 +744,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -758,7 +758,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-transactions-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
+        /// Charge Charges a card represented by a card nonce or a customer&#39;s card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the &#x60;card_nonce&#x60; parameter (to charge a card nonce generated with the &#x60;SqPaymentForm&#x60;) - Values for the &#x60;customer_card_id&#x60; and &#x60;customer_id&#x60; parameters (to charge a customer&#39;s card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - &#x60;buyer_email_address&#x60; - At least one of &#x60;billing_address&#x60; or &#x60;shipping_address&#x60;  When this response is returned, the amount of Square&#39;s processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the &#x60;processing_fee_money&#x60; field of each [Tender included](#type-tender) in the transaction.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to associate the created transaction with.</param>
@@ -794,7 +794,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -886,7 +886,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -980,7 +980,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -1026,7 +1026,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListRefundsResponse</returns>
         public ListRefundsResponse ListRefunds (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1042,7 +1042,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListRefundsResponse</returns>
         public ApiResponse< ListRefundsResponse > ListRefundsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1071,7 +1071,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
@@ -1112,7 +1112,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListRefundsResponse</returns>
         public async System.Threading.Tasks.Task<ListRefundsResponse> ListRefundsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1129,7 +1129,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListRefundsResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ListRefundsResponse>> ListRefundsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1158,7 +1158,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
@@ -1199,7 +1199,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ListTransactionsResponse</returns>
         public ListTransactionsResponse ListTransactions (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1215,7 +1215,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>ApiResponse of ListTransactionsResponse</returns>
         public ApiResponse< ListTransactionsResponse > ListTransactionsWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1244,7 +1244,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
@@ -1285,7 +1285,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ListTransactionsResponse</returns>
         public async System.Threading.Tasks.Task<ListTransactionsResponse> ListTransactionsAsync (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1302,7 +1302,7 @@ namespace Square.Connect.Api
         /// <param name="beginTime">The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)</param>
         /// <param name="endTime">The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)</param>
         /// <param name="sortOrder">The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)</param>
-        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
+        /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)</param>
         /// <returns>Task of ApiResponse (ListTransactionsResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ListTransactionsResponse>> ListTransactionsAsyncWithHttpInfo (string locationId, string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null)
         {
@@ -1331,7 +1331,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
@@ -1414,7 +1414,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
 
@@ -1495,7 +1495,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
 
@@ -1526,7 +1526,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -1539,7 +1539,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -1575,7 +1575,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
 
@@ -1606,7 +1606,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -1620,7 +1620,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
+        /// VoidTransaction Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a &#x60;delay_capture&#x60; value of &#x60;true&#x60;.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId"></param>
@@ -1656,7 +1656,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (transactionId != null) localVarPathParams.Add("transaction_id", Configuration.ApiClient.ParameterToString(transactionId)); // path parameter
 

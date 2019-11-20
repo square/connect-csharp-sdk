@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// 
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1CreateModifierOptionRequest :  IEquatable<V1CreateModifierOptionRequest>, IValidatableObject
     {
         /// <summary>

@@ -3,6 +3,7 @@
 ### Description
 
 V1Discount
+**Note: This model is deprecated.**
 
 ## Properties
 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **AmountMoney** | [**V1Money**](V1Money.md) | The amount of the discount. This amount is 0 if discount_type is VARIABLE_AMOUNT. This field is not included for rate-based discounts. | [optional] 
 **DiscountType** | **string** | Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values | [optional] 
 **PinRequired** | **bool?** | Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment. | [optional] 
-**Color** | **string** | The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values | [optional] 
+**Color** | **string** | The color of the discount&#39;s display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values | [optional] 
 **V2Id** | **string** | The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID. | [optional] 
 
 

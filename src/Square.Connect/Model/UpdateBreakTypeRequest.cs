@@ -32,10 +32,23 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateBreakTypeRequest" /> class.
         /// </summary>
-        /// <param name="BreakType">The updated &#x60;BreakType&#x60;..</param>
+        [JsonConstructorAttribute]
+        protected UpdateBreakTypeRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateBreakTypeRequest" /> class.
+        /// </summary>
+        /// <param name="BreakType">The updated &#x60;BreakType&#x60;. (required).</param>
         public UpdateBreakTypeRequest(BreakType BreakType = default(BreakType))
         {
-            this.BreakType = BreakType;
+            // to ensure "BreakType" is required (not null)
+            if (BreakType == null)
+            {
+                throw new InvalidDataException("BreakType is a required property for UpdateBreakTypeRequest and cannot be null");
+            }
+            else
+            {
+                this.BreakType = BreakType;
+            }
         }
         
         /// <summary>

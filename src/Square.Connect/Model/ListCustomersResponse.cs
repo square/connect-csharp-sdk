@@ -33,8 +33,8 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="ListCustomersResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Customers">An array of &#x60;Customer&#x60; objects that match your query..</param>
-        /// <param name="Cursor">A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
+        /// <param name="Customers">An array of &#x60;Customer&#x60; objects that match the provided query..</param>
+        /// <param name="Cursor">A pagination cursor to retrieve the next set of results for the original query. Only present if the request succeeded and additional results are available.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information..</param>
         public ListCustomersResponse(List<Error> Errors = default(List<Error>), List<Customer> Customers = default(List<Customer>), string Cursor = default(string))
         {
             this.Errors = Errors;
@@ -49,15 +49,15 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// An array of &#x60;Customer&#x60; objects that match your query.
+        /// An array of &#x60;Customer&#x60; objects that match the provided query.
         /// </summary>
-        /// <value>An array of &#x60;Customer&#x60; objects that match your query.</value>
+        /// <value>An array of &#x60;Customer&#x60; objects that match the provided query.</value>
         [DataMember(Name="customers", EmitDefaultValue=false)]
         public List<Customer> Customers { get; set; }
         /// <summary>
-        /// A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+        /// A pagination cursor to retrieve the next set of results for the original query. Only present if the request succeeded and additional results are available.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
         /// </summary>
-        /// <value>A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
+        /// <value>A pagination cursor to retrieve the next set of results for the original query. Only present if the request succeeded and additional results are available.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

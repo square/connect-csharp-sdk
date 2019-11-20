@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1Discount
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1Discount :  IEquatable<V1Discount>, IValidatableObject
     {
         /// <summary>
@@ -38,7 +39,7 @@ namespace Square.Connect.Model
         /// <param name="AmountMoney">The amount of the discount. This amount is 0 if discount_type is VARIABLE_AMOUNT. This field is not included for rate-based discounts..</param>
         /// <param name="DiscountType">Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values.</param>
         /// <param name="PinRequired">Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment..</param>
-        /// <param name="Color">The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values.</param>
+        /// <param name="Color">The color of the discount&#39;s display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values.</param>
         /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
         public V1Discount(string Id = default(string), string Name = default(string), string Rate = default(string), V1Money AmountMoney = default(V1Money), string DiscountType = default(string), bool? PinRequired = default(bool?), string Color = default(string), string V2Id = default(string))
         {
@@ -89,9 +90,9 @@ namespace Square.Connect.Model
         [DataMember(Name="pin_required", EmitDefaultValue=false)]
         public bool? PinRequired { get; set; }
         /// <summary>
-        /// The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
+        /// The color of the discount&#39;s display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
         /// </summary>
-        /// <value>The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values</value>
+        /// <value>The color of the discount&#39;s display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values</value>
         [DataMember(Name="color", EmitDefaultValue=false)]
         public string Color { get; set; }
         /// <summary>

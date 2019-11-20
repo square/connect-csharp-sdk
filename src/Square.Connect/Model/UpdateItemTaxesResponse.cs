@@ -32,8 +32,8 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateItemTaxesResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
-        /// <param name="UpdatedAt">The database [timestamp](#workingwithdates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="Errors">Information on any errors encountered..</param>
+        /// <param name="UpdatedAt">The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-date) of this update in RFC 3339 format, e.g., &#x60;2016-09-04T23:59:33.123Z&#x60;..</param>
         public UpdateItemTaxesResponse(List<Error> Errors = default(List<Error>), string UpdatedAt = default(string))
         {
             this.Errors = Errors;
@@ -41,15 +41,15 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of &#x60;Error&#x60;s encountered.
+        /// Information on any errors encountered.
         /// </summary>
-        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
+        /// <value>Information on any errors encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The database [timestamp](#workingwithdates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
+        /// The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-date) of this update in RFC 3339 format, e.g., &#x60;2016-09-04T23:59:33.123Z&#x60;.
         /// </summary>
-        /// <value>The database [timestamp](#workingwithdates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
+        /// <value>The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-date) of this update in RFC 3339 format, e.g., &#x60;2016-09-04T23:59:33.123Z&#x60;.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>

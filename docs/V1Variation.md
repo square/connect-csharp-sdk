@@ -3,6 +3,7 @@
 ### Description
 
 V1Variation
+**Note: This model is deprecated.**
 
 ## Properties
 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 **Id** | **string** | The item variation&#39;s unique ID. | [optional] 
 **Name** | **string** | The item variation&#39;s name. | [optional] 
 **ItemId** | **string** | The ID of the variation&#39;s associated item. | [optional] 
-**Ordinal** | **int?** | Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order | [optional] 
+**Ordinal** | **int?** | Indicates the variation&#39;s list position when displayed in Square Point of Sale and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order | [optional] 
 **PricingType** | **string** | Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values | [optional] 
 **PriceMoney** | [**V1Money**](V1Money.md) | The item variation&#39;s price, if any. | [optional] 
 **Sku** | **string** | The item variation&#39;s SKU, if any. | [optional] 

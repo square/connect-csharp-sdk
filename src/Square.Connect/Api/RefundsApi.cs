@@ -56,8 +56,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>ListPaymentRefundsResponse</returns>        ListPaymentRefundsResponse ListPaymentRefunds (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null);
 
         /// <summary>
@@ -72,8 +72,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>ApiResponse of ListPaymentRefundsResponse</returns>
         ApiResponse<ListPaymentRefundsResponse> ListPaymentRefundsWithHttpInfo (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null);
         /// <summary>
@@ -131,8 +131,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>Task of ListPaymentRefundsResponse</returns>
         System.Threading.Tasks.Task<ListPaymentRefundsResponse> ListPaymentRefundsAsync (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null);
 
@@ -148,8 +148,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>Task of ApiResponse (ListPaymentRefundsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListPaymentRefundsResponse>> ListPaymentRefundsAsyncWithHttpInfo (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null);
         /// <summary>
@@ -330,7 +330,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (refundId != null) localVarPathParams.Add("refund_id", Configuration.ApiClient.ParameterToString(refundId)); // path parameter
 
             // authentication (oauth2) required
@@ -405,7 +405,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (refundId != null) localVarPathParams.Add("refund_id", Configuration.ApiClient.ParameterToString(refundId)); // path parameter
 
             // authentication (oauth2) required
@@ -443,8 +443,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>ListPaymentRefundsResponse</returns>
         public ListPaymentRefundsResponse ListPaymentRefunds (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null)
         {
@@ -461,8 +461,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>ApiResponse of ListPaymentRefundsResponse</returns>
         public ApiResponse< ListPaymentRefundsResponse > ListPaymentRefundsWithHttpInfo (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null)
         {
@@ -488,7 +488,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -532,8 +532,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>Task of ListPaymentRefundsResponse</returns>
         public async System.Threading.Tasks.Task<ListPaymentRefundsResponse> ListPaymentRefundsAsync (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null)
         {
@@ -551,8 +551,8 @@ namespace Square.Connect.Api
         /// <param name="sortOrder">The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)</param>
         /// <param name="cursor">A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)</param>
         /// <param name="locationId">ID of location associated with payment. (optional)</param>
-        /// <param name="status">If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
-        /// <param name="sourceType">If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
+        /// <param name="status">If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. (optional)</param>
+        /// <param name="sourceType">If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. (optional)</param>
         /// <returns>Task of ApiResponse (ListPaymentRefundsResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ListPaymentRefundsResponse>> ListPaymentRefundsAsyncWithHttpInfo (string beginTime = null, string endTime = null, string sortOrder = null, string cursor = null, string locationId = null, string status = null, string sourceType = null)
         {
@@ -578,7 +578,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -658,7 +658,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -740,7 +740,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter

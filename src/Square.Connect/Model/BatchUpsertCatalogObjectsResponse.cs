@@ -32,10 +32,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchUpsertCatalogObjectsResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
-        /// <param name="Objects">The created &#x60;CatalogObject&#x60;s.</param>
-        /// <param name="UpdatedAt">The database [timestamp](#workingwithdates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
-        /// <param name="IdMappings">The mapping between client and server IDs for this Upsert..</param>
+        /// <param name="Errors">Information on any errors that encountered..</param>
+        /// <param name="Objects">The created successfully created CatalogObjects..</param>
+        /// <param name="UpdatedAt">The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="IdMappings">The mapping between client and server IDs for this upsert..</param>
         public BatchUpsertCatalogObjectsResponse(List<Error> Errors = default(List<Error>), List<CatalogObject> Objects = default(List<CatalogObject>), string UpdatedAt = default(string), List<CatalogIdMapping> IdMappings = default(List<CatalogIdMapping>))
         {
             this.Errors = Errors;
@@ -45,27 +45,27 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of &#x60;Error&#x60;s encountered.
+        /// Information on any errors that encountered.
         /// </summary>
-        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
+        /// <value>Information on any errors that encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The created &#x60;CatalogObject&#x60;s
+        /// The created successfully created CatalogObjects.
         /// </summary>
-        /// <value>The created &#x60;CatalogObject&#x60;s</value>
+        /// <value>The created successfully created CatalogObjects.</value>
         [DataMember(Name="objects", EmitDefaultValue=false)]
         public List<CatalogObject> Objects { get; set; }
         /// <summary>
-        /// The database [timestamp](#workingwithdates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
+        /// The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The database [timestamp](#workingwithdates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
+        /// <value>The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this update in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>
-        /// The mapping between client and server IDs for this Upsert.
+        /// The mapping between client and server IDs for this upsert.
         /// </summary>
-        /// <value>The mapping between client and server IDs for this Upsert.</value>
+        /// <value>The mapping between client and server IDs for this upsert.</value>
         [DataMember(Name="id_mappings", EmitDefaultValue=false)]
         public List<CatalogIdMapping> IdMappings { get; set; }
         /// <summary>

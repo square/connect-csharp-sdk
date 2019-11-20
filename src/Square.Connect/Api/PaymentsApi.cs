@@ -28,7 +28,7 @@ namespace Square.Connect.Api
         /// CancelPayment
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -38,7 +38,7 @@ namespace Square.Connect.Api
         /// CancelPayment
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -48,7 +48,7 @@ namespace Square.Connect.Api
         /// CancelPaymentByIdempotencyKey
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -58,7 +58,7 @@ namespace Square.Connect.Api
         /// CancelPaymentByIdempotencyKey
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -164,7 +164,7 @@ namespace Square.Connect.Api
         /// CancelPayment
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -175,7 +175,7 @@ namespace Square.Connect.Api
         /// CancelPayment
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -185,7 +185,7 @@ namespace Square.Connect.Api
         /// CancelPaymentByIdempotencyKey
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -196,7 +196,7 @@ namespace Square.Connect.Api
         /// CancelPaymentByIdempotencyKey
         /// </summary>
         /// <remarks>
-        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -413,7 +413,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -425,7 +425,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -457,7 +457,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -487,7 +487,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -500,7 +500,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment, you can cancel the payment using this endpoint. For more information, see [Delayed Payments](/payments-api/take-payments#delayed-payments).
+        /// CancelPayment Cancels (voids) a payment. If you set &#x60;autocomplete&#x60; to false when creating a payment,  you can cancel the payment using this endpoint. For more information, see  [Delayed Payments](/payments-api/take-payments#delayed-payments).
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">&#x60;payment_id&#x60; identifying the payment to be canceled.</param>
@@ -532,7 +532,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -562,7 +562,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -574,7 +574,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -606,7 +606,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -643,7 +643,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -656,7 +656,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don&#39;t get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again. Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+        /// CancelPaymentByIdempotencyKey Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don&#39;t get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
@@ -688,7 +688,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -769,7 +769,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -844,7 +844,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -918,7 +918,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1000,7 +1000,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -1081,7 +1081,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1156,7 +1156,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (paymentId != null) localVarPathParams.Add("payment_id", Configuration.ApiClient.ParameterToString(paymentId)); // path parameter
 
             // authentication (oauth2) required
@@ -1241,7 +1241,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter
@@ -1334,7 +1334,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (beginTime != null) localVarQueryParams.Add("begin_time", Configuration.ApiClient.ParameterToString(beginTime)); // query parameter
             if (endTime != null) localVarQueryParams.Add("end_time", Configuration.ApiClient.ParameterToString(endTime)); // query parameter
             if (sortOrder != null) localVarQueryParams.Add("sort_order", Configuration.ApiClient.ParameterToString(sortOrder)); // query parameter

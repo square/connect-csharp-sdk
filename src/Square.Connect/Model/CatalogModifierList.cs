@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// A modifier list in the Catalog object model. A [CatalogModifierList](#type-catalogmodifierlist) contains [Modifier](#type-catalogmodifier)s that can be applied to a [CatalogItem](#type-catalogitem) at the time of sale.  For example, a modifier list \&quot;Condiments\&quot; that would apply to a \&quot;Hot Dog\&quot; [CatalogItem](#type-catalogitem) might contain [CatalogModifier](#type-catalogmodifier)s \&quot;Ketchup\&quot;, \&quot;Mustard\&quot;, and \&quot;Relish\&quot;. The &#x60;selection_type&#x60; field specifies whether or not multiple selections from the modifier list are allowed.
+    /// A modifier list in the Catalog object model. A &#x60;CatalogModifierList&#x60; contains &#x60;CatalogModifier&#x60; objects that can be applied to a &#x60;CatalogItem&#x60; at the time of sale.  For example, a modifier list \&quot;Condiments\&quot; that would apply to a \&quot;Hot Dog\&quot; &#x60;CatalogItem&#x60; might contain &#x60;CatalogModifier&#x60;s \&quot;Ketchup\&quot;, \&quot;Mustard\&quot;, and \&quot;Relish\&quot;. The &#x60;selection_type&#x60; field specifies whether or not multiple selections from the modifier list are allowed.
     /// </summary>
     [DataContract]
     public partial class CatalogModifierList :  IEquatable<CatalogModifierList>, IValidatableObject
@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogModifierList" /> class.
         /// </summary>
-        /// <param name="Name">The &#x60;CatalogModifierList&#x60;&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
+        /// <param name="Name">A searchable name for the &#x60;CatalogModifierList&#x60;. This field has max length of 255 Unicode code points..</param>
         /// <param name="SelectionType">Indicates whether multiple options from the &#x60;CatalogModifierList&#x60; can be applied to a single &#x60;CatalogItem&#x60;. See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values.</param>
-        /// <param name="Modifiers">The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each &#x60;CatalogObject&#x60; must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data..</param>
+        /// <param name="Modifiers">The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each CatalogObject must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data..</param>
         public CatalogModifierList(string Name = default(string), string SelectionType = default(string), List<CatalogObject> Modifiers = default(List<CatalogObject>))
         {
             this.Name = Name;
@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The &#x60;CatalogModifierList&#x60;&#39;s name. Searchable. This field has max length of 255 Unicode code points.
+        /// A searchable name for the &#x60;CatalogModifierList&#x60;. This field has max length of 255 Unicode code points.
         /// </summary>
-        /// <value>The &#x60;CatalogModifierList&#x60;&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
+        /// <value>A searchable name for the &#x60;CatalogModifierList&#x60;. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -55,9 +55,9 @@ namespace Square.Connect.Model
         [DataMember(Name="selection_type", EmitDefaultValue=false)]
         public string SelectionType { get; set; }
         /// <summary>
-        /// The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each &#x60;CatalogObject&#x60; must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data.
+        /// The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each CatalogObject must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data.
         /// </summary>
-        /// <value>The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each &#x60;CatalogObject&#x60; must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data.</value>
+        /// <value>The options included in the &#x60;CatalogModifierList&#x60;. You must include at least one &#x60;CatalogModifier&#x60;. Each CatalogObject must have type &#x60;MODIFIER&#x60; and contain &#x60;CatalogModifier&#x60; data.</value>
         [DataMember(Name="modifiers", EmitDefaultValue=false)]
         public List<CatalogObject> Modifiers { get; set; }
         /// <summary>

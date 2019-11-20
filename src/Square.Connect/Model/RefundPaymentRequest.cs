@@ -37,9 +37,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RefundPaymentRequest" /> class.
         /// </summary>
-        /// <param name="IdempotencyKey"> A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency). (required).</param>
+        /// <param name="IdempotencyKey"> A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request. For more information, see [Idempotency keys](https://developer.squareup.com/docs/working-with-apis/idempotency). (required).</param>
         /// <param name="AmountMoney">The amount of money to refund.  Cannot be more than the &#x60;total_money&#x60; value of the payment minus the total amount of all previously completed refunds for this payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The currency code must match the currency associated with the business that is charging the card. (required).</param>
-        /// <param name="AppFeeMoney">Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the &#x60;amount_money&#x60;.  You can specify this parameter in a refund request only if the  same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports.  For more information, see  [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).</param>
+        /// <param name="AppFeeMoney">Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the &#x60;amount_money&#x60;.  You can specify this parameter in a refund request only if the same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports. For more information, see [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).</param>
         /// <param name="PaymentId">Unique ID of the payment being refunded..</param>
         /// <param name="Reason">A description of the reason for the refund..</param>
         public RefundPaymentRequest(string IdempotencyKey = default(string), Money AmountMoney = default(Money), Money AppFeeMoney = default(Money), string PaymentId = default(string), string Reason = default(string))
@@ -68,9 +68,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        ///  A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency).
+        ///  A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request. For more information, see [Idempotency keys](https://developer.squareup.com/docs/working-with-apis/idempotency).
         /// </summary>
-        /// <value> A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency).</value>
+        /// <value> A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request. For more information, see [Idempotency keys](https://developer.squareup.com/docs/working-with-apis/idempotency).</value>
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>
@@ -80,9 +80,9 @@ namespace Square.Connect.Model
         [DataMember(Name="amount_money", EmitDefaultValue=false)]
         public Money AmountMoney { get; set; }
         /// <summary>
-        /// Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the &#x60;amount_money&#x60;.  You can specify this parameter in a refund request only if the  same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports.  For more information, see  [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees)
+        /// Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the &#x60;amount_money&#x60;.  You can specify this parameter in a refund request only if the same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports. For more information, see [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees)
         /// </summary>
-        /// <value>Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the &#x60;amount_money&#x60;.  You can specify this parameter in a refund request only if the  same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports.  For more information, see  [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees)</value>
+        /// <value>Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the &#x60;amount_money&#x60;.  You can specify this parameter in a refund request only if the same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports. For more information, see [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees)</value>
         [DataMember(Name="app_fee_money", EmitDefaultValue=false)]
         public Money AppFeeMoney { get; set; }
         /// <summary>

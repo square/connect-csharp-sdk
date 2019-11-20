@@ -132,6 +132,7 @@ namespace Square.Connect.Model
             // credit: http://stackoverflow.com/a/10454552/677735
             return this.Equals(obj as AdditionalRecipient);
         }
+
         /// <summary>
         /// Returns true if AdditionalRecipient instances are equal
         /// </summary>

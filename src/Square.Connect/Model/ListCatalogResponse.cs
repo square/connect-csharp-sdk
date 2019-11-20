@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ListCatalogResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
+        /// <param name="Errors">Information on any errors encountered..</param>
         /// <param name="Cursor">The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
-        /// <param name="Objects">The &#x60;CatalogObject&#x60;s returned..</param>
+        /// <param name="Objects">The CatalogObjects returned..</param>
         public ListCatalogResponse(List<Error> Errors = default(List<Error>), string Cursor = default(string), List<CatalogObject> Objects = default(List<CatalogObject>))
         {
             this.Errors = Errors;
@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of &#x60;Error&#x60;s encountered.
+        /// Information on any errors encountered.
         /// </summary>
-        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
+        /// <value>Information on any errors encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
@@ -55,9 +55,9 @@ namespace Square.Connect.Model
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>
-        /// The &#x60;CatalogObject&#x60;s returned.
+        /// The CatalogObjects returned.
         /// </summary>
-        /// <value>The &#x60;CatalogObject&#x60;s returned.</value>
+        /// <value>The CatalogObjects returned.</value>
         [DataMember(Name="objects", EmitDefaultValue=false)]
         public List<CatalogObject> Objects { get; set; }
         /// <summary>
