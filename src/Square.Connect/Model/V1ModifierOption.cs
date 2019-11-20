@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1ModifierOption
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1ModifierOption :  IEquatable<V1ModifierOption>, IValidatableObject
     {
         /// <summary>
@@ -36,7 +37,7 @@ namespace Square.Connect.Model
         /// <param name="Name">The modifier option&#39;s name..</param>
         /// <param name="PriceMoney">The modifier option&#39;s price..</param>
         /// <param name="OnByDefault">If true, the modifier option is the default option in a modifier list for which selection_type is SINGLE..</param>
-        /// <param name="Ordinal">Indicates the modifier option&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order..</param>
+        /// <param name="Ordinal">Indicates the modifier option&#39;s list position when displayed in Square Point of Sale and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order..</param>
         /// <param name="ModifierListId">The ID of the modifier list the option belongs to..</param>
         /// <param name="V2Id">The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID..</param>
         public V1ModifierOption(string Id = default(string), string Name = default(string), V1Money PriceMoney = default(V1Money), bool? OnByDefault = default(bool?), int? Ordinal = default(int?), string ModifierListId = default(string), string V2Id = default(string))
@@ -75,9 +76,9 @@ namespace Square.Connect.Model
         [DataMember(Name="on_by_default", EmitDefaultValue=false)]
         public bool? OnByDefault { get; set; }
         /// <summary>
-        /// Indicates the modifier option&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
+        /// Indicates the modifier option&#39;s list position when displayed in Square Point of Sale and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
         /// </summary>
-        /// <value>Indicates the modifier option&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.</value>
+        /// <value>Indicates the modifier option&#39;s list position when displayed in Square Point of Sale and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.</value>
         [DataMember(Name="ordinal", EmitDefaultValue=false)]
         public int? Ordinal { get; set; }
         /// <summary>

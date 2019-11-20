@@ -32,10 +32,23 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateWorkweekConfigRequest" /> class.
         /// </summary>
-        /// <param name="WorkweekConfig">The updated &#x60;WorkweekConfig&#x60; object..</param>
+        [JsonConstructorAttribute]
+        protected UpdateWorkweekConfigRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateWorkweekConfigRequest" /> class.
+        /// </summary>
+        /// <param name="WorkweekConfig">The updated &#x60;WorkweekConfig&#x60; object. (required).</param>
         public UpdateWorkweekConfigRequest(WorkweekConfig WorkweekConfig = default(WorkweekConfig))
         {
-            this.WorkweekConfig = WorkweekConfig;
+            // to ensure "WorkweekConfig" is required (not null)
+            if (WorkweekConfig == null)
+            {
+                throw new InvalidDataException("WorkweekConfig is a required property for UpdateWorkweekConfigRequest and cannot be null");
+            }
+            else
+            {
+                this.WorkweekConfig = WorkweekConfig;
+            }
         }
         
         /// <summary>

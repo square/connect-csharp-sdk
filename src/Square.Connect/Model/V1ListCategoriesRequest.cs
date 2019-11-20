@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// 
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1ListCategoriesRequest :  IEquatable<V1ListCategoriesRequest>, IValidatableObject
     {
         /// <summary>

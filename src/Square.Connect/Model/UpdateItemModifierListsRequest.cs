@@ -37,9 +37,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateItemModifierListsRequest" /> class.
         /// </summary>
-        /// <param name="ItemIds">The &#x60;CatalogItem](#type-catalogitem)s whose [CatalogModifierList&#x60;s are being updated. (required).</param>
-        /// <param name="ModifierListsToEnable">The set of &#x60;CatalogModifierList](#type-catalogmodifierlist)s (referenced by ID) to enable for the [CatalogItem&#x60;..</param>
-        /// <param name="ModifierListsToDisable">The set of &#x60;CatalogModifierList](#type-catalogmodifierlist)s (referenced by ID) to disable for the [CatalogItem&#x60;..</param>
+        /// <param name="ItemIds">The IDs of the catalog items associated with the CatalogModifierList objects being updated. (required).</param>
+        /// <param name="ModifierListsToEnable">The IDs of the CatalogModifierList objects to enable for the CatalogItem..</param>
+        /// <param name="ModifierListsToDisable">The IDs of the CatalogModifierList objects to disable for the CatalogItem..</param>
         public UpdateItemModifierListsRequest(List<string> ItemIds = default(List<string>), List<string> ModifierListsToEnable = default(List<string>), List<string> ModifierListsToDisable = default(List<string>))
         {
             // to ensure "ItemIds" is required (not null)
@@ -56,21 +56,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The &#x60;CatalogItem](#type-catalogitem)s whose [CatalogModifierList&#x60;s are being updated.
+        /// The IDs of the catalog items associated with the CatalogModifierList objects being updated.
         /// </summary>
-        /// <value>The &#x60;CatalogItem](#type-catalogitem)s whose [CatalogModifierList&#x60;s are being updated.</value>
+        /// <value>The IDs of the catalog items associated with the CatalogModifierList objects being updated.</value>
         [DataMember(Name="item_ids", EmitDefaultValue=false)]
         public List<string> ItemIds { get; set; }
         /// <summary>
-        /// The set of &#x60;CatalogModifierList](#type-catalogmodifierlist)s (referenced by ID) to enable for the [CatalogItem&#x60;.
+        /// The IDs of the CatalogModifierList objects to enable for the CatalogItem.
         /// </summary>
-        /// <value>The set of &#x60;CatalogModifierList](#type-catalogmodifierlist)s (referenced by ID) to enable for the [CatalogItem&#x60;.</value>
+        /// <value>The IDs of the CatalogModifierList objects to enable for the CatalogItem.</value>
         [DataMember(Name="modifier_lists_to_enable", EmitDefaultValue=false)]
         public List<string> ModifierListsToEnable { get; set; }
         /// <summary>
-        /// The set of &#x60;CatalogModifierList](#type-catalogmodifierlist)s (referenced by ID) to disable for the [CatalogItem&#x60;.
+        /// The IDs of the CatalogModifierList objects to disable for the CatalogItem.
         /// </summary>
-        /// <value>The set of &#x60;CatalogModifierList](#type-catalogmodifierlist)s (referenced by ID) to disable for the [CatalogItem&#x60;.</value>
+        /// <value>The IDs of the CatalogModifierList objects to disable for the CatalogItem.</value>
         [DataMember(Name="modifier_lists_to_disable", EmitDefaultValue=false)]
         public List<string> ModifierListsToDisable { get; set; }
         /// <summary>

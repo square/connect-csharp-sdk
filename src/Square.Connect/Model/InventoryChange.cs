@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a single physical count, inventory, adjustment, or transfer that is part of the history of inventory changes for a particular [CatalogObject](#type-catalogobject).
+    /// Represents a single physical count, inventory, adjustment, or transfer that is part of the history of inventory changes for a particular &#x60;CatalogObject&#x60;.
     /// </summary>
     [DataContract]
     public partial class InventoryChange :  IEquatable<InventoryChange>, IValidatableObject
@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryChange" /> class.
         /// </summary>
-        /// <param name="Type">Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values.</param>
+        /// <param name="Type">Indicates how the inventory change was applied. See &#x60;InventoryChangeType&#x60; for all possible values. See [InventoryChangeType](#type-inventorychangetype) for possible values.</param>
         /// <param name="PhysicalCount">Contains details about the physical count when &#x60;type&#x60; is &#x60;PHYSICAL_COUNT&#x60; and unset for all other types..</param>
         /// <param name="Adjustment">Contains details about the inventory adjustment when &#x60;type&#x60; is &#x60;ADJUSTMENT&#x60; and unset for all other types..</param>
         /// <param name="Transfer">Contains details about the inventory transfer when &#x60;type&#x60; is &#x60;TRANSFER&#x60; and unset for all other types..</param>
@@ -45,9 +45,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values
+        /// Indicates how the inventory change was applied. See &#x60;InventoryChangeType&#x60; for all possible values. See [InventoryChangeType](#type-inventorychangetype) for possible values
         /// </summary>
-        /// <value>Indicates how the inventory change was applied. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
+        /// <value>Indicates how the inventory change was applied. See &#x60;InventoryChangeType&#x60; for all possible values. See [InventoryChangeType](#type-inventorychangetype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>

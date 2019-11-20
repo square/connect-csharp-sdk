@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TenderCardDetails" /> class.
         /// </summary>
-        /// <param name="Status">The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.</param>
+        /// <param name="Status">The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See &#x60;TenderCardDetailsStatus&#x60; for possible values. See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.</param>
         /// <param name="Card">The credit card&#39;s non-confidential details..</param>
         /// <param name="EntryMethod">The method used to enter the card&#39;s details for the transaction. See [TenderCardDetailsEntryMethod](#type-tendercarddetailsentrymethod) for possible values.</param>
         public TenderCardDetails(string Status = default(string), Card Card = default(Card), string EntryMethod = default(string))
@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
+        /// The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See &#x60;TenderCardDetailsStatus&#x60; for possible values. See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
         /// </summary>
-        /// <value>The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values</value>
+        /// <value>The credit card payment&#39;s current state (such as &#x60;AUTHORIZED&#x60; or &#x60;CAPTURED&#x60;). See &#x60;TenderCardDetailsStatus&#x60; for possible values. See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>

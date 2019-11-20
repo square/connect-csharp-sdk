@@ -38,7 +38,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="CatalogModifierOverride" /> class.
         /// </summary>
         /// <param name="ModifierId">The ID of the &#x60;CatalogModifier&#x60; whose default behavior is being overridden. (required).</param>
-        /// <param name="OnByDefault">If &#x60;true&#x60;, this &#x60;CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem&#x60;..</param>
+        /// <param name="OnByDefault">If &#x60;true&#x60;, this &#x60;CatalogModifier&#x60; should be selected by default for this &#x60;CatalogItem&#x60;..</param>
         public CatalogModifierOverride(string ModifierId = default(string), bool? OnByDefault = default(bool?))
         {
             // to ensure "ModifierId" is required (not null)
@@ -60,9 +60,9 @@ namespace Square.Connect.Model
         [DataMember(Name="modifier_id", EmitDefaultValue=false)]
         public string ModifierId { get; set; }
         /// <summary>
-        /// If &#x60;true&#x60;, this &#x60;CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem&#x60;.
+        /// If &#x60;true&#x60;, this &#x60;CatalogModifier&#x60; should be selected by default for this &#x60;CatalogItem&#x60;.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, this &#x60;CatalogModifier](#type-catalogmodifier) should be selected by default for this [CatalogItem&#x60;.</value>
+        /// <value>If &#x60;true&#x60;, this &#x60;CatalogModifier&#x60; should be selected by default for this &#x60;CatalogItem&#x60;.</value>
         [DataMember(Name="on_by_default", EmitDefaultValue=false)]
         public bool? OnByDefault { get; set; }
         /// <summary>

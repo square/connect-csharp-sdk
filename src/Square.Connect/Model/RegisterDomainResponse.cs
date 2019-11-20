@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the RegisterDomain endpoint.  Either &#x60;errors&#x60; or &#x60;status&#x60; will be present in a given response (never both).
+    /// Defines the fields that are included in the response body of a request to the __RegisterDomain__ endpoint.  Either &#x60;errors&#x60; or &#x60;status&#x60; will be present in a given response (never both).
     /// </summary>
     [DataContract]
     public partial class RegisterDomainResponse :  IEquatable<RegisterDomainResponse>, IValidatableObject
@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="RegisterDomainResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Status">Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.</param>
+        /// <param name="Status">Status of the domain registration.  See &#x60;RegisterDomainResponseStatus&#x60; for possible values. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values.</param>
         public RegisterDomainResponse(List<Error> Errors = default(List<Error>), string Status = default(string))
         {
             this.Errors = Errors;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values
+        /// Status of the domain registration.  See &#x60;RegisterDomainResponseStatus&#x60; for possible values. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values
         /// </summary>
-        /// <value>Status of the domain registration. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values</value>
+        /// <value>Status of the domain registration.  See &#x60;RegisterDomainResponseStatus&#x60; for possible values. See [RegisterDomainResponseStatus](#type-registerdomainresponsestatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents an amount of money. &#x60;Money&#x60; fields can be signed or unsigned.
+    /// Represents an amount of money. &#x60;Money&#x60; fields can be signed or unsigned. Fields that do not explicitly define whether they are signed or unsigned are considered unsigned and can only hold positive amounts. For signed fields, the sign of the value indicates the purpose of the money transfer. See [Working with Monetary Amounts](/build-basics/working-with-monetary-amounts) for more information.
     /// </summary>
     [DataContract]
     public partial class Money :  IEquatable<Money>, IValidatableObject
@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Money" /> class.
         /// </summary>
-        /// <param name="Amount">The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents. Monetary amounts can be positive or negative. See the specific API documentation to determine the meaning of the sign in a particular case..</param>
+        /// <param name="Amount">The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents. Monetary amounts can be positive or negative. See the specific field description to determine the meaning of the sign in a particular case..</param>
         /// <param name="Currency">The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is &#x60;USD&#x60;.  See &#x60;Currency&#x60; for possible values. See [Currency](#type-currency) for possible values.</param>
         public Money(long? Amount = default(long?), string Currency = default(string))
         {
@@ -41,9 +41,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents. Monetary amounts can be positive or negative. See the specific API documentation to determine the meaning of the sign in a particular case.
+        /// The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents. Monetary amounts can be positive or negative. See the specific field description to determine the meaning of the sign in a particular case.
         /// </summary>
-        /// <value>The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents. Monetary amounts can be positive or negative. See the specific API documentation to determine the meaning of the sign in a particular case.</value>
+        /// <value>The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents. Monetary amounts can be positive or negative. See the specific field description to determine the meaning of the sign in a particular case.</value>
         [DataMember(Name="amount", EmitDefaultValue=false)]
         public long? Amount { get; set; }
         /// <summary>

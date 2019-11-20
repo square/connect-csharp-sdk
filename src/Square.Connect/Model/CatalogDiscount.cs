@@ -32,13 +32,14 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogDiscount" /> class.
         /// </summary>
-        /// <param name="Name">The discount&#39;s name. Searchable. This field has max length of 255 Unicode code points..</param>
+        /// <param name="Name">The discount name. Searchable. This field has max length of 255 Unicode code points..</param>
         /// <param name="DiscountType">Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values.</param>
         /// <param name="Percentage">The percentage of the discount as a string representation of a decimal number, using a &#x60;.&#x60; as the decimal separator and without a &#x60;%&#x60; sign. A value of &#x60;7.5&#x60; corresponds to &#x60;7.5%&#x60;. Specify a percentage of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_PERCENTAGE&#x60;.  Do not include this field for amount-based or variable discounts..</param>
         /// <param name="AmountMoney">The amount of the discount. Specify an amount of &#x60;0&#x60; if &#x60;discount_type&#x60; is &#x60;VARIABLE_AMOUNT&#x60;.  Do not include this field for percentage-based or variable discounts..</param>
         /// <param name="PinRequired">Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment in the Square Point of Sale app..</param>
-        /// <param name="LabelColor">The color of the discount&#39;s display label in the Square Point of Sale app. This must be a valid hex color code..</param>
-        public CatalogDiscount(string Name = default(string), string DiscountType = default(string), string Percentage = default(string), Money AmountMoney = default(Money), bool? PinRequired = default(bool?), string LabelColor = default(string))
+        /// <param name="LabelColor">The color of the discount display label in the Square Point of Sale app. This must be a valid hex color code..</param>
+        /// <param name="ModifyTaxBasis">Indicates whether this discount should reduce the price used to calculate tax.  Most discounts should use &#x60;MODIFY_TAX_BASIS&#x60;. However, in some circumstances taxes must be calculated based on an item&#39;s price, ignoring a particular discount. For example, in many US jurisdictions, a manufacturer coupon or instant rebate reduces the price a customer pays but does not reduce the sale price used to calculate how much sales tax is due. In this case, the discount representing that manufacturer coupon should have &#x60;DO_NOT_MODIFY_TAX_BASIS&#x60; for this field.  If you are unsure whether you need to use this field, consult your tax professional. See [CatalogDiscountModifyTaxBasis](#type-catalogdiscountmodifytaxbasis) for possible values.</param>
+        public CatalogDiscount(string Name = default(string), string DiscountType = default(string), string Percentage = default(string), Money AmountMoney = default(Money), bool? PinRequired = default(bool?), string LabelColor = default(string), string ModifyTaxBasis = default(string))
         {
             this.Name = Name;
             this.DiscountType = DiscountType;
@@ -46,12 +47,13 @@ namespace Square.Connect.Model
             this.AmountMoney = AmountMoney;
             this.PinRequired = PinRequired;
             this.LabelColor = LabelColor;
+            this.ModifyTaxBasis = ModifyTaxBasis;
         }
         
         /// <summary>
-        /// The discount&#39;s name. Searchable. This field has max length of 255 Unicode code points.
+        /// The discount name. Searchable. This field has max length of 255 Unicode code points.
         /// </summary>
-        /// <value>The discount&#39;s name. Searchable. This field has max length of 255 Unicode code points.</value>
+        /// <value>The discount name. Searchable. This field has max length of 255 Unicode code points.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -79,11 +81,17 @@ namespace Square.Connect.Model
         [DataMember(Name="pin_required", EmitDefaultValue=false)]
         public bool? PinRequired { get; set; }
         /// <summary>
-        /// The color of the discount&#39;s display label in the Square Point of Sale app. This must be a valid hex color code.
+        /// The color of the discount display label in the Square Point of Sale app. This must be a valid hex color code.
         /// </summary>
-        /// <value>The color of the discount&#39;s display label in the Square Point of Sale app. This must be a valid hex color code.</value>
+        /// <value>The color of the discount display label in the Square Point of Sale app. This must be a valid hex color code.</value>
         [DataMember(Name="label_color", EmitDefaultValue=false)]
         public string LabelColor { get; set; }
+        /// <summary>
+        /// Indicates whether this discount should reduce the price used to calculate tax.  Most discounts should use &#x60;MODIFY_TAX_BASIS&#x60;. However, in some circumstances taxes must be calculated based on an item&#39;s price, ignoring a particular discount. For example, in many US jurisdictions, a manufacturer coupon or instant rebate reduces the price a customer pays but does not reduce the sale price used to calculate how much sales tax is due. In this case, the discount representing that manufacturer coupon should have &#x60;DO_NOT_MODIFY_TAX_BASIS&#x60; for this field.  If you are unsure whether you need to use this field, consult your tax professional. See [CatalogDiscountModifyTaxBasis](#type-catalogdiscountmodifytaxbasis) for possible values
+        /// </summary>
+        /// <value>Indicates whether this discount should reduce the price used to calculate tax.  Most discounts should use &#x60;MODIFY_TAX_BASIS&#x60;. However, in some circumstances taxes must be calculated based on an item&#39;s price, ignoring a particular discount. For example, in many US jurisdictions, a manufacturer coupon or instant rebate reduces the price a customer pays but does not reduce the sale price used to calculate how much sales tax is due. In this case, the discount representing that manufacturer coupon should have &#x60;DO_NOT_MODIFY_TAX_BASIS&#x60; for this field.  If you are unsure whether you need to use this field, consult your tax professional. See [CatalogDiscountModifyTaxBasis](#type-catalogdiscountmodifytaxbasis) for possible values</value>
+        [DataMember(Name="modify_tax_basis", EmitDefaultValue=false)]
+        public string ModifyTaxBasis { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -98,6 +106,7 @@ namespace Square.Connect.Model
             sb.Append("  AmountMoney: ").Append(AmountMoney).Append("\n");
             sb.Append("  PinRequired: ").Append(PinRequired).Append("\n");
             sb.Append("  LabelColor: ").Append(LabelColor).Append("\n");
+            sb.Append("  ModifyTaxBasis: ").Append(ModifyTaxBasis).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +172,11 @@ namespace Square.Connect.Model
                     this.LabelColor == other.LabelColor ||
                     this.LabelColor != null &&
                     this.LabelColor.Equals(other.LabelColor)
+                ) && 
+                (
+                    this.ModifyTaxBasis == other.ModifyTaxBasis ||
+                    this.ModifyTaxBasis != null &&
+                    this.ModifyTaxBasis.Equals(other.ModifyTaxBasis)
                 );
         }
 
@@ -189,6 +203,8 @@ namespace Square.Connect.Model
                     hash = hash * 59 + this.PinRequired.GetHashCode();
                 if (this.LabelColor != null)
                     hash = hash * 59 + this.LabelColor.GetHashCode();
+                if (this.ModifyTaxBasis != null)
+                    hash = hash * 59 + this.ModifyTaxBasis.GetHashCode();
                 return hash;
             }
         }

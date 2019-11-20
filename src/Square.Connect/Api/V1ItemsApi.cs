@@ -28,19 +28,21 @@ namespace Square.Connect.Api
         /// AdjustInventory
         /// </summary>
         /// <remarks>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="variationId">The ID of the variation to adjust inventory information for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1InventoryEntry</returns>        V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body);
+        /// <returns>V1InventoryEntry</returns>
+        [Obsolete]
+        V1InventoryEntry AdjustInventory (string locationId, string variationId, V1AdjustInventoryRequest body);
 
         /// <summary>
         /// AdjustInventory
         /// </summary>
         /// <remarks>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -52,19 +54,21 @@ namespace Square.Connect.Api
         /// ApplyFee
         /// </summary>
         /// <remarks>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
-        /// <returns>V1Item</returns>        V1Item ApplyFee (string locationId, string itemId, string feeId);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item ApplyFee (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// ApplyFee
         /// </summary>
         /// <remarks>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -76,19 +80,21 @@ namespace Square.Connect.Api
         /// ApplyModifierList
         /// </summary>
         /// <remarks>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to apply.</param>
         /// <param name="itemId">The ID of the item to add the modifier list to.</param>
-        /// <returns>V1Item</returns>        V1Item ApplyModifierList (string locationId, string modifierListId, string itemId);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item ApplyModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// ApplyModifierList
         /// </summary>
         /// <remarks>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -100,18 +106,20 @@ namespace Square.Connect.Api
         /// CreateCategory
         /// </summary>
         /// <remarks>
-        /// Creates an item category.
+        /// Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Category</returns>        V1Category CreateCategory (string locationId, V1Category body);
+        /// <returns>V1Category</returns>
+        [Obsolete]
+        V1Category CreateCategory (string locationId, V1Category body);
 
         /// <summary>
         /// CreateCategory
         /// </summary>
         /// <remarks>
-        /// Creates an item category.
+        /// Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -122,18 +130,20 @@ namespace Square.Connect.Api
         /// CreateDiscount
         /// </summary>
         /// <remarks>
-        /// Creates a discount.
+        /// Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Discount</returns>        V1Discount CreateDiscount (string locationId, V1Discount body);
+        /// <returns>V1Discount</returns>
+        [Obsolete]
+        V1Discount CreateDiscount (string locationId, V1Discount body);
 
         /// <summary>
         /// CreateDiscount
         /// </summary>
         /// <remarks>
-        /// Creates a discount.
+        /// Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -144,18 +154,20 @@ namespace Square.Connect.Api
         /// CreateFee
         /// </summary>
         /// <remarks>
-        /// Creates a fee (tax).
+        /// Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Fee</returns>        V1Fee CreateFee (string locationId, V1Fee body);
+        /// <returns>V1Fee</returns>
+        [Obsolete]
+        V1Fee CreateFee (string locationId, V1Fee body);
 
         /// <summary>
         /// CreateFee
         /// </summary>
         /// <remarks>
-        /// Creates a fee (tax).
+        /// Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -166,18 +178,20 @@ namespace Square.Connect.Api
         /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Item</returns>        V1Item CreateItem (string locationId, V1Item body);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item CreateItem (string locationId, V1Item body);
 
         /// <summary>
         /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -188,18 +202,20 @@ namespace Square.Connect.Api
         /// CreateModifierList
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierList</returns>        V1ModifierList CreateModifierList (string locationId, V1ModifierList body);
+        /// <returns>V1ModifierList</returns>
+        [Obsolete]
+        V1ModifierList CreateModifierList (string locationId, V1ModifierList body);
 
         /// <summary>
         /// CreateModifierList
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -210,19 +226,21 @@ namespace Square.Connect.Api
         /// CreateModifierOption
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierOption</returns>        V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body);
+        /// <returns>V1ModifierOption</returns>
+        [Obsolete]
+        V1ModifierOption CreateModifierOption (string locationId, string modifierListId, V1ModifierOption body);
 
         /// <summary>
         /// CreateModifierOption
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -234,18 +252,20 @@ namespace Square.Connect.Api
         /// CreatePage
         /// </summary>
         /// <remarks>
-        /// Creates a Favorites page in Square Register.
+        /// Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Page</returns>        V1Page CreatePage (string locationId, V1Page body);
+        /// <returns>V1Page</returns>
+        [Obsolete]
+        V1Page CreatePage (string locationId, V1Page body);
 
         /// <summary>
         /// CreatePage
         /// </summary>
         /// <remarks>
-        /// Creates a Favorites page in Square Register.
+        /// Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -256,19 +276,21 @@ namespace Square.Connect.Api
         /// CreateVariation
         /// </summary>
         /// <remarks>
-        /// Creates an item variation for an existing item.
+        /// Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Variation</returns>        V1Variation CreateVariation (string locationId, string itemId, V1Variation body);
+        /// <returns>V1Variation</returns>
+        [Obsolete]
+        V1Variation CreateVariation (string locationId, string itemId, V1Variation body);
 
         /// <summary>
         /// CreateVariation
         /// </summary>
         /// <remarks>
-        /// Creates an item variation for an existing item.
+        /// Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -280,18 +302,20 @@ namespace Square.Connect.Api
         /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to delete.</param>
-        /// <returns>V1Category</returns>        V1Category DeleteCategory (string locationId, string categoryId);
+        /// <returns>V1Category</returns>
+        [Obsolete]
+        V1Category DeleteCategory (string locationId, string categoryId);
 
         /// <summary>
         /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -302,18 +326,20 @@ namespace Square.Connect.Api
         /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to delete.</param>
-        /// <returns>V1Discount</returns>        V1Discount DeleteDiscount (string locationId, string discountId);
+        /// <returns>V1Discount</returns>
+        [Obsolete]
+        V1Discount DeleteDiscount (string locationId, string discountId);
 
         /// <summary>
         /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -324,18 +350,20 @@ namespace Square.Connect.Api
         /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to delete.</param>
-        /// <returns>V1Fee</returns>        V1Fee DeleteFee (string locationId, string feeId);
+        /// <returns>V1Fee</returns>
+        [Obsolete]
+        V1Fee DeleteFee (string locationId, string feeId);
 
         /// <summary>
         /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -346,18 +374,20 @@ namespace Square.Connect.Api
         /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
-        /// <returns>V1Item</returns>        V1Item DeleteItem (string locationId, string itemId);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item DeleteItem (string locationId, string itemId);
 
         /// <summary>
         /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -368,18 +398,20 @@ namespace Square.Connect.Api
         /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
-        /// <returns>V1ModifierList</returns>        V1ModifierList DeleteModifierList (string locationId, string modifierListId);
+        /// <returns>V1ModifierList</returns>
+        [Obsolete]
+        V1ModifierList DeleteModifierList (string locationId, string modifierListId);
 
         /// <summary>
         /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -390,19 +422,21 @@ namespace Square.Connect.Api
         /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to delete.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
-        /// <returns>V1ModifierOption</returns>        V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId);
+        /// <returns>V1ModifierOption</returns>
+        [Obsolete]
+        V1ModifierOption DeleteModifierOption (string locationId, string modifierListId, string modifierOptionId);
 
         /// <summary>
         /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -414,18 +448,20 @@ namespace Square.Connect.Api
         /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
-        /// <returns>V1Page</returns>        V1Page DeletePage (string locationId, string pageId);
+        /// <returns>V1Page</returns>
+        [Obsolete]
+        V1Page DeletePage (string locationId, string pageId);
 
         /// <summary>
         /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -436,20 +472,22 @@ namespace Square.Connect.Api
         /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page to delete.</param>
         /// <param name="row">The row of the cell to clear. Always an integer between 0 and 4, inclusive. Row 0 is the top row. (optional)</param>
         /// <param name="column">The column of the cell to clear. Always an integer between 0 and 4, inclusive. Column 0 is the leftmost column. (optional)</param>
-        /// <returns>V1Page</returns>        V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null);
+        /// <returns>V1Page</returns>
+        [Obsolete]
+        V1Page DeletePageCell (string locationId, string pageId, string row = null, string column = null);
 
         /// <summary>
         /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -462,19 +500,21 @@ namespace Square.Connect.Api
         /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to delete.</param>
         /// <param name="variationId">The ID of the variation to delete.</param>
-        /// <returns>V1Variation</returns>        V1Variation DeleteVariation (string locationId, string itemId, string variationId);
+        /// <returns>V1Variation</returns>
+        [Obsolete]
+        V1Variation DeleteVariation (string locationId, string itemId, string variationId);
 
         /// <summary>
         /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -486,17 +526,19 @@ namespace Square.Connect.Api
         /// ListCategories
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s item categories.
+        /// Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
-        /// <returns>List&lt;V1Category&gt;</returns>        List<V1Category> ListCategories (string locationId);
+        /// <returns>List&lt;V1Category&gt;</returns>
+        [Obsolete]
+        List<V1Category> ListCategories (string locationId);
 
         /// <summary>
         /// ListCategories
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s item categories.
+        /// Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -506,17 +548,19 @@ namespace Square.Connect.Api
         /// ListDiscounts
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s discounts.
+        /// Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
-        /// <returns>List&lt;V1Discount&gt;</returns>        List<V1Discount> ListDiscounts (string locationId);
+        /// <returns>List&lt;V1Discount&gt;</returns>
+        [Obsolete]
+        List<V1Discount> ListDiscounts (string locationId);
 
         /// <summary>
         /// ListDiscounts
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s discounts.
+        /// Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -526,17 +570,19 @@ namespace Square.Connect.Api
         /// ListFees
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
-        /// <returns>List&lt;V1Fee&gt;</returns>        List<V1Fee> ListFees (string locationId);
+        /// <returns>List&lt;V1Fee&gt;</returns>
+        [Obsolete]
+        List<V1Fee> ListFees (string locationId);
 
         /// <summary>
         /// ListFees
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -546,19 +592,21 @@ namespace Square.Connect.Api
         /// ListInventory
         /// </summary>
         /// <remarks>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="limit">The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1InventoryEntry&gt;</returns>        List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null);
+        /// <returns>List&lt;V1InventoryEntry&gt;</returns>
+        [Obsolete]
+        List<V1InventoryEntry> ListInventory (string locationId, int? limit = null, string batchToken = null);
 
         /// <summary>
         /// ListInventory
         /// </summary>
         /// <remarks>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -570,18 +618,20 @@ namespace Square.Connect.Api
         /// ListItems
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all of a location&#39;s items.
+        /// Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
         /// <param name="batchToken">A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)</param>
-        /// <returns>List&lt;V1Item&gt;</returns>        List<V1Item> ListItems (string locationId, string batchToken = null);
+        /// <returns>List&lt;V1Item&gt;</returns>
+        [Obsolete]
+        List<V1Item> ListItems (string locationId, string batchToken = null);
 
         /// <summary>
         /// ListItems
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all of a location&#39;s items.
+        /// Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -592,17 +642,19 @@ namespace Square.Connect.Api
         /// ListModifierLists
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s modifier lists.
+        /// Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
-        /// <returns>List&lt;V1ModifierList&gt;</returns>        List<V1ModifierList> ListModifierLists (string locationId);
+        /// <returns>List&lt;V1ModifierList&gt;</returns>
+        [Obsolete]
+        List<V1ModifierList> ListModifierLists (string locationId);
 
         /// <summary>
         /// ListModifierLists
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s modifier lists.
+        /// Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -612,17 +664,19 @@ namespace Square.Connect.Api
         /// ListPages
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
-        /// <returns>List&lt;V1Page&gt;</returns>        List<V1Page> ListPages (string locationId);
+        /// <returns>List&lt;V1Page&gt;</returns>
+        [Obsolete]
+        List<V1Page> ListPages (string locationId);
 
         /// <summary>
         /// ListPages
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -632,19 +686,21 @@ namespace Square.Connect.Api
         /// RemoveFee
         /// </summary>
         /// <remarks>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to add the fee to.</param>
         /// <param name="feeId">The ID of the fee to apply.</param>
-        /// <returns>V1Item</returns>        V1Item RemoveFee (string locationId, string itemId, string feeId);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item RemoveFee (string locationId, string itemId, string feeId);
 
         /// <summary>
         /// RemoveFee
         /// </summary>
         /// <remarks>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -656,19 +712,21 @@ namespace Square.Connect.Api
         /// RemoveModifierList
         /// </summary>
         /// <remarks>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to remove.</param>
         /// <param name="itemId">The ID of the item to remove the modifier list from.</param>
-        /// <returns>V1Item</returns>        V1Item RemoveModifierList (string locationId, string modifierListId, string itemId);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item RemoveModifierList (string locationId, string modifierListId, string itemId);
 
         /// <summary>
         /// RemoveModifierList
         /// </summary>
         /// <remarks>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -680,18 +738,20 @@ namespace Square.Connect.Api
         /// RetrieveItem
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The item&#39;s ID.</param>
-        /// <returns>V1Item</returns>        V1Item RetrieveItem (string locationId, string itemId);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item RetrieveItem (string locationId, string itemId);
 
         /// <summary>
         /// RetrieveItem
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -702,18 +762,20 @@ namespace Square.Connect.Api
         /// RetrieveModifierList
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single modifier list.
+        /// Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The modifier list&#39;s ID.</param>
-        /// <returns>V1ModifierList</returns>        V1ModifierList RetrieveModifierList (string locationId, string modifierListId);
+        /// <returns>V1ModifierList</returns>
+        [Obsolete]
+        V1ModifierList RetrieveModifierList (string locationId, string modifierListId);
 
         /// <summary>
         /// RetrieveModifierList
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single modifier list.
+        /// Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -724,19 +786,21 @@ namespace Square.Connect.Api
         /// UpdateCategory
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item category.
+        /// Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
         /// <param name="categoryId">The ID of the category to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Category</returns>        V1Category UpdateCategory (string locationId, string categoryId, V1Category body);
+        /// <returns>V1Category</returns>
+        [Obsolete]
+        V1Category UpdateCategory (string locationId, string categoryId, V1Category body);
 
         /// <summary>
         /// UpdateCategory
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item category.
+        /// Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -748,19 +812,21 @@ namespace Square.Connect.Api
         /// UpdateDiscount
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing discount.
+        /// Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
         /// <param name="discountId">The ID of the discount to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Discount</returns>        V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body);
+        /// <returns>V1Discount</returns>
+        [Obsolete]
+        V1Discount UpdateDiscount (string locationId, string discountId, V1Discount body);
 
         /// <summary>
         /// UpdateDiscount
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing discount.
+        /// Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -772,19 +838,21 @@ namespace Square.Connect.Api
         /// UpdateFee
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing fee (tax).
+        /// Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
         /// <param name="feeId">The ID of the fee to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Fee</returns>        V1Fee UpdateFee (string locationId, string feeId, V1Fee body);
+        /// <returns>V1Fee</returns>
+        [Obsolete]
+        V1Fee UpdateFee (string locationId, string feeId, V1Fee body);
 
         /// <summary>
         /// UpdateFee
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing fee (tax).
+        /// Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -796,19 +864,21 @@ namespace Square.Connect.Api
         /// UpdateItem
         /// </summary>
         /// <remarks>
-        /// Modifies the core details of an existing item.
+        /// Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Item</returns>        V1Item UpdateItem (string locationId, string itemId, V1Item body);
+        /// <returns>V1Item</returns>
+        [Obsolete]
+        V1Item UpdateItem (string locationId, string itemId, V1Item body);
 
         /// <summary>
         /// UpdateItem
         /// </summary>
         /// <remarks>
-        /// Modifies the core details of an existing item.
+        /// Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -820,19 +890,21 @@ namespace Square.Connect.Api
         /// UpdateModifierList
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier list.
+        /// Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierList</returns>        V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body);
+        /// <returns>V1ModifierList</returns>
+        [Obsolete]
+        V1ModifierList UpdateModifierList (string locationId, string modifierListId, V1UpdateModifierListRequest body);
 
         /// <summary>
         /// UpdateModifierList
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier list.
+        /// Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -844,20 +916,22 @@ namespace Square.Connect.Api
         /// UpdateModifierOption
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier option.
+        /// Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="modifierListId">The ID of the modifier list to edit.</param>
         /// <param name="modifierOptionId">The ID of the modifier list to edit.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1ModifierOption</returns>        V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
+        /// <returns>V1ModifierOption</returns>
+        [Obsolete]
+        V1ModifierOption UpdateModifierOption (string locationId, string modifierListId, string modifierOptionId, V1ModifierOption body);
 
         /// <summary>
         /// UpdateModifierOption
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier option.
+        /// Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -870,19 +944,21 @@ namespace Square.Connect.Api
         /// UpdatePage
         /// </summary>
         /// <remarks>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
         /// <param name="pageId">The ID of the page to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Page</returns>        V1Page UpdatePage (string locationId, string pageId, V1Page body);
+        /// <returns>V1Page</returns>
+        [Obsolete]
+        V1Page UpdatePage (string locationId, string pageId, V1Page body);
 
         /// <summary>
         /// UpdatePage
         /// </summary>
         /// <remarks>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -894,19 +970,21 @@ namespace Square.Connect.Api
         /// UpdatePageCell
         /// </summary>
         /// <remarks>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
         /// <param name="pageId">The ID of the page the cell belongs to.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Page</returns>        V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body);
+        /// <returns>V1Page</returns>
+        [Obsolete]
+        V1Page UpdatePageCell (string locationId, string pageId, V1PageCell body);
 
         /// <summary>
         /// UpdatePageCell
         /// </summary>
         /// <remarks>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -918,20 +996,22 @@ namespace Square.Connect.Api
         /// UpdateVariation
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item variation.
+        /// Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
         /// <param name="itemId">The ID of the item to modify.</param>
         /// <param name="variationId">The ID of the variation to modify.</param>
         /// <param name="body">An object containing the fields to POST for the request.  See the corresponding object definition for field details.</param>
-        /// <returns>V1Variation</returns>        V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body);
+        /// <returns>V1Variation</returns>
+        [Obsolete]
+        V1Variation UpdateVariation (string locationId, string itemId, string variationId, V1Variation body);
 
         /// <summary>
         /// UpdateVariation
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item variation.
+        /// Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -946,7 +1026,7 @@ namespace Square.Connect.Api
         /// AdjustInventory
         /// </summary>
         /// <remarks>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -959,7 +1039,7 @@ namespace Square.Connect.Api
         /// AdjustInventory
         /// </summary>
         /// <remarks>
-        /// Adjusts an item variation&#39;s current available inventory.
+        /// Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -971,7 +1051,7 @@ namespace Square.Connect.Api
         /// ApplyFee
         /// </summary>
         /// <remarks>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -984,7 +1064,7 @@ namespace Square.Connect.Api
         /// ApplyFee
         /// </summary>
         /// <remarks>
-        /// Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -996,7 +1076,7 @@ namespace Square.Connect.Api
         /// ApplyModifierList
         /// </summary>
         /// <remarks>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1009,7 +1089,7 @@ namespace Square.Connect.Api
         /// ApplyModifierList
         /// </summary>
         /// <remarks>
-        /// Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1021,7 +1101,7 @@ namespace Square.Connect.Api
         /// CreateCategory
         /// </summary>
         /// <remarks>
-        /// Creates an item category.
+        /// Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1033,7 +1113,7 @@ namespace Square.Connect.Api
         /// CreateCategory
         /// </summary>
         /// <remarks>
-        /// Creates an item category.
+        /// Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1044,7 +1124,7 @@ namespace Square.Connect.Api
         /// CreateDiscount
         /// </summary>
         /// <remarks>
-        /// Creates a discount.
+        /// Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1056,7 +1136,7 @@ namespace Square.Connect.Api
         /// CreateDiscount
         /// </summary>
         /// <remarks>
-        /// Creates a discount.
+        /// Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1067,7 +1147,7 @@ namespace Square.Connect.Api
         /// CreateFee
         /// </summary>
         /// <remarks>
-        /// Creates a fee (tax).
+        /// Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -1079,7 +1159,7 @@ namespace Square.Connect.Api
         /// CreateFee
         /// </summary>
         /// <remarks>
-        /// Creates a fee (tax).
+        /// Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -1090,7 +1170,7 @@ namespace Square.Connect.Api
         /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1102,7 +1182,7 @@ namespace Square.Connect.Api
         /// CreateItem
         /// </summary>
         /// <remarks>
-        /// Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1113,7 +1193,7 @@ namespace Square.Connect.Api
         /// CreateModifierList
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -1125,7 +1205,7 @@ namespace Square.Connect.Api
         /// CreateModifierList
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier list and at least one modifier option for it.
+        /// Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -1136,7 +1216,7 @@ namespace Square.Connect.Api
         /// CreateModifierOption
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1149,7 +1229,7 @@ namespace Square.Connect.Api
         /// CreateModifierOption
         /// </summary>
         /// <remarks>
-        /// Creates an item modifier option and adds it to a modifier list.
+        /// Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1161,7 +1241,7 @@ namespace Square.Connect.Api
         /// CreatePage
         /// </summary>
         /// <remarks>
-        /// Creates a Favorites page in Square Register.
+        /// Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1173,7 +1253,7 @@ namespace Square.Connect.Api
         /// CreatePage
         /// </summary>
         /// <remarks>
-        /// Creates a Favorites page in Square Register.
+        /// Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -1184,7 +1264,7 @@ namespace Square.Connect.Api
         /// CreateVariation
         /// </summary>
         /// <remarks>
-        /// Creates an item variation for an existing item.
+        /// Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1197,7 +1277,7 @@ namespace Square.Connect.Api
         /// CreateVariation
         /// </summary>
         /// <remarks>
-        /// Creates an item variation for an existing item.
+        /// Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1209,7 +1289,7 @@ namespace Square.Connect.Api
         /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1221,7 +1301,7 @@ namespace Square.Connect.Api
         /// DeleteCategory
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1232,7 +1312,7 @@ namespace Square.Connect.Api
         /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1244,7 +1324,7 @@ namespace Square.Connect.Api
         /// DeleteDiscount
         /// </summary>
         /// <remarks>
-        /// Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1255,7 +1335,7 @@ namespace Square.Connect.Api
         /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1267,7 +1347,7 @@ namespace Square.Connect.Api
         /// DeleteFee
         /// </summary>
         /// <remarks>
-        /// Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1278,7 +1358,7 @@ namespace Square.Connect.Api
         /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1290,7 +1370,7 @@ namespace Square.Connect.Api
         /// DeleteItem
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1301,7 +1381,7 @@ namespace Square.Connect.Api
         /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1313,7 +1393,7 @@ namespace Square.Connect.Api
         /// DeleteModifierList
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1324,7 +1404,7 @@ namespace Square.Connect.Api
         /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1337,7 +1417,7 @@ namespace Square.Connect.Api
         /// DeleteModifierOption
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1349,7 +1429,7 @@ namespace Square.Connect.Api
         /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1361,7 +1441,7 @@ namespace Square.Connect.Api
         /// DeletePage
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1372,7 +1452,7 @@ namespace Square.Connect.Api
         /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1386,7 +1466,7 @@ namespace Square.Connect.Api
         /// DeletePageCell
         /// </summary>
         /// <remarks>
-        /// Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1399,7 +1479,7 @@ namespace Square.Connect.Api
         /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1412,7 +1492,7 @@ namespace Square.Connect.Api
         /// DeleteVariation
         /// </summary>
         /// <remarks>
-        /// Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1424,7 +1504,7 @@ namespace Square.Connect.Api
         /// ListCategories
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s item categories.
+        /// Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -1435,7 +1515,7 @@ namespace Square.Connect.Api
         /// ListCategories
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s item categories.
+        /// Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -1445,7 +1525,7 @@ namespace Square.Connect.Api
         /// ListDiscounts
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s discounts.
+        /// Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -1456,7 +1536,7 @@ namespace Square.Connect.Api
         /// ListDiscounts
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s discounts.
+        /// Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -1466,7 +1546,7 @@ namespace Square.Connect.Api
         /// ListFees
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -1477,7 +1557,7 @@ namespace Square.Connect.Api
         /// ListFees
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s fees (taxes).
+        /// Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -1487,7 +1567,7 @@ namespace Square.Connect.Api
         /// ListInventory
         /// </summary>
         /// <remarks>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1500,7 +1580,7 @@ namespace Square.Connect.Api
         /// ListInventory
         /// </summary>
         /// <remarks>
-        /// Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1512,7 +1592,7 @@ namespace Square.Connect.Api
         /// ListItems
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all of a location&#39;s items.
+        /// Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -1524,7 +1604,7 @@ namespace Square.Connect.Api
         /// ListItems
         /// </summary>
         /// <remarks>
-        /// Provides summary information for all of a location&#39;s items.
+        /// Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -1535,7 +1615,7 @@ namespace Square.Connect.Api
         /// ListModifierLists
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s modifier lists.
+        /// Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -1546,7 +1626,7 @@ namespace Square.Connect.Api
         /// ListModifierLists
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s modifier lists.
+        /// Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -1556,7 +1636,7 @@ namespace Square.Connect.Api
         /// ListPages
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -1567,7 +1647,7 @@ namespace Square.Connect.Api
         /// ListPages
         /// </summary>
         /// <remarks>
-        /// Lists all of a location&#39;s Favorites pages in Square Register.
+        /// Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -1577,7 +1657,7 @@ namespace Square.Connect.Api
         /// RemoveFee
         /// </summary>
         /// <remarks>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1590,7 +1670,7 @@ namespace Square.Connect.Api
         /// RemoveFee
         /// </summary>
         /// <remarks>
-        /// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1602,7 +1682,7 @@ namespace Square.Connect.Api
         /// RemoveModifierList
         /// </summary>
         /// <remarks>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1615,7 +1695,7 @@ namespace Square.Connect.Api
         /// RemoveModifierList
         /// </summary>
         /// <remarks>
-        /// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1627,7 +1707,7 @@ namespace Square.Connect.Api
         /// RetrieveItem
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1639,7 +1719,7 @@ namespace Square.Connect.Api
         /// RetrieveItem
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single item, including associated modifier lists and fees.
+        /// Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1650,7 +1730,7 @@ namespace Square.Connect.Api
         /// RetrieveModifierList
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single modifier list.
+        /// Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1662,7 +1742,7 @@ namespace Square.Connect.Api
         /// RetrieveModifierList
         /// </summary>
         /// <remarks>
-        /// Provides the details for a single modifier list.
+        /// Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1673,7 +1753,7 @@ namespace Square.Connect.Api
         /// UpdateCategory
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item category.
+        /// Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -1686,7 +1766,7 @@ namespace Square.Connect.Api
         /// UpdateCategory
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item category.
+        /// Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -1698,7 +1778,7 @@ namespace Square.Connect.Api
         /// UpdateDiscount
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing discount.
+        /// Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -1711,7 +1791,7 @@ namespace Square.Connect.Api
         /// UpdateDiscount
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing discount.
+        /// Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -1723,7 +1803,7 @@ namespace Square.Connect.Api
         /// UpdateFee
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing fee (tax).
+        /// Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1736,7 +1816,7 @@ namespace Square.Connect.Api
         /// UpdateFee
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing fee (tax).
+        /// Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -1748,7 +1828,7 @@ namespace Square.Connect.Api
         /// UpdateItem
         /// </summary>
         /// <remarks>
-        /// Modifies the core details of an existing item.
+        /// Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1761,7 +1841,7 @@ namespace Square.Connect.Api
         /// UpdateItem
         /// </summary>
         /// <remarks>
-        /// Modifies the core details of an existing item.
+        /// Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1773,7 +1853,7 @@ namespace Square.Connect.Api
         /// UpdateModifierList
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier list.
+        /// Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1786,7 +1866,7 @@ namespace Square.Connect.Api
         /// UpdateModifierList
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier list.
+        /// Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1798,7 +1878,7 @@ namespace Square.Connect.Api
         /// UpdateModifierOption
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier option.
+        /// Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1812,7 +1892,7 @@ namespace Square.Connect.Api
         /// UpdateModifierOption
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item modifier option.
+        /// Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1825,7 +1905,7 @@ namespace Square.Connect.Api
         /// UpdatePage
         /// </summary>
         /// <remarks>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -1838,7 +1918,7 @@ namespace Square.Connect.Api
         /// UpdatePage
         /// </summary>
         /// <remarks>
-        /// Modifies the details of a Favorites page in Square Register.
+        /// Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -1850,7 +1930,7 @@ namespace Square.Connect.Api
         /// UpdatePageCell
         /// </summary>
         /// <remarks>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1863,7 +1943,7 @@ namespace Square.Connect.Api
         /// UpdatePageCell
         /// </summary>
         /// <remarks>
-        /// Modifies a cell of a Favorites page in Square Register.
+        /// Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -1875,7 +1955,7 @@ namespace Square.Connect.Api
         /// UpdateVariation
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item variation.
+        /// Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -1889,7 +1969,7 @@ namespace Square.Connect.Api
         /// UpdateVariation
         /// </summary>
         /// <remarks>
-        /// Modifies the details of an existing item variation.
+        /// Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2011,7 +2091,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2025,7 +2105,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2065,7 +2145,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -2104,7 +2184,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2119,7 +2199,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// AdjustInventory Adjusts an item variation&#39;s current available inventory.
+        /// AdjustInventory Adjusts the current available inventory of an item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2159,7 +2239,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -2198,7 +2278,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2212,7 +2292,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2252,7 +2332,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -2284,7 +2364,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2299,7 +2379,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyFee Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+        /// ApplyFee Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -2339,7 +2419,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -2371,7 +2451,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2385,7 +2465,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2425,7 +2505,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -2457,7 +2537,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2472,7 +2552,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ApplyModifierList Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+        /// ApplyModifierList Associates a modifier list with an item so the associated modifier options can be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -2512,7 +2592,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -2544,7 +2624,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCategory Creates an item category.
+        /// CreateCategory Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2557,7 +2637,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCategory Creates an item category.
+        /// CreateCategory Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2593,7 +2673,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2631,7 +2711,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCategory Creates an item category.
+        /// CreateCategory Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2645,7 +2725,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateCategory Creates an item category.
+        /// CreateCategory Creates an item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2681,7 +2761,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2719,7 +2799,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateDiscount Creates a discount.
+        /// CreateDiscount Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2732,7 +2812,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateDiscount Creates a discount.
+        /// CreateDiscount Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2768,7 +2848,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2806,7 +2886,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateDiscount Creates a discount.
+        /// CreateDiscount Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2820,7 +2900,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateDiscount Creates a discount.
+        /// CreateDiscount Creates a discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -2856,7 +2936,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2894,7 +2974,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateFee Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -2907,7 +2987,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateFee Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -2943,7 +3023,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -2981,7 +3061,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateFee Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -2995,7 +3075,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateFee Creates a fee (tax).
+        /// CreateFee Creates a fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a fee for.</param>
@@ -3031,7 +3111,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3069,7 +3149,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// CreateItem Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3082,7 +3162,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// CreateItem Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3118,7 +3198,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3156,7 +3236,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// CreateItem Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3170,7 +3250,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateItem Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+        /// CreateItem Creates an item and at least one variation for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify &#x60;id&#x60;. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a &#x60;user_data&#x60; string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3206,7 +3286,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3244,7 +3324,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3257,7 +3337,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3293,7 +3373,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3331,7 +3411,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3345,7 +3425,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierList Creates an item modifier list and at least one modifier option for it.
+        /// CreateModifierList Creates an item modifier list and at least 1 modifier option for it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create a modifier list for.</param>
@@ -3381,7 +3461,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3419,7 +3499,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3433,7 +3513,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3473,7 +3553,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3512,7 +3592,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3527,7 +3607,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.
+        /// CreateModifierOption Creates an item modifier option and adds it to a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3567,7 +3647,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3606,7 +3686,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreatePage Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3619,7 +3699,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreatePage Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3655,7 +3735,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3693,7 +3773,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreatePage Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3707,7 +3787,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreatePage Creates a Favorites page in Square Register.
+        /// CreatePage Creates a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to create an item for.</param>
@@ -3743,7 +3823,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
@@ -3781,7 +3861,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateVariation Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3795,7 +3875,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateVariation Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3835,7 +3915,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3874,7 +3954,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateVariation Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3889,7 +3969,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// CreateVariation Creates an item variation for an existing item.
+        /// CreateVariation Creates an item variation for an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3929,7 +4009,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -3968,7 +4048,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// DeleteCategory Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -3981,7 +4061,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// DeleteCategory Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4017,7 +4097,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
 
@@ -4048,7 +4128,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// DeleteCategory Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4062,7 +4142,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteCategory Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
+        /// DeleteCategory Deletes an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteCategoryRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4098,7 +4178,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
 
@@ -4129,7 +4209,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// DeleteDiscount Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4142,7 +4222,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// DeleteDiscount Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4178,7 +4258,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
 
@@ -4209,7 +4289,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// DeleteDiscount Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4223,7 +4303,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteDiscount Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
+        /// DeleteDiscount Deletes an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteDiscountRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4259,7 +4339,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
 
@@ -4290,7 +4370,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// DeleteFee Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4303,7 +4383,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// DeleteFee Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4339,7 +4419,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
 
@@ -4370,7 +4450,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// DeleteFee Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4384,7 +4464,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteFee Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
+        /// DeleteFee Deletes an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteFeeRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -4420,7 +4500,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
 
@@ -4451,7 +4531,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// DeleteItem Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4464,7 +4544,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// DeleteItem Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4500,7 +4580,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -4531,7 +4611,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// DeleteItem Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4545,7 +4625,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteItem Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
+        /// DeleteItem Deletes an existing item and all item variations associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteItemRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4581,7 +4661,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -4612,7 +4692,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4625,7 +4705,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4661,7 +4741,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -4692,7 +4772,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4706,7 +4786,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
+        /// DeleteModifierList Deletes an existing item modifier list and all modifier options associated with it.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierListRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4742,7 +4822,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -4773,7 +4853,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4787,7 +4867,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4827,7 +4907,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -4859,7 +4939,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4874,7 +4954,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object as documented below.
+        /// DeleteModifierOption Deletes an existing item modifier option from a modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteModifierOptionRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -4914,7 +4994,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -4946,7 +5026,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// DeletePage Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -4959,7 +5039,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// DeletePage Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -4995,7 +5075,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
 
@@ -5026,7 +5106,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// DeletePage Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5040,7 +5120,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePage Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object as documented below.
+        /// DeletePage Deletes an existing Favorites page and all of its cells.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageRequest&#x60; object.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5076,7 +5156,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
 
@@ -5107,7 +5187,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5122,7 +5202,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5160,7 +5240,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (row != null) localVarQueryParams.Add("row", Configuration.ApiClient.ParameterToString(row)); // query parameter
@@ -5193,7 +5273,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5209,7 +5289,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeletePageCell Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
+        /// DeletePageCell Deletes a cell from a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeletePageCellRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -5247,7 +5327,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (row != null) localVarQueryParams.Add("row", Configuration.ApiClient.ParameterToString(row)); // query parameter
@@ -5280,7 +5360,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// DeleteVariation Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5294,7 +5374,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// DeleteVariation Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5334,7 +5414,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
@@ -5366,7 +5446,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// DeleteVariation Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5381,7 +5461,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// DeleteVariation Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
+        /// DeleteVariation Deletes an existing item variation from an item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty &#x60;V1DeleteVariationRequest&#x60; object as documented below.
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5421,7 +5501,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
@@ -5453,7 +5533,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListCategories Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5465,7 +5545,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListCategories Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5497,7 +5577,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5527,7 +5607,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListCategories Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5540,7 +5620,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListCategories Lists all of a location&#39;s item categories.
+        /// ListCategories Lists all the item categories for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5572,7 +5652,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5602,7 +5682,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListDiscounts Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5614,7 +5694,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListDiscounts Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5646,7 +5726,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5676,7 +5756,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListDiscounts Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5689,7 +5769,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListDiscounts Lists all of a location&#39;s discounts.
+        /// ListDiscounts Lists all the discounts for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list categories for.</param>
@@ -5721,7 +5801,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5751,7 +5831,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListFees Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5763,7 +5843,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListFees Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5795,7 +5875,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5825,7 +5905,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListFees Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5838,7 +5918,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListFees Lists all of a location&#39;s fees (taxes).
+        /// ListFees Lists all the fees (taxes) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list fees for.</param>
@@ -5870,7 +5950,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -5900,7 +5980,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5914,7 +5994,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5948,7 +6028,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
@@ -5980,7 +6060,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -5995,7 +6075,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListInventory Provides inventory information for all of a merchant&#39;s inventory-enabled item variations.
+        /// ListInventory Provides inventory information for all inventory-enabled item variations.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6029,7 +6109,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
@@ -6061,7 +6141,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListItems Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6074,7 +6154,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListItems Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6107,7 +6187,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
@@ -6138,7 +6218,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListItems Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6152,7 +6232,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListItems Provides summary information for all of a location&#39;s items.
+        /// ListItems Provides summary information of all items for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list items for.</param>
@@ -6185,7 +6265,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (batchToken != null) localVarQueryParams.Add("batch_token", Configuration.ApiClient.ParameterToString(batchToken)); // query parameter
 
@@ -6216,7 +6296,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListModifierLists Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6228,7 +6308,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListModifierLists Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6260,7 +6340,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6290,7 +6370,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListModifierLists Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6303,7 +6383,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListModifierLists Lists all of a location&#39;s modifier lists.
+        /// ListModifierLists Lists all the modifier lists for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list modifier lists for.</param>
@@ -6335,7 +6415,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6365,7 +6445,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6377,7 +6457,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6409,7 +6489,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6439,7 +6519,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6452,7 +6532,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListPages Lists all of a location&#39;s Favorites pages in Square Register.
+        /// ListPages Lists all Favorites pages (in Square Point of Sale) for a given location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the location to list Favorites pages for.</param>
@@ -6484,7 +6564,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
 
             // authentication (oauth2) required
@@ -6514,7 +6594,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6528,7 +6608,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6568,7 +6648,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -6600,7 +6680,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6615,7 +6695,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveFee Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+        /// RemoveFee Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -6655,7 +6735,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
@@ -6687,7 +6767,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6701,7 +6781,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6741,7 +6821,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -6773,7 +6853,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6788,7 +6868,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RemoveModifierList Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+        /// RemoveModifierList Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6828,7 +6908,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
@@ -6860,7 +6940,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6873,7 +6953,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6909,7 +6989,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -6940,7 +7020,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6954,7 +7034,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.
+        /// RetrieveItem Provides the details for a single item, including associated modifier lists and fees.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -6990,7 +7070,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
 
@@ -7021,7 +7101,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveModifierList Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7034,7 +7114,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveModifierList Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7070,7 +7150,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -7101,7 +7181,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveModifierList Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7115,7 +7195,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveModifierList Provides the details for a single modifier list.
+        /// RetrieveModifierList Provides the details for a single modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7151,7 +7231,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
 
@@ -7182,7 +7262,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCategory Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7196,7 +7276,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCategory Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7236,7 +7316,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7275,7 +7355,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCategory Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7290,7 +7370,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateCategory Modifies the details of an existing item category.
+        /// UpdateCategory Modifies the details of an existing item category.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7330,7 +7410,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (categoryId != null) localVarPathParams.Add("category_id", Configuration.ApiClient.ParameterToString(categoryId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7369,7 +7449,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateDiscount Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7383,7 +7463,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateDiscount Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7423,7 +7503,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7462,7 +7542,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateDiscount Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7477,7 +7557,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateDiscount Modifies the details of an existing discount.
+        /// UpdateDiscount Modifies the details of an existing discount.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the category&#39;s associated location.</param>
@@ -7517,7 +7597,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (discountId != null) localVarPathParams.Add("discount_id", Configuration.ApiClient.ParameterToString(discountId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7556,7 +7636,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateFee Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7570,7 +7650,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateFee Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7610,7 +7690,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7649,7 +7729,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateFee Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7664,7 +7744,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateFee Modifies the details of an existing fee (tax).
+        /// UpdateFee Modifies the details of an existing fee (tax).  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the fee&#39;s associated location.</param>
@@ -7704,7 +7784,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (feeId != null) localVarPathParams.Add("fee_id", Configuration.ApiClient.ParameterToString(feeId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7743,7 +7823,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateItem Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7757,7 +7837,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateItem Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7797,7 +7877,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7836,7 +7916,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateItem Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7851,7 +7931,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateItem Modifies the core details of an existing item.
+        /// UpdateItem Modifies the core details of an existing item.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7891,7 +7971,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -7930,7 +8010,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierList Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7944,7 +8024,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierList Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -7984,7 +8064,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8023,7 +8103,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierList Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8038,7 +8118,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierList Modifies the details of an existing item modifier list.
+        /// UpdateModifierList Modifies the details of an existing item modifier list.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8078,7 +8158,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8117,7 +8197,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierOption Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8132,7 +8212,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierOption Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8176,7 +8256,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -8216,7 +8296,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierOption Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8232,7 +8312,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateModifierOption Modifies the details of an existing item modifier option.
+        /// UpdateModifierOption Modifies the details of an existing item modifier option.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8276,7 +8356,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (modifierListId != null) localVarPathParams.Add("modifier_list_id", Configuration.ApiClient.ParameterToString(modifierListId)); // path parameter
             if (modifierOptionId != null) localVarPathParams.Add("modifier_option_id", Configuration.ApiClient.ParameterToString(modifierOptionId)); // path parameter
@@ -8316,7 +8396,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePage Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8330,7 +8410,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePage Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8370,7 +8450,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8409,7 +8489,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePage Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8424,7 +8504,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePage Modifies the details of a Favorites page in Square Register.
+        /// UpdatePage Modifies the details of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location</param>
@@ -8464,7 +8544,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8503,7 +8583,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8517,7 +8597,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8557,7 +8637,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8596,7 +8676,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8611,7 +8691,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdatePageCell Modifies a cell of a Favorites page in Square Register.
+        /// UpdatePageCell Modifies a cell of a Favorites page in Square Point of Sale.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the Favorites page&#39;s associated location.</param>
@@ -8651,7 +8731,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (pageId != null) localVarPathParams.Add("page_id", Configuration.ApiClient.ParameterToString(pageId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
@@ -8690,7 +8770,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateVariation Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8705,7 +8785,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateVariation Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8749,7 +8829,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter
@@ -8789,7 +8869,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateVariation Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8805,7 +8885,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// UpdateVariation Modifies the details of an existing item variation.
+        /// UpdateVariation Modifies the details of an existing item variation.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">The ID of the item&#39;s associated location.</param>
@@ -8849,7 +8929,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarPathParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // path parameter
             if (itemId != null) localVarPathParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // path parameter
             if (variationId != null) localVarPathParams.Add("variation_id", Configuration.ApiClient.ParameterToString(variationId)); // path parameter

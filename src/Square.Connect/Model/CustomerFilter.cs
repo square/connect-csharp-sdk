@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents a set of &#x60;CustomerQuery&#x60; filters used to limit the set of Customers returned by SearchCustomers.
+    /// Represents a set of &#x60;CustomerQuery&#x60; filters used to limit the set of &#x60;Customers&#x60; returned by SearchCustomers.
     /// </summary>
     [DataContract]
     public partial class CustomerFilter :  IEquatable<CustomerFilter>, IValidatableObject

@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1InventoryEntry
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1InventoryEntry :  IEquatable<V1InventoryEntry>, IValidatableObject
     {
         /// <summary>

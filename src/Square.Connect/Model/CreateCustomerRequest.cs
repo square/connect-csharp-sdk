@@ -32,17 +32,17 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCustomerRequest" /> class.
         /// </summary>
-        /// <param name="IdempotencyKey">The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information..</param>
-        /// <param name="GivenName">The customer&#39;s given (i.e., first) name..</param>
-        /// <param name="FamilyName">The customer&#39;s family (i.e., last) name..</param>
-        /// <param name="CompanyName">The name of the customer&#39;s company..</param>
-        /// <param name="Nickname">A nickname for the customer..</param>
-        /// <param name="EmailAddress">The customer&#39;s email address..</param>
-        /// <param name="Address">The customer&#39;s physical address..</param>
-        /// <param name="PhoneNumber">The customer&#39;s phone number..</param>
-        /// <param name="ReferenceId">An optional second ID you can set to associate the customer with an entity in another system..</param>
-        /// <param name="Note">An optional note to associate with the customer..</param>
-        /// <param name="Birthday">The customer birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998..</param>
+        /// <param name="IdempotencyKey">The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency) guide for more information..</param>
+        /// <param name="GivenName">The given (i.e., first) name associated with the customer profile..</param>
+        /// <param name="FamilyName">The family (i.e., last) name associated with the customer profile..</param>
+        /// <param name="CompanyName">A business name associated with the customer profile..</param>
+        /// <param name="Nickname">A nickname for the customer profile..</param>
+        /// <param name="EmailAddress">The email address associated with the customer profile..</param>
+        /// <param name="Address">The physical address associated with the customer profile..</param>
+        /// <param name="PhoneNumber">The 11-digit phone number associated with the customer profile..</param>
+        /// <param name="ReferenceId">An optional, second ID used to associate the customer profile with an entity in another system..</param>
+        /// <param name="Note">A custom note associated with the customer profile..</param>
+        /// <param name="Birthday">The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__..</param>
         public CreateCustomerRequest(string IdempotencyKey = default(string), string GivenName = default(string), string FamilyName = default(string), string CompanyName = default(string), string Nickname = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string ReferenceId = default(string), string Note = default(string), string Birthday = default(string))
         {
             this.IdempotencyKey = IdempotencyKey;
@@ -59,69 +59,69 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.
+        /// The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency) guide for more information.
         /// </summary>
-        /// <value>The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.</value>
+        /// <value>The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency) guide for more information.</value>
         [DataMember(Name="idempotency_key", EmitDefaultValue=false)]
         public string IdempotencyKey { get; set; }
         /// <summary>
-        /// The customer&#39;s given (i.e., first) name.
+        /// The given (i.e., first) name associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s given (i.e., first) name.</value>
+        /// <value>The given (i.e., first) name associated with the customer profile.</value>
         [DataMember(Name="given_name", EmitDefaultValue=false)]
         public string GivenName { get; set; }
         /// <summary>
-        /// The customer&#39;s family (i.e., last) name.
+        /// The family (i.e., last) name associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s family (i.e., last) name.</value>
+        /// <value>The family (i.e., last) name associated with the customer profile.</value>
         [DataMember(Name="family_name", EmitDefaultValue=false)]
         public string FamilyName { get; set; }
         /// <summary>
-        /// The name of the customer&#39;s company.
+        /// A business name associated with the customer profile.
         /// </summary>
-        /// <value>The name of the customer&#39;s company.</value>
+        /// <value>A business name associated with the customer profile.</value>
         [DataMember(Name="company_name", EmitDefaultValue=false)]
         public string CompanyName { get; set; }
         /// <summary>
-        /// A nickname for the customer.
+        /// A nickname for the customer profile.
         /// </summary>
-        /// <value>A nickname for the customer.</value>
+        /// <value>A nickname for the customer profile.</value>
         [DataMember(Name="nickname", EmitDefaultValue=false)]
         public string Nickname { get; set; }
         /// <summary>
-        /// The customer&#39;s email address.
+        /// The email address associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s email address.</value>
+        /// <value>The email address associated with the customer profile.</value>
         [DataMember(Name="email_address", EmitDefaultValue=false)]
         public string EmailAddress { get; set; }
         /// <summary>
-        /// The customer&#39;s physical address.
+        /// The physical address associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s physical address.</value>
+        /// <value>The physical address associated with the customer profile.</value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public Address Address { get; set; }
         /// <summary>
-        /// The customer&#39;s phone number.
+        /// The 11-digit phone number associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s phone number.</value>
+        /// <value>The 11-digit phone number associated with the customer profile.</value>
         [DataMember(Name="phone_number", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
         /// <summary>
-        /// An optional second ID you can set to associate the customer with an entity in another system.
+        /// An optional, second ID used to associate the customer profile with an entity in another system.
         /// </summary>
-        /// <value>An optional second ID you can set to associate the customer with an entity in another system.</value>
+        /// <value>An optional, second ID used to associate the customer profile with an entity in another system.</value>
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
         /// <summary>
-        /// An optional note to associate with the customer.
+        /// A custom note associated with the customer profile.
         /// </summary>
-        /// <value>An optional note to associate with the customer.</value>
+        /// <value>A custom note associated with the customer profile.</value>
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// The customer birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.
+        /// The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__.
         /// </summary>
-        /// <value>The customer birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.</value>
+        /// <value>The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__.</value>
         [DataMember(Name="birthday", EmitDefaultValue=false)]
         public string Birthday { get; set; }
         /// <summary>

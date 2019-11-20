@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Price and inventory alerting overrides for a [CatalogItemVariation](#type-catalogitemvariation) at a specific [location](#type-location).
+    /// Price and inventory alerting overrides for a &#x60;CatalogItemVariation&#x60; at a specific &#x60;Location&#x60;.
     /// </summary>
     [DataContract]
     public partial class ItemVariationLocationOverrides :  IEquatable<ItemVariationLocationOverrides>, IValidatableObject
@@ -32,10 +32,10 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVariationLocationOverrides" /> class.
         /// </summary>
-        /// <param name="LocationId">The ID of the &#x60;location&#x60;..</param>
-        /// <param name="PriceMoney">The price of the &#x60;CatalogItemVariation](#type-catalogitemvariation) at the given [location&#x60;, or blank for variable pricing..</param>
-        /// <param name="PricingType">The pricing type (fixed or variable) for the &#x60;CatalogItemVariation](#type-catalogitemvariation) at the given [location&#x60;. See [CatalogPricingType](#type-catalogpricingtype) for possible values.</param>
-        /// <param name="TrackInventory">If &#x60;true&#x60;, inventory tracking is active for the &#x60;CatalogItemVariation](#type-catalogitemvariation) at this [location&#x60;..</param>
+        /// <param name="LocationId">The ID of the &#x60;Location&#x60;..</param>
+        /// <param name="PriceMoney">The price of the &#x60;CatalogItemVariation&#x60; at the given &#x60;Location&#x60;, or blank for variable pricing..</param>
+        /// <param name="PricingType">The pricing type (fixed or variable) for the &#x60;CatalogItemVariation&#x60; at the given &#x60;Location&#x60;. See [CatalogPricingType](#type-catalogpricingtype) for possible values.</param>
+        /// <param name="TrackInventory">If &#x60;true&#x60;, inventory tracking is active for the &#x60;CatalogItemVariation&#x60; at this &#x60;Location&#x60;..</param>
         /// <param name="InventoryAlertType">Indicates whether the &#x60;CatalogItemVariation&#x60; displays an alert when its inventory quantity is less than or equal to its &#x60;inventory_alert_threshold&#x60;. See [InventoryAlertType](#type-inventoryalerttype) for possible values.</param>
         /// <param name="InventoryAlertThreshold">If the inventory quantity for the variation is less than or equal to this value and &#x60;inventory_alert_type&#x60; is &#x60;LOW_QUANTITY&#x60;, the variation displays an alert in the merchant dashboard.  This value is always an integer..</param>
         public ItemVariationLocationOverrides(string LocationId = default(string), Money PriceMoney = default(Money), string PricingType = default(string), bool? TrackInventory = default(bool?), string InventoryAlertType = default(string), long? InventoryAlertThreshold = default(long?))
@@ -49,27 +49,27 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The ID of the &#x60;location&#x60;.
+        /// The ID of the &#x60;Location&#x60;.
         /// </summary>
-        /// <value>The ID of the &#x60;location&#x60;.</value>
+        /// <value>The ID of the &#x60;Location&#x60;.</value>
         [DataMember(Name="location_id", EmitDefaultValue=false)]
         public string LocationId { get; set; }
         /// <summary>
-        /// The price of the &#x60;CatalogItemVariation](#type-catalogitemvariation) at the given [location&#x60;, or blank for variable pricing.
+        /// The price of the &#x60;CatalogItemVariation&#x60; at the given &#x60;Location&#x60;, or blank for variable pricing.
         /// </summary>
-        /// <value>The price of the &#x60;CatalogItemVariation](#type-catalogitemvariation) at the given [location&#x60;, or blank for variable pricing.</value>
+        /// <value>The price of the &#x60;CatalogItemVariation&#x60; at the given &#x60;Location&#x60;, or blank for variable pricing.</value>
         [DataMember(Name="price_money", EmitDefaultValue=false)]
         public Money PriceMoney { get; set; }
         /// <summary>
-        /// The pricing type (fixed or variable) for the &#x60;CatalogItemVariation](#type-catalogitemvariation) at the given [location&#x60;. See [CatalogPricingType](#type-catalogpricingtype) for possible values
+        /// The pricing type (fixed or variable) for the &#x60;CatalogItemVariation&#x60; at the given &#x60;Location&#x60;. See [CatalogPricingType](#type-catalogpricingtype) for possible values
         /// </summary>
-        /// <value>The pricing type (fixed or variable) for the &#x60;CatalogItemVariation](#type-catalogitemvariation) at the given [location&#x60;. See [CatalogPricingType](#type-catalogpricingtype) for possible values</value>
+        /// <value>The pricing type (fixed or variable) for the &#x60;CatalogItemVariation&#x60; at the given &#x60;Location&#x60;. See [CatalogPricingType](#type-catalogpricingtype) for possible values</value>
         [DataMember(Name="pricing_type", EmitDefaultValue=false)]
         public string PricingType { get; set; }
         /// <summary>
-        /// If &#x60;true&#x60;, inventory tracking is active for the &#x60;CatalogItemVariation](#type-catalogitemvariation) at this [location&#x60;.
+        /// If &#x60;true&#x60;, inventory tracking is active for the &#x60;CatalogItemVariation&#x60; at this &#x60;Location&#x60;.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, inventory tracking is active for the &#x60;CatalogItemVariation](#type-catalogitemvariation) at this [location&#x60;.</value>
+        /// <value>If &#x60;true&#x60;, inventory tracking is active for the &#x60;CatalogItemVariation&#x60; at this &#x60;Location&#x60;.</value>
         [DataMember(Name="track_inventory", EmitDefaultValue=false)]
         public bool? TrackInventory { get; set; }
         /// <summary>

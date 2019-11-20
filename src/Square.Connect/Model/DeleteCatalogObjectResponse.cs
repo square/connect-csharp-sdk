@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteCatalogObjectResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
-        /// <param name="DeletedObjectIds">The IDs of all &#x60;CatalogObject&#x60;s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a &#x60;CatalogItemVariation&#x60; when its parent &#x60;CatalogItem&#x60; is deleted..</param>
-        /// <param name="DeletedAt">The database [timestamp](#workingwithdates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="Errors">Information on any errors encountered..</param>
+        /// <param name="DeletedObjectIds">The IDs of all catalog objects deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a catalog item variation will be deleted (and its ID included in this field) when its parent catalog item is deleted..</param>
+        /// <param name="DeletedAt">The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this deletion in RFC 3339 format, e.g., &#x60;2016-09-04T23:59:33.123Z&#x60;..</param>
         public DeleteCatalogObjectResponse(List<Error> Errors = default(List<Error>), List<string> DeletedObjectIds = default(List<string>), string DeletedAt = default(string))
         {
             this.Errors = Errors;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of &#x60;Error&#x60;s encountered.
+        /// Information on any errors encountered.
         /// </summary>
-        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
+        /// <value>Information on any errors encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The IDs of all &#x60;CatalogObject&#x60;s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a &#x60;CatalogItemVariation&#x60; when its parent &#x60;CatalogItem&#x60; is deleted.
+        /// The IDs of all catalog objects deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a catalog item variation will be deleted (and its ID included in this field) when its parent catalog item is deleted.
         /// </summary>
-        /// <value>The IDs of all &#x60;CatalogObject&#x60;s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a &#x60;CatalogItemVariation&#x60; when its parent &#x60;CatalogItem&#x60; is deleted.</value>
+        /// <value>The IDs of all catalog objects deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a catalog item variation will be deleted (and its ID included in this field) when its parent catalog item is deleted.</value>
         [DataMember(Name="deleted_object_ids", EmitDefaultValue=false)]
         public List<string> DeletedObjectIds { get; set; }
         /// <summary>
-        /// The database [timestamp](#workingwithdates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
+        /// The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this deletion in RFC 3339 format, e.g., &#x60;2016-09-04T23:59:33.123Z&#x60;.
         /// </summary>
-        /// <value>The database [timestamp](#workingwithdates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
+        /// <value>The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this deletion in RFC 3339 format, e.g., &#x60;2016-09-04T23:59:33.123Z&#x60;.</value>
         [DataMember(Name="deleted_at", EmitDefaultValue=false)]
         public string DeletedAt { get; set; }
         /// <summary>

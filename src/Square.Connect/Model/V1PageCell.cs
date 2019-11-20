@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1PageCell
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1PageCell :  IEquatable<V1PageCell>, IValidatableObject
     {
         /// <summary>

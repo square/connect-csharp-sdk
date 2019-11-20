@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the fields that are included in the response body of a request to the ListLocations endpoint.  One of &#x60;errors&#x60; or &#x60;locations&#x60; is present in a given response (never both).
+    /// Defines the fields that are included in the response body of a request to the __ListLocations__ endpoint.  One of &#x60;errors&#x60; or &#x60;locations&#x60; is present in a given response (never both).
     /// </summary>
     [DataContract]
     public partial class ListLocationsResponse :  IEquatable<ListLocationsResponse>, IValidatableObject
@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="ListLocationsResponse" /> class.
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
-        /// <param name="Locations">The business&#39;s locations..</param>
+        /// <param name="Locations">The business locations..</param>
         public ListLocationsResponse(List<Error> Errors = default(List<Error>), List<Location> Locations = default(List<Location>))
         {
             this.Errors = Errors;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The business&#39;s locations.
+        /// The business locations.
         /// </summary>
-        /// <value>The business&#39;s locations.</value>
+        /// <value>The business locations.</value>
         [DataMember(Name="locations", EmitDefaultValue=false)]
         public List<Location> Locations { get; set; }
         /// <summary>

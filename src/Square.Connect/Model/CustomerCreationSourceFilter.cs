@@ -33,7 +33,7 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="CustomerCreationSourceFilter" /> class.
         /// </summary>
         /// <param name="Values">The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values.</param>
-        /// <param name="Rule">Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values.</param>
+        /// <param name="Rule">Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result.  Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values.</param>
         public CustomerCreationSourceFilter(List<string> Values = default(List<string>), string Rule = default(string))
         {
             this.Values = Values;
@@ -47,9 +47,9 @@ namespace Square.Connect.Model
         [DataMember(Name="values", EmitDefaultValue=false)]
         public List<string> Values { get; set; }
         /// <summary>
-        /// Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values
+        /// Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result.  Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values
         /// </summary>
-        /// <value>Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values</value>
+        /// <value>Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result.  Default: &#x60;INCLUDE&#x60;. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values</value>
         [DataMember(Name="rule", EmitDefaultValue=false)]
         public string Rule { get; set; }
         /// <summary>

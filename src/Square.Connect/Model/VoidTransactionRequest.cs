@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the request body for calls to the VoidTransaction endpoint.
+    /// 
     /// </summary>
     [DataContract]
     [Obsolete]

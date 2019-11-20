@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrieveCatalogObjectResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
-        /// <param name="_Object">The &#x60;CatalogObject&#x60;s returned..</param>
-        /// <param name="RelatedObjects">A list of &#x60;CatalogObject&#x60;s referenced by the object in the &#x60;object&#x60; field..</param>
+        /// <param name="Errors">Information on any errors encountered..</param>
+        /// <param name="_Object">The CatalogObjects returned..</param>
+        /// <param name="RelatedObjects">A list of CatalogObjects referenced by the object in the &#x60;object&#x60; field..</param>
         public RetrieveCatalogObjectResponse(List<Error> Errors = default(List<Error>), CatalogObject _Object = default(CatalogObject), List<CatalogObject> RelatedObjects = default(List<CatalogObject>))
         {
             this.Errors = Errors;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of &#x60;Error&#x60;s encountered.
+        /// Information on any errors encountered.
         /// </summary>
-        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
+        /// <value>Information on any errors encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The &#x60;CatalogObject&#x60;s returned.
+        /// The CatalogObjects returned.
         /// </summary>
-        /// <value>The &#x60;CatalogObject&#x60;s returned.</value>
+        /// <value>The CatalogObjects returned.</value>
         [DataMember(Name="object", EmitDefaultValue=false)]
         public CatalogObject _Object { get; set; }
         /// <summary>
-        /// A list of &#x60;CatalogObject&#x60;s referenced by the object in the &#x60;object&#x60; field.
+        /// A list of CatalogObjects referenced by the object in the &#x60;object&#x60; field.
         /// </summary>
-        /// <value>A list of &#x60;CatalogObject&#x60;s referenced by the object in the &#x60;object&#x60; field.</value>
+        /// <value>A list of CatalogObjects referenced by the object in the &#x60;object&#x60; field.</value>
         [DataMember(Name="related_objects", EmitDefaultValue=false)]
         public List<CatalogObject> RelatedObjects { get; set; }
         /// <summary>

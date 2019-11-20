@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogQueryItemsForTax" /> class.
         /// </summary>
-        /// <param name="TaxIds">A set of &#x60;CatalogTax](#type-catalogtax) IDs to be used to find associated [CatalogItem&#x60;s. (required).</param>
+        /// <param name="TaxIds">A set of &#x60;CatalogTax&#x60; IDs to be used to find associated &#x60;CatalogItem&#x60;s. (required).</param>
         public CatalogQueryItemsForTax(List<string> TaxIds = default(List<string>))
         {
             // to ensure "TaxIds" is required (not null)
@@ -52,9 +52,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A set of &#x60;CatalogTax](#type-catalogtax) IDs to be used to find associated [CatalogItem&#x60;s.
+        /// A set of &#x60;CatalogTax&#x60; IDs to be used to find associated &#x60;CatalogItem&#x60;s.
         /// </summary>
-        /// <value>A set of &#x60;CatalogTax](#type-catalogtax) IDs to be used to find associated [CatalogItem&#x60;s.</value>
+        /// <value>A set of &#x60;CatalogTax&#x60; IDs to be used to find associated &#x60;CatalogItem&#x60;s.</value>
         [DataMember(Name="tax_ids", EmitDefaultValue=false)]
         public List<string> TaxIds { get; set; }
         /// <summary>

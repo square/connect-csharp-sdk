@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// 
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1ApplyFeeRequest :  IEquatable<V1ApplyFeeRequest>, IValidatableObject
     {
         /// <summary>

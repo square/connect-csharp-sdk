@@ -35,7 +35,7 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Errors">Any errors that occurred during the request..</param>
         /// <param name="Refunds">An array of refunds that match your query..</param>
-        /// <param name="Cursor">A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information..</param>
+        /// <param name="Cursor">A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Paginating results](#paginatingresults) for more information..</param>
         public ListRefundsResponse(List<Error> Errors = default(List<Error>), List<Refund> Refunds = default(List<Refund>), string Cursor = default(string))
         {
             this.Errors = Errors;
@@ -56,9 +56,9 @@ namespace Square.Connect.Model
         [DataMember(Name="refunds", EmitDefaultValue=false)]
         public List<Refund> Refunds { get; set; }
         /// <summary>
-        /// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+        /// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Paginating results](#paginatingresults) for more information.
         /// </summary>
-        /// <value>A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.</value>
+        /// <value>A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Paginating results](#paginatingresults) for more information.</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
         public string Cursor { get; set; }
         /// <summary>

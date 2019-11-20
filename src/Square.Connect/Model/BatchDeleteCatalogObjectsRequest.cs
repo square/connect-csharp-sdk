@@ -32,16 +32,16 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchDeleteCatalogObjectsRequest" /> class.
         /// </summary>
-        /// <param name="ObjectIds">The IDs of the &#x60;CatalogObject&#x60;s to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;..</param>
+        /// <param name="ObjectIds">The IDs of the CatalogObjects to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a CatalogItem will delete its CatalogItemVariation..</param>
         public BatchDeleteCatalogObjectsRequest(List<string> ObjectIds = default(List<string>))
         {
             this.ObjectIds = ObjectIds;
         }
         
         /// <summary>
-        /// The IDs of the &#x60;CatalogObject&#x60;s to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.
+        /// The IDs of the CatalogObjects to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a CatalogItem will delete its CatalogItemVariation.
         /// </summary>
-        /// <value>The IDs of the &#x60;CatalogObject&#x60;s to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a &#x60;CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation&#x60;.</value>
+        /// <value>The IDs of the CatalogObjects to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a CatalogItem will delete its CatalogItemVariation.</value>
         [DataMember(Name="object_ids", EmitDefaultValue=false)]
         public List<string> ObjectIds { get; set; }
         /// <summary>

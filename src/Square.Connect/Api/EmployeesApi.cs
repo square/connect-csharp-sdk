@@ -28,7 +28,7 @@ namespace Square.Connect.Api
         /// ListEmployees
         /// </summary>
         /// <remarks>
-        /// Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -41,7 +41,7 @@ namespace Square.Connect.Api
         /// ListEmployees
         /// </summary>
         /// <remarks>
-        /// Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -54,7 +54,7 @@ namespace Square.Connect.Api
         /// RetrieveEmployee
         /// </summary>
         /// <remarks>
-        /// Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -64,7 +64,7 @@ namespace Square.Connect.Api
         /// RetrieveEmployee
         /// </summary>
         /// <remarks>
-        /// Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -76,7 +76,7 @@ namespace Square.Connect.Api
         /// ListEmployees
         /// </summary>
         /// <remarks>
-        /// Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -90,7 +90,7 @@ namespace Square.Connect.Api
         /// ListEmployees
         /// </summary>
         /// <remarks>
-        /// Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -103,7 +103,7 @@ namespace Square.Connect.Api
         /// RetrieveEmployee
         /// </summary>
         /// <remarks>
-        /// Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -114,7 +114,7 @@ namespace Square.Connect.Api
         /// RetrieveEmployee
         /// </summary>
         /// <remarks>
-        /// Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// 
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -233,7 +233,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListEmployees Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// ListEmployees 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -248,7 +248,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListEmployees Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// ListEmployees 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -280,7 +280,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarQueryParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // query parameter
             if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
@@ -313,7 +313,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListEmployees Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// ListEmployees 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -329,7 +329,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListEmployees Gets a list of &#x60;Employee&#x60; objects for a business.
+        /// ListEmployees 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="locationId">Filter employees returned to only those that are associated with the specified location. (optional)</param>
@@ -361,7 +361,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (locationId != null) localVarQueryParams.Add("location_id", Configuration.ApiClient.ParameterToString(locationId)); // query parameter
             if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
@@ -394,7 +394,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveEmployee Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// RetrieveEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -406,7 +406,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveEmployee Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// RetrieveEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -438,7 +438,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
@@ -468,7 +468,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveEmployee Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// RetrieveEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -481,7 +481,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveEmployee Gets an &#x60;Employee&#x60; by Square-assigned employee &#x60;ID&#x60; (UUID)
+        /// RetrieveEmployee 
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">UUID for the employee that was requested.</param>
@@ -513,7 +513,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required

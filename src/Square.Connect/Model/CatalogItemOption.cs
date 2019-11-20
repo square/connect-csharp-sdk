@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// A group of variations for a [CatalogItem](#type-catalogitem)&#39;s.
+    /// A group of variations for a &#x60;CatalogItem&#x60;.
     /// Note: This endpoint is in beta.
     /// </summary>
     [DataContract]
@@ -35,9 +35,9 @@ namespace Square.Connect.Model
         /// </summary>
         /// <param name="Name">The item option&#39;s display name for the seller. Must be unique across all item options. Searchable..</param>
         /// <param name="DisplayName">The item option&#39;s display name for the customer. Searchable..</param>
-        /// <param name="Description">The item option&#39;s human-readable description. Displays for in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer..</param>
+        /// <param name="Description">The item option&#39;s human-readable description. Displayed in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer..</param>
         /// <param name="ShowColors">If true, display colors for entries in &#x60;values&#x60; when present..</param>
-        /// <param name="Values">A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemOptionValue&#x60;s for this item..</param>
+        /// <param name="Values">A list of CatalogObjects containing the &#x60;CatalogItemOptionValue&#x60;s for this item..</param>
         /// <param name="ItemCount">The number of &#x60;CatalogItem&#x60;s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;..</param>
         public CatalogItemOption(string Name = default(string), string DisplayName = default(string), string Description = default(string), bool? ShowColors = default(bool?), List<CatalogObject> Values = default(List<CatalogObject>), long? ItemCount = default(long?))
         {
@@ -62,9 +62,9 @@ namespace Square.Connect.Model
         [DataMember(Name="display_name", EmitDefaultValue=false)]
         public string DisplayName { get; set; }
         /// <summary>
-        /// The item option&#39;s human-readable description. Displays for in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer.
+        /// The item option&#39;s human-readable description. Displayed in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer.
         /// </summary>
-        /// <value>The item option&#39;s human-readable description. Displays for in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer.</value>
+        /// <value>The item option&#39;s human-readable description. Displayed in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer.</value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
@@ -74,9 +74,9 @@ namespace Square.Connect.Model
         [DataMember(Name="show_colors", EmitDefaultValue=false)]
         public bool? ShowColors { get; set; }
         /// <summary>
-        /// A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemOptionValue&#x60;s for this item.
+        /// A list of CatalogObjects containing the &#x60;CatalogItemOptionValue&#x60;s for this item.
         /// </summary>
-        /// <value>A list of &#x60;CatalogObject&#x60;s containing the &#x60;CatalogItemOptionValue&#x60;s for this item.</value>
+        /// <value>A list of CatalogObjects containing the &#x60;CatalogItemOptionValue&#x60;s for this item.</value>
         [DataMember(Name="values", EmitDefaultValue=false)]
         public List<CatalogObject> Values { get; set; }
         /// <summary>

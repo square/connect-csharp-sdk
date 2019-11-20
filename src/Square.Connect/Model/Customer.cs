@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents one of a business&#39;s customers, which can have one or more cards on file associated with it.
+    /// Represents a Square customer profile, which can have one or more cards on file associated with it.
     /// </summary>
     [DataContract]
     public partial class Customer :  IEquatable<Customer>, IValidatableObject
@@ -37,21 +37,21 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Customer" /> class.
         /// </summary>
-        /// <param name="Id">The customer&#39;s unique ID. (required).</param>
-        /// <param name="CreatedAt">The time when the customer was created, in RFC 3339 format. (required).</param>
-        /// <param name="UpdatedAt">The time when the customer was last updated, in RFC 3339 format. (required).</param>
-        /// <param name="Cards">The payment details of the customer&#39;s cards on file..</param>
-        /// <param name="GivenName">The customer&#39;s given (i.e., first) name..</param>
-        /// <param name="FamilyName">The customer&#39;s family (i.e., last) name..</param>
-        /// <param name="Nickname">The customer&#39;s nickname..</param>
-        /// <param name="CompanyName">The name of the customer&#39;s company..</param>
-        /// <param name="EmailAddress">The customer&#39;s email address..</param>
-        /// <param name="Address">The customer&#39;s physical address..</param>
-        /// <param name="PhoneNumber">The customer&#39;s phone number..</param>
-        /// <param name="Birthday">The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998..</param>
-        /// <param name="ReferenceId">A second ID you can set to associate the customer with an entity in another system..</param>
-        /// <param name="Note">A note to associate with the customer..</param>
-        /// <param name="Preferences">The customer&#39;s preferences..</param>
+        /// <param name="Id">A unique, Square-assigned object ID. (required).</param>
+        /// <param name="CreatedAt">The time when the customer profile was created, in RFC 3339 format. (required).</param>
+        /// <param name="UpdatedAt">The time when the customer profile was last updated, in RFC 3339 format. (required).</param>
+        /// <param name="Cards">Payment details of cards stored on file for the customer profile..</param>
+        /// <param name="GivenName">The given (i.e., first) name associated with the customer profile..</param>
+        /// <param name="FamilyName">The family (i.e., last) name associated with the customer profile..</param>
+        /// <param name="Nickname">A nickname for the customer profile..</param>
+        /// <param name="CompanyName">A business name associated with the customer profile..</param>
+        /// <param name="EmailAddress">The email address associated with the customer profile..</param>
+        /// <param name="Address">The physical address associated with the customer profile..</param>
+        /// <param name="PhoneNumber">The 11-digit phone number associated with the customer profile..</param>
+        /// <param name="Birthday">The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__..</param>
+        /// <param name="ReferenceId">An optional, second ID used to associate the customer profile with an entity in another system..</param>
+        /// <param name="Note">A custom note associated with the customer profile..</param>
+        /// <param name="Preferences">Represents general customer preferences..</param>
         /// <param name="Groups">The groups the customer belongs to..</param>
         /// <param name="CreationSource">A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values.</param>
         public Customer(string Id = default(string), string CreatedAt = default(string), string UpdatedAt = default(string), List<Card> Cards = default(List<Card>), string GivenName = default(string), string FamilyName = default(string), string Nickname = default(string), string CompanyName = default(string), string EmailAddress = default(string), Address Address = default(Address), string PhoneNumber = default(string), string Birthday = default(string), string ReferenceId = default(string), string Note = default(string), CustomerPreferences Preferences = default(CustomerPreferences), List<CustomerGroupInfo> Groups = default(List<CustomerGroupInfo>), string CreationSource = default(string))
@@ -100,93 +100,93 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The customer&#39;s unique ID.
+        /// A unique, Square-assigned object ID.
         /// </summary>
-        /// <value>The customer&#39;s unique ID.</value>
+        /// <value>A unique, Square-assigned object ID.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// The time when the customer was created, in RFC 3339 format.
+        /// The time when the customer profile was created, in RFC 3339 format.
         /// </summary>
-        /// <value>The time when the customer was created, in RFC 3339 format.</value>
+        /// <value>The time when the customer profile was created, in RFC 3339 format.</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         public string CreatedAt { get; set; }
         /// <summary>
-        /// The time when the customer was last updated, in RFC 3339 format.
+        /// The time when the customer profile was last updated, in RFC 3339 format.
         /// </summary>
-        /// <value>The time when the customer was last updated, in RFC 3339 format.</value>
+        /// <value>The time when the customer profile was last updated, in RFC 3339 format.</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public string UpdatedAt { get; set; }
         /// <summary>
-        /// The payment details of the customer&#39;s cards on file.
+        /// Payment details of cards stored on file for the customer profile.
         /// </summary>
-        /// <value>The payment details of the customer&#39;s cards on file.</value>
+        /// <value>Payment details of cards stored on file for the customer profile.</value>
         [DataMember(Name="cards", EmitDefaultValue=false)]
         public List<Card> Cards { get; set; }
         /// <summary>
-        /// The customer&#39;s given (i.e., first) name.
+        /// The given (i.e., first) name associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s given (i.e., first) name.</value>
+        /// <value>The given (i.e., first) name associated with the customer profile.</value>
         [DataMember(Name="given_name", EmitDefaultValue=false)]
         public string GivenName { get; set; }
         /// <summary>
-        /// The customer&#39;s family (i.e., last) name.
+        /// The family (i.e., last) name associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s family (i.e., last) name.</value>
+        /// <value>The family (i.e., last) name associated with the customer profile.</value>
         [DataMember(Name="family_name", EmitDefaultValue=false)]
         public string FamilyName { get; set; }
         /// <summary>
-        /// The customer&#39;s nickname.
+        /// A nickname for the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s nickname.</value>
+        /// <value>A nickname for the customer profile.</value>
         [DataMember(Name="nickname", EmitDefaultValue=false)]
         public string Nickname { get; set; }
         /// <summary>
-        /// The name of the customer&#39;s company.
+        /// A business name associated with the customer profile.
         /// </summary>
-        /// <value>The name of the customer&#39;s company.</value>
+        /// <value>A business name associated with the customer profile.</value>
         [DataMember(Name="company_name", EmitDefaultValue=false)]
         public string CompanyName { get; set; }
         /// <summary>
-        /// The customer&#39;s email address.
+        /// The email address associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s email address.</value>
+        /// <value>The email address associated with the customer profile.</value>
         [DataMember(Name="email_address", EmitDefaultValue=false)]
         public string EmailAddress { get; set; }
         /// <summary>
-        /// The customer&#39;s physical address.
+        /// The physical address associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s physical address.</value>
+        /// <value>The physical address associated with the customer profile.</value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public Address Address { get; set; }
         /// <summary>
-        /// The customer&#39;s phone number.
+        /// The 11-digit phone number associated with the customer profile.
         /// </summary>
-        /// <value>The customer&#39;s phone number.</value>
+        /// <value>The 11-digit phone number associated with the customer profile.</value>
         [DataMember(Name="phone_number", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
         /// <summary>
-        /// The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.
+        /// The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__.
         /// </summary>
-        /// <value>The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998.</value>
+        /// <value>The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__.</value>
         [DataMember(Name="birthday", EmitDefaultValue=false)]
         public string Birthday { get; set; }
         /// <summary>
-        /// A second ID you can set to associate the customer with an entity in another system.
+        /// An optional, second ID used to associate the customer profile with an entity in another system.
         /// </summary>
-        /// <value>A second ID you can set to associate the customer with an entity in another system.</value>
+        /// <value>An optional, second ID used to associate the customer profile with an entity in another system.</value>
         [DataMember(Name="reference_id", EmitDefaultValue=false)]
         public string ReferenceId { get; set; }
         /// <summary>
-        /// A note to associate with the customer.
+        /// A custom note associated with the customer profile.
         /// </summary>
-        /// <value>A note to associate with the customer.</value>
+        /// <value>A custom note associated with the customer profile.</value>
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// The customer&#39;s preferences.
+        /// Represents general customer preferences.
         /// </summary>
-        /// <value>The customer&#39;s preferences.</value>
+        /// <value>Represents general customer preferences.</value>
         [DataMember(Name="preferences", EmitDefaultValue=false)]
         public CustomerPreferences Preferences { get; set; }
         /// <summary>

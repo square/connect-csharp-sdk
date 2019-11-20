@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Defines the request body fields for calls to the RetrieveTransaction endpoint.
+    /// 
     /// </summary>
     [DataContract]
     [Obsolete]

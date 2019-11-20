@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Retrieve a paged-list of employees for a Square account
+    /// 
     /// </summary>
     [DataContract]
     public partial class ListEmployeesRequest :  IEquatable<ListEmployeesRequest>, IValidatableObject

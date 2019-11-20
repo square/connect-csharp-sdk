@@ -37,7 +37,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogQueryText" /> class.
         /// </summary>
-        /// <param name="Keywords">A list of one, two, or three search keywords. Keywords with fewer than three characters are ignored. (required).</param>
+        /// <param name="Keywords">A list of 1, 2, or 3 search keywords. Keywords with fewer than 3 characters are ignored. (required).</param>
         public CatalogQueryText(List<string> Keywords = default(List<string>))
         {
             // to ensure "Keywords" is required (not null)
@@ -52,9 +52,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// A list of one, two, or three search keywords. Keywords with fewer than three characters are ignored.
+        /// A list of 1, 2, or 3 search keywords. Keywords with fewer than 3 characters are ignored.
         /// </summary>
-        /// <value>A list of one, two, or three search keywords. Keywords with fewer than three characters are ignored.</value>
+        /// <value>A list of 1, 2, or 3 search keywords. Keywords with fewer than 3 characters are ignored.</value>
         [DataMember(Name="keywords", EmitDefaultValue=false)]
         public List<string> Keywords { get; set; }
         /// <summary>

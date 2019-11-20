@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// Additional information for a single-location account specified by its associated business account, if it has one.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1MerchantLocationDetails :  IEquatable<V1MerchantLocationDetails>, IValidatableObject
     {
         /// <summary>

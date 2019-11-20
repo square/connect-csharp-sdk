@@ -32,7 +32,7 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RevokeTokenRequest" /> class.
         /// </summary>
-        /// <param name="ClientId">Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps)..</param>
+        /// <param name="ClientId">The Square issued ID for your application, available from the [application dashboard](https://connect.squareup.com/apps)..</param>
         /// <param name="AccessToken">The access token of the merchant whose token you want to revoke. Do not provide a value for merchant_id if you provide this parameter..</param>
         /// <param name="MerchantId">The ID of the merchant whose token you want to revoke. Do not provide a value for access_token if you provide this parameter..</param>
         public RevokeTokenRequest(string ClientId = default(string), string AccessToken = default(string), string MerchantId = default(string))
@@ -43,9 +43,9 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps).
+        /// The Square issued ID for your application, available from the [application dashboard](https://connect.squareup.com/apps).
         /// </summary>
-        /// <value>Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps).</value>
+        /// <value>The Square issued ID for your application, available from the [application dashboard](https://connect.squareup.com/apps).</value>
         [DataMember(Name="client_id", EmitDefaultValue=false)]
         public string ClientId { get; set; }
         /// <summary>

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// An employee created in the **Square Dashboard** account of a business.  Used by the Labor API.
+    /// An employee object that is used by the external API.
     /// </summary>
     [DataContract]
     public partial class Employee :  IEquatable<Employee>, IValidatableObject
@@ -32,13 +32,13 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Employee" /> class.
         /// </summary>
-        /// <param name="Id">UUID for this &#x60;Employee&#x60;..</param>
-        /// <param name="FirstName">Given (first) name of the employee..</param>
-        /// <param name="LastName">Family (last) name of the employee.</param>
-        /// <param name="Email">Email of the employee.</param>
-        /// <param name="PhoneNumber">Phone number of the employee in E.164 format, i.e. \&quot;+12125554250\&quot;.</param>
-        /// <param name="LocationIds">A list of location IDs where this employee has access..</param>
-        /// <param name="Status">Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values.</param>
+        /// <param name="Id">UUID for this object..</param>
+        /// <param name="FirstName">The employee&#39;s first name..</param>
+        /// <param name="LastName">The employee&#39;s last name..</param>
+        /// <param name="Email">The employee&#39;s email address.</param>
+        /// <param name="PhoneNumber">The employee&#39;s phone number in E.164 format, i.e. \&quot;+12125554250\&quot;.</param>
+        /// <param name="LocationIds">A list of location IDs where this employee has access to..</param>
+        /// <param name="Status">Specifies the status of the employees being fetched. See [EmployeeStatus](#type-employeestatus) for possible values.</param>
         /// <param name="CreatedAt">A read-only timestamp in RFC 3339 format..</param>
         /// <param name="UpdatedAt">A read-only timestamp in RFC 3339 format..</param>
         public Employee(string Id = default(string), string FirstName = default(string), string LastName = default(string), string Email = default(string), string PhoneNumber = default(string), List<string> LocationIds = default(List<string>), string Status = default(string), string CreatedAt = default(string), string UpdatedAt = default(string))
@@ -55,45 +55,45 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// UUID for this &#x60;Employee&#x60;.
+        /// UUID for this object.
         /// </summary>
-        /// <value>UUID for this &#x60;Employee&#x60;.</value>
+        /// <value>UUID for this object.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// Given (first) name of the employee.
+        /// The employee&#39;s first name.
         /// </summary>
-        /// <value>Given (first) name of the employee.</value>
+        /// <value>The employee&#39;s first name.</value>
         [DataMember(Name="first_name", EmitDefaultValue=false)]
         public string FirstName { get; set; }
         /// <summary>
-        /// Family (last) name of the employee
+        /// The employee&#39;s last name.
         /// </summary>
-        /// <value>Family (last) name of the employee</value>
+        /// <value>The employee&#39;s last name.</value>
         [DataMember(Name="last_name", EmitDefaultValue=false)]
         public string LastName { get; set; }
         /// <summary>
-        /// Email of the employee
+        /// The employee&#39;s email address
         /// </summary>
-        /// <value>Email of the employee</value>
+        /// <value>The employee&#39;s email address</value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Phone number of the employee in E.164 format, i.e. \&quot;+12125554250\&quot;
+        /// The employee&#39;s phone number in E.164 format, i.e. \&quot;+12125554250\&quot;
         /// </summary>
-        /// <value>Phone number of the employee in E.164 format, i.e. \&quot;+12125554250\&quot;</value>
+        /// <value>The employee&#39;s phone number in E.164 format, i.e. \&quot;+12125554250\&quot;</value>
         [DataMember(Name="phone_number", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
         /// <summary>
-        /// A list of location IDs where this employee has access.
+        /// A list of location IDs where this employee has access to.
         /// </summary>
-        /// <value>A list of location IDs where this employee has access.</value>
+        /// <value>A list of location IDs where this employee has access to.</value>
         [DataMember(Name="location_ids", EmitDefaultValue=false)]
         public List<string> LocationIds { get; set; }
         /// <summary>
-        /// Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
+        /// Specifies the status of the employees being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
         /// </summary>
-        /// <value>Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values</value>
+        /// <value>Specifies the status of the employees being fetched. See [EmployeeStatus](#type-employeestatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>

@@ -28,16 +28,18 @@ namespace Square.Connect.Api
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;V1Merchant&gt;</returns>        List<V1Merchant> ListLocations ();
+        /// <returns>List&lt;V1Merchant&gt;</returns>
+        [Obsolete]
+        List<V1Merchant> ListLocations ();
 
         /// <summary>
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
@@ -46,16 +48,18 @@ namespace Square.Connect.Api
         /// RetrieveBusiness
         /// </summary>
         /// <remarks>
-        /// Get a business&#39;s information.
+        /// Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>V1Merchant</returns>        V1Merchant RetrieveBusiness ();
+        /// <returns>V1Merchant</returns>
+        [Obsolete]
+        V1Merchant RetrieveBusiness ();
 
         /// <summary>
         /// RetrieveBusiness
         /// </summary>
         /// <remarks>
-        /// Get a business&#39;s information.
+        /// Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of V1Merchant</returns>
@@ -66,7 +70,7 @@ namespace Square.Connect.Api
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;V1Merchant&gt;</returns>
@@ -76,7 +80,7 @@ namespace Square.Connect.Api
         /// ListLocations
         /// </summary>
         /// <remarks>
-        /// Provides details for a business&#39;s locations, including their IDs.
+        /// Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
@@ -85,7 +89,7 @@ namespace Square.Connect.Api
         /// RetrieveBusiness
         /// </summary>
         /// <remarks>
-        /// Get a business&#39;s information.
+        /// Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of V1Merchant</returns>
@@ -95,7 +99,7 @@ namespace Square.Connect.Api
         /// RetrieveBusiness
         /// </summary>
         /// <remarks>
-        /// Get a business&#39;s information.
+        /// Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </remarks>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (V1Merchant)</returns>
@@ -213,7 +217,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;V1Merchant&gt;</returns>
@@ -224,7 +228,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;V1Merchant&gt;</returns>
@@ -252,7 +256,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
 
             // authentication (oauth2) required
             // oauth required
@@ -281,7 +285,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;V1Merchant&gt;</returns>
@@ -293,7 +297,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// ListLocations Provides details for a business&#39;s locations, including their IDs.
+        /// ListLocations Provides details for all business locations associated with a Square account, including the Square-assigned object ID for the location.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;V1Merchant&gt;)</returns>
@@ -321,7 +325,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
 
             // authentication (oauth2) required
             // oauth required
@@ -350,7 +354,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveBusiness Get a business&#39;s information.
+        /// RetrieveBusiness Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>V1Merchant</returns>
@@ -361,7 +365,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveBusiness Get a business&#39;s information.
+        /// RetrieveBusiness Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of V1Merchant</returns>
@@ -389,7 +393,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
 
             // authentication (oauth2) required
             // oauth required
@@ -418,7 +422,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveBusiness Get a business&#39;s information.
+        /// RetrieveBusiness Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of V1Merchant</returns>
@@ -430,7 +434,7 @@ namespace Square.Connect.Api
         }
 
         /// <summary>
-        /// RetrieveBusiness Get a business&#39;s information.
+        /// RetrieveBusiness Get the general information for a business.  - --  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-locations)  - --
         /// </summary>
         /// <exception cref="Square.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (V1Merchant)</returns>
@@ -458,7 +462,7 @@ namespace Square.Connect.Api
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            localVarHeaderParams.Add("Square-Version", "2019-10-23");
+            localVarHeaderParams.Add("Square-Version", "2019-11-20");
 
             // authentication (oauth2) required
             // oauth required

@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpsertCatalogObjectResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
-        /// <param name="CatalogObject">The created &#x60;CatalogObject&#x60;..</param>
-        /// <param name="IdMappings">The mapping between client and server IDs for this Upsert..</param>
+        /// <param name="Errors">Information on any errors encountered..</param>
+        /// <param name="CatalogObject">The successfully created or updated CatalogObject..</param>
+        /// <param name="IdMappings">The mapping between client and server IDs for this upsert..</param>
         public UpsertCatalogObjectResponse(List<Error> Errors = default(List<Error>), CatalogObject CatalogObject = default(CatalogObject), List<CatalogIdMapping> IdMappings = default(List<CatalogIdMapping>))
         {
             this.Errors = Errors;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of &#x60;Error&#x60;s encountered.
+        /// Information on any errors encountered.
         /// </summary>
-        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
+        /// <value>Information on any errors encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The created &#x60;CatalogObject&#x60;.
+        /// The successfully created or updated CatalogObject.
         /// </summary>
-        /// <value>The created &#x60;CatalogObject&#x60;.</value>
+        /// <value>The successfully created or updated CatalogObject.</value>
         [DataMember(Name="catalog_object", EmitDefaultValue=false)]
         public CatalogObject CatalogObject { get; set; }
         /// <summary>
-        /// The mapping between client and server IDs for this Upsert.
+        /// The mapping between client and server IDs for this upsert.
         /// </summary>
-        /// <value>The mapping between client and server IDs for this Upsert.</value>
+        /// <value>The mapping between client and server IDs for this upsert.</value>
         [DataMember(Name="id_mappings", EmitDefaultValue=false)]
         public List<CatalogIdMapping> IdMappings { get; set; }
         /// <summary>

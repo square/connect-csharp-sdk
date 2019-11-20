@@ -8,7 +8,7 @@ A request to update a `WorkweekConfig` object
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkweekConfig** | [**WorkweekConfig**](WorkweekConfig.md) | The updated &#x60;WorkweekConfig&#x60; object. | [optional] 
+**WorkweekConfig** | [**WorkweekConfig**](WorkweekConfig.md) | The updated &#x60;WorkweekConfig&#x60; object. | 
 
 
 

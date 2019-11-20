@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// A tender represents a discrete monetary exchange. Square represents this exchange as a money object with a specific currency and amount, where the amount is given in the smallest denomination of the given currency.  Square POS can accept more than one form of tender for a single payment (such as by splitting a bill between a credit card and a gift card). The &#x60;tender&#x60; field of the Payment object lists all forms of tender used for the payment.  Split tender payments behave slightly differently from single tender payments:  The receipt_url for a split tender corresponds only to the first tender listed in the tender field. To get the receipt URLs for the remaining tenders, use the receipt_url fields of the corresponding Tender objects.  *A note on gift cards**: when a customer purchases a Square gift card from a merchant, the merchant receives the full amount of the gift card in the associated payment.  When that gift card is used as a tender, the balance of the gift card is reduced and the merchant receives no funds. A &#x60;Tender&#x60; object with a type of &#x60;SQUARE_GIFT_CARD&#x60; indicates a gift card was used for some or all of the associated payment.
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1Tender :  IEquatable<V1Tender>, IValidatableObject
     {
         /// <summary>

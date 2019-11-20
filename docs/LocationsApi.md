@@ -4,10 +4,77 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateLocation**](LocationsApi.md#createlocation) | **POST** /v2/locations | CreateLocation
 [**ListLocations**](LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 [**RetrieveLocation**](LocationsApi.md#retrievelocation) | **GET** /v2/locations/{location_id} | RetrieveLocation
 [**UpdateLocation**](LocationsApi.md#updatelocation) | **PUT** /v2/locations/{location_id} | UpdateLocation
 
+
+<a name="createlocation"></a>
+# **CreateLocation**
+**Note: This endpoint is in beta.**
+> CreateLocationResponse CreateLocation (CreateLocationRequest body)
+
+CreateLocation
+
+Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Square.Connect.Api;
+using Square.Connect.Client;
+using Square.Connect.Model;
+
+namespace Example
+{
+    public class CreateLocationExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new LocationsApi();
+            var body = new CreateLocationRequest(); // CreateLocationRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+
+            try
+            {
+                // CreateLocation
+                CreateLocationResponse result = apiInstance.CreateLocation(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LocationsApi.CreateLocation: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateLocationRequest**](CreateLocationRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. | 
+
+### Return type
+
+[**CreateLocationResponse**](CreateLocationResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="listlocations"></a>
 # **ListLocations**
@@ -15,7 +82,7 @@ Method | HTTP request | Description
 
 ListLocations
 
-Provides the details for all of a business's locations.  Most other Connect API endpoints have a required `location_id` path parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
+Provides information of all locations of a business.  Most other Connect API endpoints have a required `location_id` path parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
 
 ### Example
 ```csharp
@@ -72,7 +139,6 @@ This endpoint does not need any parameter.
 
 <a name="retrievelocation"></a>
 # **RetrieveLocation**
-**Note: This endpoint is in beta.**
 > RetrieveLocationResponse RetrieveLocation (string locationId)
 
 RetrieveLocation
@@ -143,7 +209,7 @@ Name | Type | Description  | Notes
 
 UpdateLocation
 
-Updates the `Location` specified by the given ID.
+Updates a location.
 
 ### Example
 ```csharp

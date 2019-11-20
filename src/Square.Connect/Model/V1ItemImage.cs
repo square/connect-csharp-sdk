@@ -27,6 +27,7 @@ namespace Square.Connect.Model
     /// V1ItemImage
     /// </summary>
     [DataContract]
+    [Obsolete]
     public partial class V1ItemImage :  IEquatable<V1ItemImage>, IValidatableObject
     {
         /// <summary>

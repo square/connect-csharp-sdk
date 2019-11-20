@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    ///  Represents the hours of operation for a business location.
+    /// Represents the hours of operation for a business location.
     /// </summary>
     [DataContract]
     public partial class BusinessHours :  IEquatable<BusinessHours>, IValidatableObject

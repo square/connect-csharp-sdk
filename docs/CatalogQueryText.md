@@ -8,7 +8,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Keywords** | **List<string>** | A list of one, two, or three search keywords. Keywords with fewer than three characters are ignored. | 
+**Keywords** | **List<string>** | A list of 1, 2, or 3 search keywords. Keywords with fewer than 3 characters are ignored. | 
 
 
 

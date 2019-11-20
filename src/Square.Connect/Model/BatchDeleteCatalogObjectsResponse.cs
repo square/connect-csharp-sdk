@@ -32,9 +32,9 @@ namespace Square.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchDeleteCatalogObjectsResponse" /> class.
         /// </summary>
-        /// <param name="Errors">The set of &#x60;Error&#x60;s encountered..</param>
-        /// <param name="DeletedObjectIds">The IDs of all &#x60;CatalogObject&#x60;s deleted by this request..</param>
-        /// <param name="DeletedAt">The database [timestamp](#workingwithdates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
+        /// <param name="Errors">The set of Errors encountered..</param>
+        /// <param name="DeletedObjectIds">The IDs of all CatalogObjects deleted by this request..</param>
+        /// <param name="DeletedAt">The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;..</param>
         public BatchDeleteCatalogObjectsResponse(List<Error> Errors = default(List<Error>), List<string> DeletedObjectIds = default(List<string>), string DeletedAt = default(string))
         {
             this.Errors = Errors;
@@ -43,21 +43,21 @@ namespace Square.Connect.Model
         }
         
         /// <summary>
-        /// The set of &#x60;Error&#x60;s encountered.
+        /// The set of Errors encountered.
         /// </summary>
-        /// <value>The set of &#x60;Error&#x60;s encountered.</value>
+        /// <value>The set of Errors encountered.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
         /// <summary>
-        /// The IDs of all &#x60;CatalogObject&#x60;s deleted by this request.
+        /// The IDs of all CatalogObjects deleted by this request.
         /// </summary>
-        /// <value>The IDs of all &#x60;CatalogObject&#x60;s deleted by this request.</value>
+        /// <value>The IDs of all CatalogObjects deleted by this request.</value>
         [DataMember(Name="deleted_object_ids", EmitDefaultValue=false)]
         public List<string> DeletedObjectIds { get; set; }
         /// <summary>
-        /// The database [timestamp](#workingwithdates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
+        /// The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.
         /// </summary>
-        /// <value>The database [timestamp](#workingwithdates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
+        /// <value>The database [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) of this deletion in RFC 3339 format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;.</value>
         [DataMember(Name="deleted_at", EmitDefaultValue=false)]
         public string DeletedAt { get; set; }
         /// <summary>

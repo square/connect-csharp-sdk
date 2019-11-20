@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Square.Connect.Model
 {
     /// <summary>
-    /// Represents one of a business&#39;s locations.
+    /// 
     /// </summary>
     [DataContract]
     public partial class Location :  IEquatable<Location>, IValidatableObject
@@ -33,29 +33,29 @@ namespace Square.Connect.Model
         /// Initializes a new instance of the <see cref="Location" /> class.
         /// </summary>
         /// <param name="Id">The Square-issued ID of the location..</param>
-        /// <param name="Name">The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname.</param>
-        /// <param name="Address">The location&#39;s physical address..</param>
-        /// <param name="Timezone">The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone..</param>
+        /// <param name="Name">The name of the location. This information appears in the dashboard as the nickname..</param>
+        /// <param name="Address">The physical address of the location..</param>
+        /// <param name="Timezone">The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location..</param>
         /// <param name="Capabilities">The Square features that are enabled for the location. See &#x60;LocationCapability&#x60; for possible values. See [LocationCapability](#type-locationcapability) for possible values.</param>
-        /// <param name="Status">The location&#39;s status See [LocationStatus](#type-locationstatus) for possible values.</param>
+        /// <param name="Status">The status of the location, either active or inactive. See [LocationStatus](#type-locationstatus) for possible values.</param>
         /// <param name="CreatedAt">The time when the location was created, in RFC 3339 format..</param>
         /// <param name="MerchantId">The ID of the merchant that owns the location..</param>
         /// <param name="Country">The country of the location, in ISO 3166-1-alpha-2 format.  See &#x60;Country&#x60; for possible values. See [Country](#type-country) for possible values.</param>
-        /// <param name="LanguageCode">The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A)..</param>
-        /// <param name="Currency">The currency used for all transactions at this location, in ISO 4217 format.  See &#x60;Currency&#x60; for possible values. See [Currency](#type-currency) for possible values.</param>
-        /// <param name="PhoneNumber">The location&#39;s phone_number..</param>
-        /// <param name="BusinessName">The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts..</param>
-        /// <param name="Type">The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values.</param>
-        /// <param name="WebsiteUrl">The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set..</param>
-        /// <param name="BusinessHours">  The hours of operation for a business location.  Default: none; only exists if explicitly set..</param>
-        /// <param name="BusinessEmail">The email of the location..</param>
-        /// <param name="Description">The business description of the location..</param>
+        /// <param name="LanguageCode">The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A)..</param>
+        /// <param name="Currency">The currency used for all transactions at this location, in ISO 4217 format. See &#x60;Currency&#x60; for possible values. See [Currency](#type-currency) for possible values.</param>
+        /// <param name="PhoneNumber">The phone number of the location in human readable format..</param>
+        /// <param name="BusinessName">The business name of the location This is the name visible to the customers of the location. For example, this name appears on customer receipts..</param>
+        /// <param name="Type">The type of the location, either physical or mobile. See [LocationType](#type-locationtype) for possible values.</param>
+        /// <param name="WebsiteUrl">The website URL of the location..</param>
+        /// <param name="BusinessHours"> Represents the hours of operation for the location..</param>
+        /// <param name="BusinessEmail">The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts..</param>
+        /// <param name="Description">The description of the location..</param>
         /// <param name="TwitterUsername">The Twitter username of the location without the &#39;&amp;#64;&#39; symbol..</param>
         /// <param name="InstagramUsername">The Instagram username of the location without the &#39;&amp;#64;&#39; symbol..</param>
         /// <param name="FacebookUrl">The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;..</param>
         /// <param name="Coordinates">The physical coordinates (latitude and longitude) of the location..</param>
-        /// <param name="LogoUrl">The logo image URL of the location..</param>
-        /// <param name="PosBackgroundUrl">The Point of Sale background image URL of the location..</param>
+        /// <param name="LogoUrl">The URL of the logo image for the location..</param>
+        /// <param name="PosBackgroundUrl">The URL of the Point of Sale background image for the location..</param>
         /// <param name="Mcc">[beta] The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location..</param>
         public Location(string Id = default(string), string Name = default(string), Address Address = default(Address), string Timezone = default(string), List<string> Capabilities = default(List<string>), string Status = default(string), string CreatedAt = default(string), string MerchantId = default(string), string Country = default(string), string LanguageCode = default(string), string Currency = default(string), string PhoneNumber = default(string), string BusinessName = default(string), string Type = default(string), string WebsiteUrl = default(string), BusinessHours BusinessHours = default(BusinessHours), string BusinessEmail = default(string), string Description = default(string), string TwitterUsername = default(string), string InstagramUsername = default(string), string FacebookUrl = default(string), Coordinates Coordinates = default(Coordinates), string LogoUrl = default(string), string PosBackgroundUrl = default(string), string Mcc = default(string))
         {
@@ -93,21 +93,21 @@ namespace Square.Connect.Model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname
+        /// The name of the location. This information appears in the dashboard as the nickname.
         /// </summary>
-        /// <value>The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname</value>
+        /// <value>The name of the location. This information appears in the dashboard as the nickname.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// The location&#39;s physical address.
+        /// The physical address of the location.
         /// </summary>
-        /// <value>The location&#39;s physical address.</value>
+        /// <value>The physical address of the location.</value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public Address Address { get; set; }
         /// <summary>
-        /// The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone.
+        /// The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location.
         /// </summary>
-        /// <value>The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone.</value>
+        /// <value>The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location.</value>
         [DataMember(Name="timezone", EmitDefaultValue=false)]
         public string Timezone { get; set; }
         /// <summary>
@@ -117,9 +117,9 @@ namespace Square.Connect.Model
         [DataMember(Name="capabilities", EmitDefaultValue=false)]
         public List<string> Capabilities { get; set; }
         /// <summary>
-        /// The location&#39;s status See [LocationStatus](#type-locationstatus) for possible values
+        /// The status of the location, either active or inactive. See [LocationStatus](#type-locationstatus) for possible values
         /// </summary>
-        /// <value>The location&#39;s status See [LocationStatus](#type-locationstatus) for possible values</value>
+        /// <value>The status of the location, either active or inactive. See [LocationStatus](#type-locationstatus) for possible values</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
@@ -141,57 +141,57 @@ namespace Square.Connect.Model
         [DataMember(Name="country", EmitDefaultValue=false)]
         public string Country { get; set; }
         /// <summary>
-        /// The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
+        /// The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
         /// </summary>
-        /// <value>The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).</value>
+        /// <value>The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).</value>
         [DataMember(Name="language_code", EmitDefaultValue=false)]
         public string LanguageCode { get; set; }
         /// <summary>
-        /// The currency used for all transactions at this location, in ISO 4217 format.  See &#x60;Currency&#x60; for possible values. See [Currency](#type-currency) for possible values
+        /// The currency used for all transactions at this location, in ISO 4217 format. See &#x60;Currency&#x60; for possible values. See [Currency](#type-currency) for possible values
         /// </summary>
-        /// <value>The currency used for all transactions at this location, in ISO 4217 format.  See &#x60;Currency&#x60; for possible values. See [Currency](#type-currency) for possible values</value>
+        /// <value>The currency used for all transactions at this location, in ISO 4217 format. See &#x60;Currency&#x60; for possible values. See [Currency](#type-currency) for possible values</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
         public string Currency { get; set; }
         /// <summary>
-        /// The location&#39;s phone_number.
+        /// The phone number of the location in human readable format.
         /// </summary>
-        /// <value>The location&#39;s phone_number.</value>
+        /// <value>The phone number of the location in human readable format.</value>
         [DataMember(Name="phone_number", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
         /// <summary>
-        /// The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts.
+        /// The business name of the location This is the name visible to the customers of the location. For example, this name appears on customer receipts.
         /// </summary>
-        /// <value>The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts.</value>
+        /// <value>The business name of the location This is the name visible to the customers of the location. For example, this name appears on customer receipts.</value>
         [DataMember(Name="business_name", EmitDefaultValue=false)]
         public string BusinessName { get; set; }
         /// <summary>
-        /// The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values
+        /// The type of the location, either physical or mobile. See [LocationType](#type-locationtype) for possible values
         /// </summary>
-        /// <value>The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values</value>
+        /// <value>The type of the location, either physical or mobile. See [LocationType](#type-locationtype) for possible values</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.
+        /// The website URL of the location.
         /// </summary>
-        /// <value>The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.</value>
+        /// <value>The website URL of the location.</value>
         [DataMember(Name="website_url", EmitDefaultValue=false)]
         public string WebsiteUrl { get; set; }
         /// <summary>
-        ///   The hours of operation for a business location.  Default: none; only exists if explicitly set.
+        ///  Represents the hours of operation for the location.
         /// </summary>
-        /// <value>  The hours of operation for a business location.  Default: none; only exists if explicitly set.</value>
+        /// <value> Represents the hours of operation for the location.</value>
         [DataMember(Name="business_hours", EmitDefaultValue=false)]
         public BusinessHours BusinessHours { get; set; }
         /// <summary>
-        /// The email of the location.
+        /// The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts.
         /// </summary>
-        /// <value>The email of the location.</value>
+        /// <value>The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts.</value>
         [DataMember(Name="business_email", EmitDefaultValue=false)]
         public string BusinessEmail { get; set; }
         /// <summary>
-        /// The business description of the location.
+        /// The description of the location.
         /// </summary>
-        /// <value>The business description of the location.</value>
+        /// <value>The description of the location.</value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
@@ -219,15 +219,15 @@ namespace Square.Connect.Model
         [DataMember(Name="coordinates", EmitDefaultValue=false)]
         public Coordinates Coordinates { get; set; }
         /// <summary>
-        /// The logo image URL of the location.
+        /// The URL of the logo image for the location.
         /// </summary>
-        /// <value>The logo image URL of the location.</value>
+        /// <value>The URL of the logo image for the location.</value>
         [DataMember(Name="logo_url", EmitDefaultValue=false)]
         public string LogoUrl { get; set; }
         /// <summary>
-        /// The Point of Sale background image URL of the location.
+        /// The URL of the Point of Sale background image for the location.
         /// </summary>
-        /// <value>The Point of Sale background image URL of the location.</value>
+        /// <value>The URL of the Point of Sale background image for the location.</value>
         [DataMember(Name="pos_background_url", EmitDefaultValue=false)]
         public string PosBackgroundUrl { get; set; }
         /// <summary>
