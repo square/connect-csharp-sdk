@@ -14,7 +14,7 @@
 The Square Connect .NET SDK is retired (EOL) as of 2019-12-17 and will no longer
 receive bug fixes or product updates. To continue receiving API and SDK
 improvements, please follow the instructions below to migrate to the new
-[Square .NET SDK].
+[Square .NET SDK](https://github.com/square/square-dotnet-sdk).
 
 
 The old Connect SDK documentation is available under the
